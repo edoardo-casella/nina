@@ -12,7 +12,7 @@
     "type": "catamaran",
     "polar_file": "dufour48cat.pol",
     "draft_m": 1.35,
-    "cruise_motor_kn": 7.5,
+    "cruise_motor_kn": 7.2,
     "fuel_lph": 6.0,
     "max_tws_comfort_kn": 22,
     "max_tws_safe_kn": 28,
@@ -20,7 +20,7 @@
     "min_tws_sailing_kn": 7,
     "berths": 11,
     "min_sail_speed_kn": 6.5,
-    "polar_status": "stimata"
+    "polar_status": "stimata-v2 (derated da fonti online 2026-07-10, da validare a bordo)"
   },
   "crew": [
     {

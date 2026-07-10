@@ -33,18 +33,23 @@ def sail_score(twa_deg: float, tws: float, gust: float, wave: float, boat: dict,
     running = twa_deg > 165
     if beating:
         best_twa, vmg = pol.best_upwind(tws)
+        ws = pol.speed(best_twa, tws)
         bs, cap, extra = vmg, 40, f"bolina: {best_twa:.0f}° per bordo, VMG {vmg:.1f} kn"
     elif running:
         best_twa, vmg = pol.best_downwind(tws)
+        ws = pol.speed(best_twa, tws)
         bs, cap, extra = vmg, 62, f"poppa: meglio strambare a {best_twa:.0f}°"
     else:
         bs, cap, extra = pol.speed(twa_deg, tws), 100, None
+        ws = bs
 
-    motoring = tws < boat["min_tws_sailing_kn"] or bs < 3.0
+    # regola dello skipper: si va a vela solo se la polare da' almeno
+    # min_sail_speed_kn (6.5 sul Dufour 48 cat) di velocita' SULL'ACQUA
+    motoring = tws < boat["min_tws_sailing_kn"] or ws < boat.get("min_sail_speed_kn", 3.0)
     if motoring:
         return {"score": round(max(15, 40 - wave * 15)), "verdict": "MOTORE", "boat_kn": boat["cruise_motor_kn"],
                 "mode": "motore", "reason": f"vento {tws:.0f} kn insufficiente" if tws < boat["min_tws_sailing_kn"]
-                else "VMG troppo bassa: la vela non paga"}
+                else f"a vela solo {ws:.1f} kn: sotto la soglia dei {boat.get('min_sail_speed_kn', 3.0)} kn"}
 
     # componenti (0-1)
     angle = _bell(twa_deg, 100, 42)                 # cat: il bello sta fra 70 e 140

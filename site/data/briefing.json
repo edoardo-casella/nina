@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T14:22+02:00",
+  "generated_at": "2026-07-10T15:42+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -11,23 +11,24 @@
   ],
   "sim": true,
   "cruise_start": "2026-08-08",
+  "departure_at": "2026-08-08T17:00",
   "position": {
     "id": "cannigione",
     "name": "Rada di Cannigione (test)",
     "lat": 41.1035,
     "lon": 9.439,
     "live": true,
-    "age_h": 0.0
+    "age_h": 1.3
   },
   "rest": false,
   "leg": {
     "leg": "Cannigione -> Cala Portese",
     "nm": 4.7,
     "cog": 13,
-    "depart": "2026-07-10T13:00",
-    "eta": "2026-07-10T13:33",
-    "hours": 0.6,
-    "avg_score": 87,
+    "depart": "2026-07-10T14:00",
+    "eta": "2026-07-10T14:43",
+    "hours": 0.7,
+    "avg_score": 84,
     "sail_pct": 100,
     "abort": false,
     "detail": []
@@ -36,29 +37,17 @@
     "andatura": "traverso",
     "twa": 97,
     "vela": true,
-    "avg_kn": 7.8
+    "avg_kn": 6.7
   },
   "options": [
     {
       "leg": "Cannigione -> Cala Portese",
       "nm": 4.7,
       "cog": 13,
-      "depart": "2026-07-10T13:00",
-      "eta": "2026-07-10T13:33",
-      "hours": 0.6,
-      "avg_score": 87,
-      "sail_pct": 100,
-      "abort": false,
-      "detail": []
-    },
-    {
-      "leg": "Cannigione -> Cala Portese",
-      "nm": 4.7,
-      "cog": 13,
       "depart": "2026-07-10T14:00",
-      "eta": "2026-07-10T14:33",
-      "hours": 0.6,
-      "avg_score": 87,
+      "eta": "2026-07-10T14:43",
+      "hours": 0.7,
+      "avg_score": 84,
       "sail_pct": 100,
       "abort": false,
       "detail": []
@@ -68,17 +57,29 @@
       "nm": 4.7,
       "cog": 13,
       "depart": "2026-07-10T15:00",
-      "eta": "2026-07-10T15:32",
-      "hours": 0.5,
-      "avg_score": 87,
+      "eta": "2026-07-10T15:41",
+      "hours": 0.7,
+      "avg_score": 84,
       "sail_pct": 100,
+      "abort": false,
+      "detail": []
+    },
+    {
+      "leg": "Cannigione -> Cala Portese",
+      "nm": 4.7,
+      "cog": 13,
+      "depart": "2026-07-10T08:00",
+      "eta": "2026-07-10T08:39",
+      "hours": 0.7,
+      "avg_score": 36,
+      "sail_pct": 0,
       "abort": false,
       "detail": []
     }
   ],
   "confidence": {
     "mean_spread_kn": 1.1,
-    "max_spread_kn": 4.1,
+    "max_spread_kn": 4.3,
     "confidence": "alta"
   },
   "stop_reason": null,
@@ -88,9 +89,9 @@
     "name": "Cala Lazarina (Lavezzi)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 98,
+    "margin_deg": 99,
     "fetch_km": 30,
-    "why": "vento 118° a 98° dal settore esposto",
+    "why": "vento 119° a 99° dal settore esposto",
     "holding": "sabbia tra roccia",
     "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
     "verify": true
@@ -101,9 +102,9 @@
       "name": "Cala Lazarina (Lavezzi)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 98,
+      "margin_deg": 99,
       "fetch_km": 30,
-      "why": "vento 118° a 98° dal settore esposto",
+      "why": "vento 119° a 99° dal settore esposto",
       "holding": "sabbia tra roccia",
       "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
       "verify": true
@@ -113,9 +114,9 @@
       "name": "Iles Sanguinaires",
       "score": 96,
       "light": "verde",
-      "margin_deg": 82,
+      "margin_deg": 81,
       "fetch_km": 80,
-      "why": "vento 118° a 82° dal settore esposto",
+      "why": "vento 119° a 81° dal settore esposto",
       "holding": "sabbia/roccia",
       "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
       "verify": true
@@ -125,9 +126,9 @@
       "name": "Isola Mortorio",
       "score": 86,
       "light": "verde",
-      "margin_deg": 62,
+      "margin_deg": 61,
       "fetch_km": 20,
-      "why": "vento 118° a 62° dal settore esposto",
+      "why": "vento 119° a 61° dal settore esposto",
       "holding": "sabbia",
       "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
       "verify": true
@@ -139,7 +140,7 @@
       "light": "giallo",
       "margin_deg": 0,
       "fetch_km": 12,
-      "why": "vento 118° entra in rada (settore 40-140°), fetch 12 km",
+      "why": "vento 119° entra in rada (settore 40-140°), fetch 12 km",
       "holding": "sabbia",
       "notes": "Sosta diurna. Sbarco a terra regolamentato.",
       "verify": true
@@ -166,8 +167,8 @@
       "sailing": {
         "twa": 125,
         "andatura": "lasco",
-        "vela": true,
-        "boat_kn": 7.94,
+        "vela": false,
+        "boat_kn": 7.2,
         "tws_est": 12.5,
         "twd": 80
       }
@@ -193,7 +194,7 @@
         "twa": 133,
         "andatura": "lasco",
         "vela": false,
-        "boat_kn": 7.5,
+        "boat_kn": 7.2,
         "tws_est": 7.8,
         "twd": 77
       }
@@ -219,7 +220,7 @@
         "twa": 144,
         "andatura": "lasco",
         "vela": false,
-        "boat_kn": 7.5,
+        "boat_kn": 7.2,
         "tws_est": 6.8,
         "twd": 159
       }
@@ -245,7 +246,7 @@
         "twa": 126,
         "andatura": "lasco",
         "vela": false,
-        "boat_kn": 7.5,
+        "boat_kn": 7.2,
         "tws_est": 3.7,
         "twd": 108
       }
@@ -271,13 +272,13 @@
         "twa": 138,
         "andatura": "lasco",
         "vela": false,
-        "boat_kn": 7.5,
+        "boat_kn": 7.2,
         "tws_est": 4.6,
         "twd": 212
       }
     }
   ],
-  "polar_estimated": true,
+  "polar_estimated": false,
   "crew": [
     {
       "name": "Edo C",
@@ -333,11 +334,11 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 30.9,
-    "rh": 58,
+    "temp": 30.7,
+    "rh": 59,
     "rain": 0.0,
     "wmo": 1,
-    "tws": 12.2,
-    "twd": 110
+    "tws": 12.6,
+    "twd": 113
   }
 }

@@ -44,7 +44,7 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 | `data/voyage.json` — conti | Charter €31.246 = autorità Excel, **fa fede il foglio Bonifici**; ledger.py gestisce solo le spese comuni (variable_budget da tarare) |
 | `data/voyage.json` — plan | **VUOTO** — si riempie allo step 3 dal foglio Percorso (2 scenari Corsica + giro corto) |
 | `data/voyage.json` — waypoints | **STIMATI** — coordinate approssimate, `verify: true` |
-| `data/polars/dufour48cat.pol` | **STIMATA** — non è la polare reale della barca |
+| `data/polars/dufour48cat.pol` | **STIMATA v2** (2026-07-10) — derated −17/−25% per crociera carica da fonti online (test GdV 2022 barca scarica, comparabili Lagoon 46/Elba 45/Bali 4.8, regole carico); attenti al MONOSCAFO Dufour 48 nei risultati web. Da validare a bordo (step 5) |
 | `data/anchorages.json` | **STIMATO** — settori esposti a occhio, da portolano |
 | `RATES` in `provisioning.py` | da tarare sul gruppo |
 

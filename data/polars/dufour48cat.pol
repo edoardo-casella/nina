@@ -1,18 +1,29 @@
-# Dufour 48 Catamaran — polare STIMATA (placeholder da sostituire)
-# Fonte: interpolazione da cat da crociera ~48ft, dislocamento ~14 t.
-# Sostituire con dati reali raccolti a bordo (log NMEA) o forniti dal cantiere.
-# TWA in riga, TWS in colonna. Velocita' barca in nodi.
+# Dufour 48 Catamaran — polare STIMATA v2 (2026-07-10), derated per crociera CARICA.
+# Base: v1 (VPP-like, replicava il test GdV 09/2022 su barca DEMO SCARICA ~15t:
+#   6.5 kn @ TWS 10 al traverso, ratio 0.65) scalata per la condizione reale:
+#   17.5-19 t con 6-11 persone (+20-27% disloc.), 2 eliche fisse trascinate su
+#   saildrive, bimini, vele charter. Fattori: x0.80 traverso/lasco TWS 10-16,
+#   x0.74 bolina e TWS<8 (sluggish sotto 10 kn senza code0), plateau ~8.5 kn
+#   sopra 16-18 TWS (si terzarola). Sanity: ratio 0.45-0.55xTWS al traverso,
+#   mai >0.6 sotto 16 TWS — coerente con test comparabili (Lagoon 46, Elba 45,
+#   Tanna 47, Bali 4.8, Leopard 46) e medie ARC cat crociera.
+# Fonti: Giornale della Vela test 2022; Felci Yacht Design / Multihulls World
+#   (specifiche 14,955 kg, randa 72-76 + autovirante 48 m2); Cruising World /
+#   Yachting World test comparabili; regole Harries (AAC) / PredictWind 80%.
+# ATTENZIONE: i numeri "Dufour 48" 2025 online sono del MONOSCAFO, non del cat.
+# Resta una STIMA: da validare a bordo col log NMEA (step 5).
+# TWA in riga, TWS in colonna. Velocita' barca in nodi, vele bianche.
 twa/tws;6;8;10;12;14;16;20;25
-45;3.0;3.8;4.5;5.0;5.3;5.5;5.6;5.4
-52;4.0;5.0;5.8;6.4;6.8;7.0;7.2;6.9
-60;4.6;5.7;6.6;7.2;7.6;7.9;8.1;7.8
-70;5.0;6.2;7.1;7.8;8.2;8.5;8.8;8.4
-80;5.2;6.5;7.4;8.1;8.6;8.9;9.2;8.8
-90;5.3;6.6;7.6;8.3;8.8;9.1;9.5;9.1
-100;5.3;6.6;7.6;8.4;8.9;9.3;9.7;9.4
-110;5.2;6.5;7.5;8.3;8.8;9.2;9.7;9.5
-120;4.9;6.2;7.2;8.0;8.6;9.0;9.6;9.5
-135;4.4;5.6;6.6;7.4;8.0;8.5;9.2;9.3
-150;3.8;4.9;5.8;6.6;7.2;7.7;8.5;8.8
-165;3.2;4.1;4.9;5.6;6.2;6.7;7.5;8.0
-180;2.9;3.7;4.4;5.1;5.6;6.1;6.9;7.4
+45;2.0;2.7;3.3;3.8;4.1;4.3;4.4;4.2
+52;2.4;3.2;4.0;4.7;5.2;5.5;5.7;5.5
+60;2.7;3.6;4.5;5.2;5.8;6.2;6.4;6.2
+70;2.9;4.0;5.1;5.9;6.5;7.0;7.5;7.3
+80;3.0;4.2;5.4;6.3;6.9;7.5;8.1;7.9
+90;3.1;4.3;5.5;6.4;7.1;7.8;8.5;8.3
+100;3.1;4.3;5.6;6.5;7.2;7.9;8.6;8.4
+110;3.0;4.2;5.5;6.4;7.1;7.8;8.6;8.5
+120;2.9;4.0;5.2;6.1;6.8;7.5;8.4;8.4
+135;2.6;3.6;4.7;5.5;6.2;6.8;7.8;8.0
+150;2.2;3.1;4.0;4.8;5.4;6.0;6.9;7.4
+165;1.9;2.6;3.4;4.0;4.6;5.1;5.9;6.5
+180;1.7;2.3;3.0;3.6;4.1;4.6;5.4;6.0
