@@ -265,12 +265,13 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "polar_estimated": v["boat"].get("polar_status", "stimata") == "stimata",
         "crew": [{"name": m["name"], "role": m["role"], "board": m["board"],
                   "leave": m["leave"], "cabin": m.get("cabin")} for m in crew],
-        # turni a rotazione equa per data (giorno di crociera come offset)
+        # 6 turni/giorno a rotazione equa sul giorno di crociera;
+        # gli skipper sono SEMPRE esclusi dai turni
         "turns": (lambda names, k: {
-            "cucina": names[k % len(names)] if names else None,
-            "cambusa": names[(k + 1) % len(names)] if names else None,
-            "tender": names[(k + 2) % len(names)] if names else None,
-        })([m["name"] for m in crew],
+            t: (names[(k + i) % len(names)] if names else None)
+            for i, t in enumerate(["cucina_pranzo", "cucina_cena", "pulizie_pranzo",
+                                   "pulizie_cena", "check_mattina", "check_pomeriggio"])
+        })([m["name"] for m in crew if m["role"] != "skipper"],
            (dt.date.fromisoformat(day) - dt.date.fromisoformat(plan_all[0]["date"])).days if plan_all else 0),
         "source": "Open-Meteo (ECMWF) — non ufficiale",
         "official": "https://www.meteoam.it/it/mare",

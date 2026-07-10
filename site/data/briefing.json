@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T12:54+02:00",
+  "generated_at": "2026-07-10T13:06+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -288,7 +288,7 @@
     },
     {
       "name": "BeB",
-      "role": "crew",
+      "role": "skipper",
       "board": "2026-08-08",
       "leave": "2026-08-21",
       "cabin": "Bagno privato"
@@ -316,18 +316,21 @@
     }
   ],
   "turns": {
-    "cucina": "EC",
-    "cambusa": "GL",
-    "tender": "BeB"
+    "cucina_pranzo": "GL",
+    "cucina_cena": "BiB",
+    "pulizie_pranzo": "GN",
+    "pulizie_cena": "MM",
+    "check_mattina": "GL",
+    "check_pomeriggio": "BiB"
   },
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 30.6,
+    "temp": 30.9,
     "rh": 58,
     "rain": 0.0,
-    "wmo": 0,
-    "tws": 11.6,
-    "twd": 111
+    "wmo": 1,
+    "tws": 12.0,
+    "twd": 110
   }
 }

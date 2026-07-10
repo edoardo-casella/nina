@@ -364,10 +364,18 @@ function outlookRows(outlook) {
   }).join("");
 }
 
+const TURN_LABEL = {
+  cucina_pranzo: "Cucina · pranzo", cucina_cena: "Cucina · cena",
+  pulizie_pranzo: "Pulizie · pranzo", pulizie_cena: "Pulizie · cena",
+  check_mattina: "Check barca · mattina", check_pomeriggio: "Check barca · pomeriggio",
+};
 const TURN_INFO = {
-  cucina: "Ai fornelli: prepara pranzo e cena per tutti, oggi.",
-  cambusa: "Spesa e dispensa: tiene il conto di cosa manca e compra a terra.",
-  tender: "Responsabile del gommone: sbarchi, ormeggio del tender, benzina.",
+  cucina_pranzo: "Prepara il pranzo per tutti.",
+  cucina_cena: "Prepara la cena per tutti.",
+  pulizie_pranzo: "Sparecchia e lava dopo pranzo (pozzetto compreso).",
+  pulizie_cena: "Sparecchia e lava dopo cena.",
+  check_mattina: "Giro barca del mattino: oggetti al loro posto, cime chiare, niente in giro prima di salpare.",
+  check_pomeriggio: "Giro barca del pomeriggio: riordino generale prima dell'ancoraggio e dell'aperitivo.",
 };
 const fmtD = d => d ? new Date(d + "T12:00").toLocaleDateString("it", { day: "numeric", month: "short" }) : "—";
 
@@ -376,17 +384,19 @@ function crewBlock(b) {
   const chips = b.crew.map((m, i) =>
     `<button class="chip ${m.role === "skipper" ? "skipper" : ""}" onclick="toggleCrew(${i})">${esc(m.name)}</button>`).join("");
   const cards = b.crew.map((m, i) => {
-    const turno = Object.entries(b.turns || {}).find(([, v]) => v === m.name);
+    const turni = Object.entries(b.turns || {}).filter(([, v]) => v === m.name)
+      .map(([k]) => TURN_LABEL[k] ?? k);
+    const ruolo = m.role === "skipper" ? "skipper (esente dai turni)" : m.role;
     return `<div class="crewcard" id="crew-${i}" hidden>
-      <b>${esc(m.name)}</b> — ${esc(m.role)}${m.cabin ? ` · ${esc(m.cabin)}` : ""}<br>
-      A bordo dal ${fmtD(m.board)} al ${fmtD(m.leave)}${turno ? `<br>Turno di oggi: <b>${turno[0]}</b>` : ""}</div>`;
+      <b>${esc(m.name)}</b> — ${esc(ruolo)}${m.cabin ? ` · ${esc(m.cabin)}` : ""}<br>
+      A bordo dal ${fmtD(m.board)} al ${fmtD(m.leave)}${turni.length ? `<br>Turni di oggi: <b>${turni.join(" + ")}</b>` : ""}</div>`;
   }).join("");
   const turns = Object.entries(b.turns || {}).filter(([, v]) => v).map(([k, v]) =>
-    `<details class="turn"><summary><em>${k}</em><span>${esc(v)}</span></summary>
-     <p>${TURN_INFO[k] ?? ""} I turni ruotano automaticamente ogni giorno.</p></details>`).join("");
+    `<details class="turn"><summary><em>${TURN_LABEL[k] ?? k}</em><span>${esc(v)}</span></summary>
+     <p>${TURN_INFO[k] ?? ""} La rotazione è automatica, un posto avanti ogni giorno — skipper esclusi.</p></details>`).join("");
   return `
   <h2>Equipaggio di giornata · ${b.crew.length} a bordo</h2>
-  <p class="hint">Chi è in barca oggi (tocca un nome per la scheda). Sotto: i turni di servizio del giorno — tocca per la spiegazione.</p>
+  <p class="hint">Chi è in barca oggi (tocca un nome per la scheda). Sotto: i 6 turni di servizio del giorno — tocca per la spiegazione. Gli skipper non entrano in rotazione.</p>
   <div class="crew">${chips}</div>${cards}
   <div class="turns">${turns}</div>`;
 }
