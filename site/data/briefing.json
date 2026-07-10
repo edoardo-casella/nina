@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T14:20+02:00",
+  "generated_at": "2026-07-10T14:22+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -13,11 +13,11 @@
   "cruise_start": "2026-08-08",
   "position": {
     "id": "cannigione",
-    "name": "Cannigione",
-    "lat": 41.1069,
-    "lon": 9.4404,
-    "live": false,
-    "age_h": null
+    "name": "Rada di Cannigione (test)",
+    "lat": 41.1035,
+    "lon": 9.439,
+    "live": true,
+    "age_h": 0.0
   },
   "rest": false,
   "leg": {
