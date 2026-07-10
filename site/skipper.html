@@ -98,6 +98,12 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
   box-shadow:0 2px 8px rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.35);color:#3a2c05}
 .dec b{display:block;font:700 .62rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase}
 .dec span{font-size:.66rem;color:var(--soft)}
+a.dec{text-decoration:none;color:inherit}
+.dec.ph .disc{background:radial-gradient(circle at 50% 38%, #E6C6F5, #8E44AD 55%, #5B2C82);color:#fff;box-shadow:0 2px 8px rgba(70,20,110,.4), inset 0 0 0 2px rgba(255,255,255,.3)}
+.dec.ph b{color:#a05bd0}
+.incident.gold{border-left-color:var(--gold)}
+.incident.gold .stamp{border-color:var(--gold);color:var(--gold)}
+.incident.gold .les b,.incident.gold .esito b{color:var(--gold)}
 
 /* galleria */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
@@ -266,9 +272,15 @@ function decorations(d) {
       why: `Almeno 5 crociere al timone di un catamarano (${catTrips}).` },
     { on: t.trips >= 20, icon: "🔱", ttl: "Lupo di mare", sub: `${t.trips} crociere`,
       why: `Più di 20 crociere completate (${t.trips}): un vero lupo di mare.` },
+    { on: true, icon: "💜", ttl: "Purple Heart", sub: "caduto in azione", cls: "ph", link: "#errori-fatali",
+      why: "Ferito in combattimento con qualche dossier: tocca per «Gli errori fatali»." },
   ].filter(m => m.on);
-  const cells = meds.map(m => `<div class="dec" title="${esc(m.why)}"><div class="disc">${m.icon}</div>
-    <b>${m.ttl}</b><span>${m.sub}</span></div>`).join("");
+  const cells = meds.map(m => {
+    const in_ = `<div class="disc">${m.icon}</div><b>${m.ttl}</b><span>${m.sub}</span>`;
+    return m.link
+      ? `<a class="dec ${m.cls || ""}" href="${m.link}" title="${esc(m.why)}">${in_}</a>`
+      : `<div class="dec ${m.cls || ""}" title="${esc(m.why)}">${in_}</div>`;
+  }).join("");
   return `<section><h2>Decorazioni · ${meds.length}</h2>
     <p class="dossier-note" style="margin-bottom:.9rem">Passa il mouse (o tocca) su una medaglia per il criterio.</p>
     <div class="medals">${cells}</div></section>`;
@@ -342,7 +354,7 @@ function tripsHTML(d) {
 
 // Gli errori fatali — contenuto statico (aneddoti dello skipper, tono autoironico)
 function mistakesHTML() {
-  return `<section><h2>Gli errori fatali</h2>
+  return `<section id="errori-fatali"><h2>Gli errori fatali</h2>
   <p class="dossier-note">Ogni comandante tiene, da qualche parte, il registro dei disastri.
   Questi sono gli atti declassificati — perché sui propri errori è meglio riderci su.</p>
 
@@ -388,6 +400,30 @@ function mistakesHTML() {
   </div></section>`;
 }
 
+// Atti eroici — imprese di valore (tono epico con un occhiolino)
+function heroicsHTML() {
+  return `<section><h2>Atti eroici</h2>
+  <p class="dossier-note">Non solo disastri. Agli atti risultano anche imprese di puro valore marinaresco.</p>
+
+  <div class="incident gold"><span class="stamp">Al valore</span>
+    <h3>La veglia di Serifos</h3>
+    <div class="meta">🇬🇷 Serifos · Cicladi · agosto</div>
+    <p>Il Meltemi entra in scena e non se ne va più: <b>quattro giorni con mare forza 6 e raffiche
+    oltre i 50 nodi</b>. Lo skipper resta di guardia <b>quattro notti di fila</b>, praticamente senza
+    chiudere occhio, per tenere la barca all'ancora e l'equipaggio al sicuro — in barca con la
+    fidanzata dell'epoca.</p>
+    <p>Il gran finale, degno di un vero stratega: pur di non affrontare la tratta di rientro (e
+    soprattutto di non perdere l'aereo per la <b>crociera successiva</b>), chiama <b>due skipper</b>
+    che vengono a rilevare la barca, e abbandona la nave per correre in aeroporto. La priorità, sopra
+    ogni cosa: la prossima barca.</p>
+    <div class="les"><b>Menzione d'onore</b>
+      <ol><li>Resistenza fuori scala: quattro notti in bianco sotto i 50 nodi.</li>
+      <li>Sangue freddo: barca e equipaggio portati a casa interi.</li>
+      <li>Senso delle priorità cristallino: l'aereo per la barca dopo non si perde.</li></ol></div>
+    <div class="esito"><b>Bilancio:</b> quattro notti di sonno perse, una barca salvata e un aereo preso al volo.</div>
+  </div></section>`;
+}
+
 function render(d) {
   const t = d.totals;
   const { cur, next } = rankOf(t.nm);
@@ -428,6 +464,7 @@ function render(d) {
   ${galleryHTML(d)}
   ${tripsHTML(d)}
   ${mistakesHTML()}
+  ${heroicsHTML()}
 
   <section style="text-align:center">
     <h2 style="justify-content:center">Seguilo</h2>

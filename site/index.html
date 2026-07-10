@@ -76,6 +76,10 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
   color:var(--soft);font-style:normal;display:block;margin-top:.25rem}
 .count .lbl{font:700 .68rem/1.4 var(--display);letter-spacing:.14em;text-transform:uppercase;
   color:var(--accent);flex-basis:100%}
+.crew-cta{display:flex;align-items:center;justify-content:center;gap:.5rem;
+  margin-top:.7rem;padding:.8rem 1rem;background:var(--accent);color:var(--chiptx);
+  font:700 .74rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;border-radius:3px}
 
 .nowbar{display:flex;flex-wrap:wrap;gap:.4rem .95rem;font-size:.85rem;color:var(--soft);
   margin:1rem 0 .9rem;align-items:baseline}
@@ -832,7 +836,8 @@ function render(b, wx, c, prog) {
     <span class="lbl">⏳ Mollo gli ormeggi — ${new Date(b.departure_at).toLocaleDateString("it", { day: "numeric", month: "long" })} ore ${b.departure_at.slice(11, 16)}</span>
     <span><b data-u="g">—</b><i>giorni</i></span><span><b data-u="h">—</b><i>ore</i></span>
     <span><b data-u="m">—</b><i>min</i></span><span><b data-u="s">—</b><i>sec</i></span>
-  </div>` : ""}
+  </div>
+  <a class="crew-cta" href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">🧭 Questionario equipaggio</a>` : ""}
   ${execCard(b, wx)}
   <h2>Oggi${b.position ? ` — <span style="text-transform:none;letter-spacing:0">${esc(b.position.name)}</span>` : ""}</h2>
   ${b.now ? `<div class="nowbar">
