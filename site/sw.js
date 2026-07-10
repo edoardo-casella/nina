@@ -5,11 +5,15 @@
 // Un dato vecchio dichiarato e' utile; un dato vecchio spacciato per fresco e'
 // pericoloso. E un captive portal di marina che risponde 200 con l'HTML del
 // login NON deve sovrascrivere l'ultimo briefing buono: si cache-a solo JSON ok.
-const SHELL = "nina-shell-v2";
+// SHELL si bumpa a ogni release del guscio; DATA NON si rinomina mai
+// (l'activate cancella le cache con altri nomi: si perderebbe l'ultimo
+// briefing buono per l'offline).
+const SHELL = "nina-shell-v3";
 const DATA = "nina-data-v1";
 const FILES = ["./", "./index.html", "./manifest.json",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
-const DATAFILES = ["./data/briefing.json", "./data/weather.json", "./data/conti.json"];
+const DATAFILES = ["./data/briefing.json", "./data/weather.json", "./data/conti.json",
+                   "./data/program.json"];
 
 const isJson = r => r.ok && (r.headers.get("content-type") || "").includes("json");
 

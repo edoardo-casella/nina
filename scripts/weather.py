@@ -155,15 +155,44 @@ DAILY_VARS = ("weather_code,temperature_2m_max,temperature_2m_min,precipitation_
               "precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,"
               "wind_direction_10m_dominant")
 
+SEA_DAILY_VARS = "wave_height_max,wave_direction_dominant,wave_period_max"
 
-def daily_at(points: list[tuple[float, float]], start: str, end: str) -> list[dict]:
+
+def _clamp_horizon(end: str, max_days: int) -> str:
+    """L'API rifiuta le date oltre l'orizzonte del modello: meglio troncare
+    la richiesta che farla fallire tutta."""
+    import datetime as dt
+    lim = (dt.date.today() + dt.timedelta(days=max_days)).isoformat()
+    return min(end, lim)
+
+
+def daily_at(points: list[tuple[float, float]], start: str, end: str,
+             model: str | None = None) -> list[dict]:
     """Previsione giornaliera per una LISTA di coordinate (una chiamata sola).
-    Ritorna una lista di risposte nello stesso ordine dei punti."""
-    data = _get(FORECAST, {
+    Ritorna una lista di risposte nello stesso ordine dei punti.
+    Orizzonte forecast ~16 giorni (best_match): end viene troncato."""
+    params = {
         "latitude": ",".join(f"{p[0]:.4f}" for p in points),
         "longitude": ",".join(f"{p[1]:.4f}" for p in points),
         "daily": DAILY_VARS, "wind_speed_unit": "kn",
-        "timezone": "Europe/Rome", "start_date": start, "end_date": end,
+        "timezone": "Europe/Rome", "start_date": start,
+        "end_date": _clamp_horizon(end, 15),
+    }
+    if model:
+        params["models"] = model
+    data = _get(FORECAST, params)
+    return data if isinstance(data, list) else [data]
+
+
+def sea_daily(points: list[tuple[float, float]], start: str, end: str) -> list[dict]:
+    """Onda giornaliera (max) per una LISTA di coordinate, una chiamata sola.
+    Orizzonte marine ~8 giorni: end viene troncato a oggi+7."""
+    data = _get(MARINE, {
+        "latitude": ",".join(f"{p[0]:.4f}" for p in points),
+        "longitude": ",".join(f"{p[1]:.4f}" for p in points),
+        "daily": SEA_DAILY_VARS,
+        "timezone": "Europe/Rome", "start_date": start,
+        "end_date": _clamp_horizon(end, 7),
     })
     return data if isinstance(data, list) else [data]
 

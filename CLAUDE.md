@@ -30,11 +30,30 @@ Stato unico: `data/voyage.json`. Otto skill in `skills/`, script in `scripts/`,
 dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 
 - `core.py` — stato, geodesia, polare (con VMG di bolina e di poppa)
-- `weather.py` — Open-Meteo, cache 1 h, `ensemble_spread` per l'affidabilità
+- `weather.py` — Open-Meteo, cache 1 h, `ensemble_spread` per l'affidabilità;
+  `daily_at`/`sea_daily` per il programma a 14 giorni (orizzonti troncati)
 - `routing.py` — Sail Score, simulazione ora per ora
 - `shelter.py` — Shelter Score per le rade
 - `ledger.py` / `provisioning.py` / `logbook.py` / `import_kml.py`
-- `publish.py` — genera `site/data/*.json`
+- `draft_plan.py` — bozza one-off delle tappe giornaliere (dry-run di default)
+- `publish.py` — genera i 4 JSON di `site/data/`: `briefing`, `weather`,
+  `conti`, `program` (14 giorni con fascia di confidenza `piena`/`degradata`/`programma`)
+
+### Giornata a tappe (`steps`)
+
+Ogni giorno di `plan[]` può avere fino a 3 tappe in `steps[]`: chiavi
+`slot` (mattina/pomeriggio/sera; "giornata" per tappa unica), `from`/`to`
+(id waypoint, `from == to` = sosta), `depart_at`/`arrive_by` (HH:MM,
+facoltativi), `activity` (bagno/trekking/bordo/porto/cambusa), `night_stay`
+(esattamente 1 per i giorni normali, 0 nelle notturne), `verify`.
+Vincoli: `steps[0].from == day.from`, `steps[-1].to == day.to`, catena
+continua. I campi day-level `from/to/rest/night` restano l'autorità (il gate
+notturna legge `night` lì). I giorni senza `steps` valgono come tappa unica.
+Bozza: `python scripts/draft_plan.py` (dry-run) → revisione → `--write` → `git diff`.
+
+La dashboard ha 4 viste hash-routed (`#oggi` executive summary + tappe,
+`#vento` e `#mare` 48h + 14gg, `#programma` griglia 2 settimane). `sw.js`:
+a ogni release del guscio si bumpa `SHELL`; la cache `DATA` non si rinomina mai.
 
 ## Stato dei dati
 
@@ -42,7 +61,7 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 |---|---|
 | `data/voyage.json` — crew e date | **REALI** (step 2, da Excel; iniziali). Diete: da raccogliere (default onnivoro) |
 | `data/voyage.json` — conti | Charter €31.246 = autorità Excel, **fa fede il foglio Bonifici**; ledger.py gestisce solo le spese comuni (variable_budget da tarare) |
-| `data/voyage.json` — plan | **VUOTO** — si riempie allo step 3 dal foglio Percorso (2 scenari Corsica + giro corto) |
+| `data/voyage.json` — plan | **REALE** 8–29 ago, 22 giorni antiorari (2 notturne, 2 soste). Tappe `steps`: bozza da `draft_plan.py`, **STIMATE** `verify: true` finché non riviste su carta |
 | `data/voyage.json` — waypoints | **STIMATI** — coordinate approssimate, `verify: true` |
 | `data/polars/dufour48cat.pol` | **STIMATA v2** (2026-07-10) — derated −17/−25% per crociera carica da fonti online (test GdV 2022 barca scarica, comparabili Lagoon 46/Elba 45/Bali 4.8, regole carico); attenti al MONOSCAFO Dufour 48 nei risultati web. Da validare a bordo (step 5) |
 | `data/anchorages.json` | **STIMATO** — settori esposti a occhio, da portolano |

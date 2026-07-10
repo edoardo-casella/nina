@@ -104,6 +104,30 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
   border-radius:3px;color:var(--soft);cursor:pointer}
 .tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
+/* drill-down: quattro viste in una pagina, hash-router senza framework */
+header .tabs{max-width:640px;margin:0 auto;padding:0 1.1rem .6rem}
+header .tab{flex:1;text-align:center;text-decoration:none}
+main>section{display:none}
+main>section.on{display:block}
+
+.exec{background:var(--sea-1);border:1px solid var(--hair);border-left:3px solid var(--accent);
+  border-radius:3px;padding:.95rem 1.05rem;font-size:.95rem;line-height:1.65}
+.exec .dot{display:inline-block;width:10px;height:10px;margin:0 0 -1px 0}
+.vflag{color:var(--magenta);font-weight:600}
+.tl em{width:4.8rem}
+
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.pgrid .day{display:flex;flex-direction:column;gap:.18rem}
+.pgrid .day span{font-size:.72rem}
+.day.piena{border-top-color:var(--accent)}
+.day.degradata{border-top-color:var(--giallo)}
+.day.programma{border-top-color:var(--hair);opacity:.62}
+
+.hr.wide{width:34px}
+.hr.wide svg{width:13px;height:13px}
+.axis.wide span{width:34px}
+.hr.dim{opacity:.55}
+
 .leg{background:var(--sea-1);border:1px solid var(--hair);border-radius:3px;padding:1.05rem 1.1rem}
 .route{font:1.35rem/1.25 var(--body);font-style:italic;margin-bottom:.7rem}
 .route span{color:var(--soft);font-style:normal;padding:0 .25rem}
@@ -202,7 +226,13 @@ footer strong{color:var(--ink)}
   <div class="clock" id="clock"></div></div>
   <span class="when" id="when">carico…</span>
   <button class="theme" id="themeBtn" onclick="cycleTheme()" title="Tema: auto segue alba e tramonto">AUTO</button>
-</div></header>
+</div>
+<nav class="tabs" id="mainnav">
+  <a class="tab on" id="nav-oggi" href="#oggi">Oggi</a>
+  <a class="tab" id="nav-vento" href="#vento">Vento</a>
+  <a class="tab" id="nav-mare" href="#mare">Mare</a>
+  <a class="tab" id="nav-programma" href="#programma">Programma</a>
+</nav></header>
 
 <div id="flag"></div>
 <main id="app"></main>
@@ -254,27 +284,15 @@ function ribbon(hours) {
     <span>nodi sopra, ora sotto · tocca una barra</span></div>`;
 }
 
-function windyMaps(pos) {
+function windyMap(pos, ov, title) {
   if (!navigator.onLine || !pos || pos.lat == null) return "";
-  const base = ov => `https://embed.windy.com/embed2.html?lat=${pos.lat}&lon=${pos.lon}&detailLat=${pos.lat}&detailLon=${pos.lon}&zoom=8&level=surface&overlay=${ov}&menu=&message=true&marker=true&calendar=now&type=map&location=coordinates&metricWind=kt&metricTemp=%C2%B0C`;
-  return `<h2>Vento e onde — mappa live</h2>
-  <div class="tabs">
-    <button class="tab on" data-src="${base("wind")}" onclick="swapWindy(this)">Vento</button>
-    <button class="tab" data-src="${base("waves")}" onclick="swapWindy(this)">Onde</button>
-  </div>
+  const src = `https://embed.windy.com/embed2.html?lat=${pos.lat}&lon=${pos.lon}&detailLat=${pos.lat}&detailLon=${pos.lon}&zoom=8&level=surface&overlay=${ov}&menu=&message=true&marker=true&calendar=now&type=map&location=coordinates&metricWind=kt&metricTemp=%C2%B0C`;
+  return `<h2>${title}</h2>
   <div style="border:1px solid var(--hair);border-radius:3px;overflow:hidden">
-    <iframe id="windy" src="${base("wind")}" style="width:100%;height:420px;border:0;display:block" loading="lazy" title="Mappa vento e onde"></iframe>
+    <iframe src="${src}" style="width:100%;height:420px;border:0;display:block" loading="lazy" title="${title}"></iframe>
   </div>
   <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
     Windy centrato su ${esc(pos.name)} — trascina la barra del tempo in basso per vedere il trend.</p>`;
-}
-
-function swapWindy(btn) {
-  const f = document.getElementById("windy");
-  if (!f) return;
-  f.src = btn.dataset.src;
-  const sib = btn.parentNode && btn.parentNode.children ? [...btn.parentNode.children] : [];
-  sib.forEach(x => x.classList && x.classList.toggle("on", x === btn));
 }
 
 const wmoIcon = c => c == null ? "·" : c === 0 ? "☀️" : c <= 2 ? "🌤️" : c === 3 ? "☁️" :
@@ -446,7 +464,160 @@ function toggleCrew(i) {
   t.hidden = !wasHidden;
 }
 
-function render(b, wx, c) {
+// ---- giornata a tappe: rada mattina / pomeriggio / sera + attività
+const ACT_ICON = { bagno: "🏊", trekking: "🥾", bordo: "⚓", porto: "🧭", cambusa: "🛒" };
+const actLabels = a => (a || []).map(x => `${ACT_ICON[x] ?? "•"} ${x}`).join(" · ");
+
+function execCard(b, wx) {
+  const steps = b.steps || [];
+  const moves = steps.filter(s => !s.stay);
+  const parts = [];
+  if (b.rest) {
+    parts.push(`<b>Giornata di sosta</b> a <span class="water">${esc(steps[0]?.name ?? b.position?.name ?? "—")}</span> — ${actLabels(steps[0]?.activity) || "bagno, riposo, cambusa"}.`);
+  } else if (b.leg?.night) {
+    const dest = b.leg.leg?.split(/ (?:->|→) /)[1] ?? "destinazione";
+    parts.push(`<b>Notturna</b> 🌙 — si salpa in serata (~${b.leg.depart?.slice(11, 16) ?? "—"}), arrivo all'alba a <span class="water">${esc(dest)}</span>.`);
+    if (b.leg.night_check) parts.push(b.leg.night_check.ok
+      ? `Gate mare piatto: <b style="color:var(--verde)">ok</b> (onda max ${b.leg.night_check.max_wave} m).`
+      : `Gate mare piatto: <b style="color:var(--giallo)">onda oltre soglia</b> (${b.leg.night_check.max_wave} m &gt; ${b.leg.night_check.thr}) — consigliato il piano diurno.`);
+  } else if (moves.length) {
+    const first = moves[0];
+    const after = steps.slice(steps.indexOf(first) + 1).map(s =>
+      `<span class="water">${esc(s.stay ? s.name : s.to)}</span>${s.activity?.length ? ` (${actLabels(s.activity)})` : ""}`);
+    parts.push(`<b>${steps.length} tapp${steps.length === 1 ? "a" : "e"} · ${b.day_nm ?? first.nm} nm</b> — partenza ~${first.depart?.slice(11, 16) ?? "—"} da <span class="water">${esc(first.frm)}</span> verso <span class="water">${esc(first.to)}</span>${after.length ? `, poi ${after.join(", ")}` : ""}.`);
+  } else if (b.stop_reason) {
+    parts.push(`<b class="vflag">Nessuna partenza consigliata</b> — ${esc(b.stop_reason)}.`);
+  } else {
+    parts.push(`Nessuna tratta pianificata per oggi.`);
+  }
+  const rows = (wx?.hours || []).filter(h => h.time.startsWith(b.day));
+  const dayRows = rows.filter(h => { const hh = +h.time.slice(11, 13); return hh >= 8 && hh <= 20; });
+  const use = dayRows.length ? dayRows : rows;
+  if (use.length) {
+    const wm = use.reduce((a, h) => (h.tws > a.tws ? h : a));
+    const wavem = Math.max(0, ...use.map(h => h.wave ?? 0));
+    parts.push(`Vento fino a <b>${Math.round(wm.tws)} kn</b> da ${comp(wm.twd)} verso le ${wm.time.slice(11, 13)}${wavem ? `, onda max <b>${wavem.toFixed(1)} m</b>` : ""}.`);
+  }
+  if (b.tonight && !b.leg?.night) parts.push(`Stanotte: <span class="water">${esc(b.tonight.name)}</span> <span class="dot ${b.tonight.light}"></span>.`);
+  if (b.turns?.cucina_cena) parts.push(`Stasera in cucina: <b>${esc(b.turns.cucina_cena)}</b>.`);
+  return `<h2>La giornata in breve</h2><div class="exec">${parts.join(" ")}
+    ${steps.some(s => s.verify) ? `<p class="vflag" style="margin-top:.5rem;font-size:.8rem">⚑ Tappe stimate, da verificare su carta nautica.</p>` : ""}</div>`;
+}
+
+function tappeTimeline(b) {
+  const steps = b.steps || [];
+  if (steps.length < 2) return "";
+  const rows = steps.map(s => {
+    const flag = s.verify ? ` <span class="vflag">⚑</span>` : "";
+    const moon = s.night_stay ? " ⚓🌙" : "";
+    const acts = actLabels(s.activity);
+    if (s.stay) return `<div class="dayrow"><em>${esc(s.slot)}</em>
+      <div><h3 class="water">${esc(s.name)}${moon}${flag}</h3>
+      <p>in rada${acts ? " · " + acts : ""}</p></div></div>`;
+    const plus = s.eta && s.depart && s.eta.slice(0, 10) !== s.depart.slice(0, 10) ? " +1" : "";
+    const times = s.depart && s.eta ? `${s.depart.slice(11, 16)} → ${s.eta.slice(11, 16)}${plus}` : "";
+    const badge = s.abort ? `<span class="badge" style="background:var(--rosso)">STOP</span>`
+      : s.sail_pct != null ? `<span class="badge ${s.sail_pct >= 50 ? "sail" : "motor"}">${s.sail_pct >= 50 ? "vela" : "motore"}</span>` : "";
+    return `<div class="dayrow"><em>${esc(s.slot)}</em>
+      <div><h3 class="water">${esc(s.frm)} → ${esc(s.to)}${moon}${flag}</h3>
+      <p><span class="num">${s.nm} nm</span>${times ? ` · ${times}` : ""}${s.arrive_by ? ` · entro ${esc(s.arrive_by)}` : ""} ${badge}${acts ? `<br>${acts}` : ""}${s.abort && s.reason ? `<br><span class="vflag">${esc(s.reason)}</span>` : ""}</p></div></div>`;
+  }).join("");
+  return `<h2>Le tappe di oggi · <span class="num" style="text-transform:none">${b.day_nm ?? "—"} nm</span></h2><div class="tl">${rows}</div>`;
+}
+
+// ---- programma a due settimane, con fascia di affidabilità per giorno
+function programGrid(prog) {
+  if (!prog?.days?.length) return `<h2>Programma — 2 settimane</h2>
+    <p style="font-size:.85rem;color:var(--soft)">Programma esteso non disponibile (dati non ancora pubblicati o cache vecchia) — sotto il dettaglio dei prossimi giorni.</p>`;
+  const tiers = prog.tiers || {};
+  const cells = prog.days.map(d => {
+    const wd = new Date(d.date + "T12:00").toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" });
+    const route = d.rest ? `Sosta — ${esc(d.to)}` : `${esc(d.frm)} → ${esc(d.to)}`;
+    const wxLine = d.wx
+      ? `<span style="font-style:normal">${wmoIcon(d.wx.wmo)} ${Math.round(d.wx.tmax)}° · <b class="num">${Math.round(d.wx.wind_max)}</b> kn ${comp(d.wx.wind_dir)}${d.wx.synthetic ? " · sint." : ""}</span>`
+      : `<span style="font-style:normal;opacity:.75">— nessuna previsione</span>`;
+    const waveLine = d.wave ? `<span style="font-style:normal">onda max ${d.wave.hmax.toFixed(1)} m</span>` : "";
+    const cd = d.crew_delta || {};
+    const crew = (cd.on?.length || cd.off?.length)
+      ? `<span style="font-style:normal;color:var(--warmtx);font-weight:600">equipaggio${cd.on?.length ? ` +${cd.on.length}` : ""}${cd.off?.length ? ` −${cd.off.length}` : ""}</span>` : "";
+    const dots = d.n_tappe > 1 ? ` <span style="color:var(--accent);letter-spacing:.1em">${"●".repeat(Math.min(d.n_tappe, 3))}</span>` : "";
+    return `<div class="day ${d.tier}" title="${esc(tiers[d.tier] ?? "")}">
+      <em>${wd}${d.night ? " 🌙" : ""}${d.verify ? ` <span class="vflag">⚑</span>` : ""}</em>
+      <strong>${d.nm}<span style="font-size:.7rem"> nm</span>${dots}</strong>
+      <span class="water">${route}</span>
+      ${wxLine}${waveLine}${crew}</div>`;
+  }).join("");
+  return `<h2>Programma — 2 settimane</h2>
+  <div class="pgrid">${cells}</div>
+  <div class="legend" style="flex-wrap:wrap">
+    <span><b style="color:var(--accent)">▔</b> previsione piena (≤7 gg)</span>
+    <span><b style="color:var(--giallo)">▔</b> ridotta (8–10 gg)</span>
+    <span><b style="color:var(--soft)">▔</b> solo programma</span>
+    <span>● = tappe del giorno</span>
+  </div>
+  ${prog.days.some(d => d.tier === "programma") ? `<p class="vflag" style="margin-top:.5rem;font-size:.8rem">Oltre ~10 giorni: solo programma, nessuna previsione affidabile.</p>` : ""}
+  ${prog.days.some(d => d.verify) ? `<p style="margin-top:.3rem;font-size:.76rem;color:var(--soft)">⚑ = tappe stimate, da verificare su carta nautica.</p>` : ""}`;
+}
+
+function dailyStrip(prog, kind) {
+  const days = prog?.days || [];
+  const have = days.filter(d => kind === "wind" ? d.wx : d.wave);
+  if (!have.length) return "";
+  const max = kind === "wind"
+    ? Math.max(22, ...have.map(d => d.wx.wind_max))
+    : Math.max(1.2, ...have.map(d => d.wave.hmax));
+  const cols = days.map(d => {
+    const wd = new Date(d.date + "T12:00").toLocaleDateString("it", { weekday: "short", day: "numeric" });
+    const dim = d.tier === "degradata" ? " dim" : "";
+    const data = kind === "wind" ? d.wx : d.wave;
+    if (!data) return `<div class="hr wide" title="${wd} — oltre l'orizzonte di previsione"><span></span><div class="col" style="height:4px"></div></div>`;
+    if (kind === "wind") {
+      const f = bft(data.wind_max);
+      const px = Math.max(6, Math.round(data.wind_max / max * 96));
+      return `<div class="hr wide${dim}" title="${wd} — vento max ${Math.round(data.wind_max)} kn da ${comp(data.wind_dir)} · raffiche ${Math.round(data.gust_max)} · F${f} ${BFT_NAME[f]}">
+        <span style="transform:rotate(${(data.wind_dir + 180) % 360}deg);display:flex">${ARROW}</span>
+        <div class="col" style="height:${px}px;background:${SCALE_COL[f]}"></div></div>`;
+    }
+    const st = seaState(data.hmax);
+    const px = Math.max(6, Math.round(data.hmax / max * 96));
+    const rot = data.dir != null ? `<span style="transform:rotate(${(data.dir + 180) % 360}deg);display:flex">${ARROW}</span>` : "<span></span>";
+    return `<div class="hr wide${dim}" title="${wd} — onda max ${data.hmax.toFixed(1)} m · mare ${st} (${SEA_NAME[st]})">${rot}<div class="col" style="height:${px}px;background:${SCALE_COL[st]}"></div></div>`;
+  }).join("");
+  const vals = days.map(d => `<span>${kind === "wind" ? (d.wx ? Math.round(d.wx.wind_max) : "—") : (d.wave ? d.wave.hmax.toFixed(1).replace("0.", ".") : "—")}</span>`).join("");
+  const axis = days.map(d => `<span>${new Date(d.date + "T12:00").toLocaleDateString("it", { weekday: "narrow", day: "numeric" })}</span>`).join("");
+  return `<h2>${kind === "wind" ? "Vento" : "Onda"} — 14 giorni · max giornaliero</h2>
+  <div class="ribbon"><div class="strip">${cols}</div>
+  <div class="axis wide vals">${vals}</div><div class="axis wide">${axis}</div></div>
+  <div class="legend"><span>colonne attenuate = affidabilità ridotta (8–10 gg)</span>${kind === "wave" ? "<span>orizzonte marine ~8 giorni</span>" : ""}</div>`;
+}
+
+const myMaps = () => navigator.onLine ? `
+  <h2>Mappa — rotta live</h2>
+  <div style="border:1px solid var(--hair);border-radius:3px;overflow:hidden">
+    <iframe src="https://www.google.com/maps/d/embed?mid=1RJf2lcAZMecJ238BEcXIA3uyJcuEHr8&ehbc=2E312F"
+      style="width:100%;height:380px;border:0;display:block" loading="lazy" title="Mappa della rotta"></iframe>
+  </div>
+  <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
+    Mappa condivisa, aggiornata in tempo reale — i segnaposto NON sono punti di fonda verificati.</p>` : "";
+
+// ---- hash-router: si renderizza UNA volta, poi si mostra/nasconde (gli
+// iframe non si ricaricano, lo scroll di ogni tab si conserva)
+const TABS = ["oggi", "vento", "mare", "programma"];
+let currentTab = null;
+const scrollMem = {};
+function route() {
+  const t = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "oggi";
+  if (currentTab && currentTab !== t) scrollMem[currentTab] = window.scrollY;
+  TABS.forEach(x => {
+    document.getElementById("tab-" + x)?.classList.toggle("on", x === t);
+    document.getElementById("nav-" + x)?.classList.toggle("on", x === t);
+  });
+  if (currentTab !== t) window.scrollTo(0, scrollMem[t] || 0);
+  currentTab = t;
+}
+window.addEventListener("hashchange", route);
+
+function render(b, wx, c, prog) {
   document.getElementById("boat").textContent = b.boat;
   const a = ago(b.generated_at);
   const w = document.getElementById("when");
@@ -466,13 +637,14 @@ function render(b, wx, c) {
   const conf = b.confidence?.confidence ?? "sconosciuta";
   const t = b.tonight, pb = b.plan_b;
 
-  document.getElementById("app").innerHTML = `
+  const oggi = `
   ${b.departure_at && new Date(b.departure_at) > new Date() ? `
   <div class="count" id="countdown" data-t="${esc(b.departure_at)}">
     <span class="lbl">⏳ Mollo gli ormeggi — ${new Date(b.departure_at).toLocaleDateString("it", { day: "numeric", month: "long" })} ore ${b.departure_at.slice(11, 16)}</span>
     <span><b data-u="g">—</b><i>giorni</i></span><span><b data-u="h">—</b><i>ore</i></span>
     <span><b data-u="m">—</b><i>min</i></span><span><b data-u="s">—</b><i>sec</i></span>
   </div>` : ""}
+  ${execCard(b, wx)}
   <h2>Oggi${b.position ? ` — <span style="text-transform:none;letter-spacing:0">${esc(b.position.name)}</span>` : ""}</h2>
   ${b.now ? `<div class="nowbar">
     <span>📍 <b>${esc(b.position?.name ?? "—")}</b> ${b.position?.live ? `(GPS, ${b.position.age_h} h fa)` : "(da piano)"}</span>
@@ -480,19 +652,10 @@ function render(b, wx, c) {
     <span>umidità <b>${b.now.rh ?? "—"}%</b></span>
     <span>vento <b>${Math.round(b.now.tws)} kn</b> da ${comp(b.now.twd)}</span>
     <span>pioggia <b>${b.now.rain ?? 0} mm/h</b></span></div>` : ""}
+  ${tappeTimeline(b)}
+  ${(b.steps?.length ?? 0) > 1 && !b.rest ? "<h2>Tratta principale</h2>" : ""}
   ${legCard(b)}
-
-  <h2>Vento — 48 ore</h2>
-  ${ribbon(wx.hours)}
-  <p style="margin-top:.7rem;font-size:.82rem;color:var(--soft)">
-    Accordo fra i modelli ECMWF e ICON: <strong>${esc(conf)}</strong>${b.confidence?.mean_spread_kn != null
-      ? ` (scarto medio ${b.confidence.mean_spread_kn} kn)` : ""}.
-    ${conf === "bassa" ? " Non pianificare oltre le 24 ore." : ""}
-  </p>
-
-  ${waveRibbon(wx.hours)}
   ${skyStrip(wx.hours)}
-  ${windyMaps(b.position)}
 
   <h2>Stanotte</h2>
   ${b.leg?.night ? `<p class="water" style="font-size:.95rem">🌙 In navigazione — arrivo all'alba a ${esc(b.leg.leg.split(/ (?:->|→) /)[1] ?? "destinazione")}. Turni di guardia decisi dagli skipper.</p>` :
@@ -507,19 +670,6 @@ function render(b, wx, c) {
   </details>
 
   ${astroCard(wx.astro, b.day)}
-
-  <h2>Prossimi giorni — lungo la rotta</h2>
-  ${outlookRows(b.outlook)}
-
-  ${navigator.onLine ? `
-  <h2>Mappa — rotta live</h2>
-  <div style="border:1px solid var(--hair);border-radius:3px;overflow:hidden">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1RJf2lcAZMecJ238BEcXIA3uyJcuEHr8&ehbc=2E312F"
-      style="width:100%;height:380px;border:0;display:block" loading="lazy" title="Mappa della rotta"></iframe>
-  </div>
-  <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
-    Mappa condivisa, aggiornata in tempo reale — i segnaposto NON sono punti di fonda verificati.</p>` : ""}
-
   ${crewBlock(b)}
 
   <h2>Conti</h2>
@@ -530,12 +680,41 @@ function render(b, wx, c) {
     ${c.transfers.length ? `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Per pareggiare:</p>
       <table><tbody>${c.transfers.map(t => `<tr><td>${esc(t.from)} → ${esc(t.to)}</td><td>${t.amount.toFixed(2)} €</td></tr>`).join("")}</tbody></table>` : ""}
   </details>`;
+
+  const vento = `
+  <h2>Vento — 48 ore</h2>
+  ${ribbon(wx.hours)}
+  <p style="margin-top:.7rem;font-size:.82rem;color:var(--soft)">
+    Accordo fra i modelli ECMWF e ICON: <strong>${esc(conf)}</strong>${b.confidence?.mean_spread_kn != null
+      ? ` (scarto medio ${b.confidence.mean_spread_kn} kn)` : ""}.
+    ${conf === "bassa" ? " Non pianificare oltre le 24 ore." : ""}
+  </p>
+  ${dailyStrip(prog, "wind")}
+  ${windyMap(b.position, "wind", "Vento — mappa live")}`;
+
+  const mare = `
+  ${waveRibbon(wx.hours)}
+  ${dailyStrip(prog, "wave")}
+  ${windyMap(b.position, "waves", "Onde — mappa live")}`;
+
+  const programma = `
+  ${programGrid(prog)}
+  <h2>Prossimi giorni — dettaglio</h2>
+  ${outlookRows(b.outlook)}
+  ${myMaps()}`;
+
+  document.getElementById("app").innerHTML = `
+  <section id="tab-oggi">${oggi}</section>
+  <section id="tab-vento">${vento}</section>
+  <section id="tab-mare">${mare}</section>
+  <section id="tab-programma">${programma}</section>`;
+  route();
 }
 
 (async () => {
   // due catch separati: "manca la rete" e "la pagina ha un bug" sono diagnosi
   // diverse e all'equipaggio serve quella giusta
-  let data;
+  let data, prog = null;
   try {
     data = window.__DATA ?? await Promise.all(
       ["briefing", "weather", "conti"].map(n => fetch(`data/${n}.json`, { cache: "no-cache" }).then(r => {
@@ -548,10 +727,16 @@ function render(b, wx, c) {
       Se sei in rada senza rete, riapri quando torni sotto copertura. Nel frattempo il meteo ufficiale è su
       <a href="https://www.meteoam.it/it/mare">meteoam.it</a>.</div>`;
   }
+  // il programma esteso e' additivo: se manca (deploy in corso, cache
+  // vecchia) la plancia funziona lo stesso, senza vista 14 giorni
+  try {
+    const r = await fetch("data/program.json", { cache: "no-cache" });
+    if (r.ok) prog = await r.json();
+  } catch (e) { /* niente programma: fallback in programGrid */ }
   if (data) try {
     window.__astro = data[1]?.astro;
     applyTheme();
-    render(...data);
+    render(data[0], data[1], data[2], prog);
   } catch (e) {
     document.getElementById("when").textContent = "errore di pagina";
     document.getElementById("app").innerHTML = `<div class="err">

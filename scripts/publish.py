@@ -1,5 +1,6 @@
-"""Genera i tre JSON che la dashboard legge. Girato da GitHub Actions due volte al
-giorno (12:00 e 20:00 Europe/Rome) e da riga di comando quando serve.
+"""Genera i quattro JSON che la dashboard legge (briefing, weather, conti,
+program). Girato da GitHub Actions due volte al giorno (12:00 e 20:00
+Europe/Rome) e da riga di comando quando serve.
 
   python scripts/publish.py                 # oggi, meteo reale
   python scripts/publish.py --day 2026-08-12
@@ -76,6 +77,151 @@ def build_astro(wp: dict, day: str, offline: bool) -> list[dict]:
 
 def leg_for(v: dict, day: str) -> dict | None:
     return next((p for p in v["plan"] if p["date"] == day), None)
+
+
+def norm_steps(p: dict) -> list[dict]:
+    """Un giorno puo' avere fino a 3 tappe esplicite in `steps` (rada mattina,
+    pomeriggio, sera). I giorni in formato vecchio (solo from/to) diventano
+    un'unica tappa sintetica: le due forme convivono, day-level resta autorita'."""
+    if p.get("steps"):
+        return p["steps"]
+    return [{"slot": "giornata", "from": p["from"], "to": p["to"],
+             "activity": [], "night_stay": not p.get("night"), "verify": False}]
+
+
+def slot_depart(step: dict, prefs: dict) -> str:
+    """Orario di partenza della tappa: esplicito se c'e', altrimenti default
+    di slot (mattina = earliest_departure)."""
+    if step.get("depart_at"):
+        return step["depart_at"]
+    return {"pomeriggio": "13:00", "sera": "16:00"}.get(
+        step.get("slot"), prefs.get("earliest_departure", "08:00"))
+
+
+def build_day_steps(v: dict, p: dict, day: str, series: list[dict]) -> list[dict]:
+    """Le tappe del giorno, ognuna con il suo routing orario. Approssimazione
+    dichiarata: un'unica serie meteo (scaricata alla posizione di inizio
+    giornata) per tutte le tappe — a <=30 nm/giorno l'errore e' piccolo."""
+    prefs = v.get("preferences", {})
+    out = []
+    for s in norm_steps(p):
+        a, b = core.find_wp(v, s["from"]), core.find_wp(v, s["to"])
+        meta = {"slot": s.get("slot", "giornata"), "activity": s.get("activity", []),
+                "night_stay": bool(s.get("night_stay")), "verify": bool(s.get("verify")),
+                "arrive_by": s.get("arrive_by")}
+        if s["from"] == s["to"]:
+            out.append({**meta, "stay": True, "name": b["name"], "nm": 0})
+            continue
+        hh = slot_depart(s, prefs)
+        try:
+            r = routing.simulate_leg(v, s["from"], s["to"], f"{day}T{hh}", series)
+        except ValueError:
+            # partenza fuori dalla finestra di previsione: resta la geometria
+            r = {"leg": f"{a['name']} -> {b['name']}",
+                 "nm": round(core.haversine_nm((a["lat"], a["lon"]), (b["lat"], b["lon"])), 1),
+                 "cog": round(core.bearing((a["lat"], a["lon"]), (b["lat"], b["lon"]))),
+                 "abort": None, "reason": "fuori dalla finestra di previsione"}
+        out.append({**r, **meta, "stay": False, "frm": a["name"], "to": b["name"]})
+    return out
+
+
+def confidence_tier(days_ahead: int) -> str:
+    """Fascia di affidabilita' della previsione giornaliera: entro ~7 giorni
+    piena, 8-10 degradata, oltre resta solo il programma."""
+    if days_ahead <= 7:
+        return "piena"
+    if days_ahead <= 10:
+        return "degradata"
+    return "programma"
+
+
+TIER_LEGEND = {"piena": "previsione affidabile (fino a ~7 giorni)",
+               "degradata": "affidabilita' ridotta (8-10 giorni)",
+               "programma": "solo programma: oltre l'orizzonte di previsione"}
+
+
+def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
+                  offline: bool, now: str) -> dict:
+    """Le prossime due settimane lungo la rotta, un giorno per riga: tappe,
+    miglia, cambi equipaggio, e meteo dove la previsione arriva davvero
+    (fascia `tier`). Le miglia sono haversine: e' un programma, non un routing."""
+    d0 = dt.date.fromisoformat(day)
+    rows = []
+    for i in range(14):
+        d = (d0 + dt.timedelta(days=i)).isoformat()
+        p = leg_for({"plan": plan_all}, d)
+        if not p:
+            continue
+        tappe, tot = [], 0.0
+        for s in norm_steps(p):
+            a, b = core.find_wp(v, s["from"]), core.find_wp(v, s["to"])
+            nm = 0.0 if s["from"] == s["to"] else core.haversine_nm(
+                (a["lat"], a["lon"]), (b["lat"], b["lon"]))
+            tot += nm
+            tappe.append({"slot": s.get("slot", "giornata"), "to": b["name"],
+                          "nm": round(nm, 1), "activity": s.get("activity", []),
+                          "verify": bool(s.get("verify"))})
+        # in simulazione i cambi equipaggio seguono le date VERE, non quelle shiftate
+        orig = (dt.date.fromisoformat(d) - dt.timedelta(days=offset)).isoformat()
+        rows.append({"date": d, "i": i, "rest": bool(p.get("rest")), "night": bool(p.get("night")),
+                     "frm": core.find_wp(v, p["from"])["name"],
+                     "to": core.find_wp(v, p["to"])["name"],
+                     "nm": round(tot, 1), "tappe": tappe, "n_tappe": len(tappe),
+                     "verify": any(t["verify"] for t in tappe),
+                     "tier": confidence_tier(i),
+                     "crew_delta": {"on": [m["name"] for m in v["crew"] if m["board"] == orig],
+                                    "off": [m["name"] for m in v["crew"] if m["leave"] == orig]},
+                     "wx": None, "wave": None, "_dest": core.find_wp(v, p["to"])})
+
+    wx_rows = [r for r in rows if r["tier"] != "programma"]
+    if offline:
+        for r in wx_rows:
+            r["wx"] = {"wmo": 1, "tmax": 29, "tmin": 22, "rain_prob": 5,
+                       "wind_max": 16, "gust_max": 22, "wind_dir": 305, "synthetic": True}
+            if r["i"] <= 7:
+                r["wave"] = {"hmax": 0.6, "dir": 290, "period": 4.2, "synthetic": True}
+    elif wx_rows:
+        try:
+            resp = weather.daily_at([(r["_dest"]["lat"], r["_dest"]["lon"]) for r in wx_rows],
+                                    wx_rows[0]["date"], wx_rows[-1]["date"])
+            for r, met in zip(wx_rows, resp):
+                try:
+                    dd = met["daily"]
+                    j = dd["time"].index(r["date"])
+                    r["wx"] = {"wmo": dd["weather_code"][j], "tmax": dd["temperature_2m_max"][j],
+                               "tmin": dd["temperature_2m_min"][j],
+                               "rain_prob": dd["precipitation_probability_max"][j],
+                               "wind_max": dd["wind_speed_10m_max"][j],
+                               "gust_max": dd["wind_gusts_10m_max"][j],
+                               "wind_dir": dd["wind_direction_10m_dominant"][j]}
+                except Exception:
+                    pass
+        except Exception:
+            pass
+        sea_rows = [r for r in wx_rows if r["i"] <= 7]
+        if sea_rows:
+            try:
+                resp = weather.sea_daily([(r["_dest"]["lat"], r["_dest"]["lon"]) for r in sea_rows],
+                                         sea_rows[0]["date"], sea_rows[-1]["date"])
+                for r, met in zip(sea_rows, resp):
+                    try:
+                        dd = met["daily"]
+                        j = dd["time"].index(r["date"])
+                        r["wave"] = {"hmax": dd["wave_height_max"][j],
+                                     "dir": dd["wave_direction_dominant"][j],
+                                     "period": dd["wave_period_max"][j]}
+                    except Exception:
+                        pass
+            except Exception:
+                pass
+
+    for r in rows:
+        r.pop("_dest")
+        r.pop("i")
+    return {"generated_at": now, "sim": bool(offset), "day": day,
+            "start_date": plan_all[0]["date"] if plan_all else None,
+            "end_date": plan_all[-1]["date"] if plan_all else None,
+            "tiers": TIER_LEGEND, "days": rows}
 
 
 def sim_shift_days(v: dict, today: str) -> int:
@@ -197,7 +343,8 @@ def build_outlook(v: dict, plan: list[dict], day: str, days: int, offline: bool)
         p, a, b = r["plan"], r["frm"], r["to"]
         nm = core.haversine_nm((a["lat"], a["lon"]), (b["lat"], b["lon"]))
         row = {"date": r["date"], "rest": p["rest"], "night": bool(p.get("night")),
-               "frm": a["name"], "to": b["name"], "nm": round(nm, 1)}
+               "frm": a["name"], "to": b["name"], "nm": round(nm, 1),
+               "n_tappe": len(norm_steps(p))}
         wx_day = None
         if met:
             try:
@@ -245,8 +392,11 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         except Exception as e:
             conf = {"confidence": "sconosciuta", "error": str(e)}
 
+    # ---- tappe del giorno (fino a 3: rada mattina / pomeriggio / sera)
+    steps = build_day_steps(v, plan, day, series) if plan else []
+
     # ---- tratta di oggi
-    leg, options = None, []
+    leg, options, stop_reason = None, [], None
     if plan and not plan["rest"] and plan.get("night"):
         # NOTTURNA: si salpa in serata, si arriva all'alba. Gate non negoziabile:
         # mare piatto lungo il transito, altrimenti si consiglia il piano diurno.
@@ -269,6 +419,14 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
             thr = v["preferences"].get("night_max_wave_m", 0.5)
             leg["night_check"] = {"ok": wmax <= thr, "max_wave": round(wmax, 2),
                                   "max_tws": round(max(r["tws"] for r in transit), 1), "thr": thr}
+    elif plan and not plan["rest"] and plan.get("steps"):
+        # giorno a tappe esplicite: la tratta "principale" del briefing e' la
+        # piu' lunga (per le notturne coincide col passaggio: gate invariato)
+        moves = [s for s in steps if not s["stay"] and not s.get("abort") and s.get("eta")]
+        leg = max(moves, key=lambda s: s["nm"]) if moves else None
+        if leg is None:
+            ab = next((s for s in steps if s.get("abort") and s.get("reason")), None)
+            stop_reason = ("STOP: " + ab["reason"]) if ab else None
     elif plan and not plan["rest"]:
         _real = weather.combined
         weather.combined = lambda *a, **k: series          # riusa la serie gia' scaricata
@@ -326,7 +484,9 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
                      "live": bool(pos), "age_h": pos["age_h"] if pos else None},
         "rest": bool(plan and plan["rest"]),
         "leg": leg, "leg_sailing": leg_sailing, "options": options, "confidence": conf,
-        "stop_reason": (options[0].get("note") if options and leg is None else None),
+        "steps": steps,
+        "day_nm": round(sum(s["nm"] for s in steps), 1) if steps else None,
+        "stop_reason": stop_reason or (options[0].get("note") if options and leg is None else None),
         "tonight": tonight, "plan_b": plan_b, "ranked": ranked[:4],
         "outlook": outlook,
         "polar_estimated": v["boat"].get("polar_status", "stimata") == "stimata",
@@ -360,7 +520,8 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
              "transfers": [{"from": next(m["name"] for m in v["crew"] if m["id"] == t["from"]),
                             "to": next(m["name"] for m in v["crew"] if m["id"] == t["to"]),
                             "amount": t["amount"]} for t in st["transfers"]]}
-    return briefing, wx, conti
+    program = build_program(v, plan_all, day, offset, offline, now)
+    return briefing, wx, conti, program
 
 
 if __name__ == "__main__":
@@ -379,8 +540,8 @@ if __name__ == "__main__":
         print(f"Piano del {b['day']} approvato da {a.approve}")
         sys.exit(0)
 
-    briefing, wx, conti = build(a.day, a.offline)
-    for name, obj in (("briefing", briefing), ("weather", wx), ("conti", conti)):
+    briefing, wx, conti, program = build(a.day, a.offline)
+    for name, obj in (("briefing", briefing), ("weather", wx), ("conti", conti), ("program", program)):
         (SITE / f"{name}.json").write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
     tag = briefing["leg"]["leg"] if briefing["leg"] else ("sosta" if briefing["rest"] else "—")
     print(f"Pubblicato {a.day}: {tag} | score {briefing['leg']['avg_score'] if briefing['leg'] else '—'} "
