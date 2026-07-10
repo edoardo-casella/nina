@@ -123,8 +123,16 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .trip .fl{flex:none;display:flex;gap:2px}
 .trip .pl{flex:1;min-width:0}.trip .pl b{font-weight:600}
 .trip .pl span{display:block;font-size:.8rem;color:var(--soft)}
-.trip .mi{flex:none;font:700 .95rem/1 var(--mono);color:var(--accent);text-align:right}
-.trip .mi em{display:block;font:400 .62rem/1.3 var(--display);color:var(--soft);font-style:normal;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+.trip .mi{flex:none;min-width:3.2rem;font:700 1.15rem/1 var(--mono);color:var(--accent);text-align:right}
+.trip .mi em{display:block;font:400 .58rem/1.3 var(--display);color:var(--soft);font-style:normal;letter-spacing:.08em;text-transform:uppercase;margin-top:.25rem}
+.pace{display:inline-block;font:700 .56rem/1 var(--display);letter-spacing:.11em;text-transform:uppercase;
+  padding:.26rem .5rem;border-radius:3px;margin-top:.35rem}
+.pace.chill{background:color-mix(in srgb,var(--verde) 20%,transparent);color:var(--verde)}
+.pace.cruise{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
+.pace.push{background:color-mix(in srgb,var(--gold) 24%,transparent);color:var(--gold)}
+.pace.extreme{background:color-mix(in srgb,#e2536f 22%,transparent);color:#e2536f}
+.paceleg{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:1.2rem}
+.paceleg em{font-style:normal;font-size:.72rem;color:var(--soft);flex-basis:100%;margin-top:.2rem}
 
 .ig{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:0 auto;padding:.9rem 1.4rem;border-radius:99px;
   text-decoration:none;font:700 .95rem/1 var(--body);color:#fff;background:linear-gradient(70deg,#f9ce34,#ee2a7b 45%,#6228d7);max-width:22rem}
@@ -241,18 +249,36 @@ function galleryHTML(d) {
   return `<section><h2>In navigazione</h2><div class="grid">${cells}</div></section>`;
 }
 
+// ritmo del viaggio dalla media giornaliera di miglia (nm/giorno)
+function pace(a) {
+  if (a == null) return null;
+  if (a < 18) return { k: "chill", t: "Chilling", d: "relax, tappe corte" };
+  if (a < 30) return { k: "cruise", t: "Crociera", d: "ritmo classico" };
+  if (a < 40) return { k: "push", t: "Spinto", d: "ritmo sostenuto" };
+  return { k: "extreme", t: "Estremo", d: "navigazione dura" };
+}
+
 function tripsHTML(d) {
+  const oavg = d.totals.days ? Math.round(d.totals.nm / d.totals.days) : null;
   const byYear = {};
   d.trips.slice().reverse().forEach(t => (byYear[t.year] = byYear[t.year] || []).push(t));
   const years = Object.keys(byYear).sort((a, b) => b - a).map(y => {
-    const rows = byYear[y].map(t => `
+    const rows = byYear[y].map(t => {
+      const avg = t.days ? Math.round(t.nm / t.days) : null;
+      const p = pace(avg);
+      return `
       <div class="trip"><span class="fl">${flags(t.country) || "⚓"}</span>
         <span class="pl"><b>${esc((t.zone || t.country || "").replace(/ ?-? ?(GR|CZ|SP)$/, ""))}</b>
-          <span>${esc(t.boat || "")}${t.boat_name ? ` · <span class="water">${esc(t.boat_name)}</span>` : ""}${t.month ? ` · ${MONTHS[t.month] || t.month.toLowerCase()}` : ""}</span></span>
-        <span class="mi">${t.nm} nm<em>${t.days ? t.days + " gg" : ""}</em></span></div>`).join("");
+          <span>${esc(t.boat || "")}${t.boat_name ? ` · <span class="water">${esc(t.boat_name)}</span>` : ""} · ${t.nm} nm${t.days ? ` · ${t.days} gg` : ""}</span>
+          ${p ? `<span class="pace ${p.k}" title="${p.d}">${p.t}</span>` : ""}</span>
+        <span class="mi">${avg ?? "—"}<em>nm/giorno</em></span></div>`;
+    }).join("");
     return `<div class="year"><h3>${y}</h3>${rows}</div>`;
   }).join("");
-  return `<section><h2>Registro di bordo · ${d.totals.first_year}–${d.totals.last_year}</h2>${years}</section>`;
+  const legend = `<div class="paceleg">
+    <span class="pace chill">Chilling</span><span class="pace cruise">Crociera</span><span class="pace push">Spinto</span><span class="pace extreme">Estremo</span>
+    <em>etichetta dal ritmo: miglia percorse ÷ giorni di navigazione</em></div>`;
+  return `<section><h2>Registro di bordo · media ${oavg} nm/giorno</h2>${legend}${years}</section>`;
 }
 
 function render(d) {
