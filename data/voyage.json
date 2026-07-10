@@ -809,135 +809,695 @@
       "date": "2026-08-08",
       "from": "cannigione",
       "to": "cala_portese",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "cannigione",
+          "to": "coticcio",
+          "depart_at": "08:00",
+          "arrive_by": "08:45",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "coticcio",
+          "to": "cala_portese",
+          "depart_at": "17:15",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-09",
       "from": "cala_portese",
       "to": "lavezzi",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "cala_portese",
+          "to": "spargi",
+          "depart_at": "08:00",
+          "arrive_by": "09:00",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "spargi",
+          "to": "marmorata",
+          "depart_at": "10:45",
+          "arrive_by": "11:15",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "marmorata",
+          "to": "lavezzi",
+          "depart_at": "16:45",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-10",
       "from": "lavezzi",
       "to": "bonifacio",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "lavezzi",
+          "to": "corsica_isola_piana",
+          "depart_at": "08:00",
+          "arrive_by": "08:15",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "corsica_isola_piana",
+          "to": "santa_manza",
+          "depart_at": "10:00",
+          "arrive_by": "10:30",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "santa_manza",
+          "to": "bonifacio",
+          "depart_at": "17:00",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-11",
       "from": "bonifacio",
       "to": "tizzano",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "bonifacio",
+          "to": "cr_roccapina_nord",
+          "depart_at": "08:00",
+          "arrive_by": "09:45",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "cr_roccapina_nord",
+          "to": "cala_longa_tizzano",
+          "depart_at": "11:30",
+          "arrive_by": "12:15",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "cala_longa_tizzano",
+          "to": "tizzano",
+          "depart_at": "17:15",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-12",
       "from": "tizzano",
       "to": "campomoro",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "tizzano",
+          "to": "cala_longa_tizzano",
+          "depart_at": "08:00",
+          "arrive_by": "08:15",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "cala_longa_tizzano",
+          "to": "campomoro",
+          "depart_at": "16:45",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-13",
       "from": "campomoro",
       "to": "isolella",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "giornata",
+          "from": "campomoro",
+          "to": "isolella",
+          "depart_at": "08:00",
+          "arrive_by": "09:45",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-14",
       "from": "isolella",
       "to": "girolata",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "giornata",
+          "from": "isolella",
+          "to": "girolata",
+          "depart_at": "08:00",
+          "arrive_by": "12:15",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-15",
       "from": "girolata",
       "to": "san_fiorenzo",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "giornata",
+          "from": "girolata",
+          "to": "san_fiorenzo",
+          "depart_at": "08:00",
+          "arrive_by": "13:00",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-16",
       "from": "san_fiorenzo",
       "to": "centuri",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "san_fiorenzo",
+          "to": "saleccia",
+          "depart_at": "08:00",
+          "arrive_by": "08:30",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "saleccia",
+          "to": "centuri",
+          "depart_at": "15:15",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-17",
       "from": "centuri",
       "to": "erbalunga",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "giornata",
+          "from": "centuri",
+          "to": "erbalunga",
+          "depart_at": "08:00",
+          "arrive_by": "09:45",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-18",
       "from": "erbalunga",
       "to": "favone",
       "rest": false,
-      "night": true
+      "night": true,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "erbalunga",
+          "to": "erbalunga",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "erbalunga",
+          "to": "favone",
+          "depart_at": "20:00",
+          "activity": [],
+          "night_stay": false,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-19",
       "from": "favone",
       "to": "palombaggia",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "favone",
+          "to": "fautea",
+          "depart_at": "08:00",
+          "arrive_by": "08:30",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "fautea",
+          "to": "san_ciprianu",
+          "depart_at": "10:15",
+          "arrive_by": "11:00",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "san_ciprianu",
+          "to": "palombaggia",
+          "depart_at": "17:00",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-20",
       "from": "palombaggia",
       "to": "porto_rotondo",
       "rest": false,
-      "night": true
+      "night": true,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "palombaggia",
+          "to": "palombaggia",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "palombaggia",
+          "to": "porto_rotondo",
+          "depart_at": "20:00",
+          "activity": [],
+          "night_stay": false,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-21",
       "from": "porto_rotondo",
       "to": "porto_rotondo",
-      "rest": true
+      "rest": true,
+      "steps": [
+        {
+          "slot": "giornata",
+          "from": "porto_rotondo",
+          "to": "porto_rotondo",
+          "activity": [
+            "bordo",
+            "porto"
+          ],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-22",
       "from": "porto_rotondo",
       "to": "porto_rotondo",
-      "rest": true
+      "rest": true,
+      "steps": [
+        {
+          "slot": "giornata",
+          "from": "porto_rotondo",
+          "to": "porto_rotondo",
+          "activity": [
+            "bordo",
+            "porto"
+          ],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-23",
       "from": "porto_rotondo",
       "to": "porto_palma",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "porto_rotondo",
+          "to": "mortorio",
+          "depart_at": "08:00",
+          "arrive_by": "08:30",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "mortorio",
+          "to": "coticcio",
+          "depart_at": "10:15",
+          "arrive_by": "11:30",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "coticcio",
+          "to": "porto_palma",
+          "depart_at": "17:15",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-24",
       "from": "porto_palma",
       "to": "porto_madonna",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "porto_palma",
+          "to": "coticcio",
+          "depart_at": "08:00",
+          "arrive_by": "08:15",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "coticcio",
+          "to": "spargi",
+          "depart_at": "10:00",
+          "arrive_by": "10:45",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "spargi",
+          "to": "porto_madonna",
+          "depart_at": "17:00",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-25",
       "from": "porto_madonna",
       "to": "corsica_isola_piana",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "porto_madonna",
+          "to": "santamaria",
+          "depart_at": "08:00",
+          "arrive_by": "08:15",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "santamaria",
+          "to": "lavezzi",
+          "depart_at": "10:00",
+          "arrive_by": "11:00",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "lavezzi",
+          "to": "corsica_isola_piana",
+          "depart_at": "17:15",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-26",
       "from": "corsica_isola_piana",
       "to": "rondinara",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "corsica_isola_piana",
+          "to": "santa_manza",
+          "depart_at": "08:00",
+          "arrive_by": "08:15",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "santa_manza",
+          "to": "rondinara",
+          "depart_at": "16:45",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-27",
       "from": "rondinara",
       "to": "marmorata",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "rondinara",
+          "to": "santa_manza",
+          "depart_at": "08:00",
+          "arrive_by": "08:45",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "santa_manza",
+          "to": "lavezzi",
+          "depart_at": "10:30",
+          "arrive_by": "11:00",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "lavezzi",
+          "to": "marmorata",
+          "depart_at": "16:45",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-28",
       "from": "marmorata",
       "to": "coticcio",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "marmorata",
+          "to": "spargi",
+          "depart_at": "08:00",
+          "arrive_by": "08:45",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "from": "spargi",
+          "to": "budelli",
+          "depart_at": "10:30",
+          "arrive_by": "10:45",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "budelli",
+          "to": "coticcio",
+          "depart_at": "16:30",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     },
     {
       "date": "2026-08-29",
       "from": "coticcio",
       "to": "cannigione",
-      "rest": false
+      "rest": false,
+      "steps": [
+        {
+          "slot": "mattina",
+          "from": "coticcio",
+          "to": "cala_portese",
+          "depart_at": "08:00",
+          "arrive_by": "08:15",
+          "activity": [
+            "bagno"
+          ],
+          "night_stay": false,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "from": "cala_portese",
+          "to": "cannigione",
+          "depart_at": "16:45",
+          "arrive_by": "17:30",
+          "activity": [],
+          "night_stay": true,
+          "verify": true
+        }
+      ]
     }
   ],
   "logbook": [],
@@ -954,7 +1514,7 @@
       "23:00"
     ]
   },
-  "updated_at": "2026-07-10T11:14:26",
+  "updated_at": "2026-07-10T16:42:50",
   "charter": {
     "_nota": "Autorita': Excel 'Summer 26.xlsx', foglio Bonifici (fuori repo). Non entra nelle quote di ledger.py.",
     "totale_eur": 31246,

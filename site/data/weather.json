@@ -1,20 +1,7 @@
 {
-  "generated_at": "2026-07-10T15:42+02:00",
+  "generated_at": "2026-07-10T16:43+02:00",
   "waypoint": "Rada di Cannigione (test)",
   "hours": [
-    {
-      "time": "2026-07-10T15:00",
-      "tws": 12.6,
-      "twd": 113,
-      "gust": 27.0,
-      "rain": 0.0,
-      "temp": 30.7,
-      "rh": 59,
-      "wmo": 1,
-      "wave": 0.42,
-      "wave_dir": 127,
-      "wave_period": 2.6
-    },
     {
       "time": "2026-07-10T16:00",
       "tws": 13.0,
@@ -623,6 +610,19 @@
       "rh": 58,
       "wmo": 0,
       "wave": 0.36,
+      "wave_dir": 130,
+      "wave_period": 4.35
+    },
+    {
+      "time": "2026-07-12T15:00",
+      "tws": 7.8,
+      "twd": 94,
+      "gust": 19.0,
+      "rain": 0.0,
+      "temp": 31.1,
+      "rh": 57,
+      "wmo": 0,
+      "wave": 0.34,
       "wave_dir": 130,
       "wave_period": 4.35
     }

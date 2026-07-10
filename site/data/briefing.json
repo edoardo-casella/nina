@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T15:42+02:00",
+  "generated_at": "2026-07-10T16:43+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -18,70 +18,88 @@
     "lat": 41.1035,
     "lon": 9.439,
     "live": true,
-    "age_h": 1.3
+    "age_h": 2.3
   },
   "rest": false,
   "leg": {
-    "leg": "Cannigione -> Cala Portese",
-    "nm": 4.7,
-    "cog": 13,
-    "depart": "2026-07-10T14:00",
-    "eta": "2026-07-10T14:43",
-    "hours": 0.7,
-    "avg_score": 84,
-    "sail_pct": 100,
+    "leg": "Cannigione -> Cala Coticcio (Caprera)",
+    "nm": 6.1,
+    "cog": 10,
+    "depart": "2026-07-10T08:00",
+    "eta": "2026-07-10T08:51",
+    "hours": 0.9,
+    "avg_score": 36,
+    "sail_pct": 0,
     "abort": false,
-    "detail": []
+    "detail": [],
+    "slot": "mattina",
+    "activity": [
+      "bagno"
+    ],
+    "night_stay": false,
+    "verify": true,
+    "arrive_by": "08:45",
+    "stay": false,
+    "frm": "Cannigione",
+    "to": "Cala Coticcio (Caprera)"
   },
   "leg_sailing": {
-    "andatura": "traverso",
-    "twa": 97,
-    "vela": true,
-    "avg_kn": 6.7
+    "andatura": "lasco",
+    "twa": 117,
+    "vela": false,
+    "avg_kn": 6.8
   },
-  "options": [
-    {
-      "leg": "Cannigione -> Cala Portese",
-      "nm": 4.7,
-      "cog": 13,
-      "depart": "2026-07-10T14:00",
-      "eta": "2026-07-10T14:43",
-      "hours": 0.7,
-      "avg_score": 84,
-      "sail_pct": 100,
-      "abort": false,
-      "detail": []
-    },
-    {
-      "leg": "Cannigione -> Cala Portese",
-      "nm": 4.7,
-      "cog": 13,
-      "depart": "2026-07-10T15:00",
-      "eta": "2026-07-10T15:41",
-      "hours": 0.7,
-      "avg_score": 84,
-      "sail_pct": 100,
-      "abort": false,
-      "detail": []
-    },
-    {
-      "leg": "Cannigione -> Cala Portese",
-      "nm": 4.7,
-      "cog": 13,
-      "depart": "2026-07-10T08:00",
-      "eta": "2026-07-10T08:39",
-      "hours": 0.7,
-      "avg_score": 36,
-      "sail_pct": 0,
-      "abort": false,
-      "detail": []
-    }
-  ],
+  "options": [],
   "confidence": {
     "mean_spread_kn": 1.1,
     "max_spread_kn": 4.3,
     "confidence": "alta"
   },
+  "steps": [
+    {
+      "leg": "Cannigione -> Cala Coticcio (Caprera)",
+      "nm": 6.1,
+      "cog": 10,
+      "depart": "2026-07-10T08:00",
+      "eta": "2026-07-10T08:51",
+      "hours": 0.9,
+      "avg_score": 36,
+      "sail_pct": 0,
+      "abort": false,
+      "detail": [],
+      "slot": "mattina",
+      "activity": [
+        "bagno"
+      ],
+      "night_stay": false,
+      "verify": true,
+      "arrive_by": "08:45",
+      "stay": false,
+      "frm": "Cannigione",
+      "to": "Cala Coticcio (Caprera)"
+    },
+    {
+      "leg": "Cala Coticcio (Caprera) -> Cala Portese",
+      "nm": 1.5,
+      "cog": 183,
+      "depart": "2026-07-10T17:15",
+      "eta": "2026-07-10T17:27",
+      "hours": 0.2,
+      "avg_score": 33,
+      "sail_pct": 0,
+      "abort": false,
+      "detail": [],
+      "slot": "sera",
+      "activity": [],
+      "night_stay": true,
+      "verify": true,
+      "arrive_by": "17:30",
+      "stay": false,
+      "frm": "Cala Coticcio (Caprera)",
+      "to": "Cala Portese"
+    }
+  ],
+  "day_nm": 7.6,
   "stop_reason": null,
   "tonight": null,
   "plan_b": {
@@ -154,6 +172,7 @@
       "frm": "Cala Portese",
       "to": "Isole Lavezzi",
       "nm": 13.3,
+      "n_tappe": 3,
       "wx": {
         "wmo": 3,
         "tmax": 27.9,
@@ -180,6 +199,7 @@
       "frm": "Isole Lavezzi",
       "to": "Bonifacio",
       "nm": 5.2,
+      "n_tappe": 3,
       "wx": {
         "wmo": 2,
         "tmax": 31.0,
@@ -206,6 +226,7 @@
       "frm": "Bonifacio",
       "to": "Tizzano",
       "nm": 16.7,
+      "n_tappe": 3,
       "wx": {
         "wmo": 3,
         "tmax": 35.7,
@@ -232,6 +253,7 @@
       "frm": "Tizzano",
       "to": "Campomoro",
       "nm": 5.9,
+      "n_tappe": 2,
       "wx": {
         "wmo": 2,
         "tmax": 36.4,
@@ -258,6 +280,7 @@
       "frm": "Campomoro",
       "to": "Isolella",
       "nm": 12.4,
+      "n_tappe": 1,
       "wx": {
         "wmo": 2,
         "tmax": 36.2,
@@ -334,11 +357,11 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 30.7,
-    "rh": 59,
+    "temp": 30.5,
+    "rh": 61,
     "rain": 0.0,
     "wmo": 1,
-    "tws": 12.6,
-    "twd": 113
+    "tws": 13.0,
+    "twd": 115
   }
 }

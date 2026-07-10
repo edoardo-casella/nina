@@ -1,0 +1,641 @@
+{
+  "generated_at": "2026-07-10T16:43+02:00",
+  "sim": true,
+  "day": "2026-07-10",
+  "start_date": "2026-07-10",
+  "end_date": "2026-07-31",
+  "tiers": {
+    "piena": "previsione affidabile (fino a ~7 giorni)",
+    "degradata": "affidabilita' ridotta (8-10 giorni)",
+    "programma": "solo programma: oltre l'orizzonte di previsione"
+  },
+  "days": [
+    {
+      "date": "2026-07-10",
+      "rest": false,
+      "night": false,
+      "frm": "Cannigione",
+      "to": "Cala Portese",
+      "nm": 7.6,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Cala Coticcio (Caprera)",
+          "nm": 6.1,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Cala Portese",
+          "nm": 1.5,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 2,
+      "verify": true,
+      "tier": "piena",
+      "crew_delta": {
+        "on": [
+          "Edo C",
+          "Ginevra L",
+          "Bernardo B",
+          "Bianca B",
+          "Giacomo N",
+          "Mati M"
+        ],
+        "off": []
+      },
+      "wx": {
+        "wmo": 45,
+        "tmax": 31.2,
+        "tmin": 24.7,
+        "rain_prob": 0,
+        "wind_max": 13.8,
+        "gust_max": 26.4,
+        "wind_dir": 117
+      },
+      "wave": {
+        "hmax": 0.48,
+        "dir": 157,
+        "period": 3.55
+      }
+    },
+    {
+      "date": "2026-07-11",
+      "rest": false,
+      "night": false,
+      "frm": "Cala Portese",
+      "to": "Isole Lavezzi",
+      "nm": 16.4,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Cala Corsara (Spargi)",
+          "nm": 6.3,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "to": "Marmorata",
+          "nm": 4.7,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Isole Lavezzi",
+          "nm": 5.4,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 3,
+      "verify": true,
+      "tier": "piena",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": {
+        "wmo": 3,
+        "tmax": 27.9,
+        "tmin": 26.6,
+        "rain_prob": 8,
+        "wind_max": 15.6,
+        "gust_max": 20.4,
+        "wind_dir": 80
+      },
+      "wave": {
+        "hmax": 0.72,
+        "dir": 91,
+        "period": 3.45
+      }
+    },
+    {
+      "date": "2026-07-12",
+      "rest": false,
+      "night": false,
+      "frm": "Isole Lavezzi",
+      "to": "Bonifacio",
+      "nm": 7.6,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Corsica- Isola Piana",
+          "nm": 2.5,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "to": "Santa Manza",
+          "nm": 2.1,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Bonifacio",
+          "nm": 3.0,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 3,
+      "verify": true,
+      "tier": "piena",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": {
+        "wmo": 2,
+        "tmax": 31.0,
+        "tmin": 24.6,
+        "rain_prob": 5,
+        "wind_max": 9.7,
+        "gust_max": 19.4,
+        "wind_dir": 77
+      },
+      "wave": {
+        "hmax": 0.68,
+        "dir": 86,
+        "period": 3.4
+      }
+    },
+    {
+      "date": "2026-07-13",
+      "rest": false,
+      "night": false,
+      "frm": "Bonifacio",
+      "to": "Tizzano",
+      "nm": 20.2,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "CR - Roccapina Nord",
+          "nm": 12.8,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "to": "Cala Longa Tizzano",
+          "nm": 5.6,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Tizzano",
+          "nm": 1.8,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 3,
+      "verify": true,
+      "tier": "piena",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": {
+        "wmo": 3,
+        "tmax": 35.7,
+        "tmin": 23.9,
+        "rain_prob": 0,
+        "wind_max": 8.5,
+        "gust_max": 18.3,
+        "wind_dir": 159
+      },
+      "wave": {
+        "hmax": 0.34,
+        "dir": 138,
+        "period": 4.15
+      }
+    },
+    {
+      "date": "2026-07-14",
+      "rest": false,
+      "night": false,
+      "frm": "Tizzano",
+      "to": "Campomoro",
+      "nm": 6.5,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Cala Longa Tizzano",
+          "nm": 1.8,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Campomoro",
+          "nm": 4.8,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 2,
+      "verify": true,
+      "tier": "piena",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": {
+        "wmo": 2,
+        "tmax": 36.4,
+        "tmin": 24.2,
+        "rain_prob": 0,
+        "wind_max": 4.6,
+        "gust_max": 9.7,
+        "wind_dir": 108
+      },
+      "wave": {
+        "hmax": 0.12,
+        "dir": 225,
+        "period": 4.5
+      }
+    },
+    {
+      "date": "2026-07-15",
+      "rest": false,
+      "night": false,
+      "frm": "Campomoro",
+      "to": "Isolella",
+      "nm": 12.4,
+      "tappe": [
+        {
+          "slot": "giornata",
+          "to": "Isolella",
+          "nm": 12.4,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 1,
+      "verify": true,
+      "tier": "piena",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": {
+        "wmo": 2,
+        "tmax": 36.2,
+        "tmin": 26.8,
+        "rain_prob": 0,
+        "wind_max": 5.7,
+        "gust_max": 12.4,
+        "wind_dir": 212
+      },
+      "wave": {
+        "hmax": 0.36,
+        "dir": 220,
+        "period": 4.75
+      }
+    },
+    {
+      "date": "2026-07-16",
+      "rest": false,
+      "night": false,
+      "frm": "Isolella",
+      "to": "Girolata",
+      "nm": 31.4,
+      "tappe": [
+        {
+          "slot": "giornata",
+          "to": "Girolata",
+          "nm": 31.4,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 1,
+      "verify": true,
+      "tier": "piena",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": {
+        "wmo": 2,
+        "tmax": 39.9,
+        "tmin": 25.5,
+        "rain_prob": 0,
+        "wind_max": 6.2,
+        "gust_max": 29.0,
+        "wind_dir": 200
+      },
+      "wave": {
+        "hmax": 0.24,
+        "dir": 218,
+        "period": 4.25
+      }
+    },
+    {
+      "date": "2026-07-17",
+      "rest": false,
+      "night": false,
+      "frm": "Girolata",
+      "to": "San Fiorenzo",
+      "nm": 35.8,
+      "tappe": [
+        {
+          "slot": "giornata",
+          "to": "San Fiorenzo",
+          "nm": 35.8,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 1,
+      "verify": true,
+      "tier": "piena",
+      "crew_delta": {
+        "on": [
+          "Giulia N",
+          "Fede B",
+          "Manlio",
+          "Davide"
+        ],
+        "off": []
+      },
+      "wx": {
+        "wmo": 2,
+        "tmax": 39.2,
+        "tmin": 26.0,
+        "rain_prob": 5,
+        "wind_max": 6.0,
+        "gust_max": 17.4,
+        "wind_dir": 297
+      },
+      "wave": {
+        "hmax": 0.08,
+        "dir": 252,
+        "period": 4.45
+      }
+    },
+    {
+      "date": "2026-07-18",
+      "rest": false,
+      "night": false,
+      "frm": "San Fiorenzo",
+      "to": "Centuri",
+      "nm": 19.9,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Saleccia",
+          "nm": 4.2,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Centuri",
+          "nm": 15.6,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 2,
+      "verify": true,
+      "tier": "degradata",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": {
+        "wmo": 0,
+        "tmax": 29.1,
+        "tmin": 27.2,
+        "rain_prob": 0,
+        "wind_max": 10.9,
+        "gust_max": 13.8,
+        "wind_dir": 218
+      },
+      "wave": null
+    },
+    {
+      "date": "2026-07-19",
+      "rest": false,
+      "night": false,
+      "frm": "Centuri",
+      "to": "Erbalunga",
+      "nm": 12.8,
+      "tappe": [
+        {
+          "slot": "giornata",
+          "to": "Erbalunga",
+          "nm": 12.8,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 1,
+      "verify": true,
+      "tier": "degradata",
+      "crew_delta": {
+        "on": [],
+        "off": [
+          "Giacomo N",
+          "Mati M"
+        ]
+      },
+      "wx": {
+        "wmo": 0,
+        "tmax": 36.9,
+        "tmin": 27.7,
+        "rain_prob": 0,
+        "wind_max": 2.6,
+        "gust_max": 18.9,
+        "wind_dir": 252
+      },
+      "wave": null
+    },
+    {
+      "date": "2026-07-20",
+      "rest": false,
+      "night": true,
+      "frm": "Erbalunga",
+      "to": "Favone",
+      "nm": 60.1,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Erbalunga",
+          "nm": 0.0,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Favone",
+          "nm": 60.1,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 2,
+      "verify": true,
+      "tier": "degradata",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": {
+        "wmo": 0,
+        "tmax": 32.0,
+        "tmin": 26.5,
+        "rain_prob": 0,
+        "wind_max": 6.5,
+        "gust_max": 19.0,
+        "wind_dir": 31
+      },
+      "wave": null
+    },
+    {
+      "date": "2026-07-21",
+      "rest": false,
+      "night": false,
+      "frm": "Favone",
+      "to": "Palombaggia",
+      "nm": 13.8,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Fautea",
+          "nm": 3.7,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "to": "San Ciprianu",
+          "nm": 5.6,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Palombaggia",
+          "nm": 4.5,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 3,
+      "verify": true,
+      "tier": "programma",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": null,
+      "wave": null
+    },
+    {
+      "date": "2026-07-22",
+      "rest": false,
+      "night": true,
+      "frm": "Palombaggia",
+      "to": "Porto Rotondo",
+      "nm": 33.0,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Palombaggia",
+          "nm": 0.0,
+          "activity": [
+            "bagno"
+          ],
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Porto Rotondo",
+          "nm": 33.0,
+          "activity": [],
+          "verify": true
+        }
+      ],
+      "n_tappe": 2,
+      "verify": true,
+      "tier": "programma",
+      "crew_delta": {
+        "on": [],
+        "off": []
+      },
+      "wx": null,
+      "wave": null
+    },
+    {
+      "date": "2026-07-23",
+      "rest": true,
+      "night": false,
+      "frm": "Porto Rotondo",
+      "to": "Porto Rotondo",
+      "nm": 0.0,
+      "tappe": [
+        {
+          "slot": "giornata",
+          "to": "Porto Rotondo",
+          "nm": 0.0,
+          "activity": [
+            "bordo",
+            "porto"
+          ],
+          "verify": true
+        }
+      ],
+      "n_tappe": 1,
+      "verify": true,
+      "tier": "programma",
+      "crew_delta": {
+        "on": [
+          "Riccardo B",
+          "Fede N",
+          "Ilaria M",
+          "Lavinia P"
+        ],
+        "off": [
+          "Bernardo B",
+          "Bianca B"
+        ]
+      },
+      "wx": null,
+      "wave": null
+    }
+  ]
+}
