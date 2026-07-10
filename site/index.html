@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Niña — briefing</title>
+<title>Plancia Niña — live</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -41,6 +41,11 @@ header{background:#060D18;color:var(--ink);position:sticky;top:0;z-index:10;
 .boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
 .cap{font:600 .6rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:#7FA6B5;margin-top:.22rem}
 .clock{font:600 .74rem/1.3 var(--mono);color:var(--accent);margin-top:.2rem;font-variant-numeric:tabular-nums}
+.live{font:700 .58rem/1 var(--display);letter-spacing:.12em;margin-left:.55rem;vertical-align:middle}
+.live.on{color:var(--verde)} .live.off{color:var(--soft)}
+.live.on::before{content:"●";margin-right:.25rem;animation:pulse 2s infinite}
+.live.off::before{content:"●";margin-right:.25rem}
+@keyframes pulse{50%{opacity:.35}}
 .when{font-family:var(--mono);font-size:.78rem;color:var(--soft);margin-left:auto;text-align:right;flex:none}
 .stale{color:#FF9BD6}
 
@@ -168,7 +173,8 @@ footer strong{color:var(--ink)}
 </head>
 <body>
 <header><div class="hdr">
-  <div><span class="boat" id="boat">Niña</span><div class="cap" id="captains"></div>
+  <div><span class="boat" id="boat">Niña</span><span class="live" id="live"></span>
+  <div class="cap" id="captains"></div>
   <div class="clock" id="clock"></div></div>
   <span class="when" id="when">carico…</span>
 </div></header>
@@ -525,6 +531,18 @@ const clockTick = () => {
 clockTick();
 const clockTimer = setInterval(clockTick, 1000);
 clockTimer.unref?.();
+
+// indicatore LIVE / OFFLINE
+const liveTick = () => {
+  const el = document.getElementById("live");
+  if (!el) return;
+  const on = typeof navigator !== "undefined" && navigator.onLine !== false;
+  el.className = "live " + (on ? "on" : "off");
+  el.textContent = on ? "LIVE" : "OFFLINE";
+};
+liveTick();
+window.addEventListener?.("online", liveTick);
+window.addEventListener?.("offline", liveTick);
 </script>
 </body>
 </html>

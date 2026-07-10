@@ -1,6 +1,6 @@
 {
-  "name": "Niña — briefing di bordo",
-  "short_name": "Niña",
+  "name": "Plancia Niña — dashboard di bordo live",
+  "short_name": "Plancia Niña",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#0A1424",
