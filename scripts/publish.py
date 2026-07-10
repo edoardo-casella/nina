@@ -30,8 +30,47 @@ def synth(day: str, hours: int = 72) -> list[dict]:
         tws = 8 + 11 * max(diurnal, 0) + 2 * math.sin(h / 17)
         out.append({"time": t.isoformat(timespec="minutes"), "tws": round(tws, 1),
                     "twd": round(305 + 18 * math.sin(h / 23), 0), "gust": round(tws * 1.32, 1),
-                    "wave": round(0.2 + tws / 30, 2), "rain": 0})
+                    "wave": round(0.2 + tws / 30, 2), "wave_dir": round(290 + 15 * math.sin(h / 19), 0),
+                    "rain": 0, "wmo": 0 if h % 30 < 24 else 3})
     return out
+
+
+# fase in gradi -> nome ed emoji (0 nuova, 90 primo quarto, 180 piena, 270 ultimo)
+MOON_NAMES = ["Luna nuova", "Crescente", "Primo quarto", "Gibbosa crescente",
+              "Luna piena", "Gibbosa calante", "Ultimo quarto", "Calante"]
+MOON_EMOJI = ["\U0001F311", "\U0001F312", "\U0001F313", "\U0001F314",
+              "\U0001F315", "\U0001F316", "\U0001F317", "\U0001F318"]
+
+
+def moon_info(deg: float | None) -> dict:
+    if deg is None:
+        return {"name": None, "emoji": None, "illum_pct": None}
+    i = int(((deg + 22.5) % 360) // 45)
+    return {"name": MOON_NAMES[i], "emoji": MOON_EMOJI[i],
+            "illum_pct": round((1 - math.cos(math.radians(deg))) / 2 * 100)}
+
+
+def synth_moon_deg(day: str) -> float:
+    """Fase lunare calcolata (novilunio di riferimento 2000-01-06): niente rete."""
+    ref = dt.datetime(2000, 1, 6, 18, 14)
+    age = (dt.datetime.fromisoformat(day + "T12:00") - ref).total_seconds() / 86400 % 29.530588
+    return age / 29.530588 * 360
+
+
+def build_astro(wp: dict, day: str, offline: bool) -> list[dict]:
+    if offline:
+        deg = synth_moon_deg(day)
+        days = []
+        for i in range(4):
+            d = (dt.date.fromisoformat(day) + dt.timedelta(days=i)).isoformat()
+            days.append({"date": d, "sunrise": "06:32", "sunset": "20:41",
+                         "moonrise": "21:15", "moonset": "07:05",
+                         "moon_deg": (deg + i * 12.2) % 360, "synthetic": True})
+    else:
+        days = weather.sun_moon(wp["lat"], wp["lon"], day)
+    for r in days:
+        r.update(moon_info(r.get("moon_deg")))
+    return days
 
 
 def leg_for(v: dict, day: str) -> dict | None:
@@ -119,7 +158,12 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     # mostrerebbe 20 colonne di passato e solo 28 di previsione
     cur_hour = now[:13] + ":00"
     start = next((i for i, r in enumerate(series) if r["time"] >= cur_hour), 0)
-    wx = {"generated_at": now, "waypoint": wp["name"], "hours": series[start:start + 48]}
+    try:
+        astro = build_astro(wp, day, offline)
+    except Exception:
+        astro = []          # niente effemeridi non deve mai bloccare il briefing
+    wx = {"generated_at": now, "waypoint": wp["name"], "hours": series[start:start + 48],
+          "astro": astro}
     sh = ledger.shares(v)
     st = ledger.settle(v)
     conti = {"generated_at": now, "person_nights": sh["total_person_nights"],

@@ -1,23 +1,14 @@
 {
-  "generated_at": "2026-07-10T11:35+02:00",
+  "generated_at": "2026-07-10T12:06+02:00",
   "waypoint": "Cannigione",
   "hours": [
-    {
-      "time": "2026-07-10T11:00",
-      "tws": 10.8,
-      "twd": 111,
-      "gust": 23.1,
-      "rain": 0.0,
-      "wave": 0.34,
-      "wave_dir": 127,
-      "wave_period": 2.45
-    },
     {
       "time": "2026-07-10T12:00",
       "tws": 11.6,
       "twd": 111,
       "gust": 24.9,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.36,
       "wave_dir": 127,
       "wave_period": 2.45
@@ -28,6 +19,7 @@
       "twd": 110,
       "gust": 25.7,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.38,
       "wave_dir": 127,
       "wave_period": 2.5
@@ -38,6 +30,7 @@
       "twd": 110,
       "gust": 26.2,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.4,
       "wave_dir": 127,
       "wave_period": 2.55
@@ -48,6 +41,7 @@
       "twd": 113,
       "gust": 26.8,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.44,
       "wave_dir": 128,
       "wave_period": 2.6
@@ -58,6 +52,7 @@
       "twd": 115,
       "gust": 27.2,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.46,
       "wave_dir": 129,
       "wave_period": 2.7
@@ -68,6 +63,7 @@
       "twd": 117,
       "gust": 26.8,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.5,
       "wave_dir": 130,
       "wave_period": 2.75
@@ -78,6 +74,7 @@
       "twd": 118,
       "gust": 25.7,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.5,
       "wave_dir": 130,
       "wave_period": 2.8
@@ -88,6 +85,7 @@
       "twd": 118,
       "gust": 23.7,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.48,
       "wave_dir": 130,
       "wave_period": 2.85
@@ -98,6 +96,7 @@
       "twd": 118,
       "gust": 21.8,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.48,
       "wave_dir": 130,
       "wave_period": 2.9
@@ -108,6 +107,7 @@
       "twd": 118,
       "gust": 19.6,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.46,
       "wave_dir": 129,
       "wave_period": 2.9
@@ -118,6 +118,7 @@
       "twd": 118,
       "gust": 17.1,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.46,
       "wave_dir": 129,
       "wave_period": 2.9
@@ -128,6 +129,7 @@
       "twd": 117,
       "gust": 15.2,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.44,
       "wave_dir": 128,
       "wave_period": 2.85
@@ -138,6 +140,7 @@
       "twd": 119,
       "gust": 13.8,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.42,
       "wave_dir": 128,
       "wave_period": 2.8
@@ -148,6 +151,7 @@
       "twd": 122,
       "gust": 12.8,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.42,
       "wave_dir": 129,
       "wave_period": 2.8
@@ -158,6 +162,7 @@
       "twd": 125,
       "gust": 11.7,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.4,
       "wave_dir": 129,
       "wave_period": 2.75
@@ -168,6 +173,7 @@
       "twd": 128,
       "gust": 9.7,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.38,
       "wave_dir": 129,
       "wave_period": 2.75
@@ -178,6 +184,7 @@
       "twd": 130,
       "gust": 7.8,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.36,
       "wave_dir": 129,
       "wave_period": 2.75
@@ -188,6 +195,7 @@
       "twd": 132,
       "gust": 6.6,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.34,
       "wave_dir": 129,
       "wave_period": 2.75
@@ -198,6 +206,7 @@
       "twd": 138,
       "gust": 6.6,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.34,
       "wave_dir": 129,
       "wave_period": 2.7
@@ -208,6 +217,7 @@
       "twd": 140,
       "gust": 7.6,
       "rain": 0.0,
+      "wmo": 2,
       "wave": 0.32,
       "wave_dir": 130,
       "wave_period": 2.65
@@ -218,6 +228,7 @@
       "twd": 135,
       "gust": 9.5,
       "rain": 0.0,
+      "wmo": 2,
       "wave": 0.32,
       "wave_dir": 130,
       "wave_period": 2.65
@@ -228,6 +239,7 @@
       "twd": 128,
       "gust": 12.8,
       "rain": 0.0,
+      "wmo": 2,
       "wave": 0.36,
       "wave_dir": 130,
       "wave_period": 2.65
@@ -238,6 +250,7 @@
       "twd": 121,
       "gust": 16.9,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.4,
       "wave_dir": 129,
       "wave_period": 2.7
@@ -248,6 +261,7 @@
       "twd": 118,
       "gust": 20.6,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.44,
       "wave_dir": 129,
       "wave_period": 2.75
@@ -258,6 +272,7 @@
       "twd": 115,
       "gust": 23.3,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.5,
       "wave_dir": 129,
       "wave_period": 2.85
@@ -268,6 +283,7 @@
       "twd": 113,
       "gust": 25.5,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.56,
       "wave_dir": 128,
       "wave_period": 3.0
@@ -278,6 +294,7 @@
       "twd": 113,
       "gust": 27.0,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.62,
       "wave_dir": 128,
       "wave_period": 3.15
@@ -288,6 +305,7 @@
       "twd": 114,
       "gust": 27.8,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.64,
       "wave_dir": 127,
       "wave_period": 3.25
@@ -298,6 +316,7 @@
       "twd": 116,
       "gust": 28.0,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.68,
       "wave_dir": 126,
       "wave_period": 3.35
@@ -308,6 +327,7 @@
       "twd": 117,
       "gust": 27.6,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.7,
       "wave_dir": 125,
       "wave_period": 3.4
@@ -318,6 +338,7 @@
       "twd": 119,
       "gust": 27.0,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.7,
       "wave_dir": 124,
       "wave_period": 3.45
@@ -328,6 +349,7 @@
       "twd": 119,
       "gust": 25.9,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.72,
       "wave_dir": 122,
       "wave_period": 3.5
@@ -338,6 +360,7 @@
       "twd": 120,
       "gust": 24.1,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.72,
       "wave_dir": 121,
       "wave_period": 3.55
@@ -348,6 +371,7 @@
       "twd": 121,
       "gust": 20.8,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.7,
       "wave_dir": 122,
       "wave_period": 3.65
@@ -358,6 +382,7 @@
       "twd": 123,
       "gust": 16.5,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.66,
       "wave_dir": 124,
       "wave_period": 3.75
@@ -368,6 +393,7 @@
       "twd": 121,
       "gust": 13.6,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.64,
       "wave_dir": 125,
       "wave_period": 3.8
@@ -378,6 +404,7 @@
       "twd": 113,
       "gust": 13.4,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.62,
       "wave_dir": 127,
       "wave_period": 3.8
@@ -388,6 +415,7 @@
       "twd": 105,
       "gust": 14.4,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.6,
       "wave_dir": 128,
       "wave_period": 3.8
@@ -398,6 +426,7 @@
       "twd": 99,
       "gust": 14.4,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.58,
       "wave_dir": 130,
       "wave_period": 3.85
@@ -408,6 +437,7 @@
       "twd": 90,
       "gust": 11.9,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.56,
       "wave_dir": 130,
       "wave_period": 3.95
@@ -418,6 +448,7 @@
       "twd": 71,
       "gust": 8.4,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.54,
       "wave_dir": 130,
       "wave_period": 4.05
@@ -428,6 +459,7 @@
       "twd": 51,
       "gust": 5.8,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.52,
       "wave_dir": 130,
       "wave_period": 4.15
@@ -438,6 +470,7 @@
       "twd": 51,
       "gust": 5.4,
       "rain": 0.0,
+      "wmo": 0,
       "wave": 0.5,
       "wave_dir": 129,
       "wave_period": 4.25
@@ -448,6 +481,7 @@
       "twd": 66,
       "gust": 6.0,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.46,
       "wave_dir": 129,
       "wave_period": 4.35
@@ -458,6 +492,7 @@
       "twd": 77,
       "gust": 7.4,
       "rain": 0.0,
+      "wmo": 1,
       "wave": 0.44,
       "wave_dir": 128,
       "wave_period": 4.4
@@ -468,6 +503,7 @@
       "twd": 83,
       "gust": 9.5,
       "rain": 0.1,
+      "wmo": 51,
       "wave": 0.42,
       "wave_dir": 127,
       "wave_period": 4.4
@@ -478,9 +514,67 @@
       "twd": 85,
       "gust": 12.1,
       "rain": 0.1,
+      "wmo": 51,
       "wave": 0.42,
       "wave_dir": 127,
       "wave_period": 4.4
+    },
+    {
+      "time": "2026-07-12T11:00",
+      "tws": 5.5,
+      "twd": 86,
+      "gust": 14.6,
+      "rain": 0.1,
+      "wmo": 51,
+      "wave": 0.4,
+      "wave_dir": 126,
+      "wave_period": 4.4
+    }
+  ],
+  "astro": [
+    {
+      "date": "2026-07-10",
+      "sunrise": "05:59",
+      "sunset": "20:56",
+      "moonrise": "01:39",
+      "moonset": "17:05",
+      "moon_deg": 298.09,
+      "name": "Calante",
+      "emoji": "🌘",
+      "illum_pct": 26
+    },
+    {
+      "date": "2026-07-11",
+      "sunrise": "05:59",
+      "sunset": "20:55",
+      "moonrise": "02:20",
+      "moonset": "18:23",
+      "moon_deg": 311.7,
+      "name": "Calante",
+      "emoji": "🌘",
+      "illum_pct": 17
+    },
+    {
+      "date": "2026-07-12",
+      "sunrise": "06:00",
+      "sunset": "20:55",
+      "moonrise": "03:13",
+      "moonset": "19:34",
+      "moon_deg": 325.63,
+      "name": "Calante",
+      "emoji": "🌘",
+      "illum_pct": 9
+    },
+    {
+      "date": "2026-07-13",
+      "sunrise": "06:01",
+      "sunset": "20:54",
+      "moonrise": "04:20",
+      "moonset": "20:34",
+      "moon_deg": 339.75,
+      "name": "Luna nuova",
+      "emoji": "🌑",
+      "illum_pct": 3
     }
   ]
 }

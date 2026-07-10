@@ -78,6 +78,10 @@ header{background:var(--ink);color:var(--sea-1);position:sticky;top:0;z-index:10
 .legend{display:flex;gap:1.1rem;margin-top:.6rem;font-size:.72rem;color:var(--soft)}
 .legend b{font-family:var(--mono);color:var(--ink);font-weight:600}
 
+.sky{display:flex;gap:2px;width:max-content;padding:.2rem 0}
+.sky span{width:49px;display:flex;flex-direction:column;align-items:center;gap:.18rem;font-size:1.15rem}
+.sky em{font:400 .58rem/1 var(--mono);color:var(--soft);font-style:normal}
+
 .rada{display:flex;gap:.8rem;align-items:flex-start;padding:.9rem 0;border-bottom:1px solid var(--hair)}
 .rada:last-child{border-bottom:0}
 .dot{width:13px;height:13px;border-radius:50%;flex:none;margin-top:.32rem}
@@ -170,6 +174,56 @@ function ribbon(hours) {
     <span>freccia = dove va il vento</span></div>`;
 }
 
+const wmoIcon = c => c == null ? "·" : c === 0 ? "☀️" : c <= 2 ? "🌤️" : c === 3 ? "☁️" :
+  c <= 49 ? "🌫️" : c <= 57 ? "🌦️" : c <= 67 ? "🌧️" : c <= 79 ? "🌨️" : c <= 82 ? "🌧️" : "⛈️";
+
+function waveRibbon(hours) {
+  const has = hours.filter(h => h.wave != null);
+  if (!has.length) return `<h2>Onda — 48 ore</h2>
+    <p style="font-size:.85rem;color:var(--soft)">Dati onda non disponibili per questo punto.</p>`;
+  const max = Math.max(1.2, ...has.map(h => h.wave));
+  const cols = hours.map(h => {
+    if (h.wave == null) return `<div class="hr"><span></span><div class="col" style="height:4px"></div></div>`;
+    const cls = h.wave >= 1.5 ? "gale" : h.wave >= 0.8 ? "strong" : "";
+    const px = Math.max(4, Math.round(h.wave / max * 96));
+    const rot = h.wave_dir != null
+      ? `<span style="transform:rotate(${(h.wave_dir + 180) % 360}deg);display:flex">${ARROW}</span>` : "<span></span>";
+    return `<div class="hr ${cls}">${rot}<div class="col" style="height:${px}px"></div></div>`;
+  }).join("");
+  const axis = hours.map((h, i) => `<span>${i % 3 === 0 ? h.time.slice(11, 13) : ""}</span>`).join("");
+  return `<h2>Onda — 48 ore</h2>
+    <div class="ribbon"><div class="strip">${cols}</div><div class="axis">${axis}</div></div>
+    <div class="legend"><span class="water">max <b>${max.toFixed(1)} m</b></span>
+    <span>freccia = dove va l'onda</span><span>risoluzione ~5 km: sottocosta indicativa</span></div>`;
+}
+
+function skyStrip(hours) {
+  const slots = [];
+  for (let i = 0; i < hours.length; i += 3) {
+    const h = hours[i];
+    slots.push(`<span title="${h.time.slice(11, 16)}">${wmoIcon(h.wmo)}<em>${h.time.slice(11, 13)}</em></span>`);
+  }
+  return slots.length
+    ? `<h2>Cielo</h2><div class="ribbon"><div class="sky">${slots.join("")}</div></div>` : "";
+}
+
+function astroCard(astro, day) {
+  if (!astro || !astro.length) return "";
+  const t = astro.find(a => a.date === day) ?? astro[0];
+  const next = astro.filter(a => a !== t && a.emoji).slice(0, 3).map(a =>
+    `${a.emoji} ${new Date(a.date + "T12:00").toLocaleDateString("it", { weekday: "short" })}`).join(" · ");
+  return `<h2>Sole e luna</h2>
+  <div class="leg"><div class="facts">
+    <div class="fact"><b>${esc(t.sunrise ?? "—")}</b><i>alba</i></div>
+    <div class="fact"><b>${esc(t.sunset ?? "—")}</b><i>tramonto</i></div>
+    <div class="fact"><b>${esc(t.moonrise ?? "—")}</b><i>sorge luna</i></div>
+    <div class="fact"><b>${esc(t.moonset ?? "—")}</b><i>cala luna</i></div>
+    <div class="fact"><b>${t.emoji ?? "—"}${t.illum_pct != null ? " " + t.illum_pct + "%" : ""}</b><i>${esc(t.name ?? "fase n/d")}</i></div>
+  </div>
+  ${next ? `<p style="margin-top:.7rem;font-size:.8rem;color:var(--soft)">Prossime notti: ${next}</p>` : ""}
+  ${t.synthetic ? `<p style="margin-top:.4rem;font-size:.74rem;color:var(--magenta)">Dati astro sintetici (offline)</p>` : ""}</div>`;
+}
+
 function legCard(b) {
   if (b.rest) return `<div class="leg"><div class="route">Giornata di sosta</div>
     <p style="color:var(--soft);font-size:.9rem">Nessun trasferimento in programma. Bagno, riposo, cambusa.</p></div>`;
@@ -224,6 +278,9 @@ function render(b, wx, c) {
     ${conf === "bassa" ? " Non pianificare oltre le 24 ore." : ""}
   </p>
 
+  ${waveRibbon(wx.hours)}
+  ${skyStrip(wx.hours)}
+
   <h2>Stanotte</h2>
   ${t ? `<div class="rada"><div class="dot ${t.light}"></div>
       <div><h3>${esc(t.name)}</h3><p class="water">${esc(t.why)} · fondo ${esc(t.holding)}</p></div>
@@ -234,6 +291,8 @@ function render(b, wx, c) {
       <div><h3>${esc(r.name)}</h3><p class="water">${esc(r.why)}</p></div>
       <div class="pts num">${r.score}</div></div>`).join("")}
   </details>
+
+  ${astroCard(wx.astro, b.day)}
 
   <h2>Prossimi giorni</h2>
   <div class="days">${b.outlook.map(o => `<div class="day ${o.light}">

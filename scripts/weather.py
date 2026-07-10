@@ -37,17 +37,20 @@ def _get(url: str, params: dict) -> dict:
     key = CACHE / (hashlib.sha1(full.encode()).hexdigest() + ".json")
     if key.exists() and time.time() - key.stat().st_mtime < TTL_S:
         return json.loads(key.read_text(encoding="utf-8"))
-    with urllib.request.urlopen(full, timeout=20) as r:
+    # met.no rifiuta le richieste senza User-Agent identificativo
+    req = urllib.request.Request(full, headers={
+        "User-Agent": "nina-sailing-agent/1.0 github.com/edoardo-casella/nina"})
+    with urllib.request.urlopen(req, timeout=20) as r:
         data = json.loads(r.read())
     key.write_text(json.dumps(data), encoding="utf-8")
     return data
 
 
 def wind(lat: float, lon: float, days: int = 5, model: str = "ecmwf_ifs025") -> dict:
-    """Vento orario: velocita' (kn), direzione (da cui viene), raffiche."""
+    """Vento orario: velocita' (kn), direzione (da cui viene), raffiche, cielo."""
     return _get(FORECAST, {
         "latitude": lat, "longitude": lon,
-        "hourly": "wind_speed_10m,wind_direction_10m,wind_gusts_10m,precipitation,temperature_2m",
+        "hourly": "wind_speed_10m,wind_direction_10m,wind_gusts_10m,precipitation,temperature_2m,weather_code",
         "wind_speed_unit": "kn", "timezone": "Europe/Rome",
         "forecast_days": days, "models": model,
     })
@@ -77,6 +80,7 @@ def combined(lat: float, lon: float, days: int = 5) -> list[dict]:
             "twd": w["wind_direction_10m"][i],
             "gust": w["wind_gusts_10m"][i],
             "rain": w["precipitation"][i],
+            "wmo": (w.get("weather_code") or [None] * len(w["time"]))[i],
         }
         if s:
             try:
@@ -86,6 +90,43 @@ def combined(lat: float, lon: float, days: int = 5) -> list[dict]:
                 row["wave_period"] = s["wave_period"][j]
             except (ValueError, IndexError):
                 pass
+        out.append(row)
+    return out
+
+
+def sun_moon(lat: float, lon: float, day: str, days: int = 4) -> list[dict]:
+    """Effemeridi per `days` giorni da `day`: alba/tramonto (Open-Meteo) e
+    sorgere/tramonto/fase della luna (met.no, gratuito con User-Agent).
+
+    moon_deg: 0 = nuova, 90 = primo quarto, 180 = piena, 270 = ultimo quarto.
+    I campi luna possono essere None (la luna non sorge/tramonta ogni giorno,
+    o met.no non raggiungibile): chi consuma deve reggerlo.
+    """
+    import datetime as dt
+    d0 = dt.date.fromisoformat(day)
+    end = (d0 + dt.timedelta(days=days - 1)).isoformat()
+    sun = _get(FORECAST, {
+        "latitude": lat, "longitude": lon, "daily": "sunrise,sunset",
+        "timezone": "Europe/Rome", "start_date": day, "end_date": end,
+    })["daily"]
+
+    out = []
+    for i, date in enumerate(sun["time"]):
+        row = {"date": date, "sunrise": sun["sunrise"][i][11:16], "sunset": sun["sunset"][i][11:16],
+               "moonrise": None, "moonset": None, "moon_deg": None}
+        try:
+            data = _get("https://api.met.no/weatherapi/sunrise/3.0/moon",
+                        {"lat": lat, "lon": lon, "date": date, "offset": "+02:00"})
+            p = data["properties"]
+            row["moonrise"] = (p.get("moonrise") or {}).get("time")
+            row["moonset"] = (p.get("moonset") or {}).get("time")
+            if row["moonrise"]:
+                row["moonrise"] = row["moonrise"][11:16]
+            if row["moonset"]:
+                row["moonset"] = row["moonset"][11:16]
+            row["moon_deg"] = p.get("moonphase")
+        except Exception:
+            pass
         out.append(row)
     return out
 
