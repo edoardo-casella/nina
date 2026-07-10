@@ -18,7 +18,8 @@
     "max_tws_safe_kn": 28,
     "max_wave_comfort_m": 1.2,
     "min_tws_sailing_kn": 7,
-    "berths": 11
+    "berths": 11,
+    "min_sail_speed_kn": 6.5
   },
   "crew": [
     {
@@ -886,5 +887,9 @@
         "eur": 9500
       }
     ]
-  }
+  },
+  "captains": [
+    "Edoardo Casella",
+    "Bernardo Bolgeri"
+  ]
 }

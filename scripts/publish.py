@@ -31,7 +31,8 @@ def synth(day: str, hours: int = 72) -> list[dict]:
         out.append({"time": t.isoformat(timespec="minutes"), "tws": round(tws, 1),
                     "twd": round(305 + 18 * math.sin(h / 23), 0), "gust": round(tws * 1.32, 1),
                     "wave": round(0.2 + tws / 30, 2), "wave_dir": round(290 + 15 * math.sin(h / 19), 0),
-                    "rain": 0, "wmo": 0 if h % 30 < 24 else 3})
+                    "rain": 0, "temp": round(23 + 6 * max(diurnal, 0), 1), "rh": round(70 - 15 * max(diurnal, 0)),
+                    "wmo": 0 if h % 30 < 24 else 3})
     return out
 
 
@@ -77,9 +78,117 @@ def leg_for(v: dict, day: str) -> dict | None:
     return next((p for p in v["plan"] if p["date"] == day), None)
 
 
+def sim_shift_days(v: dict, today: str) -> int:
+    """Fuori dalle date della crociera la dashboard gira in SIMULAZIONE:
+    il piano reale viene traslato come se si partisse oggi. Ritorna l'offset
+    in giorni da applicare alle date del piano (0 = crociera in corso)."""
+    if not v["plan"]:
+        return 0
+    t = dt.date.fromisoformat(today)
+    d0 = dt.date.fromisoformat(v["plan"][0]["date"])
+    d1 = dt.date.fromisoformat(v["plan"][-1]["date"])
+    if d0 <= t <= d1:
+        return 0
+    return (t - d0).days
+
+
+def shifted_plan(v: dict, offset: int) -> list[dict]:
+    if not offset:
+        return v["plan"]
+    return [{**p, "date": (dt.date.fromisoformat(p["date"]) + dt.timedelta(days=offset)).isoformat()}
+            for p in v["plan"]]
+
+
+def andatura(twa_deg: float) -> str:
+    if twa_deg < 55:
+        return "bolina"
+    if twa_deg < 80:
+        return "bolina larga"
+    if twa_deg < 110:
+        return "traverso"
+    if twa_deg < 150:
+        return "lasco"
+    return "poppa"
+
+
+def sailing_estimate(v: dict, frm: dict, to: dict, tws: float, twd: float) -> dict:
+    """Vela o motore per una tratta, dal vento previsto e dalla polare.
+
+    Regola dello skipper: si va a vela quando l'andatura e' da bolina larga
+    in giu' (TWA >= 55) e la polare da' almeno min_sail_speed_kn (6.5 kn sul
+    Dufour 48 cat); altrimenti motore a cruise_motor_kn."""
+    cog = core.bearing((frm["lat"], frm["lon"]), (to["lat"], to["lon"]))
+    twa = core.twa(twd, cog)
+    pol = core.polar(v)
+    bs = pol.speed(twa, tws)
+    boat = v["boat"]
+    vela = (tws >= boat["min_tws_sailing_kn"] and twa >= 55
+            and bs >= boat.get("min_sail_speed_kn", 4.0))
+    return {"twa": round(twa), "andatura": andatura(twa),
+            "vela": bool(vela), "boat_kn": bs if vela else boat["cruise_motor_kn"],
+            "tws_est": round(tws, 1), "twd": round(twd)}
+
+
+def build_outlook(v: dict, plan: list[dict], day: str, days: int, offline: bool) -> list[dict]:
+    """Un giorno per riga: tratta, meteo previsto NELLA destinazione, stima
+    vela/motore. Il vento usato per l'andatura e' il dominante giornaliero:
+    e' una stima, non un routing."""
+    rows = []
+    for i in range(1, days + 1):
+        d = (dt.date.fromisoformat(day) + dt.timedelta(days=i)).isoformat()
+        p = leg_for({"plan": plan}, d)
+        if not p:
+            continue
+        a, b = core.find_wp(v, p["from"]), core.find_wp(v, p["to"])
+        rows.append({"date": d, "plan": p, "frm": a, "to": b})
+    if not rows:
+        return []
+
+    dailies = [None] * len(rows)
+    if not offline:
+        try:
+            resp = weather.daily_at([(r["to"]["lat"], r["to"]["lon"]) for r in rows],
+                                    rows[0]["date"], rows[-1]["date"])
+            dailies = [resp[i] if i < len(resp) else None for i in range(len(rows))]
+        except Exception:
+            pass
+
+    out = []
+    for r, met in zip(rows, dailies):
+        p, a, b = r["plan"], r["frm"], r["to"]
+        nm = core.haversine_nm((a["lat"], a["lon"]), (b["lat"], b["lon"]))
+        row = {"date": r["date"], "rest": p["rest"],
+               "frm": a["name"], "to": b["name"], "nm": round(nm, 1)}
+        wx_day = None
+        if met:
+            try:
+                j = met["daily"]["time"].index(r["date"])
+                dd = met["daily"]
+                wx_day = {"wmo": dd["weather_code"][j], "tmax": dd["temperature_2m_max"][j],
+                          "tmin": dd["temperature_2m_min"][j], "rain_mm": dd["precipitation_sum"][j],
+                          "rain_prob": dd["precipitation_probability_max"][j],
+                          "wind_max": dd["wind_speed_10m_max"][j], "gust_max": dd["wind_gusts_10m_max"][j],
+                          "wind_dir": dd["wind_direction_10m_dominant"][j]}
+            except Exception:
+                wx_day = None
+        if offline:
+            wx_day = {"wmo": 1, "tmax": 29, "tmin": 22, "rain_mm": 0, "rain_prob": 5,
+                      "wind_max": 16, "gust_max": 22, "wind_dir": 305, "synthetic": True}
+        row["wx"] = wx_day
+        if wx_day and not p["rest"]:
+            # vento tipico di giornata ~ 80% del massimo
+            row["sailing"] = sailing_estimate(v, a, b, wx_day["wind_max"] * 0.8, wx_day["wind_dir"])
+        else:
+            row["sailing"] = None
+        out.append(row)
+    return out
+
+
 def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     v = core.load()
-    plan = leg_for(v, day)
+    offset = sim_shift_days(v, day)
+    plan_all = shifted_plan(v, offset)
+    plan = leg_for({"plan": plan_all}, day)
     start_id = plan["from"] if plan else v["waypoints"][0]["id"]
     wp = core.find_wp(v, start_id)
 
@@ -113,28 +222,31 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     tonight = next((r for r in ranked if r["id"] == dest), None)
     plan_b = next((r for r in ranked if r["id"] != dest and r["light"] == "verde"), None)
 
-    # ---- outlook 3 giorni
-    outlook = []
-    for i in range(1, 4):
-        d = (dt.date.fromisoformat(day) + dt.timedelta(days=i)).isoformat()
-        p = leg_for(v, d)
-        day_hours = [r for r in series if r["time"].startswith(d)]
-        if not (p and day_hours):
-            continue
-        if p["rest"]:
-            outlook.append({"date": d, "leg": "sosta", "score": None, "light": "verde"})
-            continue
-        a, b = core.find_wp(v, p["from"]), core.find_wp(v, p["to"])
-        cog = core.bearing((a["lat"], a["lon"]), (b["lat"], b["lon"]))
-        pol = core.polar(v)
-        best = max(day_hours, key=lambda r: routing.sail_score(
-            core.twa(r["twd"], cog), r["tws"], r.get("gust", r["tws"]), r.get("wave", .3), v["boat"], pol)["score"])
-        s = routing.sail_score(core.twa(best["twd"], cog), best["tws"], best.get("gust", best["tws"]),
-                               best.get("wave", .3), v["boat"], pol)
-        outlook.append({"date": d, "leg": f"{a['name']} → {b['name']}", "score": s["score"],
-                        "light": LIGHTS[s["verdict"]], "verdict": s["verdict"]})
+    # ---- prossimi giorni: meteo nella destinazione + stima vela/motore
+    outlook = build_outlook(v, plan_all, day, 5, offline)
 
-    crew = core.aboard_on(v, day)
+    # ---- andatura di oggi (dal routing orario della tratta scelta)
+    leg_sailing = None
+    if leg:
+        if leg.get("detail"):
+            sail_rows = [r for r in leg["detail"] if r["mode"] != "motore"]
+            twas = sorted(r["twa"] for r in (sail_rows or leg["detail"]))
+            med = twas[len(twas) // 2]
+            leg_sailing = {"andatura": andatura(med), "twa": med,
+                           "vela": bool(sail_rows),
+                           "avg_kn": round(leg["nm"] / leg["hours"], 1) if leg.get("hours") else None}
+        else:
+            # tratta cosi' corta da chiudersi nella prima ora: stima dal vento alla partenza
+            dep = next((r for r in series if r["time"] >= leg["depart"]), None)
+            if dep:
+                est = sailing_estimate(v, core.find_wp(v, plan["from"]), core.find_wp(v, plan["to"]),
+                                       dep["tws"], dep["twd"])
+                leg_sailing = {"andatura": est["andatura"], "twa": est["twa"], "vela": est["vela"],
+                               "avg_kn": round(leg["nm"] / leg["hours"], 1) if leg.get("hours") else est["boat_kn"]}
+
+    # in simulazione l'equipaggio e' quello della data reale corrispondente
+    orig_day = (dt.date.fromisoformat(day) - dt.timedelta(days=offset)).isoformat()
+    crew = core.aboard_on(v, orig_day)
     # offset esplicito: i telefoni fuori dal fuso italiano devono leggere
     # l'eta' del dato giusta
     now = dt.datetime.now().astimezone().isoformat(timespec="minutes")
@@ -142,8 +254,11 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     briefing = {
         "generated_at": now, "approved": False, "approved_by": None,
         "day": day, "boat": v["boat"]["name"], "voyage": v["name"],
+        "captains": v.get("captains", []),
+        "sim": bool(offset), "cruise_start": v["plan"][0]["date"] if v["plan"] else None,
+        "position": {"id": wp["id"], "name": wp["name"]},
         "rest": bool(plan and plan["rest"]),
-        "leg": leg, "options": options, "confidence": conf,
+        "leg": leg, "leg_sailing": leg_sailing, "options": options, "confidence": conf,
         "stop_reason": (options[0].get("note") if options and leg is None else None),
         "tonight": tonight, "plan_b": plan_b, "ranked": ranked[:4],
         "outlook": outlook,
@@ -158,6 +273,11 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     # mostrerebbe 20 colonne di passato e solo 28 di previsione
     cur_hour = now[:13] + ":00"
     start = next((i for i, r in enumerate(series) if r["time"] >= cur_hour), 0)
+    now_row = series[start] if start < len(series) else None
+    briefing["now"] = ({"temp": now_row.get("temp"), "rh": now_row.get("rh"),
+                        "rain": now_row.get("rain"), "wmo": now_row.get("wmo"),
+                        "tws": now_row.get("tws"), "twd": now_row.get("twd")}
+                       if now_row else None)
     try:
         astro = build_astro(wp, day, offline)
     except Exception:

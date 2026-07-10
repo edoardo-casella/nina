@@ -50,7 +50,7 @@ def wind(lat: float, lon: float, days: int = 5, model: str = "ecmwf_ifs025") -> 
     """Vento orario: velocita' (kn), direzione (da cui viene), raffiche, cielo."""
     return _get(FORECAST, {
         "latitude": lat, "longitude": lon,
-        "hourly": "wind_speed_10m,wind_direction_10m,wind_gusts_10m,precipitation,temperature_2m,weather_code",
+        "hourly": "wind_speed_10m,wind_direction_10m,wind_gusts_10m,precipitation,temperature_2m,relative_humidity_2m,weather_code",
         "wind_speed_unit": "kn", "timezone": "Europe/Rome",
         "forecast_days": days, "models": model,
     })
@@ -80,6 +80,8 @@ def combined(lat: float, lon: float, days: int = 5) -> list[dict]:
             "twd": w["wind_direction_10m"][i],
             "gust": w["wind_gusts_10m"][i],
             "rain": w["precipitation"][i],
+            "temp": (w.get("temperature_2m") or [None] * len(w["time"]))[i],
+            "rh": (w.get("relative_humidity_2m") or [None] * len(w["time"]))[i],
             "wmo": (w.get("weather_code") or [None] * len(w["time"]))[i],
         }
         if s:
@@ -94,41 +96,76 @@ def combined(lat: float, lon: float, days: int = 5) -> list[dict]:
     return out
 
 
-def sun_moon(lat: float, lon: float, day: str, days: int = 4) -> list[dict]:
-    """Effemeridi per `days` giorni da `day`: alba/tramonto (Open-Meteo) e
-    sorgere/tramonto/fase della luna (met.no, gratuito con User-Agent).
+def _metno_event(p: dict, key: str) -> tuple[str | None, float | None]:
+    ev = p.get(key) or {}
+    t = ev.get("time")
+    az = ev.get("azimuth")
+    return (t[11:16] if t else None), (round(az) if az is not None else None)
+
+
+def sun_moon(lat: float, lon: float, day: str, days: int = 6) -> list[dict]:
+    """Effemeridi per `days` giorni da `day` via met.no (gratuito, User-Agent):
+    alba/tramonto di sole e luna con AZIMUT (gradi veri), fase lunare.
 
     moon_deg: 0 = nuova, 90 = primo quarto, 180 = piena, 270 = ultimo quarto.
-    I campi luna possono essere None (la luna non sorge/tramonta ogni giorno,
-    o met.no non raggiungibile): chi consuma deve reggerlo.
+    Ogni campo puo' essere None (la luna non sorge/tramonta ogni giorno, o
+    met.no non raggiungibile): chi consuma deve reggerlo. Fallback alba e
+    tramonto da Open-Meteo se met.no /sun non risponde.
     """
     import datetime as dt
     d0 = dt.date.fromisoformat(day)
     end = (d0 + dt.timedelta(days=days - 1)).isoformat()
-    sun = _get(FORECAST, {
-        "latitude": lat, "longitude": lon, "daily": "sunrise,sunset",
-        "timezone": "Europe/Rome", "start_date": day, "end_date": end,
-    })["daily"]
+    try:
+        om_sun = _get(FORECAST, {
+            "latitude": lat, "longitude": lon, "daily": "sunrise,sunset",
+            "timezone": "Europe/Rome", "start_date": day, "end_date": end,
+        })["daily"]
+    except Exception:
+        om_sun = None
 
     out = []
-    for i, date in enumerate(sun["time"]):
-        row = {"date": date, "sunrise": sun["sunrise"][i][11:16], "sunset": sun["sunset"][i][11:16],
-               "moonrise": None, "moonset": None, "moon_deg": None}
+    for i in range(days):
+        date = (d0 + dt.timedelta(days=i)).isoformat()
+        row = {"date": date, "sunrise": None, "sunset": None, "sunrise_az": None,
+               "sunset_az": None, "moonrise": None, "moonset": None,
+               "moonrise_az": None, "moonset_az": None, "moon_deg": None}
         try:
-            data = _get("https://api.met.no/weatherapi/sunrise/3.0/moon",
-                        {"lat": lat, "lon": lon, "date": date, "offset": "+02:00"})
-            p = data["properties"]
-            row["moonrise"] = (p.get("moonrise") or {}).get("time")
-            row["moonset"] = (p.get("moonset") or {}).get("time")
-            if row["moonrise"]:
-                row["moonrise"] = row["moonrise"][11:16]
-            if row["moonset"]:
-                row["moonset"] = row["moonset"][11:16]
+            p = _get("https://api.met.no/weatherapi/sunrise/3.0/sun",
+                     {"lat": lat, "lon": lon, "date": date, "offset": "+02:00"})["properties"]
+            row["sunrise"], row["sunrise_az"] = _metno_event(p, "sunrise")
+            row["sunset"], row["sunset_az"] = _metno_event(p, "sunset")
+        except Exception:
+            pass
+        if row["sunrise"] is None and om_sun and date in om_sun["time"]:
+            j = om_sun["time"].index(date)
+            row["sunrise"], row["sunset"] = om_sun["sunrise"][j][11:16], om_sun["sunset"][j][11:16]
+        try:
+            p = _get("https://api.met.no/weatherapi/sunrise/3.0/moon",
+                     {"lat": lat, "lon": lon, "date": date, "offset": "+02:00"})["properties"]
+            row["moonrise"], row["moonrise_az"] = _metno_event(p, "moonrise")
+            row["moonset"], row["moonset_az"] = _metno_event(p, "moonset")
             row["moon_deg"] = p.get("moonphase")
         except Exception:
             pass
         out.append(row)
     return out
+
+
+DAILY_VARS = ("weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,"
+              "precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,"
+              "wind_direction_10m_dominant")
+
+
+def daily_at(points: list[tuple[float, float]], start: str, end: str) -> list[dict]:
+    """Previsione giornaliera per una LISTA di coordinate (una chiamata sola).
+    Ritorna una lista di risposte nello stesso ordine dei punti."""
+    data = _get(FORECAST, {
+        "latitude": ",".join(f"{p[0]:.4f}" for p in points),
+        "longitude": ",".join(f"{p[1]:.4f}" for p in points),
+        "daily": DAILY_VARS, "wind_speed_unit": "kn",
+        "timezone": "Europe/Rome", "start_date": start, "end_date": end,
+    })
+    return data if isinstance(data, list) else [data]
 
 
 def ensemble_spread(lat: float, lon: float, days: int = 3) -> dict:

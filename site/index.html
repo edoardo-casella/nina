@@ -37,12 +37,30 @@ header{background:var(--ink);color:var(--sea-1);position:sticky;top:0;z-index:10
   border-bottom:2px solid var(--magenta)}
 .hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem}
 .boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
-.when{font-family:var(--mono);font-size:.78rem;color:var(--sea-2);margin-left:auto;text-align:right}
+.cap{font:600 .6rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:#7FA6B5;margin-top:.22rem}
+.when{font-family:var(--mono);font-size:.78rem;color:var(--sea-2);margin-left:auto;text-align:right;flex:none}
 .stale{color:#FF9BD6}
 
 .flag{background:var(--magenta);color:#fff;padding:.65rem 1.1rem;font:600 .8rem/1.35 var(--body)}
 .flag b{font:700 .72rem/1 var(--display);letter-spacing:.14em;display:block;margin-bottom:.15rem}
 .flag.ok{background:var(--verde)}
+.flag.sim{background:var(--land);color:#6A4E0E}
+
+.nowbar{display:flex;flex-wrap:wrap;gap:.4rem .95rem;font-size:.85rem;color:var(--soft);
+  margin:1rem 0 .9rem;align-items:baseline}
+.nowbar b{font:600 .95rem/1 var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
+
+.vals span{color:var(--ink);font-weight:600}
+
+.dayrow{display:flex;gap:.85rem;padding:.85rem 0;border-bottom:1px solid var(--hair);align-items:flex-start}
+.dayrow:last-child{border-bottom:0}
+.dayrow em{flex:none;width:3.2rem;font:700 .66rem/1.35 var(--display);letter-spacing:.08em;
+  text-transform:uppercase;color:var(--soft);font-style:normal;padding-top:.15rem}
+.dayrow h3{font:400 .98rem/1.3 var(--body)}
+.dayrow p{font-size:.8rem;color:var(--soft);margin-top:.22rem;line-height:1.45}
+.badge{font:700 .58rem/1 var(--display);letter-spacing:.1em;padding:.18rem .45rem;border-radius:3px;
+  color:#fff;display:inline-block;margin-right:.2rem}
+.badge.sail{background:var(--verde)} .badge.motor{background:var(--giallo)}
 
 .leg{background:var(--sea-1);border:1px solid var(--hair);border-radius:3px;padding:1.05rem 1.1rem}
 .route{font:1.35rem/1.25 var(--body);font-style:italic;margin-bottom:.7rem}
@@ -128,7 +146,7 @@ footer strong{color:var(--ink)}
 </head>
 <body>
 <header><div class="hdr">
-  <span class="boat" id="boat">Niña</span>
+  <div><span class="boat" id="boat">Niña</span><div class="cap" id="captains"></div></div>
   <span class="when" id="when">carico…</span>
 </div></header>
 
@@ -168,14 +186,17 @@ function ribbon(hours) {
     </div>`;
   }).join("");
   const axis = hours.map((h, i) => `<span>${i % 3 === 0 ? h.time.slice(11, 13) : ""}</span>`).join("");
-  return `<div class="ribbon"><div class="strip">${cols}</div><div class="axis">${axis}</div></div>
-    <div class="legend"><span>ora <b>${new Date().getHours()}:00</b></span>
+  const vals = hours.map((h, i) => `<span>${i % 3 === 0 ? Math.round(h.tws) : ""}</span>`).join("");
+  return `<div class="ribbon"><div class="strip">${cols}</div>
+    <div class="axis vals">${vals}</div><div class="axis">${axis}</div></div>
+    <div class="legend"><span>nodi sopra, ora sotto</span>
     <span class="water">max <b>${Math.round(max)} kn</b></span>
     <span>freccia = dove va il vento</span></div>`;
 }
 
 const wmoIcon = c => c == null ? "·" : c === 0 ? "☀️" : c <= 2 ? "🌤️" : c === 3 ? "☁️" :
   c <= 49 ? "🌫️" : c <= 57 ? "🌦️" : c <= 67 ? "🌧️" : c <= 79 ? "🌨️" : c <= 82 ? "🌧️" : "⛈️";
+const comp = d => ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSO","SO","OSO","O","ONO","NO","NNO"][Math.round(d / 22.5) % 16];
 
 function waveRibbon(hours) {
   const has = hours.filter(h => h.wave != null);
@@ -191,9 +212,12 @@ function waveRibbon(hours) {
     return `<div class="hr ${cls}">${rot}<div class="col" style="height:${px}px"></div></div>`;
   }).join("");
   const axis = hours.map((h, i) => `<span>${i % 3 === 0 ? h.time.slice(11, 13) : ""}</span>`).join("");
+  const vals = hours.map((h, i) => `<span>${i % 3 === 0 && h.wave != null ? h.wave.toFixed(1).replace("0.", ".") : ""}</span>`).join("");
   return `<h2>Onda — 48 ore</h2>
-    <div class="ribbon"><div class="strip">${cols}</div><div class="axis">${axis}</div></div>
-    <div class="legend"><span class="water">max <b>${max.toFixed(1)} m</b></span>
+    <div class="ribbon"><div class="strip">${cols}</div>
+    <div class="axis vals">${vals}</div><div class="axis">${axis}</div></div>
+    <div class="legend"><span>metri sopra, ora sotto</span>
+    <span class="water">max <b>${max.toFixed(1)} m</b></span>
     <span>freccia = dove va l'onda</span><span>risoluzione ~5 km: sottocosta indicativa</span></div>`;
 }
 
@@ -214,10 +238,10 @@ function astroCard(astro, day) {
     `${a.emoji} ${new Date(a.date + "T12:00").toLocaleDateString("it", { weekday: "short" })}`).join(" · ");
   return `<h2>Sole e luna</h2>
   <div class="leg"><div class="facts">
-    <div class="fact"><b>${esc(t.sunrise ?? "—")}</b><i>alba</i></div>
-    <div class="fact"><b>${esc(t.sunset ?? "—")}</b><i>tramonto</i></div>
-    <div class="fact"><b>${esc(t.moonrise ?? "—")}</b><i>sorge luna</i></div>
-    <div class="fact"><b>${esc(t.moonset ?? "—")}</b><i>cala luna</i></div>
+    <div class="fact"><b>${esc(t.sunrise ?? "—")}</b><i>alba${t.sunrise_az != null ? " · " + comp(t.sunrise_az) : ""}</i></div>
+    <div class="fact"><b>${esc(t.sunset ?? "—")}</b><i>tramonto${t.sunset_az != null ? " · " + comp(t.sunset_az) : ""}</i></div>
+    <div class="fact"><b>${esc(t.moonrise ?? "—")}</b><i>sorge luna${t.moonrise_az != null ? " · " + comp(t.moonrise_az) : ""}</i></div>
+    <div class="fact"><b>${esc(t.moonset ?? "—")}</b><i>cala luna${t.moonset_az != null ? " · " + comp(t.moonset_az) : ""}</i></div>
     <div class="fact"><b>${t.emoji ?? "—"}${t.illum_pct != null ? " " + t.illum_pct + "%" : ""}</b><i>${esc(t.name ?? "fase n/d")}</i></div>
   </div>
   ${next ? `<p style="margin-top:.7rem;font-size:.8rem;color:var(--soft)">Prossime notti: ${next}</p>` : ""}
@@ -245,11 +269,33 @@ function legCard(b) {
       <div class="fact"><b>${L.depart.slice(11)}</b><i>salpa</i></div>
       <div class="fact"><b>${L.eta.slice(11)}</b><i>arrivo</i></div>
       <div class="fact"><b>${L.sail_pct}%</b><i>a vela</i></div>
+      ${b.leg_sailing ? `<div class="fact"><b>${b.leg_sailing.vela ? "VELA" : "MOTORE"}</b><i>${esc(b.leg_sailing.andatura)} · TWA ${b.leg_sailing.twa}°</i></div>` : ""}
+      ${b.leg_sailing?.avg_kn ? `<div class="fact"><b>${b.leg_sailing.avg_kn}</b><i>kn media</i></div>` : ""}
     </div>
     <div class="score">
       <p><span class="water">Sail Score</span><b style="color:${color}">${verdict} · ${L.avg_score}</b></p>
       <div class="bar"><i style="width:${L.avg_score}%;background:${color}"></i></div>
     </div></div>`;
+}
+
+function outlookRows(outlook) {
+  if (!outlook || !outlook.length) return "<p style='color:var(--soft);font-size:.85rem'>Piano non ancora definito per i prossimi giorni.</p>";
+  return outlook.map(o => {
+    const wd = new Date(o.date + "T12:00").toLocaleDateString("it", { weekday: "short", day: "numeric" });
+    const meteo = o.wx
+      ? `${wmoIcon(o.wx.wmo)} ${Math.round(o.wx.tmin)}–${Math.round(o.wx.tmax)}° · pioggia ${o.wx.rain_prob ?? "—"}%${o.wx.rain_mm ? ` (${o.wx.rain_mm} mm)` : ""} · vento max ${Math.round(o.wx.wind_max)} kn da ${comp(o.wx.wind_dir)}${o.wx.synthetic ? " · sintetico" : ""}`
+      : "meteo oltre l'orizzonte di previsione";
+    if (o.rest) return `<div class="dayrow"><em>${wd}</em>
+      <div><h3>Sosta — ${esc(o.to)}</h3><p>${meteo}</p></div></div>`;
+    const s = o.sailing;
+    const sail = s
+      ? `<span class="badge ${s.vela ? "sail" : "motor"}">${s.vela ? "vela" : "motore"}</span> ${s.vela ? `${esc(s.andatura)} (TWA ~${s.twa}°) · ~${s.boat_kn} kn` : `${s.tws_est < 7 ? "vento debole" : "vento in prua"} (${s.tws_est} kn da ${comp(s.twd)}) · ~${s.boat_kn} kn a motore`}`
+      : "";
+    return `<div class="dayrow"><em>${wd}</em>
+      <div><h3 class="water">${esc(o.frm)} → ${esc(o.to)} · <span class="num">${o.nm} nm</span></h3>
+      ${sail ? `<p>${sail}</p>` : ""}
+      <p>${meteo}</p></div></div>`;
+  }).join("");
 }
 
 function render(b, wx, c) {
@@ -259,15 +305,26 @@ function render(b, wx, c) {
   w.className = "when" + (a.stale ? " stale" : "");
   w.innerHTML = `${new Date(b.day + "T12:00").toLocaleDateString("it", { day: "numeric", month: "short" })}<br>${a.txt}`;
 
-  document.getElementById("flag").innerHTML = b.approved
+  document.getElementById("captains").textContent =
+    b.captains?.length ? "Capitani · " + b.captains.join(" · ") : "";
+
+  const state = b.approved
     ? `<div class="flag ok"><b>Piano approvato</b>Confermato da ${esc(b.approved_by)}.</div>`
     : `<div class="flag"><b>Proposta — non approvata</b>Generata dal meteo, non ancora confermata dallo skipper. Non salpate su questa pagina.</div>`;
+  const simFlag = b.sim
+    ? `<div class="flag sim"><b>Simulazione</b>Come se si salpasse oggi da ${esc(b.position?.name ?? "—")}: rotta e meteo sono reali, le date no. La crociera vera inizia ${b.cruise_start ? "l'" + new Date(b.cruise_start + "T12:00").toLocaleDateString("it", { day: "numeric", month: "long" }) : "—"}.</div>` : "";
+  document.getElementById("flag").innerHTML = simFlag + state;
 
   const conf = b.confidence?.confidence ?? "sconosciuta";
   const t = b.tonight, pb = b.plan_b;
 
   document.getElementById("app").innerHTML = `
-  <h2>Oggi</h2>
+  <h2>Oggi${b.position ? ` — <span style="text-transform:none;letter-spacing:0">${esc(b.position.name)}</span>` : ""}</h2>
+  ${b.now ? `<div class="nowbar">
+    <span>${wmoIcon(b.now.wmo)} <b>${b.now.temp != null ? Math.round(b.now.temp) + "°" : "—"}</b></span>
+    <span>umidità <b>${b.now.rh ?? "—"}%</b></span>
+    <span>vento <b>${Math.round(b.now.tws)} kn</b> da ${comp(b.now.twd)}</span>
+    <span>pioggia <b>${b.now.rain ?? 0} mm/h</b></span></div>` : ""}
   ${legCard(b)}
 
   <h2>Vento — 48 ore</h2>
@@ -294,11 +351,8 @@ function render(b, wx, c) {
 
   ${astroCard(wx.astro, b.day)}
 
-  <h2>Prossimi giorni</h2>
-  <div class="days">${b.outlook.map(o => `<div class="day ${o.light}">
-    <em>${new Date(o.date + "T12:00").toLocaleDateString("it", { weekday: "short" })}</em>
-    <strong>${o.score ?? "—"}</strong>
-    <span>${esc(o.leg)}</span></div>`).join("") || "<p>—</p>"}</div>
+  <h2>Prossimi giorni — lungo la rotta</h2>
+  ${outlookRows(b.outlook)}
 
   ${navigator.onLine ? `
   <h2>Mappa — rotta live</h2>

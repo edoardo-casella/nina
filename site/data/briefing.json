@@ -1,31 +1,84 @@
 {
-  "generated_at": "2026-07-10T12:06+02:00",
+  "generated_at": "2026-07-10T12:22+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
   "boat": "Niña",
   "voyage": "Corsica & La Maddalena 2026",
+  "captains": [
+    "Edoardo Casella",
+    "Bernardo Bolgeri"
+  ],
+  "sim": true,
+  "cruise_start": "2026-08-08",
+  "position": {
+    "id": "cannigione",
+    "name": "Cannigione"
+  },
   "rest": false,
-  "leg": null,
-  "options": [],
+  "leg": {
+    "leg": "Cannigione -> Cala Portese",
+    "nm": 4.7,
+    "cog": 13,
+    "depart": "2026-07-10T13:00",
+    "eta": "2026-07-10T13:33",
+    "hours": 0.6,
+    "avg_score": 87,
+    "sail_pct": 100,
+    "abort": false,
+    "detail": []
+  },
+  "leg_sailing": {
+    "andatura": "traverso",
+    "twa": 97,
+    "vela": true,
+    "avg_kn": 7.8
+  },
+  "options": [
+    {
+      "leg": "Cannigione -> Cala Portese",
+      "nm": 4.7,
+      "cog": 13,
+      "depart": "2026-07-10T13:00",
+      "eta": "2026-07-10T13:33",
+      "hours": 0.6,
+      "avg_score": 87,
+      "sail_pct": 100,
+      "abort": false,
+      "detail": []
+    },
+    {
+      "leg": "Cannigione -> Cala Portese",
+      "nm": 4.7,
+      "cog": 13,
+      "depart": "2026-07-10T14:00",
+      "eta": "2026-07-10T14:33",
+      "hours": 0.6,
+      "avg_score": 87,
+      "sail_pct": 100,
+      "abort": false,
+      "detail": []
+    },
+    {
+      "leg": "Cannigione -> Cala Portese",
+      "nm": 4.7,
+      "cog": 13,
+      "depart": "2026-07-10T15:00",
+      "eta": "2026-07-10T15:32",
+      "hours": 0.5,
+      "avg_score": 87,
+      "sail_pct": 100,
+      "abort": false,
+      "detail": []
+    }
+  ],
   "confidence": {
     "mean_spread_kn": 1.1,
     "max_spread_kn": 4.1,
     "confidence": "alta"
   },
   "stop_reason": null,
-  "tonight": {
-    "id": "cannigione",
-    "name": "Cannigione",
-    "score": 71,
-    "light": "giallo",
-    "margin_deg": 32,
-    "fetch_km": 8,
-    "why": "vento 118° a 32° dal settore esposto",
-    "holding": "fango, ottima",
-    "notes": "Base charter, riparo quasi totale.",
-    "verify": true
-  },
+  "tonight": null,
   "plan_b": {
     "id": "lavezzi",
     "name": "Cala Lazarina (Lavezzi)",
@@ -88,13 +141,172 @@
       "verify": true
     }
   ],
-  "outlook": [],
-  "crew": [],
+  "outlook": [
+    {
+      "date": "2026-07-11",
+      "rest": false,
+      "frm": "Cala Portese",
+      "to": "Isole Lavezzi",
+      "nm": 13.3,
+      "wx": {
+        "wmo": 3,
+        "tmax": 28.0,
+        "tmin": 26.6,
+        "rain_mm": 0.0,
+        "rain_prob": 8,
+        "wind_max": 15.3,
+        "gust_max": 19.6,
+        "wind_dir": 80
+      },
+      "sailing": {
+        "twa": 125,
+        "andatura": "lasco",
+        "vela": true,
+        "boat_kn": 7.87,
+        "tws_est": 12.2,
+        "twd": 80
+      }
+    },
+    {
+      "date": "2026-07-12",
+      "rest": false,
+      "frm": "Isole Lavezzi",
+      "to": "Bonifacio",
+      "nm": 5.2,
+      "wx": {
+        "wmo": 2,
+        "tmax": 31.0,
+        "tmin": 24.6,
+        "rain_mm": 0.0,
+        "rain_prob": 5,
+        "wind_max": 9.7,
+        "gust_max": 19.4,
+        "wind_dir": 77
+      },
+      "sailing": {
+        "twa": 133,
+        "andatura": "lasco",
+        "vela": false,
+        "boat_kn": 7.5,
+        "tws_est": 7.8,
+        "twd": 77
+      }
+    },
+    {
+      "date": "2026-07-13",
+      "rest": false,
+      "frm": "Bonifacio",
+      "to": "Tizzano",
+      "nm": 16.7,
+      "wx": {
+        "wmo": 3,
+        "tmax": 35.7,
+        "tmin": 23.9,
+        "rain_mm": 0.0,
+        "rain_prob": 0,
+        "wind_max": 8.5,
+        "gust_max": 18.3,
+        "wind_dir": 159
+      },
+      "sailing": {
+        "twa": 144,
+        "andatura": "lasco",
+        "vela": false,
+        "boat_kn": 7.5,
+        "tws_est": 6.8,
+        "twd": 159
+      }
+    },
+    {
+      "date": "2026-07-14",
+      "rest": false,
+      "frm": "Tizzano",
+      "to": "Campomoro",
+      "nm": 5.9,
+      "wx": {
+        "wmo": 2,
+        "tmax": 36.4,
+        "tmin": 24.2,
+        "rain_mm": 0.0,
+        "rain_prob": 0,
+        "wind_max": 4.6,
+        "gust_max": 9.7,
+        "wind_dir": 108
+      },
+      "sailing": {
+        "twa": 126,
+        "andatura": "lasco",
+        "vela": false,
+        "boat_kn": 7.5,
+        "tws_est": 3.7,
+        "twd": 108
+      }
+    },
+    {
+      "date": "2026-07-15",
+      "rest": false,
+      "frm": "Campomoro",
+      "to": "Isolella",
+      "nm": 12.4,
+      "wx": {
+        "wmo": 2,
+        "tmax": 36.2,
+        "tmin": 26.8,
+        "rain_mm": 0.0,
+        "rain_prob": 0,
+        "wind_max": 5.7,
+        "gust_max": 12.4,
+        "wind_dir": 212
+      },
+      "sailing": {
+        "twa": 138,
+        "andatura": "lasco",
+        "vela": false,
+        "boat_kn": 7.5,
+        "tws_est": 4.6,
+        "twd": 212
+      }
+    }
+  ],
+  "crew": [
+    {
+      "name": "EC",
+      "role": "skipper"
+    },
+    {
+      "name": "GL",
+      "role": "crew"
+    },
+    {
+      "name": "BeB",
+      "role": "crew"
+    },
+    {
+      "name": "BiB",
+      "role": "crew"
+    },
+    {
+      "name": "GN",
+      "role": "crew"
+    },
+    {
+      "name": "MM",
+      "role": "crew"
+    }
+  ],
   "turns": {
-    "cambusa": null,
-    "cucina": null,
-    "tender": null
+    "cambusa": "BiB",
+    "cucina": "EC",
+    "tender": "MM"
   },
   "source": "Open-Meteo (ECMWF) — non ufficiale",
-  "official": "https://www.meteoam.it/it/mare"
+  "official": "https://www.meteoam.it/it/mare",
+  "now": {
+    "temp": 30.6,
+    "rh": 58,
+    "rain": 0.0,
+    "wmo": 0,
+    "tws": 11.6,
+    "twd": 111
+  }
 }
