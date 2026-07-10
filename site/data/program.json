@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T23:30+02:00",
+  "generated_at": "2026-07-10T23:58+02:00",
   "sim": true,
   "day": "2026-07-10",
   "start_date": "2026-07-10",
@@ -930,7 +930,10 @@
         42.72867,
         9.205
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Place_de_Saleccia_-_panoramio.jpg/500px-Place_de_Saleccia_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Place_de_Saleccia_-_panoramio.jpg"
+      }
     },
     {
       "id": "palombaggia",
@@ -1007,7 +1010,10 @@
         42.7225,
         9.2328
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_heaven_water_-_panoramio.jpg/500px-Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_heaven_water_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral_-_Plage_de_Loto_(Lotu)_-_heaven_water_-_panoramio.jpg"
+      }
     },
     {
       "id": "ficajola",
@@ -1097,7 +1103,10 @@
         41.617,
         9.3325
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Punta_di_a_Chiappa.jpg/500px-Punta_di_a_Chiappa.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Punta_di_a_Chiappa.jpg"
+      }
     },
     {
       "id": "san_ciprianu",
@@ -1110,7 +1119,10 @@
         41.6283,
         9.3533
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Tour_de_San_Ciprianu_-_Corsica.jpg/500px-Tour_de_San_Ciprianu_-_Corsica.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tour_de_San_Ciprianu_-_Corsica.jpg"
+      }
     },
     {
       "id": "cala_di_conca",
@@ -1123,7 +1135,10 @@
         41.5746,
         8.8036
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Tour_de_Senetosa.jpg/500px-Tour_de_Senetosa.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Senetosa.jpg"
+      }
     },
     {
       "id": "campomoro",
@@ -1152,7 +1167,10 @@
         42.1701,
         8.5895
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Aloe_maculata_Corsica.jpg/500px-Aloe_maculata_Corsica.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Aloe_maculata_Corsica.jpg"
+      }
     },
     {
       "id": "calvi_alga",
@@ -1165,7 +1183,10 @@
         42.5628,
         8.7277
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Calvi_Revellata_l%27aghja.jpg/500px-Calvi_Revellata_l%27aghja.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Calvi_Revellata_l%27aghja.jpg"
+      }
     },
     {
       "id": "centuri",
@@ -1239,7 +1260,10 @@
         41.5549,
         8.8161
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20100_Sart%C3%A8ne%2C_France_-_panoramio.jpg/500px-20100_Sart%C3%A8ne%2C_France_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:20100_Sart%C3%A8ne,_France_-_panoramio.jpg"
+      }
     },
     {
       "id": "san_fiorenzo",
@@ -1268,7 +1292,10 @@
         42.7236,
         9.118
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Alga_putrica_-_panoramio.jpg/500px-Alga_putrica_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Alga_putrica_-_panoramio.jpg"
+      }
     },
     {
       "id": "barcaggio",

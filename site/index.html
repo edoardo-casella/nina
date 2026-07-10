@@ -807,8 +807,12 @@ function render(b, wx, c, prog) {
   w.className = "when" + (a.stale ? " stale" : "");
   w.innerHTML = `${new Date(b.day + "T12:00").toLocaleDateString("it", { day: "numeric", month: "short" })}<br>${a.txt}`;
 
-  document.getElementById("captains").textContent =
-    b.captains?.length ? "Capitani · " + b.captains.join(" · ") : "";
+  // il primo skipper (Edoardo Casella) ha la sua pagina, linkata dal nome
+  document.getElementById("captains").innerHTML =
+    b.captains?.length ? "Capitani · " + b.captains.map(c =>
+      /edoardo casella/i.test(c)
+        ? `<a href="skipper.html" style="color:inherit;border-bottom:1px dotted currentColor;text-decoration:none">${esc(c)}</a>`
+        : esc(c)).join(" · ") : "";
 
   const state = b.approved
     ? `<div class="flag ok"><b>Piano approvato</b>Confermato da ${esc(b.approved_by)}.</div>`

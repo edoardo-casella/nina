@@ -14,6 +14,10 @@ data/*.xlsx
 data/*.xls
 data/*.local.*
 
+# Foto originali dello skipper (59 MB, RAW inclusi): nel repo vanno solo le
+# versioni web ridimensionate in site/skipper/img/
+data/Skipper Images/
+
 # OS
 .DS_Store
 Thumbs.db
