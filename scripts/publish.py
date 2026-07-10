@@ -321,6 +321,7 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "day": day, "boat": v["boat"]["name"], "voyage": v["name"],
         "captains": v.get("captains", []),
         "sim": bool(offset), "cruise_start": v["plan"][0]["date"] if v["plan"] else None,
+        "departure_at": v.get("departure_at"),
         "position": {"id": wp["id"], "name": wp["name"], "lat": wp["lat"], "lon": wp["lon"],
                      "live": bool(pos), "age_h": pos["age_h"] if pos else None},
         "rest": bool(plan and plan["rest"]),
