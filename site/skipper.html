@@ -6,120 +6,138 @@
 <title>Edoardo Casella — Skipper · Plancia Niña</title>
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
-<meta name="theme-color" content="#0B1320">
+<meta name="theme-color" content="#0A1424">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --land:#F7EDD2;
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
   --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F;
-  --magenta:#C2185B; --verde:#0A7A43; --giallo:#A86400;
+  --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
   --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
   --body:"IBM Plex Sans",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
 }
 @media (prefers-color-scheme: dark){:root{
-  --paper:#0A1424; --sea-1:#101E33; --sea-2:#1C3552; --land:#2C2410;
-  --ink:#DCE7F5; --soft:#7E95B0; --hair:#22384F; --accent:#35C4E7;
-  --magenta:#E8536F; --verde:#2FBF71; --giallo:#E8A33D;
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7;
+  --gold:#E5C158; --gold-2:#FBE7A8;
 }}
 *{box-sizing:border-box;margin:0}
-body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);
-  -webkit-font-smoothing:antialiased}
-.wrap{max-width:680px;margin:0 auto}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair)}
+.wrap{max-width:700px;margin:0 auto}
 .water{font-style:italic}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 a{color:var(--accent)}
+.flag{width:24px;height:16px;border-radius:2px;object-fit:cover;
+  box-shadow:0 0 0 1px rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.25);vertical-align:-2px}
 
-.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 86%, transparent);
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
-.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
-  text-decoration:none;color:var(--soft);display:inline-flex;align-items:center;gap:.3rem}
-.top .boat{font:700 .72rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 
-/* hero */
-.hero{position:relative;height:56vh;min-height:340px;max-height:560px;overflow:hidden;background:var(--sea-2)}
-.hero img{width:100%;height:100%;object-fit:cover;display:block}
+/* HERO / dossier */
+.hero{position:relative;min-height:420px;overflow:hidden;background:#0A1424}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .grad{position:absolute;inset:0;background:linear-gradient(to top,
-  rgba(4,10,20,.86) 0%, rgba(4,10,20,.30) 42%, rgba(4,10,20,.05) 70%)}
-.hero .cap{position:absolute;left:0;right:0;bottom:0;padding:1.4rem 1.2rem}
-.hero .cap .wrap{color:#fff}
-.eyebrow{font:700 .66rem/1 var(--display);letter-spacing:.22em;text-transform:uppercase;
-  color:#cfe3f2;margin-bottom:.5rem;display:flex;gap:.55rem;align-items:center}
-.hero h1{font:700 2.5rem/1.02 var(--display);letter-spacing:.01em;color:#fff}
-.hero .tag{margin-top:.5rem;font-size:1rem;color:#e6eef6;max-width:34rem}
+  rgba(4,9,18,.95) 6%, rgba(4,9,18,.55) 45%, rgba(4,9,18,.15) 100%)}
+.hero .cap{position:relative;padding:2.4rem 1.2rem 1.5rem;color:#fff}
+.rankline{display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem}
+.medal{width:58px;height:58px;flex:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.rankttl{font:700 .72rem/1.15 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2)}
+.rankttl b{display:block;font-size:1.05rem;letter-spacing:.14em;color:#fff;margin-top:.15rem}
+.stars{color:var(--gold-2);letter-spacing:.15em;font-size:.95rem;margin-top:.15rem}
+.hero h1{font:700 2.7rem/1 var(--display);letter-spacing:.01em;color:#fff;margin-top:.2rem}
+.hero .sub{margin-top:.5rem;font-size:1rem;color:#e6eef6}
+.ribbons{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
+.ribbons .flag{width:30px;height:20px}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:.1rem;
-  background:var(--hair);border-bottom:1px solid var(--hair)}
-.stat{background:var(--paper);padding:1rem .7rem;text-align:center}
-.stat b{display:block;font:700 1.7rem/1 var(--mono);font-variant-numeric:tabular-nums;color:var(--accent)}
-.stat i{display:block;font:700 .58rem/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;
-  color:var(--soft);font-style:normal;margin-top:.4rem}
+/* progress */
+.xp{padding:1.2rem 1.1rem;background:var(--panel);border-bottom:1px solid var(--hair)}
+.xp .row{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;font:700 .64rem/1.2 var(--display);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.5rem}
+.xp .row b{color:var(--gold);font-family:var(--mono);letter-spacing:0}
+.xp .row span:last-child{text-align:right}
+.bar{height:10px;background:var(--sea-2);border-radius:6px;overflow:hidden;border:1px solid var(--hair)}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-2));border-radius:6px;
+  transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.xp .nextcap{margin-top:.5rem;font:700 .6rem/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+/* SERVICE RECORD stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:1px;background:var(--hair);border-bottom:1px solid var(--hair)}
+.stat{background:var(--panel);padding:1.1rem .5rem;text-align:center}
+.stat b{display:block;font:700 1.75rem/1 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.stat i{display:block;font:700 .55rem/1.3 var(--display);letter-spacing:.13em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.45rem}
 
 section{padding:1.7rem 1.1rem}
-h2{font:700 .74rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--soft);
-  margin-bottom:1rem;display:flex;align-items:baseline;gap:.6rem;border-left:3px solid var(--accent);padding-left:.55rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin-bottom:1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
 h2::after{content:"";flex:1;height:1px;background:var(--hair)}
-.lead{font-size:1.06rem;line-height:1.7}
-.lead b{color:var(--ink)}
-.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
-.chip{font:600 .8rem/1 var(--body);padding:.42rem .7rem;border:1px solid var(--hair);border-radius:99px;
-  background:var(--sea-1);color:var(--soft)}
+.lead{font-size:1.05rem;line-height:1.7}.lead b{color:var(--ink)}
+
+/* TEATRI operativi */
+.theatres{display:grid;grid-template-columns:1fr;gap:.5rem}
+@media(min-width:560px){.theatres{grid-template-columns:1fr 1fr}}
+.th{display:flex;align-items:center;gap:.6rem;background:var(--panel);border:1px solid var(--hair);
+  border-left:3px solid var(--gold);border-radius:4px;padding:.6rem .7rem}
+.th .flag{width:34px;height:23px;flex:none}
+.th .n{flex:1;min-width:0}
+.th .n b{display:block;font-size:.92rem;font-weight:600}
+.th .n span{font:600 .62rem/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.th .mi{font:700 .95rem/1 var(--mono);color:var(--gold)}
+
+/* DECORAZIONI */
+.medals{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:.7rem}
+.dec{text-align:center}
+.dec .disc{width:60px;height:60px;margin:0 auto .4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:1.7rem;background:radial-gradient(circle at 50% 38%, #FBE7A8, #E5C158 55%, #9A741A);
+  box-shadow:0 2px 8px rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.35);color:#3a2c05}
+.dec b{display:block;font:700 .62rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.dec span{font-size:.66rem;color:var(--soft)}
 
 /* galleria */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
 @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
-.grid button{padding:0;border:0;background:var(--sea-2);border-radius:4px;overflow:hidden;
-  aspect-ratio:1;cursor:pointer;position:relative}
+.grid button{padding:0;border:0;background:var(--sea-2);border-radius:4px;overflow:hidden;aspect-ratio:1;cursor:pointer}
 .grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .grid button:hover img{transform:scale(1.06)}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:60;background:rgba(3,8,16,.94);display:none;
-  align-items:center;justify-content:center;flex-direction:column;touch-action:pan-y}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(3,8,16,.94);display:none;align-items:center;justify-content:center;touch-action:pan-y}
 .lb.on{display:flex}
-.lb img{max-width:96vw;max-height:82vh;object-fit:contain;border-radius:4px;
-  box-shadow:0 10px 60px rgba(0,0,0,.6)}
-.lb .x{position:absolute;top:.8rem;right:1rem;width:2.6rem;height:2.6rem;border:0;border-radius:50%;
-  background:rgba(255,255,255,.14);color:#fff;font-size:1.3rem;cursor:pointer}
-.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:3rem;height:3rem;border:0;
-  border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.5rem;cursor:pointer}
-.lb .prev{left:.6rem} .lb .next{right:.6rem}
+.lb img{max-width:96vw;max-height:82vh;object-fit:contain;border-radius:4px;box-shadow:0 10px 60px rgba(0,0,0,.6)}
+.lb .x{position:absolute;top:.8rem;right:1rem;width:2.6rem;height:2.6rem;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.3rem;cursor:pointer}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:3rem;height:3rem;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.5rem;cursor:pointer}
+.lb .prev{left:.6rem}.lb .next{right:.6rem}
 .lb .count{position:absolute;bottom:1.1rem;color:#cfe3f2;font:600 .8rem/1 var(--mono);letter-spacing:.1em}
 
 /* crociere */
-.year{margin-top:1.2rem}
-.year:first-child{margin-top:0}
-.year h3{font:700 1.3rem/1 var(--mono);color:var(--ink);margin-bottom:.5rem}
-.trip{display:flex;gap:.7rem;align-items:baseline;padding:.55rem 0;border-bottom:1px solid var(--hair)}
+.year{margin-top:1.2rem}.year:first-child{margin-top:0}
+.year h3{font:700 1.3rem/1 var(--mono);color:var(--gold);margin-bottom:.5rem}
+.trip{display:flex;gap:.7rem;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--hair)}
 .trip:last-child{border-bottom:0}
-.trip .fl{font-size:1.15rem;flex:none;width:1.5rem;text-align:center}
-.trip .pl{flex:1;min-width:0}
-.trip .pl b{font-weight:600}
+.trip .fl{flex:none;display:flex;gap:2px}
+.trip .pl{flex:1;min-width:0}.trip .pl b{font-weight:600}
 .trip .pl span{display:block;font-size:.8rem;color:var(--soft)}
-.trip .mi{flex:none;font:600 .95rem/1 var(--mono);color:var(--accent);text-align:right}
-.trip .mi em{display:block;font:400 .64rem/1.3 var(--display);color:var(--soft);font-style:normal;
-  letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+.trip .mi{flex:none;font:700 .95rem/1 var(--mono);color:var(--accent);text-align:right}
+.trip .mi em{display:block;font:400 .62rem/1.3 var(--display);color:var(--soft);font-style:normal;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
 
-/* instagram + footer */
-.ig{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:0 auto;
-  padding:.9rem 1.4rem;border-radius:99px;text-decoration:none;font:700 .95rem/1 var(--body);
-  color:#fff;background:linear-gradient(70deg,#f9ce34,#ee2a7b 45%,#6228d7);max-width:22rem}
-foot,footer{display:block;padding:2rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
-footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;
-  text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);
-  padding:.6rem 1rem;border-radius:99px}
-.err{margin:3rem 1.1rem;padding:1rem;background:var(--land);border-radius:4px}
+.ig{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:0 auto;padding:.9rem 1.4rem;border-radius:99px;
+  text-decoration:none;font:700 .95rem/1 var(--body);color:#fff;background:linear-gradient(70deg,#f9ce34,#ee2a7b 45%,#6228d7);max-width:22rem}
+footer{display:block;padding:2rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+.err{margin:3rem 1.1rem;padding:1rem;background:var(--sea-1);border-radius:4px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="top"><div class="wrap">
   <a class="back" href="index.html">‹ Plancia Niña</a>
-  <span class="boat">⛵ Skipper</span>
+  <span class="tag">Dossier · Skipper</span>
 </div></div>
 
 <main id="app"></main>
@@ -134,12 +152,47 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 
 <script>
 const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
-const FLAG = { Greece: "🇬🇷", Croazia: "🇭🇷", Spain: "🇪🇸", Italy: "🇮🇹", France: "🇫🇷",
-  Cuba: "🇨🇺", Seychelles: "🇸🇨", "Saint Vincent": "🇻🇨", Turkey: "🇹🇷" };
-const flagOf = c => (c || "").split(/[-&]/).map(x => FLAG[x.trim()]).filter(Boolean).join("") || "⚓";
+// codici ISO per le bandiere reali (SVG locali) — su Windows le emoji-bandiera
+// non si vedono, quindi usiamo immagini
+const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr",
+  Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", Turkey: "tr" };
+const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia",
+  France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", Turkey: "Turchia" };
 const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April: "aprile",
   May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre",
   October: "ottobre", November: "novembre", December: "dicembre" };
+const OCEAN = new Set(["Cuba", "Saint Vincent", "Seychelles"]);
+const CAT = ["Lagoon", "Bali", "Fountain Pajot", "Fountain-Pajot", "Bali "];
+
+const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
+const flag = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";
+const flags = country => parts(country).map(flag).join("");
+
+// scala gradi (stile US Navy): dalle miglia percorse
+const RANKS = [
+  { min: 0, name: "Mozzo", stars: 0 }, { min: 700, name: "Marinaio scelto", stars: 0 },
+  { min: 1600, name: "Nostromo", stars: 0 }, { min: 2600, name: "Guardiamarina", stars: 1 },
+  { min: 3600, name: "Sottotenente di Vascello", stars: 1 }, { min: 4600, name: "Tenente di Vascello", stars: 2 },
+  { min: 5600, name: "Capitano di Corvetta", stars: 2 }, { min: 6400, name: "Capitano di Fregata", stars: 3 },
+  { min: 7000, name: "Capitano di Vascello", stars: 3 }, { min: 7500, name: "Ammiraglio", stars: 4 },
+  { min: 10000, name: "Ammiraglio della Flotta", stars: 5 },
+];
+function rankOf(nm) {
+  let i = 0;
+  for (let k = 0; k < RANKS.length; k++) if (nm >= RANKS[k].min) i = k;
+  return { cur: RANKS[i], next: RANKS[i + 1] || null };
+}
+const medalSVG = `<svg class="medal" viewBox="0 0 100 100" aria-hidden="true">
+  <defs><radialGradient id="rg" cx=".5" cy=".38" r=".72">
+    <stop offset="0" stop-color="#FBE7A8"/><stop offset=".55" stop-color="#E5C158"/><stop offset="1" stop-color="#9A741A"/>
+  </radialGradient></defs>
+  <circle cx="50" cy="50" r="49" fill="url(#rg)"/>
+  <circle cx="50" cy="50" r="41" fill="#0A1424"/>
+  <circle cx="50" cy="50" r="41" fill="none" stroke="#FBE7A8" stroke-width="1.5"/>
+  <g fill="none" stroke="#F3D98B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="50" cy="26" r="6.5"/><line x1="50" y1="32" x2="50" y2="74"/>
+    <line x1="37" y1="43" x2="63" y2="43"/><path d="M29 59 Q31 76 50 78 Q69 76 71 59"/>
+  </g></svg>`;
 
 let GAL = [];
 
@@ -148,15 +201,43 @@ function lead(d) {
   return `Dal <b>${t.first_year}</b> ${d.name.split(" ")[0]} naviga ogni estate come skipper:
     <b>${t.trips} crociere</b> e oltre <b>${(Math.floor(t.nm / 100) * 100).toLocaleString("it")} miglia</b>
     in <b>${t.seasons} stagioni</b>, dai mari greci alle Baleari, dai Caraibi a Cuba, dalla Corsica
-    alle Seychelles. Ha condotto <b>${t.n_boats} barche diverse</b> — monoscafi e catamarani da 40 a 54 piedi —
-    tra Cicladi, Dodecaneso, Sporadi, Grenadine e l'arcipelago della Maddalena.`;
+    alle Seychelles. Al comando di <b>${t.n_boats} barche diverse</b> — monoscafi e catamarani da 40 a 54 piedi.`;
+}
+
+function theatres(d) {
+  const by = {};
+  d.trips.forEach(t => parts(t.country).forEach(c => {
+    if (!CC[c]) return;
+    (by[c] = by[c] || { n: 0, nm: 0 }).n++; by[c].nm += t.nm;
+  }));
+  const rows = Object.entries(by).sort((a, b) => b[1].n - a[1].n || b[1].nm - a[1].nm).map(([c, s]) =>
+    `<div class="th">${flag(c)}<div class="n"><b>${esc(IT_NAME[c] || c)}</b>
+      <span>${s.n} ${s.n === 1 ? "missione" : "missioni"}</span></div>
+      <div class="mi">${s.nm}<span style="font-size:.6rem"> nm</span></div></div>`).join("");
+  return `<section><h2>Teatri operativi · ${Object.keys(by).length} mari</h2><div class="theatres">${rows}</div></section>`;
+}
+
+function decorations(d) {
+  const t = d.totals;
+  const catTrips = d.trips.filter(x => CAT.some(b => (x.boat || "").startsWith(b.trim()))).length;
+  const oceanic = d.trips.some(x => parts(x.country).some(c => OCEAN.has(c)));
+  const meds = [
+    { on: t.nm >= 5000, icon: "🌊", ttl: "5.000 miglia", sub: `${t.nm.toLocaleString("it")} nm` },
+    { on: oceanic, icon: "🌍", ttl: "Acque oceaniche", sub: "Caraibi · Oceano Indiano" },
+    { on: t.seasons >= 10, icon: "🎖️", ttl: "Veterano", sub: `${t.seasons} stagioni` },
+    { on: t.n_boats >= 15, icon: "⚓", ttl: "Comando flotta", sub: `${t.n_boats} barche` },
+    { on: catTrips >= 5, icon: "🛶", ttl: "Catamarano", sub: `${catTrips} crociere` },
+    { on: t.trips >= 20, icon: "🔱", ttl: "Lupo di mare", sub: `${t.trips} crociere` },
+  ].filter(m => m.on);
+  const cells = meds.map(m => `<div class="dec"><div class="disc">${m.icon}</div>
+    <b>${m.ttl}</b><span>${m.sub}</span></div>`).join("");
+  return `<section><h2>Decorazioni · ${meds.length}</h2><div class="medals">${cells}</div></section>`;
 }
 
 function galleryHTML(d) {
   GAL = d.gallery || [];
   if (!GAL.length) return "";
-  const cells = GAL.map((src, i) =>
-    `<button onclick="lbOpen(${i})"><img loading="lazy" src="${src}" alt="Foto di viaggio ${i + 1}"></button>`).join("");
+  const cells = GAL.map((src, i) => `<button onclick="lbOpen(${i})"><img loading="lazy" src="${src}" alt="Foto ${i + 1}"></button>`).join("");
   return `<section><h2>In navigazione</h2><div class="grid">${cells}</div></section>`;
 }
 
@@ -165,44 +246,52 @@ function tripsHTML(d) {
   d.trips.slice().reverse().forEach(t => (byYear[t.year] = byYear[t.year] || []).push(t));
   const years = Object.keys(byYear).sort((a, b) => b - a).map(y => {
     const rows = byYear[y].map(t => `
-      <div class="trip">
-        <span class="fl">${flagOf(t.country)}</span>
+      <div class="trip"><span class="fl">${flags(t.country) || "⚓"}</span>
         <span class="pl"><b>${esc((t.zone || t.country || "").replace(/ ?-? ?(GR|CZ|SP)$/, ""))}</b>
           <span>${esc(t.boat || "")}${t.boat_name ? ` · <span class="water">${esc(t.boat_name)}</span>` : ""}${t.month ? ` · ${MONTHS[t.month] || t.month.toLowerCase()}` : ""}</span></span>
-        <span class="mi">${t.nm} nm<em>${t.days ? t.days + " gg" : ""}</em></span>
-      </div>`).join("");
+        <span class="mi">${t.nm} nm<em>${t.days ? t.days + " gg" : ""}</em></span></div>`).join("");
     return `<div class="year"><h3>${y}</h3>${rows}</div>`;
   }).join("");
-  return `<section><h2>Le crociere · ${d.totals.first_year}–${d.totals.last_year}</h2>${years}</section>`;
+  return `<section><h2>Registro di bordo · ${d.totals.first_year}–${d.totals.last_year}</h2>${years}</section>`;
 }
 
 function render(d) {
   const t = d.totals;
+  const { cur, next } = rankOf(t.nm);
+  const pct = next ? Math.max(4, Math.round((t.nm - cur.min) / (next.min - cur.min) * 100)) : 100;
   const hero = d.gallery[0] || "icon-512.png";
+  const allFlags = t.countries.filter(c => CC[c]).map(flag).join("");
   document.getElementById("app").innerHTML = `
   <div class="hero">
     <img src="${hero}" alt="Niña in navigazione">
     <div class="grad"></div>
-    <div class="cap"><div class="wrap">
-      <div class="eyebrow">⚓ Skipper · ${t.first_year}–${t.last_year}</div>
+    <div class="cap">
+      <div class="rankline">${medalSVG}
+        <div><div class="rankttl">Grado<b>${cur.name}</b></div>
+          <div class="stars">${"★".repeat(cur.stars) || "—"}${"☆".repeat(Math.max(0, 5 - cur.stars))}</div></div></div>
       <h1>${esc(d.name)}</h1>
-      <div class="tag">${t.trips} crociere, ${t.nm.toLocaleString("it")} miglia, ${t.n_countries} mari. Al timone della <span class="water">Niña</span>.</div>
-    </div></div>
+      <div class="sub">${t.trips} crociere · ${t.nm.toLocaleString("it")} miglia · ${t.n_countries} mari · al timone della <span class="water">Niña</span></div>
+      <div class="ribbons">${allFlags}</div>
+    </div>
+  </div>
+
+  <div class="xp">
+    <div class="row"><span>Avanzamento grado</span><span>${next ? `<b>${t.nm.toLocaleString("it")}</b> / ${next.min.toLocaleString("it")} nm` : "Grado massimo"}</span></div>
+    <div class="bar"><i style="width:${pct}%"></i></div>
+    ${next ? `<div class="nextcap">↑ prossimo grado · ${esc(next.name)}${next.stars > cur.stars ? ` · ${next.stars}★` : ""}</div>` : ""}
   </div>
 
   <div class="stats">
     <div class="stat"><b>${t.trips}</b><i>crociere</i></div>
-    <div class="stat"><b>${(t.nm / 1000).toFixed(1).replace(".", ",")}k</b><i>miglia</i></div>
+    <div class="stat"><b>${t.nm.toLocaleString("it")}</b><i>miglia</i></div>
     <div class="stat"><b>${t.seasons}</b><i>stagioni</i></div>
     <div class="stat"><b>${t.n_countries}</b><i>mari</i></div>
     <div class="stat"><b>${t.n_boats}</b><i>barche</i></div>
   </div>
 
-  <section><h2>Esperienza</h2>
-    <p class="lead">${lead(d)}</p>
-    <div class="chips">${t.countries.map(c => `<span class="chip">${flagOf(c)} ${esc(c)}</span>`).join("")}</div>
-  </section>
-
+  <section><h2>Rapporto di servizio</h2><p class="lead">${lead(d)}</p></section>
+  ${theatres(d)}
+  ${decorations(d)}
   ${galleryHTML(d)}
   ${tripsHTML(d)}
 
@@ -211,38 +300,26 @@ function render(d) {
     <a class="ig" href="${esc(d.instagram)}" target="_blank" rel="noopener">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-      @edoardocasella
-    </a>
+      @edoardocasella</a>
   </section>
 
-  <footer>
-    Le miglia e le crociere sono dal registro di bordo personale dello skipper.
-    <br><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a>
-  </footer>`;
+  <footer>Miglia e crociere dal registro di bordo personale dello skipper. I gradi sono una scala simbolica sulle miglia percorse.
+    <br><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
 }
 
-// lightbox
 let lbI = 0;
 function lbOpen(i) { lbI = i; lbShow(); document.getElementById("lb").classList.add("on"); }
 function lbClose() { document.getElementById("lb").classList.remove("on"); }
 function lbStep(d) { lbI = (lbI + d + GAL.length) % GAL.length; lbShow(); }
-function lbShow() {
-  document.getElementById("lb-img").src = GAL[lbI];
-  document.getElementById("lb-count").textContent = `${lbI + 1} / ${GAL.length}`;
-}
+function lbShow() { document.getElementById("lb-img").src = GAL[lbI]; document.getElementById("lb-count").textContent = `${lbI + 1} / ${GAL.length}`; }
 document.addEventListener("keydown", e => {
   if (!document.getElementById("lb").classList.contains("on")) return;
-  if (e.key === "Escape") lbClose();
-  if (e.key === "ArrowLeft") lbStep(-1);
-  if (e.key === "ArrowRight") lbStep(1);
+  if (e.key === "Escape") lbClose(); if (e.key === "ArrowLeft") lbStep(-1); if (e.key === "ArrowRight") lbStep(1);
 });
 let tx = 0;
 const lb = document.getElementById("lb");
 lb.addEventListener("touchstart", e => { tx = e.changedTouches[0].clientX; }, { passive: true });
-lb.addEventListener("touchend", e => {
-  const dx = e.changedTouches[0].clientX - tx;
-  if (Math.abs(dx) > 50) lbStep(dx < 0 ? 1 : -1);
-}, { passive: true });
+lb.addEventListener("touchend", e => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) lbStep(dx < 0 ? 1 : -1); }, { passive: true });
 lb.addEventListener("click", e => { if (e.target === lb) lbClose(); });
 
 (async () => {
@@ -251,9 +328,8 @@ lb.addEventListener("click", e => { if (e.target === lb) lbClose(); });
     if (!r.ok) throw new Error("skipper");
     render(await r.json());
   } catch (e) {
-    document.getElementById("app").innerHTML = `<div class="err">
-      <strong>Scheda skipper non disponibile.</strong> Riprova sotto copertura di rete.
-      <br><a href="index.html">‹ Torna alla Plancia</a></div>`;
+    document.getElementById("app").innerHTML = `<div class="err"><strong>Scheda skipper non disponibile.</strong>
+      Riprova sotto copertura di rete.<br><a href="index.html">‹ Torna alla Plancia</a></div>`;
   }
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 })();
