@@ -1,8 +1,11 @@
 # Contesto — crociera Corsica & La Maddalena 2026
 
 Barca: **Dufour 48 Catamaran "Niña"** (2023), base Cannigione.
-Periodo: 9 – 29 agosto 2026. Equipaggio 8-10 persone, due cambi (17 e 22 agosto).
-Ancoraggio ogni notte, nessun porto.
+Periodo: 8 – 29 agosto 2026. Equipaggio 6–11 persone, cambi il 15 e il 22 agosto.
+Notti in rada, salvo Cannigione (imbarco e cambi), Bonifacio, Bastia/San Fiorenzo.
+Equipaggio in `voyage.json` con INIZIALI (repo pubblico): nomi completi, quote
+charter e logistica voli solo in `data/Summer 26.xlsx` e
+`data/crew-legend.local.md`, entrambi gitignorati.
 
 ## Regole non negoziabili
 
@@ -33,7 +36,10 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 
 | File | Stato |
 |---|---|
-| `data/voyage.json` | **FITTIZIO** — equipaggio, costi e piano inventati |
+| `data/voyage.json` — crew e date | **REALI** (step 2, da Excel; iniziali). Diete: da raccogliere (default onnivoro). "Ga": identità/data da confermare |
+| `data/voyage.json` — conti | Charter €31.246 = autorità Excel, **fa fede il foglio Bonifici**; ledger.py gestisce solo le spese comuni (variable_budget da tarare) |
+| `data/voyage.json` — plan | **VUOTO** — si riempie allo step 3 dal foglio Percorso (2 scenari Corsica + giro corto) |
+| `data/voyage.json` — waypoints | **STIMATI** — coordinate approssimate, `verify: true` |
 | `data/polars/dufour48cat.pol` | **STIMATA** — non è la polare reale della barca |
 | `data/anchorages.json` | **STIMATO** — settori esposti a occhio, da portolano |
 | `RATES` in `provisioning.py` | da tarare sul gruppo |
@@ -70,7 +76,9 @@ Una cosa per volta, ogni passo confermato dallo skipper:
       Pages via Actions, dashboard https://edoardo-casella.github.io/nina/
       (pubblico perché il piano free non dà Pages sui privati: quando entreranno
       dati veri, valutare se togliere i conti dalla pagina)
-- [ ] 2. Equipaggio e conti: mappare l'Excel reale su `voyage.json`
+- [x] 2. Equipaggio e conti (2026-07-10): 17 persone da `Summer 26.xlsx`,
+      quadratura 181 persona-notte e occupazione giornaliera OK; charter fuori
+      ledger (autorità Bonifici). Restano: diete reali, conferma "Ga"
 - [ ] 3. Waypoint: import KML da My Maps con `--merge`, punti rivisti uno a uno
 - [ ] 4. Rade: verifica su portolano, togliere `verify: true` solo dopo
 - [ ] 5. Polare: file reale dal cantiere o dal log NMEA

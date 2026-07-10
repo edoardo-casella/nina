@@ -1,17 +1,7 @@
 {
-  "generated_at": "2026-07-10T10:49+02:00",
+  "generated_at": "2026-07-10T11:02+02:00",
   "waypoint": "Cannigione",
   "hours": [
-    {
-      "time": "2026-07-10T10:00",
-      "tws": 9.1,
-      "twd": 114,
-      "gust": 19.6,
-      "rain": 0.0,
-      "wave": 0.32,
-      "wave_dir": 128,
-      "wave_period": 2.45
-    },
     {
       "time": "2026-07-10T11:00",
       "tws": 10.8,
@@ -477,6 +467,16 @@
       "tws": 3.3,
       "twd": 83,
       "gust": 9.5,
+      "rain": 0.1,
+      "wave": 0.42,
+      "wave_dir": 127,
+      "wave_period": 4.4
+    },
+    {
+      "time": "2026-07-12T10:00",
+      "tws": 4.5,
+      "twd": 85,
+      "gust": 12.1,
       "rain": 0.1,
       "wave": 0.42,
       "wave_dir": 127,

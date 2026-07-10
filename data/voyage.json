@@ -1,7 +1,7 @@
 {
-  "_README": "DATI FITTIZI — sostituire crew, costi e waypoint con quelli reali. Le coordinate sono approssimate: verificare su carta nautica prima di navigare.",
+  "_README": "Crew e date REALI (step 2, 2026-07-10) con iniziali al posto dei nomi (repo pubblico; legenda in data/crew-legend.local.md, fuori repo). Charter gestito nell'Excel — fa fede il foglio Bonifici — e NON ripartito da ledger.py, che gestisce solo le spese comuni di bordo. Diete: da raccogliere, default onnivoro. Waypoint ancora approssimati (verify:true); plan vuoto fino allo step 3 (Percorso + KML).",
   "name": "Corsica & La Maddalena 2026",
-  "start_date": "2026-08-09",
+  "start_date": "2026-08-08",
   "end_date": "2026-08-29",
   "base": "Cannigione",
   "currency": "EUR",
@@ -18,110 +18,182 @@
     "max_tws_safe_kn": 28,
     "max_wave_comfort_m": 1.2,
     "min_tws_sailing_kn": 7,
-    "berths": 10
+    "berths": 11
   },
   "crew": [
     {
-      "id": "edo",
-      "name": "Edo",
-      "board": "2026-08-09",
+      "id": "ec",
+      "name": "EC",
+      "board": "2026-08-08",
       "leave": "2026-08-29",
       "role": "skipper",
-      "diet": "onnivoro"
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
     },
     {
-      "id": "c02",
-      "name": "Persona 2",
-      "board": "2026-08-09",
+      "id": "gl",
+      "name": "GL",
+      "board": "2026-08-08",
       "leave": "2026-08-29",
       "role": "crew",
-      "diet": "onnivoro"
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
     },
     {
-      "id": "c03",
-      "name": "Persona 3",
-      "board": "2026-08-09",
+      "id": "beb",
+      "name": "BeB",
+      "board": "2026-08-08",
+      "leave": "2026-08-21",
+      "role": "crew",
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
+    },
+    {
+      "id": "bib",
+      "name": "BiB",
+      "board": "2026-08-08",
+      "leave": "2026-08-21",
+      "role": "crew",
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
+    },
+    {
+      "id": "gn",
+      "name": "GN",
+      "board": "2026-08-08",
       "leave": "2026-08-17",
       "role": "crew",
-      "diet": "vegetariano"
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
     },
     {
-      "id": "c04",
-      "name": "Persona 4",
-      "board": "2026-08-09",
+      "id": "mm",
+      "name": "MM",
+      "board": "2026-08-08",
       "leave": "2026-08-17",
       "role": "crew",
-      "diet": "onnivoro"
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
     },
     {
-      "id": "c05",
-      "name": "Persona 5",
-      "board": "2026-08-09",
+      "id": "gin",
+      "name": "GiN",
+      "board": "2026-08-15",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "onnivoro",
+      "cabin": "Castello letto 2",
+      "weight": 0.7
+    },
+    {
+      "id": "fb",
+      "name": "FB",
+      "board": "2026-08-15",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "onnivoro",
+      "cabin": "Castello letto 1",
+      "weight": 0.8
+    },
+    {
+      "id": "man",
+      "name": "Man",
+      "board": "2026-08-15",
       "leave": "2026-08-22",
       "role": "crew",
-      "diet": "onnivoro"
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
     },
     {
-      "id": "c06",
-      "name": "Persona 6",
-      "board": "2026-08-17",
+      "id": "dav",
+      "name": "Dav",
+      "board": "2026-08-15",
+      "leave": "2026-08-22",
+      "role": "crew",
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
+    },
+    {
+      "id": "rb",
+      "name": "RB",
+      "board": "2026-08-21",
       "leave": "2026-08-29",
       "role": "crew",
-      "diet": "onnivoro"
+      "diet": "onnivoro",
+      "cabin": "Doppia bagno condiviso",
+      "weight": 1
     },
     {
-      "id": "c07",
-      "name": "Persona 7",
-      "board": "2026-08-17",
+      "id": "fn",
+      "name": "FN",
+      "board": "2026-08-21",
       "leave": "2026-08-29",
       "role": "crew",
-      "diet": "no glutine"
+      "diet": "onnivoro",
+      "cabin": "Doppia bagno condiviso",
+      "weight": 1
     },
     {
-      "id": "c08",
-      "name": "Persona 8",
+      "id": "im",
+      "name": "IM",
+      "board": "2026-08-21",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
+    },
+    {
+      "id": "mlp",
+      "name": "MLP",
+      "board": "2026-08-21",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
+    },
+    {
+      "id": "aa",
+      "name": "AA",
       "board": "2026-08-22",
       "leave": "2026-08-29",
       "role": "crew",
-      "diet": "onnivoro"
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
     },
     {
-      "id": "c09",
-      "name": "Persona 9",
+      "id": "sa",
+      "name": "SA",
       "board": "2026-08-22",
       "leave": "2026-08-29",
       "role": "crew",
-      "diet": "onnivoro"
+      "diet": "onnivoro",
+      "cabin": "Bagno privato",
+      "weight": 1
+    },
+    {
+      "id": "ga",
+      "name": "Ga",
+      "board": "2026-08-22",
+      "leave": "2026-08-29",
+      "role": "marinaio",
+      "diet": "onnivoro",
+      "cabin": "Skipper / Marinaio",
+      "weight": 0.7
     }
   ],
   "costs": {
-    "fixed": [
-      {
-        "label": "Charter Dufour 48",
-        "amount": 24000,
-        "split": "person_nights"
-      },
-      {
-        "label": "Pulizie finali",
-        "amount": 450,
-        "split": "person_nights"
-      },
-      {
-        "label": "Assicurazione cauzione",
-        "amount": 900,
-        "split": "person_nights"
-      },
-      {
-        "label": "Transit log",
-        "amount": 150,
-        "split": "person_nights"
-      },
-      {
-        "label": "SUP (2 tavole)",
-        "amount": 360,
-        "split": "equal"
-      }
-    ],
+    "fixed": [],
     "variable_budget": [
       {
         "label": "Cambusa",
@@ -141,16 +213,7 @@
       }
     ]
   },
-  "expenses": [
-    {
-      "date": "2026-08-09",
-      "label": "Spesa iniziale Conad Cannigione",
-      "amount": 480.0,
-      "paid_by": "edo",
-      "category": "cambusa",
-      "beneficiaries": "aboard"
-    }
-  ],
+  "expenses": [],
   "waypoints": [
     {
       "id": "cannigione",
@@ -257,128 +320,7 @@
       "verify": true
     }
   ],
-  "plan": [
-    {
-      "date": "2026-08-09",
-      "from": "cannigione",
-      "to": "cannigione",
-      "rest": true
-    },
-    {
-      "date": "2026-08-10",
-      "from": "cannigione",
-      "to": "spargi",
-      "rest": false
-    },
-    {
-      "date": "2026-08-11",
-      "from": "spargi",
-      "to": "budelli",
-      "rest": false
-    },
-    {
-      "date": "2026-08-12",
-      "from": "budelli",
-      "to": "lavezzi",
-      "rest": false
-    },
-    {
-      "date": "2026-08-13",
-      "from": "lavezzi",
-      "to": "bonifacio",
-      "rest": false
-    },
-    {
-      "date": "2026-08-14",
-      "from": "bonifacio",
-      "to": "rondinara",
-      "rest": false
-    },
-    {
-      "date": "2026-08-15",
-      "from": "rondinara",
-      "to": "porto_vecchio",
-      "rest": false
-    },
-    {
-      "date": "2026-08-16",
-      "from": "porto_vecchio",
-      "to": "porto_vecchio",
-      "rest": true
-    },
-    {
-      "date": "2026-08-17",
-      "from": "porto_vecchio",
-      "to": "bonifacio",
-      "rest": false
-    },
-    {
-      "date": "2026-08-18",
-      "from": "bonifacio",
-      "to": "lavezzi",
-      "rest": false
-    },
-    {
-      "date": "2026-08-19",
-      "from": "lavezzi",
-      "to": "santamaria",
-      "rest": false
-    },
-    {
-      "date": "2026-08-20",
-      "from": "santamaria",
-      "to": "spargi",
-      "rest": false
-    },
-    {
-      "date": "2026-08-21",
-      "from": "spargi",
-      "to": "coticcio",
-      "rest": false
-    },
-    {
-      "date": "2026-08-22",
-      "from": "coticcio",
-      "to": "cannigione",
-      "rest": false
-    },
-    {
-      "date": "2026-08-23",
-      "from": "cannigione",
-      "to": "mortorio",
-      "rest": false
-    },
-    {
-      "date": "2026-08-24",
-      "from": "mortorio",
-      "to": "coticcio",
-      "rest": false
-    },
-    {
-      "date": "2026-08-25",
-      "from": "coticcio",
-      "to": "santamaria",
-      "rest": false
-    },
-    {
-      "date": "2026-08-26",
-      "from": "santamaria",
-      "to": "budelli",
-      "rest": false
-    },
-    {
-      "date": "2026-08-27",
-      "from": "budelli",
-      "to": "spargi",
-      "rest": false
-    },
-    {
-      "date": "2026-08-28",
-      "from": "spargi",
-      "to": "cannigione",
-      "rest": false
-    }
-  ],
+  "plan": [],
   "logbook": [],
   "preferences": {
     "max_daily_nm": 30,
@@ -388,5 +330,23 @@
     "latest_anchor_time": "17:30",
     "earliest_departure": "08:00"
   },
-  "updated_at": null
+  "updated_at": null,
+  "charter": {
+    "_nota": "Autorita': Excel 'Summer 26.xlsx', foglio Bonifici (fuori repo). Non entra nelle quote di ledger.py.",
+    "totale_eur": 31246,
+    "settimane": [
+      {
+        "periodo": "2026-08-08 -> 2026-08-15",
+        "eur": 11373
+      },
+      {
+        "periodo": "2026-08-15 -> 2026-08-22",
+        "eur": 10373
+      },
+      {
+        "periodo": "2026-08-22 -> 2026-08-29",
+        "eur": 9500
+      }
+    ]
+  }
 }

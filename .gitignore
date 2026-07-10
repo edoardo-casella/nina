@@ -9,6 +9,11 @@ __pycache__/
 files.zip
 .claude/settings.local.json
 
+# Sorgenti con dati personali (nomi completi, IBAN, voli): MAI nel repo pubblico
+data/*.xlsx
+data/*.xls
+data/*.local.*
+
 # OS
 .DS_Store
 Thumbs.db
