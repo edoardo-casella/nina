@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T13:06+02:00",
+  "generated_at": "2026-07-10T13:11+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -273,42 +273,42 @@
   "polar_estimated": true,
   "crew": [
     {
-      "name": "EC",
+      "name": "Edo C",
       "role": "skipper",
       "board": "2026-08-08",
       "leave": "2026-08-29",
       "cabin": "Bagno privato"
     },
     {
-      "name": "GL",
+      "name": "Ginevra L",
       "role": "crew",
       "board": "2026-08-08",
       "leave": "2026-08-29",
       "cabin": "Bagno privato"
     },
     {
-      "name": "BeB",
+      "name": "Bernardo B",
       "role": "skipper",
       "board": "2026-08-08",
       "leave": "2026-08-21",
       "cabin": "Bagno privato"
     },
     {
-      "name": "BiB",
+      "name": "Bianca B",
       "role": "crew",
       "board": "2026-08-08",
       "leave": "2026-08-21",
       "cabin": "Bagno privato"
     },
     {
-      "name": "GN",
+      "name": "Giacomo N",
       "role": "crew",
       "board": "2026-08-08",
       "leave": "2026-08-17",
       "cabin": "Bagno privato"
     },
     {
-      "name": "MM",
+      "name": "Mati M",
       "role": "crew",
       "board": "2026-08-08",
       "leave": "2026-08-17",
@@ -316,12 +316,12 @@
     }
   ],
   "turns": {
-    "cucina_pranzo": "GL",
-    "cucina_cena": "BiB",
-    "pulizie_pranzo": "GN",
-    "pulizie_cena": "MM",
-    "check_mattina": "GL",
-    "check_pomeriggio": "BiB"
+    "cucina_pranzo": "Ginevra L",
+    "cucina_cena": "Bianca B",
+    "pulizie_pranzo": "Giacomo N",
+    "pulizie_cena": "Mati M",
+    "check_mattina": "Ginevra L",
+    "check_pomeriggio": "Bianca B"
   },
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",

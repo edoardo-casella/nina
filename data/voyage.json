@@ -25,7 +25,7 @@
   "crew": [
     {
       "id": "ec",
-      "name": "EC",
+      "name": "Edo C",
       "board": "2026-08-08",
       "leave": "2026-08-29",
       "role": "skipper",
@@ -35,7 +35,7 @@
     },
     {
       "id": "gl",
-      "name": "GL",
+      "name": "Ginevra L",
       "board": "2026-08-08",
       "leave": "2026-08-29",
       "role": "crew",
@@ -45,7 +45,7 @@
     },
     {
       "id": "beb",
-      "name": "BeB",
+      "name": "Bernardo B",
       "board": "2026-08-08",
       "leave": "2026-08-21",
       "role": "skipper",
@@ -55,7 +55,7 @@
     },
     {
       "id": "bib",
-      "name": "BiB",
+      "name": "Bianca B",
       "board": "2026-08-08",
       "leave": "2026-08-21",
       "role": "crew",
@@ -65,7 +65,7 @@
     },
     {
       "id": "gn",
-      "name": "GN",
+      "name": "Giacomo N",
       "board": "2026-08-08",
       "leave": "2026-08-17",
       "role": "crew",
@@ -75,7 +75,7 @@
     },
     {
       "id": "mm",
-      "name": "MM",
+      "name": "Mati M",
       "board": "2026-08-08",
       "leave": "2026-08-17",
       "role": "crew",
@@ -85,7 +85,7 @@
     },
     {
       "id": "gin",
-      "name": "GiN",
+      "name": "Giulia N",
       "board": "2026-08-15",
       "leave": "2026-08-29",
       "role": "crew",
@@ -95,7 +95,7 @@
     },
     {
       "id": "fb",
-      "name": "FB",
+      "name": "Fede B",
       "board": "2026-08-15",
       "leave": "2026-08-29",
       "role": "crew",
@@ -105,7 +105,7 @@
     },
     {
       "id": "man",
-      "name": "Man",
+      "name": "Manlio",
       "board": "2026-08-15",
       "leave": "2026-08-22",
       "role": "crew",
@@ -115,7 +115,7 @@
     },
     {
       "id": "dav",
-      "name": "Dav",
+      "name": "Davide",
       "board": "2026-08-15",
       "leave": "2026-08-22",
       "role": "crew",
@@ -125,7 +125,7 @@
     },
     {
       "id": "rb",
-      "name": "RB",
+      "name": "Riccardo B",
       "board": "2026-08-21",
       "leave": "2026-08-29",
       "role": "crew",
@@ -135,7 +135,7 @@
     },
     {
       "id": "fn",
-      "name": "FN",
+      "name": "Fede N",
       "board": "2026-08-21",
       "leave": "2026-08-29",
       "role": "crew",
@@ -145,7 +145,7 @@
     },
     {
       "id": "im",
-      "name": "IM",
+      "name": "Ilaria M",
       "board": "2026-08-21",
       "leave": "2026-08-29",
       "role": "crew",
@@ -155,7 +155,7 @@
     },
     {
       "id": "mlp",
-      "name": "MLP",
+      "name": "Lavinia P",
       "board": "2026-08-21",
       "leave": "2026-08-29",
       "role": "crew",
@@ -165,7 +165,7 @@
     },
     {
       "id": "aa",
-      "name": "AA",
+      "name": "Andrea A",
       "board": "2026-08-22",
       "leave": "2026-08-29",
       "role": "crew",
@@ -175,7 +175,7 @@
     },
     {
       "id": "sa",
-      "name": "SA",
+      "name": "Simona A",
       "board": "2026-08-22",
       "leave": "2026-08-29",
       "role": "crew",
@@ -185,7 +185,7 @@
     },
     {
       "id": "gm",
-      "name": "GM",
+      "name": "Gabri M",
       "board": "2026-08-22",
       "leave": "2026-08-29",
       "role": "marinaio",
