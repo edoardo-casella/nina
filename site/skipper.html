@@ -122,15 +122,22 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .trip:last-child{border-bottom:0}
 .trip .fl{flex:none;display:flex;gap:2px}
 .trip .pl{flex:1;min-width:0}.trip .pl b{font-weight:600}
-.trip .pl span{display:block;font-size:.8rem;color:var(--soft)}
+.trip .pl .bl{display:block;font-size:.8rem;color:var(--soft)}
 .trip .mi{flex:none;min-width:3.2rem;font:700 1.15rem/1 var(--mono);color:var(--accent);text-align:right}
 .trip .mi em{display:block;font:400 .58rem/1.3 var(--display);color:var(--soft);font-style:normal;letter-spacing:.08em;text-transform:uppercase;margin-top:.25rem}
+.bti{display:inline-flex;vertical-align:-3px}
+.bt{width:16px;height:16px;color:var(--gold);flex:none}
+.tags{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center;margin-top:.35rem}
 .pace{display:inline-block;font:700 .56rem/1 var(--display);letter-spacing:.11em;text-transform:uppercase;
-  padding:.26rem .5rem;border-radius:3px;margin-top:.35rem}
+  padding:.26rem .5rem;border-radius:3px}
 .pace.chill{background:color-mix(in srgb,var(--verde) 20%,transparent);color:var(--verde)}
 .pace.cruise{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
 .pace.push{background:color-mix(in srgb,var(--gold) 24%,transparent);color:var(--gold)}
 .pace.extreme{background:color-mix(in srgb,#e2536f 22%,transparent);color:#e2536f}
+.diff{display:inline-block;font:700 .56rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;
+  padding:.24rem .48rem;border-radius:3px;border:1px solid currentColor;cursor:help}
+.diff.beg{color:var(--verde)} .diff.int{color:var(--accent)} .diff.adv{color:var(--gold)} .diff.exp{color:var(--rosso)}
+.dec{cursor:help}
 .paceleg{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:1.2rem}
 .paceleg em{font-style:normal;font-size:.72rem;color:var(--soft);flex-basis:100%;margin-top:.2rem}
 
@@ -247,16 +254,24 @@ function decorations(d) {
   const catTrips = d.trips.filter(x => CAT.some(b => (x.boat || "").startsWith(b.trim()))).length;
   const oceanic = d.trips.some(x => parts(x.country).some(c => OCEAN.has(c)));
   const meds = [
-    { on: t.nm >= 5000, icon: "🌊", ttl: "5.000 miglia", sub: `${t.nm.toLocaleString("it")} nm` },
-    { on: oceanic, icon: "🌍", ttl: "Acque oceaniche", sub: "Caraibi · Oceano Indiano" },
-    { on: t.seasons >= 10, icon: "🎖️", ttl: "Veterano", sub: `${t.seasons} stagioni` },
-    { on: t.n_boats >= 15, icon: "⚓", ttl: "Comando flotta", sub: `${t.n_boats} barche` },
-    { on: catTrips >= 5, icon: "🛶", ttl: "Catamarano", sub: `${catTrips} crociere` },
-    { on: t.trips >= 20, icon: "🔱", ttl: "Lupo di mare", sub: `${t.trips} crociere` },
+    { on: t.nm >= 5000, icon: "🌊", ttl: "5.000 miglia", sub: `${t.nm.toLocaleString("it")} nm`,
+      why: `Oltre 5.000 miglia nautiche percorse in carriera (${t.nm.toLocaleString("it")} nm).` },
+    { on: oceanic, icon: "🌍", ttl: "Acque oceaniche", sub: "Caraibi · Oceano Indiano",
+      why: "Non solo Mediterraneo: navigazioni in Atlantico/Caraibi e Oceano Indiano." },
+    { on: t.seasons >= 10, icon: "🎖️", ttl: "Veterano", sub: `${t.seasons} stagioni`,
+      why: `Almeno 10 stagioni di navigazione alle spalle (${t.seasons}).` },
+    { on: t.n_boats >= 15, icon: "⚓", ttl: "Comando flotta", sub: `${t.n_boats} barche`,
+      why: `Ha comandato più di 15 barche diverse (${t.n_boats}), monoscafi e catamarani.` },
+    { on: catTrips >= 5, icon: "🛶", ttl: "Catamarano", sub: `${catTrips} crociere`,
+      why: `Almeno 5 crociere al timone di un catamarano (${catTrips}).` },
+    { on: t.trips >= 20, icon: "🔱", ttl: "Lupo di mare", sub: `${t.trips} crociere`,
+      why: `Più di 20 crociere completate (${t.trips}): un vero lupo di mare.` },
   ].filter(m => m.on);
-  const cells = meds.map(m => `<div class="dec"><div class="disc">${m.icon}</div>
+  const cells = meds.map(m => `<div class="dec" title="${esc(m.why)}"><div class="disc">${m.icon}</div>
     <b>${m.ttl}</b><span>${m.sub}</span></div>`).join("");
-  return `<section><h2>Decorazioni · ${meds.length}</h2><div class="medals">${cells}</div></section>`;
+  return `<section><h2>Decorazioni · ${meds.length}</h2>
+    <p class="dossier-note" style="margin-bottom:.9rem">Passa il mouse (o tocca) su una medaglia per il criterio.</p>
+    <div class="medals">${cells}</div></section>`;
 }
 
 function galleryHTML(d) {
@@ -275,6 +290,33 @@ function pace(a) {
   return { k: "extreme", t: "Estremo", d: "navigazione dura" };
 }
 
+// icona scafo: catamarano (2 scafi) vs monoscafo, dal modello di barca
+const ICON_MONO = `<svg class="bt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16l-2.3 4H6.3z"/><path d="M12 3.5v12.5"/><path d="M12 6l5.5 10H12"/></svg>`;
+const ICON_CAT = `<svg class="bt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16h6l-1.3 4H3.8z"/><path d="M15.5 16h6l-1.3 4h-3.4z"/><path d="M6 16h12"/><path d="M12 4v12"/><path d="M12 6l5 10H12"/></svg>`;
+const isCat = boat => CAT.some(b => (boat || "").startsWith(b.trim()));
+const boatIcon = boat => `<span class="bti" title="${isCat(boat) ? "catamarano" : "monoscafo"}">${isCat(boat) ? ICON_CAT : ICON_MONO}</span>`;
+
+// livello di esperienza richiesto per la zona (ricerca su vento/condizioni)
+const DIFF = [null,
+  { k: "beg", t: "Principiante" }, { k: "int", t: "Intermedio" },
+  { k: "adv", t: "Avanzato" }, { k: "exp", t: "Lupo di mare" }];
+function diffOf(zone, month) {
+  const z = (zone || "").toLowerCase(), hi = /jul|aug/i.test(month || ""), sep = /sep/i.test(month || "");
+  let lvl, why;
+  if (/cyclad/.test(z)) { lvl = hi ? 4 : 3; why = "Cicladi: in luglio-agosto soffia il Meltemi da nord, forza 5-7 con raffiche fino a 40 nodi e onda formata nei canali. Zona da veri esperti."; }
+  else if (/sardegn|corsica/.test(z)) { lvl = 4; why = "Bocche di Bonifacio: tra i tratti più ventosi del Mediterraneo occidentale — Maestrale 20-35 nodi, effetto Venturi e mare che cambia in fretta."; }
+  else if (/dodecan/.test(z)) { lvl = 3; why = "Dodecaneso: Meltemi presente ma più regolare; tratte lunghe, consigliato equipaggio esperto."; }
+  else if (/grenadin|carib|cuba/.test(z)) { lvl = 3; why = "Caraibi: alisei costanti 10-20 nodi da est, ma passaggi lunghi ed esposti tra le isole."; }
+  else if (/sporad/.test(z)) { lvl = 2; why = "Sporadi: Meltemi più debole (forza 3-4), ma i canali esposti a nord possono rinforzare."; }
+  else if (/balear/.test(z)) { lvl = 2; why = "Baleari: venti termici moderati e qualche Tramontana; condizioni generalmente gestibili."; }
+  else if (/inner island|seychell/.test(z)) { lvl = 2; why = "Seychelles: distanze brevi e venti prevedibili, ma pochi porti — si vive sull'ancora."; }
+  else if (/egadi|sicil/.test(z)) { lvl = sep ? 1 : 2; why = sep ? "Egadi a settembre: condizioni tranquille e calde, ottime per rilassarsi." : "Egadi/Sicilia in estate: venti moderati, qualche giornata di Scirocco o Maestrale."; }
+  else if (/ionian/.test(z)) { lvl = 1; why = "Ionio: la zona più calma della Grecia — Maistro leggero e mare piatto. Ideale per iniziare."; }
+  else if (/croaz/.test(z)) { lvl = 1; why = "Croazia: acque riparate, venti regolari e baie vicine. Perfetta per i principianti."; }
+  else { lvl = 2; why = "Condizioni mediterranee tipiche."; }
+  return { ...DIFF[lvl], why };
+}
+
 function tripsHTML(d) {
   const oavg = d.totals.days ? Math.round(d.totals.nm / d.totals.days) : null;
   const byYear = {};
@@ -282,19 +324,19 @@ function tripsHTML(d) {
   const years = Object.keys(byYear).sort((a, b) => b - a).map(y => {
     const rows = byYear[y].map(t => {
       const avg = t.days ? Math.round(t.nm / t.days) : null;
-      const p = pace(avg);
+      const p = pace(avg), df = diffOf(t.zone, t.month);
       return `
       <div class="trip"><span class="fl">${flags(t.country) || "⚓"}</span>
         <span class="pl"><b>${esc((t.zone || t.country || "").replace(/ ?-? ?(GR|CZ|SP)$/, ""))}</b>
-          <span>${esc(t.boat || "")}${t.boat_name ? ` · <span class="water">${esc(t.boat_name)}</span>` : ""} · ${t.nm} nm${t.days ? ` · ${t.days} gg` : ""}</span>
-          ${p ? `<span class="pace ${p.k}" title="${p.d}">${p.t}</span>` : ""}</span>
+          <span class="bl">${boatIcon(t.boat)} ${esc(t.boat || "")}${t.boat_name ? ` · <span class="water">${esc(t.boat_name)}</span>` : ""} · ${t.nm} nm${t.days ? ` · ${t.days} gg` : ""}</span>
+          <span class="tags">${p ? `<span class="pace ${p.k}" title="${p.d}">${p.t}</span>` : ""}<span class="diff ${df.k}" title="${esc(df.why)}">⚓ ${df.t}</span></span></span>
         <span class="mi">${avg ?? "—"}<em>nm/giorno</em></span></div>`;
     }).join("");
     return `<div class="year"><h3>${y}</h3>${rows}</div>`;
   }).join("");
   const legend = `<div class="paceleg">
     <span class="pace chill">Chilling</span><span class="pace cruise">Crociera</span><span class="pace push">Spinto</span><span class="pace extreme">Estremo</span>
-    <em>etichetta dal ritmo: miglia percorse ÷ giorni di navigazione</em></div>`;
+    <em>Ritmo = miglia ÷ giorni di navigazione. ⚓ = esperienza richiesta dalla zona (Principiante → Lupo di mare, dal vento tipico): passa sopra per il dettaglio.</em></div>`;
   return `<section><h2>Registro di bordo · media ${oavg} nm/giorno</h2>${legend}${years}</section>`;
 }
 
