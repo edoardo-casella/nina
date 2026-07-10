@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Niña — Dufour 48 Catamaran · Plancia Niña</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F;
+  --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43; --rosso:#C0392B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7;
+  --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71; --rosso:#E2536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair)}
+.wrap{max-width:700px;margin:0 auto}
+.water{font-style:italic}.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem;max-width:720px}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
+.hero{position:relative;min-height:400px;overflow:hidden;background:#0A1424}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .grad{position:absolute;inset:0;background:linear-gradient(to top,
+  rgba(4,9,18,.95) 6%, rgba(4,9,18,.5) 45%, rgba(4,9,18,.12) 100%)}
+.hero .cap{position:relative;padding:2.4rem 1.2rem 1.5rem;color:#fff}
+.eyebrow{font:700 .66rem/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:#cfe3f2;margin-bottom:.5rem}
+.hero h1{font:700 2.9rem/1 var(--display);letter-spacing:.02em;color:#fff}
+.hero .sub{margin-top:.5rem;font-size:1rem;color:#e6eef6}
+.slk{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;padding:.4rem .7rem;border-radius:99px;
+  background:rgba(53,196,231,.16);border:1px solid rgba(120,200,230,.5);color:#dff3fb;
+  font:700 .64rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:1px;background:var(--hair);border-bottom:1px solid var(--hair)}
+.stat{background:var(--panel);padding:1.1rem .5rem;text-align:center}
+.stat b{display:block;font:700 1.6rem/1 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.stat i{display:block;font:700 .55rem/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.45rem}
+
+section{padding:1.7rem 1.1rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin-bottom:1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.lead{font-size:1.05rem;line-height:1.7}.lead b{color:var(--ink)}
+
+.spectable{width:100%;border-collapse:collapse;font-size:.92rem}
+.spectable td{padding:.55rem 0;border-bottom:1px solid var(--hair)}
+.spectable td:first-child{color:var(--soft);font:700 .62rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;vertical-align:middle}
+.spectable td:last-child{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600}
+
+.speeds{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.spd{background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:4px;padding:.8rem .9rem}
+.spd b{display:block;font:700 1.5rem/1 var(--mono);color:var(--accent)}
+.spd.gold{border-left-color:var(--gold)} .spd.gold b{color:var(--gold)}
+.spd i{display:block;font:700 .58rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.35rem}
+.spd small{display:block;font-size:.72rem;color:var(--soft);margin-top:.25rem}
+
+.kit{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
+.k{display:flex;align-items:center;gap:.55rem;background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:.55rem .65rem;cursor:help}
+.k.key{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 8%,var(--panel))}
+.k .ic{font-size:1.15rem;flex:none}
+.k b{font-size:.85rem;font-weight:600}
+.k.key b{color:var(--gold)}
+
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:560px){.pc{grid-template-columns:1fr}}
+.pc .col{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:.9rem 1rem}
+.pc .col.pro{border-top:3px solid var(--verde)} .pc .col.con{border-top:3px solid var(--gold)}
+.pc h3{font:700 .62rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
+.pc .pro h3{color:var(--verde)} .pc .con h3{color:var(--gold)}
+.pc ul{margin:0 0 0 1.05rem;font-size:.9rem;line-height:1.5}.pc li{margin-bottom:.35rem}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
+.grid button{padding:0;border:0;background:var(--sea-2);border-radius:4px;overflow:hidden;aspect-ratio:1;cursor:pointer}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.grid button:hover img{transform:scale(1.06)}
+
+.rev{background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--gold);border-radius:4px;
+  padding:.85rem 1rem;margin-bottom:.7rem}
+.rev p{font-size:.96rem;line-height:1.55;font-style:italic}
+.rev cite{display:block;margin-top:.4rem;font:700 .6rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-style:normal}
+
+.note{background:var(--sea-1);border:1px dashed var(--hair);border-radius:4px;padding:.9rem 1rem;font-size:.9rem;color:var(--soft)}
+
+.lb{position:fixed;inset:0;z-index:60;background:rgba(3,8,16,.94);display:none;align-items:center;justify-content:center;touch-action:pan-y}
+.lb.on{display:flex}
+.lb img{max-width:96vw;max-height:82vh;object-fit:contain;border-radius:4px;box-shadow:0 10px 60px rgba(0,0,0,.6)}
+.lb .x{position:absolute;top:.8rem;right:1rem;width:2.6rem;height:2.6rem;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.3rem;cursor:pointer}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:3rem;height:3rem;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.5rem;cursor:pointer}
+.lb .prev{left:.6rem}.lb .next{right:.6rem}
+.lb .count{position:absolute;bottom:1.1rem;color:#cfe3f2;font:600 .8rem/1 var(--mono);letter-spacing:.1em}
+footer{display:block;padding:2rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia Niña</a>
+  <span class="tag">⛵ La Barca</span>
+</div></div>
+
+<main>
+  <div class="hero">
+    <img src="barca/img/barca-00.jpg" alt="Niña — Dufour 48 Catamaran">
+    <div class="grad"></div>
+    <div class="cap">
+      <div class="eyebrow">⛵ Dufour 48 Catamaran · 2022</div>
+      <h1 class="water">Niña</h1>
+      <div class="sub">14,70 m · 8 m di baglio · 6 cabine · fino a 10 ospiti · base a Cannigione</div>
+      <span class="slk">🛰️ Powered by Starlink</span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>14,7<span style="font-size:.8rem">m</span></b><i>lunghezza</i></div>
+    <div class="stat"><b>8,0<span style="font-size:.8rem">m</span></b><i>baglio</i></div>
+    <div class="stat"><b>6</b><i>cabine</i></div>
+    <div class="stat"><b>10</b><i>ospiti</i></div>
+    <div class="stat"><b>~15<span style="font-size:.8rem">t</span></b><i>dislocamento</i></div>
+  </div>
+
+  <section><h2>La barca</h2>
+    <p class="lead">Niña è un <b>Dufour 48 Catamaran del 2022</b>, il primo catamarano firmato dal
+    cantiere Dufour su disegno di <b>Umberto Felci</b>. Quasi quindici metri per otto di baglio,
+    <b>sei cabine e sei bagni</b>, pensata per la crociera lunga in comodità: flybridge con seconda
+    postazione di guida, grandi prendisole di prua e un pozzetto in teak che è un salotto sull'acqua.
+    Dotazioni da casa galleggiante — dissalatore, aria condizionata, generatore e <b>Starlink</b> —
+    per stare in rada giorni senza rientrare in porto. Base a Marina di Cannigione.</p>
+  </section>
+
+  <section><h2>Dotazioni</h2>
+    <div class="kit">
+      <div class="k key" title="Internet satellitare veloce anche al largo: videochiamate e streaming dalla rada."><span class="ic">🛰️</span><b>Starlink</b></div>
+      <div class="k key" title="Dissalatore: produce acqua dolce dal mare, autonomia in rada senza rientrare in porto."><span class="ic">🚰</span><b>Dissalatore</b></div>
+      <div class="k key" title="Lavastoviglie a bordo: meno turni di lavaggio, più tempo in acqua."><span class="ic">🍽️</span><b>Lavastoviglie</b></div>
+      <div class="k key" title="Tender con motore fuoribordo per sbarchi, spesa e giri in rada."><span class="ic">🚤</span><b>Tender + fuoribordo</b></div>
+      <div class="k" title="Aria condizionata in tutte le cabine."><span class="ic">❄️</span><b>Aria condizionata</b></div>
+      <div class="k" title="Riscaldamento a bordo."><span class="ic">🔥</span><b>Riscaldamento</b></div>
+      <div class="k" title="Generatore: corrente 220V anche all'ancora."><span class="ic">⚡</span><b>Generatore</b></div>
+      <div class="k" title="Pilota automatico."><span class="ic">🧭</span><b>Autopilota</b></div>
+      <div class="k" title="Plotter cartografico GPS, ripetitore esterno al timone."><span class="ic">📟</span><b>Plotter GPS</b></div>
+      <div class="k" title="Flybridge: seconda postazione di guida e prendisole in alto."><span class="ic">🛥️</span><b>Flybridge</b></div>
+      <div class="k" title="Cucina completa: forno, microonde, frigo, fornelli."><span class="ic">🍳</span><b>Cucina completa</b></div>
+      <div class="k" title="Impianto audio con altoparlanti anche in pozzetto."><span class="ic">🔊</span><b>Impianto audio</b></div>
+      <div class="k" title="Griglia per barbecue in pozzetto."><span class="ic">🍖</span><b>BBQ</b></div>
+      <div class="k" title="Bimini e tendalini per l'ombra."><span class="ic">⛱️</span><b>Bimini</b></div>
+    </div>
+  </section>
+
+  <section><h2>Velocità</h2>
+    <div class="speeds">
+      <div class="spd"><b>~9–10 <span style="font-size:.8rem">kn</span></b><i>massima a vela</i><small>test rivista: 9,4 kn in raffica al lasco, 7,5 kn di bolina con 15 kn</small></div>
+      <div class="spd gold"><b>7,2 <span style="font-size:.8rem">kn</span></b><i>motore da crociera</i><small>consumo ~6 L/h, autonomia lunga con 900 L di gasolio</small></div>
+      <div class="spd"><b>— <span style="font-size:.8rem">kn</span></b><i>motore a 2000 giri</i><small>da misurare a bordo</small></div>
+      <div class="spd"><b>— <span style="font-size:.8rem">kn</span></b><i>motore a 2400 giri</i><small>da misurare a bordo</small></div>
+    </div>
+  </section>
+
+  <section><h2>Specifiche tecniche</h2>
+    <table class="spectable">
+      <tr><td>Modello</td><td>Dufour 48 Catamaran</td></tr>
+      <tr><td>Progetto</td><td>Felci Yachts Design</td></tr>
+      <tr><td>Anno</td><td>2022</td></tr>
+      <tr><td>Lunghezza fuori tutto</td><td>14,70 m</td></tr>
+      <tr><td>Baglio (larghezza)</td><td>8,00 m</td></tr>
+      <tr><td>Pescaggio</td><td>1,35 m</td></tr>
+      <tr><td>Dislocamento</td><td>~14.955 kg</td></tr>
+      <tr><td>Motori</td><td>2 × 50 cv</td></tr>
+      <tr><td>Randa</td><td>76 m²</td></tr>
+      <tr><td>Superficie velica</td><td>124 m²</td></tr>
+      <tr><td>Serbatoio gasolio</td><td>900 L</td></tr>
+      <tr><td>Serbatoio acqua</td><td>700 L</td></tr>
+      <tr><td>Cabine · bagni</td><td>6 · 6</td></tr>
+      <tr><td>Posti letto</td><td>fino a 10–11</td></tr>
+    </table>
+    <p style="margin-top:.7rem;font-size:.78rem;color:var(--soft)">Dati dall'annuncio della barca e dalle schede tecniche del modello. Altezza dell'albero e velocità ai vari regimi: da confermare a bordo.</p>
+  </section>
+
+  <section><h2>Pregi e difetti</h2>
+    <div class="pc">
+      <div class="col pro"><h3>▲ Pregi</h3>
+        <ul>
+          <li>Spazi e comfort da casa galleggiante: 6 cabine, flybridge, pozzetto in teak.</li>
+          <li>Autonomia in rada: dissalatore, aria condizionata, generatore, Starlink.</li>
+          <li>Vela facile, stabile e sicura — ideale per gruppo/famiglia.</li>
+          <li>Ottima piattaforma per bagni, tuffi e vita all'aperto.</li>
+        </ul></div>
+      <div class="col con"><h3>▼ Difetti</h3>
+        <ul>
+          <li>È pesante (~15 t): con meno di 10 kn di vento è pigra, meglio il motore.</li>
+          <li>È grande (8 m di baglio): manovre attente nei porti stretti.</li>
+          <li>Barca importante: consumi, ormeggi e gestione da 48 piedi.</li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section><h2>Galleria</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section><h2>Planimetria</h2>
+    <p class="note">Il layout è la versione <b>6 cabine / 6 bagni</b>: quattro doppie, una con letto a castello e una singola, ciascuna con bagno privato e doccia. Lo schema disegnato lo aggiungiamo a breve (layout ufficiale Dufour 48 Catamaran).</p>
+  </section>
+
+  <section><h2>Dalle riviste</h2>
+    <div class="rev"><p>«Il primo catamarano di Umberto Felci, in rotta verso la dolce vita.»</p><cite>Multihulls World</cite></div>
+    <div class="rev"><p>Un livello di comfort e lusso «senza pari nella categoria», con un equilibrio riuscito tra prestazioni, design e vivibilità.</p><cite>Ionian Catamarans</cite></div>
+    <div class="rev"><p>Dufour conferma la sua reputazione di «pensiero innovativo e comfort eccezionale»: tutto ruota attorno alla vita all'aperto e a un flybridge enorme.</p><cite>boats.com</cite></div>
+    <p style="margin-top:.5rem;font-size:.78rem;color:var(--soft)">Provata in mare anche da <a href="https://www.giornaledellavela.com/2022/09/09/dufour-catamarans-48/?lang=en" target="_blank" rel="noopener">Giornale della Vela</a> e <a href="https://www.yachtingworld.com/reviews/boat-tests/dufour-48-review-how-does-this-latest-big-cruiser-perform-in-strong-winds" target="_blank" rel="noopener">Yachting World</a>.</p>
+  </section>
+
+  <footer>Dati e foto dall'annuncio della barca e dalle recensioni delle riviste di vela.
+    <br><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>
+</main>
+
+<div class="lb" id="lb">
+  <button class="x" onclick="lbClose()" aria-label="chiudi">✕</button>
+  <button class="nav prev" onclick="lbStep(-1)" aria-label="precedente">‹</button>
+  <img id="lb-img" alt="">
+  <button class="nav next" onclick="lbStep(1)" aria-label="successiva">›</button>
+  <div class="count" id="lb-count"></div>
+</div>
+
+<script>
+const GAL = Array.from({ length: 14 }, (_, i) => `barca/img/barca-${String(i).padStart(2, "0")}.jpg`);
+document.getElementById("grid").innerHTML = GAL.map((src, i) =>
+  `<button onclick="lbOpen(${i})"><img loading="lazy" src="${src}" alt="Niña foto ${i + 1}"></button>`).join("");
+let lbI = 0;
+function lbOpen(i) { lbI = i; lbShow(); document.getElementById("lb").classList.add("on"); }
+function lbClose() { document.getElementById("lb").classList.remove("on"); }
+function lbStep(d) { lbI = (lbI + d + GAL.length) % GAL.length; lbShow(); }
+function lbShow() { document.getElementById("lb-img").src = GAL[lbI]; document.getElementById("lb-count").textContent = `${lbI + 1} / ${GAL.length}`; }
+document.addEventListener("keydown", e => {
+  if (!document.getElementById("lb").classList.contains("on")) return;
+  if (e.key === "Escape") lbClose(); if (e.key === "ArrowLeft") lbStep(-1); if (e.key === "ArrowRight") lbStep(1);
+});
+let tx = 0;
+const lb = document.getElementById("lb");
+lb.addEventListener("touchstart", e => { tx = e.changedTouches[0].clientX; }, { passive: true });
+lb.addEventListener("touchend", e => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) lbStep(dx < 0 ? 1 : -1); }, { passive: true });
+lb.addEventListener("click", e => { if (e.target === lb) lbClose(); });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

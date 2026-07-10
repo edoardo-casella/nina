@@ -49,7 +49,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:10;
   border-bottom:2px solid var(--accent)}
 .hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem}
-.boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
+.boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--hdrtext);text-decoration:none;border-bottom:1px dotted currentColor}
 .cap{font:600 .6rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--hdrsub);margin-top:.22rem}
 .theme{font:700 .58rem/1 var(--display);letter-spacing:.1em;padding:.4rem .55rem;margin-left:.6rem;
   border:1px solid var(--hair);border-radius:3px;background:transparent;color:var(--hdrtext);cursor:pointer;flex:none}
@@ -269,7 +270,7 @@ footer strong{color:var(--ink)}
 </head>
 <body>
 <header><div class="hdr">
-  <div><span class="boat" id="boat">Niña</span><span class="live" id="live"></span>
+  <div><a class="boat" id="boat" href="barca.html" title="La barca — Dufour 48 Catamaran">Niña</a><span class="live" id="live"></span>
   <div class="cap" id="captains"></div>
   <div class="clock" id="clock"></div></div>
   <span class="when" id="when">carico…</span>
@@ -294,7 +295,8 @@ footer strong{color:var(--ink)}
 <footer>
   Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF), risoluzione d'onda ~5 km — sottocosta è indicativa.
   Il bollettino ufficiale è quello del <a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">mare dell'Aeronautica Militare</a>, e prevale sempre su questa pagina.<br><br>
-  <strong>Questa pagina non è uno strumento di sicurezza.</strong> Il Sail Score dice quanto sarà bella una navigazione, non se è prudente farla. Decide lo skipper.
+  <strong>Questa pagina non è uno strumento di sicurezza.</strong> Il Sail Score dice quanto sarà bella una navigazione, non se è prudente farla. Decide lo skipper.<br><br>
+  🛰️ <strong>Powered by Starlink</strong> — internet satellitare a bordo, anche al largo · <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a>
 </footer>
 
 <script>
