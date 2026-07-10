@@ -1,0 +1,2291 @@
+{
+  "generated_at": "2026-07-10T23:00+02:00",
+  "entries": {
+    "cannigione": {
+      "name": "Cannigione",
+      "type": "port",
+      "rating": 2.5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.1069,
+        9.4404
+      ],
+      "shelter": {
+        "holding": "fango, ottima",
+        "depth_m": [
+          3,
+          6
+        ],
+        "exposed_from": 150,
+        "exposed_to": 200
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/960px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(03).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Arzachena%2C_frazione_Cannigione%2C_panorama_%2801%29.jpg/960px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Arzachena%2C_frazione_Cannigione%2C_panorama_%2802%29.jpg/960px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(02).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Arzachena%2C_stagno_di_Cannigione_%2801%29.jpg/960px-Arzachena%2C_stagno_di_Cannigione_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_stagno_di_Cannigione_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Wv_Cannigione_banner.jpg/960px-Wv_Cannigione_banner.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Wv_Cannigione_banner.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Blick_nach_Norden_-_panoramio_-_zabuse.jpg/960px-Blick_nach_Norden_-_panoramio_-_zabuse.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Blick_nach_Norden_-_panoramio_-_zabuse.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Stagno di Cannigione",
+        "extract": "Lo stagno di Cannigione è una zona umida situata in prossimità della costa settentrionale della Sardegna. Appartiene amministrativamente al comune di Arzachena. Lo stagno, che ha un'estensione di circa 36 ettari, è alimentato dal rio di San Giovanni e, con il vicino stagno di Paduli Saloni, fa parte di un'area particolarmente interessante sotto l'aspetto faunistico. Sono state infatti censite 180 specie di uccelli, delle quali 77 nidificanti.",
+        "url": "https://it.wikipedia.org/wiki/Stagno_di_Cannigione"
+      }
+    },
+    "spargi": {
+      "name": "Cala Corsara (Spargi)",
+      "type": "anchorage",
+      "rating": 5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.2311,
+        9.3389
+      ],
+      "shelter": {
+        "holding": "sabbia, buona",
+        "depth_m": [
+          4,
+          10
+        ],
+        "exposed_from": 150,
+        "exposed_to": 250
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg/960px-La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena_-_Isola_di_Spargi_(11).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Spargi%2C_Sardinien%2C_Italy_-_panoramio.jpg/960px-Spargi%2C_Sardinien%2C_Italy_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Spargi,_Sardinien,_Italy_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Spargi_-_panoramio_%281%29.jpg/960px-Spargi_-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Spargi_-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Spargi_-_panoramio_%282%29.jpg/960px-Spargi_-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Spargi_-_panoramio_(2).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Spargi_-_panoramio_%283%29.jpg/960px-Spargi_-_panoramio_%283%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Spargi_-_panoramio_(3).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Spargi_Arcipelago_della_Maddalena_2.jpg/960px-Spargi_Arcipelago_della_Maddalena_2.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Spargi_Arcipelago_della_Maddalena_2.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Isola Spargi",
+        "extract": "Spargi è un'isola dell'arcipelago di La Maddalena nella Sardegna nord-orientale in provincia della Gallura Nord-Est Sardegna.",
+        "url": "https://it.wikipedia.org/wiki/Isola_Spargi"
+      }
+    },
+    "budelli": {
+      "name": "Cala Roto (Budelli)",
+      "type": "anchorage",
+      "rating": 5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.2789,
+        9.3556
+      ],
+      "shelter": {
+        "holding": "sabbia",
+        "depth_m": [
+          3,
+          8
+        ],
+        "exposed_from": 30,
+        "exposed_to": 130
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/960px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio.jpg/960px-Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Budelli,_la_spiaggia_del_Cavaliere._-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/La_spiaggia_rosa_di_Budelli_-_panoramio_%281%29.jpg/960px-La_spiaggia_rosa_di_Budelli_-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio_%281%29.jpg/960px-Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Budelli,_la_spiaggia_del_Cavaliere._-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio_%282%29.jpg/960px-Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Budelli,_la_spiaggia_del_Cavaliere._-_panoramio_(2).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Le_acque_di_Budelli._-_panoramio.jpg/960px-Le_acque_di_Budelli._-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Le_acque_di_Budelli._-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Isola Budelli",
+        "extract": "Budelli è un'isola appartenente all'arcipelago di La Maddalena, situata all'estremo nord della Sardegna presso le Bocche di Bonifacio. Fa parte, assieme alle altre isole, del Parco nazionale dell'Arcipelago di La Maddalena. L'isola, di proprietà privata da epoca precedente all'istituzione del parco nazionale fino al marzo del 2016, quando è stata assegnata al Parco Nazionale, è stata abitata fino al 2021 da una sola persona, il modenese Mauro Morandi (1939–2025).",
+        "url": "https://it.wikipedia.org/wiki/Isola_Budelli"
+      }
+    },
+    "santamaria": {
+      "name": "Cala Santa Maria",
+      "type": "anchorage",
+      "rating": 4.5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.295,
+        9.39
+      ],
+      "shelter": {
+        "holding": "sabbia, ottima",
+        "depth_m": [
+          3,
+          9
+        ],
+        "exposed_from": 140,
+        "exposed_to": 220
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/960px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Corcelli_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/La_Maddalena%2C_isola_Piana_%2801%29.jpg/960px-La_Maddalena%2C_isola_Piana_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_Piana_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sailing_in_Sardinia_%2C_Isola_Corcelli_-_panoramio.jpg/960px-Sailing_in_Sardinia_%2C_Isola_Corcelli_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sailing_in_Sardinia_,_Isola_Corcelli_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/ISS038-E-48093_-_View_of_Earth.jpg/960px-ISS038-E-48093_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS038-E-48093_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ISS060-E-59881_-_View_of_Earth.jpg/960px-ISS060-E-59881_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS060-E-59881_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/ISS024-E-15904_-_View_of_Italy.jpg/960px-ISS024-E-15904_-_View_of_Italy.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS024-E-15904_-_View_of_Italy.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Isola Santa Maria (Sardegna)",
+        "extract": "L'isola di Santa Maria è un'isola dell'arcipelago di La Maddalena all'estremo nord della Sardegna presso le Bocche di Bonifacio. Costituisce, assieme alle altre isole, il parco nazionale dell'Arcipelago di La Maddalena.",
+        "url": "https://it.wikipedia.org/wiki/Isola_Santa_Maria_(Sardegna)"
+      }
+    },
+    "lavezzi": {
+      "name": "Isole Lavezzi",
+      "type": "anchorage",
+      "rating": 5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.3392,
+        9.2544
+      ],
+      "shelter": {
+        "holding": "sabbia tra roccia",
+        "depth_m": [
+          3,
+          7
+        ],
+        "exposed_from": 260,
+        "exposed_to": 20
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/960px-Lavezzi.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/%C3%8Eles_Lavezzi.jpg/960px-%C3%8Eles_Lavezzi.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:%C3%8Eles_Lavezzi.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Cimeti%C3%A8re_de_la_S%C3%A9millante_sur_les_%C3%AEles_Lavezzi.jpg/960px-Cimeti%C3%A8re_de_la_S%C3%A9millante_sur_les_%C3%AEles_Lavezzi.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cimeti%C3%A8re_de_la_S%C3%A9millante_sur_les_%C3%AEles_Lavezzi.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Bonifacio_-_Isola_di_Lavezzi_%2801%29.JPG/960px-Bonifacio_-_Isola_di_Lavezzi_%2801%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Bonifacio_-_Isola_di_Lavezzi_(01).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bonifacio_-_Isola_di_Lavezzi_%2802%29.JPG/960px-Bonifacio_-_Isola_di_Lavezzi_%2802%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Bonifacio_-_Isola_di_Lavezzi_(02).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/ILES_LAVEZZI.JPG/960px-ILES_LAVEZZI.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:ILES_LAVEZZI.JPG"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Isole di Lavezzi",
+        "extract": "Lavezzi è un'isola posta al centro delle Bocche di Bonifacio e rappresenta (assieme al piccolo arcipelago di scogli che la circonda), il punto più meridionale della Francia metropolitana. È nota anche come i Lavezzi, oppure gli scogli di Lavezzi, se citata riferendosi anche al gruppo di scogli che la circondano.",
+        "url": "https://it.wikipedia.org/wiki/Isole_di_Lavezzi"
+      }
+    },
+    "bonifacio": {
+      "name": "Bonifacio",
+      "type": "port",
+      "rating": 5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.3872,
+        9.1592
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/960px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%281%29.JPG/960px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%281%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(1).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%282%29.JPG/960px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%282%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(2).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%284%29.JPG/960px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%284%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(4).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%285%29.JPG/960px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%285%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(5).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Corsina_bonifacio_-_panoramio.jpg/960px-Corsina_bonifacio_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsina_bonifacio_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Bonifacio (Francia)",
+        "extract": "Bonifacio (pronuncia francese: /bɔnifasjo/; in ligure bonifacino Bunifazziu; in corso Bunifaziu; in epoca romana Calcosalto) è un comune francese di oltre 3 000 abitanti, situato nella Corsica meridionale, sullo stretto delle Bocche di Bonifacio che la separa dalla Sardegna. Appartiene al dipartimento della Corsica del Sud ed è il comune più meridionale della Francia metropolitana, esclusi quindi i dipartimenti d'oltremare. Il paese è costruito attorno ad una profonda insenatura simile ad un piccolo fiordo circondato da pareti in calcare bianco, all'interno delle quali sono anche state scavate nel tempo vani di vecchie case e magazzini. All'interno dell'insenatura si trova il porto, principalmente turistico, dal quale salpano anche i traghetti che collegano regolarmente la città alla vicina Sardegna con Santa Teresa di Gallura (OT) da cui dista 12 km che vengono percorsi in un'ora di traghetto.",
+        "url": "https://it.wikipedia.org/wiki/Bonifacio_(Francia)"
+      }
+    },
+    "rondinara": {
+      "name": "Baie de Rondinara",
+      "type": "anchorage",
+      "rating": 5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.4767,
+        9.2775
+      ],
+      "shelter": {
+        "holding": "sabbia, ottima",
+        "depth_m": [
+          3,
+          8
+        ],
+        "exposed_from": 70,
+        "exposed_to": 140
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/960px-Rondinara_%E2%80%93_Bunker_06.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Rondinara_%E2%80%93_Bunker_09.jpg/960px-Rondinara_%E2%80%93_Bunker_09.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_09.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Rondinara_%E2%80%93_Bunker_08.jpg/960px-Rondinara_%E2%80%93_Bunker_08.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_08.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Rondinara_%E2%80%93_Bunker_07.jpg/960px-Rondinara_%E2%80%93_Bunker_07.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_07.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rondinara_Bay%2C_France_%2852723802346%29.jpg/960px-Rondinara_Bay%2C_France_%2852723802346%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Rondinara_Bay,_France_(52723802346).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Rondinara_Beach_and_Bay%2C_France_%2852724277938%29.jpg/960px-Rondinara_Beach_and_Bay%2C_France_%2852724277938%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Rondinara_Beach_and_Bay,_France_(52724277938).jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Baie de Rondinara",
+        "extract": "La baie de Rondinara ou baie de la Rondinara est une baie de la mer Méditerranée qui se situe en Corse-du-Sud en France. Elle se trouve à mi-chemin entre Bonifacio et Porto-Vecchio, près de l'étang de la Prisarella, et est notamment connue pour sa plage.",
+        "url": "https://fr.wikipedia.org/wiki/Baie_de_Rondinara"
+      }
+    },
+    "porto_vecchio": {
+      "name": "Golfe de Porto-Vecchio",
+      "type": "anchorage",
+      "rating": 3,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.58,
+        9.305
+      ],
+      "shelter": {
+        "holding": "fango/sabbia",
+        "depth_m": [
+          4,
+          12
+        ],
+        "exposed_from": 40,
+        "exposed_to": 110
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg/960px-Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Baie_de_Porto-Vecchio,_Corse_-_Patrick_Nouhailler_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Arrivee_du_Ferry_%2C_Porto-Vecchio%2C_corse_-_panoramio.jpg/960px-Arrivee_du_Ferry_%2C_Porto-Vecchio%2C_corse_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Arrivee_du_Ferry_,_Porto-Vecchio,_corse_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Sunrise_in_Porto-Vecchio%2C_France_%2852724212310%29.jpg/960px-Sunrise_in_Porto-Vecchio%2C_France_%2852724212310%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sunrise_in_Porto-Vecchio,_France_(52724212310).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/GiroPVC092024.jpg/960px-GiroPVC092024.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:GiroPVC092024.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/GiroAndreaPVC2.jpg/960px-GiroAndreaPVC2.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:GiroAndreaPVC2.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Mobeye-%C3%89t%C3%A9DesVilles-Porto-Vecchio-184.jpg/960px-Mobeye-%C3%89t%C3%A9DesVilles-Porto-Vecchio-184.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Mobeye-%C3%89t%C3%A9DesVilles-Porto-Vecchio-184.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Porto Vecchio",
+        "extract": "Porto Vecchio o Portovecchio (in francese Porto-Vecchio; in corso Portivechju; in epoca romana Portus Syracusanus) è un comune di 11 748 abitanti situato nel dipartimento della Corsica del Sud, nella regione francese della Corsica.",
+        "url": "https://it.wikipedia.org/wiki/Porto_Vecchio"
+      }
+    },
+    "sanguinaires": {
+      "name": "Iles Sanguinaires",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.885,
+        8.585
+      ],
+      "shelter": {
+        "holding": "sabbia/roccia",
+        "depth_m": [
+          5,
+          12
+        ],
+        "exposed_from": 200,
+        "exposed_to": 340
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/960px-Ajaccio%2C_France_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RIB_BOATS.jpg/960px-RIB_BOATS.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:RIB_BOATS.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Ajaccio_Sanguinaires_1.jpg/960px-Ajaccio_Sanguinaires_1.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ajaccio_Sanguinaires_1.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Corsica_Ajaccio_%C3%8Eles_Sanguinaires_Phare.jpg/960px-Corsica_Ajaccio_%C3%8Eles_Sanguinaires_Phare.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_Ajaccio_%C3%8Eles_Sanguinaires_Phare.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Corse-Du-Sud_Pointe_De_La_Parata_Vue_Iles_Sanguinaires_-_panoramio_%281%29.jpg/960px-Corse-Du-Sud_Pointe_De_La_Parata_Vue_Iles_Sanguinaires_-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corse-Du-Sud_Pointe_De_La_Parata_Vue_Iles_Sanguinaires_-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ajaccio_TG2_JPG.jpg/960px-Ajaccio_TG2_JPG.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ajaccio_TG2_JPG.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Archipel des Sanguinaires",
+        "extract": "L’archipel des Sanguinaires (en corse : Ìsuli Sanguinarii) se compose de quatre îlots de porphyre d'un rouge sombre à l'entrée du golfe d'Ajaccio. Ils se nomment Mezu Mare (ou Grande Sanguinaire), des Cormorans (ou Isolotto), Cala d'Alga (30 m) et Porri (31 m de haut). Il faut y ajouter le rocher nu U Sbiru, situé entre l'île de Porri et l'île des Cormorans et haut de 13 m. Le phare des îles Sanguinaires, succédant à un premier de 1844, date de 1870 ; il est bâti sur le point culminant de la Grande Sanguinaire, à 80 mètres au-dessus du niveau de la mer. Un sémaphore de 1865, désaffecté, se trouve plus au sud.",
+        "url": "https://fr.wikipedia.org/wiki/Archipel_des_Sanguinaires"
+      }
+    },
+    "ajaccio": {
+      "name": "Ajaccio",
+      "type": "port",
+      "rating": 2.5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.92,
+        8.74
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Queen_Victoria_in_Ajaccio_harbour_II.jpg/960px-Queen_Victoria_in_Ajaccio_harbour_II.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Queen_Victoria_in_Ajaccio_harbour_II.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Queen_Victoria_in_Ajaccio_harbour_III.jpg/960px-Queen_Victoria_in_Ajaccio_harbour_III.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Queen_Victoria_in_Ajaccio_harbour_III.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Queen_Victoria_in_Ajaccio_harbour_IV.jpg/960px-Queen_Victoria_in_Ajaccio_harbour_IV.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Queen_Victoria_in_Ajaccio_harbour_IV.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Ajaccio_harbour_-_panoramio_%282%29.jpg/960px-Ajaccio_harbour_-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ajaccio_harbour_-_panoramio_(2).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Korsika_-_Palais_des_Congr%C3%A8s_Exposition_d%27Ajaccio_-_panoramio.jpg/960px-Korsika_-_Palais_des_Congr%C3%A8s_Exposition_d%27Ajaccio_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Korsika_-_Palais_des_Congr%C3%A8s_Exposition_d%27Ajaccio_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Korsika_%E2%80%93_Palais_des_Congr%C3%A8s_Exposition_d%27Ajaccio_-_panoramio.jpg/960px-Korsika_%E2%80%93_Palais_des_Congr%C3%A8s_Exposition_d%27Ajaccio_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Korsika_%E2%80%93_Palais_des_Congr%C3%A8s_Exposition_d%27Ajaccio_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Ajaccio",
+        "extract": "Ajaccio o Aiaccio (in italiano AFI: /aˈjaʧʧo/; in francese Ajaccio, AFI: /aʒaˈksjo/ ; in corso Aiacciu, AFI: /aˈjaʧʧu/, in ajaccino Aghjacciu /aɟˈɟaʧʧu/) è un comune francese di oltre 71 000 abitanti, capoluogo della regione Corsica e del dipartimento della Corsica del Sud. La città è divenuta celebre soprattutto per aver dato i natali a Napoleone Bonaparte, nato qui nel 1769: la casa in cui il generale nacque è oggi un museo chiamato Museo Nazionale della Casa Bonaparte (o Maison Bonaparte in francese). All'imperatore francese è dedicato l'aeroporto di Ajaccio Napoleone Bonaparte.",
+        "url": "https://it.wikipedia.org/wiki/Ajaccio"
+      }
+    },
+    "bastia": {
+      "name": "Bastia",
+      "type": "port",
+      "rating": 2,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        42.7,
+        9.455
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bastia0.JPG/960px-Bastia0.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Bastia0.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Corsica_Bastia_Sardinia_Regina_open_bow_visor.jpg/960px-Corsica_Bastia_Sardinia_Regina_open_bow_visor.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_Bastia_Sardinia_Regina_open_bow_visor.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Bastia_Littoral.jpg/960px-Bastia_Littoral.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Bastia_Littoral.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Ancienne_Caserne_Marbeuf_-_Bastia_%28FR2B%29_-_2021-09-12_-_2.jpg/960px-Ancienne_Caserne_Marbeuf_-_Bastia_%28FR2B%29_-_2021-09-12_-_2.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ancienne_Caserne_Marbeuf_-_Bastia_(FR2B)_-_2021-09-12_-_2.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Ancienne_Caserne_Marbeuf_-_Bastia_%28FR2B%29_-_2021-09-12_-_3.jpg/960px-Ancienne_Caserne_Marbeuf_-_Bastia_%28FR2B%29_-_2021-09-12_-_3.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ancienne_Caserne_Marbeuf_-_Bastia_(FR2B)_-_2021-09-12_-_3.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Ancienne_Caserne_Marbeuf_-_Bastia_%28FR2B%29_-_2021-09-12_-_4.jpg/960px-Ancienne_Caserne_Marbeuf_-_Bastia_%28FR2B%29_-_2021-09-12_-_4.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ancienne_Caserne_Marbeuf_-_Bastia_(FR2B)_-_2021-09-12_-_4.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Bastia",
+        "extract": "Bastia (pronuncia italiana e corsa /baˈsti.a/, francese [baˈstja]) è una città francese di 45715 abitanti, prefettura del dipartimento dell'Alta Corsica nella regione della Corsica. Seconda città della Corsica per numero di abitanti, ne rappresenta il principale porto e il principale centro commerciale e industriale. Da Bastia sono normalmente visibili, da qualsiasi punto della città, le isole di Capraia, di Montecristo e d'Elba. Inoltre, quando il tempo è chiaro, si possono scorgere Pianosa e la penisola italiana (promontorio di Piombino).",
+        "url": "https://it.wikipedia.org/wiki/Bastia"
+      }
+    },
+    "coticcio": {
+      "name": "Cala Coticcio (Caprera)",
+      "type": "anchorage",
+      "rating": 5,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.2075,
+        9.465
+      ],
+      "shelter": {
+        "holding": "sabbia",
+        "depth_m": [
+          3,
+          8
+        ],
+        "exposed_from": 40,
+        "exposed_to": 140
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/960px-Museo_Garibaldino_di_Caprera_02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Museo_Garibaldino_di_Caprera_03.jpg/960px-Museo_Garibaldino_di_Caprera_03.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_03.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Museo_Garibaldino_di_Caprera_01.jpg/960px-Museo_Garibaldino_di_Caprera_01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_01.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Museo_Garibaldino_di_Caprera_04.jpg/960px-Museo_Garibaldino_di_Caprera_04.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_04.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Museo_Garibaldino_di_Caprera_06.jpg/960px-Museo_Garibaldino_di_Caprera_06.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_06.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Museo_Garibaldino_di_Caprera_05.jpg/960px-Museo_Garibaldino_di_Caprera_05.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_05.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Caprera",
+        "extract": "Caprera è un'isola italiana dell'arcipelago di La Maddalena, al largo della costa nord-orientale della Sardegna. Il suo territorio appartiene amministrativamente al comune di La Maddalena ed è interamente ricompreso nel Parco Nazionale dell'Arcipelago di La Maddalena, area protetta di interesse nazionale e comunitario. In particolare la zona marina di fronte all'area di Punta Rossa, estrema propaggine a sud dell'isola, è un'area a massima tutela ambientale, con cala Andreani e la spiaggia del Relitto. La dorsale orientale dell'isola è zona terrestre a protezione integrale, mentre l'area marina antistante Punta Coticcio, compresa Cala Coticcio, è protetta con provvedimenti dell'ente gestore del parco nazionale. Dal punto di vista biologico-naturalistico, significativa è la presenza di numerosi endemismi in tutta l'isola. L'isola conta meno di 100 abitanti, per la maggior parte residenti nel borgo di Stagnali. Ha un peso rilevante nella cultura italiana in quanto ultima dimora di Giuseppe Garibaldi e luogo che custodisce le sue spoglie; la casa un tempo abitata dal condottiero risorgimentale è oggi un museo a lui intitolato, di proprietà del ministero della cultura. […]",
+        "url": "https://it.wikipedia.org/wiki/Caprera"
+      }
+    },
+    "mortorio": {
+      "name": "Isola Mortorio",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": null,
+      "coords": [
+        41.0783,
+        9.575
+      ],
+      "shelter": {
+        "holding": "sabbia",
+        "depth_m": [
+          4,
+          10
+        ],
+        "exposed_from": 180,
+        "exposed_to": 280
+      },
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/960px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sardinia2008-02-29_%2825%29.JPG/960px-Sardinia2008-02-29_%2825%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Sardinia2008-02-29_(25).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Sardinia2008-02-29_%2828%29.JPG/960px-Sardinia2008-02-29_%2828%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Sardinia2008-02-29_(28).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Sardinia2008-02-29_%2834%29.JPG/960px-Sardinia2008-02-29_%2834%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Sardinia2008-02-29_(34).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/2008-02-29_%2821%29_Italy%2C_Sardinia.JPG/960px-2008-02-29_%2821%29_Italy%2C_Sardinia.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:2008-02-29_(21)_Italy,_Sardinia.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/La_Maddalena%2C_isola_di_Soffi_%2802%29.jpg/960px-La_Maddalena%2C_isola_di_Soffi_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Soffi_(02).jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Isola di Mortorio",
+        "extract": "L'isola di Mortorio è un'isola sita a nord-est della Sardegna facente parte dell'arcipelago di La Maddalena. Di formazione granitica e dalle coste assai frastagliate si estende per una superficie di circa 0,60 km² e di aspetto montuoso raggiunge la quota massima di 77 metri s.l.m. Pur essendo situata a poche miglia dalla Costa Smeralda, l’isola fa parte del comune di La Maddalena e del parco nazionale dell'Arcipelago omonimo.",
+        "url": "https://it.wikipedia.org/wiki/Isola_di_Mortorio"
+      }
+    },
+    "corsica_isola_piana": {
+      "name": "Corsica- Isola Piana",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": "",
+      "coords": [
+        41.37452,
+        9.22525
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg/960px-Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Golf_de_Sperone,_trou_n%C2%B0_16.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Sperone_%28l%27%C3%A9peron%29.jpg/960px-Sperone_%28l%27%C3%A9peron%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sperone_(l%27%C3%A9peron).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Ruines_romaines_de_Piantarella.jpg/960px-Ruines_romaines_de_Piantarella.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ruines_romaines_de_Piantarella.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/HABITATION_ILE_CAVALLO.JPG/960px-HABITATION_ILE_CAVALLO.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:HABITATION_ILE_CAVALLO.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Cala_di_greco_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cala_di_greco_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Arrivo_a_cavallo_-_panoramio.jpg/960px-Arrivo_a_cavallo_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Arrivo_a_cavallo_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Isola Piana (Corsica)",
+        "extract": "L'isola Piana è un'isola disabitata parte del comune di Bonifacio e della Riserva naturale delle Isole di Lavezzi.",
+        "url": "https://it.wikipedia.org/wiki/Isola_Piana_(Corsica)"
+      }
+    },
+    "cr_roccapina_nord": {
+      "name": "CR - Roccapina Nord",
+      "type": "anchorage",
+      "rating": 4.5,
+      "verify": true,
+      "notes": "",
+      "coords": [
+        41.50003,
+        8.91714
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Tour_de_Roccapina.jpg/960px-Tour_de_Roccapina.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Roccapina.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Corse_Roccapina_tour_genoise.jpg/960px-Corse_Roccapina_tour_genoise.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corse_Roccapina_tour_genoise.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cala_di_Roccapina.jpg/960px-Cala_di_Roccapina.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cala_di_Roccapina.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/ROCCAPINA_02.JPG/960px-ROCCAPINA_02.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:ROCCAPINA_02.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/ROCCAPINA_01.JPG/960px-ROCCAPINA_01.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:ROCCAPINA_01.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Corsica_-_Roccapina_-_Rocher_du_Lion_-_panoramio.jpg/960px-Corsica_-_Roccapina_-_Rocher_du_Lion_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_-_Roccapina_-_Rocher_du_Lion_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Roccapina",
+        "extract": "Roccapina est un cap situé au sud de la façade littorale occidentale de la Corse.",
+        "url": "https://fr.wikipedia.org/wiki/Roccapina"
+      }
+    },
+    "cala_portese": {
+      "name": "Cala Portese",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": "Fondo sabbia bianca, ben ridossata; campo boe estivo del Parco La Maddalena (ancoraggio consentito fuori boe), molto affollata in agosto [coord. da verificare]",
+      "coords": [
+        41.1831,
+        9.4633
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/960px-Caprera%2C_trasparenze_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Caprera_-_panoramio.jpg/960px-Caprera_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Caprera_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Caprera%2C_panorama_verso_la_Sardegna._-_panoramio.jpg/960px-Caprera%2C_panorama_verso_la_Sardegna._-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Caprera,_panorama_verso_la_Sardegna._-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/La_Maddalena%2C_isola_del_Porco_%2801%29.jpg/960px-La_Maddalena%2C_isola_del_Porco_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_del_Porco_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/La_Maddalena%2C_isola_del_Porco_%2802%29.jpg/960px-La_Maddalena%2C_isola_del_Porco_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_del_Porco_(02).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/La_Maddalena-Caprera%2C_spiaggia_del_Relitto_%2809%29.jpg/960px-La_Maddalena-Caprera%2C_spiaggia_del_Relitto_%2809%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena-Caprera,_spiaggia_del_Relitto_(09).jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "porto_palma": {
+      "name": "Porto Palma",
+      "type": "anchorage",
+      "rating": 3,
+      "verify": true,
+      "notes": "Ridossata da tutto tranne S; miglior tenuta lato E in 5-9 m sabbia (chiazze posidonia/fango); boe estive; base velica CVC con regate mag-ott",
+      "coords": [
+        41.1892,
+        9.4505
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Porto_Palma_-_panoramio.jpg/960px-Porto_Palma_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Porto_Palma_-_panoramio_%282%29.jpg/960px-Porto_Palma_-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio_(2).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Porto_Palma_-_panoramio_%283%29.jpg/960px-Porto_Palma_-_panoramio_%283%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio_(3).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Porto_Palma_-_panoramio_%284%29.jpg/960px-Porto_Palma_-_panoramio_%284%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio_(4).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Porto_Palma_-_panoramio_%285%29.jpg/960px-Porto_Palma_-_panoramio_%285%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio_(5).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Porto_Palma_-_panoramio_%286%29.jpg/960px-Porto_Palma_-_panoramio_%286%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio_(6).jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "santa_manza": {
+      "name": "Santa Manza",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Sabbia buona tenuta ~6 m, ottimo riparo da W/mistral ma aperto a NE; ZMEL Bonifacio Marina 15 boe (obbligatorie per unita >24 m); zona kite/windsurf",
+      "coords": [
+        41.4087,
+        9.2203
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gobius_incognitus.jpg/960px-Gobius_incognitus.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Gobius_incognitus.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tour_de_Sant%27Amanza.jpg/960px-Tour_de_Sant%27Amanza.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Sant%27Amanza.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Corse_%28130313871%29.jpeg/960px-Corse_%28130313871%29.jpeg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corse_(130313871).jpeg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/ISS056-E-170089_-_View_of_Earth.jpg/960px-ISS056-E-170089_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS056-E-170089_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/ISS056-E-170088_-_View_of_Earth.jpg/960px-ISS056-E-170088_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS056-E-170088_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Ancienne_voie_pav%C3%A9e_proche_du_couvent_Saint_Julien.jpg/960px-Ancienne_voie_pav%C3%A9e_proche_du_couvent_Saint_Julien.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ancienne_voie_pav%C3%A9e_proche_du_couvent_Saint_Julien.jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "marmorata": {
+      "name": "Marmorata",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Sabbia e posidonia, ancorare sulle chiazze chiare in 5-6 m; ridosso da maestrale subito a S dell'isolotto maggiore; passaggio isolotti-costa con fondale ~1 m, non tentare",
+      "coords": [
+        41.25,
+        9.238
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Punta_Marmorata_-_panoramio.jpg/960px-Punta_Marmorata_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Punta_Marmorata_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2808%29.JPG/960px-Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2808%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_(08).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2809%29.JPG/960px-Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2809%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_(09).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2810%29.JPG/960px-Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2810%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_(10).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2811%29.JPG/960px-Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2811%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_(11).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2813%29.JPG/960px-Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_%2813%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Santa_Teresa_Gallura_-_Ex_stazione_semaforica_di_punta_Falcone_(13).JPG"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Isole della Marmorata",
+        "extract": "Le isole de La Marmorata (in gallurese Isuli di la Marmorata, in corso Isuli di a Marmurata, in sardo Isulas de sa Marmorata) sono un gruppo di isolotti del mar Tirreno situati nell'omonima località, nella Sardegna settentrionale. Appartengono amministrativamente al comune di Santa Teresa Gallura e si trovano di fronte alla bellissima spiaggia de La Marmorata dalla quale, oltre alle omonime isolette, si vede sullo sfondo la Corsica.",
+        "url": "https://it.wikipedia.org/wiki/Isole_della_Marmorata"
+      }
+    },
+    "porto_madonna": {
+      "name": "Porto Madonna",
+      "type": "mooring",
+      "rating": 5,
+      "verify": true,
+      "notes": "Ormeggio SOLO su boe del Parco (a pagamento, poche rispetto alla domanda, ~7 m sabbia/posidonia); zona piscine naturali interdetta a navigazione/ancoraggio, accesso solo a remi/nuoto; permesso Parco o [coord. da verifica",
+      "coords": [
+        41.288,
+        9.357
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg/960px-Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sailing_in_Sardinia_,_Isolotti_Paduleddi_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/960px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio.jpg/960px-Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Budelli,_la_spiaggia_del_Cavaliere._-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/La_spiaggia_rosa_di_Budelli_-_panoramio_%281%29.jpg/960px-La_spiaggia_rosa_di_Budelli_-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio_%281%29.jpg/960px-Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Budelli,_la_spiaggia_del_Cavaliere._-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio_%282%29.jpg/960px-Budelli%2C_la_spiaggia_del_Cavaliere._-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Budelli,_la_spiaggia_del_Cavaliere._-_panoramio_(2).jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "santa_giulia": {
+      "name": "Santa Giulia",
+      "type": "mooring",
+      "rating": 4.5,
+      "verify": true,
+      "notes": "ZMEL organizzata: 30 boe visitatori per taglia (3xx <9m, 2xx 9-15m, 1xx 15-20m), seguire i marker a 300 m dalla riva sud; baia sabbiosa poco profonda, aperta a E",
+      "coords": [
+        41.524,
+        9.2783
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Plage_de_Sta-Giulia_%288132718542%29.jpg/960px-Plage_de_Sta-Giulia_%288132718542%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Plage_de_Sta-Giulia_(8132718542).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Plage_de_Sta-Giulia_%288132717568%29.jpg/960px-Plage_de_Sta-Giulia_%288132717568%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Plage_de_Sta-Giulia_(8132717568).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Etang_et_golfe_de_Santa_Giulia.jpg/960px-Etang_et_golfe_de_Santa_Giulia.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Etang_et_golfe_de_Santa_Giulia.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Etang_de_Santa_Giulia_02.JPG/960px-Etang_de_Santa_Giulia_02.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Etang_de_Santa_Giulia_02.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Etang_de_Santa_Giulia_01.JPG/960px-Etang_de_Santa_Giulia_01.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Etang_de_Santa_Giulia_01.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Porto-Vecchio_blockhaus_de_Santa_Giulia.jpg/960px-Porto-Vecchio_blockhaus_de_Santa_Giulia.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto-Vecchio_blockhaus_de_Santa_Giulia.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Golfo di Santa Giulia",
+        "extract": "Il golfo di Santa Giulia (in corso golfu di Santa Ghjulia) è un golfo del mar Tirreno situato lungo la costa sudorientale della Corsica.",
+        "url": "https://it.wikipedia.org/wiki/Golfo_di_Santa_Giulia"
+      }
+    },
+    "cala_rossa": {
+      "name": "Cala Rossa",
+      "type": "mooring",
+      "rating": 4,
+      "verify": true,
+      "notes": "Cala quasi interamente occupata dal campo boe ANCRE (boe visitatori prenotabili online); fuori boe ancorare su sabbia 4-8 m; buon ridosso da N/NW, aperta a S [coord. da verificare]",
+      "coords": [
+        41.617,
+        9.3325
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Punta_di_a_Chiappa.jpg/960px-Punta_di_a_Chiappa.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Punta_di_a_Chiappa.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Tour_de_San_Ciprianu_-_Corsica.jpg/960px-Tour_de_San_Ciprianu_-_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_de_San_Ciprianu_-_Corsica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Plage_ilots_d%27or_-_panoramio.jpg/960px-Plage_ilots_d%27or_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Plage_ilots_d%27or_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/b/be/2002-Position_en_baie_de_Stagnolo_%28Corse%29.png",
+          "page": "https://commons.wikimedia.org/wiki/File:2002-Position_en_baie_de_Stagnolo_(Corse).png"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Quadrillage_du_mouillage_de_Stagnolu.jpg/960px-Quadrillage_du_mouillage_de_Stagnolu.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Quadrillage_du_mouillage_de_Stagnolu.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/L_EQUILIBRE.jpg/960px-L_EQUILIBRE.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:L_EQUILIBRE.jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "san_ciprianu": {
+      "name": "San Ciprianu",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": "Baia a mezzaluna ben protetta, sabbia e posidonia (qualche roccia verso il fondo della baia); isolotto San Ciprianu all'ingresso; buona tappa a 4 M dal porto di Porto-Vecchio [coord. da verificare]",
+      "coords": [
+        41.6283,
+        9.3533
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Tour_de_San_Ciprianu_-_Corsica.jpg/960px-Tour_de_San_Ciprianu_-_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_de_San_Ciprianu_-_Corsica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/D%C3%A9fibrillateur_%C3%A0_Saint-Cyprien%2CCorse%2C2021%2C01.jpg/960px-D%C3%A9fibrillateur_%C3%A0_Saint-Cyprien%2CCorse%2C2021%2C01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:D%C3%A9fibrillateur_%C3%A0_Saint-Cyprien,Corse,2021,01.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/D%C3%A9fibrillateur_%C3%A0_Saint-Cyprien%2CCorse%2C2021%2C02.jpg/960px-D%C3%A9fibrillateur_%C3%A0_Saint-Cyprien%2CCorse%2C2021%2C02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:D%C3%A9fibrillateur_%C3%A0_Saint-Cyprien,Corse,2021,02.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Punta_di_a_Chiappa.jpg/960px-Punta_di_a_Chiappa.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Punta_di_a_Chiappa.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/b/be/2002-Position_en_baie_de_Stagnolo_%28Corse%29.png",
+          "page": "https://commons.wikimedia.org/wiki/File:2002-Position_en_baie_de_Stagnolo_(Corse).png"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Quadrillage_du_mouillage_de_Stagnolu.jpg/960px-Quadrillage_du_mouillage_de_Stagnolu.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Quadrillage_du_mouillage_de_Stagnolu.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Tour de San Ciprianu",
+        "extract": "La Tour de San Ciprianu (en corse : Torra di San Ciprianu) est une tour génoise en ruines située dans la commune de Lecci, dans le département français de la Corse-du-Sud.",
+        "url": "https://fr.wikipedia.org/wiki/Tour_de_San_Ciprianu"
+      }
+    },
+    "cala_di_conca": {
+      "name": "Cala di Conca",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": "Cala stretta, fondo sabbia 2-16 m; buon ridosso da maestrale ma aperta a libeccio/onda; scoglio affiorante a 1.8 m circa 400 m a WSW dell'ingresso; affollata in agosto.",
+      "coords": [
+        41.5746,
+        8.8036
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Tour_de_Senetosa.jpg/960px-Tour_de_Senetosa.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Senetosa.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Phare_de_Senetosa.jpg/960px-Phare_de_Senetosa.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Phare_de_Senetosa.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/%C3%8Ele_d%27Eccica.jpg/960px-%C3%8Ele_d%27Eccica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:%C3%8Ele_d%27Eccica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Corse_phare_Senetosa.jpg/960px-Corse_phare_Senetosa.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corse_phare_Senetosa.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Corse_Capu_di_Senetosa.jpg/960px-Corse_Capu_di_Senetosa.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corse_Capu_di_Senetosa.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Corse_tour_genoise_Senetosa.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corse_tour_genoise_Senetosa.jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "tizzano": {
+      "name": "Tizzano",
+      "type": "anchorage",
+      "rating": 3,
+      "verify": true,
+      "notes": "Ancorare all'ingresso della cala fuori dal porticciolo, 3-8 m solo su sabbia; esposto a SW; secca di 1.5 m circa 200 m a S della punta W dell'ingresso; pontili interni max 1.5 m pescaggio. [coord. da verificare]",
+      "coords": [
+        41.5398,
+        8.8501
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/960px-Fortin_de_Tizzano_02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Fortin_de_Tizzano_01.JPG/960px-Fortin_de_Tizzano_01.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_01.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tizzano_-_panoramio.jpg/960px-Tizzano_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tizzano_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Plage_de_Tizzano_-_panoramio.jpg/960px-Plage_de_Tizzano_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Plage_de_Tizzano_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/FORTIN.JPG/960px-FORTIN.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:FORTIN.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Palaghju_stone_row3.jpg/960px-Palaghju_stone_row3.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Palaghju_stone_row3.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Tour de Tizzano",
+        "extract": "La tour de Tizzano (en corse : torra di Tizzà) est une tour génoise située dans la commune de Sartène, dans le département français de la Corse-du-Sud.",
+        "url": "https://fr.wikipedia.org/wiki/Tour_de_Tizzano"
+      }
+    },
+    "cala_longa_tizzano": {
+      "name": "Cala Longa Tizzano",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Caletta selvaggia presso Punta di Capicciolu tra Tizzano e Senetosa, ben ridossata dai venti, usata come rifugio; sabbia; nessun servizio; da non confondere con la Cala Longa di Bonifacio. [coord. da verificare]",
+      "coords": [
+        41.5549,
+        8.8161
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20100_Sart%C3%A8ne%2C_France_-_panoramio.jpg/960px-20100_Sart%C3%A8ne%2C_France_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:20100_Sart%C3%A8ne,_France_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/960px-Fortin_de_Tizzano_02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Fortin_de_Tizzano_01.JPG/960px-Fortin_de_Tizzano_01.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_01.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tizzano_-_panoramio.jpg/960px-Tizzano_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tizzano_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Plage_de_Tizzano_-_panoramio.jpg/960px-Plage_de_Tizzano_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Plage_de_Tizzano_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Tour_de_Senetosa.jpg/960px-Tour_de_Senetosa.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Senetosa.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Tour de Tizzano",
+        "extract": "La tour de Tizzano (en corse : torra di Tizzà) est une tour génoise située dans la commune de Sartène, dans le département français de la Corse-du-Sud.",
+        "url": "https://fr.wikipedia.org/wiki/Tour_de_Tizzano"
+      }
+    },
+    "campomoro": {
+      "name": "Campomoro",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": "Fondo sabbia con chiazze di posidonia/alga 5-15 m (fino a 30 m piu' fuori); ottimo ridosso da W/SW, esposto a NW; divieto di ancoraggio entro 300 m dalla spiaggia (fascia balneare/allevamento). [coord. da verificare]",
+      "coords": [
+        41.6342,
+        8.8098
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/960px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Campomoro_tour_g%C3%A9noise_1.jpg/960px-Campomoro_tour_g%C3%A9noise_1.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Campomoro_tour_g%C3%A9noise_1.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Campomoro_tour_g%C3%A9noise_2.jpg/960px-Campomoro_tour_g%C3%A9noise_2.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Campomoro_tour_g%C3%A9noise_2.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Campomoro_aper%C3%A7u_furtif_de_la_plage_1.jpg/960px-Campomoro_aper%C3%A7u_furtif_de_la_plage_1.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Campomoro_aper%C3%A7u_furtif_de_la_plage_1.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Campomoro_aper%C3%A7u_furtif_de_la_plage.jpg/960px-Campomoro_aper%C3%A7u_furtif_de_la_plage.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Campomoro_aper%C3%A7u_furtif_de_la_plage.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Campomoro_aper%C3%A7u_furtif_de_la_tour_1.jpg/960px-Campomoro_aper%C3%A7u_furtif_de_la_tour_1.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Campomoro_aper%C3%A7u_furtif_de_la_tour_1.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Belvedere-Campomoro",
+        "extract": "Belvedere-Campomoro (in francese Belvédère-Campomoro, in corso Belvideri è Campumoru) è un comune francese di 162 abitanti situato nel dipartimento della Corsica del Sud nella regione della Corsica. Il comune è composto da tre centri abitati: Belvedere, Campomoro e Portigliolo.",
+        "url": "https://it.wikipedia.org/wiki/Belvedere-Campomoro"
+      }
+    },
+    "isolella": {
+      "name": "Isolella",
+      "type": "mooring",
+      "rating": 3,
+      "verify": true,
+      "notes": "Campo boe comunale (ZMEL Pietrosella, ~400 gavitelli totali con Stagnola e Ste-Barbe, mag-ott); vietato ancorare fuori dalle boe e entro 300 m dalle spiagge; boa assegnata dal gestore. [coord. da verificare]",
+      "coords": [
+        41.83733,
+        8.76
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/960px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Ghiatone_tower.JPG/960px-Ghiatone_tower.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Ghiatone_tower.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ghiatone_tower_2.JPG/960px-Ghiatone_tower_2.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Ghiatone_tower_2.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Apogon_imberbis_Corse.jpg/960px-Apogon_imberbis_Corse.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Apogon_imberbis_Corse.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Tour de l'Isolella",
+        "extract": "La tour de l'Isolella (en corse : torra di l'Isuledda) est une tour génoise située dans la commune de Pietrosella, dans le département français de la Corse-du-Sud.",
+        "url": "https://fr.wikipedia.org/wiki/Tour_de_l%27Isolella"
+      }
+    },
+    "anse_chiuni": {
+      "name": "Anse Chiuni",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": "Baia ben protetta e poco profonda tra Punta d'Orchinu e Punta Omigna, fondo sabbia 3-6 m, buona tenuta; apre a W (attenzione con ponente/onda residua).",
+      "coords": [
+        42.1701,
+        8.5895
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Aloe_maculata_Corsica.jpg/960px-Aloe_maculata_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Aloe_maculata_Corsica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Plage_de_Peru%2C_Corsica_%288010175668%29.jpg/960px-Plage_de_Peru%2C_Corsica_%288010175668%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Plage_de_Peru,_Corsica_(8010175668).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Carg%C3%A8se_-_The_two_churches.JPG/960px-Carg%C3%A8se_-_The_two_churches.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Carg%C3%A8se_-_The_two_churches.JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/20130_Carg%C3%A8se%2C_France_-_panoramio_%281%29.jpg/960px-20130_Carg%C3%A8se%2C_France_-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:20130_Carg%C3%A8se,_France_-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Scenic_view_near_Carg%C3%A8se_-_panoramio_%2820%29.jpg/960px-Scenic_view_near_Carg%C3%A8se_-_panoramio_%2820%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Scenic_view_near_Carg%C3%A8se_-_panoramio_(20).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Scenic_view_near_Carg%C3%A8se_-_panoramio_%2821%29.jpg/960px-Scenic_view_near_Carg%C3%A8se_-_panoramio_%2821%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Scenic_view_near_Carg%C3%A8se_-_panoramio_(21).jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Golfo di Chiuni",
+        "extract": "Il golfo di Chiuni (in corso golfu di Chjuni) è un golfo del mar Mediterraneo situato lungo la costa occidentale della Corsica.",
+        "url": "https://it.wikipedia.org/wiki/Golfo_di_Chiuni"
+      }
+    },
+    "girolata": {
+      "name": "Girolata",
+      "type": "mooring",
+      "rating": 5,
+      "verify": true,
+      "notes": "Ormeggio solo su gavitello (capitaneria 7/7 8-20, mag-set, anche boe superyacht max 30 m); ancoraggio libero di fatto vietato/limitato per posidonia e spazio; in agosto arrivare presto.",
+      "coords": [
+        42.34917,
+        8.61306
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/960px-Girolata_Osani_2_JPG.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Girolata_Osani_1_JPG.jpg/960px-Girolata_Osani_1_JPG.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_1_JPG.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Corsica_Girolata_la_vache_sur_la_Plage_de_Focaghia.jpg/960px-Corsica_Girolata_la_vache_sur_la_Plage_de_Focaghia.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_Girolata_la_vache_sur_la_Plage_de_Focaghia.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Corsica_Girolata_Punta_Scandola.jpg/960px-Corsica_Girolata_Punta_Scandola.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_Girolata_Punta_Scandola.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Corsica_Girolata_street.jpg/960px-Corsica_Girolata_street.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_Girolata_street.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Girolata_01.JPG/960px-Girolata_01.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Girolata_01.JPG"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Girolata",
+        "extract": "Girolata est un hameau de la commune française d'Osani, sur la côte ouest de la Corse, réputé pour son golfe du même nom, dans le parc naturel régional de Corse.",
+        "url": "https://fr.wikipedia.org/wiki/Girolata"
+      }
+    },
+    "calvi_alga": {
+      "name": "Calvi Alga",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": "Fondo sabbia con chiazze di posidonia, 3-8 m; ottimo ridosso da libeccio (SW), aperta a N/NE; in alternativa lato N di Punta Oscelluccia.",
+      "coords": [
+        42.5628,
+        8.7277
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Calvi_Revellata_l%27aghja.jpg/960px-Calvi_Revellata_l%27aghja.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calvi_Revellata_l%27aghja.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Calvi_ruines_maison_du_prince_Pierre_%C3%A0_Grotta_Niella.jpg/960px-Calvi_ruines_maison_du_prince_Pierre_%C3%A0_Grotta_Niella.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calvi_ruines_maison_du_prince_Pierre_%C3%A0_Grotta_Niella.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Litoranea_fra_Calvi_e_Galeria_%28Corse%29%28F%29_24_Giugno_2013_-_panoramio.jpg/960px-Litoranea_fra_Calvi_e_Galeria_%28Corse%29%28F%29_24_Giugno_2013_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Litoranea_fra_Calvi_e_Galeria_(Corse)(F)_24_Giugno_2013_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/CALVI%2C_CORSE.jpg/960px-CALVI%2C_CORSE.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:CALVI,_CORSE.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Calvi_la_fontaine_de_Raccu.jpg/960px-Calvi_la_fontaine_de_Raccu.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calvi_la_fontaine_de_Raccu.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Calvi_%E2%80%93_general_view_01.jpg/960px-Calvi_%E2%80%93_general_view_01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calvi_%E2%80%93_general_view_01.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Calvi (Francia)",
+        "extract": "Calvi (in corso e in ligure Calvi) è un comune francese di 5 559 abitanti situato nel dipartimento dell'Alta Corsica nella regione della Corsica, sede di sottoprefettura dipartimentale (arrondissement di Calvi). Si trova sulla punta nord-occidentale della Corsica e vi è collocata la stazione meteorologica di Calvi, riconosciuta dall'Organizzazione meteorologica mondiale.",
+        "url": "https://it.wikipedia.org/wiki/Calvi_(Francia)"
+      }
+    },
+    "san_fiorenzo": {
+      "name": "San Fiorenzo",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Ancorare su 5-6 m sabbia e alghe, fondale degrada dolcemente; riparata da W/SW/S/SE/E, da abbandonare con previsione di N/NE. [coord. da verificare]",
+      "coords": [
+        42.6858,
+        9.2815
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/960px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/St.Florent_-_view_from_la_Roya_beach_%28sephia%29_-_panoramio.jpg/960px-St.Florent_-_view_from_la_Roya_beach_%28sephia%29_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_(sephia)_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ville_%28Saint-Florent%29_%286%29.jpg/960px-Ville_%28Saint-Florent%29_%286%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ville_(Saint-Florent)_(6).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rocher%2C_mer_et_phare_depuis_Saint-Florent_%281%29.jpg/960px-Rocher%2C_mer_et_phare_depuis_Saint-Florent_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Rocher,_mer_et_phare_depuis_Saint-Florent_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Citadelle_%28Saint-Florent%29_%283%29.jpg/960px-Citadelle_%28Saint-Florent%29_%283%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Citadelle_(Saint-Florent)_(3).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Port_%28Saint-Florent%29.jpg/960px-Port_%28Saint-Florent%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Port_(Saint-Florent).jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "San Fiorenzo (Francia)",
+        "extract": "San Fiorenzo (francese: Saint-Florent nome ufficiale dal 1848, in còrso: San Fiurenzu) è un comune francese di 1.666 abitanti situato nel dipartimento dell'Alta Corsica nella regione della Corsica.",
+        "url": "https://it.wikipedia.org/wiki/San_Fiorenzo_(Francia)"
+      }
+    },
+    "saleccia": {
+      "name": "Saleccia",
+      "type": "anchorage",
+      "rating": 5,
+      "verify": true,
+      "notes": "Fondo sabbia, buona tenuta, ma rada aperta: solo con meteo stabile e mare calmo; in estate ancorare oltre la fascia balneare 300 m.",
+      "coords": [
+        42.72867,
+        9.205
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Place_de_Saleccia_-_panoramio.jpg/960px-Place_de_Saleccia_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Place_de_Saleccia_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Place_de_Saleccia_%26_Marais_de_Padulella_-_panoramio.jpg/960px-Place_de_Saleccia_%26_Marais_de_Padulella_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Place_de_Saleccia_%26_Marais_de_Padulella_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Place_de_Saleccia_footsteps_in_the_sand_-_panoramio.jpg/960px-Place_de_Saleccia_footsteps_in_the_sand_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Place_de_Saleccia_footsteps_in_the_sand_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Place_de_Saleccia_tree_art_-_panoramio.jpg/960px-Place_de_Saleccia_tree_art_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Place_de_Saleccia_tree_art_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Place_de_Saleccia_sand_%26_sea_-_panoramio.jpg/960px-Place_de_Saleccia_sand_%26_sea_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Place_de_Saleccia_sand_%26_sea_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Place_de_Saleccia_Marais_de_Padulella_in_the_sunset_-_panoramio.jpg/960px-Place_de_Saleccia_Marais_de_Padulella_in_the_sunset_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Place_de_Saleccia_Marais_de_Padulella_in_the_sunset_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Plage de Saleccia",
+        "extract": "La plage de Saleccia est située en Corse, le long du désert des Agriates, territoire dont l'origine du nom évoque des « terres agricoles fertiles ».",
+        "url": "https://fr.wikipedia.org/wiki/Plage_de_Saleccia"
+      }
+    },
+    "lotu": {
+      "name": "Lotu",
+      "type": "anchorage",
+      "rating": 4.5,
+      "verify": true,
+      "notes": "Sabbia, buona tenuta; obbligo ancoraggio oltre 300 m dalla spiaggia; protetta da W/SW, esposta a N-NW. [coord. da verificare]",
+      "coords": [
+        42.7225,
+        9.2328
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_heaven_water_-_panoramio.jpg/960px-Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_heaven_water_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral_-_Plage_de_Loto_(Lotu)_-_heaven_water_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_rocks_%26_Cap_Corse_-_panoramio.jpg/960px-Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_rocks_%26_Cap_Corse_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral_-_Plage_de_Loto_(Lotu)_-_rocks_%26_Cap_Corse_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_bare_tree_-_panoramio.jpg/960px-Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_bare_tree_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral_-_Plage_de_Loto_(Lotu)_-_bare_tree_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_looking_back_-_panoramio.jpg/960px-Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_looking_back_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral_-_Plage_de_Loto_(Lotu)_-_looking_back_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_view_from_Punta_di_Ravijola_-_panoramio.jpg/960px-Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_view_from_Punta_di_Ravijola_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral_-_Plage_de_Loto_(Lotu)_-_view_from_Punta_di_Ravijola_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_arriving_-_panoramio.jpg/960px-Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_arriving_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral_-_Plage_de_Loto_(Lotu)_-_arriving_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Plage du Lotu",
+        "extract": "La Plage du Loto (Lotu ou Lodu en langue corse) est une plage au nord-est de la côte du Désert des Agriates en Corse, située entre la Punta di Ravijola et la Punta Cavallata, baignée par la mer Méditerranée.",
+        "url": "https://fr.wikipedia.org/wiki/Plage_du_Lotu"
+      }
+    },
+    "malfalco": {
+      "name": "Malfalco",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Cala stretta: si dà fondo al centro su 2-3 m sabbia/roccia; ridosso discreto da W moderato, esposta a risacca con NW-NE, rollio con mistral. [coord. da verificare]",
+      "coords": [
+        42.7236,
+        9.118
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Alga_putrica_-_panoramio.jpg/960px-Alga_putrica_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Alga_putrica_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio.jpg/960px-Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Unnamed_Road,_20246_Santo-Pietro-di-Tenda,_France_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio_%281%29.jpg/960px-Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Unnamed_Road,_20246_Santo-Pietro-di-Tenda,_France_-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio_%282%29.jpg/960px-Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Unnamed_Road,_20246_Santo-Pietro-di-Tenda,_France_-_panoramio_(2).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio_%283%29.jpg/960px-Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio_%283%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Unnamed_Road,_20246_Santo-Pietro-di-Tenda,_France_-_panoramio_(3).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio_%284%29.jpg/960px-Unnamed_Road%2C_20246_Santo-Pietro-di-Tenda%2C_France_-_panoramio_%284%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Unnamed_Road,_20246_Santo-Pietro-di-Tenda,_France_-_panoramio_(4).jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "centuri": {
+      "name": "Centuri",
+      "type": "port",
+      "rating": 4,
+      "verify": true,
+      "notes": "Porticciolo minuscolo (max ~10 m, pescaggio max 2 m, 0,8 m minimo): in agosto quasi sempre pieno; le barche a vela ancorano fuori davanti al porto su sabbia, solo con calma da W.",
+      "coords": [
+        42.9662,
+        9.3504
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/960px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Cap_Corse_-_Port_de_Centuri-_approaching_the_port_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Port_de_Centuri-_approaching_the_port_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Cap_Corse_-_Port_de_Centuri-_the_port_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Port_de_Centuri-_the_port_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Cap_Corse_-_Port_de_Centuri-_the_port_-_panoramio_-_jeffwarder.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Port_de_Centuri-_the_port_-_panoramio_-_jeffwarder.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/2/25/Cap_Corse_-_Port_de_Centuri-_boats_%26_houses_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Port_de_Centuri-_boats_%26_houses_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Cap_Corse_-_Port_de_Centuri-_narrow_alley_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Port_de_Centuri-_narrow_alley_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Centuri (Francia)",
+        "extract": "Centuri (/ʧenˈturi/, in corso Cinturi /ʧinˈturi/) è un comune francese situato nel dipartimento dell'Alta Corsica nella regione della Corsica.",
+        "url": "https://it.wikipedia.org/wiki/Centuri_(Francia)"
+      }
+    },
+    "barcaggio": {
+      "name": "Barcaggio",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Fondo sabbia con alghe e rocce, bassi fondali; rada aperta a quasi tutti i venti e a corrente del canale della Giraglia: solo sosta diurna con mare calmo, ridosso da SE a NE della spiaggia.",
+      "coords": [
+        43.0079,
+        9.4112
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Cap_Corse_-_Barcaggio-cow_passing_l%27Acqua_Tignese_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Barcaggio-cow_passing_l%27Acqua_Tignese_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Cap_Corse_-_Barcaggio-Plage_de_Cala_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Barcaggio-Plage_de_Cala_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Cap_Corse_-_Barcaggio-the_port_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Barcaggio-the_port_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Cap_Corse_-_Barcaggio-l%27Acqua_Tignese_%26_the_sea_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Barcaggio-l%27Acqua_Tignese_%26_the_sea_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Cap_Corse_-_Barcaggio_from_Pointe_d%27Agnello_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Barcaggio_from_Pointe_d%27Agnello_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Mer_et_paysage_depuis_Barcaggio_%282%29.jpg/960px-Mer_et_paysage_depuis_Barcaggio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Mer_et_paysage_depuis_Barcaggio_(2).jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "macinaggio": {
+      "name": "Macinaggio",
+      "type": "port",
+      "rating": 2.5,
+      "verify": true,
+      "notes": "Marina ~585 posti, base classica prima/dopo il doppiaggio del Capo; in agosto prenotare; ancoraggio possibile nella baia a N del porto su sabbia.",
+      "coords": [
+        42.96098,
+        9.45451
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Cap_Corse_-_Macinaggio_-_main_street_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Macinaggio_-_main_street_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/4/42/Cap_Corse_-_Macinaggio_-_narrow_alley_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Macinaggio_-_narrow_alley_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/3/33/Cap_Corse_-_Macinaggio_-_town_scene_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Macinaggio_-_town_scene_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Cap_Corse_-_Macinaggio_-_main_square_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Macinaggio_-_main_square_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Cap_Corse_-_Macinaggio_-_church_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Macinaggio_-_church_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Cap_Corse_-_Macinaggio_-_sunrise_in_the_port_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Macinaggio_-_sunrise_in_the_port_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Macinaggio",
+        "extract": "Macinaggio est la marine de Rogliano, située sur la pointe orientale du Cap Corse. Elle se trouve en bordure d'un site Natura 2000 protégé et classé, comprenant les îles de Finocchiarola et le domaine de Capandula.",
+        "url": "https://fr.wikipedia.org/wiki/Macinaggio"
+      }
+    },
+    "tamarone": {
+      "name": "Tamarone",
+      "type": "anchorage",
+      "rating": 3,
+      "verify": true,
+      "notes": "Fondo sabbia con chiazze di roccia/posidonia, 3-6 m; buon ridosso da W/SW (libeccio), aperta a E-NE; comoda alternativa gratuita a Macinaggio. [coord. da verificare]",
+      "coords": [
+        42.9755,
+        9.457
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cap_Corse_-_Tamarone_beach-from_Monte_di_a_Guardia_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Tamarone_beach-from_Monte_di_a_Guardia_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Cap_Corse_-_Tamarone_beach-crystal_waters_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Tamarone_beach-crystal_waters_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/0/00/Cap_Corse_-_Tamarone_beach-from_Punta_di_a_Coscia_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Tamarone_beach-from_Punta_di_a_Coscia_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/3/32/Cap_Corse_-_Tamarone_beach-from_Punta_di_a_Coscia-Iles_Finocchiarola_in_the_sea_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Tamarone_beach-from_Punta_di_a_Coscia-Iles_Finocchiarola_in_the_sea_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Niveau_d%27%C3%A9rosion_marine_quaternaire_pr%C3%A8s_de_Rogliano_%28Haute-Corse%2C_France%29.JPG/960px-Niveau_d%27%C3%A9rosion_marine_quaternaire_pr%C3%A8s_de_Rogliano_%28Haute-Corse%2C_France%29.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Niveau_d%27%C3%A9rosion_marine_quaternaire_pr%C3%A8s_de_Rogliano_(Haute-Corse,_France).JPG"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Capella_Santa_Maria_Cap_Corse.jpg/960px-Capella_Santa_Maria_Cap_Corse.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Capella_Santa_Maria_Cap_Corse.jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "erbalunga": {
+      "name": "Erbalunga",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Rada aperta appena a N/E del porticciolo (porto solo <8 m). Fondo sabbia e roccia, tenuta discreta; ridossata solo da venti occidentali, evitare con vento da E. [coord. da verificare]",
+      "coords": [
+        42.7742,
+        9.4787
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/960px-Erbalunga_la_tour.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Corsica_Erbalunga_Fontaine_publique.jpg/960px-Corsica_Erbalunga_Fontaine_publique.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_Erbalunga_Fontaine_publique.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Corsica_Erbalunga_Marina.jpg/960px-Corsica_Erbalunga_Marina.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_Erbalunga_Marina.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Corsica_Erbalunga_Tour_ruinee.jpg/960px-Corsica_Erbalunga_Tour_ruinee.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_Erbalunga_Tour_ruinee.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Erbalunga_Tower.jpg/960px-Erbalunga_Tower.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_Tower.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Cap_Corse_-_Erbalunga_-_an_old_house_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Erbalunga_-_an_old_house_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Tour d'Erbalunga",
+        "extract": "La Tour d'Erbalunga (en corse : Torra d'Erbalunga) est une tour génoise en ruines située dans la commune de Brando, dans le département français de la Haute-Corse.",
+        "url": "https://fr.wikipedia.org/wiki/Tour_d%27Erbalunga"
+      }
+    },
+    "foce_golo": {
+      "name": "Foce Golo",
+      "type": "anchorage",
+      "rating": 1.5,
+      "verify": true,
+      "notes": "Costa sabbiosa rettilinea completamente aperta: solo sosta diurna con mare calmo. Possibili banchi di sabbia mobili davanti alla foce, avvicinarsi con ecoscandaglio. [coord. da verificare]",
+      "coords": [
+        42.5242,
+        9.537
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Allium_corsicum_Jauzein_in_eastern_Corsica.jpg/960px-Allium_corsicum_Jauzein_in_eastern_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Allium_corsicum_Jauzein_in_eastern_Corsica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Canonica_%281119%29Ste_Marie-de-l%27Assomption_de_Lucciana.jpg/960px-Canonica_%281119%29Ste_Marie-de-l%27Assomption_de_Lucciana.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Canonica_(1119)Ste_Marie-de-l%27Assomption_de_Lucciana.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Sainte-Marie-de-l%27Assomption_de_Mariana.jpg/960px-Sainte-Marie-de-l%27Assomption_de_Mariana.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sainte-Marie-de-l%27Assomption_de_Mariana.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mariana_et_sa_cath%C3%A9drale_Santa-Maria-Assunta.jpg/960px-Mariana_et_sa_cath%C3%A9drale_Santa-Maria-Assunta.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Mariana_et_sa_cath%C3%A9drale_Santa-Maria-Assunta.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Le_baptist%C3%A8re_de_Mariana_%28V%29.jpg/960px-Le_baptist%C3%A8re_de_Mariana_%28V%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Le_baptist%C3%A8re_de_Mariana_(V).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/%D0%9A%D0%B0%D0%BD%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0._%D0%92%D1%85%D0%BE%D0%B4.jpg/960px-%D0%9A%D0%B0%D0%BD%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0._%D0%92%D1%85%D0%BE%D0%B4.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%BD%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0._%D0%92%D1%85%D0%BE%D0%B4.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Golo",
+        "extract": "Il Golo (in corso Golu) è il più lungo fiume della Corsica con oltre 89 km di percorso. Scorre interamente nel territorio del dipartimento della Alta Corsica.",
+        "url": "https://it.wikipedia.org/wiki/Golo"
+      }
+    },
+    "campoloro": {
+      "name": "Campoloro",
+      "type": "port",
+      "rating": 1.5,
+      "verify": true,
+      "notes": "Unico porto-rifugio tra Bastia e Solenzara sulla costa orientale. Entrata con risacca in caso di forte vento da E/SE; carburante e servizi disponibili.",
+      "coords": [
+        42.34135,
+        9.539
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/960px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Endophloeus_markovichianus_(Piller_%26_Mitterpacher,_1783)_lateral_view_(23150294085).png"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_%2822782298519%29.png/960px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_%2822782298519%29.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Endophloeus_markovichianus_(Piller_%26_Mitterpacher,_1783)_(22782298519).png"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Moonrise_-_panoramio_%282%29.jpg/960px-Moonrise_-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Moonrise_-_panoramio_(2).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Tour_de_Prunete_-_Corsica.jpg/960px-Tour_de_Prunete_-_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Prunete_-_Corsica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Boite_%C3%A0_livres_in_Padulella_Moriani_Plage%2C_Haute_Corse%2C_2025.jpg/960px-Boite_%C3%A0_livres_in_Padulella_Moriani_Plage%2C_Haute_Corse%2C_2025.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Boite_%C3%A0_livres_in_Padulella_Moriani_Plage,_Haute_Corse,_2025.jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "solenzara": {
+      "name": "Solenzara",
+      "type": "port",
+      "rating": 2,
+      "verify": true,
+      "notes": "Marina 450 posti, 8 pontili. In alternativa rada sabbiosa a S della foce del fiume Solenzara utilizzabile solo con tempo stabile.",
+      "coords": [
+        41.8572,
+        9.4037
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Rainy_day_in_Solenzara_-_panoramio.jpg/960px-Rainy_day_in_Solenzara_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Rainy_day_in_Solenzara_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Port_de_plaisance_de_Solenzara_Corsica.jpg/960px-Port_de_plaisance_de_Solenzara_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Port_de_plaisance_de_Solenzara_Corsica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Capitainerie_du_Port_de_Plaisance_de_Solenzara_Corsica.jpg/960px-Capitainerie_du_Port_de_Plaisance_de_Solenzara_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Capitainerie_du_Port_de_Plaisance_de_Solenzara_Corsica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Monument_des_morts_Solenzara_Corsica.jpg/960px-Monument_des_morts_Solenzara_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Monument_des_morts_Solenzara_Corsica.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Benchmark%2C_IGN%2C_Eglise_de_Solenzara%2C_Corsica%2C_2022.jpg/960px-Benchmark%2C_IGN%2C_Eglise_de_Solenzara%2C_Corsica%2C_2022.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Benchmark,_IGN,_Eglise_de_Solenzara,_Corsica,_2022.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Boite_%C3%A0_livres_in_Solenzara%2C_Corse_du_Sud%2C_2022.jpg/960px-Boite_%C3%A0_livres_in_Solenzara%2C_Corse_du_Sud%2C_2022.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Boite_%C3%A0_livres_in_Solenzara,_Corse_du_Sud,_2022.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "en",
+        "title": "Solenzara",
+        "extract": "The Solenzara is a small coastal river in the departments of Corse-du-Sud and Haute-Corse, Corsica, France.",
+        "url": "https://en.wikipedia.org/wiki/Solenzara"
+      }
+    },
+    "canella": {
+      "name": "Canella",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Cala ben protetta da W/SW (libeccio), fondo sabbia con buona tenuta; aperta a E. Fondale basso vicino a riva, molto frequentata in agosto.",
+      "coords": [
+        41.8,
+        9.397
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Beach_of_Canella%2C_Sari-Solenzara%2C_France_%2852724277338%29.jpg/960px-Beach_of_Canella%2C_Sari-Solenzara%2C_France_%2852724277338%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Beach_of_Canella,_Sari-Solenzara,_France_(52724277338).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/ISS038-E-63282_-_View_of_Earth.jpg/960px-ISS038-E-63282_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS038-E-63282_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/ISS038-E-67831_-_View_of_Earth.jpg/960px-ISS038-E-67831_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS038-E-67831_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/ISS067-E-2559_-_View_of_Earth.jpg/960px-ISS067-E-2559_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS067-E-2559_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/ISS067-E-2560_-_View_of_Earth.jpg/960px-ISS067-E-2560_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS067-E-2560_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/ISS067-E-2561_-_View_of_Earth.jpg/960px-ISS067-E-2561_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS067-E-2561_-_View_of_Earth.jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "favone": {
+      "name": "Favone",
+      "type": "anchorage",
+      "rating": 3,
+      "verify": true,
+      "notes": "Baia sabbiosa con buona tenuta, riparata da W; aperta a E-NE. Verificare posidonia prima di dare fondo; Navily mouillage #8055.",
+      "coords": [
+        41.7742,
+        9.3986
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/960px-F%C3%A9rule_f%C3%A9tide.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/ISS038-E-63282_-_View_of_Earth.jpg/960px-ISS038-E-63282_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS038-E-63282_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/ISS038-E-67831_-_View_of_Earth.jpg/960px-ISS038-E-67831_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS038-E-67831_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/ISS067-E-2559_-_View_of_Earth.jpg/960px-ISS067-E-2559_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS067-E-2559_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/ISS067-E-2560_-_View_of_Earth.jpg/960px-ISS067-E-2560_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS067-E-2560_-_View_of_Earth.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/ISS067-E-2561_-_View_of_Earth.jpg/960px-ISS067-E-2561_-_View_of_Earth.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS067-E-2561_-_View_of_Earth.jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "fautea": {
+      "name": "Fautea",
+      "type": "anchorage",
+      "rating": 3.5,
+      "verify": true,
+      "notes": "Ancoraggio nella baia a S della torre genovese del 1592, fondo sabbia; sito protetto Conservatoire du Littoral. Riparo discreto con tempo buono ma esposto a E, tenibile di notte solo con meteo stabile [coord. da verifica",
+      "coords": [
+        41.7135,
+        9.4045
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sunrise_At_Fautea_Beach_%28262708439%29.jpeg/960px-Sunrise_At_Fautea_Beach_%28262708439%29.jpeg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sunrise_At_Fautea_Beach_(262708439).jpeg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/First_stop_at_the_camping_Fautea_the_small_sandstone_beach_%2827563841455%29.jpg/960px-First_stop_at_the_camping_Fautea_the_small_sandstone_beach_%2827563841455%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:First_stop_at_the_camping_Fautea_the_small_sandstone_beach_(27563841455).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Aller_%C3%A0_la_plage_de_Lavu_Santu_%2835102102412%29.jpg/960px-Aller_%C3%A0_la_plage_de_Lavu_Santu_%2835102102412%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Aller_%C3%A0_la_plage_de_Lavu_Santu_(35102102412).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/960px-F%C3%A9rule_f%C3%A9tide.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Milky_Way_Ii_%28262683213%29.jpeg/960px-Milky_Way_Ii_%28262683213%29.jpeg",
+          "page": "https://commons.wikimedia.org/wiki/File:Milky_Way_Ii_(262683213).jpeg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Milky_Way_%28262681609%29.jpeg/960px-Milky_Way_%28262681609%29.jpeg",
+          "page": "https://commons.wikimedia.org/wiki/File:Milky_Way_(262681609).jpeg"
+        }
+      ],
+      "wiki": {
+        "lang": "en",
+        "title": "Torra di Fautea",
+        "extract": "The Tower of Fautea (Corsican: Torra di Fautea) is a Genoese tower located in the commune of Zonza (Corse-du-Sud) on the east coast of the French island of Corsica. The tower sits at an elevation of 32 metres (105 ft) on the Punta di Fautea. The tower was one of a series of coastal defences constructed by the Republic of Genoa between 1530 and 1620 to stem the attacks by Barbary pirates. It was built before 1601, the date of a document recording a payment made to one of the soldiers responsible for guarding the tower. It was attacked and burnt in 1650 by the Ottoman Turks. It was restored between 1988 and 1991 and again between 1994 and 1995. In 1992 it was listed as one of the official historical monuments of France. The tower is owned and maintained by the Collectivité Territoriale de Corse in an agreement with the French government agency, the Conservatoire du littoral. The agency plans to purchase 95 hectares (230 acres) of the headland and as of 2011 had acquired 38 hectares (94 acres).",
+        "url": "https://en.wikipedia.org/wiki/Torra_di_Fautea"
+      }
+    },
+    "pinarello": {
+      "name": "Pinarello",
+      "type": "anchorage",
+      "rating": 4,
+      "verify": true,
+      "notes": "Punto migliore ai due lati del passo tra isola di Pinarellu (torre genovese) e terraferma; fondo sabbia e roccia. Buona protezione da SW ma raffiche; attenzione allo scoglio Roscana e ai sub. Non teni [coord. da verifica",
+      "coords": [
+        41.672,
+        9.39
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/960px-Isola_Pinarello_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Isola_Pinarello_-_panoramio_%281%29.jpg/960px-Isola_Pinarello_-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Isola_Pinarello_-_panoramio_%282%29.jpg/960px-Isola_Pinarello_-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio_(2).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Isola_Pinarello_-_panoramio_%283%29.jpg/960px-Isola_Pinarello_-_panoramio_%283%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio_(3).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Pancratium_maritimum_Corsica_2008.jpg/960px-Pancratium_maritimum_Corsica_2008.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Pancratium_maritimum_Corsica_2008.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Tour_de_Pinarellu_-_Corsica.jpg/960px-Tour_de_Pinarellu_-_Corsica.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Pinarellu_-_Corsica.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Isola di Pinarello",
+        "extract": "L'isola di Pinarello (in corso Pinarellu o Pinareddu) è un'isola disabitata parte del comune di Zonza.",
+        "url": "https://it.wikipedia.org/wiki/Isola_di_Pinarello"
+      }
+    },
+    "palombaggia": {
+      "name": "Palombaggia",
+      "type": "anchorage",
+      "rating": 5,
+      "verify": true,
+      "notes": "Dare fondo solo su sabbia: le praterie di posidonia sono balisate e l'ancoraggio sopra e' vietato (arrete prefettizio 2023; >24 m vietato tra Punta Chiappa e Capicciolu). Riparata da NW dalla penisola",
+      "coords": [
+        41.5555,
+        9.3305
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Palombaggia_-_panoramio.jpg/960px-Palombaggia_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Palombaggia_-_panoramio_-_cazah.jpg/960px-Palombaggia_-_panoramio_-_cazah.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_-_panoramio_-_cazah.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Palombaggia_-_panoramio_%281%29.jpg/960px-Palombaggia_-_panoramio_%281%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_-_panoramio_(1).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Palombaggia_-_panoramio_%282%29.jpg/960px-Palombaggia_-_panoramio_%282%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_-_panoramio_(2).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Palombaggia_beach_03.jpg/960px-Palombaggia_beach_03.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_beach_03.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Palombaggia_beach_02.jpg/960px-Palombaggia_beach_02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_beach_02.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "fr",
+        "title": "Palombaggia",
+        "extract": "Palombaggia est un lieu-dit situé sur la commune de Porto-Vecchio en Corse-du-Sud entre les hameaux de Picovaggia et de Bocca dell'Oro. Ses plages de sable blanc encadrées de rochers rouges, bordées de pins parasols, face aux îles Cerbicale, passent pour être parmi les plus belles de Corse.",
+        "url": "https://fr.wikipedia.org/wiki/Palombaggia"
+      }
+    },
+    "ficajola": {
+      "name": "Ficajola",
+      "type": "anchorage",
+      "rating": 4.5,
+      "verify": true,
+      "notes": "Caletta minuscola sotto le Calanche di Piana (golfo di Porto), fondo sabbia/roccia, spazio per pochissime barche. Solo sosta diurna con mare calmo: completamente esposta a W/SW e alla risacca da ponen [coord. da verifica",
+      "coords": [
+        42.252,
+        8.6262
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Corsica_-_Piana_-_panoramio_-_gian_luca_bucci.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Corsica_-_Piana_-_panoramio_-_gian_luca_bucci.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Calanques_de_Piana_-_panoramio_%2844%29.jpg/960px-Calanques_de_Piana_-_panoramio_%2844%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calanques_de_Piana_-_panoramio_(44).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Calanques_de_Piana_-_panoramio_%2847%29.jpg/960px-Calanques_de_Piana_-_panoramio_%2847%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calanques_de_Piana_-_panoramio_(47).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Calanques_de_Piana_-_panoramio_%2849%29.jpg/960px-Calanques_de_Piana_-_panoramio_%2849%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calanques_de_Piana_-_panoramio_(49).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Calanques_de_Piana_-_panoramio_%2850%29.jpg/960px-Calanques_de_Piana_-_panoramio_%2850%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calanques_de_Piana_-_panoramio_(50).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Calanques_de_Piana_-_panoramio_%2851%29.jpg/960px-Calanques_de_Piana_-_panoramio_%2851%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Calanques_de_Piana_-_panoramio_(51).jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "porto_rotondo": {
+      "name": "Porto Rotondo",
+      "type": "port",
+      "rating": 3,
+      "verify": true,
+      "notes": "Marina + rada; base logistica drop-off/pickup 21-22/8, aeroporto Olbia ~20 min [coord. da verificare]",
+      "coords": [
+        41.0315,
+        9.5485
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/960px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg/960px-Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(02).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2803%29.jpg/960px-Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2803%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(03).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2801%29.jpg/960px-Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Porto_Rotondo_-_panoramio.jpg/960px-Porto_Rotondo_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto_Rotondo_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Porto_Rotondo%2C_Sardinien%2C_Italy_-_panoramio.jpg/960px-Porto_Rotondo%2C_Sardinien%2C_Italy_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Porto_Rotondo,_Sardinien,_Italy_-_panoramio.jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Porto Rotondo",
+        "extract": "Porto Rotondo (Poltu Rutundu in gallurese, Poltu Ridundu in sardo) è una frazione (Rudalza Porto Rotondo) del comune di Olbia. È una località che rappresenta una delle più importanti realtà del turismo sardo. Assieme a Porto Cervo, Porto Rotondo è famosa per essere frequentata nel periodo estivo dal jet set italiano e internazionale.",
+        "url": "https://it.wikipedia.org/wiki/Porto_Rotondo"
+      }
+    },
+    "golfo_di_marinella": {
+      "name": "Golfo di Marinella",
+      "type": "anchorage",
+      "rating": 3,
+      "verify": true,
+      "notes": "Baia sabbiosa ampia, buona tenuta; comoda per transfer aeroporto [coord. da verificare]",
+      "coords": [
+        41.047,
+        9.568
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/La_Maddalena%2C_isola_di_Soffi_%2802%29.jpg/960px-La_Maddalena%2C_isola_di_Soffi_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Soffi_(02).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/La_Maddalena%2C_isola_di_Soffi_%2801%29.jpg/960px-La_Maddalena%2C_isola_di_Soffi_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Soffi_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/La_Maddalena%2C_isola_di_Soffi_%2804%29.jpg/960px-La_Maddalena%2C_isola_di_Soffi_%2804%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Soffi_(04).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/La_Maddalena%2C_isola_di_Soffi_%2803%29.jpg/960px-La_Maddalena%2C_isola_di_Soffi_%2803%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Soffi_(03).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Olbia%2C_isola_di_Portisco_%2801%29.jpg/960px-Olbia%2C_isola_di_Portisco_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_isola_di_Portisco_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg/960px-Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(02).jpg"
+        }
+      ],
+      "wiki": null
+    },
+    "golfo_di_cugnana": {
+      "name": "Golfo di Cugnana",
+      "type": "anchorage",
+      "rating": 3,
+      "verify": true,
+      "notes": "Golfo riparato a S di Porto Rotondo; alternativa per la notte [coord. da verificare]",
+      "coords": [
+        41.021,
+        9.529
+      ],
+      "shelter": null,
+      "gallery": [
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Olbia%2C_golfo_di_Cugnana_%2801%29.jpg/960px-Olbia%2C_golfo_di_Cugnana_%2801%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_golfo_di_Cugnana_(01).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Olbia%2C_golfo_di_Cugnana_%2803%29.jpg/960px-Olbia%2C_golfo_di_Cugnana_%2803%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_golfo_di_Cugnana_(03).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Olbia%2C_golfo_di_Cugnana_%2802%29.jpg/960px-Olbia%2C_golfo_di_Cugnana_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_golfo_di_Cugnana_(02).jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/14_600_Cugnana.jpg/960px-14_600_Cugnana.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:14_600_Cugnana.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/960px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+        },
+        {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg/960px-Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(02).jpg"
+        }
+      ],
+      "wiki": {
+        "lang": "it",
+        "title": "Stagno di Cugnana",
+        "extract": "Lo stagno di Cugnana è una zona umida situata in prossimità della costa settentrionale della Sardegna. Appartiene amministrativamente al comune di Olbia. Lo stagno ha una superficie di 1,39 Km e una salinità media di 30,7 psu.",
+        "url": "https://it.wikipedia.org/wiki/Stagno_di_Cugnana"
+      }
+    }
+  }
+}

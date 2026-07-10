@@ -5,7 +5,8 @@ risolvono a publish-time e finiscono nei JSON come URL: il sito resta statico.
 
 GET dedicato (non weather._get): Commons risponde 429 alle raffiche, quindi
 qui c'e' throttle di 0.5 s tra le chiamate, retry che rispetta Retry-After e
-cache di 7 giorni (le foto non cambiano come il vento).
+cache di 7 giorni (le foto non cambiano come il vento). `_get` e' generico
+(Wikimedia): lo riusa anche enrich_destinations.py per Wikipedia.
 
 Una foto puo' mancare (rada remota, solo mappe nei dintorni): chi consuma
 deve reggere `None`. Le foto NON devono mai bloccare il briefing.
@@ -18,7 +19,7 @@ CACHE = Path(tempfile.gettempdir()) / "sailing_wx_cache"
 CACHE.mkdir(parents=True, exist_ok=True)
 TTL_S = 7 * 86400
 UA = "nina-sailing-agent/1.0 github.com/edoardo-casella/nina"
-_MIN_INTERVAL_S = 0.5
+_MIN_INTERVAL_S = 1.0
 _last_call = [0.0]
 # circuito: al primo 429 che esaurisce i retry si smette di chiamare Commons
 # per tutto il run (gli IP condivisi dei runner CI restano limitati a lungo);
@@ -65,35 +66,30 @@ GENERIC = {"cala", "calla", "porto", "porti", "golfo", "golfe", "baie", "baia",
 EXT_OK = (".jpg", ".jpeg", ".png")
 
 
-def photo_for(lat: float, lon: float, name: str | None = None,
-              width: int = 480) -> dict | None:
-    """Foto per il punto, provando raggi crescenti (le rade remote non hanno
-    scatti entro 1.5 km). Ritorna {src, page} o None."""
-    for radius_m in (1500, 4000):
-        p = _photo_at(lat, lon, name, radius_m, width)
-        if p:
-            return p
-    return None
+def tokens_of(name: str | None) -> list[str]:
+    """Parole distintive del nome (>=4 char, non generiche) per il matching
+    con i titoli — condiviso tra foto (Commons) e articoli (Wikipedia)."""
+    return [t for t in (name or "").lower().replace("(", " ").replace(")", " ")
+            .replace("-", " ").split() if len(t) >= 4 and t not in GENERIC]
 
 
-def _photo_at(lat: float, lon: float, name: str | None,
-              radius_m: int, width: int) -> dict | None:
-    """La foto georeferenziata piu' vicina al punto: {src, page} o None.
-    Se `name` e' dato, preferisce le foto col nome della rada nel titolo
-    (il faro sbagliato vicino batte la rada giusta solo per distanza)."""
+def _candidates(lat: float, lon: float, name: str | None,
+                radius_m: int, width: int) -> list[dict]:
+    """Foto georeferenziate entro `radius_m`, ordinate best-first: prima il
+    match di nome nel titolo, poi la vicinanza (il faro sbagliato vicino non
+    deve battere la rada giusta un po' piu' lontana)."""
     try:
         data = _get(COMMONS, {
             "action": "query", "format": "json", "generator": "geosearch",
-            "ggscoord": f"{lat}|{lon}", "ggsradius": radius_m, "ggslimit": 10,
+            "ggscoord": f"{lat}|{lon}", "ggsradius": radius_m, "ggslimit": 20,
             "ggsnamespace": 6, "prop": "imageinfo", "iiprop": "url",
             "iiurlwidth": width,
         })
     except Exception:
-        return None
+        return []
     pages = (data.get("query") or {}).get("pages") or {}
-    tokens = [t for t in (name or "").lower().replace("(", " ").replace(")", " ")
-              .replace("-", " ").split() if len(t) >= 4 and t not in GENERIC]
-    best = None      # (match_nome, -index): vince il match, poi la vicinanza
+    tokens = tokens_of(name)
+    scored = []
     for p in pages.values():
         title = p.get("title", "").lower()
         if not title.endswith(EXT_OK) or any(w in title for w in SKIP_WORDS):
@@ -102,13 +98,35 @@ def _photo_at(lat: float, lon: float, name: str | None,
         if not info.get("thumburl"):
             continue
         key = (any(t in title for t in tokens), -p.get("index", 99))
-        if best is None or key > best[0]:
-            best = (key, {"src": info["thumburl"],
-                          "page": info.get("descriptionurl")})
-    return best[1] if best else None
+        scored.append((key, {"src": info["thumburl"], "page": info.get("descriptionurl")}))
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return [c for _, c in scored]
+
+
+def gallery_for(lat: float, lon: float, name: str | None = None,
+                n: int = 6, width: int = 800) -> list[dict]:
+    """Fino a `n` foto per il punto, raggi crescenti (le rade remote non hanno
+    scatti entro 1.5 km). Dedup per URL. Ogni voce: {src, page}."""
+    seen, gal = set(), []
+    for radius_m in (1500, 4000):
+        for c in _candidates(lat, lon, name, radius_m, width):
+            if c["src"] not in seen:
+                seen.add(c["src"])
+                gal.append(c)
+        if len(gal) >= n:
+            break
+    return gal[:n]
+
+
+def photo_for(lat: float, lon: float, name: str | None = None,
+              width: int = 480) -> dict | None:
+    """La singola foto migliore per il punto: {src, page} o None."""
+    g = gallery_for(lat, lon, name, n=1, width=width)
+    return g[0] if g else None
 
 
 if __name__ == "__main__":
     import sys
     lat, lon = float(sys.argv[1]), float(sys.argv[2])
-    print(photo_for(lat, lon))
+    for p in gallery_for(lat, lon, sys.argv[3] if len(sys.argv) > 3 else None):
+        print(p["src"])

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T17:07+02:00",
+  "generated_at": "2026-07-10T23:00+02:00",
   "sim": true,
   "day": "2026-07-10",
   "start_date": "2026-07-10",
@@ -16,16 +16,15 @@
       "night": false,
       "frm": "Cannigione",
       "to": "Cala Portese",
+      "to_id": "cala_portese",
       "rating": 4,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/500px-Caprera%2C_trasparenze_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
-      },
+      "photo": null,
       "nm": 7.6,
       "tappe": [
         {
           "slot": "mattina",
           "to": "Cala Coticcio (Caprera)",
+          "to_id": "coticcio",
           "nm": 6.1,
           "activity": [
             "bagno"
@@ -36,6 +35,7 @@
         {
           "slot": "sera",
           "to": "Cala Portese",
+          "to_id": "cala_portese",
           "nm": 1.5,
           "activity": [],
           "rating": 4,
@@ -57,18 +57,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 45,
-        "tmax": 31.2,
-        "tmin": 24.7,
-        "rain_prob": 0,
-        "wind_max": 13.8,
-        "gust_max": 26.4,
-        "wind_dir": 117
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": {
-        "hmax": 0.48,
-        "dir": 157,
-        "period": 3.55
+        "hmax": 0.6,
+        "dir": 290,
+        "period": 4.2,
+        "synthetic": true
       }
     },
     {
@@ -77,16 +79,15 @@
       "night": false,
       "frm": "Cala Portese",
       "to": "Isole Lavezzi",
+      "to_id": "lavezzi",
       "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
-      },
+      "photo": null,
       "nm": 16.4,
       "tappe": [
         {
           "slot": "mattina",
           "to": "Cala Corsara (Spargi)",
+          "to_id": "spargi",
           "nm": 6.3,
           "activity": [
             "bagno"
@@ -97,6 +98,7 @@
         {
           "slot": "pomeriggio",
           "to": "Marmorata",
+          "to_id": "marmorata",
           "nm": 4.7,
           "activity": [
             "bagno"
@@ -107,6 +109,7 @@
         {
           "slot": "sera",
           "to": "Isole Lavezzi",
+          "to_id": "lavezzi",
           "nm": 5.4,
           "activity": [],
           "rating": 5,
@@ -121,18 +124,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 27.9,
-        "tmin": 26.6,
-        "rain_prob": 8,
-        "wind_max": 15.6,
-        "gust_max": 20.4,
-        "wind_dir": 80
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": {
-        "hmax": 0.72,
-        "dir": 91,
-        "period": 3.45
+        "hmax": 0.6,
+        "dir": 290,
+        "period": 4.2,
+        "synthetic": true
       }
     },
     {
@@ -141,16 +146,15 @@
       "night": false,
       "frm": "Isole Lavezzi",
       "to": "Bonifacio",
+      "to_id": "bonifacio",
       "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/500px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
-        "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
-      },
+      "photo": null,
       "nm": 7.6,
       "tappe": [
         {
           "slot": "mattina",
           "to": "Corsica- Isola Piana",
+          "to_id": "corsica_isola_piana",
           "nm": 2.5,
           "activity": [
             "bagno"
@@ -161,6 +165,7 @@
         {
           "slot": "pomeriggio",
           "to": "Santa Manza",
+          "to_id": "santa_manza",
           "nm": 2.1,
           "activity": [
             "bagno"
@@ -171,6 +176,7 @@
         {
           "slot": "sera",
           "to": "Bonifacio",
+          "to_id": "bonifacio",
           "nm": 3.0,
           "activity": [],
           "rating": 5,
@@ -185,18 +191,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 31.0,
-        "tmin": 24.6,
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
         "rain_prob": 5,
-        "wind_max": 9.7,
-        "gust_max": 19.4,
-        "wind_dir": 77
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": {
-        "hmax": 0.68,
-        "dir": 86,
-        "period": 3.4
+        "hmax": 0.6,
+        "dir": 290,
+        "period": 4.2,
+        "synthetic": true
       }
     },
     {
@@ -205,16 +213,15 @@
       "night": false,
       "frm": "Bonifacio",
       "to": "Tizzano",
+      "to_id": "tizzano",
       "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/500px-Fortin_de_Tizzano_02.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
-      },
+      "photo": null,
       "nm": 20.2,
       "tappe": [
         {
           "slot": "mattina",
           "to": "CR - Roccapina Nord",
+          "to_id": "cr_roccapina_nord",
           "nm": 12.8,
           "activity": [
             "bagno"
@@ -225,6 +232,7 @@
         {
           "slot": "pomeriggio",
           "to": "Cala Longa Tizzano",
+          "to_id": "cala_longa_tizzano",
           "nm": 5.6,
           "activity": [
             "bagno"
@@ -235,6 +243,7 @@
         {
           "slot": "sera",
           "to": "Tizzano",
+          "to_id": "tizzano",
           "nm": 1.8,
           "activity": [],
           "rating": 3,
@@ -249,18 +258,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 35.7,
-        "tmin": 23.9,
-        "rain_prob": 0,
-        "wind_max": 8.5,
-        "gust_max": 18.3,
-        "wind_dir": 159
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": {
-        "hmax": 0.34,
-        "dir": 138,
-        "period": 4.15
+        "hmax": 0.6,
+        "dir": 290,
+        "period": 4.2,
+        "synthetic": true
       }
     },
     {
@@ -269,16 +280,15 @@
       "night": false,
       "frm": "Tizzano",
       "to": "Campomoro",
+      "to_id": "campomoro",
       "rating": 4,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/500px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
-      },
+      "photo": null,
       "nm": 6.5,
       "tappe": [
         {
           "slot": "mattina",
           "to": "Cala Longa Tizzano",
+          "to_id": "cala_longa_tizzano",
           "nm": 1.8,
           "activity": [
             "bagno"
@@ -289,6 +299,7 @@
         {
           "slot": "sera",
           "to": "Campomoro",
+          "to_id": "campomoro",
           "nm": 4.8,
           "activity": [],
           "rating": 4,
@@ -303,18 +314,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 36.4,
-        "tmin": 24.2,
-        "rain_prob": 0,
-        "wind_max": 4.6,
-        "gust_max": 9.7,
-        "wind_dir": 108
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": {
-        "hmax": 0.12,
-        "dir": 225,
-        "period": 4.5
+        "hmax": 0.6,
+        "dir": 290,
+        "period": 4.2,
+        "synthetic": true
       }
     },
     {
@@ -323,16 +336,15 @@
       "night": false,
       "frm": "Campomoro",
       "to": "Isolella",
+      "to_id": "isolella",
       "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/500px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
-      },
+      "photo": null,
       "nm": 12.4,
       "tappe": [
         {
           "slot": "giornata",
           "to": "Isolella",
+          "to_id": "isolella",
           "nm": 12.4,
           "activity": [],
           "rating": 3,
@@ -347,18 +359,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 36.2,
-        "tmin": 26.8,
-        "rain_prob": 0,
-        "wind_max": 5.7,
-        "gust_max": 12.4,
-        "wind_dir": 212
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": {
-        "hmax": 0.36,
-        "dir": 220,
-        "period": 4.75
+        "hmax": 0.6,
+        "dir": 290,
+        "period": 4.2,
+        "synthetic": true
       }
     },
     {
@@ -367,16 +381,15 @@
       "night": false,
       "frm": "Isolella",
       "to": "Girolata",
+      "to_id": "girolata",
       "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Girolata_Osani_1_JPG.jpg/500px-Girolata_Osani_1_JPG.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_1_JPG.jpg"
-      },
+      "photo": null,
       "nm": 31.4,
       "tappe": [
         {
           "slot": "giornata",
           "to": "Girolata",
+          "to_id": "girolata",
           "nm": 31.4,
           "activity": [],
           "rating": 5,
@@ -391,18 +404,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 39.9,
-        "tmin": 25.5,
-        "rain_prob": 0,
-        "wind_max": 6.2,
-        "gust_max": 29.0,
-        "wind_dir": 200
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": {
-        "hmax": 0.24,
-        "dir": 218,
-        "period": 4.25
+        "hmax": 0.6,
+        "dir": 290,
+        "period": 4.2,
+        "synthetic": true
       }
     },
     {
@@ -411,16 +426,15 @@
       "night": false,
       "frm": "Girolata",
       "to": "San Fiorenzo",
+      "to_id": "san_fiorenzo",
       "rating": 3.5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
-      },
+      "photo": null,
       "nm": 35.8,
       "tappe": [
         {
           "slot": "giornata",
           "to": "San Fiorenzo",
+          "to_id": "san_fiorenzo",
           "nm": 35.8,
           "activity": [],
           "rating": 3.5,
@@ -440,18 +454,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 39.2,
-        "tmin": 26.0,
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
         "rain_prob": 5,
-        "wind_max": 6.0,
-        "gust_max": 17.4,
-        "wind_dir": 297
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": {
-        "hmax": 0.08,
-        "dir": 252,
-        "period": 4.45
+        "hmax": 0.6,
+        "dir": 290,
+        "period": 4.2,
+        "synthetic": true
       }
     },
     {
@@ -460,16 +476,15 @@
       "night": false,
       "frm": "San Fiorenzo",
       "to": "Centuri",
+      "to_id": "centuri",
       "rating": 4,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
-      },
+      "photo": null,
       "nm": 19.9,
       "tappe": [
         {
           "slot": "mattina",
           "to": "Saleccia",
+          "to_id": "saleccia",
           "nm": 4.2,
           "activity": [
             "bagno"
@@ -480,6 +495,7 @@
         {
           "slot": "sera",
           "to": "Centuri",
+          "to_id": "centuri",
           "nm": 15.6,
           "activity": [],
           "rating": 4,
@@ -494,13 +510,14 @@
         "off": []
       },
       "wx": {
-        "wmo": 0,
-        "tmax": 29.1,
-        "tmin": 27.2,
-        "rain_prob": 0,
-        "wind_max": 10.9,
-        "gust_max": 13.8,
-        "wind_dir": 218
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": null
     },
@@ -510,16 +527,15 @@
       "night": false,
       "frm": "Centuri",
       "to": "Erbalunga",
+      "to_id": "erbalunga",
       "rating": 3.5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
-      },
+      "photo": null,
       "nm": 12.8,
       "tappe": [
         {
           "slot": "giornata",
           "to": "Erbalunga",
+          "to_id": "erbalunga",
           "nm": 12.8,
           "activity": [],
           "rating": 3.5,
@@ -537,13 +553,14 @@
         ]
       },
       "wx": {
-        "wmo": 0,
-        "tmax": 36.9,
-        "tmin": 27.7,
-        "rain_prob": 0,
-        "wind_max": 2.6,
-        "gust_max": 18.9,
-        "wind_dir": 252
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": null
     },
@@ -553,16 +570,15 @@
       "night": true,
       "frm": "Erbalunga",
       "to": "Favone",
+      "to_id": "favone",
       "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
-      },
+      "photo": null,
       "nm": 60.1,
       "tappe": [
         {
           "slot": "mattina",
           "to": "Erbalunga",
+          "to_id": "erbalunga",
           "nm": 0.0,
           "activity": [
             "bagno"
@@ -573,6 +589,7 @@
         {
           "slot": "sera",
           "to": "Favone",
+          "to_id": "favone",
           "nm": 60.1,
           "activity": [],
           "rating": 3,
@@ -587,13 +604,14 @@
         "off": []
       },
       "wx": {
-        "wmo": 0,
-        "tmax": 32.0,
-        "tmin": 26.5,
-        "rain_prob": 0,
-        "wind_max": 6.5,
-        "gust_max": 19.0,
-        "wind_dir": 31
+        "wmo": 1,
+        "tmax": 29,
+        "tmin": 22,
+        "rain_prob": 5,
+        "wind_max": 16,
+        "gust_max": 22,
+        "wind_dir": 305,
+        "synthetic": true
       },
       "wave": null
     },
@@ -603,16 +621,15 @@
       "night": false,
       "frm": "Favone",
       "to": "Palombaggia",
+      "to_id": "palombaggia",
       "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Palombaggia_-_panoramio.jpg/500px-Palombaggia_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_-_panoramio.jpg"
-      },
+      "photo": null,
       "nm": 13.8,
       "tappe": [
         {
           "slot": "mattina",
           "to": "Fautea",
+          "to_id": "fautea",
           "nm": 3.7,
           "activity": [
             "bagno"
@@ -623,6 +640,7 @@
         {
           "slot": "pomeriggio",
           "to": "San Ciprianu",
+          "to_id": "san_ciprianu",
           "nm": 5.6,
           "activity": [
             "bagno"
@@ -633,6 +651,7 @@
         {
           "slot": "sera",
           "to": "Palombaggia",
+          "to_id": "palombaggia",
           "nm": 4.5,
           "activity": [],
           "rating": 5,
@@ -655,16 +674,15 @@
       "night": true,
       "frm": "Palombaggia",
       "to": "Porto Rotondo",
+      "to_id": "porto_rotondo",
       "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg/500px-Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(02).jpg"
-      },
+      "photo": null,
       "nm": 33.0,
       "tappe": [
         {
           "slot": "mattina",
           "to": "Palombaggia",
+          "to_id": "palombaggia",
           "nm": 0.0,
           "activity": [
             "bagno"
@@ -675,6 +693,7 @@
         {
           "slot": "sera",
           "to": "Porto Rotondo",
+          "to_id": "porto_rotondo",
           "nm": 33.0,
           "activity": [],
           "rating": 3,
@@ -697,16 +716,15 @@
       "night": false,
       "frm": "Porto Rotondo",
       "to": "Porto Rotondo",
+      "to_id": "porto_rotondo",
       "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg/500px-Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(02).jpg"
-      },
+      "photo": null,
       "nm": 0.0,
       "tappe": [
         {
           "slot": "giornata",
           "to": "Porto Rotondo",
+          "to_id": "porto_rotondo",
           "nm": 0.0,
           "activity": [
             "bordo",
@@ -743,10 +761,11 @@
       "rating": 5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg/500px-La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena_-_Isola_di_Spargi_(11).jpg"
-      }
+      "coords": [
+        41.2311,
+        9.3389
+      ],
+      "photo": null
     },
     {
       "id": "budelli",
@@ -755,10 +774,11 @@
       "rating": 5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
-      }
+      "coords": [
+        41.2789,
+        9.3556
+      ],
+      "photo": null
     },
     {
       "id": "lavezzi",
@@ -767,10 +787,11 @@
       "rating": 5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
-      }
+      "coords": [
+        41.3392,
+        9.2544
+      ],
+      "photo": null
     },
     {
       "id": "bonifacio",
@@ -779,10 +800,11 @@
       "rating": 5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/500px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
-        "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
-      }
+      "coords": [
+        41.3872,
+        9.1592
+      ],
+      "photo": null
     },
     {
       "id": "rondinara",
@@ -791,10 +813,11 @@
       "rating": 5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Rondinara_Bay%2C_France_%2852723802346%29.jpg/500px-Rondinara_Bay%2C_France_%2852723802346%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_Bay,_France_(52723802346).jpg"
-      }
+      "coords": [
+        41.4767,
+        9.2775
+      ],
+      "photo": null
     },
     {
       "id": "coticcio",
@@ -803,10 +826,11 @@
       "rating": 5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
-      }
+      "coords": [
+        41.2075,
+        9.465
+      ],
+      "photo": null
     },
     {
       "id": "porto_madonna",
@@ -815,10 +839,11 @@
       "rating": 5,
       "notes": "Ormeggio SOLO su boe del Parco (a pagamento, poche rispetto alla domanda, ~7 m sabbia/posidonia); zona piscine naturali interdetta a navigazione/ancoraggio, accesso solo a remi/nuoto; permesso Parco o [coord. da verifica",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg/500px-Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Sailing_in_Sardinia_,_Isolotti_Paduleddi_-_panoramio.jpg"
-      }
+      "coords": [
+        41.288,
+        9.357
+      ],
+      "photo": null
     },
     {
       "id": "girolata",
@@ -827,10 +852,11 @@
       "rating": 5,
       "notes": "Ormeggio solo su gavitello (capitaneria 7/7 8-20, mag-set, anche boe superyacht max 30 m); ancoraggio libero di fatto vietato/limitato per posidonia e spazio; in agosto arrivare presto.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Girolata_Osani_1_JPG.jpg/500px-Girolata_Osani_1_JPG.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_1_JPG.jpg"
-      }
+      "coords": [
+        42.34917,
+        8.61306
+      ],
+      "photo": null
     },
     {
       "id": "saleccia",
@@ -839,10 +865,11 @@
       "rating": 5,
       "notes": "Fondo sabbia, buona tenuta, ma rada aperta: solo con meteo stabile e mare calmo; in estate ancorare oltre la fascia balneare 300 m.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Place_de_Saleccia_footsteps_in_the_sand_-_panoramio.jpg/500px-Place_de_Saleccia_footsteps_in_the_sand_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Place_de_Saleccia_footsteps_in_the_sand_-_panoramio.jpg"
-      }
+      "coords": [
+        42.72867,
+        9.205
+      ],
+      "photo": null
     },
     {
       "id": "palombaggia",
@@ -851,10 +878,11 @@
       "rating": 5,
       "notes": "Dare fondo solo su sabbia: le praterie di posidonia sono balisate e l'ancoraggio sopra e' vietato (arrete prefettizio 2023; >24 m vietato tra Punta Chiappa e Capicciolu). Riparata da NW dalla penisola",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Palombaggia_-_panoramio.jpg/500px-Palombaggia_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_-_panoramio.jpg"
-      }
+      "coords": [
+        41.5555,
+        9.3305
+      ],
+      "photo": null
     },
     {
       "id": "santamaria",
@@ -863,10 +891,11 @@
       "rating": 4.5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/500px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Corcelli_(01).jpg"
-      }
+      "coords": [
+        41.295,
+        9.39
+      ],
+      "photo": null
     },
     {
       "id": "cr_roccapina_nord",
@@ -875,10 +904,11 @@
       "rating": 4.5,
       "notes": "",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Tour_de_Roccapina.jpg/500px-Tour_de_Roccapina.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Roccapina.jpg"
-      }
+      "coords": [
+        41.50003,
+        8.91714
+      ],
+      "photo": null
     },
     {
       "id": "santa_giulia",
@@ -887,10 +917,11 @@
       "rating": 4.5,
       "notes": "ZMEL organizzata: 30 boe visitatori per taglia (3xx <9m, 2xx 9-15m, 1xx 15-20m), seguire i marker a 300 m dalla riva sud; baia sabbiosa poco profonda, aperta a E",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Plage_de_Sta-Giulia_%288132718542%29.jpg/500px-Plage_de_Sta-Giulia_%288132718542%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Plage_de_Sta-Giulia_(8132718542).jpg"
-      }
+      "coords": [
+        41.524,
+        9.2783
+      ],
+      "photo": null
     },
     {
       "id": "lotu",
@@ -899,10 +930,11 @@
       "rating": 4.5,
       "notes": "Sabbia, buona tenuta; obbligo ancoraggio oltre 300 m dalla spiaggia; protetta da W/SW, esposta a N-NW. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_heaven_water_-_panoramio.jpg/500px-Sentier_du_littoral_-_Plage_de_Loto_%28Lotu%29_-_heaven_water_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Sentier_du_littoral_-_Plage_de_Loto_(Lotu)_-_heaven_water_-_panoramio.jpg"
-      }
+      "coords": [
+        42.7225,
+        9.2328
+      ],
+      "photo": null
     },
     {
       "id": "ficajola",
@@ -911,10 +943,11 @@
       "rating": 4.5,
       "notes": "Caletta minuscola sotto le Calanche di Piana (golfo di Porto), fondo sabbia/roccia, spazio per pochissime barche. Solo sosta diurna con mare calmo: completamente esposta a W/SW e alla risacca da ponen [coord. da verifica",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Corsica_-_Piana_-_panoramio_-_gian_luca_bucci.jpg/500px-Corsica_-_Piana_-_panoramio_-_gian_luca_bucci.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Corsica_-_Piana_-_panoramio_-_gian_luca_bucci.jpg"
-      }
+      "coords": [
+        42.252,
+        8.6262
+      ],
+      "photo": null
     },
     {
       "id": "sanguinaires",
@@ -923,10 +956,11 @@
       "rating": 4,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
-      }
+      "coords": [
+        41.885,
+        8.585
+      ],
+      "photo": null
     },
     {
       "id": "mortorio",
@@ -935,10 +969,11 @@
       "rating": 4,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sardinia2008-02-29_%2825%29.JPG/500px-Sardinia2008-02-29_%2825%29.JPG",
-        "page": "https://commons.wikimedia.org/wiki/File:Sardinia2008-02-29_(25).JPG"
-      }
+      "coords": [
+        41.0783,
+        9.575
+      ],
+      "photo": null
     },
     {
       "id": "corsica_isola_piana",
@@ -947,10 +982,11 @@
       "rating": 4,
       "notes": "",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg/500px-Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Golf_de_Sperone,_trou_n%C2%B0_16.jpg"
-      }
+      "coords": [
+        41.37452,
+        9.22525
+      ],
+      "photo": null
     },
     {
       "id": "cala_portese",
@@ -959,10 +995,11 @@
       "rating": 4,
       "notes": "Fondo sabbia bianca, ben ridossata; campo boe estivo del Parco La Maddalena (ancoraggio consentito fuori boe), molto affollata in agosto [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/500px-Caprera%2C_trasparenze_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
-      }
+      "coords": [
+        41.1831,
+        9.4633
+      ],
+      "photo": null
     },
     {
       "id": "cala_rossa",
@@ -971,10 +1008,11 @@
       "rating": 4,
       "notes": "Cala quasi interamente occupata dal campo boe ANCRE (boe visitatori prenotabili online); fuori boe ancorare su sabbia 4-8 m; buon ridosso da N/NW, aperta a S [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Punta_di_a_Chiappa.jpg/500px-Punta_di_a_Chiappa.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Punta_di_a_Chiappa.jpg"
-      }
+      "coords": [
+        41.617,
+        9.3325
+      ],
+      "photo": null
     },
     {
       "id": "san_ciprianu",
@@ -983,10 +1021,11 @@
       "rating": 4,
       "notes": "Baia a mezzaluna ben protetta, sabbia e posidonia (qualche roccia verso il fondo della baia); isolotto San Ciprianu all'ingresso; buona tappa a 4 M dal porto di Porto-Vecchio [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Tour_de_San_Ciprianu_-_Corsica.jpg/500px-Tour_de_San_Ciprianu_-_Corsica.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Tour_de_San_Ciprianu_-_Corsica.jpg"
-      }
+      "coords": [
+        41.6283,
+        9.3533
+      ],
+      "photo": null
     },
     {
       "id": "cala_di_conca",
@@ -995,10 +1034,11 @@
       "rating": 4,
       "notes": "Cala stretta, fondo sabbia 2-16 m; buon ridosso da maestrale ma aperta a libeccio/onda; scoglio affiorante a 1.8 m circa 400 m a WSW dell'ingresso; affollata in agosto.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Tour_de_Senetosa.jpg/500px-Tour_de_Senetosa.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Senetosa.jpg"
-      }
+      "coords": [
+        41.5746,
+        8.8036
+      ],
+      "photo": null
     },
     {
       "id": "campomoro",
@@ -1007,10 +1047,11 @@
       "rating": 4,
       "notes": "Fondo sabbia con chiazze di posidonia/alga 5-15 m (fino a 30 m piu' fuori); ottimo ridosso da W/SW, esposto a NW; divieto di ancoraggio entro 300 m dalla spiaggia (fascia balneare/allevamento). [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/500px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
-      }
+      "coords": [
+        41.6342,
+        8.8098
+      ],
+      "photo": null
     },
     {
       "id": "anse_chiuni",
@@ -1019,10 +1060,11 @@
       "rating": 4,
       "notes": "Baia ben protetta e poco profonda tra Punta d'Orchinu e Punta Omigna, fondo sabbia 3-6 m, buona tenuta; apre a W (attenzione con ponente/onda residua).",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Aloe_maculata_Corsica.jpg/500px-Aloe_maculata_Corsica.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Aloe_maculata_Corsica.jpg"
-      }
+      "coords": [
+        42.1701,
+        8.5895
+      ],
+      "photo": null
     },
     {
       "id": "calvi_alga",
@@ -1031,10 +1073,11 @@
       "rating": 4,
       "notes": "Fondo sabbia con chiazze di posidonia, 3-8 m; ottimo ridosso da libeccio (SW), aperta a N/NE; in alternativa lato N di Punta Oscelluccia.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Calvi_ruines_maison_du_prince_Pierre_%C3%A0_Grotta_Niella.jpg/500px-Calvi_ruines_maison_du_prince_Pierre_%C3%A0_Grotta_Niella.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Calvi_ruines_maison_du_prince_Pierre_%C3%A0_Grotta_Niella.jpg"
-      }
+      "coords": [
+        42.5628,
+        8.7277
+      ],
+      "photo": null
     },
     {
       "id": "centuri",
@@ -1043,10 +1086,11 @@
       "rating": 4,
       "notes": "Porticciolo minuscolo (max ~10 m, pescaggio max 2 m, 0,8 m minimo): in agosto quasi sempre pieno; le barche a vela ancorano fuori davanti al porto su sabbia, solo con calma da W.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
-      }
+      "coords": [
+        42.9662,
+        9.3504
+      ],
+      "photo": null
     },
     {
       "id": "pinarello",
@@ -1055,10 +1099,11 @@
       "rating": 4,
       "notes": "Punto migliore ai due lati del passo tra isola di Pinarellu (torre genovese) e terraferma; fondo sabbia e roccia. Buona protezione da SW ma raffiche; attenzione allo scoglio Roscana e ai sub. Non teni [coord. da verifica",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Isola_Pinarello_-_panoramio_%281%29.jpg/500px-Isola_Pinarello_-_panoramio_%281%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio_(1).jpg"
-      }
+      "coords": [
+        41.672,
+        9.39
+      ],
+      "photo": null
     },
     {
       "id": "santa_manza",
@@ -1067,10 +1112,11 @@
       "rating": 3.5,
       "notes": "Sabbia buona tenuta ~6 m, ottimo riparo da W/mistral ma aperto a NE; ZMEL Bonifacio Marina 15 boe (obbligatorie per unita >24 m); zona kite/windsurf",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gobius_incognitus.jpg/500px-Gobius_incognitus.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Gobius_incognitus.jpg"
-      }
+      "coords": [
+        41.4087,
+        9.2203
+      ],
+      "photo": null
     },
     {
       "id": "marmorata",
@@ -1079,10 +1125,11 @@
       "rating": 3.5,
       "notes": "Sabbia e posidonia, ancorare sulle chiazze chiare in 5-6 m; ridosso da maestrale subito a S dell'isolotto maggiore; passaggio isolotti-costa con fondale ~1 m, non tentare",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Punta_Marmorata_-_panoramio.jpg/500px-Punta_Marmorata_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Punta_Marmorata_-_panoramio.jpg"
-      }
+      "coords": [
+        41.25,
+        9.238
+      ],
+      "photo": null
     },
     {
       "id": "cala_longa_tizzano",
@@ -1091,10 +1138,11 @@
       "rating": 3.5,
       "notes": "Caletta selvaggia presso Punta di Capicciolu tra Tizzano e Senetosa, ben ridossata dai venti, usata come rifugio; sabbia; nessun servizio; da non confondere con la Cala Longa di Bonifacio. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20100_Sart%C3%A8ne%2C_France_-_panoramio.jpg/500px-20100_Sart%C3%A8ne%2C_France_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:20100_Sart%C3%A8ne,_France_-_panoramio.jpg"
-      }
+      "coords": [
+        41.5549,
+        8.8161
+      ],
+      "photo": null
     },
     {
       "id": "san_fiorenzo",
@@ -1103,10 +1151,11 @@
       "rating": 3.5,
       "notes": "Ancorare su 5-6 m sabbia e alghe, fondale degrada dolcemente; riparata da W/SW/S/SE/E, da abbandonare con previsione di N/NE. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
-      }
+      "coords": [
+        42.6858,
+        9.2815
+      ],
+      "photo": null
     },
     {
       "id": "malfalco",
@@ -1115,10 +1164,11 @@
       "rating": 3.5,
       "notes": "Cala stretta: si dà fondo al centro su 2-3 m sabbia/roccia; ridosso discreto da W moderato, esposta a risacca con NW-NE, rollio con mistral. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Alga_putrica_-_panoramio.jpg/500px-Alga_putrica_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Alga_putrica_-_panoramio.jpg"
-      }
+      "coords": [
+        42.7236,
+        9.118
+      ],
+      "photo": null
     },
     {
       "id": "barcaggio",
@@ -1127,10 +1177,11 @@
       "rating": 3.5,
       "notes": "Fondo sabbia con alghe e rocce, bassi fondali; rada aperta a quasi tutti i venti e a corrente del canale della Giraglia: solo sosta diurna con mare calmo, ridosso da SE a NE della spiaggia.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cap_Corse_-_Barcaggio-cow_passing_l%27Acqua_Tignese_-_panoramio.jpg/500px-Cap_Corse_-_Barcaggio-cow_passing_l%27Acqua_Tignese_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Barcaggio-cow_passing_l%27Acqua_Tignese_-_panoramio.jpg"
-      }
+      "coords": [
+        43.0079,
+        9.4112
+      ],
+      "photo": null
     },
     {
       "id": "erbalunga",
@@ -1139,10 +1190,11 @@
       "rating": 3.5,
       "notes": "Rada aperta appena a N/E del porticciolo (porto solo <8 m). Fondo sabbia e roccia, tenuta discreta; ridossata solo da venti occidentali, evitare con vento da E. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
-      }
+      "coords": [
+        42.7742,
+        9.4787
+      ],
+      "photo": null
     },
     {
       "id": "canella",
@@ -1151,10 +1203,11 @@
       "rating": 3.5,
       "notes": "Cala ben protetta da W/SW (libeccio), fondo sabbia con buona tenuta; aperta a E. Fondale basso vicino a riva, molto frequentata in agosto.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Beach_of_Canella%2C_Sari-Solenzara%2C_France_%2852724277338%29.jpg/500px-Beach_of_Canella%2C_Sari-Solenzara%2C_France_%2852724277338%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Beach_of_Canella,_Sari-Solenzara,_France_(52724277338).jpg"
-      }
+      "coords": [
+        41.8,
+        9.397
+      ],
+      "photo": null
     },
     {
       "id": "fautea",
@@ -1163,10 +1216,11 @@
       "rating": 3.5,
       "notes": "Ancoraggio nella baia a S della torre genovese del 1592, fondo sabbia; sito protetto Conservatoire du Littoral. Riparo discreto con tempo buono ma esposto a E, tenibile di notte solo con meteo stabile [coord. da verifica",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sunrise_At_Fautea_Beach_%28262708439%29.jpeg/500px-Sunrise_At_Fautea_Beach_%28262708439%29.jpeg",
-        "page": "https://commons.wikimedia.org/wiki/File:Sunrise_At_Fautea_Beach_(262708439).jpeg"
-      }
+      "coords": [
+        41.7135,
+        9.4045
+      ],
+      "photo": null
     },
     {
       "id": "porto_vecchio",
@@ -1175,10 +1229,11 @@
       "rating": 3,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg/500px-Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Baie_de_Porto-Vecchio,_Corse_-_Patrick_Nouhailler_-_panoramio.jpg"
-      }
+      "coords": [
+        41.58,
+        9.305
+      ],
+      "photo": null
     },
     {
       "id": "porto_palma",
@@ -1187,10 +1242,11 @@
       "rating": 3,
       "notes": "Ridossata da tutto tranne S; miglior tenuta lato E in 5-9 m sabbia (chiazze posidonia/fango); boe estive; base velica CVC con regate mag-ott",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Porto_Palma_-_panoramio_%282%29.jpg/500px-Porto_Palma_-_panoramio_%282%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio_(2).jpg"
-      }
+      "coords": [
+        41.1892,
+        9.4505
+      ],
+      "photo": null
     },
     {
       "id": "tizzano",
@@ -1199,10 +1255,11 @@
       "rating": 3,
       "notes": "Ancorare all'ingresso della cala fuori dal porticciolo, 3-8 m solo su sabbia; esposto a SW; secca di 1.5 m circa 200 m a S della punta W dell'ingresso; pontili interni max 1.5 m pescaggio. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/500px-Fortin_de_Tizzano_02.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
-      }
+      "coords": [
+        41.5398,
+        8.8501
+      ],
+      "photo": null
     },
     {
       "id": "isolella",
@@ -1211,10 +1268,11 @@
       "rating": 3,
       "notes": "Campo boe comunale (ZMEL Pietrosella, ~400 gavitelli totali con Stagnola e Ste-Barbe, mag-ott); vietato ancorare fuori dalle boe e entro 300 m dalle spiagge; boa assegnata dal gestore. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/500px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
-      }
+      "coords": [
+        41.83733,
+        8.76
+      ],
+      "photo": null
     },
     {
       "id": "tamarone",
@@ -1223,10 +1281,11 @@
       "rating": 3,
       "notes": "Fondo sabbia con chiazze di roccia/posidonia, 3-6 m; buon ridosso da W/SW (libeccio), aperta a E-NE; comoda alternativa gratuita a Macinaggio. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Cap_Corse_-_Tamarone_beach-from_Monte_di_a_Guardia_-_panoramio.jpg/500px-Cap_Corse_-_Tamarone_beach-from_Monte_di_a_Guardia_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Tamarone_beach-from_Monte_di_a_Guardia_-_panoramio.jpg"
-      }
+      "coords": [
+        42.9755,
+        9.457
+      ],
+      "photo": null
     },
     {
       "id": "favone",
@@ -1235,10 +1294,11 @@
       "rating": 3,
       "notes": "Baia sabbiosa con buona tenuta, riparata da W; aperta a E-NE. Verificare posidonia prima di dare fondo; Navily mouillage #8055.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
-      }
+      "coords": [
+        41.7742,
+        9.3986
+      ],
+      "photo": null
     },
     {
       "id": "porto_rotondo",
@@ -1247,10 +1307,11 @@
       "rating": 3,
       "notes": "Marina + rada; base logistica drop-off/pickup 21-22/8, aeroporto Olbia ~20 min [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg/500px-Olbia%2C_frazione_Porto_Rotondo%2C_panorama_%2802%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Olbia,_frazione_Porto_Rotondo,_panorama_(02).jpg"
-      }
+      "coords": [
+        41.0315,
+        9.5485
+      ],
+      "photo": null
     },
     {
       "id": "golfo_di_marinella",
@@ -1259,10 +1320,11 @@
       "rating": 3,
       "notes": "Baia sabbiosa ampia, buona tenuta; comoda per transfer aeroporto [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/La_Maddalena%2C_isola_di_Soffi_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Soffi_%2802%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Soffi_(02).jpg"
-      }
+      "coords": [
+        41.047,
+        9.568
+      ],
+      "photo": null
     },
     {
       "id": "golfo_di_cugnana",
@@ -1271,10 +1333,11 @@
       "rating": 3,
       "notes": "Golfo riparato a S di Porto Rotondo; alternativa per la notte [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Olbia%2C_golfo_di_Cugnana_%2801%29.jpg/500px-Olbia%2C_golfo_di_Cugnana_%2801%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Olbia,_golfo_di_Cugnana_(01).jpg"
-      }
+      "coords": [
+        41.021,
+        9.529
+      ],
+      "photo": null
     },
     {
       "id": "cannigione",
@@ -1283,10 +1346,11 @@
       "rating": 2.5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(03).jpg"
-      }
+      "coords": [
+        41.1069,
+        9.4404
+      ],
+      "photo": null
     },
     {
       "id": "ajaccio",
@@ -1295,10 +1359,11 @@
       "rating": 2.5,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Queen_Victoria_in_Ajaccio_harbour_III.jpg/500px-Queen_Victoria_in_Ajaccio_harbour_III.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Queen_Victoria_in_Ajaccio_harbour_III.jpg"
-      }
+      "coords": [
+        41.92,
+        8.74
+      ],
+      "photo": null
     },
     {
       "id": "macinaggio",
@@ -1307,10 +1372,11 @@
       "rating": 2.5,
       "notes": "Marina ~585 posti, base classica prima/dopo il doppiaggio del Capo; in agosto prenotare; ancoraggio possibile nella baia a N del porto su sabbia.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cap_Corse_-_Macinaggio_-_main_street_-_panoramio.jpg/500px-Cap_Corse_-_Macinaggio_-_main_street_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Macinaggio_-_main_street_-_panoramio.jpg"
-      }
+      "coords": [
+        42.96098,
+        9.45451
+      ],
+      "photo": null
     },
     {
       "id": "bastia",
@@ -1319,10 +1385,11 @@
       "rating": 2,
       "notes": null,
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bastia0.JPG/500px-Bastia0.JPG",
-        "page": "https://commons.wikimedia.org/wiki/File:Bastia0.JPG"
-      }
+      "coords": [
+        42.7,
+        9.455
+      ],
+      "photo": null
     },
     {
       "id": "solenzara",
@@ -1331,10 +1398,11 @@
       "rating": 2,
       "notes": "Marina 450 posti, 8 pontili. In alternativa rada sabbiosa a S della foce del fiume Solenzara utilizzabile solo con tempo stabile.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Rainy_day_in_Solenzara_-_panoramio.jpg/500px-Rainy_day_in_Solenzara_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Rainy_day_in_Solenzara_-_panoramio.jpg"
-      }
+      "coords": [
+        41.8572,
+        9.4037
+      ],
+      "photo": null
     },
     {
       "id": "foce_golo",
@@ -1343,10 +1411,11 @@
       "rating": 1.5,
       "notes": "Costa sabbiosa rettilinea completamente aperta: solo sosta diurna con mare calmo. Possibili banchi di sabbia mobili davanti alla foce, avvicinarsi con ecoscandaglio. [coord. da verificare]",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Allium_corsicum_Jauzein_in_eastern_Corsica.jpg/500px-Allium_corsicum_Jauzein_in_eastern_Corsica.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Allium_corsicum_Jauzein_in_eastern_Corsica.jpg"
-      }
+      "coords": [
+        42.5242,
+        9.537
+      ],
+      "photo": null
     },
     {
       "id": "campoloro",
@@ -1355,10 +1424,11 @@
       "rating": 1.5,
       "notes": "Unico porto-rifugio tra Bastia e Solenzara sulla costa orientale. Entrata con risacca in caso di forte vento da E/SE; carburante e servizi disponibili.",
       "verify": true,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png",
-        "page": "https://commons.wikimedia.org/wiki/File:Endophloeus_markovichianus_(Piller_%26_Mitterpacher,_1783)_lateral_view_(23150294085).png"
-      }
+      "coords": [
+        42.34135,
+        9.539
+      ],
+      "photo": null
     }
   ]
 }

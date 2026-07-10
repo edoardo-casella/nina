@@ -142,7 +142,7 @@ def build_day_steps(v: dict, p: dict, day: str, series: list[dict],
         a, b = core.find_wp(v, s["from"]), core.find_wp(v, s["to"])
         meta = {"slot": s.get("slot", "giornata"), "activity": s.get("activity", []),
                 "night_stay": bool(s.get("night_stay")), "verify": bool(s.get("verify")),
-                "arrive_by": s.get("arrive_by"),
+                "arrive_by": s.get("arrive_by"), "frm_id": s["from"], "to_id": s["to"],
                 "rating": b.get("rating"), "photo": photo_ref(b, offline)}
         if s["from"] == s["to"]:
             out.append({**meta, "stay": True, "name": b["name"], "nm": 0})
@@ -194,14 +194,15 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
                 (a["lat"], a["lon"]), (b["lat"], b["lon"]))
             tot += nm
             tappe.append({"slot": s.get("slot", "giornata"), "to": b["name"],
-                          "nm": round(nm, 1), "activity": s.get("activity", []),
+                          "to_id": s["to"], "nm": round(nm, 1),
+                          "activity": s.get("activity", []),
                           "rating": b.get("rating"), "verify": bool(s.get("verify"))})
         # in simulazione i cambi equipaggio seguono le date VERE, non quelle shiftate
         orig = (dt.date.fromisoformat(d) - dt.timedelta(days=offset)).isoformat()
         dest_wp = core.find_wp(v, p["to"])
         rows.append({"date": d, "i": i, "rest": bool(p.get("rest")), "night": bool(p.get("night")),
                      "frm": core.find_wp(v, p["from"])["name"],
-                     "to": dest_wp["name"],
+                     "to": dest_wp["name"], "to_id": dest_wp["id"],
                      "rating": dest_wp.get("rating"), "photo": photo_ref(dest_wp, offline),
                      "nm": round(tot, 1), "tappe": tappe, "n_tappe": len(tappe),
                      "verify": any(t["verify"] for t in tappe),
@@ -261,7 +262,8 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
     dests = sorted(
         ({"id": w["id"], "name": w["name"], "type": w.get("type"),
           "rating": w["rating"], "notes": w.get("notes"),
-          "verify": bool(w.get("verify")), "photo": photo_ref(w, offline)}
+          "verify": bool(w.get("verify")), "coords": [w["lat"], w["lon"]],
+          "photo": photo_ref(w, offline)}
          for w in v["waypoints"] if w.get("rating") is not None),
         key=lambda d: -d["rating"])
 
@@ -269,6 +271,37 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
             "start_date": plan_all[0]["date"] if plan_all else None,
             "end_date": plan_all[-1]["date"] if plan_all else None,
             "tiers": TIER_LEGEND, "days": rows, "destinations": dests}
+
+
+def build_destinations(v: dict, now: str) -> dict:
+    """Schede dettaglio: join SENZA rete di data/destinations.json (gallery +
+    Wikipedia, arricchito a mano con enrich_destinations.py) con i dati vivi —
+    voto/note/tipo da voyage.json, riparo da anchorages.json. Se il file manca
+    o una voce non c'e', la scheda resta essenziale (la UI degrada)."""
+    try:
+        src = json.loads((core.DATA / "destinations.json").read_text(encoding="utf-8"))
+        enrich = src.get("entries", {})
+    except Exception:
+        enrich = {}
+    shelters = {a["id"]: a for a in core.anchorages()}
+
+    out = {}
+    for w in v["waypoints"]:
+        if w.get("rating") is None:
+            continue
+        e = enrich.get(w["id"], {})
+        sh = shelters.get(w["id"])
+        out[w["id"]] = {
+            "name": w["name"], "type": w.get("type"), "rating": w["rating"],
+            "verify": bool(w.get("verify")), "notes": w.get("notes"),
+            "coords": [w["lat"], w["lon"]],
+            "shelter": ({"holding": sh.get("holding"), "depth_m": sh.get("depth_m"),
+                         "exposed_from": sh.get("exposed_from"),
+                         "exposed_to": sh.get("exposed_to")} if sh else None),
+            "gallery": e.get("gallery", []),
+            "wiki": e.get("wiki"),
+        }
+    return {"generated_at": now, "entries": out}
 
 
 def sim_shift_days(v: dict, today: str) -> int:
@@ -390,7 +423,7 @@ def build_outlook(v: dict, plan: list[dict], day: str, days: int, offline: bool)
         p, a, b = r["plan"], r["frm"], r["to"]
         nm = core.haversine_nm((a["lat"], a["lon"]), (b["lat"], b["lon"]))
         row = {"date": r["date"], "rest": p["rest"], "night": bool(p.get("night")),
-               "frm": a["name"], "to": b["name"], "nm": round(nm, 1),
+               "frm": a["name"], "to": b["name"], "to_id": b["id"], "nm": round(nm, 1),
                "n_tappe": len(norm_steps(p)),
                "rating": b.get("rating"), "photo": photo_ref(b, offline)}
         wx_day = None
@@ -598,7 +631,10 @@ if __name__ == "__main__":
         sys.exit(0)
 
     briefing, wx, conti, program = build(a.day, a.offline)
-    for name, obj in (("briefing", briefing), ("weather", wx), ("conti", conti), ("program", program)):
+    # schede dettaglio: join senza rete del file arricchito a mano (mai fetch qui)
+    dests = build_destinations(core.load(), briefing["generated_at"])
+    for name, obj in (("briefing", briefing), ("weather", wx), ("conti", conti),
+                      ("program", program), ("destinations", dests)):
         (SITE / f"{name}.json").write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
     tag = briefing["leg"]["leg"] if briefing["leg"] else ("sosta" if briefing["rest"] else "—")
     print(f"Pubblicato {a.day}: {tag} | score {briefing['leg']['avg_score'] if briefing['leg'] else '—'} "
