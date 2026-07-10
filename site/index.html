@@ -241,6 +241,15 @@ function render(b, wx, c) {
     <strong>${o.score ?? "—"}</strong>
     <span>${esc(o.leg)}</span></div>`).join("") || "<p>—</p>"}</div>
 
+  ${navigator.onLine ? `
+  <h2>Mappa — rotta live</h2>
+  <div style="border:1px solid var(--hair);border-radius:3px;overflow:hidden">
+    <iframe src="https://www.google.com/maps/d/embed?mid=1RJf2lcAZMecJ238BEcXIA3uyJcuEHr8&ehbc=2E312F"
+      style="width:100%;height:380px;border:0;display:block" loading="lazy" title="Mappa della rotta"></iframe>
+  </div>
+  <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
+    Mappa condivisa, aggiornata in tempo reale — i segnaposto NON sono punti di fonda verificati.</p>` : ""}
+
   ${b.crew.length ? `
   <h2>A bordo · ${b.crew.length}</h2>
   <div class="crew">${b.crew.map(m => `<span class="chip ${m.role === "skipper" ? "skipper" : ""}">${esc(m.name)}</span>`).join("")}</div>

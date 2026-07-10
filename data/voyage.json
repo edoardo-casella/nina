@@ -318,6 +318,33 @@
       "lon": 9.575,
       "type": "anchorage",
       "verify": true
+    },
+    {
+      "id": "corsica_isola_piana",
+      "name": "Corsica- Isola Piana",
+      "lat": 41.37452,
+      "lon": 9.22525,
+      "type": "anchorage",
+      "notes": "",
+      "verify": true
+    },
+    {
+      "id": "cr_bonifacio",
+      "name": "CR- Bonifacio",
+      "lat": 41.3891,
+      "lon": 9.15456,
+      "type": "anchorage",
+      "notes": "",
+      "verify": true
+    },
+    {
+      "id": "cr_roccapina_nord",
+      "name": "CR - Roccapina Nord",
+      "lat": 41.50003,
+      "lon": 8.91714,
+      "type": "anchorage",
+      "notes": "",
+      "verify": true
     }
   ],
   "plan": [],
@@ -330,7 +357,7 @@
     "latest_anchor_time": "17:30",
     "earliest_departure": "08:00"
   },
-  "updated_at": null,
+  "updated_at": "2026-07-10T11:14:26",
   "charter": {
     "_nota": "Autorita': Excel 'Summer 26.xlsx', foglio Bonifici (fuori repo). Non entra nelle quote di ledger.py.",
     "totale_eur": 31246,

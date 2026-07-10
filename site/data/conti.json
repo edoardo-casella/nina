@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T11:02+02:00",
+  "generated_at": "2026-07-10T11:15+02:00",
   "person_nights": 181,
   "per_person": [
     {
@@ -115,7 +115,7 @@
       "total": 287.0
     },
     {
-      "name": "Ga",
+      "name": "GM",
       "nights": 7,
       "fixed": 0.0,
       "variable": 287,
