@@ -36,7 +36,7 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 
 | File | Stato |
 |---|---|
-| `data/voyage.json` — crew e date | **REALI** (step 2, da Excel; iniziali). Diete: da raccogliere (default onnivoro). "Ga": identità/data da confermare |
+| `data/voyage.json` — crew e date | **REALI** (step 2, da Excel; iniziali). Diete: da raccogliere (default onnivoro) |
 | `data/voyage.json` — conti | Charter €31.246 = autorità Excel, **fa fede il foglio Bonifici**; ledger.py gestisce solo le spese comuni (variable_budget da tarare) |
 | `data/voyage.json` — plan | **VUOTO** — si riempie allo step 3 dal foglio Percorso (2 scenari Corsica + giro corto) |
 | `data/voyage.json` — waypoints | **STIMATI** — coordinate approssimate, `verify: true` |
@@ -78,7 +78,7 @@ Una cosa per volta, ogni passo confermato dallo skipper:
       dati veri, valutare se togliere i conti dalla pagina)
 - [x] 2. Equipaggio e conti (2026-07-10): 17 persone da `Summer 26.xlsx`,
       quadratura 181 persona-notte e occupazione giornaliera OK; charter fuori
-      ledger (autorità Bonifici). Restano: diete reali, conferma "Ga"
+      ledger (autorità Bonifici). Resta: diete reali
 - [ ] 3. Waypoint: import KML da My Maps con `--merge`, punti rivisti uno a uno
 - [ ] 4. Rade: verifica su portolano, togliere `verify: true` solo dopo
 - [ ] 5. Polare: file reale dal cantiere o dal log NMEA
