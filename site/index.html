@@ -306,12 +306,12 @@ function legCard(b) {
     <div class="route">${esc(from)}<span>→</span>${esc(to)}</div>
     <div class="facts">
       <div class="fact"><b>${L.nm}</b><i>miglia</i></div>
-      <div class="fact"><b>${L.cog}°</b><i>rotta</i></div>
+      <div class="fact"><b>${String(L.cog).padStart(3, "0")}°</b><i>rotta vera</i></div>
       <div class="fact"><b>${L.depart.slice(11)}</b><i>salpa</i></div>
       <div class="fact"><b>${L.eta.slice(11)}</b><i>arrivo</i></div>
       <div class="fact"><b>${L.sail_pct}%</b><i>a vela</i></div>
       ${b.leg_sailing ? `<div class="fact"><b>${b.leg_sailing.vela ? "VELA" : "MOTORE"}</b><i>${esc(b.leg_sailing.andatura)} · TWA ${b.leg_sailing.twa}°</i></div>` : ""}
-      ${b.leg_sailing?.avg_kn ? `<div class="fact"><b>${b.leg_sailing.avg_kn}</b><i>kn media</i></div>` : ""}
+      ${b.leg_sailing?.avg_kn ? `<div class="fact"><b>${b.leg_sailing.avg_kn} kn</b><i>media barca</i></div>` : ""}
     </div>
     <div class="score">
       <p><span class="water">Sail Score</span><b style="color:${color}">${verdict} · ${L.avg_score}</b></p>
