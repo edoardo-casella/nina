@@ -66,7 +66,10 @@ Installato e verificato il 2026-07-10; tutti gli script girano su Windows
 
 Una cosa per volta, ogni passo confermato dallo skipper:
 
-- [ ] 1. Repository: `git init`, repo GitHub, Pages con sorgente "GitHub Actions"
+- [x] 1. Repository (2026-07-10): repo pubblico https://github.com/edoardo-casella/nina,
+      Pages via Actions, dashboard https://edoardo-casella.github.io/nina/
+      (pubblico perché il piano free non dà Pages sui privati: quando entreranno
+      dati veri, valutare se togliere i conti dalla pagina)
 - [ ] 2. Equipaggio e conti: mappare l'Excel reale su `voyage.json`
 - [ ] 3. Waypoint: import KML da My Maps con `--merge`, punti rivisti uno a uno
 - [ ] 4. Rade: verifica su portolano, togliere `verify: true` solo dopo
