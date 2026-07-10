@@ -15,7 +15,7 @@ from __future__ import annotations
 import argparse, datetime as dt, json, math, sys
 from pathlib import Path
 
-import core, routing, shelter, ledger, weather
+import core, routing, shelter, ledger, weather, photos
 
 SITE = core.ROOT / "site" / "data"
 LIGHTS = {"OTTIMA": "verde", "BUONA": "verde", "MEDIOCRE": "giallo", "MOTORE": "giallo", "STOP": "rosso"}
@@ -79,6 +79,21 @@ def leg_for(v: dict, day: str) -> dict | None:
     return next((p for p in v["plan"] if p["date"] == day), None)
 
 
+_PHOTOS: dict[str, dict | None] = {}
+
+
+def photo_ref(wp: dict, offline: bool) -> dict | None:
+    """Foto Commons del waypoint, memoizzata per run. Mai bloccante."""
+    if offline:
+        return None
+    if wp["id"] not in _PHOTOS:
+        try:
+            _PHOTOS[wp["id"]] = photos.photo_for(wp["lat"], wp["lon"], wp["name"])
+        except Exception:
+            _PHOTOS[wp["id"]] = None
+    return _PHOTOS[wp["id"]]
+
+
 def norm_steps(p: dict) -> list[dict]:
     """Un giorno puo' avere fino a 3 tappe esplicite in `steps` (rada mattina,
     pomeriggio, sera). I giorni in formato vecchio (solo from/to) diventano
@@ -98,7 +113,8 @@ def slot_depart(step: dict, prefs: dict) -> str:
         step.get("slot"), prefs.get("earliest_departure", "08:00"))
 
 
-def build_day_steps(v: dict, p: dict, day: str, series: list[dict]) -> list[dict]:
+def build_day_steps(v: dict, p: dict, day: str, series: list[dict],
+                    offline: bool) -> list[dict]:
     """Le tappe del giorno, ognuna con il suo routing orario. Approssimazione
     dichiarata: un'unica serie meteo (scaricata alla posizione di inizio
     giornata) per tutte le tappe — a <=30 nm/giorno l'errore e' piccolo."""
@@ -108,7 +124,8 @@ def build_day_steps(v: dict, p: dict, day: str, series: list[dict]) -> list[dict
         a, b = core.find_wp(v, s["from"]), core.find_wp(v, s["to"])
         meta = {"slot": s.get("slot", "giornata"), "activity": s.get("activity", []),
                 "night_stay": bool(s.get("night_stay")), "verify": bool(s.get("verify")),
-                "arrive_by": s.get("arrive_by")}
+                "arrive_by": s.get("arrive_by"),
+                "rating": b.get("rating"), "photo": photo_ref(b, offline)}
         if s["from"] == s["to"]:
             out.append({**meta, "stay": True, "name": b["name"], "nm": 0})
             continue
@@ -160,18 +177,20 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
             tot += nm
             tappe.append({"slot": s.get("slot", "giornata"), "to": b["name"],
                           "nm": round(nm, 1), "activity": s.get("activity", []),
-                          "verify": bool(s.get("verify"))})
+                          "rating": b.get("rating"), "verify": bool(s.get("verify"))})
         # in simulazione i cambi equipaggio seguono le date VERE, non quelle shiftate
         orig = (dt.date.fromisoformat(d) - dt.timedelta(days=offset)).isoformat()
+        dest_wp = core.find_wp(v, p["to"])
         rows.append({"date": d, "i": i, "rest": bool(p.get("rest")), "night": bool(p.get("night")),
                      "frm": core.find_wp(v, p["from"])["name"],
-                     "to": core.find_wp(v, p["to"])["name"],
+                     "to": dest_wp["name"],
+                     "rating": dest_wp.get("rating"), "photo": photo_ref(dest_wp, offline),
                      "nm": round(tot, 1), "tappe": tappe, "n_tappe": len(tappe),
                      "verify": any(t["verify"] for t in tappe),
                      "tier": confidence_tier(i),
                      "crew_delta": {"on": [m["name"] for m in v["crew"] if m["board"] == orig],
                                     "off": [m["name"] for m in v["crew"] if m["leave"] == orig]},
-                     "wx": None, "wave": None, "_dest": core.find_wp(v, p["to"])})
+                     "wx": None, "wave": None, "_dest": dest_wp})
 
     wx_rows = [r for r in rows if r["tier"] != "programma"]
     if offline:
@@ -218,10 +237,20 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
     for r in rows:
         r.pop("_dest")
         r.pop("i")
+
+    # catalogo destinazioni: tutti i waypoint votati, ordinati per voto.
+    # Il voto e' una STIMA (bozza da guide): si conferma a bordo.
+    dests = sorted(
+        ({"id": w["id"], "name": w["name"], "type": w.get("type"),
+          "rating": w["rating"], "notes": w.get("notes"),
+          "verify": bool(w.get("verify")), "photo": photo_ref(w, offline)}
+         for w in v["waypoints"] if w.get("rating") is not None),
+        key=lambda d: -d["rating"])
+
     return {"generated_at": now, "sim": bool(offset), "day": day,
             "start_date": plan_all[0]["date"] if plan_all else None,
             "end_date": plan_all[-1]["date"] if plan_all else None,
-            "tiers": TIER_LEGEND, "days": rows}
+            "tiers": TIER_LEGEND, "days": rows, "destinations": dests}
 
 
 def sim_shift_days(v: dict, today: str) -> int:
@@ -344,7 +373,8 @@ def build_outlook(v: dict, plan: list[dict], day: str, days: int, offline: bool)
         nm = core.haversine_nm((a["lat"], a["lon"]), (b["lat"], b["lon"]))
         row = {"date": r["date"], "rest": p["rest"], "night": bool(p.get("night")),
                "frm": a["name"], "to": b["name"], "nm": round(nm, 1),
-               "n_tappe": len(norm_steps(p))}
+               "n_tappe": len(norm_steps(p)),
+               "rating": b.get("rating"), "photo": photo_ref(b, offline)}
         wx_day = None
         if met:
             try:
@@ -393,7 +423,7 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
             conf = {"confidence": "sconosciuta", "error": str(e)}
 
     # ---- tappe del giorno (fino a 3: rada mattina / pomeriggio / sera)
-    steps = build_day_steps(v, plan, day, series) if plan else []
+    steps = build_day_steps(v, plan, day, series, offline) if plan else []
 
     # ---- tratta di oggi
     leg, options, stop_reason = None, [], None
@@ -442,6 +472,15 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     night = next((r for r in series if r["time"].startswith(day) and r["time"][11:] == "21:00"), series[min(21, len(series) - 1)])
     dest = plan["to"] if plan else start_id
     ranked = shelter.rank(night["twd"], night["tws"], night.get("gust", night["tws"] * 1.3))
+
+    def enrich_rada(r: dict) -> dict:
+        # voto (STIMA in voyage.json) e foto Commons della rada
+        try:
+            w = core.find_wp(v, r["id"])
+        except KeyError:
+            return r
+        return {**r, "rating": w.get("rating"), "photo": photo_ref(w, offline)}
+    ranked = [enrich_rada(r) for r in ranked]
     tonight = next((r for r in ranked if r["id"] == dest), None)
     plan_b = next((r for r in ranked if r["id"] != dest and r["light"] == "verde"), None)
 

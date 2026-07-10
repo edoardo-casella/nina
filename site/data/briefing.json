@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T16:43+02:00",
+  "generated_at": "2026-07-10T17:00+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -18,7 +18,7 @@
     "lat": 41.1035,
     "lon": 9.439,
     "live": true,
-    "age_h": 2.3
+    "age_h": 2.6
   },
   "rest": false,
   "leg": {
@@ -39,6 +39,11 @@
     "night_stay": false,
     "verify": true,
     "arrive_by": "08:45",
+    "rating": 5,
+    "photo": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+    },
     "stay": false,
     "frm": "Cannigione",
     "to": "Cala Coticcio (Caprera)"
@@ -74,6 +79,11 @@
       "night_stay": false,
       "verify": true,
       "arrive_by": "08:45",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      },
       "stay": false,
       "frm": "Cannigione",
       "to": "Cala Coticcio (Caprera)"
@@ -94,6 +104,11 @@
       "night_stay": true,
       "verify": true,
       "arrive_by": "17:30",
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/500px-Caprera%2C_trasparenze_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
+      },
       "stay": false,
       "frm": "Cala Coticcio (Caprera)",
       "to": "Cala Portese"
@@ -112,7 +127,12 @@
     "why": "vento 119° a 99° dal settore esposto",
     "holding": "sabbia tra roccia",
     "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
-    "verify": true
+    "verify": true,
+    "rating": 5,
+    "photo": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+    }
   },
   "ranked": [
     {
@@ -125,7 +145,12 @@
       "why": "vento 119° a 99° dal settore esposto",
       "holding": "sabbia tra roccia",
       "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
-      "verify": true
+      "verify": true,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+      }
     },
     {
       "id": "sanguinaires",
@@ -137,7 +162,12 @@
       "why": "vento 119° a 81° dal settore esposto",
       "holding": "sabbia/roccia",
       "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
-      "verify": true
+      "verify": true,
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
+      }
     },
     {
       "id": "mortorio",
@@ -149,7 +179,12 @@
       "why": "vento 119° a 61° dal settore esposto",
       "holding": "sabbia",
       "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
-      "verify": true
+      "verify": true,
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sardinia2008-02-29_%2825%29.JPG/500px-Sardinia2008-02-29_%2825%29.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:Sardinia2008-02-29_(25).JPG"
+      }
     },
     {
       "id": "coticcio",
@@ -161,7 +196,12 @@
       "why": "vento 119° entra in rada (settore 40-140°), fetch 12 km",
       "holding": "sabbia",
       "notes": "Sosta diurna. Sbarco a terra regolamentato.",
-      "verify": true
+      "verify": true,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      }
     }
   ],
   "outlook": [
@@ -173,6 +213,11 @@
       "to": "Isole Lavezzi",
       "nm": 13.3,
       "n_tappe": 3,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+      },
       "wx": {
         "wmo": 3,
         "tmax": 27.9,
@@ -200,6 +245,11 @@
       "to": "Bonifacio",
       "nm": 5.2,
       "n_tappe": 3,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/500px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
+      },
       "wx": {
         "wmo": 2,
         "tmax": 31.0,
@@ -227,6 +277,11 @@
       "to": "Tizzano",
       "nm": 16.7,
       "n_tappe": 3,
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/500px-Fortin_de_Tizzano_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
+      },
       "wx": {
         "wmo": 3,
         "tmax": 35.7,
@@ -254,6 +309,11 @@
       "to": "Campomoro",
       "nm": 5.9,
       "n_tappe": 2,
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/500px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
+      },
       "wx": {
         "wmo": 2,
         "tmax": 36.4,
@@ -281,6 +341,11 @@
       "to": "Isolella",
       "nm": 12.4,
       "n_tappe": 1,
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/500px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
+      },
       "wx": {
         "wmo": 2,
         "tmax": 36.2,
@@ -357,11 +422,11 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 30.5,
-    "rh": 61,
+    "temp": 30.1,
+    "rh": 63,
     "rain": 0.0,
-    "wmo": 1,
+    "wmo": 2,
     "tws": 13.0,
-    "twd": 115
+    "twd": 117
   }
 }

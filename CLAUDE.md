@@ -36,6 +36,8 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 - `shelter.py` — Shelter Score per le rade
 - `ledger.py` / `provisioning.py` / `logbook.py` / `import_kml.py`
 - `draft_plan.py` — bozza one-off delle tappe giornaliere (dry-run di default)
+- `photos.py` — foto destinazioni da Wikimedia Commons (geosearch, no API key,
+  risolte a publish-time; possono mancare, mai bloccanti)
 - `publish.py` — genera i 4 JSON di `site/data/`: `briefing`, `weather`,
   `conti`, `program` (14 giorni con fascia di confidenza `piena`/`degradata`/`programma`)
 
@@ -63,6 +65,7 @@ a ogni release del guscio si bumpa `SHELL`; la cache `DATA` non si rinomina mai.
 | `data/voyage.json` — conti | Charter €31.246 = autorità Excel, **fa fede il foglio Bonifici**; ledger.py gestisce solo le spese comuni (variable_budget da tarare) |
 | `data/voyage.json` — plan | **REALE** 8–29 ago, 22 giorni antiorari (2 notturne, 2 soste). Tappe `steps`: bozza da `draft_plan.py`, **STIMATE** `verify: true` finché non riviste su carta |
 | `data/voyage.json` — waypoints | **STIMATI** — coordinate approssimate, `verify: true` |
+| `data/voyage.json` — waypoint `rating` | **STIMA agente** (1–5, bozza da guide/notorietà, 52 destinazioni; landmark esclusi) — voto estetico/esperienza, NON è lo Shelter Score; si conferma a bordo |
 | `data/polars/dufour48cat.pol` | **STIMATA v2** (2026-07-10) — derated −17/−25% per crociera carica da fonti online (test GdV 2022 barca scarica, comparabili Lagoon 46/Elba 45/Bali 4.8, regole carico); attenti al MONOSCAFO Dufour 48 nei risultati web. Da validare a bordo (step 5) |
 | `data/anchorages.json` | **STIMATO** — settori esposti a occhio, da portolano |
 | `RATES` in `provisioning.py` | da tarare sul gruppo |

@@ -300,7 +300,8 @@
       "lat": 41.1069,
       "lon": 9.4404,
       "type": "port",
-      "verify": true
+      "verify": true,
+      "rating": 2.5
     },
     {
       "id": "spargi",
@@ -308,7 +309,8 @@
       "lat": 41.2311,
       "lon": 9.3389,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "budelli",
@@ -316,7 +318,8 @@
       "lat": 41.2789,
       "lon": 9.3556,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "santamaria",
@@ -324,7 +327,8 @@
       "lat": 41.295,
       "lon": 9.39,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 4.5
     },
     {
       "id": "lavezzi",
@@ -332,7 +336,8 @@
       "lat": 41.3392,
       "lon": 9.2544,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "bonifacio",
@@ -340,7 +345,8 @@
       "lat": 41.3872,
       "lon": 9.1592,
       "type": "port",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "rondinara",
@@ -348,7 +354,8 @@
       "lat": 41.4767,
       "lon": 9.2775,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "porto_vecchio",
@@ -356,7 +363,8 @@
       "lat": 41.58,
       "lon": 9.305,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 3
     },
     {
       "id": "sanguinaires",
@@ -364,7 +372,8 @@
       "lat": 41.885,
       "lon": 8.585,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "ajaccio",
@@ -372,7 +381,8 @@
       "lat": 41.92,
       "lon": 8.74,
       "type": "port",
-      "verify": true
+      "verify": true,
+      "rating": 2.5
     },
     {
       "id": "bastia",
@@ -380,7 +390,8 @@
       "lat": 42.7,
       "lon": 9.455,
       "type": "port",
-      "verify": true
+      "verify": true,
+      "rating": 2
     },
     {
       "id": "coticcio",
@@ -388,7 +399,8 @@
       "lat": 41.2075,
       "lon": 9.465,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "mortorio",
@@ -396,7 +408,8 @@
       "lat": 41.0783,
       "lon": 9.575,
       "type": "anchorage",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "corsica_isola_piana",
@@ -405,7 +418,8 @@
       "lon": 9.22525,
       "type": "anchorage",
       "notes": "",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "cr_bonifacio",
@@ -423,7 +437,8 @@
       "lon": 8.91714,
       "type": "anchorage",
       "notes": "",
-      "verify": true
+      "verify": true,
+      "rating": 4.5
     },
     {
       "id": "cala_portese",
@@ -432,7 +447,8 @@
       "lon": 9.4633,
       "type": "anchorage",
       "notes": "Fondo sabbia bianca, ben ridossata; campo boe estivo del Parco La Maddalena (ancoraggio consentito fuori boe), molto affollata in agosto [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "porto_palma",
@@ -441,7 +457,8 @@
       "lon": 9.4505,
       "type": "anchorage",
       "notes": "Ridossata da tutto tranne S; miglior tenuta lato E in 5-9 m sabbia (chiazze posidonia/fango); boe estive; base velica CVC con regate mag-ott",
-      "verify": true
+      "verify": true,
+      "rating": 3
     },
     {
       "id": "capo_pertusato",
@@ -459,7 +476,8 @@
       "lon": 9.2203,
       "type": "anchorage",
       "notes": "Sabbia buona tenuta ~6 m, ottimo riparo da W/mistral ma aperto a NE; ZMEL Bonifacio Marina 15 boe (obbligatorie per unita >24 m); zona kite/windsurf",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "marmorata",
@@ -468,7 +486,8 @@
       "lon": 9.238,
       "type": "anchorage",
       "notes": "Sabbia e posidonia, ancorare sulle chiazze chiare in 5-6 m; ridosso da maestrale subito a S dell'isolotto maggiore; passaggio isolotti-costa con fondale ~1 m, non tentare",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "porto_madonna",
@@ -477,7 +496,8 @@
       "lon": 9.357,
       "type": "mooring",
       "notes": "Ormeggio SOLO su boe del Parco (a pagamento, poche rispetto alla domanda, ~7 m sabbia/posidonia); zona piscine naturali interdetta a navigazione/ancoraggio, accesso solo a remi/nuoto; permesso Parco o [coord. da verifica",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "santa_giulia",
@@ -486,7 +506,8 @@
       "lon": 9.2783,
       "type": "mooring",
       "notes": "ZMEL organizzata: 30 boe visitatori per taglia (3xx <9m, 2xx 9-15m, 1xx 15-20m), seguire i marker a 300 m dalla riva sud; baia sabbiosa poco profonda, aperta a E",
-      "verify": true
+      "verify": true,
+      "rating": 4.5
     },
     {
       "id": "cala_rossa",
@@ -495,7 +516,8 @@
       "lon": 9.3325,
       "type": "mooring",
       "notes": "Cala quasi interamente occupata dal campo boe ANCRE (boe visitatori prenotabili online); fuori boe ancorare su sabbia 4-8 m; buon ridosso da N/NW, aperta a S [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "san_ciprianu",
@@ -504,7 +526,8 @@
       "lon": 9.3533,
       "type": "anchorage",
       "notes": "Baia a mezzaluna ben protetta, sabbia e posidonia (qualche roccia verso il fondo della baia); isolotto San Ciprianu all'ingresso; buona tappa a 4 M dal porto di Porto-Vecchio [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "cala_di_conca",
@@ -513,7 +536,8 @@
       "lon": 8.8036,
       "type": "anchorage",
       "notes": "Cala stretta, fondo sabbia 2-16 m; buon ridosso da maestrale ma aperta a libeccio/onda; scoglio affiorante a 1.8 m circa 400 m a WSW dell'ingresso; affollata in agosto.",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "tizzano",
@@ -522,7 +546,8 @@
       "lon": 8.8501,
       "type": "anchorage",
       "notes": "Ancorare all'ingresso della cala fuori dal porticciolo, 3-8 m solo su sabbia; esposto a SW; secca di 1.5 m circa 200 m a S della punta W dell'ingresso; pontili interni max 1.5 m pescaggio. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3
     },
     {
       "id": "cala_longa_tizzano",
@@ -531,7 +556,8 @@
       "lon": 8.8161,
       "type": "anchorage",
       "notes": "Caletta selvaggia presso Punta di Capicciolu tra Tizzano e Senetosa, ben ridossata dai venti, usata come rifugio; sabbia; nessun servizio; da non confondere con la Cala Longa di Bonifacio. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "capo_senetosa",
@@ -549,7 +575,8 @@
       "lon": 8.8098,
       "type": "anchorage",
       "notes": "Fondo sabbia con chiazze di posidonia/alga 5-15 m (fino a 30 m piu' fuori); ottimo ridosso da W/SW, esposto a NW; divieto di ancoraggio entro 300 m dalla spiaggia (fascia balneare/allevamento). [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "capo_di_muro",
@@ -567,7 +594,8 @@
       "lon": 8.76,
       "type": "mooring",
       "notes": "Campo boe comunale (ZMEL Pietrosella, ~400 gavitelli totali con Stagnola e Ste-Barbe, mag-ott); vietato ancorare fuori dalle boe e entro 300 m dalle spiagge; boa assegnata dal gestore. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3
     },
     {
       "id": "anse_chiuni",
@@ -576,7 +604,8 @@
       "lon": 8.5895,
       "type": "anchorage",
       "notes": "Baia ben protetta e poco profonda tra Punta d'Orchinu e Punta Omigna, fondo sabbia 3-6 m, buona tenuta; apre a W (attenzione con ponente/onda residua).",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "girolata",
@@ -585,7 +614,8 @@
       "lon": 8.61306,
       "type": "mooring",
       "notes": "Ormeggio solo su gavitello (capitaneria 7/7 8-20, mag-set, anche boe superyacht max 30 m); ancoraggio libero di fatto vietato/limitato per posidonia e spazio; in agosto arrivare presto.",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "scandola",
@@ -603,7 +633,8 @@
       "lon": 8.7277,
       "type": "anchorage",
       "notes": "Fondo sabbia con chiazze di posidonia, 3-8 m; ottimo ridosso da libeccio (SW), aperta a N/NE; in alternativa lato N di Punta Oscelluccia.",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "san_fiorenzo",
@@ -612,7 +643,8 @@
       "lon": 9.2815,
       "type": "anchorage",
       "notes": "Ancorare su 5-6 m sabbia e alghe, fondale degrada dolcemente; riparata da W/SW/S/SE/E, da abbandonare con previsione di N/NE. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "saleccia",
@@ -621,7 +653,8 @@
       "lon": 9.205,
       "type": "anchorage",
       "notes": "Fondo sabbia, buona tenuta, ma rada aperta: solo con meteo stabile e mare calmo; in estate ancorare oltre la fascia balneare 300 m.",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "lotu",
@@ -630,7 +663,8 @@
       "lon": 9.2328,
       "type": "anchorage",
       "notes": "Sabbia, buona tenuta; obbligo ancoraggio oltre 300 m dalla spiaggia; protetta da W/SW, esposta a N-NW. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 4.5
     },
     {
       "id": "malfalco",
@@ -639,7 +673,8 @@
       "lon": 9.118,
       "type": "anchorage",
       "notes": "Cala stretta: si dà fondo al centro su 2-3 m sabbia/roccia; ridosso discreto da W moderato, esposta a risacca con NW-NE, rollio con mistral. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "centuri",
@@ -648,7 +683,8 @@
       "lon": 9.3504,
       "type": "port",
       "notes": "Porticciolo minuscolo (max ~10 m, pescaggio max 2 m, 0,8 m minimo): in agosto quasi sempre pieno; le barche a vela ancorano fuori davanti al porto su sabbia, solo con calma da W.",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "barcaggio",
@@ -657,7 +693,8 @@
       "lon": 9.4112,
       "type": "anchorage",
       "notes": "Fondo sabbia con alghe e rocce, bassi fondali; rada aperta a quasi tutti i venti e a corrente del canale della Giraglia: solo sosta diurna con mare calmo, ridosso da SE a NE della spiaggia.",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "giraglia",
@@ -675,7 +712,8 @@
       "lon": 9.45451,
       "type": "port",
       "notes": "Marina ~585 posti, base classica prima/dopo il doppiaggio del Capo; in agosto prenotare; ancoraggio possibile nella baia a N del porto su sabbia.",
-      "verify": true
+      "verify": true,
+      "rating": 2.5
     },
     {
       "id": "tamarone",
@@ -684,7 +722,8 @@
       "lon": 9.457,
       "type": "anchorage",
       "notes": "Fondo sabbia con chiazze di roccia/posidonia, 3-6 m; buon ridosso da W/SW (libeccio), aperta a E-NE; comoda alternativa gratuita a Macinaggio. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3
     },
     {
       "id": "erbalunga",
@@ -693,7 +732,8 @@
       "lon": 9.4787,
       "type": "anchorage",
       "notes": "Rada aperta appena a N/E del porticciolo (porto solo <8 m). Fondo sabbia e roccia, tenuta discreta; ridossata solo da venti occidentali, evitare con vento da E. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "foce_golo",
@@ -702,7 +742,8 @@
       "lon": 9.537,
       "type": "anchorage",
       "notes": "Costa sabbiosa rettilinea completamente aperta: solo sosta diurna con mare calmo. Possibili banchi di sabbia mobili davanti alla foce, avvicinarsi con ecoscandaglio. [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 1.5
     },
     {
       "id": "campoloro",
@@ -711,7 +752,8 @@
       "lon": 9.539,
       "type": "port",
       "notes": "Unico porto-rifugio tra Bastia e Solenzara sulla costa orientale. Entrata con risacca in caso di forte vento da E/SE; carburante e servizi disponibili.",
-      "verify": true
+      "verify": true,
+      "rating": 1.5
     },
     {
       "id": "solenzara",
@@ -720,7 +762,8 @@
       "lon": 9.4037,
       "type": "port",
       "notes": "Marina 450 posti, 8 pontili. In alternativa rada sabbiosa a S della foce del fiume Solenzara utilizzabile solo con tempo stabile.",
-      "verify": true
+      "verify": true,
+      "rating": 2
     },
     {
       "id": "canella",
@@ -729,7 +772,8 @@
       "lon": 9.397,
       "type": "anchorage",
       "notes": "Cala ben protetta da W/SW (libeccio), fondo sabbia con buona tenuta; aperta a E. Fondale basso vicino a riva, molto frequentata in agosto.",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "favone",
@@ -738,7 +782,8 @@
       "lon": 9.3986,
       "type": "anchorage",
       "notes": "Baia sabbiosa con buona tenuta, riparata da W; aperta a E-NE. Verificare posidonia prima di dare fondo; Navily mouillage #8055.",
-      "verify": true
+      "verify": true,
+      "rating": 3
     },
     {
       "id": "fautea",
@@ -747,7 +792,8 @@
       "lon": 9.4045,
       "type": "anchorage",
       "notes": "Ancoraggio nella baia a S della torre genovese del 1592, fondo sabbia; sito protetto Conservatoire du Littoral. Riparo discreto con tempo buono ma esposto a E, tenibile di notte solo con meteo stabile [coord. da verifica",
-      "verify": true
+      "verify": true,
+      "rating": 3.5
     },
     {
       "id": "pinarello",
@@ -756,7 +802,8 @@
       "lon": 9.39,
       "type": "anchorage",
       "notes": "Punto migliore ai due lati del passo tra isola di Pinarellu (torre genovese) e terraferma; fondo sabbia e roccia. Buona protezione da SW ma raffiche; attenzione allo scoglio Roscana e ai sub. Non teni [coord. da verifica",
-      "verify": true
+      "verify": true,
+      "rating": 4
     },
     {
       "id": "palombaggia",
@@ -765,7 +812,8 @@
       "lon": 9.3305,
       "type": "anchorage",
       "notes": "Dare fondo solo su sabbia: le praterie di posidonia sono balisate e l'ancoraggio sopra e' vietato (arrete prefettizio 2023; >24 m vietato tra Punta Chiappa e Capicciolu). Riparata da NW dalla penisola",
-      "verify": true
+      "verify": true,
+      "rating": 5
     },
     {
       "id": "ficajola",
@@ -774,7 +822,8 @@
       "lon": 8.6262,
       "type": "anchorage",
       "notes": "Caletta minuscola sotto le Calanche di Piana (golfo di Porto), fondo sabbia/roccia, spazio per pochissime barche. Solo sosta diurna con mare calmo: completamente esposta a W/SW e alla risacca da ponen [coord. da verifica",
-      "verify": true
+      "verify": true,
+      "rating": 4.5
     },
     {
       "id": "porto_rotondo",
@@ -783,7 +832,8 @@
       "lon": 9.5485,
       "type": "port",
       "notes": "Marina + rada; base logistica drop-off/pickup 21-22/8, aeroporto Olbia ~20 min [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3
     },
     {
       "id": "golfo_di_marinella",
@@ -792,7 +842,8 @@
       "lon": 9.568,
       "type": "anchorage",
       "notes": "Baia sabbiosa ampia, buona tenuta; comoda per transfer aeroporto [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3
     },
     {
       "id": "golfo_di_cugnana",
@@ -801,7 +852,8 @@
       "lon": 9.529,
       "type": "anchorage",
       "notes": "Golfo riparato a S di Porto Rotondo; alternativa per la notte [coord. da verificare]",
-      "verify": true
+      "verify": true,
+      "rating": 3
     }
   ],
   "plan": [

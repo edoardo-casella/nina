@@ -128,6 +128,22 @@ main>section.on{display:block}
 .axis.wide span{width:34px}
 .hr.dim{opacity:.55}
 
+/* voti (stima) e foto delle destinazioni */
+.stars{color:var(--giallo);font-size:.8rem;letter-spacing:.04em;white-space:nowrap;font-style:normal}
+.stars .off{opacity:.28}
+.thumb{width:56px;height:56px;object-fit:cover;border-radius:3px;flex:none;
+  border:1px solid var(--hair)}
+.dayrow .thumb{margin-left:auto}
+.dests{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.6rem}
+.dest{border:1px solid var(--hair);border-radius:3px;overflow:hidden;background:var(--sea-1)}
+.dphoto{width:100%;height:110px;object-fit:cover;display:block}
+.dphoto.none{display:flex;align-items:center;justify-content:center;height:110px;
+  background:var(--sea-2);color:var(--soft);font-size:1.5rem}
+.dest .dbody{padding:.5rem .6rem}
+.dest h3{font:400 .92rem/1.25 var(--body)}
+.dest .dbody p{font-size:.72rem;color:var(--soft);margin-top:.25rem;display:-webkit-box;
+  -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
 .leg{background:var(--sea-1);border:1px solid var(--hair);border-radius:3px;padding:1.05rem 1.1rem}
 .route{font:1.35rem/1.25 var(--body);font-style:italic;margin-bottom:.7rem}
 .route span{color:var(--soft);font-style:normal;padding:0 .25rem}
@@ -406,16 +422,16 @@ function outlookRows(outlook) {
       ? `${wmoIcon(o.wx.wmo)} ${Math.round(o.wx.tmin)}–${Math.round(o.wx.tmax)}° · pioggia ${o.wx.rain_prob ?? "—"}%${o.wx.rain_mm ? ` (${o.wx.rain_mm} mm)` : ""} · vento max ${Math.round(o.wx.wind_max)} kn da ${comp(o.wx.wind_dir)}${o.wx.synthetic ? " · sintetico" : ""}`
       : "meteo oltre l'orizzonte di previsione";
     if (o.rest) return `<div class="dayrow"><em>${wd}</em>
-      <div><h3>Sosta — ${esc(o.to)}</h3><p>${meteo}</p></div></div>`;
+      <div><h3>Sosta — ${esc(o.to)} ${stars(o.rating)}</h3><p>${meteo}</p></div>${thumb(o.photo, o.to)}</div>`;
     const s = o.sailing;
     const sail = s
       ? `<span class="badge ${s.vela ? "sail" : "motor"}">${s.vela ? "vela" : "motore"}</span> ${s.vela ? `${esc(s.andatura)} (TWA ~${s.twa}°) · ~${s.boat_kn} kn` : `${s.tws_est < 7 ? "vento debole" : "vento in prua"} (${s.tws_est} kn da ${comp(s.twd)}) · ~${s.boat_kn} kn a motore`}`
       : "";
     const nb = o.night ? `<span class="badge night">🌙 notturna</span> solo con mare ≤ 0,5 m · ` : "";
     return `<div class="dayrow"><em>${wd}</em>
-      <div><h3 class="water">${esc(o.frm)} → ${esc(o.to)} · <span class="num">${o.nm} nm</span>${o.night ? " 🌙" : ""}</h3>
+      <div><h3 class="water">${esc(o.frm)} → ${esc(o.to)} · <span class="num">${o.nm} nm</span>${o.night ? " 🌙" : ""} ${stars(o.rating)}</h3>
       ${sail || nb ? `<p>${nb}${sail}</p>` : ""}
-      <p>${meteo}</p></div></div>`;
+      <p>${meteo}</p></div>${thumb(o.photo, o.to)}</div>`;
   }).join("");
 }
 
@@ -468,6 +484,15 @@ function toggleCrew(i) {
 const ACT_ICON = { bagno: "🏊", trekking: "🥾", bordo: "⚓", porto: "🧭", cambusa: "🛒" };
 const actLabels = a => (a || []).map(x => `${ACT_ICON[x] ?? "•"} ${x}`).join(" · ");
 
+// voto 1-5 delle destinazioni: STIMA da guide, si conferma a bordo
+function stars(r) {
+  if (r == null) return "";
+  const full = Math.floor(r), half = r % 1 >= 0.5;
+  return `<span class="stars" title="voto ${r}/5 — indicativo, si conferma a bordo">${"★".repeat(full)}${half ? "½" : ""}<span class="off">${"★".repeat(5 - full - (half ? 1 : 0))}</span></span>`;
+}
+const thumb = (p, alt) => p?.src
+  ? `<img class="thumb" loading="lazy" src="${p.src}" alt="${esc(alt ?? "")}" onerror="this.remove()">` : "";
+
 function execCard(b, wx) {
   const steps = b.steps || [];
   const moves = steps.filter(s => !s.stay);
@@ -498,7 +523,7 @@ function execCard(b, wx) {
     const wavem = Math.max(0, ...use.map(h => h.wave ?? 0));
     parts.push(`Vento fino a <b>${Math.round(wm.tws)} kn</b> da ${comp(wm.twd)} verso le ${wm.time.slice(11, 13)}${wavem ? `, onda max <b>${wavem.toFixed(1)} m</b>` : ""}.`);
   }
-  if (b.tonight && !b.leg?.night) parts.push(`Stanotte: <span class="water">${esc(b.tonight.name)}</span> <span class="dot ${b.tonight.light}"></span>.`);
+  if (b.tonight && !b.leg?.night) parts.push(`Stanotte: <span class="water">${esc(b.tonight.name)}</span> ${stars(b.tonight.rating)} <span class="dot ${b.tonight.light}"></span>.`);
   if (b.turns?.cucina_cena) parts.push(`Stasera in cucina: <b>${esc(b.turns.cucina_cena)}</b>.`);
   return `<h2>La giornata in breve</h2><div class="exec">${parts.join(" ")}
     ${steps.some(s => s.verify) ? `<p class="vflag" style="margin-top:.5rem;font-size:.8rem">⚑ Tappe stimate, da verificare su carta nautica.</p>` : ""}</div>`;
@@ -512,15 +537,15 @@ function tappeTimeline(b) {
     const moon = s.night_stay ? " ⚓🌙" : "";
     const acts = actLabels(s.activity);
     if (s.stay) return `<div class="dayrow"><em>${esc(s.slot)}</em>
-      <div><h3 class="water">${esc(s.name)}${moon}${flag}</h3>
-      <p>in rada${acts ? " · " + acts : ""}</p></div></div>`;
+      <div><h3 class="water">${esc(s.name)}${moon}${flag} ${stars(s.rating)}</h3>
+      <p>in rada${acts ? " · " + acts : ""}</p></div>${thumb(s.photo, s.name)}</div>`;
     const plus = s.eta && s.depart && s.eta.slice(0, 10) !== s.depart.slice(0, 10) ? " +1" : "";
     const times = s.depart && s.eta ? `${s.depart.slice(11, 16)} → ${s.eta.slice(11, 16)}${plus}` : "";
     const badge = s.abort ? `<span class="badge" style="background:var(--rosso)">STOP</span>`
       : s.sail_pct != null ? `<span class="badge ${s.sail_pct >= 50 ? "sail" : "motor"}">${s.sail_pct >= 50 ? "vela" : "motore"}</span>` : "";
     return `<div class="dayrow"><em>${esc(s.slot)}</em>
-      <div><h3 class="water">${esc(s.frm)} → ${esc(s.to)}${moon}${flag}</h3>
-      <p><span class="num">${s.nm} nm</span>${times ? ` · ${times}` : ""}${s.arrive_by ? ` · entro ${esc(s.arrive_by)}` : ""} ${badge}${acts ? `<br>${acts}` : ""}${s.abort && s.reason ? `<br><span class="vflag">${esc(s.reason)}</span>` : ""}</p></div></div>`;
+      <div><h3 class="water">${esc(s.frm)} → ${esc(s.to)}${moon}${flag} ${stars(s.rating)}</h3>
+      <p><span class="num">${s.nm} nm</span>${times ? ` · ${times}` : ""}${s.arrive_by ? ` · entro ${esc(s.arrive_by)}` : ""} ${badge}${acts ? `<br>${acts}` : ""}${s.abort && s.reason ? `<br><span class="vflag">${esc(s.reason)}</span>` : ""}</p></div>${thumb(s.photo, s.to)}</div>`;
   }).join("");
   return `<h2>Le tappe di oggi · <span class="num" style="text-transform:none">${b.day_nm ?? "—"} nm</span></h2><div class="tl">${rows}</div>`;
 }
@@ -545,6 +570,7 @@ function programGrid(prog) {
       <em>${wd}${d.night ? " 🌙" : ""}${d.verify ? ` <span class="vflag">⚑</span>` : ""}</em>
       <strong>${d.nm}<span style="font-size:.7rem"> nm</span>${dots}</strong>
       <span class="water">${route}</span>
+      ${d.rating != null ? `<span style="font-style:normal">${stars(d.rating)}</span>` : ""}
       ${wxLine}${waveLine}${crew}</div>`;
   }).join("");
   return `<h2>Programma — 2 settimane</h2>
@@ -589,6 +615,25 @@ function dailyStrip(prog, kind) {
   <div class="ribbon"><div class="strip">${cols}</div>
   <div class="axis wide vals">${vals}</div><div class="axis wide">${axis}</div></div>
   <div class="legend"><span>colonne attenuate = affidabilità ridotta (8–10 gg)</span>${kind === "wave" ? "<span>orizzonte marine ~8 giorni</span>" : ""}</div>`;
+}
+
+// catalogo destinazioni: voto 1-5 (stima) + foto Commons, ordinato per voto
+function destCatalog(prog) {
+  const ds = prog?.destinations || [];
+  if (!ds.length) return "";
+  const cards = ds.map(d => `
+    <div class="dest">
+      ${d.photo?.src
+        ? `<a href="${d.photo.page ?? d.photo.src}" target="_blank" rel="noopener"><img class="dphoto" loading="lazy" src="${d.photo.src}" alt="${esc(d.name)}" onerror="this.parentNode.remove()"></a>`
+        : `<div class="dphoto none">⚓</div>`}
+      <div class="dbody"><h3 class="water">${esc(d.name)}${d.verify ? ' <span class="vflag">⚑</span>' : ""}</h3>
+      ${stars(d.rating)}
+      ${d.notes ? `<p>${esc(d.notes)}</p>` : ""}</div>
+    </div>`).join("");
+  return `<h2>Destinazioni — voti e foto</h2>
+  <p class="hint">Voto 1–5 indicativo (bozza da guide nautiche, si conferma a bordo — non è lo Shelter Score meteo).
+  Foto georeferenziate da Wikimedia Commons: tocca una foto per autore e licenza.</p>
+  <details><summary>${ds.length} destinazioni, dalla più bella</summary><div class="dests">${cards}</div></details>`;
 }
 
 const myMaps = () => navigator.onLine ? `
@@ -660,8 +705,8 @@ function render(b, wx, c, prog) {
   <h2>Stanotte</h2>
   ${b.leg?.night ? `<p class="water" style="font-size:.95rem">🌙 In navigazione — arrivo all'alba a ${esc(b.leg.leg.split(/ (?:->|→) /)[1] ?? "destinazione")}. Turni di guardia decisi dagli skipper.</p>` :
   t ? `<div class="rada"><div class="dot ${t.light}"></div>
-      <div><h3>${esc(t.name)}</h3><p class="water">${esc(t.why)} · fondo ${esc(t.holding)}</p></div>
-      <div class="pts num">${t.score}</div></div>` : `<p>Rada non definita.</p>`}
+      <div><h3>${esc(t.name)} ${stars(t.rating)}</h3><p class="water">${esc(t.why)} · fondo ${esc(t.holding)}</p></div>
+      ${thumb(t.photo, t.name)}<div class="pts num">${t.score}</div></div>` : `<p>Rada non definita.</p>`}
   ${pb ? `<div class="b-plan"><b>Piano B</b><span class="water">${esc(pb.name)}</span> — ${esc(pb.why)}.</div>` : ""}
   <details><summary>Le altre rade con questo vento</summary>
     ${b.ranked.filter(r => r.id !== t?.id && r.id !== pb?.id).map(r => `<div class="rada"><div class="dot ${r.light}"></div>
@@ -701,6 +746,7 @@ function render(b, wx, c, prog) {
   ${programGrid(prog)}
   <h2>Prossimi giorni — dettaglio</h2>
   ${outlookRows(b.outlook)}
+  ${destCatalog(prog)}
   ${myMaps()}`;
 
   document.getElementById("app").innerHTML = `
