@@ -82,6 +82,8 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
 .badge{font:700 .58rem/1 var(--display);letter-spacing:.1em;padding:.18rem .45rem;border-radius:3px;
   color:#fff;display:inline-block;margin-right:.2rem}
 .badge.sail{background:var(--verde)} .badge.motor{background:var(--giallo)}
+.badge.night{background:#3D5A9E}
+.nightline{margin:.1rem 0 .8rem;font-size:.82rem;color:var(--soft)}
 
 .hr.day0{border-left:1px solid var(--soft);margin-left:2px;padding-left:2px}
 .axis .d0{font-weight:700;color:var(--ink);overflow:visible;white-space:nowrap}
@@ -346,8 +348,13 @@ function legCard(b) {
   const L = b.leg, [from, to] = L.leg.split(/ (?:->|→) /);
   const color = L.avg_score >= 70 ? "var(--verde)" : L.avg_score >= 45 ? "var(--giallo)" : "var(--rosso)";
   const verdict = L.avg_score >= 70 ? "Ottima" : L.avg_score >= 45 ? "Buona" : "Mediocre";
+  const night = L.night ? `<p class="nightline">🌙 <b>NOTTURNA</b> — si salpa in serata, arrivo all'alba.
+    ${L.night_check ? (L.night_check.ok
+      ? `<b style="color:var(--verde)">Mare piatto confermato</b> (onda max ${L.night_check.max_wave} m ≤ ${L.night_check.thr})`
+      : `<b style="color:var(--giallo)">Onda oltre soglia</b> (${L.night_check.max_wave} m > ${L.night_check.thr}): consigliato il piano diurno`) : ""}</p>` : "";
   return `<div class="leg">
     <div class="route">${esc(from)}<span>→</span>${esc(to)}</div>
+    ${night}
     <div class="facts">
       <div class="fact"><b>${L.nm}</b><i>miglia</i></div>
       <div class="fact"><b>${String(L.cog).padStart(3, "0")}°</b><i>rotta vera</i></div>
@@ -377,9 +384,10 @@ function outlookRows(outlook) {
     const sail = s
       ? `<span class="badge ${s.vela ? "sail" : "motor"}">${s.vela ? "vela" : "motore"}</span> ${s.vela ? `${esc(s.andatura)} (TWA ~${s.twa}°) · ~${s.boat_kn} kn` : `${s.tws_est < 7 ? "vento debole" : "vento in prua"} (${s.tws_est} kn da ${comp(s.twd)}) · ~${s.boat_kn} kn a motore`}`
       : "";
+    const nb = o.night ? `<span class="badge night">🌙 notturna</span> solo con mare ≤ 0,5 m · ` : "";
     return `<div class="dayrow"><em>${wd}</em>
-      <div><h3 class="water">${esc(o.frm)} → ${esc(o.to)} · <span class="num">${o.nm} nm</span></h3>
-      ${sail ? `<p>${sail}</p>` : ""}
+      <div><h3 class="water">${esc(o.frm)} → ${esc(o.to)} · <span class="num">${o.nm} nm</span>${o.night ? " 🌙" : ""}</h3>
+      ${sail || nb ? `<p>${nb}${sail}</p>` : ""}
       <p>${meteo}</p></div></div>`;
   }).join("");
 }
@@ -471,7 +479,8 @@ function render(b, wx, c) {
   ${windyMaps(b.position)}
 
   <h2>Stanotte</h2>
-  ${t ? `<div class="rada"><div class="dot ${t.light}"></div>
+  ${b.leg?.night ? `<p class="water" style="font-size:.95rem">🌙 In navigazione — arrivo all'alba a ${esc(b.leg.leg.split(/ (?:->|→) /)[1] ?? "destinazione")}. Turni di guardia decisi dagli skipper.</p>` :
+  t ? `<div class="rada"><div class="dot ${t.light}"></div>
       <div><h3>${esc(t.name)}</h3><p class="water">${esc(t.why)} · fondo ${esc(t.holding)}</p></div>
       <div class="pts num">${t.score}</div></div>` : `<p>Rada non definita.</p>`}
   ${pb ? `<div class="b-plan"><b>Piano B</b><span class="water">${esc(pb.name)}</span> — ${esc(pb.why)}.</div>` : ""}

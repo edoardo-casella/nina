@@ -791,26 +791,28 @@
     {
       "date": "2026-08-18",
       "from": "erbalunga",
-      "to": "campoloro",
-      "rest": false
+      "to": "favone",
+      "rest": false,
+      "night": true
     },
     {
       "date": "2026-08-19",
-      "from": "campoloro",
-      "to": "favone",
-      "rest": false
-    },
-    {
-      "date": "2026-08-20",
       "from": "favone",
       "to": "palombaggia",
       "rest": false
     },
     {
-      "date": "2026-08-21",
+      "date": "2026-08-20",
       "from": "palombaggia",
       "to": "porto_rotondo",
-      "rest": false
+      "rest": false,
+      "night": true
+    },
+    {
+      "date": "2026-08-21",
+      "from": "porto_rotondo",
+      "to": "porto_rotondo",
+      "rest": true
     },
     {
       "date": "2026-08-22",
@@ -865,10 +867,15 @@
   "preferences": {
     "max_daily_nm": 30,
     "prefer_sailing_over_motor": true,
-    "night_sailing": false,
+    "night_sailing": "solo tratte flaggate night, mare piatto",
     "swim_stops_per_day": 2,
     "latest_anchor_time": "17:30",
-    "earliest_departure": "08:00"
+    "earliest_departure": "08:00",
+    "night_max_wave_m": 0.5,
+    "night_departure_window": [
+      "20:00",
+      "23:00"
+    ]
   },
   "updated_at": "2026-07-10T11:14:26",
   "charter": {

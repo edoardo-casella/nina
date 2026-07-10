@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T13:11+02:00",
+  "generated_at": "2026-07-10T14:08+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -147,31 +147,33 @@
     {
       "date": "2026-07-11",
       "rest": false,
+      "night": false,
       "frm": "Cala Portese",
       "to": "Isole Lavezzi",
       "nm": 13.3,
       "wx": {
         "wmo": 3,
-        "tmax": 28.0,
+        "tmax": 27.9,
         "tmin": 26.6,
         "rain_mm": 0.0,
         "rain_prob": 8,
-        "wind_max": 15.3,
-        "gust_max": 19.6,
+        "wind_max": 15.6,
+        "gust_max": 20.4,
         "wind_dir": 80
       },
       "sailing": {
         "twa": 125,
         "andatura": "lasco",
         "vela": true,
-        "boat_kn": 7.87,
-        "tws_est": 12.2,
+        "boat_kn": 7.94,
+        "tws_est": 12.5,
         "twd": 80
       }
     },
     {
       "date": "2026-07-12",
       "rest": false,
+      "night": false,
       "frm": "Isole Lavezzi",
       "to": "Bonifacio",
       "nm": 5.2,
@@ -197,6 +199,7 @@
     {
       "date": "2026-07-13",
       "rest": false,
+      "night": false,
       "frm": "Bonifacio",
       "to": "Tizzano",
       "nm": 16.7,
@@ -222,6 +225,7 @@
     {
       "date": "2026-07-14",
       "rest": false,
+      "night": false,
       "frm": "Tizzano",
       "to": "Campomoro",
       "nm": 5.9,
@@ -247,6 +251,7 @@
     {
       "date": "2026-07-15",
       "rest": false,
+      "night": false,
       "frm": "Campomoro",
       "to": "Isolella",
       "nm": 12.4,
@@ -330,7 +335,7 @@
     "rh": 58,
     "rain": 0.0,
     "wmo": 1,
-    "tws": 12.0,
+    "tws": 12.2,
     "twd": 110
   }
 }

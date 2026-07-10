@@ -17,6 +17,10 @@ charter e logistica voli solo in `data/Summer 26.xlsx` e
 3. **La rotta antioraria attorno alla Corsica è il default.** L'oraria solo con
    previsioni stabili confermate da due modelli con largo anticipo.
 4. **Ogni dato con `verify: true` non è stato controllato su carta nautica.** Dirlo.
+5. **Notturne solo su tratte flaggate `night` nel piano e SOLO con mare piatto**
+   (onda ≤ `night_max_wave_m`, default 0.5 m, su tutto il transito). La dashboard
+   mostra il gate; la decisione resta dello skipper la sera stessa. Nel piano
+   2026 ce ne sono due: 18/8 Erbalunga→Favone e 20/8 Palombaggia→Porto Rotondo.
 5. Documenti: dal 3 agosto 2026 la carta d'identità cartacea non vale per la Corsica.
    CIE o passaporto per tutti.
 

@@ -157,7 +157,7 @@ def build_outlook(v: dict, plan: list[dict], day: str, days: int, offline: bool)
     for r, met in zip(rows, dailies):
         p, a, b = r["plan"], r["frm"], r["to"]
         nm = core.haversine_nm((a["lat"], a["lon"]), (b["lat"], b["lon"]))
-        row = {"date": r["date"], "rest": p["rest"],
+        row = {"date": r["date"], "rest": p["rest"], "night": bool(p.get("night")),
                "frm": a["name"], "to": b["name"], "nm": round(nm, 1)}
         wx_day = None
         if met:
@@ -204,7 +204,29 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
 
     # ---- tratta di oggi
     leg, options = None, []
-    if plan and not plan["rest"]:
+    if plan and not plan["rest"] and plan.get("night"):
+        # NOTTURNA: si salpa in serata, si arriva all'alba. Gate non negoziabile:
+        # mare piatto lungo il transito, altrimenti si consiglia il piano diurno.
+        w0, w1 = v["preferences"].get("night_departure_window", ["20:00", "23:00"])
+        for h in range(int(w0[:2]), int(w1[:2]) + 1):
+            depart = f"{day}T{h:02d}:00"
+            try:
+                r = routing.simulate_leg(v, plan["from"], plan["to"], depart, series)
+            except ValueError:
+                continue
+            if not r.get("abort"):
+                options.append(r)
+        options = sorted(options, key=lambda x: x["avg_score"], reverse=True)[:3]
+        leg = options[0] if options else None
+        if leg:
+            leg["night"] = True
+            i0 = next((i for i, r in enumerate(series) if r["time"] >= leg["depart"]), 0)
+            transit = series[i0:i0 + max(1, int(leg["hours"]) + 1)]
+            wmax = max((r.get("wave") if r.get("wave") is not None else 0) for r in transit)
+            thr = v["preferences"].get("night_max_wave_m", 0.5)
+            leg["night_check"] = {"ok": wmax <= thr, "max_wave": round(wmax, 2),
+                                  "max_tws": round(max(r["tws"] for r in transit), 1), "thr": thr}
+    elif plan and not plan["rest"]:
         _real = weather.combined
         weather.combined = lambda *a, **k: series          # riusa la serie gia' scaricata
         try:
