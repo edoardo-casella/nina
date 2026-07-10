@@ -14,7 +14,7 @@
 :root{
   --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
   --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F;
-  --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
+  --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43; --rosso:#C0392B;
   --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
   --body:"IBM Plex Sans",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -22,7 +22,7 @@
 @media (prefers-color-scheme: dark){:root{
   --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
   --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7;
-  --gold:#E5C158; --gold-2:#FBE7A8;
+  --gold:#E5C158; --gold-2:#FBE7A8; --rosso:#E2536F;
 }}
 *{box-sizing:border-box;margin:0}
 body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
@@ -133,6 +133,23 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .pace.extreme{background:color-mix(in srgb,#e2536f 22%,transparent);color:#e2536f}
 .paceleg{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:1.2rem}
 .paceleg em{font-style:normal;font-size:.72rem;color:var(--soft);flex-basis:100%;margin-top:.2rem}
+
+/* GLI ERRORI FATALI — rapporti d'incidente declassificati */
+.dossier-note{font-size:.92rem;color:var(--soft);margin-bottom:1.1rem;line-height:1.6}
+.incident{position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--hair);
+  border-left:3px solid var(--rosso);border-radius:4px;padding:1.05rem 1.1rem;margin-bottom:1rem}
+.incident .stamp{position:absolute;top:.8rem;right:.7rem;transform:rotate(7deg);border:2px solid var(--rosso);
+  color:var(--rosso);font:700 .56rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;
+  padding:.24rem .45rem;border-radius:3px;opacity:.8}
+.incident h3{font:700 1.18rem/1.2 var(--body);margin-bottom:.25rem;padding-right:5rem}
+.incident .meta{font:700 .6rem/1.3 var(--display);letter-spacing:.11em;text-transform:uppercase;color:var(--soft);margin-bottom:.7rem;display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.incident p{font-size:.94rem;line-height:1.65;margin-bottom:.55rem}
+.incident .les{border-top:1px dashed var(--hair);padding-top:.65rem;margin-top:.7rem}
+.incident .les b{font:700 .58rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--rosso)}
+.incident .les ol{margin:.45rem 0 0 1.1rem;font-size:.88rem;line-height:1.55}
+.incident .les li{margin-bottom:.25rem}
+.incident .esito{margin-top:.7rem;font:600 .82rem/1.5 var(--body);color:var(--ink)}
+.incident .esito b{color:var(--rosso)}
 
 .ig{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:0 auto;padding:.9rem 1.4rem;border-radius:99px;
   text-decoration:none;font:700 .95rem/1 var(--body);color:#fff;background:linear-gradient(70deg,#f9ce34,#ee2a7b 45%,#6228d7);max-width:22rem}
@@ -281,6 +298,54 @@ function tripsHTML(d) {
   return `<section><h2>Registro di bordo · media ${oavg} nm/giorno</h2>${legend}${years}</section>`;
 }
 
+// Gli errori fatali — contenuto statico (aneddoti dello skipper, tono autoironico)
+function mistakesHTML() {
+  return `<section><h2>Gli errori fatali</h2>
+  <p class="dossier-note">Ogni comandante tiene, da qualche parte, il registro dei disastri.
+  Questi sono gli atti declassificati — perché sui propri errori è meglio riderci su.</p>
+
+  <div class="incident"><span class="stamp">Caso 01</span>
+    <h3>Il fuoribordo fantasma</h3>
+    <div class="meta">🇻🇨 Saint Vincent e Grenadine · 2017 · Lagoon 450 «Sorbe»</div>
+    <p>Ormeggio alla banchina del benzinaio. Posizione stretta, vento forte e — dettaglio non
+    secondario — l'equipaggio che si dimentica i parabordi. Nella manovra la barca sfiora il motore
+    fuoribordo del gommone di due sedicenti sommozzatori: due tipi che avevano tutta l'aria di
+    napoletani, ma in edizione caraibica.</p>
+    <p>Loro gridano al disastro. Il sospetto di bordo è un altro: che quel fuoribordo fosse già andato,
+    e che la «collisione» fosse più che altro l'occasione per farsi pagare un motore già rotto. Una
+    classica napoletanata, ai tropici. La barca l'ha toccato, sì — ma non abbastanza da meritare
+    tanto teatro.</p>
+    <div class="les"><b>Lezioni imparate</b>
+      <ol><li>Parabordi pronti sempre, per qualsiasi evenienza.</li>
+      <li>In banchina stretta con vento forte, la manovra non si improvvisa.</li></ol></div>
+    <div class="esito"><b>Bilancio:</b> un fuoribordo (forse) e una lezione sui parabordi che non si scorda più.</div>
+  </div>
+
+  <div class="incident"><span class="stamp">Caso 02</span>
+    <h3>Il canale di Ferragosto</h3>
+    <div class="meta">🇬🇷 Grecia · 2022 · Sporadi · Lagoon 42 «All in»</div>
+    <p>Rotta da Atene alle Sporadi per il canale di Calcide, il cui ponte si apre una sola volta a
+    notte, tra le 22 e le 23. Dettaglio scritto da nessuna parte: a Ferragosto non si apre. Lo skipper
+    si presenta al ponte proprio il 15 agosto e scopre l'amara verità.</p>
+    <p>Ripiego: ormeggio a terra dentro il canale, con poca ancora. Ma un canale di marea resta un
+    canale di marea: con la luna il vento gira dalla parte opposta. Ci si mette a terra con due cime e
+    mare piatto (le foto sono qui sopra, nella galleria).</p>
+    <p>Poi la trappola: pranzo pesante, capitano sotto coperta con l'aria condizionata — chilling
+    supremo. In coperta resta Jack Nassi con tre signore a briscola. Nessuno si accorge del vento che
+    sale né delle cime finite in acqua: l'ormeggio aveva ceduto. Il capitano si sveglia per un «TOC»
+    sulla carena, vola ai comandi per non finire inscogliato, sacrifica un'elica — ma esce.</p>
+    <p>Epilogo: barca alata con la gru, elica nuova, si riparte. Ma il canale si vendica: pieno di
+    meduse che intasano le prese a mare. Aria condizionata KO, generatore KO, un'elica sola. Due o tre
+    giorni di caldo bestiale in mezzo al canale.</p>
+    <div class="les"><b>Lezioni imparate</b>
+      <ol><li>Mai lasciare Jack Nassi solo in coperta.</li>
+      <li>Mai ormeggiare a terra in un canale di marea fidandosi di poca ancora.</li>
+      <li>Controllare feste comandate greche e maree prima di certi passaggi.</li>
+      <li>Dare. Più. Ancora.</li></ol></div>
+    <div class="esito"><b>Bilancio:</b> un'elica, due o tre giorni di vacanza e una nuova regola su Jack Nassi.</div>
+  </div></section>`;
+}
+
 function render(d) {
   const t = d.totals;
   const { cur, next } = rankOf(t.nm);
@@ -320,6 +385,7 @@ function render(d) {
   ${decorations(d)}
   ${galleryHTML(d)}
   ${tripsHTML(d)}
+  ${mistakesHTML()}
 
   <section style="text-align:center">
     <h2 style="justify-content:center">Seguilo</h2>
