@@ -5,13 +5,30 @@ on:
     # 10:00 e 18:00 UTC = 12:00 e 20:00 ora italiana (CEST, estate)
     - cron: "0 10 * * *"
     - cron: "0 18 * * *"
-  workflow_dispatch:        # bottone "Run workflow" per rigenerare a mano
+  workflow_dispatch:        # bottone "Run workflow": rigenera, e dal telefono
+    inputs:                 # (app GitHub) approva il piano o aggiorna la posizione
+      approva:
+        description: "Approva il piano di oggi con questo nome (es. Edo)"
+        required: false
+        default: ""
+      lat:
+        description: "Posizione reale: latitudine (es. 41.1069)"
+        required: false
+        default: ""
+      lon:
+        description: "Posizione reale: longitudine (es. 9.4404)"
+        required: false
+        default: ""
+      luogo:
+        description: "Nome del posto (es. Rada di Girolata)"
+        required: false
+        default: ""
   push:
     branches: [main]
     paths-ignore: ["**.md"]   # i commit solo-doc non devono rigenerare il briefing
 
 permissions:
-  contents: read
+  contents: write     # per riscrivere posizione e approvazione dal telefono
   pages: write
   id-token: write
 
@@ -26,6 +43,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+
+      - name: Aggiorna la posizione reale (se fornita dal telefono)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.lat != '' && inputs.lon != '' }}
+        run: |
+          printf '{"lat": %s, "lon": %s, "name": "%s", "at": "%s"}\n' \
+            "${{ inputs.lat }}" "${{ inputs.lon }}" "${{ inputs.luogo }}" \
+            "$(date -u +%FT%TZ)" > data/position.json
+          cat data/position.json
 
       # L'approvazione vive nel repo (publish.py --approve + push). Va salvata
       # PRIMA che publish.py sovrascriva il file: il deploy via Actions non ha
@@ -57,6 +82,19 @@ jobs:
               pathlib.Path("site/data/briefing.json").write_text(json.dumps(new, indent=2, ensure_ascii=False))
               print(f"Approvazione di {by} conservata")
           PY
+
+      - name: Approvazione dello skipper (se richiesta dal telefono)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.approva != '' }}
+        run: python scripts/publish.py --approve "${{ inputs.approva }}"
+
+      - name: Riporta posizione e approvazione nel repo
+        if: ${{ github.event_name == 'workflow_dispatch' && (inputs.approva != '' || inputs.lat != '') }}
+        run: |
+          git config user.name "nina-bot"
+          git config user.email "actions@github.com"
+          git add data/position.json site/data/briefing.json 2>/dev/null || true
+          git commit -m "Plancia: posizione/approvazione dal telefono [skip ci]" || echo "niente da committare"
+          git push || true
 
       - uses: actions/upload-pages-artifact@v3
         with: { path: site }

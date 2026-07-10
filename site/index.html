@@ -460,6 +460,7 @@ function render(b, wx, c) {
   document.getElementById("app").innerHTML = `
   <h2>Oggi${b.position ? ` — <span style="text-transform:none;letter-spacing:0">${esc(b.position.name)}</span>` : ""}</h2>
   ${b.now ? `<div class="nowbar">
+    <span>📍 <b>${esc(b.position?.name ?? "—")}</b> ${b.position?.live ? `(GPS, ${b.position.age_h} h fa)` : "(da piano)"}</span>
     <span>${wmoIcon(b.now.wmo)} <b>${b.now.temp != null ? Math.round(b.now.temp) + "°" : "—"}</b></span>
     <span>umidità <b>${b.now.rh ?? "—"}%</b></span>
     <span>vento <b>${Math.round(b.now.tws)} kn</b> da ${comp(b.now.twd)}</span>

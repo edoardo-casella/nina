@@ -99,6 +99,45 @@ def shifted_plan(v: dict, offset: int) -> list[dict]:
             for p in v["plan"]]
 
 
+DUTIES_ALL = ["cucina", "pulizie", "check"]
+
+
+def day_turns(crew: list[dict], day_idx: int) -> dict:
+    """6 turni/giorno assegnati per POOL di ruolo: ogni membro ha in `duties`
+    cosa sa/puo' fare (default: tutto tranne gli skipper, che sono esenti).
+    Ogni pool ruota indipendentemente, 2 slot al giorno."""
+    def pool(duty):
+        return [m["name"] for m in crew
+                if m["role"] != "skipper" and duty in m.get("duties", DUTIES_ALL)]
+    out = {}
+    for di, (duty, slots) in enumerate((("cucina", ["cucina_pranzo", "cucina_cena"]),
+                                        ("pulizie", ["pulizie_pranzo", "pulizie_cena"]),
+                                        ("check", ["check_mattina", "check_pomeriggio"]))):
+        p = pool(duty)
+        for j, slot in enumerate(slots):
+            # offset per ruolo (di*2): con pool uguali i 6 slot si spalmano su
+            # persone diverse; avanzamento di 1 al giorno cosi' ruota anche con
+            # pool piccoli (es. 2 soli cuochi si alternano davvero)
+            out[slot] = p[(day_idx + di * 2 + j) % len(p)] if p else None
+    return out
+
+
+def live_position() -> dict | None:
+    """Posizione reale da data/position.json (scritta dal workflow via telefono).
+    Vale 24 ore: piu' vecchia di cosi', meglio la posizione da piano che una bugia."""
+    try:
+        p = json.loads((core.DATA / "position.json").read_text(encoding="utf-8"))
+        at = dt.datetime.fromisoformat(p["at"].replace("Z", "+00:00"))
+        age_h = (dt.datetime.now(dt.timezone.utc) - at).total_seconds() / 3600
+        if 0 <= age_h <= 24:
+            return {"lat": float(p["lat"]), "lon": float(p["lon"]),
+                    "name": p.get("name") or "posizione GPS",
+                    "at": p["at"], "age_h": round(age_h, 1), "live": True}
+    except Exception:
+        pass
+    return None
+
+
 def andatura(twa_deg: float) -> str:
     if twa_deg < 55:
         return "bolina"
@@ -191,6 +230,10 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     plan = leg_for({"plan": plan_all}, day)
     start_id = plan["from"] if plan else v["waypoints"][0]["id"]
     wp = core.find_wp(v, start_id)
+    # posizione reale (telefono -> workflow) batte quella derivata dal piano
+    pos = live_position()
+    if pos:
+        wp = {**wp, "lat": pos["lat"], "lon": pos["lon"], "name": pos["name"]}
 
     if offline:
         series = synth(day)
@@ -278,7 +321,8 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "day": day, "boat": v["boat"]["name"], "voyage": v["name"],
         "captains": v.get("captains", []),
         "sim": bool(offset), "cruise_start": v["plan"][0]["date"] if v["plan"] else None,
-        "position": {"id": wp["id"], "name": wp["name"], "lat": wp["lat"], "lon": wp["lon"]},
+        "position": {"id": wp["id"], "name": wp["name"], "lat": wp["lat"], "lon": wp["lon"],
+                     "live": bool(pos), "age_h": pos["age_h"] if pos else None},
         "rest": bool(plan and plan["rest"]),
         "leg": leg, "leg_sailing": leg_sailing, "options": options, "confidence": conf,
         "stop_reason": (options[0].get("note") if options and leg is None else None),
@@ -287,14 +331,8 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "polar_estimated": v["boat"].get("polar_status", "stimata") == "stimata",
         "crew": [{"name": m["name"], "role": m["role"], "board": m["board"],
                   "leave": m["leave"], "cabin": m.get("cabin")} for m in crew],
-        # 6 turni/giorno a rotazione equa sul giorno di crociera;
-        # gli skipper sono SEMPRE esclusi dai turni
-        "turns": (lambda names, k: {
-            t: (names[(k + i) % len(names)] if names else None)
-            for i, t in enumerate(["cucina_pranzo", "cucina_cena", "pulizie_pranzo",
-                                   "pulizie_cena", "check_mattina", "check_pomeriggio"])
-        })([m["name"] for m in crew if m["role"] != "skipper"],
-           (dt.date.fromisoformat(day) - dt.date.fromisoformat(plan_all[0]["date"])).days if plan_all else 0),
+        "turns": day_turns(crew, (dt.date.fromisoformat(day) - dt.date.fromisoformat(plan_all[0]["date"])).days
+                           if plan_all else 0),
         "source": "Open-Meteo (ECMWF) — non ufficiale",
         "official": "https://www.meteoam.it/it/mare",
     }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T14:08+02:00",
+  "generated_at": "2026-07-10T14:20+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -15,7 +15,9 @@
     "id": "cannigione",
     "name": "Cannigione",
     "lat": 41.1069,
-    "lon": 9.4404
+    "lon": 9.4404,
+    "live": false,
+    "age_h": null
   },
   "rest": false,
   "leg": {
