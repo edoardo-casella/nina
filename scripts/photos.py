@@ -20,6 +20,10 @@ TTL_S = 7 * 86400
 UA = "nina-sailing-agent/1.0 github.com/edoardo-casella/nina"
 _MIN_INTERVAL_S = 0.5
 _last_call = [0.0]
+# circuito: al primo 429 che esaurisce i retry si smette di chiamare Commons
+# per tutto il run (gli IP condivisi dei runner CI restano limitati a lungo);
+# publish.py ripiega sulle foto dell'ultimo program.json committato
+_rate_limited = [False]
 
 COMMONS = "https://commons.wikimedia.org/w/api.php"
 
@@ -30,7 +34,9 @@ def _get(url: str, params: dict) -> dict:
     key = CACHE / (hashlib.sha1(full.encode()).hexdigest() + ".json")
     if key.exists() and time.time() - key.stat().st_mtime < TTL_S:
         return json.loads(key.read_text(encoding="utf-8"))
-    for attempt in (1, 2, 3):
+    if _rate_limited[0]:
+        raise RuntimeError("Commons rate-limited: niente altre chiamate in questo run")
+    for attempt in (1, 2):
         pause = _MIN_INTERVAL_S - (time.time() - _last_call[0])
         if pause > 0:
             time.sleep(pause)
@@ -42,9 +48,12 @@ def _get(url: str, params: dict) -> dict:
             key.write_text(json.dumps(data), encoding="utf-8")
             return data
         except urllib.error.HTTPError as e:
-            if e.code == 429 and attempt < 3:
-                time.sleep(min(float(e.headers.get("Retry-After") or 2 * attempt), 30))
+            if e.code != 429:
+                raise
+            if attempt == 1:
+                time.sleep(min(float(e.headers.get("Retry-After") or 3), 5))
                 continue
+            _rate_limited[0] = True
             raise
 # titoli che quasi sicuramente non sono panorami
 SKIP_WORDS = ("map", "karte", "carte", "mappa", "plan", "diagram", "logo",

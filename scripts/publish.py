@@ -82,15 +82,33 @@ def leg_for(v: dict, day: str) -> dict | None:
 _PHOTOS: dict[str, dict | None] = {}
 
 
+_PREV_PHOTOS: dict[str, dict] | None = None
+
+
+def _prev_photos() -> dict[str, dict]:
+    """Foto dell'ultimo program.json pubblicato: se Commons rate-limita il
+    runner CI (IP condivisi), si riusa l'ultima foto buona invece di perderla."""
+    global _PREV_PHOTOS
+    if _PREV_PHOTOS is None:
+        try:
+            prev = json.loads((SITE / "program.json").read_text(encoding="utf-8"))
+            _PREV_PHOTOS = {d["id"]: d["photo"]
+                            for d in prev.get("destinations", []) if d.get("photo")}
+        except Exception:
+            _PREV_PHOTOS = {}
+    return _PREV_PHOTOS
+
+
 def photo_ref(wp: dict, offline: bool) -> dict | None:
     """Foto Commons del waypoint, memoizzata per run. Mai bloccante."""
     if offline:
         return None
     if wp["id"] not in _PHOTOS:
         try:
-            _PHOTOS[wp["id"]] = photos.photo_for(wp["lat"], wp["lon"], wp["name"])
+            p = photos.photo_for(wp["lat"], wp["lon"], wp["name"])
         except Exception:
-            _PHOTOS[wp["id"]] = None
+            p = None
+        _PHOTOS[wp["id"]] = p or _prev_photos().get(wp["id"])
     return _PHOTOS[wp["id"]]
 
 
