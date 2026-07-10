@@ -8,6 +8,7 @@ on:
   workflow_dispatch:        # bottone "Run workflow" per rigenerare a mano
   push:
     branches: [main]
+    paths-ignore: ["**.md"]   # i commit solo-doc non devono rigenerare il briefing
 
 permissions:
   contents: read
@@ -43,12 +44,18 @@ jobs:
           test -f /tmp/old.json || exit 0
           python - <<'PY'
           import json, pathlib
+          try:
+              old = json.loads(pathlib.Path("/tmp/old.json").read_text())
+              approved, by, day = old.get("approved"), old.get("approved_by"), old.get("day")
+          except Exception:
+              # briefing committato illeggibile (hand-edit, conflitto): fail-safe,
+              # l'approvazione decade ma il deploy schedulato deve sopravvivere
+              raise SystemExit(0)
           new = json.loads(pathlib.Path("site/data/briefing.json").read_text())
-          old = json.loads(pathlib.Path("/tmp/old.json").read_text())
-          if old.get("approved") and old.get("day") == new["day"]:
-              new["approved"], new["approved_by"] = True, old["approved_by"]
+          if approved and day == new["day"]:
+              new["approved"], new["approved_by"] = True, by
               pathlib.Path("site/data/briefing.json").write_text(json.dumps(new, indent=2, ensure_ascii=False))
-              print(f"Approvazione di {old['approved_by']} conservata")
+              print(f"Approvazione di {by} conservata")
           PY
 
       - uses: actions/upload-pages-artifact@v3

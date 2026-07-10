@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Niña — briefing</title>
 <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#0E2029">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,8 +173,14 @@ function ribbon(hours) {
 function legCard(b) {
   if (b.rest) return `<div class="leg"><div class="route">Giornata di sosta</div>
     <p style="color:var(--soft);font-size:.9rem">Nessun trasferimento in programma. Bagno, riposo, cambusa.</p></div>`;
-  if (!b.leg) return `<div class="leg"><div class="route">Nessuna tratta pianificata</div></div>`;
-  const L = b.leg, [from, to] = L.leg.split(" -> ");
+  if (!b.leg || !b.leg.leg) {
+    // giorno di STOP: best_departure ritorna solo stub senza tratta.
+    // Proprio quel giorno la pagina deve spiegare, non rompersi.
+    const stop = b.stop_reason
+      ? `<p style="color:var(--magenta);font-size:.9rem;margin-top:.4rem">${esc(b.stop_reason)}</p>` : "";
+    return `<div class="leg"><div class="route">${b.stop_reason ? "Nessuna partenza consigliata" : "Nessuna tratta pianificata"}</div>${stop}</div>`;
+  }
+  const L = b.leg, [from, to] = L.leg.split(/ (?:->|→) /);
   const color = L.avg_score >= 70 ? "var(--verde)" : L.avg_score >= 45 ? "var(--giallo)" : "var(--rosso)";
   const verdict = L.avg_score >= 70 ? "Ottima" : L.avg_score >= 45 ? "Buona" : "Mediocre";
   return `<div class="leg">
@@ -222,7 +230,7 @@ function render(b, wx, c) {
       <div class="pts num">${t.score}</div></div>` : `<p>Rada non definita.</p>`}
   ${pb ? `<div class="b-plan"><b>Piano B</b><span class="water">${esc(pb.name)}</span> — ${esc(pb.why)}.</div>` : ""}
   <details><summary>Le altre rade con questo vento</summary>
-    ${b.ranked.map(r => `<div class="rada"><div class="dot ${r.light}"></div>
+    ${b.ranked.filter(r => r.id !== t?.id && r.id !== pb?.id).map(r => `<div class="rada"><div class="dot ${r.light}"></div>
       <div><h3>${esc(r.name)}</h3><p class="water">${esc(r.why)}</p></div>
       <div class="pts num">${r.score}</div></div>`).join("")}
   </details>
@@ -233,11 +241,12 @@ function render(b, wx, c) {
     <strong>${o.score ?? "—"}</strong>
     <span>${esc(o.leg)}</span></div>`).join("") || "<p>—</p>"}</div>
 
+  ${b.crew.length ? `
   <h2>A bordo · ${b.crew.length}</h2>
   <div class="crew">${b.crew.map(m => `<span class="chip ${m.role === "skipper" ? "skipper" : ""}">${esc(m.name)}</span>`).join("")}</div>
   <div class="turns">
     ${Object.entries(b.turns).filter(([, v]) => v).map(([k, v]) => `<div class="turn"><em>${k}</em><span>${esc(v)}</span></div>`).join("")}
-  </div>
+  </div>` : ""}
 
   <h2>Conti</h2>
   <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora</summary>
@@ -250,17 +259,29 @@ function render(b, wx, c) {
 }
 
 (async () => {
+  // due catch separati: "manca la rete" e "la pagina ha un bug" sono diagnosi
+  // diverse e all'equipaggio serve quella giusta
+  let data;
   try {
-    const [b, wx, c] = window.__DATA ?? await Promise.all(
+    data = window.__DATA ?? await Promise.all(
       ["briefing", "weather", "conti"].map(n => fetch(`data/${n}.json`, { cache: "no-cache" }).then(r => {
         if (!r.ok) throw new Error(n); return r.json();
       })));
-    render(b, wx, c);
   } catch (e) {
     document.getElementById("when").textContent = "dati non raggiungibili";
     document.getElementById("app").innerHTML = `<div class="err">
       <strong>Nessun dato disponibile.</strong> La pagina non ha trovato il briefing e non ha una copia in cache.
       Se sei in rada senza rete, riapri quando torni sotto copertura. Nel frattempo il meteo ufficiale è su
+      <a href="https://www.meteoam.it/it/mare">meteoam.it</a>.</div>`;
+  }
+  if (data) try {
+    render(...data);
+  } catch (e) {
+    document.getElementById("when").textContent = "errore di pagina";
+    document.getElementById("app").innerHTML = `<div class="err">
+      <strong>I dati ci sono ma la pagina non riesce a mostrarli.</strong> Non è un problema di rete:
+      segnalalo a chi mantiene la dashboard. Il briefing grezzo è in
+      <a href="data/briefing.json">data/briefing.json</a>, il meteo ufficiale su
       <a href="https://www.meteoam.it/it/mare">meteoam.it</a>.</div>`;
   }
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});

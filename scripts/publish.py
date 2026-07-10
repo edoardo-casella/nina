@@ -61,7 +61,9 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         weather.combined = lambda *a, **k: series          # riusa la serie gia' scaricata
         try:
             options = routing.best_departure(v, plan["from"], plan["to"], day)[:3]
-            leg = options[0] if options else None
+            # gli STOP entrano in classifica come stub senza leg/eta:
+            # mai darli alla dashboard come tratta del giorno
+            leg = next((o for o in options if o.get("leg")), None)
         finally:
             weather.combined = _real
 
@@ -94,13 +96,16 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
                         "light": LIGHTS[s["verdict"]], "verdict": s["verdict"]})
 
     crew = core.aboard_on(v, day)
-    now = dt.datetime.now().isoformat(timespec="minutes")
+    # offset esplicito: i telefoni fuori dal fuso italiano devono leggere
+    # l'eta' del dato giusta
+    now = dt.datetime.now().astimezone().isoformat(timespec="minutes")
 
     briefing = {
         "generated_at": now, "approved": False, "approved_by": None,
         "day": day, "boat": v["boat"]["name"], "voyage": v["name"],
         "rest": bool(plan and plan["rest"]),
         "leg": leg, "options": options, "confidence": conf,
+        "stop_reason": (options[0].get("note") if options and leg is None else None),
         "tonight": tonight, "plan_b": plan_b, "ranked": ranked[:4],
         "outlook": outlook,
         "crew": [{"name": m["name"], "role": m["role"]} for m in crew],
@@ -110,7 +115,11 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "source": "Open-Meteo (ECMWF) — non ufficiale",
         "official": "https://www.meteoam.it/it/mare",
     }
-    wx = {"generated_at": now, "waypoint": wp["name"], "hours": series[:48]}
+    # 48 ore DA ADESSO: senza questo taglio, al run delle 20:00 il ribbon
+    # mostrerebbe 20 colonne di passato e solo 28 di previsione
+    cur_hour = now[:13] + ":00"
+    start = next((i for i, r in enumerate(series) if r["time"] >= cur_hour), 0)
+    wx = {"generated_at": now, "waypoint": wp["name"], "hours": series[start:start + 48]}
     sh = ledger.shares(v)
     st = ledger.settle(v)
     conti = {"generated_at": now, "person_nights": sh["total_person_nights"],

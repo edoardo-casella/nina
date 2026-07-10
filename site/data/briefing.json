@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T02:00",
+  "generated_at": "2026-07-10T10:49+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -10,17 +10,18 @@
   "options": [],
   "confidence": {
     "mean_spread_kn": 1.1,
-    "max_spread_kn": 3.8,
+    "max_spread_kn": 5.7,
     "confidence": "alta"
   },
+  "stop_reason": null,
   "tonight": {
     "id": "cannigione",
     "name": "Cannigione",
-    "score": 73,
+    "score": 71,
     "light": "giallo",
-    "margin_deg": 36,
+    "margin_deg": 32,
     "fetch_km": 8,
-    "why": "vento 114° a 36° dal settore esposto",
+    "why": "vento 118° a 32° dal settore esposto",
     "holding": "fango, ottima",
     "notes": "Base charter, riparo quasi totale.",
     "verify": true
@@ -30,9 +31,9 @@
     "name": "Cala Lazarina (Lavezzi)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 94,
+    "margin_deg": 98,
     "fetch_km": 30,
-    "why": "vento 114° a 94° dal settore esposto",
+    "why": "vento 118° a 98° dal settore esposto",
     "holding": "sabbia tra roccia",
     "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
     "verify": true
@@ -43,9 +44,9 @@
       "name": "Cala Lazarina (Lavezzi)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 94,
+      "margin_deg": 98,
       "fetch_km": 30,
-      "why": "vento 114° a 94° dal settore esposto",
+      "why": "vento 118° a 98° dal settore esposto",
       "holding": "sabbia tra roccia",
       "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
       "verify": true
@@ -53,11 +54,11 @@
     {
       "id": "sanguinaires",
       "name": "Iles Sanguinaires",
-      "score": 98,
+      "score": 96,
       "light": "verde",
-      "margin_deg": 86,
+      "margin_deg": 82,
       "fetch_km": 80,
-      "why": "vento 114° a 86° dal settore esposto",
+      "why": "vento 118° a 82° dal settore esposto",
       "holding": "sabbia/roccia",
       "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
       "verify": true
@@ -65,11 +66,11 @@
     {
       "id": "mortorio",
       "name": "Isola Mortorio",
-      "score": 88,
+      "score": 86,
       "light": "verde",
-      "margin_deg": 66,
+      "margin_deg": 62,
       "fetch_km": 20,
-      "why": "vento 114° a 66° dal settore esposto",
+      "why": "vento 118° a 62° dal settore esposto",
       "holding": "sabbia",
       "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
       "verify": true
@@ -77,11 +78,11 @@
     {
       "id": "coticcio",
       "name": "Cala Coticcio (Caprera)",
-      "score": 79,
+      "score": 78,
       "light": "giallo",
       "margin_deg": 0,
       "fetch_km": 12,
-      "why": "vento 114° entra in rada (settore 40-140°), fetch 12 km",
+      "why": "vento 118° entra in rada (settore 40-140°), fetch 12 km",
       "holding": "sabbia",
       "notes": "Sosta diurna. Sbarco a terra regolamentato.",
       "verify": true

@@ -1,13 +1,28 @@
-// Cache-first per il guscio, network-first per i dati.
-// In rada senza rete la pagina si apre lo stesso e mostra l'ultimo briefing scaricato,
-// con la sua data bene in vista. Un dato vecchio dichiarato e' utile; un dato vecchio
-// spacciato per fresco e' pericoloso.
-const SHELL = "nina-shell-v1";
+// Guscio: stale-while-revalidate (si apre subito dalla cache, si aggiorna in
+// background — niente client congelati sulla vecchia index.html).
+// Dati: network-first con fallback cache. In rada senza rete la pagina si apre
+// lo stesso e mostra l'ultimo briefing scaricato, con la sua data bene in vista.
+// Un dato vecchio dichiarato e' utile; un dato vecchio spacciato per fresco e'
+// pericoloso. E un captive portal di marina che risponde 200 con l'HTML del
+// login NON deve sovrascrivere l'ultimo briefing buono: si cache-a solo JSON ok.
+const SHELL = "nina-shell-v2";
 const DATA = "nina-data-v1";
-const FILES = ["./", "./index.html", "./manifest.json"];
+const FILES = ["./", "./index.html", "./manifest.json",
+               "./icon-192.png", "./icon-512.png", "./icon-180.png"];
+const DATAFILES = ["./data/briefing.json", "./data/weather.json", "./data/conti.json"];
+
+const isJson = r => r.ok && (r.headers.get("content-type") || "").includes("json");
 
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(SHELL).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
+  e.waitUntil((async () => {
+    const shell = await caches.open(SHELL);
+    await shell.addAll(FILES);
+    // precache dati best-effort: cosi' l'offline funziona gia' dalla prima
+    // visita, e un fallimento qui non deve bloccare l'install del guscio
+    const data = await caches.open(DATA);
+    await Promise.allSettled(DATAFILES.map(u => data.add(u)));
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener("activate", e => {
@@ -23,12 +38,26 @@ self.addEventListener("fetch", e => {
   if (url.pathname.includes("/data/")) {
     e.respondWith(
       fetch(e.request).then(r => {
-        const copy = r.clone();
-        caches.open(DATA).then(c => c.put(e.request, copy));
-        return r;
+        if (isJson(r)) {
+          const copy = r.clone();
+          caches.open(DATA).then(c => c.put(e.request, copy));
+          return r;
+        }
+        // 404, redirect di captive portal, HTML: meglio l'ultimo JSON buono
+        return caches.match(e.request).then(m => m || r);
       }).catch(() => caches.match(e.request))
     );
     return;
   }
-  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+
+  e.respondWith(caches.match(e.request).then(cached => {
+    const fresh = fetch(e.request).then(r => {
+      if (r.ok) {
+        const copy = r.clone();
+        caches.open(SHELL).then(c => c.put(e.request, copy));
+      }
+      return r;
+    }).catch(() => cached);
+    return cached || fresh;
+  }));
 });
