@@ -7,15 +7,16 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
-<meta name="theme-color" content="#0E2029">
+<meta name="theme-color" content="#060D18">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FCFDFC; --sea-1:#E4EFF3; --sea-2:#C9E0E8; --land:#F0E4C0;
-  --ink:#0E2029; --soft:#4A6672; --hair:#B7CBD3;
-  --magenta:#C2007B; --verde:#0E7A4C; --giallo:#B8730A; --rosso:#A81F1B;
+  /* console navale: navy profondo, ciano dati, ambra caution, rosso danger */
+  --paper:#0A1424; --sea-1:#101E33; --sea-2:#1C3552; --land:#2C2410;
+  --ink:#DCE7F5; --soft:#7E95B0; --hair:#22384F; --accent:#35C4E7;
+  --magenta:#E8536F; --verde:#2FBF71; --giallo:#E8A33D; --rosso:#E8536F;
   --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
   --body:"IBM Plex Sans",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -29,23 +30,24 @@ main{max-width:640px;margin:0 auto;padding:0 1.1rem}
 .water{font-style:italic}
 
 h2{font:700 .72rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase;
-  color:var(--soft);margin:2.4rem 0 .85rem;display:flex;align-items:baseline;gap:.6rem}
+  color:#9FB6CE;margin:2.4rem 0 .85rem;display:flex;align-items:baseline;gap:.6rem;
+  border-left:3px solid var(--accent);padding-left:.55rem}
 h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 
-header{background:var(--ink);color:var(--sea-1);position:sticky;top:0;z-index:10;
-  border-bottom:2px solid var(--magenta)}
+header{background:#060D18;color:var(--ink);position:sticky;top:0;z-index:10;
+  border-bottom:2px solid var(--accent)}
 .hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem}
 .boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
 .cap{font:600 .6rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:#7FA6B5;margin-top:.22rem}
-.clock{font:400 .72rem/1.3 var(--mono);color:var(--sea-2);margin-top:.2rem;font-variant-numeric:tabular-nums}
-.when{font-family:var(--mono);font-size:.78rem;color:var(--sea-2);margin-left:auto;text-align:right;flex:none}
+.clock{font:600 .74rem/1.3 var(--mono);color:var(--accent);margin-top:.2rem;font-variant-numeric:tabular-nums}
+.when{font-family:var(--mono);font-size:.78rem;color:var(--soft);margin-left:auto;text-align:right;flex:none}
 .stale{color:#FF9BD6}
 
 .flag{background:var(--magenta);color:#fff;padding:.65rem 1.1rem;font:600 .8rem/1.35 var(--body)}
 .flag b{font:700 .72rem/1 var(--display);letter-spacing:.14em;display:block;margin-bottom:.15rem}
 .flag.ok{background:var(--verde)}
-.flag.sim{background:var(--land);color:#6A4E0E}
+.flag.sim{background:var(--land);color:#FFC97A}
 
 .nowbar{display:flex;flex-wrap:wrap;gap:.4rem .95rem;font-size:.85rem;color:var(--soft);
   margin:1rem 0 .9rem;align-items:baseline}
@@ -120,7 +122,7 @@ header{background:var(--ink);color:var(--sea-1);position:sticky;top:0;z-index:10
 .rada .pts{margin-left:auto;font:600 1rem/1 var(--mono);color:var(--soft)}
 .b-plan{background:var(--land);border-radius:3px;padding:.75rem .9rem;margin-top:.9rem;font-size:.88rem}
 .b-plan b{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
-  display:block;color:#7A5A12;margin-bottom:.22rem}
+  display:block;color:#FFC97A;margin-bottom:.22rem}
 
 .days{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.55rem}
 .day{border:1px solid var(--hair);border-radius:3px;padding:.7rem .6rem;border-top:3px solid var(--hair)}
@@ -131,18 +133,27 @@ header{background:var(--ink);color:var(--sea-1);position:sticky;top:0;z-index:10
 .day span{font-size:.75rem;font-style:italic;color:var(--soft);display:block;line-height:1.3}
 
 .crew{display:flex;flex-wrap:wrap;gap:.4rem}
-.chip{border:1px solid var(--hair);border-radius:99px;padding:.24rem .7rem;font-size:.82rem}
-.chip.skipper{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.turns{margin-top:.9rem;display:grid;gap:.4rem}
-.turn{display:flex;justify-content:space-between;font-size:.88rem;padding:.42rem 0;border-bottom:1px dotted var(--hair)}
+.chip{border:1px solid var(--hair);border-radius:99px;padding:.28rem .75rem;font-size:.82rem;
+  background:var(--sea-1);color:var(--ink);font-family:var(--body);cursor:pointer}
+.chip.skipper{background:var(--accent);color:#062330;border-color:var(--accent);font-weight:600}
+.crewcard{background:var(--sea-1);border:1px solid var(--hair);border-left:3px solid var(--accent);
+  border-radius:3px;padding:.7rem .9rem;margin-top:.6rem;font-size:.85rem;line-height:1.7;color:var(--soft)}
+.crewcard b{color:var(--ink)}
+.hint{font-size:.78rem;color:var(--soft);margin:-.35rem 0 .7rem}
+.turns{margin-top:.9rem;display:grid;gap:.15rem}
+.turn{font-size:.88rem;border-bottom:1px dotted var(--hair)}
+.turn summary{display:flex;justify-content:space-between;padding:.45rem 0;cursor:pointer;list-style:none}
+.turn summary::-webkit-details-marker{display:none}
+.turn p{font-size:.78rem;color:var(--soft);padding:0 0 .55rem}
 .turn em{font-style:normal;color:var(--soft);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;
   font-family:var(--display);font-weight:700}
+.pwarn{margin-top:.7rem;font-size:.76rem;color:#FFC97A}
 
 table{width:100%;border-collapse:collapse;font-size:.88rem}
 th{font:700 .62rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
   text-align:right;padding:.4rem 0;border-bottom:1px solid var(--hair)}
 th:first-child{text-align:left}
-td{padding:.44rem 0;border-bottom:1px solid #EAF1F3;text-align:right;font-family:var(--mono);
+td{padding:.44rem 0;border-bottom:1px solid var(--hair);text-align:right;font-family:var(--mono);
   font-variant-numeric:tabular-nums}
 td:first-child{text-align:left;font-family:var(--body)}
 details summary{cursor:pointer;color:var(--soft);font-size:.85rem;padding:.5rem 0}
@@ -193,23 +204,23 @@ function ribbon(hours) {
   const now = Date.now();
   const max = Math.max(22, ...hours.map(h => h.gust ?? h.tws));
   const cols = hours.map((h, i) => {
-    const t = new Date(h.time), kn = h.tws;
-    const cls = kn >= 22 ? "gale" : kn >= 15 ? "strong" : "";
+    const t = new Date(h.time), kn = h.tws, f = bft(kn);
     const near = Math.abs(t - now) < 18e5 ? " now" : "";
     const mid = h.time.slice(11, 16) === "00:00" ? " day0" : "";
     const px = Math.max(4, Math.round(kn / max * 96));
     // la freccia punta DOVE VA il vento: direzione di provenienza + 180°
-    return `<div class="hr ${cls}${near}${mid}" title="${dayLbl(h.time)} ${h.time.slice(11, 16)} — ${Math.round(kn)} kn da ${comp(h.twd)}, raffiche ${Math.round(h.gust)}">
+    return `<div class="hr${near}${mid}" title="${dayLbl(h.time)} ${h.time.slice(11, 16)} — ${Math.round(kn)} kn da ${comp(h.twd)} · F${f} ${BFT_NAME[f]} · raffiche ${Math.round(h.gust)}">
       <span style="transform:rotate(${(h.twd + 180) % 360}deg);display:flex">${ARROW}</span>
-      <div class="col" style="height:${px}px;animation-delay:${Math.min(i * 12, 600)}ms"></div>
+      <div class="col" style="height:${px}px;background:${SCALE_COL[f]};animation-delay:${Math.min(i * 12, 600)}ms"></div>
     </div>`;
   }).join("");
   const vals = hours.map((h, i) => `<span>${i % 3 === 0 ? Math.round(h.tws) : ""}</span>`).join("");
+  const fmax = bft(max);
   return `<div class="ribbon"><div class="strip">${cols}</div>
     <div class="axis vals">${vals}</div><div class="axis">${hourAxis(hours)}</div></div>
-    <div class="legend"><span>nodi sopra, ora sotto — tocca una barra per il dettaglio</span>
-    <span class="water">max <b>${Math.round(max)} kn</b></span>
-    <span>freccia = dove va il vento</span></div>`;
+    <div class="legend"><span class="water">max <b>${Math.round(max)} kn · F${fmax}</b> (${BFT_NAME[fmax]})</span>
+    <span>${[2, 3, 4, 5, 6, 7].map(f => `<b style="color:${SCALE_COL[f]}">F${f}</b>`).join(" ")}</span>
+    <span>nodi sopra, ora sotto · tocca una barra</span></div>`;
 }
 
 function windyMaps(pos) {
@@ -239,6 +250,19 @@ const wmoIcon = c => c == null ? "·" : c === 0 ? "☀️" : c <= 2 ? "🌤️" 
   c <= 49 ? "🌫️" : c <= 57 ? "🌦️" : c <= 67 ? "🌧️" : c <= 79 ? "🌨️" : c <= 82 ? "🌧️" : "⛈️";
 const comp = d => ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSO","SO","OSO","O","ONO","NO","NNO"][Math.round(d / 22.5) % 16];
 
+// scala Beaufort (nodi) e stato del mare Douglas (metri): colori condivisi
+const BFT_MAX = [1, 3, 6, 10, 16, 21, 27, 33, 40, 47, 55, 63];
+const bft = kn => { const i = BFT_MAX.findIndex(x => kn <= x); return i === -1 ? 12 : i; };
+const BFT_NAME = ["calma", "bava di vento", "brezza leggera", "brezza tesa", "vento moderato",
+  "vento teso", "vento fresco", "vento forte", "burrasca", "burrasca forte",
+  "tempesta", "tempesta violenta", "uragano"];
+const SCALE_COL = ["#4A6FA5", "#4A8FBF", "#38A3C4", "#37D07C", "#A8D34C", "#FFD54F",
+  "#FFB454", "#FF8A3D", "#FF5A5A", "#E5484D", "#C13030", "#A02020", "#801515"];
+const seaState = m => m <= 0.02 ? 0 : m <= 0.1 ? 1 : m <= 0.5 ? 2 : m <= 1.25 ? 3 :
+  m <= 2.5 ? 4 : m <= 4 ? 5 : m <= 6 ? 6 : m <= 9 ? 7 : 8;
+const SEA_NAME = ["calmo", "quasi calmo", "poco mosso", "mosso", "molto mosso",
+  "agitato", "molto agitato", "grosso", "molto grosso"];
+
 function waveRibbon(hours) {
   const has = hours.filter(h => h.wave != null);
   if (!has.length) return `<h2>Onda — 48 ore</h2>
@@ -246,20 +270,20 @@ function waveRibbon(hours) {
   const max = Math.max(1.2, ...has.map(h => h.wave));
   const cols = hours.map(h => {
     if (h.wave == null) return `<div class="hr"><span></span><div class="col" style="height:4px"></div></div>`;
-    const cls = h.wave >= 1.5 ? "gale" : h.wave >= 0.8 ? "strong" : "";
+    const st = seaState(h.wave);
     const mid = h.time.slice(11, 16) === "00:00" ? " day0" : "";
     const px = Math.max(4, Math.round(h.wave / max * 96));
     const rot = h.wave_dir != null
       ? `<span style="transform:rotate(${(h.wave_dir + 180) % 360}deg);display:flex">${ARROW}</span>` : "<span></span>";
-    return `<div class="hr ${cls}${mid}" title="${dayLbl(h.time)} ${h.time.slice(11, 16)} — onda ${h.wave.toFixed(1)} m${h.wave_dir != null ? " da " + comp(h.wave_dir) : ""}">${rot}<div class="col" style="height:${px}px"></div></div>`;
+    return `<div class="hr${mid}" title="${dayLbl(h.time)} ${h.time.slice(11, 16)} — onda ${h.wave.toFixed(1)} m${h.wave_dir != null ? " da " + comp(h.wave_dir) : ""} · mare ${st} (${SEA_NAME[st]})">${rot}<div class="col" style="height:${px}px;background:${SCALE_COL[st]}"></div></div>`;
   }).join("");
   const vals = hours.map((h, i) => `<span>${i % 3 === 0 && h.wave != null ? h.wave.toFixed(1).replace("0.", ".") : ""}</span>`).join("");
+  const smax = seaState(max);
   return `<h2>Onda — 48 ore</h2>
     <div class="ribbon"><div class="strip">${cols}</div>
     <div class="axis vals">${vals}</div><div class="axis">${hourAxis(hours)}</div></div>
-    <div class="legend"><span>metri sopra, ora sotto</span>
-    <span class="water">max <b>${max.toFixed(1)} m</b></span>
-    <span>freccia = dove va l'onda</span><span>risoluzione ~5 km: sottocosta indicativa</span></div>`;
+    <div class="legend"><span class="water">max <b>${max.toFixed(1)} m · mare ${smax}</b> (${SEA_NAME[smax]})</span>
+    <span>freccia = dove va l'onda</span><span>~5 km: sottocosta indicativa</span></div>`;
 }
 
 function skyStrip(hours) {
@@ -316,7 +340,8 @@ function legCard(b) {
     <div class="score">
       <p><span class="water">Sail Score</span><b style="color:${color}">${verdict} · ${L.avg_score}</b></p>
       <div class="bar"><i style="width:${L.avg_score}%;background:${color}"></i></div>
-    </div></div>`;
+    </div>
+    ${b.polar_estimated ? `<p class="pwarn">⚠ Velocità da polare STIMATA, non validata a bordo: considera ±20% finché non la misuriamo (step 5).</p>` : ""}</div>`;
 }
 
 function outlookRows(outlook) {
@@ -337,6 +362,41 @@ function outlookRows(outlook) {
       ${sail ? `<p>${sail}</p>` : ""}
       <p>${meteo}</p></div></div>`;
   }).join("");
+}
+
+const TURN_INFO = {
+  cucina: "Ai fornelli: prepara pranzo e cena per tutti, oggi.",
+  cambusa: "Spesa e dispensa: tiene il conto di cosa manca e compra a terra.",
+  tender: "Responsabile del gommone: sbarchi, ormeggio del tender, benzina.",
+};
+const fmtD = d => d ? new Date(d + "T12:00").toLocaleDateString("it", { day: "numeric", month: "short" }) : "—";
+
+function crewBlock(b) {
+  if (!b.crew.length) return "";
+  const chips = b.crew.map((m, i) =>
+    `<button class="chip ${m.role === "skipper" ? "skipper" : ""}" onclick="toggleCrew(${i})">${esc(m.name)}</button>`).join("");
+  const cards = b.crew.map((m, i) => {
+    const turno = Object.entries(b.turns || {}).find(([, v]) => v === m.name);
+    return `<div class="crewcard" id="crew-${i}" hidden>
+      <b>${esc(m.name)}</b> — ${esc(m.role)}${m.cabin ? ` · ${esc(m.cabin)}` : ""}<br>
+      A bordo dal ${fmtD(m.board)} al ${fmtD(m.leave)}${turno ? `<br>Turno di oggi: <b>${turno[0]}</b>` : ""}</div>`;
+  }).join("");
+  const turns = Object.entries(b.turns || {}).filter(([, v]) => v).map(([k, v]) =>
+    `<details class="turn"><summary><em>${k}</em><span>${esc(v)}</span></summary>
+     <p>${TURN_INFO[k] ?? ""} I turni ruotano automaticamente ogni giorno.</p></details>`).join("");
+  return `
+  <h2>Equipaggio di giornata · ${b.crew.length} a bordo</h2>
+  <p class="hint">Chi è in barca oggi (tocca un nome per la scheda). Sotto: i turni di servizio del giorno — tocca per la spiegazione.</p>
+  <div class="crew">${chips}</div>${cards}
+  <div class="turns">${turns}</div>`;
+}
+
+function toggleCrew(i) {
+  const t = document.getElementById("crew-" + i);
+  if (!t) return;
+  const wasHidden = t.hidden;
+  document.querySelectorAll(".crewcard").forEach(el => { el.hidden = true; });
+  t.hidden = !wasHidden;
 }
 
 function render(b, wx, c) {
@@ -405,12 +465,7 @@ function render(b, wx, c) {
   <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
     Mappa condivisa, aggiornata in tempo reale — i segnaposto NON sono punti di fonda verificati.</p>` : ""}
 
-  ${b.crew.length ? `
-  <h2>A bordo · ${b.crew.length}</h2>
-  <div class="crew">${b.crew.map(m => `<span class="chip ${m.role === "skipper" ? "skipper" : ""}">${esc(m.name)}</span>`).join("")}</div>
-  <div class="turns">
-    ${Object.entries(b.turns).filter(([, v]) => v).map(([k, v]) => `<div class="turn"><em>${k}</em><span>${esc(v)}</span></div>`).join("")}
-  </div>` : ""}
+  ${crewBlock(b)}
 
   <h2>Conti</h2>
   <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora</summary>

@@ -19,7 +19,8 @@
     "max_wave_comfort_m": 1.2,
     "min_tws_sailing_kn": 7,
     "berths": 11,
-    "min_sail_speed_kn": 6.5
+    "min_sail_speed_kn": 6.5,
+    "polar_status": "stimata"
   },
   "crew": [
     {

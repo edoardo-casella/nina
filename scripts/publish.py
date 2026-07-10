@@ -262,7 +262,9 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "stop_reason": (options[0].get("note") if options and leg is None else None),
         "tonight": tonight, "plan_b": plan_b, "ranked": ranked[:4],
         "outlook": outlook,
-        "crew": [{"name": m["name"], "role": m["role"]} for m in crew],
+        "polar_estimated": v["boat"].get("polar_status", "stimata") == "stimata",
+        "crew": [{"name": m["name"], "role": m["role"], "board": m["board"],
+                  "leave": m["leave"], "cabin": m.get("cabin")} for m in crew],
         # turni a rotazione equa per data (giorno di crociera come offset)
         "turns": (lambda names, k: {
             "cucina": names[k % len(names)] if names else None,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T12:29+02:00",
+  "generated_at": "2026-07-10T12:54+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -270,30 +270,49 @@
       }
     }
   ],
+  "polar_estimated": true,
   "crew": [
     {
       "name": "EC",
-      "role": "skipper"
+      "role": "skipper",
+      "board": "2026-08-08",
+      "leave": "2026-08-29",
+      "cabin": "Bagno privato"
     },
     {
       "name": "GL",
-      "role": "crew"
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-29",
+      "cabin": "Bagno privato"
     },
     {
       "name": "BeB",
-      "role": "crew"
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-21",
+      "cabin": "Bagno privato"
     },
     {
       "name": "BiB",
-      "role": "crew"
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-21",
+      "cabin": "Bagno privato"
     },
     {
       "name": "GN",
-      "role": "crew"
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-17",
+      "cabin": "Bagno privato"
     },
     {
       "name": "MM",
-      "role": "crew"
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-17",
+      "cabin": "Bagno privato"
     }
   ],
   "turns": {
