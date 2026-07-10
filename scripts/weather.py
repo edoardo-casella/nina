@@ -57,10 +57,10 @@ def wind(lat: float, lon: float, days: int = 5, model: str = "ecmwf_ifs025") -> 
 
 
 def sea(lat: float, lon: float, days: int = 5) -> dict:
-    """Onda oraria: altezza significativa, periodo, direzione, onda da vento."""
+    """Onda oraria + temperatura superficiale del mare (SST)."""
     return _get(MARINE, {
         "latitude": lat, "longitude": lon,
-        "hourly": "wave_height,wave_direction,wave_period,wind_wave_height",
+        "hourly": "wave_height,wave_direction,wave_period,wind_wave_height,sea_surface_temperature",
         "timezone": "Europe/Rome", "forecast_days": days,
     })
 
@@ -90,6 +90,8 @@ def combined(lat: float, lon: float, days: int = 5) -> list[dict]:
                 row["wave"] = s["wave_height"][j]
                 row["wave_dir"] = s["wave_direction"][j]
                 row["wave_period"] = s["wave_period"][j]
+                sst = (s.get("sea_surface_temperature") or [None] * len(s["time"]))[j]
+                row["sst"] = sst
             except (ValueError, IndexError):
                 pass
         out.append(row)
@@ -155,7 +157,8 @@ DAILY_VARS = ("weather_code,temperature_2m_max,temperature_2m_min,precipitation_
               "precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,"
               "wind_direction_10m_dominant")
 
-SEA_DAILY_VARS = "wave_height_max,wave_direction_dominant,wave_period_max"
+SEA_DAILY_VARS = ("wave_height_max,wave_direction_dominant,wave_period_max,"
+                  "sea_surface_temperature_max,sea_surface_temperature_min")
 
 
 def _clamp_horizon(end: str, max_days: int) -> str:

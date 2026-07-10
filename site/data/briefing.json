@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T23:00+02:00",
+  "generated_at": "2026-07-10T23:30+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -18,7 +18,7 @@
     "lat": 41.1035,
     "lon": 9.439,
     "live": true,
-    "age_h": 8.6
+    "age_h": 9.1
   },
   "rest": false,
   "leg": {
@@ -28,7 +28,7 @@
     "depart": "2026-07-10T08:00",
     "eta": "2026-07-10T08:51",
     "hours": 0.9,
-    "avg_score": 30,
+    "avg_score": 36,
     "sail_pct": 0,
     "abort": false,
     "detail": [],
@@ -42,21 +42,25 @@
     "frm_id": "cannigione",
     "to_id": "coticcio",
     "rating": 5,
-    "photo": null,
+    "photo": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+    },
     "stay": false,
     "frm": "Cannigione",
     "to": "Cala Coticcio (Caprera)"
   },
   "leg_sailing": {
-    "andatura": "bolina larga",
-    "twa": 62,
+    "andatura": "lasco",
+    "twa": 117,
     "vela": false,
     "avg_kn": 6.8
   },
   "options": [],
   "confidence": {
-    "confidence": "n/d (offline)",
-    "mean_spread_kn": null
+    "mean_spread_kn": 1.2,
+    "max_spread_kn": 4.9,
+    "confidence": "alta"
   },
   "steps": [
     {
@@ -66,7 +70,7 @@
       "depart": "2026-07-10T08:00",
       "eta": "2026-07-10T08:51",
       "hours": 0.9,
-      "avg_score": 30,
+      "avg_score": 36,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -80,7 +84,10 @@
       "frm_id": "cannigione",
       "to_id": "coticcio",
       "rating": 5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      },
       "stay": false,
       "frm": "Cannigione",
       "to": "Cala Coticcio (Caprera)"
@@ -92,7 +99,7 @@
       "depart": "2026-07-10T17:15",
       "eta": "2026-07-10T17:27",
       "hours": 0.2,
-      "avg_score": 30,
+      "avg_score": 33,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -104,7 +111,10 @@
       "frm_id": "coticcio",
       "to_id": "cala_portese",
       "rating": 4,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/500px-Caprera%2C_trasparenze_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
+      },
       "stay": false,
       "frm": "Cala Coticcio (Caprera)",
       "to": "Cala Portese"
@@ -114,75 +124,90 @@
   "stop_reason": null,
   "tonight": null,
   "plan_b": {
-    "id": "santamaria",
-    "name": "Cala Santa Maria",
+    "id": "lavezzi",
+    "name": "Cala Lazarina (Lavezzi)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 99,
-    "fetch_km": 20,
-    "why": "vento 319° a 99° dal settore esposto",
-    "holding": "sabbia, ottima",
-    "notes": "Ampia, riparata da N e NW.",
+    "margin_deg": 104,
+    "fetch_km": 30,
+    "why": "vento 124° a 104° dal settore esposto",
+    "holding": "sabbia tra roccia",
+    "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
     "verify": true,
-    "rating": 4.5,
-    "photo": null
+    "rating": 5,
+    "photo": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+    }
   },
   "ranked": [
     {
-      "id": "santamaria",
-      "name": "Cala Santa Maria",
+      "id": "lavezzi",
+      "name": "Cala Lazarina (Lavezzi)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 99,
-      "fetch_km": 20,
-      "why": "vento 319° a 99° dal settore esposto",
-      "holding": "sabbia, ottima",
-      "notes": "Ampia, riparata da N e NW.",
-      "verify": true,
-      "rating": 4.5,
-      "photo": null
-    },
-    {
-      "id": "rondinara",
-      "name": "Baie de Rondinara",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 111,
-      "fetch_km": 40,
-      "why": "vento 319° a 111° dal settore esposto",
-      "holding": "sabbia, ottima",
-      "notes": "Rifugio classico da Maestrale. Affollata in agosto.",
+      "margin_deg": 104,
+      "fetch_km": 30,
+      "why": "vento 124° a 104° dal settore esposto",
+      "holding": "sabbia tra roccia",
+      "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
       "verify": true,
       "rating": 5,
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+      }
     },
     {
-      "id": "cannigione",
-      "name": "Cannigione",
-      "score": 100,
+      "id": "sanguinaires",
+      "name": "Iles Sanguinaires",
+      "score": 93,
       "light": "verde",
-      "margin_deg": 119,
-      "fetch_km": 8,
-      "why": "vento 319° a 119° dal settore esposto",
-      "holding": "fango, ottima",
-      "notes": "Base charter, riparo quasi totale.",
+      "margin_deg": 76,
+      "fetch_km": 80,
+      "why": "vento 124° a 76° dal settore esposto",
+      "holding": "sabbia/roccia",
+      "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
       "verify": true,
-      "rating": 2.5,
-      "photo": null
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
+      }
     },
     {
-      "id": "porto_vecchio",
-      "name": "Golfe de Porto-Vecchio",
-      "score": 96,
+      "id": "mortorio",
+      "name": "Isola Mortorio",
+      "score": 83,
       "light": "verde",
-      "margin_deg": 81,
-      "fetch_km": 30,
-      "why": "vento 319° a 81° dal settore esposto",
-      "holding": "fango/sabbia",
-      "notes": "Molte cale interne, riparo in quasi ogni condizione.",
+      "margin_deg": 56,
+      "fetch_km": 20,
+      "why": "vento 124° a 56° dal settore esposto",
+      "holding": "sabbia",
+      "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
       "verify": true,
-      "rating": 3,
-      "photo": null
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
+      }
+    },
+    {
+      "id": "coticcio",
+      "name": "Cala Coticcio (Caprera)",
+      "score": 77,
+      "light": "giallo",
+      "margin_deg": 0,
+      "fetch_km": 12,
+      "why": "vento 124° entra in rada (settore 40-140°), fetch 12 km",
+      "holding": "sabbia",
+      "notes": "Sosta diurna. Sbarco a terra regolamentato.",
+      "verify": true,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      }
     }
   ],
   "outlook": [
@@ -196,25 +221,27 @@
       "nm": 13.3,
       "n_tappe": 3,
       "rating": 5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+      },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_mm": 0,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 28.2,
+        "tmin": 26.5,
+        "rain_mm": 0.0,
+        "rain_prob": 13,
+        "wind_max": 14.8,
+        "gust_max": 20.4,
+        "wind_dir": 81
       },
       "sailing": {
-        "twa": 10,
-        "andatura": "bolina",
+        "twa": 126,
+        "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 12.8,
-        "twd": 305
+        "tws_est": 11.8,
+        "twd": 81
       }
     },
     {
@@ -227,25 +254,27 @@
       "nm": 5.2,
       "n_tappe": 3,
       "rating": 5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/500px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
+      },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_mm": 0,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 2,
+        "tmax": 31.3,
+        "tmin": 24.2,
+        "rain_mm": 0.0,
+        "rain_prob": 3,
+        "wind_max": 11.0,
+        "gust_max": 21.8,
+        "wind_dir": 76
       },
       "sailing": {
-        "twa": 1,
-        "andatura": "bolina",
+        "twa": 132,
+        "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 12.8,
-        "twd": 305
+        "tws_est": 8.8,
+        "twd": 76
       }
     },
     {
@@ -258,25 +287,27 @@
       "nm": 16.7,
       "n_tappe": 3,
       "rating": 3,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/500px-Fortin_de_Tizzano_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
+      },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_mm": 0,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 35.7,
+        "tmin": 23.9,
+        "rain_mm": 0.0,
+        "rain_prob": 0,
+        "wind_max": 9.2,
+        "gust_max": 18.9,
+        "wind_dir": 149
       },
       "sailing": {
-        "twa": 2,
-        "andatura": "bolina",
+        "twa": 154,
+        "andatura": "poppa",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 12.8,
-        "twd": 305
+        "tws_est": 7.4,
+        "twd": 149
       }
     },
     {
@@ -289,25 +320,27 @@
       "nm": 5.9,
       "n_tappe": 2,
       "rating": 4,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/500px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
+      },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_mm": 0,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 35.1,
+        "tmin": 24.0,
+        "rain_mm": 0.0,
+        "rain_prob": 0,
+        "wind_max": 4.7,
+        "gust_max": 9.3,
+        "wind_dir": 114
       },
       "sailing": {
-        "twa": 37,
-        "andatura": "bolina",
+        "twa": 132,
+        "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 12.8,
-        "twd": 305
+        "tws_est": 3.8,
+        "twd": 114
       }
     },
     {
@@ -320,25 +353,27 @@
       "nm": 12.4,
       "n_tappe": 1,
       "rating": 3,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/500px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
+      },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_mm": 0,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 35.7,
+        "tmin": 27.5,
+        "rain_mm": 0.0,
+        "rain_prob": 0,
+        "wind_max": 4.7,
+        "gust_max": 15.6,
+        "wind_dir": 245
       },
       "sailing": {
-        "twa": 45,
-        "andatura": "bolina",
+        "twa": 105,
+        "andatura": "traverso",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 12.8,
-        "twd": 305
+        "tws_est": 3.8,
+        "twd": 245
       }
     }
   ],
@@ -398,11 +433,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 23,
-    "rh": 70,
-    "rain": 0,
+    "temp": 26.8,
+    "rh": 79,
+    "rain": 0.0,
     "wmo": 0,
-    "tws": 10.0,
-    "twd": 320.0
+    "tws": 7.3,
+    "twd": 124,
+    "sst": 27.6
   }
 }

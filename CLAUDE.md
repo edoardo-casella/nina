@@ -31,7 +31,10 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 
 - `core.py` — stato, geodesia, polare (con VMG di bolina e di poppa)
 - `weather.py` — Open-Meteo, cache 1 h, `ensemble_spread` per l'affidabilità;
-  `daily_at`/`sea_daily` per il programma a 14 giorni (orizzonti troncati)
+  `daily_at`/`sea_daily` per il programma a 14 giorni (orizzonti troncati).
+  Temperatura del mare (`sea_surface_temperature`) oraria + giornaliera →
+  `briefing.now.sst` (posizione corrente) e `program.days[].sst` (per giorno,
+  orizzonte marine ~8 gg poi `null`); modello, si aggiorna a ogni run
 - `routing.py` — Sail Score, simulazione ora per ora
 - `shelter.py` — Shelter Score per le rade
 - `ledger.py` / `provisioning.py` / `logbook.py` / `import_kml.py`
@@ -40,7 +43,9 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
   `photo_for` 1; geosearch, no API key, `_get` throttled+cache condiviso; mai bloccante)
 - `enrich_destinations.py` — one-off: gallery + scheda Wikipedia per ogni
   destinazione votata → `data/destinations.json` (COMMITTATO). La CI non chiama
-  mai Wikipedia/Commons: `publish.py` legge solo il file committato
+  mai Wikipedia/Commons: `publish.py` legge solo il file committato. Articolo
+  scelto per match-nome + penalita' titoli-struttura (chiesa/stazione/faro);
+  correzioni manuali nella mappa `OVERRIDES` (`--refresh --only <id>`)
 - `publish.py` — genera i 4 JSON di `site/data/`: `briefing`, `weather`,
   `conti`, `program` (14 giorni con fascia di confidenza `piena`/`degradata`/`programma`)
 

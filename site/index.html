@@ -127,6 +127,10 @@ main>section.on{display:block}
 .hr.wide svg{width:13px;height:13px}
 .axis.wide span{width:34px}
 .hr.dim{opacity:.55}
+.strip.sst{height:auto;align-items:center;padding:.3rem 0}
+.strip.sst .hr{justify-content:center;gap:.3rem}
+.sstv{font:700 .95rem/1 var(--mono);font-variant-numeric:tabular-nums}
+.strip.sst em{font:400 .56rem/1 var(--mono);color:var(--soft);font-style:normal}
 
 /* voti (stima) e foto delle destinazioni */
 .stars{color:var(--giallo);font-size:.8rem;letter-spacing:.04em;white-space:nowrap;font-style:normal}
@@ -555,7 +559,8 @@ function execCard(b, wx) {
   if (use.length) {
     const wm = use.reduce((a, h) => (h.tws > a.tws ? h : a));
     const wavem = Math.max(0, ...use.map(h => h.wave ?? 0));
-    parts.push(`Vento fino a <b>${Math.round(wm.tws)} kn</b> da ${comp(wm.twd)} verso le ${wm.time.slice(11, 13)}${wavem ? `, onda max <b>${wavem.toFixed(1)} m</b>` : ""}.`);
+    const sst = b.now?.sst;
+    parts.push(`Vento fino a <b>${Math.round(wm.tws)} kn</b> da ${comp(wm.twd)} verso le ${wm.time.slice(11, 13)}${wavem ? `, onda max <b>${wavem.toFixed(1)} m</b>` : ""}${sst != null ? `, mare <b>${Math.round(sst)}°</b>` : ""}.`);
   }
   if (b.tonight && !b.leg?.night) parts.push(`Stanotte: <span class="water">${destLink(b.tonight.name, b.tonight.id)}</span> ${stars(b.tonight.rating)} <span class="dot ${b.tonight.light}"></span>.`);
   if (b.turns?.cucina_cena) parts.push(`Stasera in cucina: <b>${esc(b.turns.cucina_cena)}</b>.`);
@@ -596,6 +601,7 @@ function programGrid(prog) {
       ? `<span style="font-style:normal">${wmoIcon(d.wx.wmo)} ${Math.round(d.wx.tmax)}° · <b class="num">${Math.round(d.wx.wind_max)}</b> kn ${comp(d.wx.wind_dir)}${d.wx.synthetic ? " · sint." : ""}</span>`
       : `<span style="font-style:normal;opacity:.75">— nessuna previsione</span>`;
     const waveLine = d.wave ? `<span style="font-style:normal">onda max ${d.wave.hmax.toFixed(1)} m</span>` : "";
+    const sstLine = d.sst != null ? `<span style="font-style:normal">🌊 ${Math.round(d.sst)}°</span>` : "";
     const cd = d.crew_delta || {};
     const crew = (cd.on?.length || cd.off?.length)
       ? `<span style="font-style:normal;color:var(--warmtx);font-weight:600">equipaggio${cd.on?.length ? ` +${cd.on.length}` : ""}${cd.off?.length ? ` −${cd.off.length}` : ""}</span>` : "";
@@ -606,7 +612,7 @@ function programGrid(prog) {
       <strong>${d.nm}<span style="font-size:.7rem"> nm</span>${dots}</strong>
       <span class="water">${route}</span>
       ${d.rating != null ? `<span style="font-style:normal">${stars(d.rating)}</span>` : ""}
-      ${wxLine}${waveLine}${crew}</div>`;
+      ${wxLine}${waveLine}${sstLine}${crew}</div>`;
   }).join("");
   return `<h2>Programma — 2 settimane</h2>
   <div class="pgrid">${cells}</div>
@@ -650,6 +656,25 @@ function dailyStrip(prog, kind) {
   <div class="ribbon"><div class="strip">${cols}</div>
   <div class="axis wide vals">${vals}</div><div class="axis wide">${axis}</div></div>
   <div class="legend"><span>colonne attenuate = affidabilità ridotta (8–10 gg)</span>${kind === "wave" ? "<span>orizzonte marine ~8 giorni</span>" : ""}</div>`;
+}
+
+// colore acqua per temperatura (fresca→calda): dal turchese all'ambra
+const sstColor = t => t == null ? "var(--sea-2)"
+  : t < 18 ? "#4A8FBF" : t < 21 ? "#38A3C4" : t < 24 ? "#37D07C"
+  : t < 26 ? "#A8D34C" : t < 28 ? "#FFD54F" : "#FFB454";
+
+function sstStrip(prog) {
+  const days = prog?.days || [];
+  const have = days.filter(d => d.sst != null);
+  if (!have.length) return "";
+  const cols = days.map(d => {
+    const wd = new Date(d.date + "T12:00").toLocaleDateString("it", { weekday: "narrow", day: "numeric" });
+    if (d.sst == null) return `<div class="hr wide"><span class="sstv">—</span><em>${wd}</em></div>`;
+    return `<div class="hr wide" title="${d.to} — mare ~${d.sst.toFixed(1)}°"><span class="sstv" style="color:${sstColor(d.sst)}">${Math.round(d.sst)}°</span><em>${wd}</em></div>`;
+  }).join("");
+  return `<h2>Temperatura del mare — 14 giorni</h2>
+  <div class="ribbon"><div class="strip sst">${cols}</div></div>
+  <div class="legend"><span class="water">superficie, alla destinazione del giorno · modello Open-Meteo</span><span>orizzonte marine ~8 giorni</span></div>`;
 }
 
 // catalogo destinazioni: voto 1-5 (stima) + foto Commons, ordinato per voto
@@ -698,14 +723,27 @@ function destData(id) {
     coords: c.coords || null, shelter: null } : null;
 }
 
+// temperatura del mare per una destinazione: dal programma (giorno con questo
+// to_id) o dalla posizione di oggi — coerente con "raccolta quando ci andiamo"
+function seaTempFor(id) {
+  const day = (window.__prog?.days || []).find(x => x.to_id === id && x.sst != null);
+  if (day) {
+    const when = window.__prog.day === day.date ? "oggi"
+      : new Date(day.date + "T12:00").toLocaleDateString("it", { day: "numeric", month: "short" });
+    return { t: day.sst, when };
+  }
+  return null;
+}
+
 function schedaHTML(id) {
   const d = destData(id);
   if (!d) return `<h1>Destinazione</h1><p class="water">Dettagli non disponibili.</p>`;
   const gal = (d.gallery || []).map(p =>
     `<a href="${p.page ?? p.src}" target="_blank" rel="noopener"><img loading="lazy" src="${p.src}" alt="${esc(d.name)}" onerror="this.parentNode.remove()"></a>`).join("");
-  const sh = d.shelter, co = d.coords;
+  const sh = d.shelter, co = d.coords, sea = seaTempFor(id);
   const facts = [
     d.type ? `<div class="fact"><b>${esc(d.type)}</b><i>tipo</i></div>` : "",
+    sea ? `<div class="fact"><b style="color:${sstColor(sea.t)}">🌊 ${Math.round(sea.t)}°</b><i>mare · ${esc(sea.when)}</i></div>` : "",
     sh?.holding ? `<div class="fact"><b style="font-size:.85rem">${esc(sh.holding)}</b><i>fondo</i></div>` : "",
     sh?.depth_m ? `<div class="fact"><b>${sh.depth_m[0]}–${sh.depth_m[1]} m</b><i>profondità</i></div>` : "",
     sh?.exposed_from != null ? `<div class="fact"><b>${comp(sh.exposed_from)}–${comp(sh.exposed_to)}</b><i>esposta a</i></div>` : "",
@@ -796,6 +834,7 @@ function render(b, wx, c, prog) {
     <span>${wmoIcon(b.now.wmo)} <b>${b.now.temp != null ? Math.round(b.now.temp) + "°" : "—"}</b></span>
     <span>umidità <b>${b.now.rh ?? "—"}%</b></span>
     <span>vento <b>${Math.round(b.now.tws)} kn</b> da ${comp(b.now.twd)}</span>
+    ${b.now.sst != null ? `<span title="temperatura superficiale, modello Open-Meteo">🌊 mare <b>${Math.round(b.now.sst)}°</b></span>` : ""}
     <span>pioggia <b>${b.now.rain ?? 0} mm/h</b></span></div>` : ""}
   ${tappeTimeline(b)}
   ${(b.steps?.length ?? 0) > 1 && !b.rest ? "<h2>Tratta principale</h2>" : ""}
@@ -840,6 +879,7 @@ function render(b, wx, c, prog) {
   const mare = `
   ${waveRibbon(wx.hours)}
   ${dailyStrip(prog, "wave")}
+  ${sstStrip(prog)}
   ${windyMap(b.position, "waves", "Onde — mappa live")}`;
 
   const programma = `

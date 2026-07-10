@@ -28,6 +28,13 @@ import core, photos
 DEST_FILE = core.DATA / "destinations.json"
 WIKI_LANGS = ("it", "fr", "en")   # Corsica spesso solo fr, La Maddalena it
 EXTRACT_MAX = 1500
+
+# Correzioni manuali dell'articolo scelto: `id -> {"lang","title"}` forza quella
+# voce, `id -> None` la azzera (nessun articolo → solo link di ricerca). Vuoto =
+# auto-selezione. Per applicare: python scripts/enrich_destinations.py --refresh --only <id>
+# (l'auto-scelta e' gia' buona; usare solo per i pochi casi da rifinire a mano).
+OVERRIDES: dict[str, dict | None] = {
+}
 # titoli "struttura": la chiesa/stazione/faro taggata sul posto NON deve
 # battere l'articolo del luogo (Bonifacio-paese vs "Chiesa ... (Bonifacio)")
 STRUCT_WORDS = ("chiesa", "eglise", "église", "stazione", "gare", "phare", "faro",
@@ -50,6 +57,23 @@ def _clip(text: str, limit: int = EXTRACT_MAX) -> str:
     cut = text[:limit]
     end = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
     return (cut[:end + 1] if end > limit * 0.5 else cut.rstrip()) + " […]"
+
+
+def wiki_by_title(lang: str, title: str) -> dict | None:
+    """Scheda per un titolo esplicito (override manuale). None se non esiste."""
+    try:
+        ex = _wiki_get(lang, {"action": "query", "prop": "extracts|info",
+                              "exintro": 1, "explaintext": 1, "inprop": "url",
+                              "redirects": 1, "titles": title})
+    except Exception:
+        return None
+    page = next(iter((ex.get("query") or {}).get("pages", {}).values()), {})
+    extract = _clip(page.get("extract", ""))
+    if not extract:
+        return None
+    return {"lang": lang, "title": page.get("title", title),
+            "extract": extract, "url": page.get("fullurl") or
+            f"https://{lang}.wikipedia.org/wiki/" + urllib.parse.quote(title.replace(" ", "_"))}
 
 
 def wiki_article(lat: float, lon: float, name: str) -> dict | None:
@@ -134,7 +158,11 @@ def main() -> None:
             print("  Wikimedia rate-limited: mi fermo, rilancia con --refresh piu' tardi.")
             break
         gal = photos.gallery_for(w["lat"], w["lon"], w["name"], n=6, width=800)
-        wiki = wiki_article(w["lat"], w["lon"], w["name"])
+        if w["id"] in OVERRIDES:
+            ov = OVERRIDES[w["id"]]
+            wiki = wiki_by_title(ov["lang"], ov["title"]) if ov else None
+        else:
+            wiki = wiki_article(w["lat"], w["lon"], w["name"])
         if photos._rate_limited[0]:
             # il 429 e' scattato DURANTE questa voce: gallery/wiki sono parziali
             # (un wiki:null qui non e' "nessun articolo", e' "non ho potuto

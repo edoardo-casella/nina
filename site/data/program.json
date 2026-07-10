@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T23:00+02:00",
+  "generated_at": "2026-07-10T23:30+02:00",
   "sim": true,
   "day": "2026-07-10",
   "start_date": "2026-07-10",
@@ -18,7 +18,10 @@
       "to": "Cala Portese",
       "to_id": "cala_portese",
       "rating": 4,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/500px-Caprera%2C_trasparenze_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
+      },
       "nm": 7.6,
       "tappe": [
         {
@@ -57,21 +60,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 45,
+        "tmax": 31.0,
+        "tmin": 24.7,
+        "rain_prob": 0,
+        "wind_max": 14.1,
+        "gust_max": 27.0,
+        "wind_dir": 118
       },
       "wave": {
-        "hmax": 0.6,
-        "dir": 290,
-        "period": 4.2,
-        "synthetic": true
-      }
+        "hmax": 0.48,
+        "dir": 157,
+        "period": 3.55
+      },
+      "sst": 27.7
     },
     {
       "date": "2026-07-11",
@@ -81,7 +83,10 @@
       "to": "Isole Lavezzi",
       "to_id": "lavezzi",
       "rating": 5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+      },
       "nm": 16.4,
       "tappe": [
         {
@@ -124,21 +129,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 28.2,
+        "tmin": 26.5,
+        "rain_prob": 13,
+        "wind_max": 14.8,
+        "gust_max": 20.4,
+        "wind_dir": 81
       },
       "wave": {
-        "hmax": 0.6,
-        "dir": 290,
-        "period": 4.2,
-        "synthetic": true
-      }
+        "hmax": 0.72,
+        "dir": 91,
+        "period": 3.45
+      },
+      "sst": 26.8
     },
     {
       "date": "2026-07-12",
@@ -148,7 +152,10 @@
       "to": "Bonifacio",
       "to_id": "bonifacio",
       "rating": 5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/500px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
+      },
       "nm": 7.6,
       "tappe": [
         {
@@ -191,21 +198,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 2,
+        "tmax": 31.3,
+        "tmin": 24.2,
+        "rain_prob": 3,
+        "wind_max": 11.0,
+        "gust_max": 21.8,
+        "wind_dir": 76
       },
       "wave": {
-        "hmax": 0.6,
-        "dir": 290,
-        "period": 4.2,
-        "synthetic": true
-      }
+        "hmax": 0.68,
+        "dir": 86,
+        "period": 3.4
+      },
+      "sst": 26.5
     },
     {
       "date": "2026-07-13",
@@ -215,7 +221,10 @@
       "to": "Tizzano",
       "to_id": "tizzano",
       "rating": 3,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/500px-Fortin_de_Tizzano_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
+      },
       "nm": 20.2,
       "tappe": [
         {
@@ -258,21 +267,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 35.7,
+        "tmin": 23.9,
+        "rain_prob": 0,
+        "wind_max": 9.2,
+        "gust_max": 18.9,
+        "wind_dir": 149
       },
       "wave": {
-        "hmax": 0.6,
-        "dir": 290,
-        "period": 4.2,
-        "synthetic": true
-      }
+        "hmax": 0.34,
+        "dir": 138,
+        "period": 4.15
+      },
+      "sst": 27.7
     },
     {
       "date": "2026-07-14",
@@ -282,7 +290,10 @@
       "to": "Campomoro",
       "to_id": "campomoro",
       "rating": 4,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/500px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
+      },
       "nm": 6.5,
       "tappe": [
         {
@@ -314,21 +325,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 35.1,
+        "tmin": 24.0,
+        "rain_prob": 0,
+        "wind_max": 4.7,
+        "gust_max": 9.3,
+        "wind_dir": 114
       },
       "wave": {
-        "hmax": 0.6,
-        "dir": 290,
-        "period": 4.2,
-        "synthetic": true
-      }
+        "hmax": 0.12,
+        "dir": 225,
+        "period": 4.5
+      },
+      "sst": 28.6
     },
     {
       "date": "2026-07-15",
@@ -338,7 +348,10 @@
       "to": "Isolella",
       "to_id": "isolella",
       "rating": 3,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/500px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
+      },
       "nm": 12.4,
       "tappe": [
         {
@@ -359,21 +372,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 35.7,
+        "tmin": 27.5,
+        "rain_prob": 0,
+        "wind_max": 4.7,
+        "gust_max": 15.6,
+        "wind_dir": 245
       },
       "wave": {
-        "hmax": 0.6,
-        "dir": 290,
-        "period": 4.2,
-        "synthetic": true
-      }
+        "hmax": 0.36,
+        "dir": 220,
+        "period": 4.75
+      },
+      "sst": 28.9
     },
     {
       "date": "2026-07-16",
@@ -383,7 +395,10 @@
       "to": "Girolata",
       "to_id": "girolata",
       "rating": 5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
+      },
       "nm": 31.4,
       "tappe": [
         {
@@ -404,21 +419,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 36.8,
+        "tmin": 27.3,
+        "rain_prob": 0,
+        "wind_max": 5.6,
+        "gust_max": 17.9,
+        "wind_dir": 184
       },
       "wave": {
-        "hmax": 0.6,
-        "dir": 290,
-        "period": 4.2,
-        "synthetic": true
-      }
+        "hmax": 0.24,
+        "dir": 218,
+        "period": 4.25
+      },
+      "sst": 28.9
     },
     {
       "date": "2026-07-17",
@@ -428,7 +442,10 @@
       "to": "San Fiorenzo",
       "to_id": "san_fiorenzo",
       "rating": 3.5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
+      },
       "nm": 35.8,
       "tappe": [
         {
@@ -454,21 +471,20 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 33.5,
+        "tmin": 25.9,
+        "rain_prob": 0,
+        "wind_max": 4.8,
+        "gust_max": 9.9,
+        "wind_dir": 283
       },
       "wave": {
-        "hmax": 0.6,
-        "dir": 290,
-        "period": 4.2,
-        "synthetic": true
-      }
+        "hmax": 0.08,
+        "dir": 252,
+        "period": 4.45
+      },
+      "sst": 29.1
     },
     {
       "date": "2026-07-18",
@@ -478,7 +494,10 @@
       "to": "Centuri",
       "to_id": "centuri",
       "rating": 4,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
+      },
       "nm": 19.9,
       "tappe": [
         {
@@ -510,16 +529,16 @@
         "off": []
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 3,
+        "tmax": 28.6,
+        "tmin": 26.5,
+        "rain_prob": 0,
+        "wind_max": 14.3,
+        "gust_max": 18.7,
+        "wind_dir": 227
       },
-      "wave": null
+      "wave": null,
+      "sst": null
     },
     {
       "date": "2026-07-19",
@@ -529,7 +548,10 @@
       "to": "Erbalunga",
       "to_id": "erbalunga",
       "rating": 3.5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
+      },
       "nm": 12.8,
       "tappe": [
         {
@@ -553,16 +575,16 @@
         ]
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "wmo": 0,
+        "tmax": 37.4,
+        "tmin": 27.8,
+        "rain_prob": 0,
+        "wind_max": 1.9,
+        "gust_max": 15.7,
+        "wind_dir": 288
       },
-      "wave": null
+      "wave": null,
+      "sst": null
     },
     {
       "date": "2026-07-20",
@@ -572,7 +594,10 @@
       "to": "Favone",
       "to_id": "favone",
       "rating": 3,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
+      },
       "nm": 60.1,
       "tappe": [
         {
@@ -605,15 +630,15 @@
       },
       "wx": {
         "wmo": 1,
-        "tmax": 29,
-        "tmin": 22,
-        "rain_prob": 5,
-        "wind_max": 16,
-        "gust_max": 22,
-        "wind_dir": 305,
-        "synthetic": true
+        "tmax": 33.5,
+        "tmin": 27.4,
+        "rain_prob": 0,
+        "wind_max": 5.0,
+        "gust_max": 17.5,
+        "wind_dir": 65
       },
-      "wave": null
+      "wave": null,
+      "sst": null
     },
     {
       "date": "2026-07-21",
@@ -623,7 +648,10 @@
       "to": "Palombaggia",
       "to_id": "palombaggia",
       "rating": 5,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Palombaggia_-_panoramio.jpg/500px-Palombaggia_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_-_panoramio.jpg"
+      },
       "nm": 13.8,
       "tappe": [
         {
@@ -666,7 +694,8 @@
         "off": []
       },
       "wx": null,
-      "wave": null
+      "wave": null,
+      "sst": null
     },
     {
       "date": "2026-07-22",
@@ -676,7 +705,10 @@
       "to": "Porto Rotondo",
       "to_id": "porto_rotondo",
       "rating": 3,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+      },
       "nm": 33.0,
       "tappe": [
         {
@@ -708,7 +740,8 @@
         "off": []
       },
       "wx": null,
-      "wave": null
+      "wave": null,
+      "sst": null
     },
     {
       "date": "2026-07-23",
@@ -718,7 +751,10 @@
       "to": "Porto Rotondo",
       "to_id": "porto_rotondo",
       "rating": 3,
-      "photo": null,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+      },
       "nm": 0.0,
       "tappe": [
         {
@@ -750,7 +786,8 @@
         ]
       },
       "wx": null,
-      "wave": null
+      "wave": null,
+      "sst": null
     }
   ],
   "destinations": [
@@ -765,7 +802,10 @@
         41.2311,
         9.3389
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg/500px-La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena_-_Isola_di_Spargi_(11).jpg"
+      }
     },
     {
       "id": "budelli",
@@ -778,7 +818,10 @@
         41.2789,
         9.3556
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+      }
     },
     {
       "id": "lavezzi",
@@ -791,7 +834,10 @@
         41.3392,
         9.2544
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+      }
     },
     {
       "id": "bonifacio",
@@ -804,7 +850,10 @@
         41.3872,
         9.1592
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/500px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
+      }
     },
     {
       "id": "rondinara",
@@ -817,7 +866,10 @@
         41.4767,
         9.2775
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
+      }
     },
     {
       "id": "coticcio",
@@ -830,7 +882,10 @@
         41.2075,
         9.465
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      }
     },
     {
       "id": "porto_madonna",
@@ -843,7 +898,10 @@
         41.288,
         9.357
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg/500px-Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Sailing_in_Sardinia_,_Isolotti_Paduleddi_-_panoramio.jpg"
+      }
     },
     {
       "id": "girolata",
@@ -856,7 +914,10 @@
         42.34917,
         8.61306
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
+      }
     },
     {
       "id": "saleccia",
@@ -882,7 +943,10 @@
         41.5555,
         9.3305
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Palombaggia_-_panoramio.jpg/500px-Palombaggia_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Palombaggia_-_panoramio.jpg"
+      }
     },
     {
       "id": "santamaria",
@@ -895,7 +959,10 @@
         41.295,
         9.39
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/500px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Corcelli_(01).jpg"
+      }
     },
     {
       "id": "cr_roccapina_nord",
@@ -908,7 +975,10 @@
         41.50003,
         8.91714
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Tour_de_Roccapina.jpg/500px-Tour_de_Roccapina.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tour_de_Roccapina.jpg"
+      }
     },
     {
       "id": "santa_giulia",
@@ -921,7 +991,10 @@
         41.524,
         9.2783
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Plage_de_Sta-Giulia_%288132718542%29.jpg/500px-Plage_de_Sta-Giulia_%288132718542%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Plage_de_Sta-Giulia_(8132718542).jpg"
+      }
     },
     {
       "id": "lotu",
@@ -960,7 +1033,10 @@
         41.885,
         8.585
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
+      }
     },
     {
       "id": "mortorio",
@@ -973,7 +1049,10 @@
         41.0783,
         9.575
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
+      }
     },
     {
       "id": "corsica_isola_piana",
@@ -986,7 +1065,10 @@
         41.37452,
         9.22525
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg/500px-Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Golf_de_Sperone,_trou_n%C2%B0_16.jpg"
+      }
     },
     {
       "id": "cala_portese",
@@ -999,7 +1081,10 @@
         41.1831,
         9.4633
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/500px-Caprera%2C_trasparenze_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
+      }
     },
     {
       "id": "cala_rossa",
@@ -1051,7 +1136,10 @@
         41.6342,
         8.8098
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/500px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
+      }
     },
     {
       "id": "anse_chiuni",
@@ -1090,7 +1178,10 @@
         42.9662,
         9.3504
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
+      }
     },
     {
       "id": "pinarello",
@@ -1116,7 +1207,10 @@
         41.4087,
         9.2203
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gobius_incognitus.jpg/500px-Gobius_incognitus.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Gobius_incognitus.jpg"
+      }
     },
     {
       "id": "marmorata",
@@ -1129,7 +1223,10 @@
         41.25,
         9.238
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Punta_Marmorata_-_panoramio.jpg/500px-Punta_Marmorata_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Punta_Marmorata_-_panoramio.jpg"
+      }
     },
     {
       "id": "cala_longa_tizzano",
@@ -1155,7 +1252,10 @@
         42.6858,
         9.2815
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
+      }
     },
     {
       "id": "malfalco",
@@ -1194,7 +1294,10 @@
         42.7742,
         9.4787
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
+      }
     },
     {
       "id": "canella",
@@ -1233,7 +1336,10 @@
         41.58,
         9.305
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg/500px-Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Baie_de_Porto-Vecchio,_Corse_-_Patrick_Nouhailler_-_panoramio.jpg"
+      }
     },
     {
       "id": "porto_palma",
@@ -1246,7 +1352,10 @@
         41.1892,
         9.4505
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Porto_Palma_-_panoramio.jpg/500px-Porto_Palma_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio.jpg"
+      }
     },
     {
       "id": "tizzano",
@@ -1259,7 +1368,10 @@
         41.5398,
         8.8501
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/500px-Fortin_de_Tizzano_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
+      }
     },
     {
       "id": "isolella",
@@ -1272,7 +1384,10 @@
         41.83733,
         8.76
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/500px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
+      }
     },
     {
       "id": "tamarone",
@@ -1298,7 +1413,10 @@
         41.7742,
         9.3986
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
+      }
     },
     {
       "id": "porto_rotondo",
@@ -1311,7 +1429,10 @@
         41.0315,
         9.5485
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+      }
     },
     {
       "id": "golfo_di_marinella",
@@ -1350,7 +1471,10 @@
         41.1069,
         9.4404
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(03).jpg"
+      }
     },
     {
       "id": "ajaccio",
@@ -1363,7 +1487,10 @@
         41.92,
         8.74
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Queen_Victoria_in_Ajaccio_harbour_II.jpg/500px-Queen_Victoria_in_Ajaccio_harbour_II.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Queen_Victoria_in_Ajaccio_harbour_II.jpg"
+      }
     },
     {
       "id": "macinaggio",
@@ -1389,7 +1516,10 @@
         42.7,
         9.455
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bastia0.JPG/500px-Bastia0.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:Bastia0.JPG"
+      }
     },
     {
       "id": "solenzara",

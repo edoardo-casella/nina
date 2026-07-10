@@ -32,6 +32,7 @@ def synth(day: str, hours: int = 72) -> list[dict]:
         out.append({"time": t.isoformat(timespec="minutes"), "tws": round(tws, 1),
                     "twd": round(305 + 18 * math.sin(h / 23), 0), "gust": round(tws * 1.32, 1),
                     "wave": round(0.2 + tws / 30, 2), "wave_dir": round(290 + 15 * math.sin(h / 19), 0),
+                    "sst": round(24 + 1.5 * math.sin(h / 20), 1),
                     "rain": 0, "temp": round(23 + 6 * max(diurnal, 0), 1), "rh": round(70 - 15 * max(diurnal, 0)),
                     "wmo": 0 if h % 30 < 24 else 3})
     return out
@@ -209,7 +210,7 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
                      "tier": confidence_tier(i),
                      "crew_delta": {"on": [m["name"] for m in v["crew"] if m["board"] == orig],
                                     "off": [m["name"] for m in v["crew"] if m["leave"] == orig]},
-                     "wx": None, "wave": None, "_dest": dest_wp})
+                     "wx": None, "wave": None, "sst": None, "_dest": dest_wp})
 
     wx_rows = [r for r in rows if r["tier"] != "programma"]
     if offline:
@@ -218,6 +219,7 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
                        "wind_max": 16, "gust_max": 22, "wind_dir": 305, "synthetic": True}
             if r["i"] <= 7:
                 r["wave"] = {"hmax": 0.6, "dir": 290, "period": 4.2, "synthetic": True}
+                r["sst"] = 24.0
     elif wx_rows:
         try:
             resp = weather.daily_at([(r["_dest"]["lat"], r["_dest"]["lon"]) for r in wx_rows],
@@ -248,6 +250,9 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
                         r["wave"] = {"hmax": dd["wave_height_max"][j],
                                      "dir": dd["wave_direction_dominant"][j],
                                      "period": dd["wave_period_max"][j]}
+                        smax = dd.get("sea_surface_temperature_max", [None] * (j + 1))[j]
+                        if smax is not None:
+                            r["sst"] = round(smax, 1)
                     except Exception:
                         pass
             except Exception:
@@ -594,7 +599,8 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     now_row = series[start] if start < len(series) else None
     briefing["now"] = ({"temp": now_row.get("temp"), "rh": now_row.get("rh"),
                         "rain": now_row.get("rain"), "wmo": now_row.get("wmo"),
-                        "tws": now_row.get("tws"), "twd": now_row.get("twd")}
+                        "tws": now_row.get("tws"), "twd": now_row.get("twd"),
+                        "sst": now_row.get("sst")}
                        if now_row else None)
     try:
         astro = build_astro(wp, day, offline)
