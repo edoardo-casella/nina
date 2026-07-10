@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-07-10T02:00",
+  "person_nights": 107,
+  "per_person": [
+    {
+      "name": "Edo",
+      "nights": 20,
+      "fixed": 4806.36,
+      "variable": 820,
+      "total": 5626.36
+    },
+    {
+      "name": "Persona 2",
+      "nights": 20,
+      "fixed": 4806.36,
+      "variable": 820,
+      "total": 5626.36
+    },
+    {
+      "name": "Persona 3",
+      "nights": 8,
+      "fixed": 1946.54,
+      "variable": 328,
+      "total": 2274.54
+    },
+    {
+      "name": "Persona 4",
+      "nights": 8,
+      "fixed": 1946.54,
+      "variable": 328,
+      "total": 2274.54
+    },
+    {
+      "name": "Persona 5",
+      "nights": 13,
+      "fixed": 3138.13,
+      "variable": 533,
+      "total": 3671.13
+    },
+    {
+      "name": "Persona 6",
+      "nights": 12,
+      "fixed": 2899.81,
+      "variable": 492,
+      "total": 3391.81
+    },
+    {
+      "name": "Persona 7",
+      "nights": 12,
+      "fixed": 2899.81,
+      "variable": 492,
+      "total": 3391.81
+    },
+    {
+      "name": "Persona 8",
+      "nights": 7,
+      "fixed": 1708.22,
+      "variable": 287,
+      "total": 1995.22
+    },
+    {
+      "name": "Persona 9",
+      "nights": 7,
+      "fixed": 1708.22,
+      "variable": 287,
+      "total": 1995.22
+    }
+  ],
+  "spent": 480.0,
+  "transfers": [
+    {
+      "from": "Persona 2",
+      "to": "Edo",
+      "amount": 96.0
+    },
+    {
+      "from": "Persona 3",
+      "to": "Edo",
+      "amount": 96.0
+    },
+    {
+      "from": "Persona 4",
+      "to": "Edo",
+      "amount": 96.0
+    },
+    {
+      "from": "Persona 5",
+      "to": "Edo",
+      "amount": 96.0
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "_README": "DATI FITTIZI — sostituire crew, costi e waypoint con quelli reali. Le coordinate sono approssimate: verificare su carta nautica prima di navigare.",
+  "name": "Corsica & La Maddalena 2026",
+  "start_date": "2026-08-09",
+  "end_date": "2026-08-29",
+  "base": "Cannigione",
+  "currency": "EUR",
+  "boat": {
+    "model": "Dufour 48 Catamaran",
+    "name": "Niña",
+    "year": 2023,
+    "type": "catamaran",
+    "polar_file": "dufour48cat.pol",
+    "draft_m": 1.35,
+    "cruise_motor_kn": 7.5,
+    "fuel_lph": 6.0,
+    "max_tws_comfort_kn": 22,
+    "max_tws_safe_kn": 28,
+    "max_wave_comfort_m": 1.2,
+    "min_tws_sailing_kn": 7,
+    "berths": 10
+  },
+  "crew": [
+    {
+      "id": "edo",
+      "name": "Edo",
+      "board": "2026-08-09",
+      "leave": "2026-08-29",
+      "role": "skipper",
+      "diet": "onnivoro"
+    },
+    {
+      "id": "c02",
+      "name": "Persona 2",
+      "board": "2026-08-09",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "onnivoro"
+    },
+    {
+      "id": "c03",
+      "name": "Persona 3",
+      "board": "2026-08-09",
+      "leave": "2026-08-17",
+      "role": "crew",
+      "diet": "vegetariano"
+    },
+    {
+      "id": "c04",
+      "name": "Persona 4",
+      "board": "2026-08-09",
+      "leave": "2026-08-17",
+      "role": "crew",
+      "diet": "onnivoro"
+    },
+    {
+      "id": "c05",
+      "name": "Persona 5",
+      "board": "2026-08-09",
+      "leave": "2026-08-22",
+      "role": "crew",
+      "diet": "onnivoro"
+    },
+    {
+      "id": "c06",
+      "name": "Persona 6",
+      "board": "2026-08-17",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "onnivoro"
+    },
+    {
+      "id": "c07",
+      "name": "Persona 7",
+      "board": "2026-08-17",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "no glutine"
+    },
+    {
+      "id": "c08",
+      "name": "Persona 8",
+      "board": "2026-08-22",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "onnivoro"
+    },
+    {
+      "id": "c09",
+      "name": "Persona 9",
+      "board": "2026-08-22",
+      "leave": "2026-08-29",
+      "role": "crew",
+      "diet": "onnivoro"
+    }
+  ],
+  "costs": {
+    "fixed": [
+      {
+        "label": "Charter Dufour 48",
+        "amount": 24000,
+        "split": "person_nights"
+      },
+      {
+        "label": "Pulizie finali",
+        "amount": 450,
+        "split": "person_nights"
+      },
+      {
+        "label": "Assicurazione cauzione",
+        "amount": 900,
+        "split": "person_nights"
+      },
+      {
+        "label": "Transit log",
+        "amount": 150,
+        "split": "person_nights"
+      },
+      {
+        "label": "SUP (2 tavole)",
+        "amount": 360,
+        "split": "equal"
+      }
+    ],
+    "variable_budget": [
+      {
+        "label": "Cambusa",
+        "eur_per_person_day": 22
+      },
+      {
+        "label": "Gasolio",
+        "eur_per_person_day": 6
+      },
+      {
+        "label": "Ormeggi/boe",
+        "eur_per_person_day": 5
+      },
+      {
+        "label": "Extra (bar, taxi)",
+        "eur_per_person_day": 8
+      }
+    ]
+  },
+  "expenses": [
+    {
+      "date": "2026-08-09",
+      "label": "Spesa iniziale Conad Cannigione",
+      "amount": 480.0,
+      "paid_by": "edo",
+      "category": "cambusa",
+      "beneficiaries": "aboard"
+    }
+  ],
+  "waypoints": [
+    {
+      "id": "cannigione",
+      "name": "Cannigione",
+      "lat": 41.1069,
+      "lon": 9.4404,
+      "type": "port",
+      "verify": true
+    },
+    {
+      "id": "spargi",
+      "name": "Cala Corsara (Spargi)",
+      "lat": 41.2311,
+      "lon": 9.3389,
+      "type": "anchorage",
+      "verify": true
+    },
+    {
+      "id": "budelli",
+      "name": "Cala Roto (Budelli)",
+      "lat": 41.2789,
+      "lon": 9.3556,
+      "type": "anchorage",
+      "verify": true
+    },
+    {
+      "id": "santamaria",
+      "name": "Cala Santa Maria",
+      "lat": 41.295,
+      "lon": 9.39,
+      "type": "anchorage",
+      "verify": true
+    },
+    {
+      "id": "lavezzi",
+      "name": "Isole Lavezzi",
+      "lat": 41.3392,
+      "lon": 9.2544,
+      "type": "anchorage",
+      "verify": true
+    },
+    {
+      "id": "bonifacio",
+      "name": "Bonifacio",
+      "lat": 41.3872,
+      "lon": 9.1592,
+      "type": "port",
+      "verify": true
+    },
+    {
+      "id": "rondinara",
+      "name": "Baie de Rondinara",
+      "lat": 41.4767,
+      "lon": 9.2775,
+      "type": "anchorage",
+      "verify": true
+    },
+    {
+      "id": "porto_vecchio",
+      "name": "Golfe de Porto-Vecchio",
+      "lat": 41.58,
+      "lon": 9.305,
+      "type": "anchorage",
+      "verify": true
+    },
+    {
+      "id": "sanguinaires",
+      "name": "Iles Sanguinaires",
+      "lat": 41.885,
+      "lon": 8.585,
+      "type": "anchorage",
+      "verify": true
+    },
+    {
+      "id": "ajaccio",
+      "name": "Ajaccio",
+      "lat": 41.92,
+      "lon": 8.74,
+      "type": "port",
+      "verify": true
+    },
+    {
+      "id": "bastia",
+      "name": "Bastia",
+      "lat": 42.7,
+      "lon": 9.455,
+      "type": "port",
+      "verify": true
+    },
+    {
+      "id": "coticcio",
+      "name": "Cala Coticcio (Caprera)",
+      "lat": 41.2075,
+      "lon": 9.465,
+      "type": "anchorage",
+      "verify": true
+    },
+    {
+      "id": "mortorio",
+      "name": "Isola Mortorio",
+      "lat": 41.0783,
+      "lon": 9.575,
+      "type": "anchorage",
+      "verify": true
+    }
+  ],
+  "plan": [
+    {
+      "date": "2026-08-09",
+      "from": "cannigione",
+      "to": "cannigione",
+      "rest": true
+    },
+    {
+      "date": "2026-08-10",
+      "from": "cannigione",
+      "to": "spargi",
+      "rest": false
+    },
+    {
+      "date": "2026-08-11",
+      "from": "spargi",
+      "to": "budelli",
+      "rest": false
+    },
+    {
+      "date": "2026-08-12",
+      "from": "budelli",
+      "to": "lavezzi",
+      "rest": false
+    },
+    {
+      "date": "2026-08-13",
+      "from": "lavezzi",
+      "to": "bonifacio",
+      "rest": false
+    },
+    {
+      "date": "2026-08-14",
+      "from": "bonifacio",
+      "to": "rondinara",
+      "rest": false
+    },
+    {
+      "date": "2026-08-15",
+      "from": "rondinara",
+      "to": "porto_vecchio",
+      "rest": false
+    },
+    {
+      "date": "2026-08-16",
+      "from": "porto_vecchio",
+      "to": "porto_vecchio",
+      "rest": true
+    },
+    {
+      "date": "2026-08-17",
+      "from": "porto_vecchio",
+      "to": "bonifacio",
+      "rest": false
+    },
+    {
+      "date": "2026-08-18",
+      "from": "bonifacio",
+      "to": "lavezzi",
+      "rest": false
+    },
+    {
+      "date": "2026-08-19",
+      "from": "lavezzi",
+      "to": "santamaria",
+      "rest": false
+    },
+    {
+      "date": "2026-08-20",
+      "from": "santamaria",
+      "to": "spargi",
+      "rest": false
+    },
+    {
+      "date": "2026-08-21",
+      "from": "spargi",
+      "to": "coticcio",
+      "rest": false
+    },
+    {
+      "date": "2026-08-22",
+      "from": "coticcio",
+      "to": "cannigione",
+      "rest": false
+    },
+    {
+      "date": "2026-08-23",
+      "from": "cannigione",
+      "to": "mortorio",
+      "rest": false
+    },
+    {
+      "date": "2026-08-24",
+      "from": "mortorio",
+      "to": "coticcio",
+      "rest": false
+    },
+    {
+      "date": "2026-08-25",
+      "from": "coticcio",
+      "to": "santamaria",
+      "rest": false
+    },
+    {
+      "date": "2026-08-26",
+      "from": "santamaria",
+      "to": "budelli",
+      "rest": false
+    },
+    {
+      "date": "2026-08-27",
+      "from": "budelli",
+      "to": "spargi",
+      "rest": false
+    },
+    {
+      "date": "2026-08-28",
+      "from": "spargi",
+      "to": "cannigione",
+      "rest": false
+    }
+  ],
+  "logbook": [],
+  "preferences": {
+    "max_daily_nm": 30,
+    "prefer_sailing_over_motor": true,
+    "night_sailing": false,
+    "swim_stops_per_day": 2,
+    "latest_anchor_time": "17:30",
+    "earliest_departure": "08:00"
+  },
+  "updated_at": null
+}

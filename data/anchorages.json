@@ -1,0 +1,15 @@
+{
+  "_README": "exposed_from/exposed_to = settore (gradi veri, senso orario) da cui entrano vento e mare in rada. Se la direzione del vento cade nel settore, la rada e' sottovento cattiva. DATI STIMATI: verificare su portolano (Imray, Navicarte) prima di usarli per decidere dove ancorare.",
+  "anchorages": [
+    { "id": "spargi", "name": "Cala Corsara (Spargi)", "exposed_from": 150, "exposed_to": 250, "fetch_km": 25, "holding": "sabbia, buona", "depth_m": [4, 10], "notes": "Riparo eccellente da Maestrale. Boe parco a pagamento.", "verify": true },
+    { "id": "budelli", "name": "Cala Roto (Budelli)", "exposed_from": 30, "exposed_to": 130, "fetch_km": 15, "holding": "sabbia", "depth_m": [3, 8], "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.", "verify": true },
+    { "id": "santamaria", "name": "Cala Santa Maria", "exposed_from": 140, "exposed_to": 220, "fetch_km": 20, "holding": "sabbia, ottima", "depth_m": [3, 9], "notes": "Ampia, riparata da N e NW.", "verify": true },
+    { "id": "lavezzi", "name": "Cala Lazarina (Lavezzi)", "exposed_from": 260, "exposed_to": 20, "fetch_km": 30, "holding": "sabbia tra roccia", "depth_m": [3, 7], "notes": "Riserva naturale, boe. Insidiosa con Ponente.", "verify": true },
+    { "id": "rondinara", "name": "Baie de Rondinara", "exposed_from": 70, "exposed_to": 140, "fetch_km": 40, "holding": "sabbia, ottima", "depth_m": [3, 8], "notes": "Rifugio classico da Maestrale. Affollata in agosto.", "verify": true },
+    { "id": "porto_vecchio", "name": "Golfe de Porto-Vecchio", "exposed_from": 40, "exposed_to": 110, "fetch_km": 30, "holding": "fango/sabbia", "depth_m": [4, 12], "notes": "Molte cale interne, riparo in quasi ogni condizione.", "verify": true },
+    { "id": "coticcio", "name": "Cala Coticcio (Caprera)", "exposed_from": 40, "exposed_to": 140, "fetch_km": 12, "holding": "sabbia", "depth_m": [3, 8], "notes": "Sosta diurna. Sbarco a terra regolamentato.", "verify": true },
+    { "id": "mortorio", "name": "Isola Mortorio", "exposed_from": 180, "exposed_to": 280, "fetch_km": 20, "holding": "sabbia", "depth_m": [4, 10], "notes": "Buon riparo dal Grecale, esposta a Libeccio.", "verify": true },
+    { "id": "sanguinaires", "name": "Iles Sanguinaires", "exposed_from": 200, "exposed_to": 340, "fetch_km": 80, "holding": "sabbia/roccia", "depth_m": [5, 12], "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.", "verify": true },
+    { "id": "cannigione", "name": "Cannigione", "exposed_from": 150, "exposed_to": 200, "fetch_km": 8, "holding": "fango, ottima", "depth_m": [3, 6], "notes": "Base charter, riparo quasi totale.", "verify": true }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Niña — briefing di bordo",
+  "short_name": "Niña",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FCFDFC",
+  "theme_color": "#0E2029",
+  "icons": []
+}

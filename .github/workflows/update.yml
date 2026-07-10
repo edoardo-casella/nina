@@ -1,0 +1,65 @@
+name: Aggiorna briefing
+
+on:
+  schedule:
+    # 10:00 e 18:00 UTC = 12:00 e 20:00 ora italiana (CEST, estate)
+    - cron: "0 10 * * *"
+    - cron: "0 18 * * *"
+  workflow_dispatch:        # bottone "Run workflow" per rigenerare a mano
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      # L'approvazione vive nel repo (publish.py --approve + push). Va salvata
+      # PRIMA che publish.py sovrascriva il file: il deploy via Actions non ha
+      # un branch gh-pages da cui recuperarla.
+      - name: Metti da parte il briefing committato
+        run: cp site/data/briefing.json /tmp/old.json 2>/dev/null || true
+
+      - name: Genera i JSON del briefing
+        env: { TZ: Europe/Rome }
+        run: python scripts/publish.py
+
+      # Il piano resta "non approvato" finche' qualcuno non lo conferma:
+      # publish.py --approve NOME (+ push), oppure approved:true a mano.
+      - name: Riporta l'approvazione se il giorno non e' cambiato
+        run: |
+          test -f /tmp/old.json || exit 0
+          python - <<'PY'
+          import json, pathlib
+          new = json.loads(pathlib.Path("site/data/briefing.json").read_text())
+          old = json.loads(pathlib.Path("/tmp/old.json").read_text())
+          if old.get("approved") and old.get("day") == new["day"]:
+              new["approved"], new["approved_by"] = True, old["approved_by"]
+              pathlib.Path("site/data/briefing.json").write_text(json.dumps(new, indent=2, ensure_ascii=False))
+              print(f"Approvazione di {old['approved_by']} conservata")
+          PY
+
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,16 @@
+{
+  "env": {
+    "PYTHONUTF8": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/*)",
+      "Bash(python -m http.server*)",
+      "PowerShell(python scripts/*)",
+      "PowerShell(python -m http.server*)",
+      "WebFetch(domain:www.meteoam.it)",
+      "WebFetch(domain:api.open-meteo.com)",
+      "WebFetch(domain:marine-api.open-meteo.com)"
+    ]
+  }
+}

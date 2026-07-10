@@ -1,0 +1,6 @@
+{
+  "name": "sailing-agent",
+  "version": "0.1.0",
+  "description": "Agente di pianificazione per crociere a vela: meteo e routing, scelta della rada, quote equipaggio, cambusa, diario di bordo.",
+  "author": { "name": "Edo" }
+}

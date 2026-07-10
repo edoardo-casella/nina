@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-07-10T02:00",
+  "approved": false,
+  "approved_by": null,
+  "day": "2026-07-10",
+  "boat": "Niña",
+  "voyage": "Corsica & La Maddalena 2026",
+  "rest": false,
+  "leg": null,
+  "options": [],
+  "confidence": {
+    "mean_spread_kn": 1.1,
+    "max_spread_kn": 3.8,
+    "confidence": "alta"
+  },
+  "tonight": {
+    "id": "cannigione",
+    "name": "Cannigione",
+    "score": 73,
+    "light": "giallo",
+    "margin_deg": 36,
+    "fetch_km": 8,
+    "why": "vento 114° a 36° dal settore esposto",
+    "holding": "fango, ottima",
+    "notes": "Base charter, riparo quasi totale.",
+    "verify": true
+  },
+  "plan_b": {
+    "id": "lavezzi",
+    "name": "Cala Lazarina (Lavezzi)",
+    "score": 100,
+    "light": "verde",
+    "margin_deg": 94,
+    "fetch_km": 30,
+    "why": "vento 114° a 94° dal settore esposto",
+    "holding": "sabbia tra roccia",
+    "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
+    "verify": true
+  },
+  "ranked": [
+    {
+      "id": "lavezzi",
+      "name": "Cala Lazarina (Lavezzi)",
+      "score": 100,
+      "light": "verde",
+      "margin_deg": 94,
+      "fetch_km": 30,
+      "why": "vento 114° a 94° dal settore esposto",
+      "holding": "sabbia tra roccia",
+      "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
+      "verify": true
+    },
+    {
+      "id": "sanguinaires",
+      "name": "Iles Sanguinaires",
+      "score": 98,
+      "light": "verde",
+      "margin_deg": 86,
+      "fetch_km": 80,
+      "why": "vento 114° a 86° dal settore esposto",
+      "holding": "sabbia/roccia",
+      "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
+      "verify": true
+    },
+    {
+      "id": "mortorio",
+      "name": "Isola Mortorio",
+      "score": 88,
+      "light": "verde",
+      "margin_deg": 66,
+      "fetch_km": 20,
+      "why": "vento 114° a 66° dal settore esposto",
+      "holding": "sabbia",
+      "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
+      "verify": true
+    },
+    {
+      "id": "coticcio",
+      "name": "Cala Coticcio (Caprera)",
+      "score": 79,
+      "light": "giallo",
+      "margin_deg": 0,
+      "fetch_km": 12,
+      "why": "vento 114° entra in rada (settore 40-140°), fetch 12 km",
+      "holding": "sabbia",
+      "notes": "Sosta diurna. Sbarco a terra regolamentato.",
+      "verify": true
+    }
+  ],
+  "outlook": [],
+  "crew": [],
+  "turns": {
+    "cambusa": null,
+    "cucina": null,
+    "tender": null
+  },
+  "source": "Open-Meteo (ECMWF) — non ufficiale",
+  "official": "https://www.meteoam.it/it/mare"
+}

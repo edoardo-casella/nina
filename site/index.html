@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Niña — briefing</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0E2029">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFDFC; --sea-1:#E4EFF3; --sea-2:#C9E0E8; --land:#F0E4C0;
+  --ink:#0E2029; --soft:#4A6672; --hair:#B7CBD3;
+  --magenta:#C2007B; --verde:#0E7A4C; --giallo:#B8730A; --rosso:#A81F1B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--body);
+  -webkit-font-smoothing:antialiased;padding-bottom:4rem}
+main{max-width:640px;margin:0 auto;padding:0 1.1rem}
+
+/* convenzione cartografica: corsivo = acqua, tondo = terra */
+.water{font-style:italic}
+
+h2{font:700 .72rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--soft);margin:2.4rem 0 .85rem;display:flex;align-items:baseline;gap:.6rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+header{background:var(--ink);color:var(--sea-1);position:sticky;top:0;z-index:10;
+  border-bottom:2px solid var(--magenta)}
+.hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem}
+.boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
+.when{font-family:var(--mono);font-size:.78rem;color:var(--sea-2);margin-left:auto;text-align:right}
+.stale{color:#FF9BD6}
+
+.flag{background:var(--magenta);color:#fff;padding:.65rem 1.1rem;font:600 .8rem/1.35 var(--body)}
+.flag b{font:700 .72rem/1 var(--display);letter-spacing:.14em;display:block;margin-bottom:.15rem}
+.flag.ok{background:var(--verde)}
+
+.leg{background:var(--sea-1);border:1px solid var(--hair);border-radius:3px;padding:1.05rem 1.1rem}
+.route{font:1.35rem/1.25 var(--body);font-style:italic;margin-bottom:.7rem}
+.route span{color:var(--soft);font-style:normal;padding:0 .25rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:.9rem .7rem;
+  border-top:1px solid var(--hair);padding-top:.8rem}
+.fact b{display:block;font:600 1.15rem/1 var(--mono);font-variant-numeric:tabular-nums}
+.fact i{display:block;font:400 .64rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--soft);font-style:normal;margin-top:.28rem}
+
+.score{margin-top:.95rem}
+.bar{height:7px;background:var(--sea-2);border-radius:4px;overflow:hidden}
+.bar>i{display:block;height:100%;border-radius:4px;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.score p{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.35rem;
+  font-size:.85rem;color:var(--soft)}
+.score p b{font:700 .8rem/1 var(--display);letter-spacing:.1em}
+
+/* firma: la fascia del vento */
+.ribbon{margin:0 -1.1rem;padding:0 1.1rem;overflow-x:auto;overscroll-behavior-x:contain;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.ribbon::-webkit-scrollbar{display:none}
+.strip{display:flex;gap:2px;align-items:flex-end;height:132px;position:relative;width:max-content}
+.hr{width:15px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;position:relative}
+.hr .col{width:100%;background:var(--sea-2);border-radius:1px 1px 0 0;
+  transform-origin:bottom;animation:rise .6s cubic-bezier(.2,.7,.2,1) backwards}
+.hr.strong .col{background:#7FB0C1}
+.hr.gale .col{background:var(--magenta)}
+.hr svg{width:11px;height:11px;color:var(--soft);flex:none}
+.hr.now::before{content:"";position:absolute;top:-8px;bottom:-16px;left:50%;width:1px;background:var(--magenta)}
+@keyframes rise{from{transform:scaleY(0)}}
+.axis{display:flex;gap:2px;width:max-content;margin-top:.35rem}
+.axis span{width:15px;text-align:center;font:400 .58rem/1 var(--mono);color:var(--soft)}
+.legend{display:flex;gap:1.1rem;margin-top:.6rem;font-size:.72rem;color:var(--soft)}
+.legend b{font-family:var(--mono);color:var(--ink);font-weight:600}
+
+.rada{display:flex;gap:.8rem;align-items:flex-start;padding:.9rem 0;border-bottom:1px solid var(--hair)}
+.rada:last-child{border-bottom:0}
+.dot{width:13px;height:13px;border-radius:50%;flex:none;margin-top:.32rem}
+.dot.verde{background:var(--verde)} .dot.giallo{background:var(--giallo)} .dot.rosso{background:var(--rosso)}
+.rada h3{font:400 1.05rem/1.3 var(--body);font-style:italic}
+.rada p{font-size:.83rem;color:var(--soft);margin-top:.15rem}
+.rada .pts{margin-left:auto;font:600 1rem/1 var(--mono);color:var(--soft)}
+.b-plan{background:var(--land);border-radius:3px;padding:.75rem .9rem;margin-top:.9rem;font-size:.88rem}
+.b-plan b{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
+  display:block;color:#7A5A12;margin-bottom:.22rem}
+
+.days{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.55rem}
+.day{border:1px solid var(--hair);border-radius:3px;padding:.7rem .6rem;border-top:3px solid var(--hair)}
+.day.verde{border-top-color:var(--verde)} .day.giallo{border-top-color:var(--giallo)} .day.rosso{border-top-color:var(--rosso)}
+.day em{display:block;font:400 .64rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--soft);font-style:normal}
+.day strong{display:block;font:600 1.25rem/1.2 var(--mono);margin:.3rem 0}
+.day span{font-size:.75rem;font-style:italic;color:var(--soft);display:block;line-height:1.3}
+
+.crew{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{border:1px solid var(--hair);border-radius:99px;padding:.24rem .7rem;font-size:.82rem}
+.chip.skipper{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.turns{margin-top:.9rem;display:grid;gap:.4rem}
+.turn{display:flex;justify-content:space-between;font-size:.88rem;padding:.42rem 0;border-bottom:1px dotted var(--hair)}
+.turn em{font-style:normal;color:var(--soft);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;
+  font-family:var(--display);font-weight:700}
+
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{font:700 .62rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
+  text-align:right;padding:.4rem 0;border-bottom:1px solid var(--hair)}
+th:first-child{text-align:left}
+td{padding:.44rem 0;border-bottom:1px solid #EAF1F3;text-align:right;font-family:var(--mono);
+  font-variant-numeric:tabular-nums}
+td:first-child{text-align:left;font-family:var(--body)}
+details summary{cursor:pointer;color:var(--soft);font-size:.85rem;padding:.5rem 0}
+
+footer{max-width:640px;margin:3rem auto 0;padding:1.2rem 1.1rem;border-top:1px solid var(--hair);
+  font-size:.76rem;color:var(--soft);line-height:1.6}
+footer a{color:var(--magenta)}
+footer strong{color:var(--ink)}
+.err{background:var(--land);padding:1rem;border-radius:3px;margin-top:1.5rem;font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="hdr">
+  <span class="boat" id="boat">Niña</span>
+  <span class="when" id="when">carico…</span>
+</div></header>
+
+<div id="flag"></div>
+<main id="app"></main>
+
+<footer>
+  Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF), risoluzione d'onda ~5 km — sottocosta è indicativa.
+  Il bollettino ufficiale è quello del <a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">mare dell'Aeronautica Militare</a>, e prevale sempre su questa pagina.<br><br>
+  <strong>Questa pagina non è uno strumento di sicurezza.</strong> Il Sail Score dice quanto sarà bella una navigazione, non se è prudente farla. Decide lo skipper.
+</footer>
+
+<script>
+const $ = (h) => { const d = document.createElement("div"); d.innerHTML = h.trim(); return d.firstChild; };
+const esc = (s) => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 19V5M12 19l-5-5M12 19l5-5"/></svg>';
+
+function ago(iso) {
+  const h = (Date.now() - new Date(iso)) / 36e5;
+  if (h < 1) return { txt: "aggiornato ora", stale: false };
+  if (h < 24) return { txt: `aggiornato ${Math.round(h)} h fa`, stale: h > 12 };
+  return { txt: `aggiornato ${Math.round(h / 24)} g fa`, stale: true };
+}
+
+function ribbon(hours) {
+  const now = Date.now();
+  const max = Math.max(22, ...hours.map(h => h.gust ?? h.tws));
+  const cols = hours.map((h, i) => {
+    const t = new Date(h.time), kn = h.tws;
+    const cls = kn >= 22 ? "gale" : kn >= 15 ? "strong" : "";
+    const near = Math.abs(t - now) < 18e5 ? " now" : "";
+    const px = Math.max(4, Math.round(kn / max * 96));
+    // la freccia punta DOVE VA il vento: direzione di provenienza + 180°
+    return `<div class="hr ${cls}${near}">
+      <span style="transform:rotate(${(h.twd + 180) % 360}deg);display:flex">${ARROW}</span>
+      <div class="col" style="height:${px}px;animation-delay:${Math.min(i * 12, 600)}ms"></div>
+    </div>`;
+  }).join("");
+  const axis = hours.map((h, i) => `<span>${i % 3 === 0 ? h.time.slice(11, 13) : ""}</span>`).join("");
+  return `<div class="ribbon"><div class="strip">${cols}</div><div class="axis">${axis}</div></div>
+    <div class="legend"><span>ora <b>${new Date().getHours()}:00</b></span>
+    <span class="water">max <b>${Math.round(max)} kn</b></span>
+    <span>freccia = dove va il vento</span></div>`;
+}
+
+function legCard(b) {
+  if (b.rest) return `<div class="leg"><div class="route">Giornata di sosta</div>
+    <p style="color:var(--soft);font-size:.9rem">Nessun trasferimento in programma. Bagno, riposo, cambusa.</p></div>`;
+  if (!b.leg) return `<div class="leg"><div class="route">Nessuna tratta pianificata</div></div>`;
+  const L = b.leg, [from, to] = L.leg.split(" -> ");
+  const color = L.avg_score >= 70 ? "var(--verde)" : L.avg_score >= 45 ? "var(--giallo)" : "var(--rosso)";
+  const verdict = L.avg_score >= 70 ? "Ottima" : L.avg_score >= 45 ? "Buona" : "Mediocre";
+  return `<div class="leg">
+    <div class="route">${esc(from)}<span>→</span>${esc(to)}</div>
+    <div class="facts">
+      <div class="fact"><b>${L.nm}</b><i>miglia</i></div>
+      <div class="fact"><b>${L.cog}°</b><i>rotta</i></div>
+      <div class="fact"><b>${L.depart.slice(11)}</b><i>salpa</i></div>
+      <div class="fact"><b>${L.eta.slice(11)}</b><i>arrivo</i></div>
+      <div class="fact"><b>${L.sail_pct}%</b><i>a vela</i></div>
+    </div>
+    <div class="score">
+      <p><span class="water">Sail Score</span><b style="color:${color}">${verdict} · ${L.avg_score}</b></p>
+      <div class="bar"><i style="width:${L.avg_score}%;background:${color}"></i></div>
+    </div></div>`;
+}
+
+function render(b, wx, c) {
+  document.getElementById("boat").textContent = b.boat;
+  const a = ago(b.generated_at);
+  const w = document.getElementById("when");
+  w.className = "when" + (a.stale ? " stale" : "");
+  w.innerHTML = `${new Date(b.day + "T12:00").toLocaleDateString("it", { day: "numeric", month: "short" })}<br>${a.txt}`;
+
+  document.getElementById("flag").innerHTML = b.approved
+    ? `<div class="flag ok"><b>Piano approvato</b>Confermato da ${esc(b.approved_by)}.</div>`
+    : `<div class="flag"><b>Proposta — non approvata</b>Generata dal meteo, non ancora confermata dallo skipper. Non salpate su questa pagina.</div>`;
+
+  const conf = b.confidence?.confidence ?? "sconosciuta";
+  const t = b.tonight, pb = b.plan_b;
+
+  document.getElementById("app").innerHTML = `
+  <h2>Oggi</h2>
+  ${legCard(b)}
+
+  <h2>Vento — 48 ore</h2>
+  ${ribbon(wx.hours)}
+  <p style="margin-top:.7rem;font-size:.82rem;color:var(--soft)">
+    Accordo fra i modelli ECMWF e ICON: <strong>${esc(conf)}</strong>${b.confidence?.mean_spread_kn != null
+      ? ` (scarto medio ${b.confidence.mean_spread_kn} kn)` : ""}.
+    ${conf === "bassa" ? " Non pianificare oltre le 24 ore." : ""}
+  </p>
+
+  <h2>Stanotte</h2>
+  ${t ? `<div class="rada"><div class="dot ${t.light}"></div>
+      <div><h3>${esc(t.name)}</h3><p class="water">${esc(t.why)} · fondo ${esc(t.holding)}</p></div>
+      <div class="pts num">${t.score}</div></div>` : `<p>Rada non definita.</p>`}
+  ${pb ? `<div class="b-plan"><b>Piano B</b><span class="water">${esc(pb.name)}</span> — ${esc(pb.why)}.</div>` : ""}
+  <details><summary>Le altre rade con questo vento</summary>
+    ${b.ranked.map(r => `<div class="rada"><div class="dot ${r.light}"></div>
+      <div><h3>${esc(r.name)}</h3><p class="water">${esc(r.why)}</p></div>
+      <div class="pts num">${r.score}</div></div>`).join("")}
+  </details>
+
+  <h2>Prossimi giorni</h2>
+  <div class="days">${b.outlook.map(o => `<div class="day ${o.light}">
+    <em>${new Date(o.date + "T12:00").toLocaleDateString("it", { weekday: "short" })}</em>
+    <strong>${o.score ?? "—"}</strong>
+    <span>${esc(o.leg)}</span></div>`).join("") || "<p>—</p>"}</div>
+
+  <h2>A bordo · ${b.crew.length}</h2>
+  <div class="crew">${b.crew.map(m => `<span class="chip ${m.role === "skipper" ? "skipper" : ""}">${esc(m.name)}</span>`).join("")}</div>
+  <div class="turns">
+    ${Object.entries(b.turns).filter(([, v]) => v).map(([k, v]) => `<div class="turn"><em>${k}</em><span>${esc(v)}</span></div>`).join("")}
+  </div>
+
+  <h2>Conti</h2>
+  <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora</summary>
+    <table><thead><tr><th>Nome</th><th>Notti</th><th>Quota</th></tr></thead><tbody>
+      ${c.per_person.map(p => `<tr><td>${esc(p.name)}</td><td>${p.nights}</td><td>${Math.round(p.total)} €</td></tr>`).join("")}
+    </tbody></table>
+    ${c.transfers.length ? `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Per pareggiare:</p>
+      <table><tbody>${c.transfers.map(t => `<tr><td>${esc(t.from)} → ${esc(t.to)}</td><td>${t.amount.toFixed(2)} €</td></tr>`).join("")}</tbody></table>` : ""}
+  </details>`;
+}
+
+(async () => {
+  try {
+    const [b, wx, c] = window.__DATA ?? await Promise.all(
+      ["briefing", "weather", "conti"].map(n => fetch(`data/${n}.json`, { cache: "no-cache" }).then(r => {
+        if (!r.ok) throw new Error(n); return r.json();
+      })));
+    render(b, wx, c);
+  } catch (e) {
+    document.getElementById("when").textContent = "dati non raggiungibili";
+    document.getElementById("app").innerHTML = `<div class="err">
+      <strong>Nessun dato disponibile.</strong> La pagina non ha trovato il briefing e non ha una copia in cache.
+      Se sei in rada senza rete, riapri quando torni sotto copertura. Nel frattempo il meteo ufficiale è su
+      <a href="https://www.meteoam.it/it/mare">meteoam.it</a>.</div>`;
+  }
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+})();
+</script>
+</body>
+</html>
