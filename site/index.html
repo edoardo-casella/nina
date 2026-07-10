@@ -38,6 +38,7 @@ header{background:var(--ink);color:var(--sea-1);position:sticky;top:0;z-index:10
 .hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem}
 .boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
 .cap{font:600 .6rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:#7FA6B5;margin-top:.22rem}
+.clock{font:400 .72rem/1.3 var(--mono);color:var(--sea-2);margin-top:.2rem;font-variant-numeric:tabular-nums}
 .when{font-family:var(--mono);font-size:.78rem;color:var(--sea-2);margin-left:auto;text-align:right;flex:none}
 .stale{color:#FF9BD6}
 
@@ -61,6 +62,16 @@ header{background:var(--ink);color:var(--sea-1);position:sticky;top:0;z-index:10
 .badge{font:700 .58rem/1 var(--display);letter-spacing:.1em;padding:.18rem .45rem;border-radius:3px;
   color:#fff;display:inline-block;margin-right:.2rem}
 .badge.sail{background:var(--verde)} .badge.motor{background:var(--giallo)}
+
+.hr.day0{border-left:1px solid var(--soft);margin-left:2px;padding-left:2px}
+.axis .d0{font-weight:700;color:var(--ink);overflow:visible;white-space:nowrap}
+.sky b{font:600 .6rem/1 var(--mono);color:var(--ink)}
+
+.tabs{display:flex;gap:.4rem;margin-bottom:.6rem}
+.tab{font:700 .64rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;
+  padding:.4rem .75rem;border:1px solid var(--hair);background:var(--paper);
+  border-radius:3px;color:var(--soft);cursor:pointer}
+.tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
 .leg{background:var(--sea-1);border:1px solid var(--hair);border-radius:3px;padding:1.05rem 1.1rem}
 .route{font:1.35rem/1.25 var(--body);font-style:italic;margin-bottom:.7rem}
@@ -146,7 +157,8 @@ footer strong{color:var(--ink)}
 </head>
 <body>
 <header><div class="hdr">
-  <div><span class="boat" id="boat">Niña</span><div class="cap" id="captains"></div></div>
+  <div><span class="boat" id="boat">Niña</span><div class="cap" id="captains"></div>
+  <div class="clock" id="clock"></div></div>
   <span class="when" id="when">carico…</span>
 </div></header>
 
@@ -171,6 +183,12 @@ function ago(iso) {
   return { txt: `aggiornato ${Math.round(h / 24)} g fa`, stale: true };
 }
 
+const dayLbl = iso => new Date(iso).toLocaleDateString("it", { weekday: "short", day: "numeric" });
+const hourAxis = hours => hours.map((h, i) => {
+  const hh = h.time.slice(11, 13);
+  return hh === "00" ? `<span class="d0">${dayLbl(h.time)}</span>` : `<span>${i % 3 === 0 ? hh : ""}</span>`;
+}).join("");
+
 function ribbon(hours) {
   const now = Date.now();
   const max = Math.max(22, ...hours.map(h => h.gust ?? h.tws));
@@ -178,20 +196,43 @@ function ribbon(hours) {
     const t = new Date(h.time), kn = h.tws;
     const cls = kn >= 22 ? "gale" : kn >= 15 ? "strong" : "";
     const near = Math.abs(t - now) < 18e5 ? " now" : "";
+    const mid = h.time.slice(11, 16) === "00:00" ? " day0" : "";
     const px = Math.max(4, Math.round(kn / max * 96));
     // la freccia punta DOVE VA il vento: direzione di provenienza + 180°
-    return `<div class="hr ${cls}${near}">
+    return `<div class="hr ${cls}${near}${mid}" title="${dayLbl(h.time)} ${h.time.slice(11, 16)} — ${Math.round(kn)} kn da ${comp(h.twd)}, raffiche ${Math.round(h.gust)}">
       <span style="transform:rotate(${(h.twd + 180) % 360}deg);display:flex">${ARROW}</span>
       <div class="col" style="height:${px}px;animation-delay:${Math.min(i * 12, 600)}ms"></div>
     </div>`;
   }).join("");
-  const axis = hours.map((h, i) => `<span>${i % 3 === 0 ? h.time.slice(11, 13) : ""}</span>`).join("");
   const vals = hours.map((h, i) => `<span>${i % 3 === 0 ? Math.round(h.tws) : ""}</span>`).join("");
   return `<div class="ribbon"><div class="strip">${cols}</div>
-    <div class="axis vals">${vals}</div><div class="axis">${axis}</div></div>
-    <div class="legend"><span>nodi sopra, ora sotto</span>
+    <div class="axis vals">${vals}</div><div class="axis">${hourAxis(hours)}</div></div>
+    <div class="legend"><span>nodi sopra, ora sotto — tocca una barra per il dettaglio</span>
     <span class="water">max <b>${Math.round(max)} kn</b></span>
     <span>freccia = dove va il vento</span></div>`;
+}
+
+function windyMaps(pos) {
+  if (!navigator.onLine || !pos || pos.lat == null) return "";
+  const base = ov => `https://embed.windy.com/embed2.html?lat=${pos.lat}&lon=${pos.lon}&detailLat=${pos.lat}&detailLon=${pos.lon}&zoom=8&level=surface&overlay=${ov}&menu=&message=true&marker=true&calendar=now&type=map&location=coordinates&metricWind=kt&metricTemp=%C2%B0C`;
+  return `<h2>Vento e onde — mappa live</h2>
+  <div class="tabs">
+    <button class="tab on" data-src="${base("wind")}" onclick="swapWindy(this)">Vento</button>
+    <button class="tab" data-src="${base("waves")}" onclick="swapWindy(this)">Onde</button>
+  </div>
+  <div style="border:1px solid var(--hair);border-radius:3px;overflow:hidden">
+    <iframe id="windy" src="${base("wind")}" style="width:100%;height:420px;border:0;display:block" loading="lazy" title="Mappa vento e onde"></iframe>
+  </div>
+  <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
+    Windy centrato su ${esc(pos.name)} — trascina la barra del tempo in basso per vedere il trend.</p>`;
+}
+
+function swapWindy(btn) {
+  const f = document.getElementById("windy");
+  if (!f) return;
+  f.src = btn.dataset.src;
+  const sib = btn.parentNode && btn.parentNode.children ? [...btn.parentNode.children] : [];
+  sib.forEach(x => x.classList && x.classList.toggle("on", x === btn));
 }
 
 const wmoIcon = c => c == null ? "·" : c === 0 ? "☀️" : c <= 2 ? "🌤️" : c === 3 ? "☁️" :
@@ -206,16 +247,16 @@ function waveRibbon(hours) {
   const cols = hours.map(h => {
     if (h.wave == null) return `<div class="hr"><span></span><div class="col" style="height:4px"></div></div>`;
     const cls = h.wave >= 1.5 ? "gale" : h.wave >= 0.8 ? "strong" : "";
+    const mid = h.time.slice(11, 16) === "00:00" ? " day0" : "";
     const px = Math.max(4, Math.round(h.wave / max * 96));
     const rot = h.wave_dir != null
       ? `<span style="transform:rotate(${(h.wave_dir + 180) % 360}deg);display:flex">${ARROW}</span>` : "<span></span>";
-    return `<div class="hr ${cls}">${rot}<div class="col" style="height:${px}px"></div></div>`;
+    return `<div class="hr ${cls}${mid}" title="${dayLbl(h.time)} ${h.time.slice(11, 16)} — onda ${h.wave.toFixed(1)} m${h.wave_dir != null ? " da " + comp(h.wave_dir) : ""}">${rot}<div class="col" style="height:${px}px"></div></div>`;
   }).join("");
-  const axis = hours.map((h, i) => `<span>${i % 3 === 0 ? h.time.slice(11, 13) : ""}</span>`).join("");
   const vals = hours.map((h, i) => `<span>${i % 3 === 0 && h.wave != null ? h.wave.toFixed(1).replace("0.", ".") : ""}</span>`).join("");
   return `<h2>Onda — 48 ore</h2>
     <div class="ribbon"><div class="strip">${cols}</div>
-    <div class="axis vals">${vals}</div><div class="axis">${axis}</div></div>
+    <div class="axis vals">${vals}</div><div class="axis">${hourAxis(hours)}</div></div>
     <div class="legend"><span>metri sopra, ora sotto</span>
     <span class="water">max <b>${max.toFixed(1)} m</b></span>
     <span>freccia = dove va l'onda</span><span>risoluzione ~5 km: sottocosta indicativa</span></div>`;
@@ -225,10 +266,10 @@ function skyStrip(hours) {
   const slots = [];
   for (let i = 0; i < hours.length; i += 3) {
     const h = hours[i];
-    slots.push(`<span title="${h.time.slice(11, 16)}">${wmoIcon(h.wmo)}<em>${h.time.slice(11, 13)}</em></span>`);
+    slots.push(`<span title="${dayLbl(h.time)} ${h.time.slice(11, 16)}">${wmoIcon(h.wmo)}<b>${h.temp != null ? Math.round(h.temp) + "°" : ""}</b><em>${h.time.slice(11, 13) === "00" ? dayLbl(h.time) : h.time.slice(11, 13)}</em></span>`);
   }
   return slots.length
-    ? `<h2>Cielo</h2><div class="ribbon"><div class="sky">${slots.join("")}</div></div>` : "";
+    ? `<h2>Cielo e temperatura</h2><div class="ribbon"><div class="sky">${slots.join("")}</div></div>` : "";
 }
 
 function astroCard(astro, day) {
@@ -337,6 +378,7 @@ function render(b, wx, c) {
 
   ${waveRibbon(wx.hours)}
   ${skyStrip(wx.hours)}
+  ${windyMaps(b.position)}
 
   <h2>Stanotte</h2>
   ${t ? `<div class="rada"><div class="dot ${t.light}"></div>
@@ -408,6 +450,16 @@ function render(b, wx, c) {
   }
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 })();
+
+// orologio di bordo in tempo reale
+const clockTick = () => {
+  const el = document.getElementById("clock");
+  if (el) el.textContent = new Date().toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" })
+    + " · " + new Date().toLocaleTimeString("it");
+};
+clockTick();
+const clockTimer = setInterval(clockTick, 1000);
+clockTimer.unref?.();
 </script>
 </body>
 </html>

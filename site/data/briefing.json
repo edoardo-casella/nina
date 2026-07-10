@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T12:22+02:00",
+  "generated_at": "2026-07-10T12:29+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-10",
@@ -13,7 +13,9 @@
   "cruise_start": "2026-08-08",
   "position": {
     "id": "cannigione",
-    "name": "Cannigione"
+    "name": "Cannigione",
+    "lat": 41.1069,
+    "lon": 9.4404
   },
   "rest": false,
   "leg": {
@@ -295,9 +297,9 @@
     }
   ],
   "turns": {
-    "cambusa": "BiB",
     "cucina": "EC",
-    "tender": "MM"
+    "cambusa": "GL",
+    "tender": "BeB"
   },
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
