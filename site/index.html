@@ -7,19 +7,30 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
-<meta name="theme-color" content="#060D18">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* console navale: navy profondo, ciano dati, ambra caution, rosso danger */
-  --paper:#0A1424; --sea-1:#101E33; --sea-2:#1C3552; --land:#2C2410;
-  --ink:#DCE7F5; --soft:#7E95B0; --hair:#22384F; --accent:#35C4E7;
-  --magenta:#E8536F; --verde:#2FBF71; --giallo:#E8A33D; --rosso:#E8536F;
+  /* GIORNO (default): leggibile in pieno sole — carta bianca, inchiostro nero,
+     testi secondari scuriti apposta. Come il day-mode dei plotter nautici. */
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --land:#F7EDD2;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F;
+  --magenta:#C2185B; --verde:#0A7A43; --giallo:#A86400; --rosso:#C22030;
+  --hdr:#FFFFFF; --hdrtext:#0B1320; --hdrsub:#3E556B; --stale:#C2185B;
+  --warmtx:#6A4E0E; --chiptx:#FFFFFF;
   --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
   --body:"IBM Plex Sans",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+html[data-theme="dark"]{
+  /* NOTTE: console navale — non brucia la visione notturna in rada */
+  --paper:#0A1424; --sea-1:#101E33; --sea-2:#1C3552; --land:#2C2410;
+  --ink:#DCE7F5; --soft:#7E95B0; --hair:#22384F; --accent:#35C4E7;
+  --magenta:#E8536F; --verde:#2FBF71; --giallo:#E8A33D; --rosso:#E8536F;
+  --hdr:#060D18; --hdrtext:#DCE7F5; --hdrsub:#7FA6B5; --stale:#FF9BD6;
+  --warmtx:#FFC97A; --chiptx:#062330;
 }
 *{box-sizing:border-box;margin:0}
 body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--body);
@@ -30,16 +41,18 @@ main{max-width:640px;margin:0 auto;padding:0 1.1rem}
 .water{font-style:italic}
 
 h2{font:700 .72rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase;
-  color:#9FB6CE;margin:2.4rem 0 .85rem;display:flex;align-items:baseline;gap:.6rem;
+  color:var(--soft);margin:2.4rem 0 .85rem;display:flex;align-items:baseline;gap:.6rem;
   border-left:3px solid var(--accent);padding-left:.55rem}
 h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 
-header{background:#060D18;color:var(--ink);position:sticky;top:0;z-index:10;
+header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:10;
   border-bottom:2px solid var(--accent)}
 .hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem}
 .boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
-.cap{font:600 .6rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:#7FA6B5;margin-top:.22rem}
+.cap{font:600 .6rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--hdrsub);margin-top:.22rem}
+.theme{font:700 .58rem/1 var(--display);letter-spacing:.1em;padding:.4rem .55rem;margin-left:.6rem;
+  border:1px solid var(--hair);border-radius:3px;background:transparent;color:var(--hdrtext);cursor:pointer;flex:none}
 .clock{font:600 .74rem/1.3 var(--mono);color:var(--accent);margin-top:.2rem;font-variant-numeric:tabular-nums}
 .live{font:700 .58rem/1 var(--display);letter-spacing:.12em;margin-left:.55rem;vertical-align:middle}
 .live.on{color:var(--verde)} .live.off{color:var(--soft)}
@@ -47,12 +60,12 @@ header{background:#060D18;color:var(--ink);position:sticky;top:0;z-index:10;
 .live.off::before{content:"●";margin-right:.25rem}
 @keyframes pulse{50%{opacity:.35}}
 .when{font-family:var(--mono);font-size:.78rem;color:var(--soft);margin-left:auto;text-align:right;flex:none}
-.stale{color:#FF9BD6}
+.stale{color:var(--stale)}
 
 .flag{background:var(--magenta);color:#fff;padding:.65rem 1.1rem;font:600 .8rem/1.35 var(--body)}
 .flag b{font:700 .72rem/1 var(--display);letter-spacing:.14em;display:block;margin-bottom:.15rem}
 .flag.ok{background:var(--verde)}
-.flag.sim{background:var(--land);color:#FFC97A}
+.flag.sim{background:var(--land);color:var(--warmtx)}
 
 .nowbar{display:flex;flex-wrap:wrap;gap:.4rem .95rem;font-size:.85rem;color:var(--soft);
   margin:1rem 0 .9rem;align-items:baseline}
@@ -127,7 +140,7 @@ header{background:#060D18;color:var(--ink);position:sticky;top:0;z-index:10;
 .rada .pts{margin-left:auto;font:600 1rem/1 var(--mono);color:var(--soft)}
 .b-plan{background:var(--land);border-radius:3px;padding:.75rem .9rem;margin-top:.9rem;font-size:.88rem}
 .b-plan b{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
-  display:block;color:#FFC97A;margin-bottom:.22rem}
+  display:block;color:var(--warmtx);margin-bottom:.22rem}
 
 .days{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.55rem}
 .day{border:1px solid var(--hair);border-radius:3px;padding:.7rem .6rem;border-top:3px solid var(--hair)}
@@ -140,7 +153,7 @@ header{background:#060D18;color:var(--ink);position:sticky;top:0;z-index:10;
 .crew{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{border:1px solid var(--hair);border-radius:99px;padding:.28rem .75rem;font-size:.82rem;
   background:var(--sea-1);color:var(--ink);font-family:var(--body);cursor:pointer}
-.chip.skipper{background:var(--accent);color:#062330;border-color:var(--accent);font-weight:600}
+.chip.skipper{background:var(--accent);color:var(--chiptx);border-color:var(--accent);font-weight:600}
 .crewcard{background:var(--sea-1);border:1px solid var(--hair);border-left:3px solid var(--accent);
   border-radius:3px;padding:.7rem .9rem;margin-top:.6rem;font-size:.85rem;line-height:1.7;color:var(--soft)}
 .crewcard b{color:var(--ink)}
@@ -152,7 +165,7 @@ header{background:#060D18;color:var(--ink);position:sticky;top:0;z-index:10;
 .turn p{font-size:.78rem;color:var(--soft);padding:0 0 .55rem}
 .turn em{font-style:normal;color:var(--soft);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;
   font-family:var(--display);font-weight:700}
-.pwarn{margin-top:.7rem;font-size:.76rem;color:#FFC97A}
+.pwarn{margin-top:.7rem;font-size:.76rem;color:var(--warmtx);font-weight:600}
 
 table{width:100%;border-collapse:collapse;font-size:.88rem}
 th{font:700 .62rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
@@ -177,6 +190,7 @@ footer strong{color:var(--ink)}
   <div class="cap" id="captains"></div>
   <div class="clock" id="clock"></div></div>
   <span class="when" id="when">carico…</span>
+  <button class="theme" id="themeBtn" onclick="cycleTheme()" title="Tema: auto segue alba e tramonto">AUTO</button>
 </div></header>
 
 <div id="flag"></div>
@@ -510,6 +524,8 @@ function render(b, wx, c) {
       <a href="https://www.meteoam.it/it/mare">meteoam.it</a>.</div>`;
   }
   if (data) try {
+    window.__astro = data[1]?.astro;
+    applyTheme();
     render(...data);
   } catch (e) {
     document.getElementById("when").textContent = "errore di pagina";
@@ -531,6 +547,32 @@ const clockTick = () => {
 clockTick();
 const clockTimer = setInterval(clockTick, 1000);
 clockTimer.unref?.();
+
+// tema giorno/notte: auto sull'alba e il tramonto veri (day-mode leggibile al
+// sole, night-mode che non brucia la visione notturna), forzabile dal bottone
+function themeMode() { try { return localStorage.getItem("nina_theme") || "auto"; } catch { return "auto"; } }
+function applyTheme() {
+  const mode = themeMode();
+  let dark;
+  if (mode === "auto") {
+    const a = (window.__astro || [])[0];
+    const hm = new Date().toTimeString().slice(0, 5);
+    dark = hm < (a?.sunrise ?? "06:30") || hm > (a?.sunset ?? "20:30");
+  } else dark = mode === "dark";
+  if (document.documentElement?.dataset) document.documentElement.dataset.theme = dark ? "dark" : "light";
+  const btn = document.getElementById("themeBtn");
+  if (btn) btn.textContent = mode === "auto" ? "AUTO" : (dark ? "NOTTE" : "GIORNO");
+  const meta = document.querySelector?.('meta[name="theme-color"]');
+  if (meta) meta.content = dark ? "#060D18" : "#FFFFFF";
+}
+function cycleTheme() {
+  const next = { auto: "light", light: "dark", dark: "auto" }[themeMode()] || "auto";
+  try { localStorage.setItem("nina_theme", next); } catch {}
+  applyTheme();
+}
+applyTheme();
+const themeTimer = setInterval(applyTheme, 60000);
+themeTimer.unref?.();
 
 // indicatore LIVE / OFFLINE
 const liveTick = () => {
