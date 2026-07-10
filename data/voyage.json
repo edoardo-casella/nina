@@ -700,8 +700,8 @@
     {
       "id": "porto_rotondo",
       "name": "Porto Rotondo",
-      "lat": 41.029,
-      "lon": 9.546,
+      "lat": 41.0315,
+      "lon": 9.5485,
       "type": "port",
       "notes": "Marina + rada; base logistica drop-off/pickup 21-22/8, aeroporto Olbia ~20 min [coord. da verificare]",
       "verify": true
