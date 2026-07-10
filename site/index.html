@@ -143,6 +143,34 @@ main>section.on{display:block}
 .dest h3{font:400 .92rem/1.25 var(--body)}
 .dest .dbody p{font-size:.72rem;color:var(--soft);margin-top:.25rem;display:-webkit-box;
   -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.dest{cursor:pointer}
+a.dl{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent);cursor:pointer}
+
+/* scheda destinazione: overlay modale */
+.modal{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.modal[hidden]{display:none}
+.modal .back{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
+.sheet{position:relative;background:var(--paper);width:100%;max-width:640px;max-height:92vh;
+  overflow-y:auto;border-radius:14px 14px 0 0;box-shadow:0 -8px 40px rgba(0,0,0,.4);
+  animation:slideup .28s cubic-bezier(.2,.7,.2,1)}
+@keyframes slideup{from{transform:translateY(100%)}}
+@media(min-width:680px){.modal{align-items:center}.sheet{border-radius:14px;animation:none}}
+.sheet-x{position:sticky;top:0;float:right;margin:.5rem .6rem 0 0;z-index:2;width:2rem;height:2rem;
+  border:0;border-radius:50%;background:var(--sea-2);color:var(--ink);font:700 1.1rem/1 var(--body);cursor:pointer}
+.sheet-in{padding:1.1rem 1.2rem 2rem}
+.sheet h2{margin-top:1.5rem}
+.sheet h1{font:400 1.5rem/1.2 var(--body);font-style:italic;padding-right:2.4rem}
+.sheet .sub{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin:.35rem 0 .2rem;
+  font:700 .62rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.gal{display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x mandatory;margin:.9rem -1.2rem 0;
+  padding:0 1.2rem .4rem;scrollbar-width:thin}
+.gal a{flex:none;scroll-snap-align:start}
+.gal img{height:190px;width:auto;border-radius:5px;display:block;border:1px solid var(--hair)}
+.storia{font-size:.95rem;line-height:1.62;color:var(--ink)}
+.storia .src{display:block;margin-top:.5rem;font-size:.76rem;color:var(--soft)}
+.linkrow{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+.linkrow a{font:600 .82rem/1 var(--body);padding:.55rem .8rem;border:1px solid var(--hair);
+  border-radius:99px;color:var(--accent);text-decoration:none;background:var(--sea-1)}
 
 .leg{background:var(--sea-1);border:1px solid var(--hair);border-radius:3px;padding:1.05rem 1.1rem}
 .route{font:1.35rem/1.25 var(--body);font-style:italic;margin-bottom:.7rem}
@@ -252,6 +280,12 @@ footer strong{color:var(--ink)}
 
 <div id="flag"></div>
 <main id="app"></main>
+
+<div id="scheda" class="modal" hidden>
+  <div class="back" onclick="history.back()"></div>
+  <div class="sheet"><button class="sheet-x" onclick="history.back()" aria-label="chiudi">✕</button>
+    <div class="sheet-in" id="scheda-in"></div></div>
+</div>
 
 <footer>
   Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF), risoluzione d'onda ~5 km — sottocosta è indicativa.
@@ -422,14 +456,14 @@ function outlookRows(outlook) {
       ? `${wmoIcon(o.wx.wmo)} ${Math.round(o.wx.tmin)}–${Math.round(o.wx.tmax)}° · pioggia ${o.wx.rain_prob ?? "—"}%${o.wx.rain_mm ? ` (${o.wx.rain_mm} mm)` : ""} · vento max ${Math.round(o.wx.wind_max)} kn da ${comp(o.wx.wind_dir)}${o.wx.synthetic ? " · sintetico" : ""}`
       : "meteo oltre l'orizzonte di previsione";
     if (o.rest) return `<div class="dayrow"><em>${wd}</em>
-      <div><h3>Sosta — ${esc(o.to)} ${stars(o.rating)}</h3><p>${meteo}</p></div>${thumb(o.photo, o.to)}</div>`;
+      <div><h3>Sosta — ${destLink(o.to, o.to_id)} ${stars(o.rating)}</h3><p>${meteo}</p></div>${thumb(o.photo, o.to)}</div>`;
     const s = o.sailing;
     const sail = s
       ? `<span class="badge ${s.vela ? "sail" : "motor"}">${s.vela ? "vela" : "motore"}</span> ${s.vela ? `${esc(s.andatura)} (TWA ~${s.twa}°) · ~${s.boat_kn} kn` : `${s.tws_est < 7 ? "vento debole" : "vento in prua"} (${s.tws_est} kn da ${comp(s.twd)}) · ~${s.boat_kn} kn a motore`}`
       : "";
     const nb = o.night ? `<span class="badge night">🌙 notturna</span> solo con mare ≤ 0,5 m · ` : "";
     return `<div class="dayrow"><em>${wd}</em>
-      <div><h3 class="water">${esc(o.frm)} → ${esc(o.to)} · <span class="num">${o.nm} nm</span>${o.night ? " 🌙" : ""} ${stars(o.rating)}</h3>
+      <div><h3 class="water">${esc(o.frm)} → ${destLink(o.to, o.to_id)} · <span class="num">${o.nm} nm</span>${o.night ? " 🌙" : ""} ${stars(o.rating)}</h3>
       ${sail || nb ? `<p>${nb}${sail}</p>` : ""}
       <p>${meteo}</p></div>${thumb(o.photo, o.to)}</div>`;
   }).join("");
@@ -523,7 +557,7 @@ function execCard(b, wx) {
     const wavem = Math.max(0, ...use.map(h => h.wave ?? 0));
     parts.push(`Vento fino a <b>${Math.round(wm.tws)} kn</b> da ${comp(wm.twd)} verso le ${wm.time.slice(11, 13)}${wavem ? `, onda max <b>${wavem.toFixed(1)} m</b>` : ""}.`);
   }
-  if (b.tonight && !b.leg?.night) parts.push(`Stanotte: <span class="water">${esc(b.tonight.name)}</span> ${stars(b.tonight.rating)} <span class="dot ${b.tonight.light}"></span>.`);
+  if (b.tonight && !b.leg?.night) parts.push(`Stanotte: <span class="water">${destLink(b.tonight.name, b.tonight.id)}</span> ${stars(b.tonight.rating)} <span class="dot ${b.tonight.light}"></span>.`);
   if (b.turns?.cucina_cena) parts.push(`Stasera in cucina: <b>${esc(b.turns.cucina_cena)}</b>.`);
   return `<h2>La giornata in breve</h2><div class="exec">${parts.join(" ")}
     ${steps.some(s => s.verify) ? `<p class="vflag" style="margin-top:.5rem;font-size:.8rem">⚑ Tappe stimate, da verificare su carta nautica.</p>` : ""}</div>`;
@@ -537,14 +571,14 @@ function tappeTimeline(b) {
     const moon = s.night_stay ? " ⚓🌙" : "";
     const acts = actLabels(s.activity);
     if (s.stay) return `<div class="dayrow"><em>${esc(s.slot)}</em>
-      <div><h3 class="water">${esc(s.name)}${moon}${flag} ${stars(s.rating)}</h3>
+      <div><h3 class="water">${destLink(s.name, s.to_id)}${moon}${flag} ${stars(s.rating)}</h3>
       <p>in rada${acts ? " · " + acts : ""}</p></div>${thumb(s.photo, s.name)}</div>`;
     const plus = s.eta && s.depart && s.eta.slice(0, 10) !== s.depart.slice(0, 10) ? " +1" : "";
     const times = s.depart && s.eta ? `${s.depart.slice(11, 16)} → ${s.eta.slice(11, 16)}${plus}` : "";
     const badge = s.abort ? `<span class="badge" style="background:var(--rosso)">STOP</span>`
       : s.sail_pct != null ? `<span class="badge ${s.sail_pct >= 50 ? "sail" : "motor"}">${s.sail_pct >= 50 ? "vela" : "motore"}</span>` : "";
     return `<div class="dayrow"><em>${esc(s.slot)}</em>
-      <div><h3 class="water">${esc(s.frm)} → ${esc(s.to)}${moon}${flag} ${stars(s.rating)}</h3>
+      <div><h3 class="water">${esc(s.frm)} → ${destLink(s.to, s.to_id)}${moon}${flag} ${stars(s.rating)}</h3>
       <p><span class="num">${s.nm} nm</span>${times ? ` · ${times}` : ""}${s.arrive_by ? ` · entro ${esc(s.arrive_by)}` : ""} ${badge}${acts ? `<br>${acts}` : ""}${s.abort && s.reason ? `<br><span class="vflag">${esc(s.reason)}</span>` : ""}</p></div>${thumb(s.photo, s.to)}</div>`;
   }).join("");
   return `<h2>Le tappe di oggi · <span class="num" style="text-transform:none">${b.day_nm ?? "—"} nm</span></h2><div class="tl">${rows}</div>`;
@@ -566,7 +600,8 @@ function programGrid(prog) {
     const crew = (cd.on?.length || cd.off?.length)
       ? `<span style="font-style:normal;color:var(--warmtx);font-weight:600">equipaggio${cd.on?.length ? ` +${cd.on.length}` : ""}${cd.off?.length ? ` −${cd.off.length}` : ""}</span>` : "";
     const dots = d.n_tappe > 1 ? ` <span style="color:var(--accent);letter-spacing:.1em">${"●".repeat(Math.min(d.n_tappe, 3))}</span>` : "";
-    return `<div class="day ${d.tier}" title="${esc(tiers[d.tier] ?? "")}">
+    return `<div class="day ${d.tier}" title="${esc(tiers[d.tier] ?? "")} — tocca per la scheda"
+      ${d.to_id ? `onclick="openDest('${d.to_id}')" style="cursor:pointer"` : ""}>
       <em>${wd}${d.night ? " 🌙" : ""}${d.verify ? ` <span class="vflag">⚑</span>` : ""}</em>
       <strong>${d.nm}<span style="font-size:.7rem"> nm</span>${dots}</strong>
       <span class="water">${route}</span>
@@ -622,18 +657,18 @@ function destCatalog(prog) {
   const ds = prog?.destinations || [];
   if (!ds.length) return "";
   const cards = ds.map(d => `
-    <div class="dest">
+    <div class="dest" onclick="openDest('${d.id}')">
       ${d.photo?.src
-        ? `<a href="${d.photo.page ?? d.photo.src}" target="_blank" rel="noopener"><img class="dphoto" loading="lazy" src="${d.photo.src}" alt="${esc(d.name)}" onerror="this.parentNode.remove()"></a>`
+        ? `<img class="dphoto" loading="lazy" src="${d.photo.src}" alt="${esc(d.name)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'dphoto none',textContent:'⚓'}))">`
         : `<div class="dphoto none">⚓</div>`}
       <div class="dbody"><h3 class="water">${esc(d.name)}${d.verify ? ' <span class="vflag">⚑</span>' : ""}</h3>
       ${stars(d.rating)}
       ${d.notes ? `<p>${esc(d.notes)}</p>` : ""}</div>
     </div>`).join("");
-  return `<h2>Destinazioni — voti e foto</h2>
-  <p class="hint">Voto 1–5 indicativo (bozza da guide nautiche, si conferma a bordo — non è lo Shelter Score meteo).
-  Foto georeferenziate da Wikimedia Commons: tocca una foto per autore e licenza.</p>
-  <details><summary>${ds.length} destinazioni, dalla più bella</summary><div class="dests">${cards}</div></details>`;
+  return `<h2>Destinazioni — schede, voti e foto</h2>
+  <p class="hint">Tocca una destinazione per la scheda: gallery, caratteristiche, storia e link.
+  Voto 1–5 indicativo (bozza da guide nautiche, si conferma a bordo — non è lo Shelter Score meteo).</p>
+  <details open><summary>${ds.length} destinazioni, dalla più bella</summary><div class="dests">${cards}</div></details>`;
 }
 
 const myMaps = () => navigator.onLine ? `
@@ -645,13 +680,78 @@ const myMaps = () => navigator.onLine ? `
   <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
     Mappa condivisa, aggiornata in tempo reale — i segnaposto NON sono punti di fonda verificati.</p>` : "";
 
+// ---- schede destinazione (modale) --------------------------------------
+// nome cliccabile → apre la scheda. openDest usa l'hash (#dest-<id>) così il
+// tasto Indietro e Esc chiudono; la scheda è un overlay: il tab sotto resta.
+const destLink = (name, id) => id
+  ? `<a class="dl" onclick="openDest('${id}')">${esc(name)}</a>` : esc(name);
+function openDest(id) { location.hash = "dest-" + id; }
+
+// dati scheda: prima il dettaglio (destinations.json), poi il catalogo come
+// fallback (name/rating/notes/1 foto) → la scheda funziona anche senza il 5° file
+function destData(id) {
+  const d = window.__dests?.entries?.[id];
+  if (d) return d;
+  const c = (window.__prog?.destinations || []).find(x => x.id === id);
+  return c ? { name: c.name, type: c.type, rating: c.rating, verify: c.verify,
+    notes: c.notes, gallery: c.photo ? [c.photo] : [], wiki: null,
+    coords: c.coords || null, shelter: null } : null;
+}
+
+function schedaHTML(id) {
+  const d = destData(id);
+  if (!d) return `<h1>Destinazione</h1><p class="water">Dettagli non disponibili.</p>`;
+  const gal = (d.gallery || []).map(p =>
+    `<a href="${p.page ?? p.src}" target="_blank" rel="noopener"><img loading="lazy" src="${p.src}" alt="${esc(d.name)}" onerror="this.parentNode.remove()"></a>`).join("");
+  const sh = d.shelter, co = d.coords;
+  const facts = [
+    d.type ? `<div class="fact"><b>${esc(d.type)}</b><i>tipo</i></div>` : "",
+    sh?.holding ? `<div class="fact"><b style="font-size:.85rem">${esc(sh.holding)}</b><i>fondo</i></div>` : "",
+    sh?.depth_m ? `<div class="fact"><b>${sh.depth_m[0]}–${sh.depth_m[1]} m</b><i>profondità</i></div>` : "",
+    sh?.exposed_from != null ? `<div class="fact"><b>${comp(sh.exposed_from)}–${comp(sh.exposed_to)}</b><i>esposta a</i></div>` : "",
+    co ? `<div class="fact"><b style="font-size:.8rem">${co[0].toFixed(3)}, ${co[1].toFixed(3)}</b><i>posizione</i></div>` : "",
+  ].filter(Boolean).join("");
+  const maps = co ? `https://www.google.com/maps/search/?api=1&query=${co[0]},${co[1]}` : null;
+  const q = encodeURIComponent(d.name + " ancoraggio");
+  const links = [
+    d.wiki ? `<a href="${d.wiki.url}" target="_blank" rel="noopener">Wikipedia</a>` : "",
+    maps ? `<a href="${maps}" target="_blank" rel="noopener">📍 Google Maps</a>` : "",
+    `<a href="https://www.navily.com/search?q=${encodeURIComponent(d.name)}" target="_blank" rel="noopener">⚓ Navily</a>`,
+    `<a href="https://duckduckgo.com/?q=${q}" target="_blank" rel="noopener">🔍 Cerca sul web</a>`,
+  ].filter(Boolean).join("");
+  return `
+    <h1 class="water">${esc(d.name)}${d.verify ? ' <span class="vflag">⚑</span>' : ""}</h1>
+    <div class="sub">${d.rating != null ? stars(d.rating) : ""}${d.type ? `<span>${esc(d.type)}</span>` : ""}</div>
+    ${gal ? `<div class="gal">${gal}</div>` : ""}
+    ${d.notes ? `<h2>In breve</h2><p class="water" style="font-size:.9rem">${esc(d.notes)}</p>` : ""}
+    ${facts ? `<h2>Caratteristiche</h2><div class="leg"><div class="facts">${facts}</div>
+      ${d.verify ? `<p class="pwarn" style="color:var(--magenta)">⚑ Dati di fonda stimati: verifica su carta nautica.</p>` : ""}</div>` : ""}
+    ${d.wiki ? `<h2>Storia e territorio</h2><div class="storia">${esc(d.wiki.extract)}
+      <span class="src">da Wikipedia (${d.wiki.lang.toUpperCase()}) · <a href="${d.wiki.url}" target="_blank" rel="noopener">apri la voce</a></span></div>` : ""}
+    <h2>Link</h2><div class="linkrow">${links}</div>`;
+}
+
+function showScheda(id) {
+  const box = document.getElementById("scheda");
+  document.getElementById("scheda-in").innerHTML = schedaHTML(id);
+  box.hidden = false;
+  box.querySelector(".sheet").scrollTop = 0;
+}
+function hideScheda() { document.getElementById("scheda").hidden = true; }
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && !document.getElementById("scheda").hidden) history.back();
+});
+
 // ---- hash-router: si renderizza UNA volta, poi si mostra/nasconde (gli
 // iframe non si ricaricano, lo scroll di ogni tab si conserva)
 const TABS = ["oggi", "vento", "mare", "programma"];
 let currentTab = null;
 const scrollMem = {};
 function route() {
-  const t = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "oggi";
+  const h = location.hash.slice(1);
+  if (h.startsWith("dest-")) { showScheda(h.slice(5)); return; }  // overlay: il tab sotto resta
+  hideScheda();
+  const t = TABS.includes(h) ? h : "oggi";
   if (currentTab && currentTab !== t) scrollMem[currentTab] = window.scrollY;
   TABS.forEach(x => {
     document.getElementById("tab-" + x)?.classList.toggle("on", x === t);
@@ -705,12 +805,12 @@ function render(b, wx, c, prog) {
   <h2>Stanotte</h2>
   ${b.leg?.night ? `<p class="water" style="font-size:.95rem">🌙 In navigazione — arrivo all'alba a ${esc(b.leg.leg.split(/ (?:->|→) /)[1] ?? "destinazione")}. Turni di guardia decisi dagli skipper.</p>` :
   t ? `<div class="rada"><div class="dot ${t.light}"></div>
-      <div><h3>${esc(t.name)} ${stars(t.rating)}</h3><p class="water">${esc(t.why)} · fondo ${esc(t.holding)}</p></div>
+      <div><h3>${destLink(t.name, t.id)} ${stars(t.rating)}</h3><p class="water">${esc(t.why)} · fondo ${esc(t.holding)}</p></div>
       ${thumb(t.photo, t.name)}<div class="pts num">${t.score}</div></div>` : `<p>Rada non definita.</p>`}
-  ${pb ? `<div class="b-plan"><b>Piano B</b><span class="water">${esc(pb.name)}</span> — ${esc(pb.why)}.</div>` : ""}
+  ${pb ? `<div class="b-plan"><b>Piano B</b><span class="water">${destLink(pb.name, pb.id)}</span> — ${esc(pb.why)}.</div>` : ""}
   <details><summary>Le altre rade con questo vento</summary>
     ${b.ranked.filter(r => r.id !== t?.id && r.id !== pb?.id).map(r => `<div class="rada"><div class="dot ${r.light}"></div>
-      <div><h3>${esc(r.name)}</h3><p class="water">${esc(r.why)}</p></div>
+      <div><h3>${destLink(r.name, r.id)}</h3><p class="water">${esc(r.why)}</p></div>
       <div class="pts num">${r.score}</div></div>`).join("")}
   </details>
 
@@ -773,12 +873,18 @@ function render(b, wx, c, prog) {
       Se sei in rada senza rete, riapri quando torni sotto copertura. Nel frattempo il meteo ufficiale è su
       <a href="https://www.meteoam.it/it/mare">meteoam.it</a>.</div>`;
   }
-  // il programma esteso e' additivo: se manca (deploy in corso, cache
-  // vecchia) la plancia funziona lo stesso, senza vista 14 giorni
+  // programma esteso e schede dettaglio: additivi e fault-tolerant. Se
+  // mancano (deploy in corso, cache vecchia) la plancia funziona lo stesso —
+  // le schede ripiegano sul catalogo, le viste 14gg si omettono.
   try {
     const r = await fetch("data/program.json", { cache: "no-cache" });
     if (r.ok) prog = await r.json();
   } catch (e) { /* niente programma: fallback in programGrid */ }
+  window.__prog = prog;
+  try {
+    const r = await fetch("data/destinations.json", { cache: "no-cache" });
+    if (r.ok) window.__dests = await r.json();
+  } catch (e) { /* niente schede dettaglio: fallback al catalogo */ }
   if (data) try {
     window.__astro = data[1]?.astro;
     applyTheme();
