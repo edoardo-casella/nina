@@ -1,0 +1,905 @@
+{
+  "areas": [
+    {
+      "id": "med-italia",
+      "name": "Mediterraneo – Italia",
+      "color": "#0A7A43"
+    },
+    {
+      "id": "med-est",
+      "name": "Mediterraneo – Est e Adriatico",
+      "color": "#0E8FA8"
+    },
+    {
+      "id": "med-ovest",
+      "name": "Mediterraneo – Ovest",
+      "color": "#3E7CB1"
+    },
+    {
+      "id": "atl-nord",
+      "name": "Atlantico – Nord Europa",
+      "color": "#5B6BB5"
+    },
+    {
+      "id": "atl-isole",
+      "name": "Atlantico – Isole e traversate",
+      "color": "#8A5AA8"
+    },
+    {
+      "id": "caraibi",
+      "name": "Caraibi",
+      "color": "#C2185B"
+    },
+    {
+      "id": "pacifico",
+      "name": "Pacifico e Oceania",
+      "color": "#E07A1F"
+    },
+    {
+      "id": "indiano",
+      "name": "Oceano Indiano e Mar Rosso",
+      "color": "#C69214"
+    },
+    {
+      "id": "avventura",
+      "name": "Alte latitudini e avventura",
+      "color": "#5A7D8C"
+    }
+  ],
+  "mete": [
+    {
+      "id": "maddalena",
+      "n": 1,
+      "area": "med-italia",
+      "name": "Arcipelago della Maddalena (Sardegna)",
+      "lat": 41.22,
+      "lon": 9.42,
+      "done": true,
+      "trip_ids": [
+        "alba",
+        "enya",
+        "silkwave"
+      ]
+    },
+    {
+      "id": "bonifacio",
+      "n": 2,
+      "area": "med-italia",
+      "name": "Bocche di Bonifacio",
+      "lat": 41.32,
+      "lon": 9.25,
+      "done": true,
+      "trip_ids": [
+        "alba",
+        "enya"
+      ]
+    },
+    {
+      "id": "orosei",
+      "n": 3,
+      "area": "med-italia",
+      "name": "Golfo di Orosei (Sardegna)",
+      "lat": 40.15,
+      "lon": 9.65,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "costa-smeralda",
+      "n": 4,
+      "area": "med-italia",
+      "name": "Costa Smeralda",
+      "lat": 41.13,
+      "lon": 9.53,
+      "done": true,
+      "trip_ids": [
+        "silkwave",
+        "alba",
+        "enya"
+      ]
+    },
+    {
+      "id": "toscano-elba",
+      "n": 5,
+      "area": "med-italia",
+      "name": "Arcipelago Toscano / Isola d'Elba",
+      "lat": 42.78,
+      "lon": 10.28,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "portofino",
+      "n": 6,
+      "area": "med-italia",
+      "name": "Portofino e Golfo del Tigullio",
+      "lat": 44.3,
+      "lon": 9.21,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "pontine",
+      "n": 7,
+      "area": "med-italia",
+      "name": "Isole Pontine (Ponza, Palmarola, Ventotene)",
+      "lat": 40.9,
+      "lon": 12.96,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "napoli-capri",
+      "n": 8,
+      "area": "med-italia",
+      "name": "Golfo di Napoli, Capri e Ischia",
+      "lat": 40.55,
+      "lon": 14.24,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "amalfi",
+      "n": 9,
+      "area": "med-italia",
+      "name": "Costiera Amalfitana",
+      "lat": 40.63,
+      "lon": 14.6,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "eolie",
+      "n": 10,
+      "area": "med-italia",
+      "name": "Isole Eolie",
+      "lat": 38.55,
+      "lon": 14.87,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "egadi",
+      "n": 11,
+      "area": "med-italia",
+      "name": "Isole Egadi",
+      "lat": 37.93,
+      "lon": 12.33,
+      "done": true,
+      "trip_ids": [
+        "mars-planet",
+        "isla"
+      ]
+    },
+    {
+      "id": "pantelleria-lampedusa",
+      "n": 12,
+      "area": "med-italia",
+      "name": "Pantelleria e Lampedusa",
+      "lat": 36.78,
+      "lon": 12.02,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "corsica-ovest",
+      "n": 13,
+      "area": "med-est",
+      "name": "Corsica occidentale (Scandola, Girolata)",
+      "lat": 42.35,
+      "lon": 8.62,
+      "done": true,
+      "trip_ids": [
+        "alba",
+        "enya"
+      ]
+    },
+    {
+      "id": "kornati",
+      "n": 14,
+      "area": "med-est",
+      "name": "Croazia – Kornati",
+      "lat": 43.8,
+      "lon": 15.35,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "dalmazia",
+      "n": 15,
+      "area": "med-est",
+      "name": "Croazia – Dalmazia centrale (Hvar, Vis, Brač)",
+      "lat": 43.17,
+      "lon": 16.45,
+      "done": true,
+      "trip_ids": [
+        "camelia",
+        "ondine"
+      ]
+    },
+    {
+      "id": "dubrovnik",
+      "n": 16,
+      "area": "med-est",
+      "name": "Croazia – Dubrovnik ed Elafiti",
+      "lat": 42.65,
+      "lon": 18.09,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "istria-kvarner",
+      "n": 17,
+      "area": "med-est",
+      "name": "Croazia – Istria e Kvarner",
+      "lat": 44.87,
+      "lon": 14.2,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "cattaro",
+      "n": 18,
+      "area": "med-est",
+      "name": "Montenegro – Bocche di Cattaro",
+      "lat": 42.43,
+      "lon": 18.69,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "cicladi",
+      "n": 19,
+      "area": "med-est",
+      "name": "Grecia – Cicladi",
+      "lat": 37.05,
+      "lon": 25.15,
+      "done": true,
+      "trip_ids": [
+        "nemo",
+        "natfika",
+        "stephanie",
+        "capitan-nikos",
+        "alexandros"
+      ]
+    },
+    {
+      "id": "ionie",
+      "n": 20,
+      "area": "med-est",
+      "name": "Grecia – Ionie (Lefkada, Itaca, Cefalonia)",
+      "lat": 38.4,
+      "lon": 20.55,
+      "done": true,
+      "trip_ids": [
+        "showtime"
+      ]
+    },
+    {
+      "id": "dodecaneso",
+      "n": 21,
+      "area": "med-est",
+      "name": "Grecia – Dodecaneso",
+      "lat": 36.9,
+      "lon": 27.3,
+      "done": true,
+      "trip_ids": [
+        "stephanie",
+        "klaudia"
+      ]
+    },
+    {
+      "id": "sporadi-saronico",
+      "n": 22,
+      "area": "med-est",
+      "name": "Grecia – Sporadi e Golfo Saronico",
+      "lat": 39.2,
+      "lon": 23.75,
+      "done": true,
+      "trip_ids": [
+        "anax",
+        "all-in"
+      ]
+    },
+    {
+      "id": "licia",
+      "n": 23,
+      "area": "med-est",
+      "name": "Turchia – costa licia (Göcek, Fethiye, Kekova)",
+      "lat": 36.55,
+      "lon": 29.3,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "malta",
+      "n": 24,
+      "area": "med-est",
+      "name": "Malta, Gozo e Comino",
+      "lat": 36.0,
+      "lon": 14.35,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "ibiza-formentera",
+      "n": 25,
+      "area": "med-ovest",
+      "name": "Baleari – Ibiza e Formentera",
+      "lat": 38.85,
+      "lon": 1.35,
+      "done": true,
+      "trip_ids": [
+        "cubalibre",
+        "blue-bird",
+        "trocha",
+        "aquarela",
+        "invitation",
+        "challenger"
+      ]
+    },
+    {
+      "id": "menorca-mallorca",
+      "n": 26,
+      "area": "med-ovest",
+      "name": "Baleari – Menorca e Mallorca",
+      "lat": 39.7,
+      "lon": 3.2,
+      "done": true,
+      "trip_ids": [
+        "cubalibre",
+        "blue-bird",
+        "trocha",
+        "aquarela",
+        "invitation",
+        "challenger"
+      ]
+    },
+    {
+      "id": "costa-brava",
+      "n": 27,
+      "area": "med-ovest",
+      "name": "Costa Brava e Cap de Creus (Spagna)",
+      "lat": 42.3,
+      "lon": 3.3,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "costa-azzurra",
+      "n": 28,
+      "area": "med-ovest",
+      "name": "Costa Azzurra (Saint-Tropez, Lérins, Porquerolles)",
+      "lat": 43.1,
+      "lon": 6.4,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "sicilia-nw",
+      "n": 29,
+      "area": "med-ovest",
+      "name": "Sicilia nord-occidentale (Golfo di Castellammare, San Vito)",
+      "lat": 38.15,
+      "lon": 12.75,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "tunisia-kerkennah",
+      "n": 30,
+      "area": "med-ovest",
+      "name": "Tunisia / Kerkennah",
+      "lat": 34.7,
+      "lon": 11.2,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "bretagna",
+      "n": 31,
+      "area": "atl-nord",
+      "name": "Bretagna e Golfo del Morbihan",
+      "lat": 47.55,
+      "lon": -2.8,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "channel",
+      "n": 32,
+      "area": "atl-nord",
+      "name": "Isole del Canale (Channel Islands)",
+      "lat": 49.35,
+      "lon": -2.35,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "scilly-cornovaglia",
+      "n": 33,
+      "area": "atl-nord",
+      "name": "Isole Scilly e Cornovaglia",
+      "lat": 49.95,
+      "lon": -6.3,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "ebridi",
+      "n": 34,
+      "area": "atl-nord",
+      "name": "Scozia – Ebridi Interne ed Esterne",
+      "lat": 57.3,
+      "lon": -6.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "fiordi-norvegia",
+      "n": 35,
+      "area": "atl-nord",
+      "name": "Norvegia – fiordi occidentali",
+      "lat": 61.2,
+      "lon": 6.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "lofoten",
+      "n": 36,
+      "area": "atl-nord",
+      "name": "Isole Lofoten",
+      "lat": 68.2,
+      "lon": 13.6,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "stoccolma",
+      "n": 37,
+      "area": "atl-nord",
+      "name": "Arcipelago di Stoccolma",
+      "lat": 59.35,
+      "lon": 18.8,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "baltico",
+      "n": 38,
+      "area": "atl-nord",
+      "name": "Mar Baltico (Danimarca, Åland)",
+      "lat": 60.1,
+      "lon": 20.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "canarie",
+      "n": 39,
+      "area": "atl-isole",
+      "name": "Canarie",
+      "lat": 28.3,
+      "lon": -16.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "madeira",
+      "n": 40,
+      "area": "atl-isole",
+      "name": "Madeira",
+      "lat": 32.75,
+      "lon": -16.95,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "azzorre",
+      "n": 41,
+      "area": "atl-isole",
+      "name": "Azzorre",
+      "lat": 38.55,
+      "lon": -28.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "capo-verde",
+      "n": 42,
+      "area": "atl-isole",
+      "name": "Capo Verde",
+      "lat": 16.0,
+      "lon": -24.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "gibilterra",
+      "n": 43,
+      "area": "atl-isole",
+      "name": "Stretto di Gibilterra",
+      "lat": 36.0,
+      "lon": -5.6,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "arc",
+      "n": 44,
+      "area": "atl-isole",
+      "name": "Traversata atlantica ARC (Canarie → Caraibi)",
+      "lat": 20.0,
+      "lon": -40.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "bvi",
+      "n": 45,
+      "area": "caraibi",
+      "name": "Isole Vergini Britanniche (BVI)",
+      "lat": 18.43,
+      "lon": -64.62,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "grenadine",
+      "n": 46,
+      "area": "caraibi",
+      "name": "Grenadine",
+      "lat": 12.9,
+      "lon": -61.2,
+      "done": true,
+      "trip_ids": [
+        "sorbe"
+      ]
+    },
+    {
+      "id": "antigua",
+      "n": 47,
+      "area": "caraibi",
+      "name": "Antigua e Barbuda",
+      "lat": 17.1,
+      "lon": -61.8,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "st-martin-barth",
+      "n": 48,
+      "area": "caraibi",
+      "name": "Saint-Martin e Saint-Barth",
+      "lat": 18.05,
+      "lon": -63.05,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "martinica-guadalupa",
+      "n": 49,
+      "area": "caraibi",
+      "name": "Martinica e Guadalupa",
+      "lat": 15.5,
+      "lon": -61.3,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "bahamas-exuma",
+      "n": 50,
+      "area": "caraibi",
+      "name": "Bahamas – Exuma",
+      "lat": 24.2,
+      "lon": -76.4,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "san-blas",
+      "n": 51,
+      "area": "caraibi",
+      "name": "San Blas (Panama)",
+      "lat": 9.55,
+      "lon": -78.8,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "belize",
+      "n": 52,
+      "area": "caraibi",
+      "name": "Belize – barriera corallina",
+      "lat": 17.2,
+      "lon": -87.9,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "cuba",
+      "n": 53,
+      "area": "caraibi",
+      "name": "Cuba",
+      "lat": 21.9,
+      "lon": -79.5,
+      "done": true,
+      "trip_ids": [
+        "lohengrin"
+      ]
+    },
+    {
+      "id": "grenada-tobago",
+      "n": 54,
+      "area": "caraibi",
+      "name": "Grenada e Tobago Cays",
+      "lat": 12.1,
+      "lon": -61.35,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "societa",
+      "n": 55,
+      "area": "pacifico",
+      "name": "Polinesia Francese – Isole della Società (Bora Bora, Moorea)",
+      "lat": -16.8,
+      "lon": -151.4,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "tuamotu",
+      "n": 56,
+      "area": "pacifico",
+      "name": "Polinesia Francese – Tuamotu (atolli)",
+      "lat": -16.0,
+      "lon": -145.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "marchesi",
+      "n": 57,
+      "area": "pacifico",
+      "name": "Polinesia Francese – Marchesi",
+      "lat": -9.0,
+      "lon": -139.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "tonga",
+      "n": 58,
+      "area": "pacifico",
+      "name": "Tonga – Vava'u",
+      "lat": -18.65,
+      "lon": -173.98,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "fiji",
+      "n": 59,
+      "area": "pacifico",
+      "name": "Fiji",
+      "lat": -17.8,
+      "lon": 178.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "cook",
+      "n": 60,
+      "area": "pacifico",
+      "name": "Isole Cook",
+      "lat": -21.2,
+      "lon": -159.75,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "nuova-caledonia",
+      "n": 61,
+      "area": "pacifico",
+      "name": "Nuova Caledonia",
+      "lat": -22.0,
+      "lon": 166.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "whitsundays",
+      "n": 62,
+      "area": "pacifico",
+      "name": "Whitsundays e Grande Barriera Corallina (Australia)",
+      "lat": -20.25,
+      "lon": 149.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "bay-of-islands",
+      "n": 63,
+      "area": "pacifico",
+      "name": "Nuova Zelanda – Bay of Islands",
+      "lat": -35.2,
+      "lon": 174.1,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "hawaii",
+      "n": 64,
+      "area": "pacifico",
+      "name": "Hawaii",
+      "lat": 20.8,
+      "lon": -156.3,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "seychelles",
+      "n": 65,
+      "area": "indiano",
+      "name": "Seychelles",
+      "lat": -4.65,
+      "lon": 55.47,
+      "done": true,
+      "trip_ids": [
+        "cari"
+      ]
+    },
+    {
+      "id": "maldive",
+      "n": 66,
+      "area": "indiano",
+      "name": "Maldive",
+      "lat": 3.2,
+      "lon": 73.2,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "thailandia-andamane",
+      "n": 67,
+      "area": "indiano",
+      "name": "Thailandia – Phang Nga e Andamane",
+      "lat": 8.0,
+      "lon": 98.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "raja-ampat",
+      "n": 68,
+      "area": "indiano",
+      "name": "Indonesia – Raja Ampat",
+      "lat": -0.5,
+      "lon": 130.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "komodo",
+      "n": 69,
+      "area": "indiano",
+      "name": "Indonesia – Komodo",
+      "lat": -8.55,
+      "lon": 119.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "mar-rosso",
+      "n": 70,
+      "area": "indiano",
+      "name": "Mar Rosso (Egitto, Sudan)",
+      "lat": 24.0,
+      "lon": 35.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "musandam",
+      "n": 71,
+      "area": "indiano",
+      "name": "Oman – Musandam",
+      "lat": 26.3,
+      "lon": 56.3,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "patagonia",
+      "n": 72,
+      "area": "avventura",
+      "name": "Patagonia e canali cileni",
+      "lat": -50.5,
+      "lon": -74.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "capo-horn",
+      "n": 73,
+      "area": "avventura",
+      "name": "Capo Horn – il doppiaggio",
+      "lat": -55.98,
+      "lon": -67.27,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "penisola-antartica",
+      "n": 74,
+      "area": "avventura",
+      "name": "Penisola Antartica",
+      "lat": -64.5,
+      "lon": -61.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "georgia-sud",
+      "n": 75,
+      "area": "avventura",
+      "name": "Georgia del Sud",
+      "lat": -54.3,
+      "lon": -36.8,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "groenlandia",
+      "n": 76,
+      "area": "avventura",
+      "name": "Groenlandia occidentale",
+      "lat": 69.2,
+      "lon": -51.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "islanda",
+      "n": 77,
+      "area": "avventura",
+      "name": "Islanda",
+      "lat": 64.9,
+      "lon": -19.0,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "svalbard",
+      "n": 78,
+      "area": "avventura",
+      "name": "Svalbard / Spitsbergen",
+      "lat": 78.2,
+      "lon": 15.6,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "galapagos",
+      "n": 79,
+      "area": "avventura",
+      "name": "Galápagos",
+      "lat": -0.6,
+      "lon": -90.5,
+      "done": false,
+      "trip_ids": []
+    },
+    {
+      "id": "nord-ovest",
+      "n": 80,
+      "area": "avventura",
+      "name": "Passaggio a Nord-Ovest",
+      "lat": 74.0,
+      "lon": -95.0,
+      "done": false,
+      "trip_ids": []
+    }
+  ]
+}

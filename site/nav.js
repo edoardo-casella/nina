@@ -8,6 +8,7 @@
     ["aneddoti.html", "Aneddoti", "📖"],
     ["viaggio.html", "I viaggi", "⛵"],
     ["paese.html", "I mari", "🌍"],
+    ["mete.html", "Le mete", "🗺️"],
     ["membro.html", "La ciurma", "👥"],
     ["arrivi.html", "Arrivi & partenze", "🛟"],
     ["barca.html", "La barca", "🛥️"],
