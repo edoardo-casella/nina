@@ -131,6 +131,7 @@ main>section.on{display:block}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
 .pgrid .day{display:flex;flex-direction:column;gap:.18rem}
 .pgrid .day span{font-size:.72rem}
+.pgrid .day .pstop{cursor:pointer;border-bottom:1px dotted currentColor}
 .day.piena{border-top-color:var(--accent)}
 .day.degradata{border-top-color:var(--giallo)}
 .day.programma{border-top-color:var(--hair);opacity:.62}
@@ -679,6 +680,20 @@ function tappeTimeline(b) {
   return `<h2>Le tappe di oggi · <span class="num" style="text-transform:none">${b.day_nm ?? "—"} nm</span></h2><div class="tl">${rows}</div>`;
 }
 
+// Quote monetarie nascoste per ora — rimetti SHOW_CONTI a true per riattivare i "Conti".
+const SHOW_CONTI = false;
+function contiCard(c) {
+  if (!SHOW_CONTI || !c) return "";
+  return `<h2>Conti</h2>
+  <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora</summary>
+    <table><thead><tr><th>Nome</th><th>Notti</th><th>Quota</th></tr></thead><tbody>
+      ${c.per_person.map(p => `<tr><td>${esc(p.name)}</td><td>${p.nights}</td><td>${Math.round(p.total)} €</td></tr>`).join("")}
+    </tbody></table>
+    ${c.transfers.length ? `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Per pareggiare:</p>
+      <table><tbody>${c.transfers.map(t => `<tr><td>${esc(t.from)} → ${esc(t.to)}</td><td>${t.amount.toFixed(2)} €</td></tr>`).join("")}</tbody></table>` : ""}
+  </details>`;
+}
+
 // ---- programma a due settimane, con fascia di affidabilità per giorno
 function programGrid(prog) {
   if (!prog?.days?.length) return `<h2>Programma — 2 settimane</h2>
@@ -686,7 +701,10 @@ function programGrid(prog) {
   const tiers = prog.tiers || {};
   const cells = prog.days.map(d => {
     const wd = new Date(d.date + "T12:00").toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" });
-    const route = d.rest ? `Sosta — ${esc(d.to)}` : `${esc(d.frm)} → ${esc(d.to)}`;
+    const stop = (name, id) => id ? `<span class="pstop" onclick="event.stopPropagation();openDest('${id}')">${esc(name)}</span>` : esc(name);
+    const route = d.rest
+      ? `Sosta — ${stop(d.to, d.to_id)}`
+      : [esc(d.frm), ...((d.tappe && d.tappe.length) ? d.tappe.map(t => stop(t.to, t.to_id)) : [stop(d.to, d.to_id)])].join(" → ");
     const wxLine = d.wx
       ? `<span style="font-style:normal">${wmoIcon(d.wx.wmo)} ${Math.round(d.wx.tmax)}° · <b class="num">${Math.round(d.wx.wind_max)}</b> kn ${comp(d.wx.wind_dir)}${d.wx.synthetic ? " · sint." : ""}</span>`
       : `<span style="font-style:normal;opacity:.75">— nessuna previsione</span>`;
@@ -695,11 +713,10 @@ function programGrid(prog) {
     const cd = d.crew_delta || {};
     const crew = (cd.on?.length || cd.off?.length)
       ? `<span style="font-style:normal;color:var(--warmtx);font-weight:600">equipaggio${cd.on?.length ? ` +${cd.on.length}` : ""}${cd.off?.length ? ` −${cd.off.length}` : ""}</span>` : "";
-    const dots = d.n_tappe > 1 ? ` <span style="color:var(--accent);letter-spacing:.1em">${"●".repeat(Math.min(d.n_tappe, 3))}</span>` : "";
     return `<div class="day ${d.tier}" title="${esc(tiers[d.tier] ?? "")} — tocca per la scheda"
       ${d.to_id ? `onclick="openDest('${d.to_id}')" style="cursor:pointer"` : ""}>
-      <em>${wd}${d.night ? " 🌙" : ""}</em>
-      <strong>${d.nm}<span style="font-size:.7rem"> nm</span>${dots}</strong>
+      <em>${wd}${d.night ? " 🌙" : ""}${d.n_tappe > 1 ? ` · ${d.n_tappe} tappe` : ""}</em>
+      <strong>${d.nm}<span style="font-size:.7rem"> nm</span></strong>
       <span class="water">${route}</span>
       ${d.rating != null ? `<span style="font-style:normal">${stars(d.rating)}</span>` : ""}
       ${wxLine}${waveLine}${sstLine}${crew}</div>`;
@@ -710,7 +727,7 @@ function programGrid(prog) {
     <span><b style="color:var(--accent)">▔</b> previsione piena (≤7 gg)</span>
     <span><b style="color:var(--giallo)">▔</b> ridotta (8–10 gg)</span>
     <span><b style="color:var(--soft)">▔</b> solo programma</span>
-    <span>● = tappe del giorno</span>
+    <span>Tocca una tappa per aprirne la scheda</span>
   </div>
   ${prog.days.some(d => d.tier === "programma") ? `<p class="vflag" style="margin-top:.5rem;font-size:.8rem">Oltre ~10 giorni: solo programma, nessuna previsione affidabile.</p>` : ""}`;
 }
@@ -951,14 +968,7 @@ function render(b, wx, c, prog) {
   ${astroCard(wx.astro, b.day)}
   ${crewBlock(b)}
 
-  <h2>Conti</h2>
-  <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora</summary>
-    <table><thead><tr><th>Nome</th><th>Notti</th><th>Quota</th></tr></thead><tbody>
-      ${c.per_person.map(p => `<tr><td>${esc(p.name)}</td><td>${p.nights}</td><td>${Math.round(p.total)} €</td></tr>`).join("")}
-    </tbody></table>
-    ${c.transfers.length ? `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Per pareggiare:</p>
-      <table><tbody>${c.transfers.map(t => `<tr><td>${esc(t.from)} → ${esc(t.to)}</td><td>${t.amount.toFixed(2)} €</td></tr>`).join("")}</tbody></table>` : ""}
-  </details>`;
+  ${contiCard(c)}`;
 
   const vento = `
   <h2>Vento — 48 ore</h2>
