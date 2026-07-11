@@ -105,8 +105,37 @@
         "Bernardo B.",
         "Martina R."
       ],
-      "n_photos": 0,
-      "photos": [],
+      "n_photos": 4,
+      "photos": [
+        {
+          "src": "trips/img/natfika/01.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia Cicladi 2012"
+        },
+        {
+          "src": "trips/img/natfika/02.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia Cicladi 2012"
+        },
+        {
+          "src": "trips/img/natfika/03.jpg",
+          "w": 956,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2012"
+        },
+        {
+          "src": "trips/img/natfika/04.jpg",
+          "w": 720,
+          "h": 495,
+          "people": [],
+          "caption": "Grecia Cicladi 2012"
+        }
+      ],
       "story": {
         "title": "Meltemi fino a Santorini",
         "html": "<a class='plink' href='membro.html#bernardo-b'>Bernardo</a> ed Edo accompagnano <a class='plink' href='membro.html#mirco-l'>Mirco L.</a> in una vacanza col <b>Meltemi</b> a tutta forza: da Mykonos giù fino a <b>Santorini</b>, andata e ritorno, con la barca piegatissima e vento importante. Più di una volta i due salvano l'ormeggio &mdash; soprattutto in porto, dove le raffiche non perdonano."
@@ -130,8 +159,57 @@
         "Margherita C.",
         "Matilde C."
       ],
-      "n_photos": 0,
-      "photos": [],
+      "n_photos": 6,
+      "photos": [
+        {
+          "src": "trips/img/stephanie/01.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [
+            "bernardo-b",
+            "edo-c"
+          ],
+          "caption": "Grecia Cicladi-Dodecaneso 2012"
+        },
+        {
+          "src": "trips/img/stephanie/02.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [
+            "claudio-c",
+            "gabriele-b"
+          ],
+          "caption": "Grecia Cicladi-Dodecaneso 2012"
+        },
+        {
+          "src": "trips/img/stephanie/03.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia Cicladi-Dodecaneso 2012"
+        },
+        {
+          "src": "trips/img/stephanie/04.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia Cicladi-Dodecaneso 2012"
+        },
+        {
+          "src": "trips/img/stephanie/05.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia Cicladi-Dodecaneso 2012"
+        },
+        {
+          "src": "trips/img/stephanie/06.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia Cicladi-Dodecaneso 2012"
+        }
+      ],
       "story": {
         "title": "Bodrum e la pietra di Kalymnos",
         "html": "Grecia e Turchia con <a class='plink' href='membro.html#gabriele-b'>Gabriele B.</a> di nuovo guida spirituale e <a class='plink' href='membro.html#bernardo-b'>Bernardo</a> a bordo: sailing più deciso, perché qui il vento c'è. Si parte da <b>Bodrum</b>, un problema tecnico ai motori e un piccolo incidente in rada a <b>Kalymnos</b>: <a class='plink' href='membro.html#claudio-c'>Claudio C.</a> lega l'ormeggio a terra a una pietra&hellip; che decide di franare, facendo cedere tutto. Il vento forte mette alla prova l'equipaggio, che comunque ne esce."
@@ -339,10 +417,17 @@
         "A.",
         "A."
       ],
-      "n_photos": 1,
+      "n_photos": 2,
       "photos": [
         {
           "src": "trips/img/aquarela/01.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/02.jpg",
           "w": 1280,
           "h": 720,
           "people": [],
@@ -571,13 +656,22 @@
         "L.",
         "Nicola R."
       ],
-      "n_photos": 1,
+      "n_photos": 2,
       "photos": [
         {
           "src": "trips/img/ondine/01.jpg",
           "w": 1280,
           "h": 1189,
           "people": [],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/02.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [
+            "edo-c"
+          ],
           "caption": "Croazia 2018"
         }
       ],
@@ -637,7 +731,7 @@
         "Giorgio M.",
         "Giacomo B."
       ],
-      "n_photos": 3,
+      "n_photos": 15,
       "photos": [
         {
           "src": "trips/img/alba/01.jpg",
@@ -671,6 +765,113 @@
             "matilde-r"
           ],
           "caption": "Sardegna 2020"
+        },
+        {
+          "src": "trips/img/alba/04.jpg",
+          "w": 1276,
+          "h": 956,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/05.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/06.jpg",
+          "w": 956,
+          "h": 1276,
+          "people": [
+            "edo-c"
+          ],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/07.jpg",
+          "w": 956,
+          "h": 1276,
+          "people": [
+            "edo-c"
+          ],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/08.jpg",
+          "w": 956,
+          "h": 1276,
+          "people": [
+            "edo-c"
+          ],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/09.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/10.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [
+            "leonardo-m",
+            "edo-c"
+          ],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/11.jpg",
+          "w": 956,
+          "h": 1276,
+          "people": [
+            "leonardo-m",
+            "edo-c"
+          ],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/12.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [
+            "leonardo-m",
+            "edo-c"
+          ],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/13.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [
+            "leonardo-m"
+          ],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/14.jpg",
+          "w": 1276,
+          "h": 956,
+          "people": [
+            "sara-b",
+            "alice-s"
+          ],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/15.jpg",
+          "w": 1276,
+          "h": 956,
+          "people": [
+            "sergio-s",
+            "beatrice-f"
+          ],
+          "caption": "Sardegna-Corsica 2020"
         }
       ],
       "story": {
@@ -732,7 +933,7 @@
         "Sofia M.",
         "Jennifer S."
       ],
-      "n_photos": 1,
+      "n_photos": 5,
       "photos": [
         {
           "src": "trips/img/enya/01.jpg",
@@ -740,6 +941,34 @@
           "h": 853,
           "people": [],
           "caption": "Corsica 2021"
+        },
+        {
+          "src": "trips/img/enya/02.jpg",
+          "w": 1024,
+          "h": 1280,
+          "people": [],
+          "caption": "Corsica-Sardegna 2021"
+        },
+        {
+          "src": "trips/img/enya/03.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Corsica-Sardegna 2021"
+        },
+        {
+          "src": "trips/img/enya/04.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Corsica-Sardegna 2021"
+        },
+        {
+          "src": "trips/img/enya/05.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Corsica-Sardegna 2021"
         }
       ],
       "story": {
@@ -1106,7 +1335,7 @@
         "Angela K.",
         "Bernardo B."
       ],
-      "n_photos": 2,
+      "n_photos": 4,
       "photos": [
         {
           "src": "trips/img/alexandros/01.jpg",
@@ -1121,6 +1350,20 @@
           "h": 1280,
           "people": [],
           "caption": "Grecia 2024"
+        },
+        {
+          "src": "trips/img/alexandros/03.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2024"
+        },
+        {
+          "src": "trips/img/alexandros/04.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2024"
         }
       ],
       "story": {

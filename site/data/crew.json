@@ -263,6 +263,11 @@
      "caption": "Croazia 2011"
     },
     {
+     "src": "trips/img/stephanie/01.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
+    },
+    {
      "src": "trips/img/cubalibre/01.jpg",
      "trip_id": "cubalibre",
      "caption": "Spagna 2014"
@@ -308,6 +313,11 @@
      "caption": "Grenadine 2017"
     },
     {
+     "src": "trips/img/ondine/02.jpg",
+     "trip_id": "ondine",
+     "caption": "Croazia 2018"
+    },
+    {
      "src": "trips/img/alba/01.jpg",
      "trip_id": "alba",
      "caption": "Sardegna 2020"
@@ -316,6 +326,36 @@
      "src": "trips/img/alba/02.jpg",
      "trip_id": "alba",
      "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/alba/06.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    },
+    {
+     "src": "trips/img/alba/07.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    },
+    {
+     "src": "trips/img/alba/08.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    },
+    {
+     "src": "trips/img/alba/10.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    },
+    {
+     "src": "trips/img/alba/11.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    },
+    {
+     "src": "trips/img/alba/12.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
     },
     {
      "src": "trips/img/silkwave/01.jpg",
@@ -738,6 +778,11 @@
      "src": "trips/img/camelia/02.jpg",
      "trip_id": "camelia",
      "caption": "Croazia 2011"
+    },
+    {
+     "src": "trips/img/stephanie/02.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
     }
    ],
    "bio": {
@@ -1016,6 +1061,11 @@
     "photo": "crew/img/bernardo-b.jpg"
    },
    "photos": [
+    {
+     "src": "trips/img/stephanie/01.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
+    },
     {
      "src": "trips/img/isla/01.jpg",
      "trip_id": "isla",
@@ -1397,6 +1447,11 @@
      "src": "trips/img/camelia/02.jpg",
      "trip_id": "camelia",
      "caption": "Croazia 2011"
+    },
+    {
+     "src": "trips/img/stephanie/02.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
     }
    ],
    "companions": [
@@ -1523,6 +1578,26 @@
      "src": "trips/img/alba/03.jpg",
      "trip_id": "alba",
      "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/alba/10.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    },
+    {
+     "src": "trips/img/alba/11.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    },
+    {
+     "src": "trips/img/alba/12.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    },
+    {
+     "src": "trips/img/alba/13.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
     },
     {
      "src": "trips/img/silkwave/01.jpg",
@@ -3485,6 +3560,13 @@
      "days": 20
     }
    ],
+   "photos": [
+    {
+     "src": "trips/img/alba/14.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    }
+   ],
    "companions": [
     {
      "id": "cecilia-r",
@@ -4329,6 +4411,11 @@
      "src": "trips/img/alba/03.jpg",
      "trip_id": "alba",
      "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/alba/14.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
     }
    ],
    "companions": [
@@ -4390,6 +4477,13 @@
      "days": 20
     }
    ],
+   "photos": [
+    {
+     "src": "trips/img/alba/15.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
+    }
+   ],
    "companions": [
     {
      "id": "cecilia-r",
@@ -4447,6 +4541,13 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/alba/15.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
     }
    ],
    "companions": [
