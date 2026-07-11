@@ -15,8 +15,15 @@ data/*.xls
 data/*.local.*
 
 # Foto originali dello skipper (59 MB, RAW inclusi): nel repo vanno solo le
-# versioni web ridimensionate in site/skipper/img/
+# versioni web ridimensionate in site/skipper/img/ e site/crew/img/
 data/Skipper Images/
+
+# Liste equipaggio e documenti personali (nomi completi, passaporti, DOB):
+# MAI nel repo pubblico. Nel sito vanno solo iniziali e foto ridotte.
+data/Crewlists/
+data/*.pdf
+data/*.docx
+data/*.doc
 
 # OS
 .DS_Store
