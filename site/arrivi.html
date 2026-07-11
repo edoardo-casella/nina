@@ -66,10 +66,12 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .note{background:var(--sea-1);border:1px dashed var(--hair);border-radius:4px;padding:.85rem 1rem;font-size:.86rem;color:var(--soft);margin-top:1rem}
 /* roster ciurma — veterani & matricole */
 .rintro{color:var(--soft);font-size:.9rem;margin-bottom:1rem}
-.rmember{display:flex;align-items:center;gap:.6rem;padding:.55rem 0;border-bottom:1px solid var(--hair)}
+.rmember{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-bottom:1px solid var(--hair);text-decoration:none;color:inherit}
 .rmember:last-child{border-bottom:0}
-.rdot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
-.rdot.skip{background:var(--gold)} .rdot.mar{background:var(--verde)}
+a.rmember:hover .rname{color:var(--accent)}
+.rav{width:36px;height:36px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2)}
+.rav.ph{display:flex;align-items:center;justify-content:center;font:700 1rem/1 var(--display);color:#fff;background:var(--accent)}
+.rgo{color:var(--soft);font-weight:400}
 .rmid{flex:1;min-width:0}
 .rname{font-size:.92rem;font-weight:600}
 .rname em{font:700 .54rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-left:.35rem}
@@ -116,12 +118,12 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 // x = volte già in barca con Edoardo (dal registro storico); fy = primo anno.
 // I nickname non trovati nel registro storico valgono come "prima volta".
 const CREW = [
-  {n:"Giacomo N",b:"2026-08-08",l:"2026-08-17",r:"crew",x:5,fy:2021},
+  {n:"Giacomo N",b:"2026-08-08",l:"2026-08-17",r:"crew",x:5,fy:2021,p:"crew/img/giacomo-n.jpg"},
   {n:"Mati M",b:"2026-08-08",l:"2026-08-17",r:"crew",x:0},
   {n:"Bernardo B",b:"2026-08-08",l:"2026-08-21",r:"skipper",x:9,fy:2011},
   {n:"Bianca B",b:"2026-08-08",l:"2026-08-21",r:"crew",x:0},
   {n:"Edo C",b:"2026-08-08",l:"2026-08-29",r:"skipper",x:25,fy:2011},
-  {n:"Ginevra L",b:"2026-08-08",l:"2026-08-29",r:"crew",x:4,fy:2022},
+  {n:"Ginevra L",b:"2026-08-08",l:"2026-08-29",r:"crew",x:4,fy:2022,p:"crew/img/ginevra-l.jpg"},
   {n:"Davide",b:"2026-08-15",l:"2026-08-22",r:"crew",x:0},
   {n:"Manlio",b:"2026-08-15",l:"2026-08-22",r:"crew",x:0},
   {n:"Fede B",b:"2026-08-15",l:"2026-08-29",r:"crew",x:1,fy:2023},
@@ -182,6 +184,9 @@ document.getElementById("gantt").innerHTML = CREW.map(m => {
 
 // roster: la ciurma per anzianità (veterani prima), badge volte a bordo
 const dshort = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
+const slug = n => n.toLowerCase().replace(/\s+/g, "-");
+const mhref = m => m.n.startsWith("Edo ") ? "skipper.html" : `membro.html#${slug(m.n)}`;
+const av = m => m.p ? `<img class="rav" src="${m.p}" alt="" loading="lazy">` : `<span class="rav ph">${m.n[0]}</span>`;
 document.getElementById("roster").innerHTML = [...CREW]
   .sort((a, b) => b.x - a.x || off(a.b) - off(b.b))
   .map(m => {
@@ -189,10 +194,10 @@ document.getElementById("roster").innerHTML = [...CREW]
     const badge = m.x > 0
       ? `<span class="vet">${m.x}× · dal ${m.fy}</span>`
       : `<span class="rookie">prima volta 🌟</span>`;
-    return `<div class="rmember"><span class="rdot ${rc(m.r)}"></span>
-      <span class="rmid"><span class="rname">${m.n}${m.r !== "crew" ? ` <em>${m.r}</em>` : ""}</span>
+    return `<a class="rmember" href="${mhref(m)}">${av(m)}
+      <span class="rmid"><span class="rname">${m.n}${m.r !== "crew" ? ` <em>${m.r}</em>` : ""} <span class="rgo">›</span></span>
       <span class="rwhen">${nights} notti · ${dshort(m.b)}–${dshort(m.l)}</span></span>
-      ${badge}</div>`;
+      ${badge}</a>`;
   }).join("");
 
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});

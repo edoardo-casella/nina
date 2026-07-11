@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Equipaggio · Plancia Niña</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin:1.5rem 0 1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+/* hero membro */
+.mhero{padding:1.6rem 1.1rem 0;display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap}
+.mphoto{width:132px;height:176px;flex:none;border-radius:8px;object-fit:cover;background:var(--sea-2);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.mph-ph{width:132px;height:176px;flex:none;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font:700 3.4rem/1 var(--display);color:#fff;background:linear-gradient(150deg,var(--accent),var(--sea-2))}
+.mhd{flex:1;min-width:11rem}
+.mhd .role{font:700 .62rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.mhd h1{font:700 2.2rem/1.02 var(--display);letter-spacing:.01em;margin:.35rem 0 .2rem}
+.mhd .nick{color:var(--soft);font-style:italic}
+.badge{display:inline-flex;align-items:center;gap:.3rem;margin-top:.6rem;font:700 .62rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:.32rem .7rem}
+.badge.vet{color:var(--gold);border:1px solid var(--gold)}
+.badge.rookie{color:var(--accent);border:1px solid var(--accent)}
+/* stats */
+.mstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.3rem}
+.mstat{background:var(--panel);padding:.9rem .4rem;text-align:center}
+.mstat b{display:block;font:700 1.5rem/1 var(--mono);color:var(--ink)}
+.mstat i{display:block;font:700 .52rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.4rem}
+.card{background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:5px;padding:.9rem 1rem;font-size:.94rem;line-height:1.6}
+.card.note{border-left-color:var(--gold)}
+.q-empty{background:var(--sea-1);border:1px dashed var(--hair);border-radius:5px;padding:1rem;color:var(--soft);font-size:.9rem;text-align:center}
+.q-empty a{font-weight:600}
+.qrow{display:grid;grid-template-columns:7.5rem 1fr;gap:.5rem;padding:.5rem 0;border-bottom:1px solid var(--hair);font-size:.92rem}
+.qrow:last-child{border-bottom:0}
+.qrow b{font:700 .58rem/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+/* strip altri membri + galleria */
+.strip{display:flex;gap:.7rem;overflow-x:auto;padding:.3rem 0 .6rem}
+.strip a{flex:none;width:60px;text-align:center;text-decoration:none;color:var(--soft)}
+.strip .av{width:56px;height:56px;border-radius:50%;object-fit:cover;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 1.3rem/1 var(--display);color:#fff;margin:0 auto .25rem}
+.strip small{font-size:.66rem;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem}
+.mcard{background:var(--panel);border:1px solid var(--hair);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.mcard .ph{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 2.6rem/1 var(--display);color:#fff}
+.mcard .b{padding:.6rem .7rem}
+.mcard .b b{display:block;font-size:.95rem}
+.mcard .b span{font:700 .56rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.mcard .b .vt{color:var(--gold)} .mcard .b .rk{color:var(--accent)}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="arrivi.html">‹ La ciurma</a>
+  <span class="tag">⚓ Equipaggio Niña</span>
+</div></div>
+<main id="app"></main>
+
+<script>
+const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+const day = s => new Date(s + "T12:00");
+const fmt = s => day(s).toLocaleDateString("it", { day: "numeric", month: "long" });
+const fmtS = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
+const nights = m => Math.round((day(m.leave) - day(m.board)) / 864e5);
+const roleLabel = r => r === "skipper" ? "Skipper" : r === "marinaio" ? "Marinaio" : "Equipaggio";
+const initial = m => (m.name || "?").trim()[0].toUpperCase();
+const avatar = (m, cls) => m.photo
+  ? `<img class="${cls}" src="${m.photo}" alt="${esc(m.name)}" loading="lazy">`
+  : `<div class="${cls}">${initial(m)}</div>`;
+
+// scheda dal questionario: ordine e etichette dei campi (mostrati se presenti)
+const QFIELDS = [
+  ["ruolo", "Ruolo a bordo"], ["esperienza", "Esperienza"], ["specialita", "Specialità"],
+  ["dieta", "Dieta / allergie"], ["valigia", "Non può mancare"], ["motto", "Motto"], ["funfact", "Fun fact"],
+];
+
+function memberPage(m, all) {
+  const vet = m.x > 0
+    ? `<span class="badge vet">⚓ veterano · ${m.x}× · dal ${m.fy}</span>`
+    : `<span class="badge rookie">🌟 prima volta a bordo</span>`;
+  const q = m.q || {};
+  const qrows = QFIELDS.filter(([k]) => q[k]).map(([k, lab]) =>
+    `<div class="qrow"><b>${lab}</b><span>${esc(q[k])}</span></div>`).join("");
+  const others = all.filter(x => x.id !== m.id && !x.link);
+  const strip = others.map(x =>
+    `<a href="#${x.id}" title="${esc(x.name)}">${avatar(x, "av")}<small>${esc(x.name)}</small></a>`).join("");
+  return `
+  <div class="mhero">
+    ${avatar(m, m.photo ? "mphoto" : "mph-ph")}
+    <div class="mhd">
+      <div class="role">${roleLabel(m.role)}</div>
+      <h1>${esc(m.name)}</h1>
+      ${m.nick ? `<div class="nick">detto “${esc(m.nick)}”</div>` : ""}
+      ${vet}
+    </div>
+  </div>
+  <section>
+    <div class="mstats">
+      <div class="mstat"><b>${m.x || 0}</b><i>crociere con l'Ammiraglio</i></div>
+      <div class="mstat"><b>${nights(m)}</b><i>notti a bordo</i></div>
+      <div class="mstat"><b>${m.fy || "—"}</b><i>${m.x > 0 ? "prima volta" : "esordio"}</i></div>
+    </div>
+    ${m.note ? `<h2>In breve</h2><div class="card note">${m.note}</div>` : ""}
+    <h2>A bordo nel 2026</h2>
+    <div class="card">Sale a Cannigione il <b>${fmt(m.board)}</b> e sbarca il <b>${fmt(m.leave)}</b> — <b>${nights(m)} notti</b> di navigazione tra Corsica e Sardegna.</div>
+    <h2>Scheda personale</h2>
+    ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">🧭 La scheda dal <b>questionario equipaggio</b> arriverà qui.<br><a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">Compila il questionario ›</a></div>`}
+    ${strip ? `<h2>Il resto della ciurma</h2><div class="strip">${strip}</div>` : ""}
+  </section>
+  <footer><a class="pl" href="arrivi.html">‹ Torna alla ciurma</a></footer>`;
+}
+
+function directory(all) {
+  const cards = all.filter(m => !m.link || m.photo).map(m => {
+    const badge = m.x > 0 ? `<span class="vt">${m.x}× · dal ${m.fy}</span>` : `<span class="rk">prima volta</span>`;
+    const href = m.link || `#${m.id}`;
+    return `<a class="mcard" href="${href}">${avatar(m, "ph")}<div class="b"><b>${esc(m.name)}</b><span>${roleLabel(m.role)}</span><br>${badge}</div></a>`;
+  }).join("");
+  return `<div class="mhero"><div class="mhd"><div class="role">Equipaggio · Niña 2026</div>
+    <h1>La ciurma</h1><div class="nick">Una scheda per ognuno: foto, miglia insieme e, presto, i dati dal questionario.</div></div></div>
+    <section><h2>I membri</h2><div class="grid">${cards}</div>
+    <p style="margin-top:1rem;font-size:.85rem;color:var(--soft)">Vedi anche <a href="arrivi.html">arrivi &amp; partenze</a> e la <a href="skipper.html">classifica compagni</a>.</p></section>
+    <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
+}
+
+let DATA = [];
+function route() {
+  const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+  const m = DATA.find(x => x.id === id);
+  if (m && m.link) { location.replace(m.link); return; }
+  document.getElementById("app").innerHTML = m ? memberPage(m, DATA) : directory(DATA);
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
+  DATA = d.members || [];
+  route();
+}).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Equipaggio non disponibile offline.</p></section>`; });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-07-11",
+  "note": "x = volte già in barca con Edoardo; fy = primo anno. I nickname non trovati nel registro storico valgono come prima volta. Campo q = scheda dal questionario equipaggio (da compilare).",
+  "members": [
+    {"id": "edo-c", "name": "Edo C", "role": "skipper", "board": "2026-08-08", "leave": "2026-08-29", "x": 25, "fy": 2011, "photo": "skipper/img/edoardo-id.jpg", "link": "skipper.html"},
+    {"id": "bernardo-b", "name": "Bernardo B", "role": "skipper", "board": "2026-08-08", "leave": "2026-08-21", "x": 9, "fy": 2011},
+    {"id": "giacomo-n", "name": "Giacomo N", "nick": "Jack", "role": "crew", "board": "2026-08-08", "leave": "2026-08-17", "x": 5, "fy": 2021, "photo": "crew/img/giacomo-n.jpg", "note": "Habitué dei <a href=\"skipper.html#errori-fatali\">rapporti d'incidente</a> 😅 — il capitano ha una regola tutta sua su di lui."},
+    {"id": "ginevra-l", "name": "Ginevra L", "role": "crew", "board": "2026-08-08", "leave": "2026-08-29", "x": 4, "fy": 2022, "photo": "crew/img/ginevra-l.jpg"},
+    {"id": "bianca-b", "name": "Bianca B", "role": "crew", "board": "2026-08-08", "leave": "2026-08-21", "x": 0},
+    {"id": "mati-m", "name": "Mati M", "role": "crew", "board": "2026-08-08", "leave": "2026-08-17", "x": 0},
+    {"id": "davide", "name": "Davide", "role": "crew", "board": "2026-08-15", "leave": "2026-08-22", "x": 0},
+    {"id": "manlio", "name": "Manlio", "role": "crew", "board": "2026-08-15", "leave": "2026-08-22", "x": 0},
+    {"id": "fede-b", "name": "Fede B", "role": "crew", "board": "2026-08-15", "leave": "2026-08-29", "x": 1, "fy": 2023},
+    {"id": "giulia-n", "name": "Giulia N", "role": "crew", "board": "2026-08-15", "leave": "2026-08-29", "x": 0},
+    {"id": "fede-n", "name": "Fede N", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 0},
+    {"id": "ilaria-m", "name": "Ilaria M", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 2, "fy": 2017},
+    {"id": "lavinia-p", "name": "Lavinia P", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 0},
+    {"id": "riccardo-b", "name": "Riccardo B", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 7, "fy": 2015},
+    {"id": "andrea-a", "name": "Andrea A", "role": "crew", "board": "2026-08-22", "leave": "2026-08-29", "x": 4, "fy": 2011},
+    {"id": "gabri-m", "name": "Gabri M", "role": "marinaio", "board": "2026-08-22", "leave": "2026-08-29", "x": 2, "fy": 2017},
+    {"id": "simona-a", "name": "Simona A", "role": "crew", "board": "2026-08-22", "leave": "2026-08-29", "x": 0}
+  ]
+}
