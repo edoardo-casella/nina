@@ -27,151 +27,226 @@
      "id": "nemo",
      "year": 2011,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 440",
+     "nm": 321,
+     "days": 11
     },
     {
      "id": "camelia",
      "year": 2011,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "natfika",
      "year": 2012,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Bavaria 50",
+     "nm": 189,
+     "days": 6
     },
     {
      "id": "stephanie",
      "year": 2012,
      "zone": "Cyclades - Dodecanese GR",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19
     },
     {
      "id": "klaudia",
      "year": 2013,
      "zone": "Dodecanese - Turkey",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 20
     },
     {
      "id": "cubalibre",
      "year": 2014,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Oceanis 43",
+     "nm": 211,
+     "days": 6
     },
     {
      "id": "anax",
      "year": 2014,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "blue-bird",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 253,
+     "days": 12
     },
     {
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "aquarela",
      "year": 2016,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 252,
+     "days": 13
     },
     {
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "capitan-nikos",
      "year": 2017,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Gib Sea 45",
+     "nm": 165,
+     "days": 4
     },
     {
      "id": "showtime",
      "year": 2017,
      "zone": "Ionian - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odissey 469",
+     "nm": 351,
+     "days": 12
     },
     {
      "id": "invitation",
      "year": 2018,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12
     },
     {
      "id": "ondine",
      "year": 2018,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     },
     {
      "id": "alba",
      "year": 2020,
      "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
     },
     {
      "id": "silkwave",
      "year": 2021,
      "zone": "Sardegna",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Bavaria 51 Cruiser",
+     "nm": 320,
+     "days": 6
     },
     {
      "id": "enya",
      "year": 2021,
      "zone": "Corsica & Sardegna",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 430,
+     "days": 12
     },
     {
      "id": "mars-planet",
      "year": 2021,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Oceanis 48",
+     "nm": 140,
+     "days": 6
     },
     {
      "id": "challenger",
      "year": 2022,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Lagoon 450",
+     "nm": 110,
+     "days": 6
     },
     {
      "id": "all-in",
      "year": 2022,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11
     },
     {
      "id": "isla",
      "year": 2023,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6
     },
     {
      "id": "alexandros",
      "year": 2024,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 230,
+     "days": 6
     },
     {
      "id": "cari",
      "year": 2024,
      "zone": "Inner Islands",
-     "country": "Seychelles"
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15
     }
    ],
    "crew2026": {
@@ -303,55 +378,82 @@
      "id": "camelia",
      "year": 2011,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "stephanie",
      "year": 2012,
      "zone": "Cyclades - Dodecanese GR",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19
     },
     {
      "id": "klaudia",
      "year": 2013,
      "zone": "Dodecanese - Turkey",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 20
     },
     {
      "id": "anax",
      "year": 2014,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "showtime",
      "year": 2017,
      "zone": "Ionian - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odissey 469",
+     "nm": 351,
+     "days": 12
     },
     {
      "id": "ondine",
      "year": 2018,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     }
    ],
    "photos": [
@@ -364,6 +466,44 @@
      "src": "trips/img/camelia/02.jpg",
      "trip_id": "camelia",
      "caption": "Croazia 2011"
+    }
+   ],
+   "companions": [
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 8,
+     "days": 125
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 7,
+     "days": 114
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 7,
+     "days": 114
+    },
+    {
+     "id": "gabriele-b",
+     "name": "Gabriele B.",
+     "trips": 3,
+     "days": 59
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 3,
+     "days": 34
     }
    ]
   },
@@ -381,55 +521,82 @@
      "id": "camelia",
      "year": 2011,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "stephanie",
      "year": 2012,
      "zone": "Cyclades - Dodecanese GR",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19
     },
     {
      "id": "klaudia",
      "year": 2013,
      "zone": "Dodecanese - Turkey",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 20
     },
     {
      "id": "anax",
      "year": 2014,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "showtime",
      "year": 2017,
      "zone": "Ionian - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odissey 469",
+     "nm": 351,
+     "days": 12
     },
     {
      "id": "ondine",
      "year": 2018,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     },
     {
      "id": "mars-planet",
      "year": 2021,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Oceanis 48",
+     "nm": 140,
+     "days": 6
     }
    ],
    "photos": [
@@ -437,6 +604,44 @@
      "src": "trips/img/camelia/01.jpg",
      "trip_id": "camelia",
      "caption": "Croazia 2011"
+    }
+   ],
+   "companions": [
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 8,
+     "days": 125
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 8,
+     "days": 120
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 8,
+     "days": 120
+    },
+    {
+     "id": "gabriele-b",
+     "name": "Gabriele B.",
+     "trips": 3,
+     "days": 59
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 3,
+     "days": 29
     }
    ]
   },
@@ -454,49 +659,73 @@
      "id": "camelia",
      "year": 2011,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "stephanie",
      "year": 2012,
      "zone": "Cyclades - Dodecanese GR",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19
     },
     {
      "id": "klaudia",
      "year": 2013,
      "zone": "Dodecanese - Turkey",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 20
     },
     {
      "id": "anax",
      "year": 2014,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "showtime",
      "year": 2017,
      "zone": "Ionian - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odissey 469",
+     "nm": 351,
+     "days": 12
     },
     {
      "id": "ondine",
      "year": 2018,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11
     },
     {
      "id": "mars-planet",
      "year": 2021,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Oceanis 48",
+     "nm": 140,
+     "days": 6
     }
    ],
    "photos": [
@@ -514,7 +743,49 @@
    "bio": {
     "epithet": "Il velista",
     "html": "L'eterno comandante velista, che però non si è mai calato del tutto nel ruolo dell'uomo dell'ormeggio in porto: la sua bestia nera, vinta solo a tratti negli ultimi anni. Vorrebbe andare a vela sempre. Uomo-rana super performante &mdash; e proprio per questo un po' &quot;sordo&quot; ai comandi quando l'acqua gli entra nelle orecchie. Celebre il suo ormeggio a terra a Mykonos, con la pietra legata che franò a valle come in un cartone di Bugs Bunny."
-   }
+   },
+   "tags": [
+    "Velista",
+    "Uomo rana"
+   ],
+   "companions": [
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 8,
+     "days": 120
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 8,
+     "days": 120
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 7,
+     "days": 114
+    },
+    {
+     "id": "gabriele-b",
+     "name": "Gabriele B.",
+     "trips": 3,
+     "days": 59
+    },
+    {
+     "id": "nicola-r",
+     "name": "Nicola R.",
+     "trips": 2,
+     "days": 25
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 2,
+     "days": 23
+    }
+   ]
   },
   {
    "id": "paola-c",
@@ -530,49 +801,73 @@
      "id": "camelia",
      "year": 2011,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "stephanie",
      "year": 2012,
      "zone": "Cyclades - Dodecanese GR",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19
     },
     {
      "id": "klaudia",
      "year": 2013,
      "zone": "Dodecanese - Turkey",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 20
     },
     {
      "id": "anax",
      "year": 2014,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "showtime",
      "year": 2017,
      "zone": "Ionian - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odissey 469",
+     "nm": 351,
+     "days": 12
     },
     {
      "id": "ondine",
      "year": 2018,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11
     },
     {
      "id": "mars-planet",
      "year": 2021,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Oceanis 48",
+     "nm": 140,
+     "days": 6
     }
    ],
    "photos": [
@@ -581,71 +876,136 @@
      "trip_id": "camelia",
      "caption": "Croazia 2011"
     }
+   ],
+   "companions": [
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 8,
+     "days": 120
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 8,
+     "days": 120
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 7,
+     "days": 114
+    },
+    {
+     "id": "gabriele-b",
+     "name": "Gabriele B.",
+     "trips": 3,
+     "days": 59
+    },
+    {
+     "id": "nicola-r",
+     "name": "Nicola R.",
+     "trips": 2,
+     "days": 25
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 2,
+     "days": 23
+    }
    ]
   },
   {
    "id": "bernardo-b",
    "name": "Bernardo B",
    "trips": 9,
-   "days": 110,
-   "nm": 2640,
+   "days": 91,
+   "nm": 2231,
    "first": 2011,
    "last": 2024,
-   "rank": "cdr",
+   "rank": "ltcdr",
    "trips_list": [
     {
      "id": "camelia",
      "year": 2011,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20
     },
     {
      "id": "natfika",
      "year": 2012,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Bavaria 50",
+     "nm": 189,
+     "days": 6
     },
     {
      "id": "stephanie",
      "year": 2012,
      "zone": "Cyclades - Dodecanese GR",
-     "country": "Greece-Turkey"
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19
     },
     {
      "id": "aquarela",
      "year": 2016,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 252,
+     "days": 13
     },
     {
      "id": "invitation",
      "year": 2018,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12
     },
     {
      "id": "enya",
      "year": 2021,
      "zone": "Corsica & Sardegna",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 430,
+     "days": 12
     },
     {
      "id": "isla",
      "year": 2023,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6
     },
     {
      "id": "alexandros",
      "year": 2024,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 230,
+     "days": 6
     },
     {
      "id": "cari",
      "year": 2024,
      "zone": "Inner Islands",
-     "country": "Seychelles"
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15
     }
    ],
    "crew2026": {
@@ -664,7 +1024,50 @@
    "bio": {
     "epithet": "Il motorista",
     "html": "Grande meccanico e uomo dei motori: quando devi entrare in porto con vento forte, o quando a bordo c'è un guaio tecnico, è lui l'uomo indispensabile. A tavola predilige il non-salutare e le scofanate di pasta. È il comandante assoluto del tratto tra l'<b>Isola d'Elba</b>, <b>San Vincenzo</b> e <b>Piombino</b>, con la sua barca-officina &laquo;Bad Boys&raquo; e il socio <a class='plink' href='membro.html#fede-n'>Fede N.</a>: una barca che sembra uscita dagli anni Ottanta, sempre &quot;ferma&quot; solo perché i guasti lui e il socio li risolvono direttamente in mare &mdash; ed è così che è diventato un meccanico vero. Difetti pochi, se non quando si impunta; e la tendenza a farsi distrarre dalle fidanzate. Uno dei migliori compagni di equipaggio che si possano avere a bordo."
-   }
+   },
+   "tags": [
+    "Motorista",
+    "Meccanico",
+    "Comandante d'Elba"
+   ],
+   "companions": [
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 4,
+     "days": 45
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 3,
+     "days": 33
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 3,
+     "days": 27
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "jennifer-s",
+     "name": "Jennifer S.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 2,
+     "days": 23
+    }
+   ]
   },
   {
    "id": "cecilia-r",
@@ -680,37 +1083,93 @@
      "id": "capitan-nikos",
      "year": 2017,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Gib Sea 45",
+     "nm": 165,
+     "days": 4
     },
     {
      "id": "showtime",
      "year": 2017,
      "zone": "Ionian - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Sun Odissey 469",
+     "nm": 351,
+     "days": 12
     },
     {
      "id": "invitation",
      "year": 2018,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12
     },
     {
      "id": "ondine",
      "year": 2018,
      "zone": "Croazia CZ",
-     "country": "Croazia"
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     },
     {
      "id": "alba",
      "year": 2020,
      "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    }
+   ],
+   "companions": [
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 15
     }
    ]
   },
@@ -718,8 +1177,8 @@
    "id": "riccardo-b",
    "name": "Riccardo B",
    "trips": 7,
-   "days": 66,
-   "nm": 1860,
+   "days": 65,
+   "nm": 1849,
    "first": 2015,
    "last": 2023,
    "rank": "ltcdr",
@@ -728,43 +1187,64 @@
      "id": "blue-bird",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 253,
+     "days": 12
     },
     {
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     },
     {
      "id": "silkwave",
      "year": 2021,
      "zone": "Sardegna",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Bavaria 51 Cruiser",
+     "nm": 320,
+     "days": 6
     },
     {
      "id": "mars-planet",
      "year": 2021,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Oceanis 48",
+     "nm": 140,
+     "days": 6
     },
     {
      "id": "isla",
      "year": 2023,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6
     }
    ],
    "crew2026": {
@@ -827,53 +1307,199 @@
    "bio": {
     "epithet": "Il conviviale",
     "html": "Parlerebbe anche con i muri, e in barca si fa in quattro: conviviale con tutti, abilissimo timoniere e ottimo uomo-rana di supporto. Ha preso la patente nautica e da poco ha iniziato la sua carriera da comandante. Molto goloso, amante degli sfizi e delle birrette &mdash; tanto che <a class='plink' href='membro.html#andrea-a'>Andrea A.</a> gli rimprovera le troppe lattine lasciate mezze aperte in giro."
-   }
+   },
+   "tags": [
+    "Conviviale",
+    "Timoniere",
+    "Aspirante comandante",
+    "Goloso"
+   ],
+   "companions": [
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 3,
+     "days": 29
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 3,
+     "days": 29
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 3,
+     "days": 29
+    }
+   ]
+  },
+  {
+   "id": "gabriele-b",
+   "name": "Gabriele B.",
+   "trips": 3,
+   "days": 59,
+   "nm": 1213,
+   "first": 2011,
+   "last": 2013,
+   "rank": "lt",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cyclades - Dodecanese GR",
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19
+    },
+    {
+     "id": "klaudia",
+     "year": 2013,
+     "zone": "Dodecanese - Turkey",
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 20
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/camelia/02.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    }
+   ],
+   "companions": [
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 3,
+     "days": 59
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 3,
+     "days": 59
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 3,
+     "days": 59
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 3,
+     "days": 59
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
   },
   {
    "id": "leonardo-m",
    "name": "Leonardo M.",
    "trips": 6,
-   "days": 62,
-   "nm": 2056,
+   "days": 57,
+   "nm": 1860,
    "first": 2014,
    "last": 2022,
-   "rank": "ltcdr",
+   "rank": "lt",
    "trips_list": [
     {
      "id": "cubalibre",
      "year": 2014,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Oceanis 43",
+     "nm": 211,
+     "days": 6
     },
     {
      "id": "invitation",
      "year": 2018,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12
     },
     {
      "id": "alba",
      "year": 2020,
      "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
     },
     {
      "id": "silkwave",
      "year": 2021,
      "zone": "Sardegna",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Bavaria 51 Cruiser",
+     "nm": 320,
+     "days": 6
     },
     {
      "id": "challenger",
      "year": 2022,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Lagoon 450",
+     "nm": 110,
+     "days": 6
     },
     {
      "id": "all-in",
      "year": 2022,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11
     }
    ],
    "photos": [
@@ -941,42 +1567,49 @@
    "bio": {
     "epithet": "L'uomo rana (detto Giuseppe)",
     "html": "Il miglior uomo-rana che si possa avere a bordo: scende a mettere le cime a terra con una velocità impressionante. Ottimo capitano &mdash; anche senza patente &mdash; sempre molto preso dal lavoro, il che rende le sue presenze ancora più preziose. Grande pescatore di ricci, intrattenitore dell'equipaggio e nuotatore fenomenale: si tufferebbe da qualsiasi altezza. L'abbiamo visto lanciarsi da una roccia di Ibiza alta venticinque metri."
-   }
-  },
-  {
-   "id": "gabriele-b",
-   "name": "Gabriele B.",
-   "trips": 3,
-   "days": 59,
-   "nm": 1213,
-   "first": 2011,
-   "last": 2013,
-   "rank": "lt",
-   "trips_list": [
-    {
-     "id": "camelia",
-     "year": 2011,
-     "zone": "Croazia CZ",
-     "country": "Croazia"
-    },
-    {
-     "id": "stephanie",
-     "year": 2012,
-     "zone": "Cyclades - Dodecanese GR",
-     "country": "Greece-Turkey"
-    },
-    {
-     "id": "klaudia",
-     "year": 2013,
-     "zone": "Dodecanese - Turkey",
-     "country": "Greece-Turkey"
-    }
+   },
+   "tags": [
+    "Uomo rana",
+    "Capitano",
+    "Pescatore di ricci",
+    "Tuffatore"
    ],
-   "photos": [
+   "companions": [
     {
-     "src": "trips/img/camelia/02.jpg",
-     "trip_id": "camelia",
-     "caption": "Croazia 2011"
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 3,
+     "days": 27
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 2,
+     "days": 21
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 2,
+     "days": 16
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 2,
+     "days": 14
     }
    ]
   },
@@ -984,8 +1617,8 @@
    "id": "giacomo-n",
    "name": "Giacomo N",
    "trips": 5,
-   "days": 51,
-   "nm": 1166,
+   "days": 48,
+   "nm": 1058,
    "first": 2021,
    "last": 2024,
    "rank": "lt",
@@ -994,31 +1627,46 @@
      "id": "enya",
      "year": 2021,
      "zone": "Corsica & Sardegna",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 430,
+     "days": 12
     },
     {
      "id": "challenger",
      "year": 2022,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Lagoon 450",
+     "nm": 110,
+     "days": 6
     },
     {
      "id": "all-in",
      "year": 2022,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11
     },
     {
      "id": "isla",
      "year": 2023,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6
     },
     {
      "id": "cari",
      "year": 2024,
      "zone": "Inner Islands",
-     "country": "Seychelles"
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15
     }
    ],
    "crew2026": {
@@ -1079,7 +1727,50 @@
    "bio": {
     "epithet": "L'uomo della tecnologia",
     "html": "L'uomo della tecnologia di bordo: manutenzione, droni, videomaker ufficiale di ogni vacanza. Prezioso assistente al meccanico e troubleshooter importante &mdash; un filo meno uomo-nautico, e da <b>non</b> lasciare in coperta quando c'è vento, perché tende a perdersi nel suo mondo (vedi <a class='plink' href='skipper.html#errori-fatali'>canale di Ferragosto</a>). A dieta di coca zero e merendine: è l'uomo delle merendine."
-   }
+   },
+   "tags": [
+    "Videomaker",
+    "Droni",
+    "Troubleshooter"
+   ],
+   "companions": [
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 3,
+     "days": 33
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 3,
+     "days": 33
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 3,
+     "days": 29
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "jennifer-s",
+     "name": "Jennifer S.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 14
+    }
+   ]
   },
   {
    "id": "sofia-m",
@@ -1095,25 +1786,75 @@
      "id": "invitation",
      "year": 2018,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12
     },
     {
      "id": "enya",
      "year": 2021,
      "zone": "Corsica & Sardegna",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 430,
+     "days": 12
     },
     {
      "id": "isla",
      "year": 2023,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6
     },
     {
      "id": "cari",
      "year": 2024,
      "zone": "Inner Islands",
-     "country": "Seychelles"
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15
+    }
+   ],
+   "companions": [
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 4,
+     "days": 45
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 3,
+     "days": 33
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "jennifer-s",
+     "name": "Jennifer S.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 2,
+     "days": 21
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 12
     }
    ]
   },
@@ -1131,25 +1872,37 @@
      "id": "all-in",
      "year": 2022,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11
     },
     {
      "id": "isla",
      "year": 2023,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6
     },
     {
      "id": "alexandros",
      "year": 2024,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 230,
+     "days": 6
     },
     {
      "id": "cari",
      "year": 2024,
      "zone": "Inner Islands",
-     "country": "Seychelles"
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15
     }
    ],
    "crew2026": {
@@ -1198,7 +1951,50 @@
    "bio": {
     "epithet": "La cuoca",
     "html": "La cuoca di ogni vacanza &mdash; e l'equipaggio è felicissimo che non sia più vegana, così si torna ad assaporare tutta la sua collezione di piatti. Porta sempre in tavola qualcosa di alternativo e sofisticato, roba rara su una barca. Famose anche le sue lezioni di yoga all'equipaggio e i suoi giri in SUP."
-   }
+   },
+   "tags": [
+    "Cuoca",
+    "Yoga",
+    "SUP"
+   ],
+   "companions": [
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 3,
+     "days": 29
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 3,
+     "days": 27
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 2,
+     "days": 21
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 1,
+     "days": 15
+    },
+    {
+     "id": "jennifer-s",
+     "name": "Jennifer S.",
+     "trips": 1,
+     "days": 15
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 11
+    }
+   ]
   },
   {
    "id": "pietro-c",
@@ -1214,82 +2010,68 @@
      "id": "nemo",
      "year": 2011,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 440",
+     "nm": 321,
+     "days": 11
     },
     {
      "id": "enya",
      "year": 2021,
      "zone": "Corsica & Sardegna",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 430,
+     "days": 12
     },
     {
      "id": "cari",
      "year": 2024,
      "zone": "Inner Islands",
-     "country": "Seychelles"
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15
+    }
+   ],
+   "companions": [
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "jennifer-s",
+     "name": "Jennifer S.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 15
+    },
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 11
     }
    ]
-  },
-  {
-   "id": "gualtiero-s",
-   "name": "Gualtiero S.",
-   "trips": 3,
-   "days": 37,
-   "nm": 1156,
-   "first": 2014,
-   "last": 2022,
-   "rank": "lt",
-   "trips_list": [
-    {
-     "id": "cubalibre",
-     "year": 2014,
-     "zone": "Baleares - SP",
-     "country": "Spain"
-    },
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    },
-    {
-     "id": "all-in",
-     "year": 2022,
-     "zone": "Sporades - GR",
-     "country": "Greece"
-    }
-   ],
-   "photos": [
-    {
-     "src": "trips/img/cubalibre/01.jpg",
-     "trip_id": "cubalibre",
-     "caption": "Spagna 2014"
-    },
-    {
-     "src": "trips/img/alba/02.jpg",
-     "trip_id": "alba",
-     "caption": "Sardegna 2020"
-    },
-    {
-     "src": "trips/img/all-in/03.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/04.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/05.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    }
-   ],
-   "bio": {
-    "epithet": "Il pescatore",
-    "html": "Il pescatore degli equipaggi. Se di notte, in rada, senti dei pestoni sul ponte, è lui che sta calando le canne: costruisce veri diagrammi, cala sette-otto lenze insieme senza impigliare un amo. Ma la scena è cult in una maturità del 2011 (senza il capitano a bordo): dopo qualche parola di troppo, <a class='plink' href='membro.html#riccardo-t'>Riccardo T.</a> lo butta in acqua mentre la barca pesca a strascico &mdash; e il buon &laquo;Wally&raquo; finisce pescato dal suo stesso amo, impigliato in una mano. Grande cuoco: le sue paste ai ricci sono tra le migliori di bordo."
-   }
   },
   {
    "id": "andrea-a",
@@ -1305,25 +2087,37 @@
      "id": "nemo",
      "year": 2011,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 440",
+     "nm": 321,
+     "days": 11
     },
     {
      "id": "blue-bird",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 253,
+     "days": 12
     },
     {
      "id": "silkwave",
      "year": 2021,
      "zone": "Sardegna",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Bavaria 51 Cruiser",
+     "nm": 320,
+     "days": 6
     },
     {
      "id": "challenger",
      "year": 2022,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Lagoon 450",
+     "nm": 110,
+     "days": 6
     }
    ],
    "crew2026": {
@@ -1356,7 +2150,50 @@
    "bio": {
     "epithet": "Il condizionatore",
     "html": "Regola dell'equipaggio: non lasciatelo al timone quando è cotto. Famoso l'episodio di <b>Sardegna 2021</b> &mdash; il comandante dormiva, al timone Andrea e <a class='plink' href='membro.html#riccardo-t'>Riccardo T.</a> (l'altissimo); una scossa sveglia di soprassalto il capitano, che in pochi secondi si accorge che stanno puntando gli scogli e con una virata d'emergenza salva barca e viaggio. Per il resto è loquace, ottimo marinaio, sempre disponibile: quando la sera è stanco va solo lasciato in pace. Odia il caldo, ama l'aria condizionata e la regola in modo maniacale. Leggendari i suoi ululati."
-   }
+   },
+   "tags": [
+    "Marinaio",
+    "Re dell'aria condizionata",
+    "Notturno"
+   ],
+   "companions": [
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 12
+    },
+    {
+     "id": "riccardo-t",
+     "name": "Riccardo T.",
+     "trips": 2,
+     "days": 12
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 1,
+     "days": 11
+    }
+   ]
   },
   {
    "id": "luca-b",
@@ -1372,19 +2209,28 @@
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     }
    ],
    "photos": [
@@ -1403,6 +2249,44 @@
      "trip_id": "sorbe",
      "caption": "Grenadine 2017"
     }
+   ],
+   "companions": [
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 2,
+     "days": 23
+    }
    ]
   },
   {
@@ -1419,123 +2303,66 @@
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
-    }
-   ]
-  },
-  {
-   "id": "belinda-b",
-   "name": "Belinda B.",
-   "trips": 2,
-   "days": 33,
-   "nm": 715,
-   "first": 2011,
-   "last": 2016,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "camelia",
-     "year": 2011,
-     "zone": "Croazia CZ",
-     "country": "Croazia"
-    },
-    {
-     "id": "aquarela",
-     "year": 2016,
-     "zone": "Baleares - SP",
-     "country": "Spain"
-    }
-   ]
-  },
-  {
-   "id": "marta-a",
-   "name": "Marta A.",
-   "trips": 2,
-   "days": 31,
-   "nm": 945,
-   "first": 2020,
-   "last": 2022,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    },
-    {
-     "id": "all-in",
-     "year": 2022,
-     "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     }
    ],
-   "photos": [
+   "companions": [
     {
-     "src": "trips/img/all-in/03.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 3,
+     "days": 34
     },
     {
-     "src": "trips/img/all-in/04.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 3,
+     "days": 34
     },
     {
-     "src": "trips/img/all-in/10.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 3,
+     "days": 34
     },
     {
-     "src": "trips/img/all-in/13.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 2,
+     "days": 23
     },
     {
-     "src": "trips/img/all-in/14.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 2,
+     "days": 23
     },
     {
-     "src": "trips/img/all-in/15.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    }
-   ]
-  },
-  {
-   "id": "nicola-r",
-   "name": "Nicola R.",
-   "trips": 2,
-   "days": 31,
-   "nm": 848,
-   "first": 2014,
-   "last": 2018,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "anax",
-     "year": 2014,
-     "zone": "Sporades - GR",
-     "country": "Greece"
-    },
-    {
-     "id": "ondine",
-     "year": 2018,
-     "zone": "Croazia CZ",
-     "country": "Croazia"
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 2,
+     "days": 23
     }
    ]
   },
@@ -1553,19 +2380,66 @@
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "mars-planet",
      "year": 2021,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Oceanis 48",
+     "nm": 140,
+     "days": 6
+    }
+   ],
+   "companions": [
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 3,
+     "days": 29
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 3,
+     "days": 29
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 2,
+     "days": 18
     }
    ]
   },
@@ -1583,19 +2457,66 @@
      "id": "trocha",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12
     },
     {
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "mars-planet",
      "year": 2021,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Oceanis 48",
+     "nm": 140,
+     "days": 6
+    }
+   ],
+   "companions": [
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 3,
+     "days": 29
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 3,
+     "days": 29
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 2,
+     "days": 18
     }
    ]
   },
@@ -1613,19 +2534,28 @@
      "id": "nemo",
      "year": 2011,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 440",
+     "nm": 321,
+     "days": 11
     },
     {
      "id": "cubalibre",
      "year": 2014,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Oceanis 43",
+     "nm": 211,
+     "days": 6
     },
     {
      "id": "blue-bird",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 253,
+     "days": 12
     }
    ],
    "photos": [
@@ -1638,6 +2568,156 @@
      "src": "trips/img/blue-bird/01.jpg",
      "trip_id": "blue-bird",
      "caption": "Spagna 2015"
+    }
+   ],
+   "companions": [
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "enrico-g",
+     "name": "Enrico G.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gianmarco-m",
+     "name": "Gianmarco M.",
+     "trips": 1,
+     "days": 11
+    }
+   ]
+  },
+  {
+   "id": "gualtiero-s",
+   "name": "Gualtiero S.",
+   "trips": 3,
+   "days": 27,
+   "nm": 881,
+   "first": 2014,
+   "last": 2022,
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "cubalibre",
+     "year": 2014,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Oceanis 43",
+     "nm": 211,
+     "days": 6
+    },
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    },
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/cubalibre/01.jpg",
+     "trip_id": "cubalibre",
+     "caption": "Spagna 2014"
+    },
+    {
+     "src": "trips/img/alba/02.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/05.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ],
+   "bio": {
+    "epithet": "Il pescatore",
+    "html": "Il pescatore degli equipaggi. Se di notte, in rada, senti dei pestoni sul ponte, è lui che sta calando le canne: costruisce veri diagrammi, cala sette-otto lenze insieme senza impigliare un amo. Ma la scena è cult in una maturità del 2011 (senza il capitano a bordo): dopo qualche parola di troppo, <a class='plink' href='membro.html#riccardo-t'>Riccardo T.</a> lo butta in acqua mentre la barca pesca a strascico &mdash; e il buon &laquo;Wally&raquo; finisce pescato dal suo stesso amo, impigliato in una mano. Grande cuoco: le sue paste ai ricci sono tra le migliori di bordo."
+   },
+   "tags": [
+    "Pescatore",
+    "Gran cuoco"
+   ],
+   "companions": [
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 3,
+     "days": 27
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 2,
+     "days": 21
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlotta-d",
+     "name": "Carlotta D.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
     }
    ]
   },
@@ -1655,100 +2735,175 @@
      "id": "enya",
      "year": 2021,
      "zone": "Corsica & Sardegna",
-     "country": "Italy - France"
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 430,
+     "days": 12
     },
     {
      "id": "cari",
      "year": 2024,
      "zone": "Inner Islands",
-     "country": "Seychelles"
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15
+    }
+   ],
+   "companions": [
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 2,
+     "days": 27
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 15
     }
    ]
   },
   {
-   "id": "giacomo-b",
-   "name": "Giacomo B.",
+   "id": "nicola-r",
+   "name": "Nicola R.",
    "trips": 2,
-   "days": 26,
-   "nm": 660,
-   "first": 2020,
-   "last": 2022,
+   "days": 25,
+   "nm": 709,
+   "first": 2014,
+   "last": 2018,
    "rank": "ltjg",
    "trips_list": [
     {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20
     },
     {
-     "id": "challenger",
-     "year": 2022,
-     "zone": "Baleares - SP",
-     "country": "Spain"
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11
     }
    ],
-   "photos": [
+   "companions": [
     {
-     "src": "trips/img/alba/02.jpg",
-     "trip_id": "alba",
-     "caption": "Sardegna 2020"
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 2,
+     "days": 25
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 2,
+     "days": 25
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 2,
+     "days": 25
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 25
+    },
+    {
+     "id": "filippo-r",
+     "name": "Filippo R.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
   {
-   "id": "laura-c",
-   "name": "Laura C.",
+   "id": "belinda-b",
+   "name": "Belinda B.",
    "trips": 2,
    "days": 23,
-   "nm": 865,
-   "first": 2018,
-   "last": 2022,
+   "nm": 484,
+   "first": 2011,
+   "last": 2016,
    "rank": "ltjg",
    "trips_list": [
     {
-     "id": "invitation",
-     "year": 2018,
-     "zone": "Baleares - SP",
-     "country": "Spain"
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20
     },
     {
-     "id": "all-in",
-     "year": 2022,
-     "zone": "Sporades - GR",
-     "country": "Greece"
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 252,
+     "days": 13
     }
    ],
-   "photos": [
+   "companions": [
     {
-     "src": "trips/img/all-in/03.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 23
     },
     {
-     "src": "trips/img/all-in/04.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "chiara-f",
+     "name": "Chiara F.",
+     "trips": 1,
+     "days": 10
     },
     {
-     "src": "trips/img/all-in/10.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 1,
+     "days": 10
     },
     {
-     "src": "trips/img/all-in/13.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/14.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/15.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 1,
+     "days": 10
     }
    ]
   },
@@ -1766,13 +2921,19 @@
      "id": "nemo",
      "year": 2011,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 440",
+     "nm": 321,
+     "days": 11
     },
     {
      "id": "blue-bird",
      "year": 2015,
      "zone": "Baleares - SP",
-     "country": "Spain"
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 253,
+     "days": 12
     }
    ],
    "photos": [
@@ -1791,6 +2952,44 @@
      "trip_id": "blue-bird",
      "caption": "Spagna 2015"
     }
+   ],
+   "companions": [
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "enrico-g",
+     "name": "Enrico G.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gianmarco-m",
+     "name": "Gianmarco M.",
+     "trips": 1,
+     "days": 11
+    }
    ]
   },
   {
@@ -1807,13 +3006,19 @@
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     }
    ],
    "crew2026": {
@@ -1836,7 +3041,49 @@
    "bio": {
     "epithet": "L'aspirante in meditazione",
     "html": "Aspirante skipper. L'highlight è alle <b>Sporadi</b>, Grecia 2015: ritiratasi in meditazione verso sera, non la si trovava più, tanto che l'equipaggio dovette organizzare una vera ricerca e soccorso &mdash; <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> ed Edo partirono con le torce a perlustrare. Al momento del recupero, complice il vento forte e un piccolo errore del comandante, forarono pure il gommone."
-   }
+   },
+   "tags": [
+    "Aspirante skipper",
+    "Meditazione"
+   ],
+   "companions": [
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11
+    }
+   ]
   },
   {
    "id": "gabri-m",
@@ -1852,13 +3099,19 @@
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     },
     {
      "id": "lohengrin",
      "year": 2019,
      "zone": "Cuba",
-     "country": "Cuba"
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11
     }
    ],
    "crew2026": {
@@ -1891,297 +3144,77 @@
    "bio": {
     "epithet": "L'uomo dei tuffi",
     "html": "L'uomo pazzo di bordo, l'uomo dei tuffi: insieme al fratello <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> si lancerebbe da qualsiasi cosa. Ottimo marinaio polivalente, uomo delle missioni impossibili e un po' pericolose."
-   }
-  },
-  {
-   "id": "matilde-r",
-   "name": "Matilde R.",
-   "trips": 1,
-   "days": 20,
-   "nm": 550,
-   "first": 2020,
-   "last": 2020,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    }
+   },
+   "tags": [
+    "Uomo dei tuffi",
+    "Marinaio polivalente"
    ],
-   "photos": [
+   "companions": [
     {
-     "src": "trips/img/alba/03.jpg",
-     "trip_id": "alba",
-     "caption": "Sardegna 2020"
-    }
-   ]
-  },
-  {
-   "id": "sara-b",
-   "name": "Sara B.",
-   "trips": 1,
-   "days": 20,
-   "nm": 550,
-   "first": 2020,
-   "last": 2020,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    }
-   ],
-   "photos": [
-    {
-     "src": "trips/img/alba/03.jpg",
-     "trip_id": "alba",
-     "caption": "Sardegna 2020"
-    }
-   ]
-  },
-  {
-   "id": "alice-s",
-   "name": "Alice S.",
-   "trips": 1,
-   "days": 20,
-   "nm": 550,
-   "first": 2020,
-   "last": 2020,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    }
-   ]
-  },
-  {
-   "id": "beatrice-f",
-   "name": "Beatrice F.",
-   "trips": 1,
-   "days": 20,
-   "nm": 550,
-   "first": 2020,
-   "last": 2020,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    }
-   ]
-  },
-  {
-   "id": "sergio-s",
-   "name": "Sergio S.",
-   "trips": 1,
-   "days": 20,
-   "nm": 550,
-   "first": 2020,
-   "last": 2020,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    }
-   ]
-  },
-  {
-   "id": "martina-g",
-   "name": "Martina G.",
-   "trips": 1,
-   "days": 20,
-   "nm": 550,
-   "first": 2020,
-   "last": 2020,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    }
-   ]
-  },
-  {
-   "id": "giorgio-m",
-   "name": "Giorgio M.",
-   "trips": 1,
-   "days": 20,
-   "nm": 550,
-   "first": 2020,
-   "last": 2020,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "alba",
-     "year": 2020,
-     "zone": "Sardegna & Corsica",
-     "country": "Italy - France"
-    }
-   ]
-  },
-  {
-   "id": "filippo-r",
-   "name": "Filippo R.",
-   "trips": 1,
-   "days": 20,
-   "nm": 463,
-   "first": 2014,
-   "last": 2014,
-   "rank": "ltjg",
-   "trips_list": [
-    {
-     "id": "anax",
-     "year": 2014,
-     "zone": "Sporades - GR",
-     "country": "Greece"
-    }
-   ]
-  },
-  {
-   "id": "riccardo-t",
-   "name": "Riccardo T.",
-   "trips": 2,
-   "days": 13,
-   "nm": 430,
-   "first": 2021,
-   "last": 2022,
-   "rank": "ensign",
-   "trips_list": [
-    {
-     "id": "silkwave",
-     "year": 2021,
-     "zone": "Sardegna",
-     "country": "Italy"
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 2,
+     "days": 22
     },
     {
-     "id": "challenger",
-     "year": 2022,
-     "zone": "Baleares - SP",
-     "country": "Spain"
-    }
-   ],
-   "photos": [
-    {
-     "src": "trips/img/silkwave/01.jpg",
-     "trip_id": "silkwave",
-     "caption": "Sardegna 2021"
-    }
-   ]
-  },
-  {
-   "id": "chiara-f",
-   "name": "Chiara F.",
-   "trips": 1,
-   "days": 13,
-   "nm": 252,
-   "first": 2016,
-   "last": 2016,
-   "rank": "ensign",
-   "trips_list": [
-    {
-     "id": "aquarela",
-     "year": 2016,
-     "zone": "Baleares - SP",
-     "country": "Spain"
-    }
-   ]
-  },
-  {
-   "id": "umberto-f",
-   "name": "Umberto F.",
-   "trips": 2,
-   "days": 12,
-   "nm": 321,
-   "first": 2014,
-   "last": 2022,
-   "rank": "ensign",
-   "trips_list": [
-    {
-     "id": "cubalibre",
-     "year": 2014,
-     "zone": "Baleares - SP",
-     "country": "Spain"
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 22
     },
     {
-     "id": "challenger",
-     "year": 2022,
-     "zone": "Baleares - SP",
-     "country": "Spain"
-    }
-   ],
-   "photos": [
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 2,
+     "days": 22
+    },
     {
-     "src": "trips/img/cubalibre/01.jpg",
-     "trip_id": "cubalibre",
-     "caption": "Spagna 2014"
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
   {
-   "id": "ludovica-r",
-   "name": "Ludovica R.",
-   "trips": 1,
-   "days": 12,
-   "nm": 470,
-   "first": 2018,
-   "last": 2018,
-   "rank": "ensign",
-   "trips_list": [
-    {
-     "id": "invitation",
-     "year": 2018,
-     "zone": "Baleares - SP",
-     "country": "Spain"
-    }
-   ]
-  },
-  {
-   "id": "giacomo-m",
-   "name": "Giacomo M.",
-   "trips": 1,
-   "days": 12,
-   "nm": 470,
-   "first": 2018,
-   "last": 2018,
-   "rank": "ensign",
-   "trips_list": [
-    {
-     "id": "invitation",
-     "year": 2018,
-     "zone": "Baleares - SP",
-     "country": "Spain"
-    }
-   ]
-  },
-  {
-   "id": "carlotta-d",
-   "name": "Carlotta D.",
-   "trips": 1,
-   "days": 11,
-   "nm": 395,
-   "first": 2022,
+   "id": "marta-a",
+   "name": "Marta A.",
+   "trips": 2,
+   "days": 21,
+   "nm": 670,
+   "first": 2020,
    "last": 2022,
-   "rank": "ensign",
+   "rank": "ltjg",
    "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    },
     {
      "id": "all-in",
      "year": 2022,
      "zone": "Sporades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11
     }
    ],
    "photos": [
@@ -2215,6 +3248,690 @@
      "trip_id": "all-in",
      "caption": "Grecia 2022"
     }
+   ],
+   "companions": [
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 21
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 2,
+     "days": 21
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlotta-d",
+     "name": "Carlotta D.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "laura-c",
+   "name": "Laura C.",
+   "trips": 2,
+   "days": 18,
+   "nm": 669,
+   "first": 2018,
+   "last": 2022,
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12
+    },
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ],
+   "companions": [
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlotta-d",
+     "name": "Carlotta D.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 8
+    }
+   ]
+  },
+  {
+   "id": "giacomo-b",
+   "name": "Giacomo B.",
+   "trips": 2,
+   "days": 16,
+   "nm": 385,
+   "first": 2020,
+   "last": 2022,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Lagoon 450",
+     "nm": 110,
+     "days": 6
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/alba/02.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    }
+   ],
+   "companions": [
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 16
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "alice-s",
+   "name": "Alice S.",
+   "trips": 1,
+   "days": 15,
+   "nm": 412,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    }
+   ],
+   "companions": [
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 15
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 15
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "filippo-r",
+   "name": "Filippo R.",
+   "trips": 1,
+   "days": 14,
+   "nm": 324,
+   "first": 2014,
+   "last": 2014,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20
+    }
+   ],
+   "companions": [
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "nicola-r",
+     "name": "Nicola R.",
+     "trips": 1,
+     "days": 14
+    }
+   ]
+  },
+  {
+   "id": "riccardo-t",
+   "name": "Riccardo T.",
+   "trips": 2,
+   "days": 13,
+   "nm": 430,
+   "first": 2021,
+   "last": 2022,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "silkwave",
+     "year": 2021,
+     "zone": "Sardegna",
+     "country": "Italy",
+     "boat": "Bavaria 51 Cruiser",
+     "nm": 320,
+     "days": 6
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Lagoon 450",
+     "nm": 110,
+     "days": 6
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/silkwave/01.jpg",
+     "trip_id": "silkwave",
+     "caption": "Sardegna 2021"
+    }
+   ],
+   "companions": [
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 12
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 2,
+     "days": 12
+    },
+    {
+     "id": "umberto-f",
+     "name": "Umberto F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 6
+    }
+   ]
+  },
+  {
+   "id": "umberto-f",
+   "name": "Umberto F.",
+   "trips": 2,
+   "days": 12,
+   "nm": 321,
+   "first": 2014,
+   "last": 2022,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "cubalibre",
+     "year": 2014,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Oceanis 43",
+     "nm": 211,
+     "days": 6
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Lagoon 450",
+     "nm": 110,
+     "days": 6
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/cubalibre/01.jpg",
+     "trip_id": "cubalibre",
+     "caption": "Spagna 2014"
+    }
+   ],
+   "companions": [
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 12
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-t",
+     "name": "Riccardo T.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 6
+    }
+   ]
+  },
+  {
+   "id": "ludovica-r",
+   "name": "Ludovica R.",
+   "trips": 1,
+   "days": 12,
+   "nm": 470,
+   "first": 2018,
+   "last": 2018,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12
+    }
+   ],
+   "companions": [
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 7
+    }
+   ]
+  },
+  {
+   "id": "giacomo-m",
+   "name": "Giacomo M.",
+   "trips": 1,
+   "days": 12,
+   "nm": 470,
+   "first": 2018,
+   "last": 2018,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12
+    }
+   ],
+   "companions": [
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 7
+    }
+   ]
+  },
+  {
+   "id": "carlotta-d",
+   "name": "Carlotta D.",
+   "trips": 1,
+   "days": 11,
+   "nm": 395,
+   "first": 2022,
+   "last": 2022,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ],
+   "companions": [
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 8
+    }
    ]
   },
   {
@@ -2231,7 +3948,10 @@
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
     }
    ],
    "photos": [
@@ -2239,6 +3959,44 @@
      "src": "trips/img/sorbe/05.jpg",
      "trip_id": "sorbe",
      "caption": "Grenadine 2017"
+    }
+   ],
+   "companions": [
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -2256,7 +4014,48 @@
      "id": "sorbe",
      "year": 2017,
      "zone": "Grenadines Caribbean",
-     "country": "Saint Vincent - France"
+     "country": "Saint Vincent - France",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11
+    }
+   ],
+   "companions": [
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -2274,7 +4073,48 @@
      "id": "nemo",
      "year": 2011,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 440",
+     "nm": 321,
+     "days": 11
+    }
+   ],
+   "companions": [
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gianmarco-m",
+     "name": "Gianmarco M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "alberto-b",
+     "name": "Alberto B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -2292,7 +4132,48 @@
      "id": "nemo",
      "year": 2011,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 440",
+     "nm": 321,
+     "days": 11
+    }
+   ],
+   "companions": [
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "enrico-g",
+     "name": "Enrico G.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "alberto-b",
+     "name": "Alberto B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -2310,7 +4191,451 @@
      "id": "nemo",
      "year": 2011,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 440",
+     "nm": 321,
+     "days": 11
+    }
+   ],
+   "companions": [
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "enrico-g",
+     "name": "Enrico G.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gianmarco-m",
+     "name": "Gianmarco M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 1,
+     "days": 11
+    }
+   ]
+  },
+  {
+   "id": "matilde-r",
+   "name": "Matilde R.",
+   "trips": 1,
+   "days": 10,
+   "nm": 275,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/alba/03.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    }
+   ],
+   "companions": [
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "sara-b",
+   "name": "Sara B.",
+   "trips": 1,
+   "days": 10,
+   "nm": 275,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/alba/03.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    }
+   ],
+   "companions": [
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "beatrice-f",
+   "name": "Beatrice F.",
+   "trips": 1,
+   "days": 10,
+   "nm": 275,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    }
+   ],
+   "companions": [
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "sergio-s",
+   "name": "Sergio S.",
+   "trips": 1,
+   "days": 10,
+   "nm": 275,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    }
+   ],
+   "companions": [
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "martina-g",
+   "name": "Martina G.",
+   "trips": 1,
+   "days": 10,
+   "nm": 275,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    }
+   ],
+   "companions": [
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "giorgio-m",
+   "name": "Giorgio M.",
+   "trips": 1,
+   "days": 10,
+   "nm": 275,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20
+    }
+   ],
+   "companions": [
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    }
+   ]
+  },
+  {
+   "id": "chiara-f",
+   "name": "Chiara F.",
+   "trips": 1,
+   "days": 10,
+   "nm": 194,
+   "first": 2016,
+   "last": 2016,
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleares - SP",
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 252,
+     "days": 13
+    }
+   ],
+   "companions": [
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 10
     }
    ]
   },
@@ -2328,7 +4653,10 @@
      "id": "isla",
      "year": 2023,
      "zone": "Sicily-Egadi",
-     "country": "Italy"
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6
     }
    ],
    "crew2026": {
@@ -2346,7 +4674,44 @@
    "bio": {
     "epithet": "Il jolly",
     "html": "La chiave inglese, il jolly di qualsiasi vacanza: con il suo accento torinese non ti fa smettere un attimo di ridere. Nuotatore infinito &mdash; potrebbe nuotare per i fatti suoi mentre la barca va da tutt'altra parte senza nemmeno accorgersene. Una volta, in Sicilia, l'abbiamo cambiato di rada lasciandolo indietro: ci ha raggiunti a nuoto. Non fa mai abbassare l'umore di bordo."
-   }
+   },
+   "tags": [
+    "Jolly",
+    "Gran nuotatore",
+    "Anima della festa"
+   ],
+   "companions": [
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 6
+    }
+   ]
   },
   {
    "id": "tonino-l",
@@ -2362,7 +4727,30 @@
      "id": "alexandros",
      "year": 2024,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 230,
+     "days": 6
+    }
+   ],
+   "companions": [
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "angela-k",
+     "name": "Angela K.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -2380,7 +4768,30 @@
      "id": "alexandros",
      "year": 2024,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 230,
+     "days": 6
+    }
+   ],
+   "companions": [
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "tonino-l",
+     "name": "Tonino L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -2398,7 +4809,36 @@
      "id": "natfika",
      "year": 2012,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Bavaria 50",
+     "nm": 189,
+     "days": 6
+    }
+   ],
+   "companions": [
+    {
+     "id": "rebecca-l",
+     "name": "Rebecca L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "fabiana-f",
+     "name": "Fabiana F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "martina-r",
+     "name": "Martina R.",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -2416,7 +4856,36 @@
      "id": "natfika",
      "year": 2012,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Bavaria 50",
+     "nm": 189,
+     "days": 6
+    }
+   ],
+   "companions": [
+    {
+     "id": "mirco-l",
+     "name": "Mirco L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "fabiana-f",
+     "name": "Fabiana F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "martina-r",
+     "name": "Martina R.",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -2434,7 +4903,36 @@
      "id": "natfika",
      "year": 2012,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Bavaria 50",
+     "nm": 189,
+     "days": 6
+    }
+   ],
+   "companions": [
+    {
+     "id": "mirco-l",
+     "name": "Mirco L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "rebecca-l",
+     "name": "Rebecca L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "martina-r",
+     "name": "Martina R.",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -2452,7 +4950,36 @@
      "id": "natfika",
      "year": 2012,
      "zone": "Cyclades - GR",
-     "country": "Greece"
+     "country": "Greece",
+     "boat": "Bavaria 50",
+     "nm": 189,
+     "days": 6
+    }
+   ],
+   "companions": [
+    {
+     "id": "mirco-l",
+     "name": "Mirco L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "rebecca-l",
+     "name": "Rebecca L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "fabiana-f",
+     "name": "Fabiana F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6
     }
    ]
   },

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Foto condivise · Plancia Niña</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+h1{font:700 2rem/1.05 var(--display);letter-spacing:.01em;padding:1.5rem 1.1rem .2rem}
+.lead{padding:0 1.1rem;color:var(--soft);font-size:.98rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin:1.5rem 0 1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.frame{width:100%;border:1px solid var(--hair);border-radius:10px;background:var(--panel);overflow:hidden}
+.frame iframe{width:100%;display:block;border:0}
+.btn{display:inline-block;margin-top:.9rem;font:700 .7rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  color:#fff;background:var(--accent);padding:.75rem 1.1rem;border-radius:99px}
+.todo{background:var(--sea-1);border:1px dashed var(--hair);border-radius:10px;padding:1.2rem;color:var(--soft);font-size:.95rem;line-height:1.65}
+.todo b{color:var(--ink)}
+.todo ol{margin:.6rem 0 0 1.1rem;padding:0}
+.todo li{margin:.35rem 0}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia Niña</a>
+  <span class="tag">📷 Foto condivise</span>
+</div></div>
+<main>
+  <h1>Foto condivise</h1>
+  <p class="lead">Le foto di tutti, in un posto solo. Carica le tue con l'account Google e finiscono nella cartella comune della crociera.</p>
+  <section id="app"></section>
+</main>
+
+<script>
+// ====== CONFIG — incolla qui i dati di Google (Edo) ======
+// 1) FORM_URL: link del Google Form con la domanda "Carica file". Va bene sia il
+//    link /viewform sia l'src dell'embed (Invia › <> Incorpora). Lascialo vuoto per nascondere.
+// 2) FOLDER_ID: l'ID della cartella Drive condivisa (la parte dopo /folders/ nell'URL).
+//    La cartella dev'essere condivisa "Chiunque abbia il link › Visualizzatore".
+const FORM_URL = "";
+const FOLDER_ID = "";
+// =========================================================
+
+const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+function formSrc(u) {
+  if (!u) return "";
+  if (/embedded=true/.test(u)) return u;
+  return u.replace(/\/viewform.*$/, "/viewform") + "?embedded=true";
+}
+function render() {
+  const app = document.getElementById("app");
+  if (!FORM_URL && !FOLDER_ID) {
+    app.innerHTML = `<h2>🚧 In allestimento</h2>
+    <div class="todo">Questa sezione è pronta: manca solo collegarla al Drive. <b>Edo</b>, quando vuoi:
+      <ol>
+        <li>Crea una <b>cartella su Google Drive</b> ("Foto Niña") e condividila come <b>"Chiunque abbia il link › Visualizzatore"</b>.</li>
+        <li>Crea un <b>Google Form</b> con una domanda di tipo <b>"Carica file"</b> impostata per salvare in quella cartella.</li>
+        <li>Mandami il <b>link del Form</b> e l'<b>ID della cartella</b>: li incollo nel blocco CONFIG di questa pagina.</li>
+      </ol>
+      Nota di Google: chi carica deve avere un account Google (serve per evitare abusi). Chi guarda no.</div>
+    <footer><a class="pl" href="index.html">‹ Torna alla Plancia</a></footer>`;
+    return;
+  }
+  let html = "";
+  if (FORM_URL) html += `<h2>⬆️ Carica le tue foto</h2>
+    <div class="frame"><iframe src="${esc(formSrc(FORM_URL))}" height="720" title="Carica foto — modulo" loading="lazy">Caricamento…</iframe></div>`;
+  if (FOLDER_ID) html += `<h2>🖼️ La galleria condivisa</h2>
+    <div class="frame"><iframe src="https://drive.google.com/embeddedfolderview?id=${esc(FOLDER_ID)}#grid" height="620" title="Galleria Drive" loading="lazy">Caricamento…</iframe></div>
+    <a class="btn" href="https://drive.google.com/drive/folders/${esc(FOLDER_ID)}" target="_blank" rel="noopener">Apri la cartella su Drive ↗</a>`;
+  html += `<footer><a class="pl" href="index.html">‹ Torna alla Plancia</a></footer>`;
+  app.innerHTML = html;
+}
+render();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>I mari · Plancia Niña</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.flag{width:26px;height:17px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.2),0 1px 2px rgba(0,0,0,.25);vertical-align:-2px;margin-right:.15rem}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin:1.5rem 0 1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.phero{padding:1.6rem 1.1rem .2rem}
+.phero .yr{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.phero h1{font:700 2.2rem/1.03 var(--display);letter-spacing:.01em;margin:.4rem 0 .2rem;display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.phero .sub{color:var(--soft);font-size:.98rem}
+.pstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.2rem}
+.pstat{background:var(--panel);padding:.85rem .3rem;text-align:center}
+.pstat b{display:block;font:700 1.35rem/1 var(--mono);color:var(--ink)}
+.pstat i{display:block;font:700 .5rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.4rem}
+/* elenco missioni */
+.mlist{display:flex;flex-direction:column;gap:.5rem}
+.mrow{display:flex;align-items:center;gap:.7rem;background:var(--panel);border:1px solid var(--hair);border-radius:8px;padding:.65rem .8rem;text-decoration:none;color:inherit}
+.mrow:hover{border-color:var(--accent)}
+.mrow .fl{flex:none;display:inline-flex}
+.mrow .mid{flex:1;min-width:0}
+.mrow .mid b{display:block;font-size:.98rem}
+.mrow .mid small{color:var(--soft);font-size:.8rem}
+.mrow .yr{font:700 .82rem/1 var(--mono);color:var(--soft)}
+.mrow .go{color:var(--soft);font-weight:700}
+.pace{display:inline-block;font:700 .56rem/1 var(--display);letter-spacing:.05em;text-transform:uppercase;border-radius:99px;padding:.2rem .45rem;vertical-align:1px}
+.pace.chill{background:rgba(47,191,113,.16);color:var(--verde)}
+.pace.cruise{background:rgba(0,107,159,.15);color:var(--accent)}
+.pace.push{background:rgba(184,134,11,.18);color:var(--gold)}
+.pace.extreme{background:rgba(197,48,48,.16);color:#C53030}
+/* directory paesi */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.7rem}
+.ccard{background:var(--panel);border:1px solid var(--hair);border-radius:9px;padding:.9rem;text-decoration:none;color:inherit;display:block}
+.ccard:hover{border-color:var(--accent)}
+.ccard .cf{font-size:1.1rem}
+.ccard b{display:block;font-size:1.05rem;margin:.5rem 0 .15rem}
+.ccard span{font:700 .56rem/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.ccard .nm{color:var(--gold)}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="skipper.html">‹ Dossier skipper</a>
+  <span class="tag">🌍 I mari</span>
+</div></div>
+<main id="app"></main>
+
+<script>
+const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", Turkey: "tr" };
+const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia", France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", Turkey: "Turchia" };
+const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April: "aprile", May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre", October: "ottobre", November: "novembre", December: "dicembre" };
+const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
+const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";
+const flags = country => parts(country).map(flag1).join("");
+const cleanZone = z => (z || "").replace(/\s*-\s*(GR|SP|IT|TR|FR)\s*$/i, "").replace(/\s+CZ$/i, "").trim();
+// ISO -> nome inglese/italiano di riferimento
+const ISO2EN = {}; Object.keys(CC).forEach(c => { if (!ISO2EN[CC[c]]) ISO2EN[CC[c]] = c; });
+function pace(a) {
+  if (a == null) return null;
+  if (a < 18) return { k: "chill", t: "Chilling" };
+  if (a < 30) return { k: "cruise", t: "Crociera" };
+  if (a < 40) return { k: "push", t: "Spinto" };
+  return { k: "extreme", t: "Estremo" };
+}
+const inCountry = (t, iso) => parts(t.country).some(c => CC[c] === iso);
+
+function countryPage(iso, all) {
+  const en = ISO2EN[iso], itn = IT_NAME[en] || en;
+  const list = all.filter(t => inCountry(t, iso)).sort((a, b) => a.year - b.year || a.nm - b.nm);
+  if (!list.length) return directory(all);
+  const nm = list.reduce((s, t) => s + (t.nm || 0), 0);
+  const ys = list.map(t => t.year);
+  const rows = list.map(t => {
+    const avg = t.days ? Math.round(t.nm / t.days) : null, p = pace(avg);
+    return `<a class="mrow" href="viaggio.html#${t.id}"><span class="fl">${flags(t.country)}</span>
+      <span class="mid"><b>${esc(cleanZone(t.zone))}</b><small>${esc(t.boat || "")} · ${t.nm} nm · ${Math.round(t.days)} gg${avg ? ` · ${avg} nm/g` : ""}</small></span>
+      ${p ? `<span class="pace ${p.k}">${p.t}</span>` : ""}<span class="yr">${t.year}</span><span class="go">›</span></a>`;
+  }).join("");
+  return `
+  <div class="phero">
+    <div class="yr">Teatro operativo</div>
+    <h1>${flag1(en)} ${esc(itn)}</h1>
+    <div class="sub">${list.length} ${list.length === 1 ? "missione" : "missioni"} tra il ${Math.min(...ys)} e il ${Math.max(...ys)}.</div>
+    <div class="pstats">
+      <div class="pstat"><b>${list.length}</b><i>missioni</i></div>
+      <div class="pstat"><b>${nm}</b><i>miglia</i></div>
+      <div class="pstat"><b>${new Set(ys).size}</b><i>stagioni</i></div>
+    </div>
+  </div>
+  <section><h2>⚓ Le missioni</h2><div class="mlist">${rows}</div></section>
+  <footer><a class="pl" href="paese.html">‹ Tutti i mari</a></footer>`;
+}
+
+function directory(all) {
+  const by = {};
+  all.forEach(t => parts(t.country).forEach(c => {
+    if (!CC[c]) return;
+    (by[CC[c]] = by[CC[c]] || { n: 0, nm: 0 }).n++; by[CC[c]].nm += (t.nm || 0);
+  }));
+  const cards = Object.entries(by).sort((a, b) => b[1].n - a[1].n || b[1].nm - a[1].nm).map(([iso, s]) => {
+    const en = ISO2EN[iso];
+    return `<a class="ccard" href="#${iso}"><span class="cf">${flag1(en)}</span><b>${esc(IT_NAME[en] || en)}</b>
+      <span>${s.n} ${s.n === 1 ? "missione" : "missioni"}</span><br><span class="nm">${s.nm} nm</span></a>`;
+  }).join("");
+  return `<div class="phero"><div class="yr">Teatri operativi</div>
+    <h1>🌍 I mari</h1><div class="sub">${Object.keys(by).length} mari solcati. Tocca un mare per vedere tutte le missioni.</div></div>
+    <section><div class="grid" style="margin-top:1rem">${cards}</div>
+    <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer></section>`;
+}
+
+let DATA = [];
+function route() {
+  const iso = decodeURIComponent(location.hash.replace(/^#/, ""));
+  document.getElementById("app").innerHTML = (iso && ISO2EN[iso]) ? countryPage(iso, DATA) : directory(DATA);
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+fetch("data/trips.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
+  DATA = d.trips || [];
+  route();
+}).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Mari non disponibili offline.</p></section>`; });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

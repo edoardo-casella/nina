@@ -67,19 +67,36 @@ svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 .tlrow{display:flex;align-items:center;gap:.55rem;background:var(--panel);border:1px solid var(--hair);border-radius:7px;padding:.55rem .7rem;text-decoration:none;color:inherit}
 .tlrow:hover{border-color:var(--accent)}
 .tlrow .fl{flex:none;display:inline-flex;align-items:center}
-.tlrow .z{flex:1;font-weight:600;font-size:.92rem}
-.tlrow .y{font:700 .82rem/1 var(--mono);color:var(--soft)}
+.tlrow .z{flex:1;min-width:0}
+.tlrow .z b{display:block;font-size:.92rem}
+.tlrow .z small{color:var(--soft);font-size:.76rem}
+.tlrow .y{font:700 .82rem/1 var(--mono);color:var(--soft);flex:none}
 .tlrow .go{color:var(--soft);font-weight:700}
+.pace{flex:none;font:700 .54rem/1 var(--display);letter-spacing:.05em;text-transform:uppercase;border-radius:99px;padding:.28rem .5rem}
+.pace.chill{background:rgba(47,191,113,.16);color:var(--verde)}
+.pace.cruise{background:rgba(0,107,159,.15);color:var(--accent)}
+.pace.push{background:rgba(184,134,11,.18);color:var(--gold)}
+.pace.extreme{background:rgba(197,48,48,.16);color:#C53030}
+/* tag di profilo */
+.mtags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.mtag{font:700 .6rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;background:var(--sea-2);color:var(--accent);border-radius:99px;padding:.42rem .7rem}
+/* companions */
+.cchips{display:flex;flex-wrap:wrap;gap:.5rem}
+.cchip{display:inline-flex;align-items:center;gap:.5rem;background:var(--panel);border:1px solid var(--hair);border-radius:99px;padding:.24rem .8rem .24rem .28rem;text-decoration:none;color:inherit}
+.cchip:hover{border-color:var(--accent)}
+.cchip .cav{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 .9rem/1 var(--display);color:#fff}
+.cchip .cn{font-weight:600;font-size:.88rem;line-height:1.12}
+.cchip .cn small{display:block;font:400 .68rem/1.2 var(--body);color:var(--soft)}
 .q-empty{background:var(--sea-1);border:1px dashed var(--hair);border-radius:5px;padding:1rem;color:var(--soft);font-size:.9rem;text-align:center}
 .q-empty a{font-weight:600}
 .qrow{display:grid;grid-template-columns:7.5rem 1fr;gap:.5rem;padding:.5rem 0;border-bottom:1px solid var(--hair);font-size:.92rem}
 .qrow:last-child{border-bottom:0}
 .qrow b{font:700 .58rem/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
-/* strip altri membri + galleria */
-.strip{display:flex;gap:.7rem;overflow-x:auto;padding:.3rem 0 .6rem}
-.strip a{flex:none;width:60px;text-align:center;text-decoration:none;color:var(--soft)}
-.strip .av{width:56px;height:56px;border-radius:50%;object-fit:cover;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 1.3rem/1 var(--display);color:#fff;margin:0 auto .25rem}
-.strip small{font-size:.66rem;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* ciurma 2026: griglia intera (niente scroll orizzontale) + galleria */
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(66px,1fr));gap:.8rem .5rem;padding:.3rem 0 .6rem}
+.strip a{text-align:center;text-decoration:none;color:var(--soft)}
+.strip .av{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 1.2rem/1 var(--display);color:#fff;margin:0 auto .25rem}
+.strip small{font-size:.64rem;display:block;line-height:1.15}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem}
 .pgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.7rem}
 .pgal figure{margin:0;cursor:zoom-in}
@@ -120,8 +137,24 @@ const partsC = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
 const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}">` : "";
 const flags = country => partsC(country).map(flag1).join("");
 const cleanZone = z => (z || "").replace(/\s*-\s*(GR|SP|IT|TR|FR)\s*$/i, "").replace(/\s+CZ$/i, "").trim();
+function pace(a) {  // livello di attività = ritmo nm/giorno (come nel dossier skipper)
+  if (a == null) return null;
+  if (a < 18) return { k: "chill", t: "Chilling" };
+  if (a < 30) return { k: "cruise", t: "Crociera" };
+  if (a < 40) return { k: "push", t: "Spinto" };
+  return { k: "extreme", t: "Estremo" };
+}
 function tripRow(t) {
-  return `<a class="tlrow" href="viaggio.html#${t.id}"><span class="fl">${flags(t.country) || "⚓"}</span><span class="z">${esc(cleanZone(t.zone) || t.country || "")}</span><span class="y num">${t.year || ""}</span><span class="go">›</span></a>`;
+  const avg = t.days ? Math.round(t.nm / t.days) : null, p = pace(avg);
+  return `<a class="tlrow" href="viaggio.html#${t.id}"><span class="fl">${flags(t.country) || "⚓"}</span>` +
+    `<span class="z"><b>${esc(cleanZone(t.zone) || t.country || "")}</b><small>${esc(t.boat || "")}${t.nm ? ` · ${t.nm} nm` : ""}</small></span>` +
+    `${p ? `<span class="pace ${p.k}">${p.t}</span>` : ""}<span class="y num">${t.year || ""}</span><span class="go">›</span></a>`;
+}
+function compChip(cp, all) {
+  const p = all.find(x => x.id === cp.id);
+  const av = p ? avatarP(p, "cav") : `<span class="cav">${esc((cp.name || "?").trim()[0])}</span>`;
+  const href = (p && p.crew2026 && p.crew2026.link) || `#${cp.id}`;
+  return `<a class="cchip" href="${href}">${av}<span class="cn">${esc(cp.name)}<small>${cp.trips} ${cp.trips === 1 ? "viaggio" : "viaggi"}</small></span></a>`;
 }
 function lbOne(src){ const lb=document.getElementById('lb'); lb.querySelector('img').src=src; lb.classList.add('on'); }
 (function(){ const lb=document.getElementById('lb'); lb.querySelector('.x').onclick=()=>lb.classList.remove('on'); lb.onclick=e=>{ if(e.target!==lb.querySelector('.x')) lb.classList.remove('on'); }; document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); }); })();
@@ -199,8 +232,10 @@ function memberPage(m, all) {
       <div class="mstat"><b>${nfmt(m.nm)}</b><i>miglia</i></div>
       <div class="mstat"><b>${yrs || "—"}</b><i>${m.trips > 0 ? "stagioni" : "esordio"}</i></div>
     </div>
+    ${(m.tags && m.tags.length) ? `<div class="mtags">${m.tags.map(tg => `<span class="mtag">${esc(tg)}</span>`).join("")}</div>` : ""}
     ${m.bio ? `<h2>Ritratto di bordo</h2><div class="card bio"><span class="epithet">${esc(m.bio.epithet || "")}</span>${m.bio.html}</div>` : ""}
     ${(m.trips_list && m.trips_list.length) ? `<h2>⛵ I viaggi insieme</h2><div class="tlog">${m.trips_list.map(tripRow).join("")}</div>` : ""}
+    ${(m.companions && m.companions.length) ? `<h2>🔗 Con chi ha navigato di più</h2><div class="cchips">${m.companions.map(cp => compChip(cp, all)).join("")}</div>` : ""}
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
     ${c ? `<h2>A bordo nel 2026</h2>
       <div class="card">Sale a Cannigione il <b>${fmt(c.board)}</b> e sbarca il <b>${fmt(c.leave)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>
@@ -244,5 +279,6 @@ fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Equipaggio non disponibile offline.</p></section>`; });
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
+<script src="nav.js"></script>
 </body>
 </html>

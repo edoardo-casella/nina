@@ -41,8 +41,16 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .vhero h1{font:700 2.2rem/1.03 var(--display);letter-spacing:.01em;margin:.4rem 0 .2rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
 .vhero .sub{color:var(--soft);font-size:.98rem}
 .vhero .sub b{color:var(--ink)}
-.vstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.2rem}
+.vstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.2rem}
 .vstat{background:var(--panel);padding:.85rem .3rem;text-align:center}
+.vtags{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;margin-top:.85rem}
+.bti{display:inline-flex;color:var(--soft)} .bti .bt{width:1.5rem;height:1.5rem}
+.pace,.diff{display:inline-flex;align-items:center;gap:.25rem;font:700 .6rem/1 var(--display);letter-spacing:.05em;text-transform:uppercase;border-radius:99px;padding:.34rem .62rem}
+.pace.chill{background:rgba(47,191,113,.16);color:var(--verde)}
+.pace.cruise{background:rgba(0,107,159,.15);color:var(--accent)}
+.pace.push{background:rgba(184,134,11,.18);color:var(--gold)}
+.pace.extreme{background:rgba(197,48,48,.16);color:#C53030}
+.diff{background:var(--sea-1);color:var(--soft);border:1px solid var(--hair)}
 .vstat b{display:block;font:700 1.35rem/1 var(--mono);color:var(--ink)}
 .vstat i{display:block;font:700 .5rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.4rem}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
@@ -165,11 +173,46 @@ function crewChipById(id) {
   return `<a class="chip lk" href="${href}">${av}${esc(p.name)}</a>`;
 }
 
+// paese cliccabile → paese.html#<iso>
+const countryLinks = c => parts(c).map(p => CC[p] ? `<a href="paese.html#${CC[p]}">${esc(IT_NAME[p] || p)}</a>` : esc(IT_NAME[p] || p)).join(" · ");
+// tag (portati dal dossier skipper): ritmo, esperienza, icona scafo
+const CAT = ["Lagoon", "Bali", "Fountain Pajot", "Fountain-Pajot"];
+const isCat = boat => CAT.some(b => (boat || "").startsWith(b.trim()));
+const ICON_MONO = `<svg class="bt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16l-2.3 4H6.3z"/><path d="M12 3.5v12.5"/><path d="M12 6l5.5 10H12"/></svg>`;
+const ICON_CAT = `<svg class="bt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16h6l-1.3 4H3.8z"/><path d="M15.5 16h6l-1.3 4h-3.4z"/><path d="M6 16h12"/><path d="M12 4v12"/><path d="M12 6l5 10H12"/></svg>`;
+const boatIcon = boat => `<span class="bti" title="${isCat(boat) ? "catamarano" : "monoscafo"}">${isCat(boat) ? ICON_CAT : ICON_MONO}</span>`;
+function pace(a) {
+  if (a == null) return null;
+  if (a < 18) return { k: "chill", t: "Chilling", d: "relax, tappe corte" };
+  if (a < 30) return { k: "cruise", t: "Crociera", d: "ritmo classico" };
+  if (a < 40) return { k: "push", t: "Spinto", d: "ritmo sostenuto" };
+  return { k: "extreme", t: "Estremo", d: "navigazione dura" };
+}
+const DIFF = [null, { k: "beg", t: "Principiante" }, { k: "int", t: "Intermedio" }, { k: "adv", t: "Avanzato" }, { k: "exp", t: "Lupo di mare" }];
+function diffOf(zone, month) {
+  const z = (zone || "").toLowerCase(), hi = /jul|aug/i.test(month || ""), sep = /sep/i.test(month || "");
+  let lvl, why;
+  if (/cyclad/.test(z)) { lvl = hi ? 4 : 3; why = "Cicladi: in luglio-agosto soffia il Meltemi da nord, forza 5-7 con raffiche fino a 40 nodi. Zona da esperti."; }
+  else if (/sardegn|corsica/.test(z)) { lvl = 4; why = "Bocche di Bonifacio: tra i tratti più ventosi del Mediterraneo — Maestrale 20-35 nodi ed effetto Venturi."; }
+  else if (/dodecan/.test(z)) { lvl = 3; why = "Dodecaneso: Meltemi presente ma più regolare; tratte lunghe, meglio equipaggio esperto."; }
+  else if (/grenadin|carib|cuba/.test(z)) { lvl = 3; why = "Caraibi: alisei costanti 10-20 nodi da est, ma passaggi lunghi ed esposti tra le isole."; }
+  else if (/sporad/.test(z)) { lvl = 2; why = "Sporadi: Meltemi più debole (forza 3-4), ma i canali a nord possono rinforzare."; }
+  else if (/balear/.test(z)) { lvl = 2; why = "Baleari: venti termici moderati e qualche Tramontana; condizioni gestibili."; }
+  else if (/inner island|seychell/.test(z)) { lvl = 2; why = "Seychelles: distanze brevi e venti prevedibili, ma pochi porti — si vive sull'ancora."; }
+  else if (/egadi|sicil/.test(z)) { lvl = sep ? 1 : 2; why = sep ? "Egadi a settembre: condizioni tranquille e calde." : "Egadi/Sicilia in estate: venti moderati, qualche Scirocco o Maestrale."; }
+  else if (/ionian/.test(z)) { lvl = 1; why = "Ionio: la zona più calma della Grecia — Maistro leggero e mare piatto. Ideale per iniziare."; }
+  else if (/croaz/.test(z)) { lvl = 1; why = "Croazia: acque riparate, venti regolari e baie vicine. Perfetta per i principianti."; }
+  else { lvl = 2; why = "Condizioni mediterranee tipiche."; }
+  return { ...DIFF[lvl], why };
+}
+
 function tripPage(t, all) {
   const idx = all.findIndex(x => x.id === t.id);
   const prev = all[idx - 1], next = all[idx + 1];
   const zone = cleanZone(t.zone);
   const cat = /Lagoon|Bali|Fountain|Pajot/i.test(t.boat) ? "catamarano" : "monoscafo";
+  const avg = t.days ? Math.round(t.nm / t.days) : null;
+  const pc = pace(avg), df = diffOf(t.zone, t.month);
   const crew = t.crew.map(crewChip).join("");
   const galId = "g_" + t.id.replace(/-/g, "_");   // niente trattini: window.g_all_in valido (non g_all-in)
   const gal = t.photos && t.photos.length
@@ -180,13 +223,15 @@ function tripPage(t, all) {
   <div class="vhero">
     <div class="yr">${MONTHS[t.month] || ""} ${t.year}</div>
     <h1>${flags(t.country)} ${esc(zone)}</h1>
-    <div class="sub"><b>«${esc(t.name)}»</b> · ${esc(t.boat)} · ${cat} · ${itCountry(t.country)}</div>
+    <div class="sub"><b>«${esc(t.name)}»</b> · ${esc(t.boat)} · ${cat} · ${countryLinks(t.country)}</div>
     <div class="vstats">
       <div class="vstat"><b>${t.nm}</b><i>miglia</i></div>
       <div class="vstat"><b>${Math.round(t.days)}</b><i>giorni</i></div>
+      <div class="vstat"><b>${avg ?? "—"}</b><i>nm/giorno</i></div>
       <div class="vstat"><b>${t.crew.length}</b><i>equipaggio</i></div>
       <div class="vstat"><b>${t.n_photos || 0}</b><i>foto</i></div>
     </div>
+    <div class="vtags">${boatIcon(t.boat)}${pc ? `<span class="pace ${pc.k}" title="${esc(pc.d)}">${pc.t}</span>` : ""}<span class="diff ${df.k}" title="${esc(df.why)}">⚓ ${df.t}</span></div>
   </div>
   <section>
     ${t.story ? `<h2>📖 ${esc(t.story.title || "Il racconto")}</h2><div class="story">${t.story.html}</div>` : ""}
@@ -237,5 +282,6 @@ Promise.all([
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Viaggi non disponibili offline.</p></section>`; });
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
+<script src="nav.js"></script>
 </body>
 </html>

@@ -20,6 +20,7 @@ IMGROOT = os.path.join(ROOT, "data", "Skipper Images")
 OUTIMG = os.path.join(ROOT, "site", "trips", "img")
 STORIES = os.path.join(ROOT, "data", "trip-stories.json")   # racconti scritti a mano
 stories = json.load(open(STORIES, encoding="utf-8")).get("stories", {}) if os.path.exists(STORIES) else {}
+ZONE_OVERRIDE = {"cari": "Seychelles"}   # la zona "Inner Islands" della crociera Seychelles va mostrata come "Seychelles"
 
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
 people = {}
@@ -174,7 +175,7 @@ for t in sorted(trips):
                         "people": list(dict.fromkeys(it["cids"])), "caption": it["kw"].title() + " " + str(m["year"])})
             kept.append((h, len(phs) - 1))
     out.append({"id": tid, "year": m["year"], "month": m["month"], "country": m["country"],
-                "zone": m["zone"], "boat": m["boat"], "name": m["name"], "nm": m["nm"],
+                "zone": ZONE_OVERRIDE.get(tid, m["zone"]), "boat": m["boat"], "name": m["name"], "nm": m["nm"],
                 "days": round(m["days"], 1), "crew": [ini(p) for p in crew.get(t, [])],
                 "n_photos": len(phs), "photos": phs,
                 **({"story": stories[tid]} if tid in stories else {})})

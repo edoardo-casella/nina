@@ -91,5 +91,6 @@ document.getElementById("fleet").innerHTML = FLEET.map(dr => `
   <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${dr.vid}" title="${dr.name} — video ufficiale DJI" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>`).join("");
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
+<script src="nav.js"></script>
 </body>
 </html>
