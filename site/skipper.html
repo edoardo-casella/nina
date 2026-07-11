@@ -51,7 +51,7 @@ a{color:var(--accent)}
 .rankttl{font:700 .72rem/1.15 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2)}
 .rankttl b{display:block;font-size:1.05rem;letter-spacing:.14em;color:#fff;margin-top:.15rem}
 .stars{color:var(--gold-2);letter-spacing:.15em;font-size:.95rem;margin-top:.15rem}
-.hero h1{font:700 2.7rem/1 var(--display);letter-spacing:.01em;color:#fff;margin-top:.2rem}
+.hero h1{font:700 clamp(1.9rem,7vw,2.7rem)/1.05 var(--display);letter-spacing:.01em;color:#fff;margin-top:.2rem;overflow-wrap:break-word}
 /* foto identificativa stile dossier anni '40 (stampa seppia spillata) */
 .idphoto{position:absolute;top:.9rem;right:.9rem;z-index:4;width:152px;margin:0;
   padding:6px 6px 20px;background:#efe6d0;border:1px solid rgba(0,0,0,.25);border-radius:2px;
@@ -61,7 +61,16 @@ a{color:var(--accent)}
 .idphoto img{width:100%;display:block;filter:contrast(1.03)}
 .idphoto figcaption{position:absolute;left:0;right:0;bottom:4px;text-align:center;
   font:400 .74rem/1 var(--body);font-style:italic;color:#6b573096}
-@media(max-width:420px){.idphoto{width:118px}}
+/* mobile: la foto identificativa diventa un float dentro il blocco testo, il
+   nome le scorre attorno e riprende a piena larghezza sotto (niente piu' nome
+   tagliato dietro la foto) */
+@media(max-width:520px){
+  .idphoto{position:relative;top:auto;right:auto;float:right;width:122px;
+    margin:.2rem 0 .5rem .8rem;transform:rotate(2deg)}
+  .hero .cap{padding-top:1.9rem}
+  .ribbons{clear:right}
+}
+@media(max-width:360px){.idphoto{width:104px}}
 .hero .sub{margin-top:.5rem;font-size:1rem;color:#e6eef6}
 .ribbons{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
 .ribbons .flag{width:30px;height:20px}
@@ -519,8 +528,8 @@ function render(d) {
   <div class="hero">
     <img src="${hero}" alt="Niña in navigazione">
     <div class="grad"></div>
-    <figure class="idphoto"><img src="skipper/img/edoardo-id.jpg" alt="${esc(d.name)}"></figure>
     <div class="cap">
+      <figure class="idphoto"><img src="skipper/img/edoardo-id.jpg" alt="${esc(d.name)}"></figure>
       <div class="rankline">${medalSVG}
         <div><div class="rankttl">Grado<b>${cur.name}</b></div>
           <div class="stars">${"★".repeat(cur.stars) || "—"}${"☆".repeat(Math.max(0, 5 - cur.stars))}</div></div></div>
