@@ -22,6 +22,158 @@
    "last": 2024,
    "rank": "admiral",
    "me": true,
+   "trips_list": [
+    {
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "natfika",
+     "year": 2012,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cyclades - Dodecanese GR",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "klaudia",
+     "year": 2013,
+     "zone": "Dodecanese - Turkey",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "cubalibre",
+     "year": 2014,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "blue-bird",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "capitan-nikos",
+     "year": 2017,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "showtime",
+     "year": 2017,
+     "zone": "Ionian - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    },
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    },
+    {
+     "id": "silkwave",
+     "year": 2021,
+     "zone": "Sardegna",
+     "country": "Italy"
+    },
+    {
+     "id": "enya",
+     "year": 2021,
+     "zone": "Corsica & Sardegna",
+     "country": "Italy - France"
+    },
+    {
+     "id": "mars-planet",
+     "year": 2021,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    },
+    {
+     "id": "alexandros",
+     "year": 2024,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Inner Islands",
+     "country": "Seychelles"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-08",
     "leave": "2026-08-29",
@@ -146,6 +298,62 @@
    "first": 2011,
    "last": 2019,
    "rank": "cdr",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cyclades - Dodecanese GR",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "klaudia",
+     "year": 2013,
+     "zone": "Dodecanese - Turkey",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "showtime",
+     "year": 2017,
+     "zone": "Ionian - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/camelia/01.jpg",
@@ -168,6 +376,62 @@
    "first": 2011,
    "last": 2021,
    "rank": "cdr",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cyclades - Dodecanese GR",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "klaudia",
+     "year": 2013,
+     "zone": "Dodecanese - Turkey",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "showtime",
+     "year": 2017,
+     "zone": "Ionian - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    },
+    {
+     "id": "mars-planet",
+     "year": 2021,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/camelia/01.jpg",
@@ -185,6 +449,56 @@
    "first": 2011,
    "last": 2021,
    "rank": "cdr",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cyclades - Dodecanese GR",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "klaudia",
+     "year": 2013,
+     "zone": "Dodecanese - Turkey",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "showtime",
+     "year": 2017,
+     "zone": "Ionian - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "mars-planet",
+     "year": 2021,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/camelia/01.jpg",
@@ -196,7 +510,11 @@
      "trip_id": "camelia",
      "caption": "Croazia 2011"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "Il velista",
+    "html": "L'eterno comandante velista, che però non si è mai calato del tutto nel ruolo dell'uomo dell'ormeggio in porto: la sua bestia nera, vinta solo a tratti negli ultimi anni. Vorrebbe andare a vela sempre. Uomo-rana super performante &mdash; e proprio per questo un po' &quot;sordo&quot; ai comandi quando l'acqua gli entra nelle orecchie. Celebre il suo ormeggio a terra a Mykonos, con la pietra legata che franò a valle come in un cartone di Bugs Bunny."
+   }
   },
   {
    "id": "paola-c",
@@ -207,6 +525,56 @@
    "first": 2011,
    "last": 2021,
    "rank": "cdr",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cyclades - Dodecanese GR",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "klaudia",
+     "year": 2013,
+     "zone": "Dodecanese - Turkey",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "showtime",
+     "year": 2017,
+     "zone": "Ionian - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "mars-planet",
+     "year": 2021,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/camelia/01.jpg",
@@ -224,6 +592,62 @@
    "first": 2011,
    "last": 2024,
    "rank": "cdr",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "natfika",
+     "year": 2012,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cyclades - Dodecanese GR",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "enya",
+     "year": 2021,
+     "zone": "Corsica & Sardegna",
+     "country": "Italy - France"
+    },
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    },
+    {
+     "id": "alexandros",
+     "year": 2024,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Inner Islands",
+     "country": "Seychelles"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-08",
     "leave": "2026-08-21",
@@ -236,7 +660,11 @@
      "trip_id": "isla",
      "caption": "Sicilia 2023"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "Il motorista",
+    "html": "Grande meccanico e uomo dei motori: quando devi entrare in porto con vento forte, o quando a bordo c'è un guaio tecnico, è lui l'uomo indispensabile. A tavola predilige il non-salutare e le scofanate di pasta. È il comandante assoluto del tratto tra l'<b>Isola d'Elba</b>, <b>San Vincenzo</b> e <b>Piombino</b>, con la sua barca-officina &laquo;Bad Boys&raquo; e il socio <a class='plink' href='membro.html#fede-n'>Fede N.</a>: una barca che sembra uscita dagli anni Ottanta, sempre &quot;ferma&quot; solo perché i guasti lui e il socio li risolvono direttamente in mare &mdash; ed è così che è diventato un meccanico vero. Difetti pochi, se non quando si impunta; e la tendenza a farsi distrarre dalle fidanzate. Uno dei migliori compagni di equipaggio che si possano avere a bordo."
+   }
   },
   {
    "id": "cecilia-r",
@@ -246,7 +674,45 @@
    "nm": 2311,
    "first": 2017,
    "last": 2020,
-   "rank": "ltcdr"
+   "rank": "ltcdr",
+   "trips_list": [
+    {
+     "id": "capitan-nikos",
+     "year": 2017,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "showtime",
+     "year": 2017,
+     "zone": "Ionian - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    },
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    }
+   ]
   },
   {
    "id": "riccardo-b",
@@ -257,6 +723,50 @@
    "first": 2015,
    "last": 2023,
    "rank": "ltcdr",
+   "trips_list": [
+    {
+     "id": "blue-bird",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    },
+    {
+     "id": "silkwave",
+     "year": 2021,
+     "zone": "Sardegna",
+     "country": "Italy"
+    },
+    {
+     "id": "mars-planet",
+     "year": 2021,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    },
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-21",
     "leave": "2026-08-29",
@@ -313,7 +823,11 @@
      "trip_id": "isla",
      "caption": "Sicilia 2023"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "Il conviviale",
+    "html": "Parlerebbe anche con i muri, e in barca si fa in quattro: conviviale con tutti, abilissimo timoniere e ottimo uomo-rana di supporto. Ha preso la patente nautica e da poco ha iniziato la sua carriera da comandante. Molto goloso, amante degli sfizi e delle birrette &mdash; tanto che <a class='plink' href='membro.html#andrea-a'>Andrea A.</a> gli rimprovera le troppe lattine lasciate mezze aperte in giro."
+   }
   },
   {
    "id": "leonardo-m",
@@ -324,6 +838,44 @@
    "first": 2014,
    "last": 2022,
    "rank": "ltcdr",
+   "trips_list": [
+    {
+     "id": "cubalibre",
+     "year": 2014,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    },
+    {
+     "id": "silkwave",
+     "year": 2021,
+     "zone": "Sardegna",
+     "country": "Italy"
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/cubalibre/01.jpg",
@@ -385,7 +937,11 @@
      "trip_id": "all-in",
      "caption": "Grecia 2022"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "L'uomo rana (detto Giuseppe)",
+    "html": "Il miglior uomo-rana che si possa avere a bordo: scende a mettere le cime a terra con una velocità impressionante. Ottimo capitano &mdash; anche senza patente &mdash; sempre molto preso dal lavoro, il che rende le sue presenze ancora più preziose. Grande pescatore di ricci, intrattenitore dell'equipaggio e nuotatore fenomenale: si tufferebbe da qualsiasi altezza. L'abbiamo visto lanciarsi da una roccia di Ibiza alta venticinque metri."
+   }
   },
   {
    "id": "gabriele-b",
@@ -396,6 +952,26 @@
    "first": 2011,
    "last": 2013,
    "rank": "lt",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cyclades - Dodecanese GR",
+     "country": "Greece-Turkey"
+    },
+    {
+     "id": "klaudia",
+     "year": 2013,
+     "zone": "Dodecanese - Turkey",
+     "country": "Greece-Turkey"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/camelia/02.jpg",
@@ -413,6 +989,38 @@
    "first": 2021,
    "last": 2024,
    "rank": "lt",
+   "trips_list": [
+    {
+     "id": "enya",
+     "year": 2021,
+     "zone": "Corsica & Sardegna",
+     "country": "Italy - France"
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Inner Islands",
+     "country": "Seychelles"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-08",
     "leave": "2026-08-17",
@@ -467,7 +1075,11 @@
      "trip_id": "isla",
      "caption": "Sicilia 2023"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "L'uomo della tecnologia",
+    "html": "L'uomo della tecnologia di bordo: manutenzione, droni, videomaker ufficiale di ogni vacanza. Prezioso assistente al meccanico e troubleshooter importante &mdash; un filo meno uomo-nautico, e da <b>non</b> lasciare in coperta quando c'è vento, perché tende a perdersi nel suo mondo (vedi <a class='plink' href='skipper.html#errori-fatali'>canale di Ferragosto</a>). A dieta di coca zero e merendine: è l'uomo delle merendine."
+   }
   },
   {
    "id": "sofia-m",
@@ -477,7 +1089,33 @@
    "nm": 1131,
    "first": 2018,
    "last": 2024,
-   "rank": "lt"
+   "rank": "lt",
+   "trips_list": [
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "enya",
+     "year": 2021,
+     "zone": "Corsica & Sardegna",
+     "country": "Italy - France"
+    },
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Inner Islands",
+     "country": "Seychelles"
+    }
+   ]
   },
   {
    "id": "ginevra-l",
@@ -488,6 +1126,32 @@
    "first": 2022,
    "last": 2024,
    "rank": "lt",
+   "trips_list": [
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    },
+    {
+     "id": "alexandros",
+     "year": 2024,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Inner Islands",
+     "country": "Seychelles"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-08",
     "leave": "2026-08-29",
@@ -530,7 +1194,11 @@
      "trip_id": "all-in",
      "caption": "Grecia 2022"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "La cuoca",
+    "html": "La cuoca di ogni vacanza &mdash; e l'equipaggio è felicissimo che non sia più vegana, così si torna ad assaporare tutta la sua collezione di piatti. Porta sempre in tavola qualcosa di alternativo e sofisticato, roba rara su una barca. Famose anche le sue lezioni di yoga all'equipaggio e i suoi giri in SUP."
+   }
   },
   {
    "id": "pietro-c",
@@ -540,7 +1208,27 @@
    "nm": 891,
    "first": 2011,
    "last": 2024,
-   "rank": "lt"
+   "rank": "lt",
+   "trips_list": [
+    {
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "enya",
+     "year": 2021,
+     "zone": "Corsica & Sardegna",
+     "country": "Italy - France"
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Inner Islands",
+     "country": "Seychelles"
+    }
+   ]
   },
   {
    "id": "gualtiero-s",
@@ -551,6 +1239,26 @@
    "first": 2014,
    "last": 2022,
    "rank": "lt",
+   "trips_list": [
+    {
+     "id": "cubalibre",
+     "year": 2014,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    },
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/cubalibre/01.jpg",
@@ -577,7 +1285,11 @@
      "trip_id": "all-in",
      "caption": "Grecia 2022"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "Il pescatore",
+    "html": "Il pescatore degli equipaggi. Se di notte, in rada, senti dei pestoni sul ponte, è lui che sta calando le canne: costruisce veri diagrammi, cala sette-otto lenze insieme senza impigliare un amo. Ma la scena è cult in una maturità del 2011 (senza il capitano a bordo): dopo qualche parola di troppo, <a class='plink' href='membro.html#riccardo-t'>Riccardo T.</a> lo butta in acqua mentre la barca pesca a strascico &mdash; e il buon &laquo;Wally&raquo; finisce pescato dal suo stesso amo, impigliato in una mano. Grande cuoco: le sue paste ai ricci sono tra le migliori di bordo."
+   }
   },
   {
    "id": "andrea-a",
@@ -588,6 +1300,32 @@
    "first": 2011,
    "last": 2022,
    "rank": "lt",
+   "trips_list": [
+    {
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "blue-bird",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "silkwave",
+     "year": 2021,
+     "zone": "Sardegna",
+     "country": "Italy"
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-22",
     "leave": "2026-08-29",
@@ -614,7 +1352,11 @@
      "trip_id": "silkwave",
      "caption": "Sardegna 2021"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "Il condizionatore",
+    "html": "Regola dell'equipaggio: non lasciatelo al timone quando è cotto. Famoso l'episodio di <b>Sardegna 2021</b> &mdash; il comandante dormiva, al timone Andrea e <a class='plink' href='membro.html#riccardo-t'>Riccardo T.</a> (l'altissimo); una scossa sveglia di soprassalto il capitano, che in pochi secondi si accorge che stanno puntando gli scogli e con una virata d'emergenza salva barca e viaggio. Per il resto è loquace, ottimo marinaio, sempre disponibile: quando la sera è stanco va solo lasciato in pace. Odia il caldo, ama l'aria condizionata e la regola in modo maniacale. Leggendari i suoi ululati."
+   }
   },
   {
    "id": "luca-b",
@@ -625,6 +1367,26 @@
    "first": 2015,
    "last": 2019,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/sorbe/04.jpg",
@@ -651,7 +1413,27 @@
    "nm": 1056,
    "first": 2015,
    "last": 2019,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    }
+   ]
   },
   {
    "id": "belinda-b",
@@ -661,7 +1443,21 @@
    "nm": 715,
    "first": 2011,
    "last": 2016,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    },
+    {
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ]
   },
   {
    "id": "marta-a",
@@ -672,6 +1468,20 @@
    "first": 2020,
    "last": 2022,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    },
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/all-in/03.jpg",
@@ -713,7 +1523,21 @@
    "nm": 848,
    "first": 2014,
    "last": 2018,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia"
+    }
+   ]
   },
   {
    "id": "silvano-b",
@@ -723,7 +1547,27 @@
    "nm": 806,
    "first": 2015,
    "last": 2021,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "mars-planet",
+     "year": 2021,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    }
+   ]
   },
   {
    "id": "simona-b",
@@ -733,7 +1577,27 @@
    "nm": 806,
    "first": 2015,
    "last": 2021,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "mars-planet",
+     "year": 2021,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    }
+   ]
   },
   {
    "id": "marco-t",
@@ -744,6 +1608,26 @@
    "first": 2011,
    "last": 2015,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "cubalibre",
+     "year": 2014,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "blue-bird",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/cubalibre/01.jpg",
@@ -765,7 +1649,21 @@
    "nm": 570,
    "first": 2021,
    "last": 2024,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "enya",
+     "year": 2021,
+     "zone": "Corsica & Sardegna",
+     "country": "Italy - France"
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Inner Islands",
+     "country": "Seychelles"
+    }
+   ]
   },
   {
    "id": "giacomo-b",
@@ -776,6 +1674,20 @@
    "first": 2020,
    "last": 2022,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/alba/02.jpg",
@@ -793,6 +1705,20 @@
    "first": 2018,
    "last": 2022,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/all-in/03.jpg",
@@ -835,6 +1761,20 @@
    "first": 2011,
    "last": 2015,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    },
+    {
+     "id": "blue-bird",
+     "year": 2015,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/blue-bird/01.jpg",
@@ -862,6 +1802,20 @@
    "first": 2017,
    "last": 2019,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-21",
     "leave": "2026-08-29",
@@ -878,7 +1832,11 @@
      "trip_id": "sorbe",
      "caption": "Grenadine 2017"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "L'aspirante in meditazione",
+    "html": "Aspirante skipper. L'highlight è alle <b>Sporadi</b>, Grecia 2015: ritiratasi in meditazione verso sera, non la si trovava più, tanto che l'equipaggio dovette organizzare una vera ricerca e soccorso &mdash; <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> ed Edo partirono con le torce a perlustrare. Al momento del recupero, complice il vento forte e un piccolo errore del comandante, forarono pure il gommone."
+   }
   },
   {
    "id": "gabri-m",
@@ -889,6 +1847,20 @@
    "first": 2017,
    "last": 2019,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-22",
     "leave": "2026-08-29",
@@ -915,7 +1887,11 @@
      "trip_id": "sorbe",
      "caption": "Grenadine 2017"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "L'uomo dei tuffi",
+    "html": "L'uomo pazzo di bordo, l'uomo dei tuffi: insieme al fratello <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> si lancerebbe da qualsiasi cosa. Ottimo marinaio polivalente, uomo delle missioni impossibili e un po' pericolose."
+   }
   },
   {
    "id": "matilde-r",
@@ -926,6 +1902,14 @@
    "first": 2020,
    "last": 2020,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/alba/03.jpg",
@@ -943,6 +1927,14 @@
    "first": 2020,
    "last": 2020,
    "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/alba/03.jpg",
@@ -959,7 +1951,15 @@
    "nm": 550,
    "first": 2020,
    "last": 2020,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    }
+   ]
   },
   {
    "id": "beatrice-f",
@@ -969,7 +1969,15 @@
    "nm": 550,
    "first": 2020,
    "last": 2020,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    }
+   ]
   },
   {
    "id": "sergio-s",
@@ -979,7 +1987,15 @@
    "nm": 550,
    "first": 2020,
    "last": 2020,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    }
+   ]
   },
   {
    "id": "martina-g",
@@ -989,7 +2005,15 @@
    "nm": 550,
    "first": 2020,
    "last": 2020,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    }
+   ]
   },
   {
    "id": "giorgio-m",
@@ -999,7 +2023,15 @@
    "nm": 550,
    "first": 2020,
    "last": 2020,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna & Corsica",
+     "country": "Italy - France"
+    }
+   ]
   },
   {
    "id": "filippo-r",
@@ -1009,7 +2041,15 @@
    "nm": 463,
    "first": 2014,
    "last": 2014,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "trips_list": [
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "riccardo-t",
@@ -1020,6 +2060,20 @@
    "first": 2021,
    "last": 2022,
    "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "silkwave",
+     "year": 2021,
+     "zone": "Sardegna",
+     "country": "Italy"
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/silkwave/01.jpg",
@@ -1036,7 +2090,15 @@
    "nm": 252,
    "first": 2016,
    "last": 2016,
-   "rank": "ensign"
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ]
   },
   {
    "id": "umberto-f",
@@ -1047,6 +2109,20 @@
    "first": 2014,
    "last": 2022,
    "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "cubalibre",
+     "year": 2014,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    },
+    {
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/cubalibre/01.jpg",
@@ -1063,7 +2139,15 @@
    "nm": 470,
    "first": 2018,
    "last": 2018,
-   "rank": "ensign"
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ]
   },
   {
    "id": "giacomo-m",
@@ -1073,7 +2157,15 @@
    "nm": 470,
    "first": 2018,
    "last": 2018,
-   "rank": "ensign"
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleares - SP",
+     "country": "Spain"
+    }
+   ]
   },
   {
    "id": "carlotta-d",
@@ -1084,6 +2176,14 @@
    "first": 2022,
    "last": 2022,
    "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporades - GR",
+     "country": "Greece"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/all-in/03.jpg",
@@ -1126,6 +2226,14 @@
    "first": 2017,
    "last": 2017,
    "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    }
+   ],
    "photos": [
     {
      "src": "trips/img/sorbe/05.jpg",
@@ -1142,7 +2250,15 @@
    "nm": 271,
    "first": 2017,
    "last": 2017,
-   "rank": "ensign"
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadines Caribbean",
+     "country": "Saint Vincent - France"
+    }
+   ]
   },
   {
    "id": "enrico-g",
@@ -1152,7 +2268,15 @@
    "nm": 321,
    "first": 2011,
    "last": 2011,
-   "rank": "ensign"
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "gianmarco-m",
@@ -1162,7 +2286,15 @@
    "nm": 321,
    "first": 2011,
    "last": 2011,
-   "rank": "ensign"
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "alberto-b",
@@ -1172,7 +2304,15 @@
    "nm": 321,
    "first": 2011,
    "last": 2011,
-   "rank": "ensign"
+   "rank": "ensign",
+   "trips_list": [
+    {
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "fede-b",
@@ -1183,6 +2323,14 @@
    "first": 2023,
    "last": 2023,
    "rank": "recruit",
+   "trips_list": [
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicily-Egadi",
+     "country": "Italy"
+    }
+   ],
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-29",
@@ -1194,7 +2342,11 @@
      "trip_id": "isla",
      "caption": "Sicilia 2023"
     }
-   ]
+   ],
+   "bio": {
+    "epithet": "Il jolly",
+    "html": "La chiave inglese, il jolly di qualsiasi vacanza: con il suo accento torinese non ti fa smettere un attimo di ridere. Nuotatore infinito &mdash; potrebbe nuotare per i fatti suoi mentre la barca va da tutt'altra parte senza nemmeno accorgersene. Una volta, in Sicilia, l'abbiamo cambiato di rada lasciandolo indietro: ci ha raggiunti a nuoto. Non fa mai abbassare l'umore di bordo."
+   }
   },
   {
    "id": "tonino-l",
@@ -1204,7 +2356,15 @@
    "nm": 230,
    "first": 2024,
    "last": 2024,
-   "rank": "recruit"
+   "rank": "recruit",
+   "trips_list": [
+    {
+     "id": "alexandros",
+     "year": 2024,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "angela-k",
@@ -1214,7 +2374,15 @@
    "nm": 230,
    "first": 2024,
    "last": 2024,
-   "rank": "recruit"
+   "rank": "recruit",
+   "trips_list": [
+    {
+     "id": "alexandros",
+     "year": 2024,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "mirco-l",
@@ -1224,7 +2392,15 @@
    "nm": 189,
    "first": 2012,
    "last": 2012,
-   "rank": "recruit"
+   "rank": "recruit",
+   "trips_list": [
+    {
+     "id": "natfika",
+     "year": 2012,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "rebecca-l",
@@ -1234,7 +2410,15 @@
    "nm": 189,
    "first": 2012,
    "last": 2012,
-   "rank": "recruit"
+   "rank": "recruit",
+   "trips_list": [
+    {
+     "id": "natfika",
+     "year": 2012,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "fabiana-f",
@@ -1244,7 +2428,15 @@
    "nm": 189,
    "first": 2012,
    "last": 2012,
-   "rank": "recruit"
+   "rank": "recruit",
+   "trips_list": [
+    {
+     "id": "natfika",
+     "year": 2012,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "martina-r",
@@ -1254,7 +2446,15 @@
    "nm": 189,
    "first": 2012,
    "last": 2012,
-   "rank": "recruit"
+   "rank": "recruit",
+   "trips_list": [
+    {
+     "id": "natfika",
+     "year": 2012,
+     "zone": "Cyclades - GR",
+     "country": "Greece"
+    }
+   ]
   },
   {
    "id": "bianca-b",
@@ -1265,6 +2465,7 @@
    "first": null,
    "last": null,
    "rank": "recruit",
+   "trips_list": [],
    "crew2026": {
     "board": "2026-08-08",
     "leave": "2026-08-21",
@@ -1280,6 +2481,7 @@
    "first": null,
    "last": null,
    "rank": "recruit",
+   "trips_list": [],
    "crew2026": {
     "board": "2026-08-08",
     "leave": "2026-08-17",
@@ -1295,6 +2497,7 @@
    "first": null,
    "last": null,
    "rank": "recruit",
+   "trips_list": [],
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-22",
@@ -1310,6 +2513,7 @@
    "first": null,
    "last": null,
    "rank": "recruit",
+   "trips_list": [],
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-22",
@@ -1325,6 +2529,7 @@
    "first": null,
    "last": null,
    "rank": "recruit",
+   "trips_list": [],
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-29",
@@ -1340,6 +2545,7 @@
    "first": null,
    "last": null,
    "rank": "recruit",
+   "trips_list": [],
    "crew2026": {
     "board": "2026-08-21",
     "leave": "2026-08-29",
@@ -1355,6 +2561,7 @@
    "first": null,
    "last": null,
    "rank": "recruit",
+   "trips_list": [],
    "crew2026": {
     "board": "2026-08-21",
     "leave": "2026-08-29",
@@ -1370,6 +2577,7 @@
    "first": null,
    "last": null,
    "rank": "recruit",
+   "trips_list": [],
    "crew2026": {
     "board": "2026-08-22",
     "leave": "2026-08-29",

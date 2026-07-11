@@ -19,11 +19,13 @@ for r in wb["Passengers"].iter_rows(min_row=2, values_only=True):
     if r[0] is None: continue
     people[int(r[0])] = {"cog": (r[1] or "").strip(), "nom": (r[2] or "").strip()}
 trip_days, trip_year, trip_nm = {}, {}, {}
+trip_name, trip_zone, trip_country = {}, {}, {}
 for r in wb["Summary"].iter_rows(min_row=2, values_only=True):
     if r[0] in (None, "TOTAL"): continue
     try: t = int(float(r[0]))
     except: continue
     trip_year[t] = int(float(r[1])); trip_days[t] = float(r[10]); trip_nm[t] = int(float(r[9]))
+    trip_name[t] = (r[8] or "").strip(); trip_zone[t] = (r[5] or "").strip(); trip_country[t] = (r[4] or "").strip()
 part = collections.defaultdict(list)
 for r in wb["Participations"].iter_rows(min_row=2, values_only=True):
     if r[0] is None or r[2] is None: continue
@@ -42,6 +44,13 @@ def stats(p):
     nm = sum(trip_nm.get(t, 0) for t in ts)
     ys = [trip_year.get(t) for t in ts if trip_year.get(t)]
     return {"trips": len(ts), "days": days, "nm": nm, "first": min(ys) if ys else None, "last": max(ys) if ys else None}
+
+def trips_list_for(ts):  # log viaggi cliccabile: id-slug (parita' con build_trips), anno, zona, paese
+    rows = []
+    for t in sorted(ts, key=lambda t: (trip_year.get(t, 0), t)):
+        rows.append({"id": slugify(trip_name.get(t, "")) or ("t" + str(t)),
+                     "year": trip_year.get(t), "zone": trip_zone.get(t, ""), "country": trip_country.get(t, "")})
+    return rows
 
 def match(name):  # voyage nickname -> registry pid
     parts = name.strip().split()
@@ -82,13 +91,14 @@ for m in members:
     nm = m["name"]
     if nm.split()[0].lower() in ("edo", "edoardo"):
         st = {"trips": 25, "days": TOTAL_DAYS, "nm": TOTAL_NM, "first": 2011, "last": 2024}; me = True
+        tl = trips_list_for(list(trip_year.keys()))   # lo skipper c'e' su tutti i viaggi
     else:
         pid = match(nm); me = False
-        if pid: used_pids.add(pid); st = stats(pid)
-        else: st = {"trips": 0, "days": 0, "nm": 0, "first": None, "last": None}
+        if pid: used_pids.add(pid); st = stats(pid); tl = trips_list_for(part.get(pid, []))
+        else: st = {"trips": 0, "days": 0, "nm": 0, "first": None, "last": None}; tl = []
     crew2026 = {k: m[k] for k in ("board", "leave", "role", "photo", "nick", "note", "link", "q") if k in m}
     out.append({"id": m["id"], "name": nm, **st, "rank": rank_of(st["days"], me),
-                **({"me": True} if me else {}), "crew2026": crew2026})
+                **({"me": True} if me else {}), "trips_list": tl, "crew2026": crew2026})
 # alumni: registro non nel crew 2026
 for p in part:
     if p in used_pids: continue
@@ -96,7 +106,7 @@ for p in part:
     if len((pp.get("nom") or "")) < 2 or not pp.get("cog"): continue  # scarta voci-stub
     st = stats(p); nm = pname(p)
     out.append({"id": slugify(nm.replace(".", "")) or ("p" + str(p)), "name": nm, **st,
-                "rank": rank_of(st["days"])})
+                "rank": rank_of(st["days"]), "trips_list": trips_list_for(part.get(p, []))})
 
 # foto taggate per persona (sidecar generato da build_trips.py) -> campo photos
 PHOTOTAGS = os.path.join(ROOT, "data", "photo-tags.json")
@@ -105,11 +115,17 @@ if os.path.exists(PHOTOTAGS):
     by_person = json.loads(io.open(PHOTOTAGS, encoding="utf-8").read()).get("by_person", {})
 else:
     print("ATTENZIONE: data/photo-tags.json assente -> nessuna foto sui profili. Esegui prima build_trips.py.")
-n_photos = 0
+# ritratti scritti a mano (data/crew-bios.json) -> campo bio
+BIOS = os.path.join(ROOT, "data", "crew-bios.json")
+bios = json.loads(io.open(BIOS, encoding="utf-8").read()).get("bios", {}) if os.path.exists(BIOS) else {}
+n_photos = n_bios = 0
 for x in out:
     ph = by_person.get(x["id"], [])
     if ph:
         x["photos"] = ph; n_photos += len(ph)
+    b = bios.get(x["id"])
+    if b:
+        x["bio"] = b; n_bios += 1
 
 out.sort(key=lambda x: (-x["days"], -x["trips"]))
 data = {"generated_at": "2026-07-11",
@@ -118,7 +134,8 @@ data = {"generated_at": "2026-07-11",
         "people": out}
 io.open(CREWJSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=1))
 print("crew.json:", len(out), "persone. TOTAL_DAYS(Edo)=", TOTAL_DAYS,
-      "| foto sui profili:", n_photos, "su", sum(1 for x in out if x.get("photos")), "persone")
+      "| foto:", n_photos, "su", sum(1 for x in out if x.get("photos")), "pers.",
+      "| bio:", n_bios, "| trips_list:", sum(1 for x in out if x.get("trips_list")))
 rc = collections.Counter(x["rank"] for x in out)
 print("distribuzione gradi:", dict(rc))
 for x in out[:20]:

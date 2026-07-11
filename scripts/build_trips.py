@@ -18,6 +18,8 @@ except PermissionError:
 CREWDIR = os.path.join(ROOT, "data", "Skipper Images", "Crew")
 IMGROOT = os.path.join(ROOT, "data", "Skipper Images")
 OUTIMG = os.path.join(ROOT, "site", "trips", "img")
+STORIES = os.path.join(ROOT, "data", "trip-stories.json")   # racconti scritti a mano
+stories = json.load(open(STORIES, encoding="utf-8")).get("stories", {}) if os.path.exists(STORIES) else {}
 
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
 people = {}
@@ -174,7 +176,8 @@ for t in sorted(trips):
     out.append({"id": tid, "year": m["year"], "month": m["month"], "country": m["country"],
                 "zone": m["zone"], "boat": m["boat"], "name": m["name"], "nm": m["nm"],
                 "days": round(m["days"], 1), "crew": [ini(p) for p in crew.get(t, [])],
-                "n_photos": len(phs), "photos": phs})
+                "n_photos": len(phs), "photos": phs,
+                **({"story": stories[tid]} if tid in stories else {})})
 
 # --- foto incidente per il dossier skipper (site/skipper/img/<slug>.jpg) ---
 SKIMG = os.path.join(ROOT, "site", "skipper", "img"); os.makedirs(SKIMG, exist_ok=True)
@@ -201,7 +204,10 @@ with open(os.path.join(ROOT, "data", "photo-tags.json"), "w", encoding="utf-8") 
 
 # --- log ---
 tot = sum(t["n_photos"] for t in out)
-print("trips.json:", len(out), "viaggi,", tot, "foto ottimizzate,", len(by_person), "persone taggate")
+print("trips.json:", len(out), "viaggi,", tot, "foto ottimizzate,", len(by_person), "persone taggate,",
+      sum(1 for t in out if t.get("story")), "racconti")
+miss_story = [t["id"] for t in out if not t.get("story")]
+if miss_story: print("viaggi senza racconto:", ", ".join(miss_story))
 for t in out:
     if t["n_photos"]:
         ppl = sorted({c for p in t["photos"] for c in p["people"]})

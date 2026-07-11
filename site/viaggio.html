@@ -55,6 +55,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
 .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;cursor:pointer;background:var(--sea-2);display:block}
 .noph{background:var(--sea-1);border:1px dashed var(--hair);border-radius:5px;padding:1rem;color:var(--soft);font-size:.9rem;text-align:center}
+.plink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
+.plink:hover{color:var(--accent)}
+.story{background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--gold);border-radius:6px;padding:1rem 1.1rem;font-size:.96rem;line-height:1.62}
+.story b{color:var(--ink)}
 .nav2{display:flex;justify-content:space-between;gap:.6rem;margin-top:1.6rem}
 .nav2 a{flex:1;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:.6rem .8rem;font-size:.86rem}
 .nav2 a small{display:block;font:700 .54rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft)}
@@ -185,6 +189,7 @@ function tripPage(t, all) {
     </div>
   </div>
   <section>
+    ${t.story ? `<h2>📖 ${esc(t.story.title || "Il racconto")}</h2><div class="story">${t.story.html}</div>` : ""}
     <h2>📸 Foto del viaggio</h2>
     ${gal}
     <h2>⚓ L'equipaggio di quell'anno</h2>
