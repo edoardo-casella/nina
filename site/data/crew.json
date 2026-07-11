@@ -33,12 +33,12 @@
   {
    "id": "matilde-c",
    "name": "Matilde C.",
-   "trips": 10,
-   "days": 142,
-   "nm": 3608,
+   "trips": 9,
+   "days": 136,
+   "nm": 3468,
    "first": 2011,
-   "last": 2021,
-   "rank": "capt"
+   "last": 2019,
+   "rank": "cdr"
   },
   {
    "id": "margherita-c",
@@ -251,6 +251,16 @@
    "rank": "ltjg"
   },
   {
+   "id": "nicola-r",
+   "name": "Nicola R.",
+   "trips": 2,
+   "days": 31,
+   "nm": 848,
+   "first": 2014,
+   "last": 2018,
+   "rank": "ltjg"
+  },
+  {
    "id": "silvano-b",
    "name": "Silvano B.",
    "trips": 3,
@@ -423,16 +433,6 @@
   {
    "id": "filippo-r",
    "name": "Filippo R.",
-   "trips": 1,
-   "days": 20,
-   "nm": 463,
-   "first": 2014,
-   "last": 2014,
-   "rank": "ltjg"
-  },
-  {
-   "id": "nicola-r",
-   "name": "Nicola R.",
    "trips": 1,
    "days": 20,
    "nm": 463,
