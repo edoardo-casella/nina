@@ -13,11 +13,11 @@
     {"id": "fede-b", "name": "Fede B", "role": "crew", "board": "2026-08-15", "leave": "2026-08-29", "x": 1, "fy": 2023},
     {"id": "giulia-n", "name": "Giulia N", "role": "crew", "board": "2026-08-15", "leave": "2026-08-29", "x": 0},
     {"id": "fede-n", "name": "Fede N", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 0},
-    {"id": "ilaria-m", "name": "Ilaria M", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 2, "fy": 2017},
+    {"id": "ilaria-m", "name": "Ilaria M", "role": "apprentice", "board": "2026-08-21", "leave": "2026-08-29", "x": 2, "fy": 2017},
     {"id": "lavinia-p", "name": "Lavinia P", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 0},
-    {"id": "riccardo-b", "name": "Riccardo B", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 7, "fy": 2015},
+    {"id": "riccardo-b", "name": "Riccardo B", "role": "apprentice", "board": "2026-08-21", "leave": "2026-08-29", "x": 7, "fy": 2015},
     {"id": "andrea-a", "name": "Andrea A", "role": "crew", "board": "2026-08-22", "leave": "2026-08-29", "x": 4, "fy": 2011},
-    {"id": "gabri-m", "name": "Gabri M", "role": "marinaio", "board": "2026-08-22", "leave": "2026-08-29", "x": 2, "fy": 2017},
+    {"id": "gabri-m", "name": "Gabri M", "role": "apprentice", "board": "2026-08-22", "leave": "2026-08-29", "x": 2, "fy": 2017},
     {"id": "simona-a", "name": "Simona A", "role": "crew", "board": "2026-08-22", "leave": "2026-08-29", "x": 0}
   ]
 }

@@ -89,7 +89,7 @@ const day = s => new Date(s + "T12:00");
 const fmt = s => day(s).toLocaleDateString("it", { day: "numeric", month: "long" });
 const fmtS = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
 const nights = m => Math.round((day(m.leave) - day(m.board)) / 864e5);
-const roleLabel = r => r === "skipper" ? "Skipper" : r === "marinaio" ? "Marinaio" : "Equipaggio";
+const roleLabel = r => r === "skipper" ? "Skipper" : r === "apprentice" ? "Aspirante skipper" : r === "marinaio" ? "Marinaio" : "Equipaggio";
 const initial = m => (m.name || "?").trim()[0].toUpperCase();
 const avatar = (m, cls) => m.photo
   ? `<img class="${cls}" src="${m.photo}" alt="${esc(m.name)}" loading="lazy">`

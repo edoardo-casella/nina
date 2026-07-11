@@ -60,7 +60,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .gtrack{position:relative;flex:1;height:20px;background:var(--sea-1);border-radius:4px;overflow:hidden}
 .gtrack .mark{position:absolute;top:0;bottom:0;width:1px;background:var(--hair)}
 .gbar{position:absolute;top:2px;bottom:2px;border-radius:3px;background:var(--accent);display:flex;align-items:center;padding:0 .35rem;min-width:14px}
-.gbar.skip{background:var(--gold)} .gbar.mar{background:var(--verde)}
+.gbar.skip{background:var(--gold)} .gbar.app{background:#B08D57} .gbar.mar{background:var(--verde)}
 .gbar b{font:700 .58rem/1 var(--mono);color:#fff;white-space:nowrap}
 .legend{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.8rem;font-size:.74rem;color:var(--soft)}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:.3rem}
@@ -103,7 +103,7 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
     <div id="gantt"></div>
     <div class="legend">
       <span><i style="background:var(--gold)"></i>skipper</span>
-      <span><i style="background:var(--verde)"></i>marinaio</span>
+      <span><i style="background:#B08D57"></i>aspirante skipper</span>
       <span><i style="background:var(--accent)"></i>equipaggio</span>
       <span>il numero sulla barra = notti a bordo</span>
     </div>
@@ -130,11 +130,11 @@ const CREW = [
   {n:"Fede B",b:"2026-08-15",l:"2026-08-29",r:"crew",x:1,fy:2023},
   {n:"Giulia N",b:"2026-08-15",l:"2026-08-29",r:"crew",x:0},
   {n:"Fede N",b:"2026-08-21",l:"2026-08-29",r:"crew",x:0},
-  {n:"Ilaria M",b:"2026-08-21",l:"2026-08-29",r:"crew",x:2,fy:2017},
+  {n:"Ilaria M",b:"2026-08-21",l:"2026-08-29",r:"apprentice",x:2,fy:2017},
   {n:"Lavinia P",b:"2026-08-21",l:"2026-08-29",r:"crew",x:0},
-  {n:"Riccardo B",b:"2026-08-21",l:"2026-08-29",r:"crew",x:7,fy:2015},
+  {n:"Riccardo B",b:"2026-08-21",l:"2026-08-29",r:"apprentice",x:7,fy:2015},
   {n:"Andrea A",b:"2026-08-22",l:"2026-08-29",r:"crew",x:4,fy:2011},
-  {n:"Gabri M",b:"2026-08-22",l:"2026-08-29",r:"marinaio",x:2,fy:2017},
+  {n:"Gabri M",b:"2026-08-22",l:"2026-08-29",r:"apprentice",x:2,fy:2017},
   {n:"Simona A",b:"2026-08-22",l:"2026-08-29",r:"crew",x:0},
 ];
 const START = "2026-08-08", END = "2026-08-29";
@@ -142,7 +142,8 @@ const day = s => new Date(s + "T12:00");
 const off = s => Math.round((day(s) - day(START)) / 864e5);
 const SPAN = off(END);
 const fmt = s => day(s).toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" });
-const rc = r => r === "skipper" ? "skip" : r === "marinaio" ? "mar" : "";
+const RL = { skipper: "skipper", apprentice: "aspirante skipper", marinaio: "marinaio" };
+const rc = r => r === "skipper" ? "skip" : r === "apprentice" ? "app" : r === "marinaio" ? "mar" : "";
 
 // statistiche
 document.getElementById("stats").innerHTML =
@@ -196,7 +197,7 @@ document.getElementById("roster").innerHTML = [...CREW]
       ? `<span class="vet">${m.x}× · dal ${m.fy}</span>`
       : `<span class="rookie">prima volta 🌟</span>`;
     return `<a class="rmember" href="${mhref(m)}">${av(m)}
-      <span class="rmid"><span class="rname">${m.n}${m.r !== "crew" ? ` <em>${m.r}</em>` : ""} <span class="rgo">›</span></span>
+      <span class="rmid"><span class="rname">${m.n}${m.r !== "crew" ? ` <em>${RL[m.r] || m.r}</em>` : ""} <span class="rgo">›</span></span>
       <span class="rwhen">${nights} notti · ${dshort(m.b)}–${dshort(m.l)}</span></span>
       ${badge}</a>`;
   }).join("");

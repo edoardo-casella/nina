@@ -220,6 +220,9 @@ a.trip:hover .pl>b{color:var(--accent)}
 .incident .shots figure{margin:0}
 .incident .shots img{width:100%;height:auto;border-radius:4px;display:block;background:#0a1424}
 .incident .shots figcaption{font:italic 400 .72rem/1.35 var(--body);color:var(--soft);margin-top:.3rem}
+.incident .oneshot{margin:.9rem 0 0}
+.incident .oneshot img{width:100%;max-width:460px;border-radius:4px;display:block}
+.incident .oneshot figcaption{font:italic 400 .72rem/1.35 var(--body);color:var(--soft);margin-top:.3rem}
 .vgrid{display:grid;gap:.8rem}
 .vgrid .video{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000}
 .vgrid .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -492,22 +495,29 @@ function mistakesHTML() {
   </div>
 
   <div class="incident"><span class="stamp">Caso 03</span>
-    <h3>Il rogo di Moneglia</h3>
-    <div class="meta">🇮🇹 Moneglia · Liguria · giugno 2023 · a bordo come ospiti</div>
-    <p>Trasferimento di una barca lungo la riviera ligure di levante. A bordo come ospiti, insieme a
-    <b>Bernardo Bolgeri</b> e — di nuovo lui — <b>Jack N</b>. Nel pomeriggio, dal vano motore, parte un incendio.</p>
-    <p>La gestione dell'emergenza, diciamo, latitava: a dare l'allarme, chiamare i soccorsi e provare a
-    domare le fiamme ci pensano gli ospiti. Ma il fuoco ha la meglio: non resta che <b>abbandonare la
-    nave</b> e buttarsi in mare, nuotando verso riva.</p>
-    <p>Arriva il gommone della Capitaneria di Porto di Sestri Levante: tutti a terra, sani e salvi —
-    solo un gran spavento. Lo yacht, preso a rimorchio verso riva, affonda.</p>
+    <h3>Il grande screzio</h3>
+    <div class="meta">🇸🇨 Seychelles · 2024 · Lagoon 46 «Cari» · Inner Islands</div>
+    <p>La crociera più tumultuosa di tutte, e non per colpa del mare. Si parte con un volo interminabile
+    e un atterraggio all'alba a Mahé da cardiopalma: meteo estremo, il pilota tira su tutto e va in
+    <b>riattaccata</b> all'ultimo. Poi uno scalo non previsto a <b>Mauritius per rifornimento</b> —
+    carburante finito — con i nervi a fior di pelle, soprattutto per chi l'aereo lo teme già di suo
+    (<b>Ginevra L.</b>).</p>
+    <p>A terra non va meglio: <b>spesa notturna a Mahé</b> con gli scaffali quasi vuoti, e la prima
+    frizione tra i salutisti di bordo e chi avrebbe caricato in barca qualunque cosa pur di mangiare.
+    Poi il meteo mette il sigillo: <b>sole quasi mai visto</b> per tutta la vacanza.</p>
+    <p>Il gran finale va in scena sulla spiaggia di <b>Grande Sœur</b> — isolotto privato a nord-est
+    di La Digue, tra i più belli delle Seychelles: granito rosso, sabbia bianca, tartarughe giganti. Lì
+    scoppia lo screzio epico tra <b>Ginevra L.</b> e il co-skipper <b>Bernardo B.</b> L'equipaggio si
+    spacca in due, e per il resto del viaggio non ci si parla più.</p>
+    <p>La pace, storica, arriva solo un anno dopo: <b>al matrimonio di Gualtiero S.</b>, a settembre 2025.
+    Oggi Ginevra e Bernardo sono di nuovo grandi amici — e la coppia che scoppia è tornata al suo posto.</p>
     <div class="les"><b>Lezioni imparate</b>
-      <ol><li>Da ospite non scegli il comandante, ma l'uscita la individui sempre.</li>
-      <li>In caso di fuoco a bordo: soccorsi subito, orgoglio poi.</li>
-      <li>Estintori giusti, al posto giusto, controllati.</li></ol></div>
-    <div class="esito"><b>Bilancio:</b> uno yacht sul fondo, cinque persone illese e una nuotata verso Moneglia.
-      <br><a href="https://www.primocanale.it/cronaca/27105-moneglia-e-affondato-lo-yacht-andato-a-fuoco-i-5-a-bordo-si-sono-buttati-in-mare.html" target="_blank" rel="noopener">📰 L'articolo, con le foto — Primocanale ↗</a></div>
-    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/rglFQp34IFY" title="Incendio yacht a Moneglia" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <ol><li>Le Seychelles fuori stagione sanno essere grigie: mettere in conto pioggia e vento.</li>
+      <li>La cambusa si fa a terra e con anticipo, non a mezzanotte con gli scaffali vuoti.</li>
+      <li>Su quattordici metri non esistono litigi «privati»: o si fa pace, o si soffre in sette.</li></ol></div>
+    <div class="esito"><b>Bilancio:</b> una crociera senza sole, un equipaggio muto per due settimane e una
+    pace siglata un anno dopo. Per il capitano, il dispiacere di vedere ai ferri corti il suo co-skipper e
+    la sua consorte — ma, come si dice, tutto è bene quel che finisce bene. 💙</div>
   </div></section>`;
 }
 
@@ -532,6 +542,27 @@ function heroicsHTML() {
       <li>Sangue freddo: barca e equipaggio portati a casa interi.</li>
       <li>Senso delle priorità cristallino: l'aereo per la barca dopo non si perde.</li></ol></div>
     <div class="esito"><b>Bilancio:</b> quattro notti di sonno perse, una barca salvata e un aereo preso al volo.</div>
+  </div>
+
+  <div class="incident gold"><span class="stamp">Al valore</span>
+    <h3>Il rogo di Moneglia</h3>
+    <div class="meta">🇮🇹 Moneglia · Liguria · giugno 2023 · a bordo come ospiti</div>
+    <p>Trasferimento lungo la riviera di levante, a bordo come <b>ospiti</b> — non era la sua barca —
+    insieme a <b>Bernardo Bolgeri</b> e <b>Jack N</b>. Nel pomeriggio, dal vano motore, parte un incendio.</p>
+    <p>Mentre la gestione dell'emergenza latita, sono gli ospiti a prendere in mano la situazione:
+    <b>allarme dato, soccorsi chiamati, fiamme affrontate</b>. Quando il fuoco ha la meglio, l'<b>abbandono
+    nave</b> è ordinato: tutti in acqua, a nuoto verso riva.</p>
+    <p>Arriva il gommone della Capitaneria di Sestri Levante: <b>cinque persone illese</b>, solo un gran
+    spavento. Lo yacht, preso a rimorchio, affonda.</p>
+    <figure class="oneshot"><img src="skipper/img/moneglia.jpg" alt="A terra dopo l'abbandono nave a Moneglia" loading="lazy">
+      <figcaption>A terra, sani e salvi.</figcaption></figure>
+    <div class="les"><b>Menzione d'onore</b>
+      <ol><li>Sangue freddo da ospiti: allarme, soccorsi e nuotata, nell'ordine giusto.</li>
+      <li>Da passeggero non scegli il comandante, ma l'uscita la individui sempre.</li>
+      <li>Sicurezza prima, orgoglio poi.</li></ol></div>
+    <div class="esito"><b>Bilancio:</b> uno yacht sul fondo, cinque persone illese e una nuotata verso Moneglia.
+      <br><a href="https://www.primocanale.it/cronaca/27105-moneglia-e-affondato-lo-yacht-andato-a-fuoco-i-5-a-bordo-si-sono-buttati-in-mare.html" target="_blank" rel="noopener">📰 L'articolo — Primocanale ↗</a></div>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/rglFQp34IFY" title="Incendio yacht a Moneglia" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div></section>`;
 }
 
