@@ -3,6 +3,11 @@
 # le assegna ai viaggi per destinazione+anno, taggia le persone dal nome file
 # (-> campo people nelle foto + sidecar data/photo-tags.json per build_crew.py) e
 # ottimizza le 3 foto incidente per il dossier skipper.
+#
+# ATTENZIONE (2026-07-12): data/Skipper Images/ e' INCOMPLETA rispetto al sito (molte
+# foto rinominate/rimosse) -> questo build ora produce ~15 foto invece delle 52 online.
+# NON rieseguirlo: cancellerebbe ~37 foto + i loro tag dal sito. Per AGGIUNGERE foto
+# nuove usa scripts/add_trip_photos.py (append-only, preserva le foto e i tag esistenti).
 import openpyxl, collections, os, glob, re, unicodedata, json
 from PIL import Image, ImageOps
 

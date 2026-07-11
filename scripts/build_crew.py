@@ -153,7 +153,7 @@ TAGS = os.path.join(ROOT, "data", "crew-tags.json")
 tagmap = json.loads(io.open(TAGS, encoding="utf-8").read()).get("tags", {}) if os.path.exists(TAGS) else {}
 pid2id = {v: k for k, v in id2pid.items()}          # per companions_for
 id2name = {x["id"]: x["name"] for x in out}
-n_photos = n_bios = n_tags = n_comp = 0
+n_photos = n_bios = n_tags = n_comp = n_avatar = 0
 for x in out:
     ph = by_person.get(x["id"], [])
     if ph:
@@ -167,6 +167,11 @@ for x in out:
     comp = companions_for(id2pid.get(x["id"]))
     if comp:
         x["companions"] = comp; n_comp += 1
+    # avatar: ritratto in site/crew/img/<id>.jpg (auto-agganciato per gli alumni,
+    # cioe' i membri senza foto nell'overlay crew2026)
+    av = os.path.join(ROOT, "site", "crew", "img", x["id"] + ".jpg")
+    if os.path.exists(av) and not x.get("crew2026", {}).get("photo"):
+        x["photo"] = "crew/img/" + x["id"] + ".jpg"; n_avatar += 1
 
 out.sort(key=lambda x: (-x["days"], -x["trips"]))
 data = {"generated_at": "2026-07-11",

@@ -785,7 +785,8 @@
      "trips": 2,
      "days": 23
     }
-   ]
+   ],
+   "photo": "crew/img/claudio-c.jpg"
   },
   {
    "id": "paola-c",
@@ -2193,7 +2194,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/andrea-a.jpg"
   },
   {
    "id": "luca-b",
