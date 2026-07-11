@@ -274,6 +274,20 @@ footer strong{color:var(--ink)}
 .starlink svg{width:15px;height:15px;color:var(--accent);flex:none}
 .err{background:var(--land);padding:1rem;border-radius:3px;margin-top:1.5rem;font-size:.9rem}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* executive summary 3 giorni — consiglio rotta */
+.advisory{background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:6px;padding:.9rem 1rem;margin-bottom:.5rem}
+.adv-lead{font-size:.98rem;font-weight:600;margin-bottom:.6rem;line-height:1.4}
+.adv-day{border-top:1px solid var(--hair);padding:.55rem 0}
+.adv-day:first-of-type{border-top:0;padding-top:.1rem}
+.adv-h{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:.9rem}
+.adv-h b{font:700 .82rem/1 var(--display);letter-spacing:.03em;text-transform:capitalize;min-width:3rem}
+.adv-tag{margin-left:auto;font:700 .55rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:.22rem .45rem;border-radius:3px}
+.adv-tag.calm{background:var(--accent)} .adv-tag.good{background:var(--verde)} .adv-tag.warn{background:var(--giallo)} .adv-tag.hard{background:var(--rosso)}
+.adv-cond{font-size:.8rem;color:var(--soft);margin:.25rem 0 .15rem;font-family:var(--mono)}
+.adv-tip{font-size:.86rem;line-height:1.5}
+.adv-obj{margin-top:.7rem;padding-top:.6rem;border-top:1px dashed var(--hair);font-size:.86rem;line-height:1.5;color:var(--soft)}
+.adv-obj b{color:var(--ink)}
+.adv-src{margin-top:.45rem;font-size:.72rem;color:var(--soft)}
 </style>
 </head>
 <body>
@@ -480,6 +494,68 @@ function outlookRows(outlook) {
       ${sail || nb ? `<p>${nb}${sail}</p>` : ""}
       <p>${meteo}</p></div>${thumb(o.photo, o.to)}</div>`;
   }).join("");
+}
+
+// ---- Executive summary 3 giorni: incrocia vento e mare, consiglia la rotta.
+// Advisory (propone, non decide): tutto in condizionale, l'obiettivo resta
+// il giro antiorario della Corsica. Si aggiorna a ogni run del meteo.
+function seaWord(m) {
+  if (m == null) return null;
+  if (m < 0.4) return "piatto"; if (m < 0.8) return "poco mosso";
+  if (m < 1.25) return "mosso"; if (m < 2) return "molto mosso"; return "agitato";
+}
+function dayVerdict(wind, gust, wave, night, rest) {
+  if (rest) return { lvl: -1, cls: "calm", label: "sosta", tip: "Giornata di rada: relax e bagni." };
+  const w = wind ?? 0, g = gust ?? w * 1.3, h = wave;
+  let lvl;
+  if (w > 25 || g > 34 || (h != null && h > 1.6)) lvl = 3;
+  else if (w >= 20 || (h != null && h > 1.1)) lvl = 2;
+  else if (w >= 12) lvl = 1;
+  else lvl = 0;
+  const base = [
+    { cls: "calm", label: "tranquillo", tip: "Poco vento: motore o vela leggera. Giornata comoda per navigare o per i bagni." },
+    { cls: "good", label: "buono", tip: "Condizioni belle per una navigazione a vela." },
+    { cls: "warn", label: "vivace", tip: "Vento sostenuto e mare formato: conviene partire presto, ridurre vela e puntare a una rada ben riparata." },
+    { cls: "hard", label: "impegnativo", tip: "Rinforzo forte: meglio accorciare o rimandare la tappa e cercare riparo. Il Maestrale può insistere." },
+  ][lvl];
+  let tip = base.tip;
+  if (night) tip = (h != null && h > 0.5)
+    ? "🌙 Notturna a piano ma mare oltre 0,5 m: conviene il piano diurno. " + tip
+    : "🌙 Notturna possibile: mare piatto, gate rispettato — da confermare la sera. " + tip;
+  return { lvl, ...base, tip };
+}
+const isMaestrale = d => d != null && d >= 290 && d <= 340; // quadrante NW
+function advisoryCard(b, prog) {
+  const days = (prog?.days || []).slice(0, 3);
+  if (!days.length) return "";
+  const vOf = d => dayVerdict(d.wx?.wind_max, d.wx?.gust_max, d.wave?.hmax, d.night, d.rest);
+  const dLabel = x => x ? new Date(x.date + "T12:00").toLocaleDateString("it", { weekday: "long" }) : "";
+  const rows = days.map(d => {
+    const w = d.wx?.wind_max, dir = d.wx?.wind_dir, h = d.wave?.hmax, v = vOf(d);
+    const wd = new Date(d.date + "T12:00").toLocaleDateString("it", { weekday: "short", day: "numeric" });
+    const route = d.rest ? `Sosta — ${esc(d.to)}` : `${esc(d.frm)} → ${esc(d.to)}`;
+    const cond = [w != null ? `vento ${Math.round(w)} kn${dir != null ? " da " + comp(dir) : ""}` : null,
+                  h != null ? `mare ${seaWord(h)} ${h.toFixed(1)} m` : null].filter(Boolean).join(" · ");
+    return `<div class="adv-day"><div class="adv-h"><b>${wd}</b> <span class="water">${route}</span> <span class="adv-tag ${v.cls}">${v.label}</span></div>
+      ${cond ? `<div class="adv-cond">${cond}</div>` : ""}
+      <div class="adv-tip">${v.tip}</div></div>`;
+  }).join("");
+  const nav = days.filter(d => !d.rest).map(d => vOf(d).lvl);
+  const worst = nav.length ? Math.max(...nav) : -1;
+  const hardDay = days.find(d => !d.rest && vOf(d).lvl === 3);
+  const maeDay = days.find(d => !d.rest && isMaestrale(d.wx?.wind_dir) && (d.wx?.wind_max ?? 0) >= 18);
+  let lead, synth;
+  if (worst <= 0) { lead = "Finestra tranquilla nei prossimi giorni: poco vento e mare calmo."; synth = "Le condizioni accompagnano il programma; il giro antiorario procede senza forzature."; }
+  else if (worst === 1) { lead = "Bella finestra da vela: vento giusto e mare gestibile."; synth = "Condizioni favorevoli al giro antiorario come da piano."; }
+  else if (worst === 2) { lead = "Un paio di giornate vivaci in arrivo."; synth = `Conviene navigare presto e scegliere rade ben riparate${maeDay ? ` dal Maestrale (${dLabel(maeDay)})` : ""}. Il senso antiorario resta valido.`; }
+  else { lead = `Rinforzo forte in arrivo${hardDay ? ` (${dLabel(hardDay)})` : ""}.`; synth = "Meglio rimodulare le tappe attorno a quel giorno — anticipare o restare in rada ben riparata. L'antiorario resta il default; l'orario solo con previsioni stabili confermate da due modelli."; }
+  return `<h2>📋 Prossimi 3 giorni — consiglio rotta</h2>
+    <div class="advisory">
+      <p class="adv-lead">${lead}</p>
+      ${rows}
+      <p class="adv-obj">🎯 Rotta di riferimento: <b>giro antiorario della Corsica</b>. ${synth}</p>
+      <p class="adv-src">Incrocio vento×mare dal modello Open-Meteo — si aggiorna a ogni bollettino.</p>
+    </div>`;
 }
 
 const TURN_LABEL = {
@@ -838,6 +914,7 @@ function render(b, wx, c, prog) {
   <a class="crew-cta" href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">🧭 Questionario equipaggio</a>
   <a class="crew-cta" href="guida.html">🎒 Guida pre-partenza · valigia &amp; regole</a>` : ""}
   ${execCard(b, wx)}
+  ${advisoryCard(b, prog)}
   <h2>Oggi${b.position ? ` — <span style="text-transform:none;letter-spacing:0">${esc(b.position.name)}</span>` : ""}</h2>
   ${b.now ? `<div class="nowbar">
     <span>📍 <b>${esc(b.position?.name ?? "—")}</b> ${b.position?.live ? `(GPS, ${b.position.age_h} h fa)` : "(da piano)"}</span>
