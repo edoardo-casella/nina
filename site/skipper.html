@@ -53,7 +53,7 @@ a{color:var(--accent)}
 .stars{color:var(--gold-2);letter-spacing:.15em;font-size:.95rem;margin-top:.15rem}
 .hero h1{font:700 2.7rem/1 var(--display);letter-spacing:.01em;color:#fff;margin-top:.2rem}
 /* foto identificativa stile dossier anni '40 (stampa seppia spillata) */
-.idphoto{position:absolute;top:.9rem;right:.9rem;z-index:4;width:118px;margin:0;
+.idphoto{position:absolute;top:.9rem;right:.9rem;z-index:4;width:152px;margin:0;
   padding:6px 6px 20px;background:#efe6d0;border:1px solid rgba(0,0,0,.25);border-radius:2px;
   box-shadow:0 8px 22px rgba(0,0,0,.55);transform:rotate(3deg)}
 .idphoto::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-4deg);
@@ -61,7 +61,7 @@ a{color:var(--accent)}
 .idphoto img{width:100%;display:block;filter:contrast(1.03)}
 .idphoto figcaption{position:absolute;left:0;right:0;bottom:4px;text-align:center;
   font:400 .74rem/1 var(--body);font-style:italic;color:#6b573096}
-@media(max-width:400px){.idphoto{width:96px}}
+@media(max-width:420px){.idphoto{width:118px}}
 .hero .sub{margin-top:.5rem;font-size:1rem;color:#e6eef6}
 .ribbons{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
 .ribbons .flag{width:30px;height:20px}
@@ -513,14 +513,13 @@ function render(d) {
   const { cur, next } = rankOf(t.nm);
   // avanzamento = miglia percorse sul traguardo del grado massimo (barra piena, onesta)
   const pct = next ? Math.round(t.nm / next.min * 100) : 100;
-  const hero = d.gallery[0] || "icon-512.png";
+  const hero = "skipper/img/hero.jpg";
   const allFlags = t.countries.filter(c => CC[c]).map(flag).join("");
   document.getElementById("app").innerHTML = `
   <div class="hero">
     <img src="${hero}" alt="Niña in navigazione">
     <div class="grad"></div>
-    <figure class="idphoto"><img src="skipper/img/edoardo-id.jpg" alt="${esc(d.name)}">
-      <figcaption>Serifos</figcaption></figure>
+    <figure class="idphoto"><img src="skipper/img/edoardo-id.jpg" alt="${esc(d.name)}"></figure>
     <div class="cap">
       <div class="rankline">${medalSVG}
         <div><div class="rankttl">Grado<b>${cur.name}</b></div>
@@ -550,7 +549,6 @@ function render(d) {
   ${decorations(d)}
   ${galleryHTML(d)}
   ${travelVideosHTML()}
-  ${dronesHTML()}
   ${tripsHTML(d)}
   ${mistakesHTML()}
   ${heroicsHTML()}

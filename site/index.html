@@ -268,6 +268,10 @@ footer{max-width:640px;margin:3rem auto 0;padding:1.2rem 1.1rem;border-top:1px s
   font-size:.76rem;color:var(--soft);line-height:1.6}
 footer a{color:var(--magenta)}
 footer strong{color:var(--ink)}
+.poweredby{display:inline-flex;align-items:center;gap:.4rem;vertical-align:middle;font-size:.82rem}
+.starlink{display:inline-flex;align-items:center;gap:.34rem;font:700 .96rem/1 var(--display);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.starlink svg{width:15px;height:15px;color:var(--accent);flex:none}
 .err{background:var(--land);padding:1rem;border-radius:3px;margin-top:1.5rem;font-size:.9rem}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -300,7 +304,8 @@ footer strong{color:var(--ink)}
   Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF), risoluzione d'onda ~5 km — sottocosta è indicativa.
   Il bollettino ufficiale è quello del <a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">mare dell'Aeronautica Militare</a>, e prevale sempre su questa pagina.<br><br>
   <strong>Questa pagina non è uno strumento di sicurezza.</strong> Il Sail Score dice quanto sarà bella una navigazione, non se è prudente farla. Decide lo skipper.<br><br>
-  🛰️ <strong>Powered by Starlink</strong> — internet satellitare a bordo, anche al largo · <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="arrivi.html">Arrivi & partenze</a>
+  <span class="poweredby">powered by <span class="starlink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="12" rx="10.5" ry="4.4" transform="rotate(-28 12 12)"/><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/></svg>Starlink</span></span> — internet satellitare a bordo, anche al largo<br><br>
+  <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="avionica.html">Avionica a bordo</a> · <a href="arrivi.html">Arrivi &amp; partenze</a>
 </footer>
 
 <script>
