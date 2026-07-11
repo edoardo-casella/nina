@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guida pre-partenza · Plancia Niña</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --rosso:#C0392B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --rosso:#E2536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair)}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.head{padding:1.7rem 1.1rem 1rem}
+.head .eyebrow{font:700 .66rem/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-bottom:.5rem}
+.head h1{font:700 2rem/1.05 var(--display);letter-spacing:.01em}
+.head p{margin-top:.6rem;color:var(--soft);font-size:.95rem}
+section{padding:0 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin:1.4rem 0 1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.note{background:var(--panel);border:1px solid var(--gold);border-left:4px solid var(--gold);border-radius:5px;
+  padding:.85rem 1rem;margin:0 1.1rem 1rem;font-size:.9rem}
+.note b{color:var(--gold)}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:5px;padding:.9rem 1rem;margin-bottom:.8rem}
+.card h3{font:700 .62rem/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.card.dont h3{color:var(--rosso)}
+ul.pk{list-style:none;margin:0;padding:0}
+ul.pk li{padding:.12rem 0}
+ul.pk.plain li{position:relative;padding-left:1.2rem;font-size:.92rem;line-height:1.5}
+ul.pk.plain li::before{content:"›";position:absolute;left:.15rem;color:var(--gold);font-weight:700}
+/* checklist spuntabile */
+.chk{display:flex;gap:.6rem;align-items:flex-start;padding:.35rem 0;cursor:pointer;font-size:.92rem;line-height:1.45}
+.chk input{position:absolute;opacity:0;width:0;height:0}
+.chk .box{flex:none;width:20px;height:20px;margin-top:.1rem;border:2px solid var(--hair);border-radius:5px;
+  display:flex;align-items:center;justify-content:center;color:#fff;background:var(--panel);transition:.15s}
+.chk input:checked ~ .box{background:var(--accent);border-color:var(--accent)}
+.chk input:checked ~ .box::after{content:"✓";font-size:.8rem;font-weight:700}
+.chk input:checked ~ .txt{color:var(--soft);text-decoration:line-through;text-decoration-color:var(--hair)}
+.chk small{display:block;color:var(--soft);font-size:.8rem;line-height:1.4;margin-top:.1rem}
+.chkbar{display:flex;align-items:center;gap:.7rem;margin:.2rem 0 1rem;font:700 .62rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.chkbar .prog{flex:1;height:8px;background:var(--sea-2);border-radius:5px;overflow:hidden;border:1px solid var(--hair)}
+.chkbar .prog>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--gold-2));width:0;transition:width .3s}
+.chkbar button{font:inherit;color:var(--accent);background:none;border:0;cursor:pointer;letter-spacing:.1em;text-transform:uppercase}
+/* decalogo */
+.deca{display:grid;gap:.6rem}
+.rule{display:flex;gap:.8rem;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--gold);border-radius:5px;padding:.75rem .9rem}
+.rule .n{flex:none;font:700 1.5rem/1 var(--mono);color:var(--gold);min-width:1.6rem}
+.rule .t b{display:block;font-size:.98rem;margin-bottom:.15rem}
+.rule .t p{font-size:.88rem;color:var(--soft);line-height:1.5}
+footer{display:block;padding:1.6rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+details.src{margin:.6rem 1.1rem 0;font-size:.82rem;color:var(--soft)}
+details.src summary{cursor:pointer;font:700 .62rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase}
+details.src a{word-break:break-word}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia Niña</a>
+  <span class="tag">🎒 Pre-partenza</span>
+</div></div>
+
+<main>
+  <div class="head">
+    <div class="eyebrow">🧭 Guida pre-partenza · equipaggio Niña</div>
+    <h1>Valigia &amp; regole di bordo</h1>
+    <p>Tre settimane in catamarano tra Corsica e Sardegna, si dorme in rada. La barca è piccola, condivisa e spartana: si vive in costume e ci si diverte. Prepara poco e bene — e leggi le regole, servono a stare comodi e sicuri.</p>
+  </div>
+
+  <div class="note">📄 <b>Documenti — leggi subito.</b> Dal <b>3 agosto 2026</b> la carta d'identità <b>cartacea</b> non vale più per l'espatrio: per la Corsica (Francia) serve <b>CIE</b> (carta elettronica) o <b>passaporto</b> in corso di validità. Controlla <b>oggi</b> di averne uno buono per tutta la crociera — rinnovarlo all'ultimo non si può.</div>
+
+  <section>
+    <h2>🎒 La valigia — checklist</h2>
+    <div class="chkbar"><span id="count">0 / 0</span><div class="prog"><i id="prog"></i></div><button id="reset" type="button">azzera</button></div>
+
+    <div class="card"><h3>Bagaglio — solo morbido</h3>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Borsone morbido o zaino (max 2 borse piccole)<small>Da vuoto si schiaccia e si stiva nei gavoni. I trolley rigidi non entrano e rigano i mobili in teak.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Metà della roba che porteresti in hotel<small>In barca si vive in costume e si ri-indossa tutto più volte.</small></span></label>
+    </div>
+
+    <div class="card"><h3>Abbigliamento — a strati</h3>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">3 cambi leggeri da giorno (t-shirt, pantaloncini) che asciugano in fretta</span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">2 cambi più coperti per la sera + felpa/pile<small>Al tramonto e in navigazione il vento raffredda.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Cerata / giacca antivento-antipioggia leggera (K-Way)<small>Contro spruzzi e pioggia.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">2-3 costumi da bagno<small>Uno addosso è sempre bagnato: così ne hai uno asciutto.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Cappello con laccio<small>Senza laccio, il vento se lo porta via.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Un outfit smart-casual per le cene a terra</span></label>
+    </div>
+
+    <div class="card"><h3>Scarpe</h3>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Scarpe da barca a suola bianca/chiara<small>A bordo scalzi o con queste: le suole scure lasciano segni sulla coperta.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Infradito / Crocs per spiaggia e doccia</span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Scarpette da scoglio<small>Per scendere su rocce e fondali sassosi.</small></span></label>
+    </div>
+
+    <div class="card"><h3>Sole &amp; pelle</h3>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Crema solare alta protezione, reef-safe<small>Leggi l'INCI: niente oxybenzone/octinoxate/octocrylene, meglio filtri minerali. Il riflesso dell'acqua raddoppia l'esposizione.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Doposole + burrocacao con protezione</span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Occhiali da sole (polarizzati) con laccetto galleggiante</span></label>
+    </div>
+
+    <div class="card"><h3>Salute</h3>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">I tuoi farmaci personali<small>In barca la farmacia è lontana.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Kit anti mal di mare (pastiglie, cerotti o braccialetti)<small>Da prendere PRIMA di salpare, non quando stai già male.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Repellente zanzare + stick post-puntura</span></label>
+    </div>
+
+    <div class="card"><h3>Tech &amp; gadget</h3>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Power bank + cavi lunghi<small>Spesso c'è una sola presa per cabina. A bordo c'è Starlink: internet non manca.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Dry bag / sacca stagna per elettronica e documenti<small>Fondamentale per il trasferimento in gommone: spruzzi garantiti.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Torcia frontale<small>Per muoverti di notte senza accendere le luci della barca.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">GoPro / action cam, cuffie, e-reader</span></label>
+    </div>
+
+    <div class="card"><h3>Varie utili</h3>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Telo microfibra ad asciugatura rapida<small>I teli mare non sono forniti a bordo.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Borraccia riutilizzabile</span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Contanti<small>Nelle cale e nei piccoli porti non sempre si paga con carta.</small></span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Maschera e boccaglio personali</span></label>
+      <label class="chk"><input type="checkbox"><span class="box"></span><span class="txt">Documento valido (CIE o passaporto)</span></label>
+    </div>
+
+    <div class="card dont"><h3>Da NON portare</h3>
+      <ul class="pk plain">
+        <li>Valigie e trolley rigidi (non si stivano, danneggiano i mobili)</li>
+        <li>Troppa roba e vestiti "buoni"</li>
+        <li>Tacchi e scarpe con suola scura (segnano il teak)</li>
+        <li>Phon potenti, piastre, stereo propri (consumano troppa energia)</li>
+        <li>Oggetti di valore: se cadono in mare sono persi</li>
+        <li>Olii/spray solari oleosi (rendono la coperta scivolosa)</li>
+        <li>Aspettative da hotel 🙂</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚓ Decalogo di bordo</h2>
+    <div class="deca">
+      <div class="rule"><div class="n">1</div><div class="t"><b>Il WC è sacro</b><p>Nel water marino va solo ciò che "hai mangiato": mai carta igienica o salviette, intasano pompa e tubazioni. La carta va nel cestino.</p></div></div>
+      <div class="rule"><div class="n">2</div><div class="t"><b>Pompa a lungo</b><p>Dopo l'uso aziona la pompa del wc ben oltre il necessario, per svuotare del tutto le tubazioni. Segui la procedura valvole che mostra lo skipper.</p></div></div>
+      <div class="rule"><div class="n">3</div><div class="t"><b>L'acqua dolce è un tesoro</b><p>Serbatoi limitati: docce cortissime (bagnati, chiudi, insapona, riapri per sciacquare), rubinetti sempre chiusi. Non è un hotel.</p></div></div>
+      <div class="rule"><div class="n">4</div><div class="t"><b>Ogni cosa al suo posto</b><p>La barca è piccola: niente oggetti in giro. In navigazione tutto ciò che è libero vola e diventa un pericolo. Rifatti la cuccetta.</p></div></div>
+      <div class="rule"><div class="n">5</div><div class="t"><b>Rifiuti compattati</b><p>Schiaccia e comprimi al massimo bottiglie e rifiuti (lo spazio è pochissimo), differenzia, porta tutto a terra. In mare non finisce mai nulla.</p></div></div>
+      <div class="rule"><div class="n">6</div><div class="t"><b>A bordo scalzi o suola chiara</b><p>Niente scarpe da terra in coperta: portano sporco e le suole scure lasciano segni.</p></div></div>
+      <div class="rule"><div class="n">7</div><div class="t"><b>Una mano per te, una per la barca</b><p>Muoviti tenendoti sempre a un appiglio. Attento a testa e dita: boma, verricelli, cime in tensione. Niente tuffi da barca in movimento.</p></div></div>
+      <div class="rule"><div class="n">8</div><div class="t"><b>Prevenire più che curare</b><p>In mare soccorsi e ospedale sono lontani e complicati: prudenza sempre. Se ti fai male o stai male, dillo <b>subito</b> allo skipper, anche per cose piccole.</p></div></div>
+      <div class="rule"><div class="n">9</div><div class="t"><b>Lo skipper comanda</b><p>Rotta, ancoraggio e sicurezza li decide lo skipper. Si ascoltano i briefing, si collabora alle manovre, non si discute in manovra.</p></div></div>
+      <div class="rule"><div class="n">10</div><div class="t"><b>Rispetto per tutti</b><p>Per i compagni (spazi comuni ordinati, silenzio la notte in rada), per il mare (niente plastica in acqua) e per i turni di cucina e pulizie.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔧 Regole pratiche</h2>
+    <div class="card"><h3>🚽 WC / bagno marino</h3>
+      <ul class="pk plain">
+        <li>Solo liquidi organici: carta e salviette sempre nel cestino, mai nel wc.</li>
+        <li>Segui alla lettera la procedura valvole aperto/chiuso: molti allagamenti nascono da un wc usato male.</li>
+        <li>Pompa abbondante dopo ogni uso, per chi viene dopo.</li>
+      </ul>
+    </div>
+    <div class="card"><h3>💧 Acqua dolce</h3>
+      <ul class="pk plain">
+        <li>Una doccia da 5 minuti consuma ~80 litri: usa la "doccia dello skipper" (acqua chiusa mentre ti insaponi).</li>
+        <li>Chiudi bene i rubinetti; non lasciare scorrere l'acqua lavando piatti o denti.</li>
+        <li>Se c'è il dissalatore produce acqua ma consuma energia: risparmiare resta la regola.</li>
+      </ul>
+    </div>
+    <div class="card"><h3>🗑️ Spazzatura</h3>
+      <ul class="pk plain">
+        <li>Comprimi tutto (bottiglie schiacciate, imballaggi ridotti) per guadagnare spazio nei gavoni.</li>
+        <li>Differenzia, sacchi chiusi, scarica a terra a ogni sosta in porto.</li>
+        <li>Nulla in mare, mai: né plastica, né mozziconi, né avanzi.</li>
+      </ul>
+    </div>
+    <div class="card"><h3>🦺 Sicurezza</h3>
+      <ul class="pk plain">
+        <li>Giubbotto di salvataggio quando serve: di notte, con mare mosso o cattivo tempo, sempre.</li>
+        <li>Impara dal primo briefing dove sono giubbotti, estintori e dotazioni di sicurezza.</li>
+        <li>Mai le dita tra cima e verricello; attenzione al boma sopra la testa.</li>
+        <li>In coperta agganciati alle linee di vita, un appiglio alla volta.</li>
+      </ul>
+    </div>
+    <div class="card"><h3>🤢 Mal di mare</h3>
+      <ul class="pk plain">
+        <li>Farmaco o cerotto <b>prima</b> di salpare, non dopo.</li>
+        <li>Resta in coperta all'aria e guarda l'orizzonte (un punto fisso lontano).</li>
+        <li>Non scendere sotto coperta a leggere o guardare il telefono: peggiora tutto.</li>
+        <li>Se stai male, sdraiati in pozzetto al centro barca, dove il moto si sente meno.</li>
+      </ul>
+    </div>
+    <div class="card"><h3>🌿 Ambiente &amp; ancoraggio</h3>
+      <ul class="pk plain">
+        <li>Si ancora su sabbia (chiara e uniforme), mai sulle chiazze scure di posidonia: è dannoso e sanzionabile.</li>
+        <li>Dove ci sono campi boa, si usano i gavitelli.</li>
+        <li>Saponi e shampoo biodegradabili; niente plastica in acqua.</li>
+      </ul>
+    </div>
+  </section>
+
+  <details class="src"><summary>Fonti</summary>
+    <p style="margin-top:.5rem">Guida costruita da guide di charter e vela: k6yachting, attentialboma, sailsquare, dreamyachtcharter, sailogy, moorings, sailingeurope · documenti Corsica: Consolato d'Italia a Marsiglia · decalogo e galateo: adriaship (Decalogo del marinaio), bebluesailing, hanseyachts, virginislandsailing · acqua/rifiuti: slowsailing, magellanostore, lifegate · sicurezza e mal di mare: greenpink, mediterraneasailing, paginemediche · posidonia: velaspiegata, medseafoundation.</p>
+  </details>
+
+  <footer>La barca è di tutti: si torna a casa più riposati se ognuno fa la sua parte. Buon vento. 🌊<br>
+    <a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>
+</main>
+
+<script>
+// checklist valigia: stato persistente per dispositivo (localStorage)
+(function () {
+  const KEY = "nina-valigia-v1";
+  const boxes = [...document.querySelectorAll(".chk input")];
+  boxes.forEach((b, i) => b.dataset.k = "v" + i);
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+  const count = document.getElementById("count"), prog = document.getElementById("prog");
+  const refresh = () => {
+    const done = boxes.filter(b => b.checked).length;
+    count.textContent = done + " / " + boxes.length;
+    prog.style.width = (boxes.length ? done / boxes.length * 100 : 0) + "%";
+  };
+  boxes.forEach(b => {
+    b.checked = !!saved[b.dataset.k];
+    b.addEventListener("change", () => {
+      saved[b.dataset.k] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      refresh();
+    });
+  });
+  document.getElementById("reset").addEventListener("click", () => {
+    saved = {}; try { localStorage.removeItem(KEY); } catch (e) {}
+    boxes.forEach(b => b.checked = false); refresh();
+  });
+  refresh();
+})();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

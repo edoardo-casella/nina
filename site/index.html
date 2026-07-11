@@ -303,7 +303,7 @@ footer strong{color:var(--ink)}
 <footer>
   Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF). Bollettino ufficiale del mare: <a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">Aeronautica Militare</a>.<br><br>
   <span class="poweredby">powered by <span class="starlink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="12" rx="10.5" ry="4.4" transform="rotate(-28 12 12)"/><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/></svg>Starlink</span></span> — internet satellitare a bordo, anche al largo<br><br>
-  <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="avionica.html">Avionica a bordo</a> · <a href="arrivi.html">Arrivi &amp; partenze</a>
+  <a href="guida.html">🎒 Guida pre-partenza</a> · <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="avionica.html">Avionica a bordo</a> · <a href="arrivi.html">Arrivi &amp; partenze</a>
 </footer>
 
 <script>
@@ -826,7 +826,7 @@ function render(b, wx, c, prog) {
   document.getElementById("flag").innerHTML = simFlag + state;
 
   const conf = b.confidence?.confidence ?? "sconosciuta";
-  const t = b.tonight, pb = b.plan_b;
+  const t = b.tonight, pb = b.plan_b, rada = t || (b.ranked && b.ranked[0]);
 
   const oggi = `
   ${b.departure_at && new Date(b.departure_at) > new Date() ? `
@@ -835,7 +835,8 @@ function render(b, wx, c, prog) {
     <span><b data-u="g">—</b><i>giorni</i></span><span><b data-u="h">—</b><i>ore</i></span>
     <span><b data-u="m">—</b><i>min</i></span><span><b data-u="s">—</b><i>sec</i></span>
   </div>
-  <a class="crew-cta" href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">🧭 Questionario equipaggio</a>` : ""}
+  <a class="crew-cta" href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">🧭 Questionario equipaggio</a>
+  <a class="crew-cta" href="guida.html">🎒 Guida pre-partenza · valigia &amp; regole</a>` : ""}
   ${execCard(b, wx)}
   <h2>Oggi${b.position ? ` — <span style="text-transform:none;letter-spacing:0">${esc(b.position.name)}</span>` : ""}</h2>
   ${b.now ? `<div class="nowbar">
@@ -852,12 +853,13 @@ function render(b, wx, c, prog) {
 
   <h2>Stanotte</h2>
   ${b.leg?.night ? `<p class="water" style="font-size:.95rem">🌙 In navigazione — arrivo all'alba a ${esc(b.leg.leg.split(/ (?:->|→) /)[1] ?? "destinazione")}. Turni di guardia decisi dagli skipper.</p>` :
-  t ? `<div class="rada"><div class="dot ${t.light}"></div>
-      <div><h3>${destLink(t.name, t.id)} ${stars(t.rating)}</h3><p class="water">${esc(t.why)} · fondo ${esc(t.holding)}</p></div>
-      ${thumb(t.photo, t.name)}<div class="pts num">${t.score}</div></div>` : `<p>Rada non definita.</p>`}
-  ${pb ? `<div class="b-plan"><b>Piano B</b><span class="water">${destLink(pb.name, pb.id)}</span> — ${esc(pb.why)}.</div>` : ""}
+  rada ? `<div class="rada"><div class="dot ${rada.light}"></div>
+      <div><h3>${destLink(rada.name, rada.id)} ${stars(rada.rating)}</h3><p class="water">${esc(rada.why)} · fondo ${esc(rada.holding)}</p>
+      ${!t ? `<p style="font-size:.78rem;color:var(--soft)">la più riparata col vento previsto — la tappa esatta la fissa il piano</p>` : ""}</div>
+      ${thumb(rada.photo, rada.name)}<div class="pts num">${rada.score}</div></div>` : `<p>Rada non definita.</p>`}
+  ${pb && pb.id !== rada?.id ? `<div class="b-plan"><b>Piano B</b><span class="water">${destLink(pb.name, pb.id)}</span> — ${esc(pb.why)}.</div>` : ""}
   <details><summary>Le altre rade con questo vento</summary>
-    ${b.ranked.filter(r => r.id !== t?.id && r.id !== pb?.id).map(r => `<div class="rada"><div class="dot ${r.light}"></div>
+    ${b.ranked.filter(r => r.id !== rada?.id && r.id !== pb?.id).map(r => `<div class="rada"><div class="dot ${r.light}"></div>
       <div><h3>${destLink(r.name, r.id)}</h3><p class="water">${esc(r.why)}</p></div>
       <div class="pts num">${r.score}</div></div>`).join("")}
   </details>
