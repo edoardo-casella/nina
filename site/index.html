@@ -50,7 +50,12 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
   border-bottom:2px solid var(--accent)}
 .hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem}
 .boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;
-  color:var(--hdrtext);text-decoration:none;border-bottom:1px dotted currentColor}
+  color:var(--hdrtext);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:1px}
+.boat::after{content:"↗";font-size:.6em;color:var(--accent);margin-left:.2em;vertical-align:super;font-weight:700}
+.boat:hover{color:var(--accent)}
+.caplink{color:var(--hdrtext);text-decoration:none;border-bottom:1px dotted var(--accent)}
+.caplink::after{content:"↗";font-size:.72em;color:var(--accent);margin-left:.1em}
+.caplink:hover{color:var(--accent)}
 .cap{font:600 .6rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--hdrsub);margin-top:.22rem}
 .theme{font:700 .58rem/1 var(--display);letter-spacing:.1em;padding:.4rem .55rem;margin-left:.6rem;
   border:1px solid var(--hair);border-radius:3px;background:transparent;color:var(--hdrtext);cursor:pointer;flex:none}
@@ -108,6 +113,8 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
   padding:.4rem .75rem;border:1px solid var(--hair);background:var(--paper);
   border-radius:3px;color:var(--soft);cursor:pointer}
 .tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab:not(.on){box-shadow:inset 0 -2px 0 var(--sea-2)}
+.tab:hover:not(.on){border-color:var(--accent);color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
 
 /* drill-down: quattro viste in una pagina, hash-router senza framework */
 header .tabs{max-width:640px;margin:0 auto;padding:0 1.1rem .6rem}
@@ -891,7 +898,7 @@ function render(b, wx, c, prog) {
   document.getElementById("captains").innerHTML =
     b.captains?.length ? "Capitani · " + b.captains.map(c =>
       /edoardo casella/i.test(c)
-        ? `<a href="skipper.html" style="color:inherit;border-bottom:1px dotted currentColor;text-decoration:none">${esc(c)}</a>`
+        ? `<a class="caplink" href="skipper.html">${esc(c)}</a>`
         : esc(c)).join(" · ") : "";
 
   const state = b.approved
