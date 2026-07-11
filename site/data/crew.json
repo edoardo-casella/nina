@@ -3,7 +3,7 @@
   "note": "x = volte già in barca con Edoardo; fy = primo anno. I nickname non trovati nel registro storico valgono come prima volta. Campo q = scheda dal questionario equipaggio (da compilare).",
   "members": [
     {"id": "edo-c", "name": "Edo C", "role": "skipper", "board": "2026-08-08", "leave": "2026-08-29", "x": 25, "fy": 2011, "photo": "skipper/img/edoardo-id.jpg", "link": "skipper.html"},
-    {"id": "bernardo-b", "name": "Bernardo B", "role": "skipper", "board": "2026-08-08", "leave": "2026-08-21", "x": 9, "fy": 2011},
+    {"id": "bernardo-b", "name": "Bernardo B", "role": "skipper", "board": "2026-08-08", "leave": "2026-08-21", "x": 9, "fy": 2011, "photo": "crew/img/bernardo-b.jpg"},
     {"id": "giacomo-n", "name": "Giacomo N", "nick": "Jack", "role": "crew", "board": "2026-08-08", "leave": "2026-08-17", "x": 5, "fy": 2021, "photo": "crew/img/giacomo-n.jpg", "note": "Habitué dei <a href=\"skipper.html#errori-fatali\">rapporti d'incidente</a> 😅 — il capitano ha una regola tutta sua su di lui."},
     {"id": "ginevra-l", "name": "Ginevra L", "role": "crew", "board": "2026-08-08", "leave": "2026-08-29", "x": 4, "fy": 2022, "photo": "crew/img/ginevra-l.jpg"},
     {"id": "bianca-b", "name": "Bianca B", "role": "crew", "board": "2026-08-08", "leave": "2026-08-21", "x": 0},
