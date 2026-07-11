@@ -229,6 +229,9 @@ a.trip:hover .pl>b{color:var(--accent)}
 .incident .oneshot{margin:.9rem 0 0}
 .incident .oneshot img{width:100%;max-width:460px;border-radius:4px;display:block}
 .incident .oneshot figcaption{font:italic 400 .72rem/1.35 var(--body);color:var(--soft);margin-top:.3rem}
+.zoom{cursor:zoom-in}
+.plink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
+.plink:hover{color:var(--accent)}
 .vgrid{display:grid;gap:.8rem}
 .vgrid .video{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000}
 .vgrid .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -303,7 +306,7 @@ const medalSVG = `<svg class="medal" viewBox="0 0 100 100" aria-hidden="true">
     <line x1="37" y1="43" x2="63" y2="43"/><path d="M29 59 Q31 76 50 78 Q69 76 71 59"/>
   </g></svg>`;
 
-let GAL = [];
+let GAL = [], LB = [];
 
 function lead(d) {
   const t = d.totals;
@@ -476,7 +479,7 @@ function mistakesHTML() {
     <h3>Il fuoribordo fantasma</h3>
     <div class="meta">🇻🇨 Saint Vincent e Grenadine · 2017 · Lagoon 450 «Sorbe»</div>
     <p>Ormeggio alla banchina del benzinaio. Posizione stretta, vento forte e — dettaglio non
-    secondario — l'equipaggio (quella volta con <b>Ilaria M</b> e <b>Gabriele</b>) che si dimentica i
+    secondario — l'equipaggio (quella volta con <a class="plink" href="membro.html#ilaria-m"><b>Ilaria M</b></a> e <a class="plink" href="membro.html#gabri-m"><b>Gabriele</b></a>) che si dimentica i
     parabordi. Nella manovra la barca sfiora il motore
     fuoribordo del gommone di due sedicenti sommozzatori: due tipi che avevano tutta l'aria di
     napoletani, ma in edizione caraibica.</p>
@@ -500,24 +503,24 @@ function mistakesHTML() {
     canale di marea: con la luna il vento gira dalla parte opposta. Ci si mette a terra con due cime e
     mare piatto (le foto sono qui sopra, nella galleria).</p>
     <p>Poi la trappola: pranzo pesante, capitano sotto coperta con l'aria condizionata — chilling
-    supremo. In coperta resta Jack N con tre signore a briscola. Nessuno si accorge del vento che
+    supremo. In coperta resta <a class="plink" href="membro.html#giacomo-n">Jack N</a> con tre signore a briscola. Nessuno si accorge del vento che
     sale né delle cime finite in acqua: l'ormeggio aveva ceduto. Il capitano si sveglia per un «TOC»
     sulla carena, vola ai comandi per non finire inscogliato, sacrifica un'elica — ma esce.</p>
     <p>Epilogo: barca alata con la gru, elica nuova, si riparte. Ma il canale si vendica: pieno di
     meduse che intasano le prese a mare. Aria condizionata KO, generatore KO, un'elica sola. Due o tre
     giorni di caldo bestiale in mezzo al canale.</p>
     <div class="shots">
-      <figure><img src="skipper/img/ferragosto-gru.jpg" alt="Il catamarano «All in» sollevato dalla gru nel porto greco" loading="lazy">
+      <figure><img class="zoom" onclick="lbOne('skipper/img/ferragosto-gru.jpg')" src="skipper/img/ferragosto-gru.jpg" alt="Il catamarano «All in» sollevato dalla gru nel porto greco" loading="lazy">
         <figcaption>L'«All in» alata con la gru per il cambio elica.</figcaption></figure>
-      <figure><img src="skipper/img/ferragosto-scafo.jpg" alt="Ispezione della carena in cantiere" loading="lazy">
+      <figure><img class="zoom" onclick="lbOne('skipper/img/ferragosto-scafo.jpg')" src="skipper/img/ferragosto-scafo.jpg" alt="Ispezione della carena in cantiere" loading="lazy">
         <figcaption>Ispezione carena in cantiere — lo scafo, per la cronaca, si reggeva già da solo.</figcaption></figure>
     </div>
     <div class="les"><b>Lezioni imparate</b>
-      <ol><li>Mai lasciare Jack N solo in coperta.</li>
+      <ol><li>Mai lasciare <a class="plink" href="membro.html#giacomo-n">Jack N</a> solo in coperta.</li>
       <li>Mai ormeggiare a terra in un canale di marea fidandosi di poca ancora.</li>
       <li>Controllare feste comandate greche e maree prima di certi passaggi.</li>
       <li>Dare. Più. Ancora.</li></ol></div>
-    <div class="esito"><b>Bilancio:</b> un'elica, due o tre giorni di vacanza e una nuova regola su Jack N.</div>
+    <div class="esito"><b>Bilancio:</b> un'elica, due o tre giorni di vacanza e una nuova regola su <a class="plink" href="membro.html#giacomo-n">Jack N</a>.</div>
   </div>
 
   <div class="incident"><span class="stamp">Caso 03</span>
@@ -527,15 +530,15 @@ function mistakesHTML() {
     e un atterraggio all'alba a Mahé da cardiopalma: meteo estremo, il pilota tira su tutto e va in
     <b>riattaccata</b> all'ultimo. Poi uno scalo non previsto a <b>Mauritius per rifornimento</b> —
     carburante finito — con i nervi a fior di pelle, soprattutto per chi l'aereo lo teme già di suo
-    (<b>Ginevra L.</b>).</p>
+    (<a class="plink" href="membro.html#ginevra-l"><b>Ginevra L.</b></a>).</p>
     <p>A terra non va meglio: <b>spesa notturna a Mahé</b> con gli scaffali quasi vuoti, e la prima
     frizione tra i salutisti di bordo e chi avrebbe caricato in barca qualunque cosa pur di mangiare.
     Poi il meteo mette il sigillo: <b>sole quasi mai visto</b> per tutta la vacanza.</p>
     <p>Il gran finale va in scena sulla spiaggia di <b>Grande Sœur</b> — isolotto privato a nord-est
     di La Digue, tra i più belli delle Seychelles: granito rosso, sabbia bianca, tartarughe giganti. Lì
-    scoppia lo screzio epico tra <b>Ginevra L.</b> e il co-skipper <b>Bernardo B.</b> L'equipaggio si
+    scoppia lo screzio epico tra <a class="plink" href="membro.html#ginevra-l"><b>Ginevra L.</b></a> e il co-skipper <a class="plink" href="membro.html#bernardo-b"><b>Bernardo B.</b></a> L'equipaggio si
     spacca in due, e per il resto del viaggio non ci si parla più.</p>
-    <p>La pace, storica, arriva solo un anno dopo: <b>al matrimonio di Gualtiero S.</b>, a settembre 2025.
+    <p>La pace, storica, arriva solo un anno dopo: <b>al matrimonio di <a class="plink" href="membro.html#gualtiero-s">Gualtiero S.</a></b>, a settembre 2025.
     Oggi Ginevra e Bernardo sono di nuovo grandi amici — e la coppia che scoppia è tornata al suo posto.</p>
     <div class="les"><b>Lezioni imparate</b>
       <ol><li>Le Seychelles fuori stagione sanno essere grigie: mettere in conto pioggia e vento.</li>
@@ -574,13 +577,13 @@ function heroicsHTML() {
     <h3>Il rogo di Moneglia</h3>
     <div class="meta">🇮🇹 Moneglia · Liguria · giugno 2023 · a bordo come ospiti</div>
     <p>Trasferimento lungo la riviera di levante, a bordo come <b>ospiti</b> — non era la sua barca —
-    insieme a <b>Bernardo Bolgeri</b> e <b>Jack N</b>. Nel pomeriggio, dal vano motore, parte un incendio.</p>
+    insieme a <a class="plink" href="membro.html#bernardo-b"><b>Bernardo Bolgeri</b></a> e <a class="plink" href="membro.html#giacomo-n"><b>Jack N</b></a>. Nel pomeriggio, dal vano motore, parte un incendio.</p>
     <p>Mentre la gestione dell'emergenza latita, sono gli ospiti a prendere in mano la situazione:
     <b>allarme dato, soccorsi chiamati, fiamme affrontate</b>. Quando il fuoco ha la meglio, l'<b>abbandono
     nave</b> è ordinato: tutti in acqua, a nuoto verso riva.</p>
     <p>Arriva il gommone della Capitaneria di Sestri Levante: <b>cinque persone illese</b>, solo un gran
     spavento. Lo yacht, preso a rimorchio, affonda.</p>
-    <figure class="oneshot"><img src="skipper/img/moneglia.jpg" alt="A terra dopo l'abbandono nave a Moneglia" loading="lazy">
+    <figure class="oneshot"><img class="zoom" onclick="lbOne('skipper/img/moneglia.jpg')" src="skipper/img/moneglia.jpg" alt="A terra dopo l'abbandono nave a Moneglia" loading="lazy">
       <figcaption>A terra, sani e salvi.</figcaption></figure>
     <div class="les"><b>Menzione d'onore</b>
       <ol><li>Sangue freddo da ospiti: allarme, soccorsi e nuotata, nell'ordine giusto.</li>
@@ -638,7 +641,7 @@ function render(d) {
     <img src="${hero}" alt="Niña in navigazione">
     <div class="grad"></div>
     <div class="cap">
-      <figure class="idphoto"><img src="skipper/img/edoardo-id.jpg" alt="${esc(d.name)}"></figure>
+      <figure class="idphoto"><img class="zoom" onclick="lbOne('skipper/img/edoardo-id.jpg')" src="skipper/img/edoardo-id.jpg" alt="${esc(d.name)}"></figure>
       <div class="rankline">${medalSVG}
         <div><div class="rankttl">Grado<b>${cur.name}</b></div>
           <div class="stars">${"★".repeat(cur.stars) || "—"}${"☆".repeat(Math.max(0, 5 - cur.stars))}</div></div></div>
@@ -690,10 +693,11 @@ function render(d) {
 }
 
 let lbI = 0;
-function lbOpen(i) { lbI = i; lbShow(); document.getElementById("lb").classList.add("on"); }
+function lbOpen(i) { LB = GAL; lbI = i; lbShow(); document.getElementById("lb").classList.add("on"); }
+function lbOne(src) { LB = [src]; lbI = 0; lbShow(); document.getElementById("lb").classList.add("on"); }
 function lbClose() { document.getElementById("lb").classList.remove("on"); }
-function lbStep(d) { lbI = (lbI + d + GAL.length) % GAL.length; lbShow(); }
-function lbShow() { document.getElementById("lb-img").src = GAL[lbI]; document.getElementById("lb-count").textContent = `${lbI + 1} / ${GAL.length}`; }
+function lbStep(d) { lbI = (lbI + d + LB.length) % LB.length; lbShow(); }
+function lbShow() { document.getElementById("lb-img").src = LB[lbI]; document.getElementById("lb-count").textContent = LB.length > 1 ? `${lbI + 1} / ${LB.length}` : ""; }
 document.addEventListener("keydown", e => {
   if (!document.getElementById("lb").classList.contains("on")) return;
   if (e.key === "Escape") lbClose(); if (e.key === "ArrowLeft") lbStep(-1); if (e.key === "ArrowRight") lbStep(1);

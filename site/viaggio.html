@@ -47,6 +47,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .vstat i{display:block;font:700 .5rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.4rem}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{font:600 .8rem/1 var(--body);background:var(--panel);border:1px solid var(--hair);border-radius:99px;padding:.36rem .7rem}
+.chip.lk{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;color:inherit;padding:.24rem .7rem .24rem .26rem}
+.chip.lk:hover{border-color:var(--accent);color:var(--accent)}
+.cav{width:22px;height:22px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2)}
+.cav.ph{display:inline-flex;align-items:center;justify-content:center;font:700 .66rem/1 var(--display);color:#fff;background:var(--accent)}
 .chip.me{border-color:var(--gold);color:var(--gold);font-weight:700}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
 .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;cursor:pointer;background:var(--sea-2);display:block}
@@ -124,12 +128,28 @@ function moveLB(d) { LBi = (LBi + d + LB.length) % LB.length; showLB(); }
   });
 })();
 
+const normName = s => (s || "").toLowerCase().normalize("NFD").replace(/[^a-z]/g, "");
+let CREWMAP = {};
+function buildCrewMap(people) {
+  CREWMAP = {}; const byId = {};
+  people.forEach(p => { byId[p.id] = p; CREWMAP[normName(p.name)] = p; });
+  // alias nickname 2026 vs nome registro nei viaggi
+  [["gabrielem", "gabri-m"], ["federicob", "fede-b"]].forEach(([n, id]) => { if (byId[id]) CREWMAP[n] = byId[id]; });
+}
+function crewChip(name) {
+  const p = CREWMAP[normName(name)];
+  const photo = p && p.crew2026 && p.crew2026.photo;
+  const av = photo ? `<img class="cav" src="${photo}" alt="" loading="lazy">` : `<span class="cav ph">${esc((name || "?").trim()[0])}</span>`;
+  if (p) { const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`; return `<a class="chip lk" href="${href}">${av}${esc(name)}</a>`; }
+  return `<span class="chip lk"><span class="cav ph">${esc((name || "?").trim()[0])}</span>${esc(name)}</span>`;
+}
+
 function tripPage(t, all) {
   const idx = all.findIndex(x => x.id === t.id);
   const prev = all[idx - 1], next = all[idx + 1];
   const zone = cleanZone(t.zone);
   const cat = /Lagoon|Bali|Fountain|Pajot/i.test(t.boat) ? "catamarano" : "monoscafo";
-  const crew = t.crew.map(c => `<span class="chip${/Edoardo/.test(c) ? " me" : ""}">${esc(c)}</span>`).join("");
+  const crew = t.crew.map(crewChip).join("");
   const galId = "g_" + t.id;
   const gal = t.photos && t.photos.length
     ? `<div class="gal">${t.photos.map((p, i) => `<img src="${p.src}" alt="${esc(zone)} ${t.year}" loading="lazy" onclick="openLB(window.${galId},${i})">`).join("")}</div>`
@@ -185,7 +205,11 @@ function route() {
   window.scrollTo(0, 0);
 }
 window.addEventListener("hashchange", () => { document.getElementById("lb").classList.remove("on"); route(); });
-fetch("data/trips.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
+Promise.all([
+  fetch("data/trips.json", { cache: "no-cache" }).then(r => r.json()),
+  fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({ people: [] })),
+]).then(([d, dc]) => {
+  buildCrewMap(dc.people || []);
   DATA = (d.trips || []).slice().sort((a, b) => a.year - b.year || a.nm - b.nm);
   route();
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Viaggi non disponibili offline.</p></section>`; });

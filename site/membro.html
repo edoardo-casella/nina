@@ -52,7 +52,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .rankbadge b{font-weight:700}
 svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 /* stats */
-.mstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.3rem}
+.mstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.3rem}
 .mstat{background:var(--panel);padding:.9rem .4rem;text-align:center}
 .mstat b{display:block;font:700 1.5rem/1 var(--mono);color:var(--ink)}
 .mstat i{display:block;font:700 .52rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.4rem}
@@ -77,6 +77,11 @@ svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 .mcard .b .vt{color:var(--gold)} .mcard .b .rk{color:var(--accent)}
 footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
 footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+.zoom{cursor:zoom-in}
+#lb{position:fixed;inset:0;z-index:80;background:rgba(3,7,14,.95);display:none;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:90vh;object-fit:contain;border-radius:4px}
+#lb .x{position:absolute;top:.7rem;right:1rem;color:#fff;font-size:1.9rem;background:none;border:0;cursor:pointer;line-height:1}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -86,9 +91,13 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
   <span class="tag">⚓ Equipaggio Niña</span>
 </div></div>
 <main id="app"></main>
+<div id="lb"><button class="x" aria-label="chiudi">✕</button><img alt=""></div>
 
 <script>
 const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+const nfmt = n => String(Math.round(n || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+function lbOne(src){ const lb=document.getElementById('lb'); lb.querySelector('img').src=src; lb.classList.add('on'); }
+(function(){ const lb=document.getElementById('lb'); lb.querySelector('.x').onclick=()=>lb.classList.remove('on'); lb.onclick=e=>{ if(e.target!==lb.querySelector('.x')) lb.classList.remove('on'); }; document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); }); })();
 const day = s => new Date(s + "T12:00");
 const fmt = s => day(s).toLocaleDateString("it", { day: "numeric", month: "long" });
 const fmtS = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
@@ -147,7 +156,7 @@ function memberPage(m, all) {
   const nn = c ? Math.round((day(c.leave) - day(c.board)) / 864e5) : 0;
   return `
   <div class="mhero">
-    ${avatarP(m, photoOf(m) ? "mphoto" : "mph-ph")}
+    ${photoOf(m) ? `<img class="mphoto zoom" src="${photoOf(m)}" alt="${esc(m.name)}" onclick="lbOne('${photoOf(m)}')">` : avatarP(m, "mph-ph")}
     <div class="mhd">
       <div class="role">${esc(roleTxt)}</div>
       <h1>${esc(m.name)}</h1>
@@ -158,8 +167,9 @@ function memberPage(m, all) {
   </div>
   <section>
     <div class="mstats">
-      <div class="mstat"><b>${m.trips || 0}</b><i>crociere con l'Ammiraglio</i></div>
-      <div class="mstat"><b>${m.days || 0}</b><i>giorni in mare</i></div>
+      <div class="mstat"><b>${m.trips || 0}</b><i>crociere</i></div>
+      <div class="mstat"><b>${nfmt(m.days)}</b><i>giorni in mare</i></div>
+      <div class="mstat"><b>${nfmt(m.nm)}</b><i>miglia</i></div>
       <div class="mstat"><b>${yrs || "—"}</b><i>${m.trips > 0 ? "stagioni" : "esordio"}</i></div>
     </div>
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
@@ -167,7 +177,7 @@ function memberPage(m, all) {
       <div class="card">Sale a Cannigione il <b>${fmt(c.board)}</b> e sbarca il <b>${fmt(c.leave)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>
       <h2>Scheda personale</h2>
       ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED La scheda dal <b>questionario equipaggio</b> arriverà qui.<br><a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">Compila il questionario ›</a></div>`}`
-    : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b> e <b>${m.days} giorni</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(RANK_LABEL[m.rank] || "")}</b>.</div>`}
+    : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(RANK_LABEL[m.rank] || "")}</b>.</div>`}
     ${strip ? `<h2>La ciurma 2026</h2><div class="strip">${strip}</div>` : ""}
   </section>
   <footer><a class="pl" href="${c ? "arrivi.html" : "skipper.html"}">‹ ${c ? "Torna alla ciurma" : "Torna alla classifica"}</a></footer>`;

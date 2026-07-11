@@ -17,6 +17,7 @@
    "name": "Edo C",
    "trips": 25,
    "days": 290,
+   "nm": 7735,
    "first": 2011,
    "last": 2024,
    "rank": "admiral",
@@ -25,8 +26,6 @@
     "board": "2026-08-08",
     "leave": "2026-08-29",
     "role": "skipper",
-    "x": 25,
-    "fy": 2011,
     "photo": "skipper/img/edoardo-id.jpg",
     "link": "skipper.html"
    }
@@ -36,6 +35,7 @@
    "name": "Matilde C.",
    "trips": 10,
    "days": 142,
+   "nm": 3608,
    "first": 2011,
    "last": 2021,
    "rank": "capt"
@@ -45,6 +45,7 @@
    "name": "Margherita C.",
    "trips": 9,
    "days": 132,
+   "nm": 3337,
    "first": 2011,
    "last": 2021,
    "rank": "cdr"
@@ -54,6 +55,7 @@
    "name": "Claudio C.",
    "trips": 8,
    "days": 120,
+   "nm": 2947,
    "first": 2011,
    "last": 2021,
    "rank": "cdr"
@@ -63,6 +65,7 @@
    "name": "Paola C.",
    "trips": 8,
    "days": 120,
+   "nm": 2947,
    "first": 2011,
    "last": 2021,
    "rank": "cdr"
@@ -72,6 +75,7 @@
    "name": "Bernardo B",
    "trips": 9,
    "days": 110,
+   "nm": 2640,
    "first": 2011,
    "last": 2024,
    "rank": "cdr",
@@ -79,8 +83,6 @@
     "board": "2026-08-08",
     "leave": "2026-08-21",
     "role": "skipper",
-    "x": 9,
-    "fy": 2011,
     "photo": "crew/img/bernardo-b.jpg"
    }
   },
@@ -89,6 +91,7 @@
    "name": "Cecilia R.",
    "trips": 6,
    "days": 70,
+   "nm": 2311,
    "first": 2017,
    "last": 2020,
    "rank": "ltcdr"
@@ -98,15 +101,14 @@
    "name": "Riccardo B",
    "trips": 7,
    "days": 66,
+   "nm": 1860,
    "first": 2015,
    "last": 2023,
    "rank": "ltcdr",
    "crew2026": {
     "board": "2026-08-21",
     "leave": "2026-08-29",
-    "role": "apprentice",
-    "x": 7,
-    "fy": 2015
+    "role": "apprentice"
    }
   },
   {
@@ -114,6 +116,7 @@
    "name": "Leonardo M.",
    "trips": 6,
    "days": 62,
+   "nm": 2056,
    "first": 2014,
    "last": 2022,
    "rank": "ltcdr"
@@ -123,6 +126,7 @@
    "name": "Gabriele B.",
    "trips": 3,
    "days": 59,
+   "nm": 1213,
    "first": 2011,
    "last": 2013,
    "rank": "lt"
@@ -132,6 +136,7 @@
    "name": "Giacomo N",
    "trips": 5,
    "days": 51,
+   "nm": 1166,
    "first": 2021,
    "last": 2024,
    "rank": "lt",
@@ -139,8 +144,6 @@
     "board": "2026-08-08",
     "leave": "2026-08-17",
     "role": "crew",
-    "x": 5,
-    "fy": 2021,
     "photo": "crew/img/giacomo-n.jpg",
     "nick": "Jack",
     "note": "Habitué dei <a href=\"skipper.html#errori-fatali\">rapporti d'incidente</a> 😅 — il capitano ha una regola tutta sua su di lui."
@@ -151,6 +154,7 @@
    "name": "Sofia M.",
    "trips": 4,
    "days": 46,
+   "nm": 1131,
    "first": 2018,
    "last": 2024,
    "rank": "lt"
@@ -160,6 +164,7 @@
    "name": "Ginevra L",
    "trips": 4,
    "days": 39,
+   "nm": 856,
    "first": 2022,
    "last": 2024,
    "rank": "lt",
@@ -167,8 +172,6 @@
     "board": "2026-08-08",
     "leave": "2026-08-29",
     "role": "crew",
-    "x": 4,
-    "fy": 2022,
     "photo": "crew/img/ginevra-l.jpg"
    }
   },
@@ -177,6 +180,7 @@
    "name": "Pietro C.",
    "trips": 3,
    "days": 38,
+   "nm": 891,
    "first": 2011,
    "last": 2024,
    "rank": "lt"
@@ -186,6 +190,7 @@
    "name": "Gualtiero S.",
    "trips": 3,
    "days": 37,
+   "nm": 1156,
    "first": 2014,
    "last": 2022,
    "rank": "lt"
@@ -195,15 +200,14 @@
    "name": "Andrea A",
    "trips": 4,
    "days": 36,
+   "nm": 1004,
    "first": 2011,
    "last": 2022,
    "rank": "lt",
    "crew2026": {
     "board": "2026-08-22",
     "leave": "2026-08-29",
-    "role": "crew",
-    "x": 4,
-    "fy": 2011
+    "role": "crew"
    }
   },
   {
@@ -211,6 +215,7 @@
    "name": "Luca B.",
    "trips": 3,
    "days": 34,
+   "nm": 1056,
    "first": 2015,
    "last": 2019,
    "rank": "ltjg"
@@ -220,6 +225,7 @@
    "name": "Rebecca B.",
    "trips": 3,
    "days": 34,
+   "nm": 1056,
    "first": 2015,
    "last": 2019,
    "rank": "ltjg"
@@ -229,6 +235,7 @@
    "name": "Belinda B.",
    "trips": 2,
    "days": 33,
+   "nm": 715,
    "first": 2011,
    "last": 2016,
    "rank": "ltjg"
@@ -238,6 +245,7 @@
    "name": "Marta A.",
    "trips": 2,
    "days": 31,
+   "nm": 945,
    "first": 2020,
    "last": 2022,
    "rank": "ltjg"
@@ -247,6 +255,7 @@
    "name": "Silvano B.",
    "trips": 3,
    "days": 30,
+   "nm": 806,
    "first": 2015,
    "last": 2021,
    "rank": "ltjg"
@@ -256,6 +265,7 @@
    "name": "Simona B.",
    "trips": 3,
    "days": 30,
+   "nm": 806,
    "first": 2015,
    "last": 2021,
    "rank": "ltjg"
@@ -265,6 +275,7 @@
    "name": "Marco T.",
    "trips": 3,
    "days": 29,
+   "nm": 785,
    "first": 2011,
    "last": 2015,
    "rank": "ltjg"
@@ -274,6 +285,7 @@
    "name": "Jennifer S.",
    "trips": 2,
    "days": 27,
+   "nm": 570,
    "first": 2021,
    "last": 2024,
    "rank": "ltjg"
@@ -283,6 +295,7 @@
    "name": "Giacomo B.",
    "trips": 2,
    "days": 26,
+   "nm": 660,
    "first": 2020,
    "last": 2022,
    "rank": "ltjg"
@@ -292,6 +305,7 @@
    "name": "Laura C.",
    "trips": 2,
    "days": 23,
+   "nm": 865,
    "first": 2018,
    "last": 2022,
    "rank": "ltjg"
@@ -301,6 +315,7 @@
    "name": "Carlo A.",
    "trips": 2,
    "days": 23,
+   "nm": 574,
    "first": 2011,
    "last": 2015,
    "rank": "ltjg"
@@ -310,15 +325,14 @@
    "name": "Ilaria M",
    "trips": 2,
    "days": 22,
+   "nm": 661,
    "first": 2017,
    "last": 2019,
    "rank": "ltjg",
    "crew2026": {
     "board": "2026-08-21",
     "leave": "2026-08-29",
-    "role": "apprentice",
-    "x": 2,
-    "fy": 2017
+    "role": "apprentice"
    }
   },
   {
@@ -326,15 +340,14 @@
    "name": "Gabri M",
    "trips": 2,
    "days": 22,
+   "nm": 661,
    "first": 2017,
    "last": 2019,
    "rank": "ltjg",
    "crew2026": {
     "board": "2026-08-22",
     "leave": "2026-08-29",
-    "role": "apprentice",
-    "x": 2,
-    "fy": 2017
+    "role": "apprentice"
    }
   },
   {
@@ -342,6 +355,7 @@
    "name": "Matilde R.",
    "trips": 1,
    "days": 20,
+   "nm": 550,
    "first": 2020,
    "last": 2020,
    "rank": "ltjg"
@@ -351,6 +365,7 @@
    "name": "Sara B.",
    "trips": 1,
    "days": 20,
+   "nm": 550,
    "first": 2020,
    "last": 2020,
    "rank": "ltjg"
@@ -360,6 +375,7 @@
    "name": "Alice S.",
    "trips": 1,
    "days": 20,
+   "nm": 550,
    "first": 2020,
    "last": 2020,
    "rank": "ltjg"
@@ -369,6 +385,7 @@
    "name": "Beatrice F.",
    "trips": 1,
    "days": 20,
+   "nm": 550,
    "first": 2020,
    "last": 2020,
    "rank": "ltjg"
@@ -378,6 +395,7 @@
    "name": "Sergio S.",
    "trips": 1,
    "days": 20,
+   "nm": 550,
    "first": 2020,
    "last": 2020,
    "rank": "ltjg"
@@ -387,6 +405,7 @@
    "name": "Martina G.",
    "trips": 1,
    "days": 20,
+   "nm": 550,
    "first": 2020,
    "last": 2020,
    "rank": "ltjg"
@@ -396,6 +415,7 @@
    "name": "Giorgio M.",
    "trips": 1,
    "days": 20,
+   "nm": 550,
    "first": 2020,
    "last": 2020,
    "rank": "ltjg"
@@ -405,6 +425,7 @@
    "name": "Filippo R.",
    "trips": 1,
    "days": 20,
+   "nm": 463,
    "first": 2014,
    "last": 2014,
    "rank": "ltjg"
@@ -414,6 +435,7 @@
    "name": "Nicola R.",
    "trips": 1,
    "days": 20,
+   "nm": 463,
    "first": 2014,
    "last": 2014,
    "rank": "ltjg"
@@ -423,6 +445,7 @@
    "name": "Riccardo T.",
    "trips": 2,
    "days": 13,
+   "nm": 430,
    "first": 2021,
    "last": 2022,
    "rank": "ensign"
@@ -432,6 +455,7 @@
    "name": "Chiara F.",
    "trips": 1,
    "days": 13,
+   "nm": 252,
    "first": 2016,
    "last": 2016,
    "rank": "ensign"
@@ -441,6 +465,7 @@
    "name": "Umberto F.",
    "trips": 2,
    "days": 12,
+   "nm": 321,
    "first": 2014,
    "last": 2022,
    "rank": "ensign"
@@ -450,6 +475,7 @@
    "name": "Ludovica R.",
    "trips": 1,
    "days": 12,
+   "nm": 470,
    "first": 2018,
    "last": 2018,
    "rank": "ensign"
@@ -459,6 +485,7 @@
    "name": "Giacomo M.",
    "trips": 1,
    "days": 12,
+   "nm": 470,
    "first": 2018,
    "last": 2018,
    "rank": "ensign"
@@ -468,6 +495,7 @@
    "name": "Carlotta D.",
    "trips": 1,
    "days": 11,
+   "nm": 395,
    "first": 2022,
    "last": 2022,
    "rank": "ensign"
@@ -477,6 +505,7 @@
    "name": "Michele M.",
    "trips": 1,
    "days": 11,
+   "nm": 271,
    "first": 2017,
    "last": 2017,
    "rank": "ensign"
@@ -486,6 +515,7 @@
    "name": "Monica M.",
    "trips": 1,
    "days": 11,
+   "nm": 271,
    "first": 2017,
    "last": 2017,
    "rank": "ensign"
@@ -495,6 +525,7 @@
    "name": "Enrico G.",
    "trips": 1,
    "days": 11,
+   "nm": 321,
    "first": 2011,
    "last": 2011,
    "rank": "ensign"
@@ -504,6 +535,7 @@
    "name": "Gianmarco M.",
    "trips": 1,
    "days": 11,
+   "nm": 321,
    "first": 2011,
    "last": 2011,
    "rank": "ensign"
@@ -513,6 +545,7 @@
    "name": "Alberto B.",
    "trips": 1,
    "days": 11,
+   "nm": 321,
    "first": 2011,
    "last": 2011,
    "rank": "ensign"
@@ -522,15 +555,14 @@
    "name": "Fede B",
    "trips": 1,
    "days": 6,
+   "nm": 91,
    "first": 2023,
    "last": 2023,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-29",
-    "role": "crew",
-    "x": 1,
-    "fy": 2023
+    "role": "crew"
    }
   },
   {
@@ -538,6 +570,7 @@
    "name": "Tonino L.",
    "trips": 1,
    "days": 6,
+   "nm": 230,
    "first": 2024,
    "last": 2024,
    "rank": "recruit"
@@ -547,6 +580,7 @@
    "name": "Angela K.",
    "trips": 1,
    "days": 6,
+   "nm": 230,
    "first": 2024,
    "last": 2024,
    "rank": "recruit"
@@ -556,6 +590,7 @@
    "name": "Mirco L.",
    "trips": 1,
    "days": 6,
+   "nm": 189,
    "first": 2012,
    "last": 2012,
    "rank": "recruit"
@@ -565,6 +600,7 @@
    "name": "Rebecca L.",
    "trips": 1,
    "days": 6,
+   "nm": 189,
    "first": 2012,
    "last": 2012,
    "rank": "recruit"
@@ -574,6 +610,7 @@
    "name": "Fabiana F.",
    "trips": 1,
    "days": 6,
+   "nm": 189,
    "first": 2012,
    "last": 2012,
    "rank": "recruit"
@@ -583,6 +620,7 @@
    "name": "Martina R.",
    "trips": 1,
    "days": 6,
+   "nm": 189,
    "first": 2012,
    "last": 2012,
    "rank": "recruit"
@@ -592,14 +630,14 @@
    "name": "Bianca B",
    "trips": 0,
    "days": 0,
+   "nm": 0,
    "first": null,
    "last": null,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-08",
     "leave": "2026-08-21",
-    "role": "crew",
-    "x": 0
+    "role": "crew"
    }
   },
   {
@@ -607,14 +645,14 @@
    "name": "Mati M",
    "trips": 0,
    "days": 0,
+   "nm": 0,
    "first": null,
    "last": null,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-08",
     "leave": "2026-08-17",
-    "role": "crew",
-    "x": 0
+    "role": "crew"
    }
   },
   {
@@ -622,14 +660,14 @@
    "name": "Davide",
    "trips": 0,
    "days": 0,
+   "nm": 0,
    "first": null,
    "last": null,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-22",
-    "role": "crew",
-    "x": 0
+    "role": "crew"
    }
   },
   {
@@ -637,14 +675,14 @@
    "name": "Manlio",
    "trips": 0,
    "days": 0,
+   "nm": 0,
    "first": null,
    "last": null,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-22",
-    "role": "crew",
-    "x": 0
+    "role": "crew"
    }
   },
   {
@@ -652,14 +690,14 @@
    "name": "Giulia N",
    "trips": 0,
    "days": 0,
+   "nm": 0,
    "first": null,
    "last": null,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-29",
-    "role": "crew",
-    "x": 0
+    "role": "crew"
    }
   },
   {
@@ -667,14 +705,14 @@
    "name": "Fede N",
    "trips": 0,
    "days": 0,
+   "nm": 0,
    "first": null,
    "last": null,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-21",
     "leave": "2026-08-29",
-    "role": "crew",
-    "x": 0
+    "role": "crew"
    }
   },
   {
@@ -682,14 +720,14 @@
    "name": "Lavinia P",
    "trips": 0,
    "days": 0,
+   "nm": 0,
    "first": null,
    "last": null,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-21",
     "leave": "2026-08-29",
-    "role": "crew",
-    "x": 0
+    "role": "crew"
    }
   },
   {
@@ -697,14 +735,14 @@
    "name": "Simona A",
    "trips": 0,
    "days": 0,
+   "nm": 0,
    "first": null,
    "last": null,
    "rank": "recruit",
    "crew2026": {
     "board": "2026-08-22",
     "leave": "2026-08-29",
-    "role": "crew",
-    "x": 0
+    "role": "crew"
    }
   }
  ]
