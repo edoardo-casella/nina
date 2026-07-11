@@ -1,0 +1,613 @@
+{
+  "generated_at": "2026-07-11",
+  "trips": [
+    {
+      "id": "nemo",
+      "year": 2011,
+      "month": "July",
+      "country": "Greece",
+      "zone": "Cyclades - GR",
+      "boat": "Lagoon 440",
+      "name": "Nemo",
+      "nm": 321,
+      "days": 11.0,
+      "crew": [
+        "Marco T.",
+        "Pietro C.",
+        "Enrico G.",
+        "Gianmarco M.",
+        "Andrea A.",
+        "Alberto B.",
+        "Carlo A."
+      ],
+      "n_photos": 1,
+      "photos": [
+        {
+          "src": "trips/img/nemo/01.jpg",
+          "w": 1280,
+          "h": 856
+        }
+      ]
+    },
+    {
+      "id": "camelia",
+      "year": 2011,
+      "month": "August",
+      "country": "Croazia",
+      "zone": "Croazia CZ",
+      "boat": "Cyclades 50",
+      "name": "Camelia",
+      "nm": 463,
+      "days": 20.0,
+      "crew": [
+        "Claudio C.",
+        "Paola C.",
+        "Margherita C.",
+        "Matilde C.",
+        "Bernardo B.",
+        "Belinda B.",
+        "Gabriele B."
+      ],
+      "n_photos": 2,
+      "photos": [
+        {
+          "src": "trips/img/camelia/01.jpg",
+          "w": 597,
+          "h": 1280
+        },
+        {
+          "src": "trips/img/camelia/02.jpg",
+          "w": 848,
+          "h": 1280
+        }
+      ]
+    },
+    {
+      "id": "natfika",
+      "year": 2012,
+      "month": "August",
+      "country": "Greece",
+      "zone": "Cyclades - GR",
+      "boat": "Bavaria 50",
+      "name": "Natfika",
+      "nm": 189,
+      "days": 6.0,
+      "crew": [
+        "Mirco L.",
+        "Rebecca L.",
+        "Fabiana F.",
+        "Bernardo B.",
+        "Martina R."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "stephanie",
+      "year": 2012,
+      "month": "August",
+      "country": "Greece-Turkey",
+      "zone": "Cyclades - Dodecanese GR",
+      "boat": "Sun Odyssey 54",
+      "name": "Stephanie",
+      "nm": 375,
+      "days": 19.0,
+      "crew": [
+        "Bernardo B.",
+        "Gabriele B.",
+        "Claudio C.",
+        "Paola C.",
+        "Margherita C.",
+        "Matilde C."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "klaudia",
+      "year": 2013,
+      "month": "August",
+      "country": "Greece-Turkey",
+      "zone": "Dodecanese - Turkey",
+      "boat": "Sun Odyssey 54",
+      "name": "Klaudia",
+      "nm": 375,
+      "days": 20.0,
+      "crew": [
+        "Gabriele B.",
+        "Claudio C.",
+        "Paola C.",
+        "Margherita C.",
+        "Matilde C."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "cubalibre",
+      "year": 2014,
+      "month": "August",
+      "country": "Spain",
+      "zone": "Baleares - SP",
+      "boat": "Oceanis 43",
+      "name": "Cubalibre",
+      "nm": 211,
+      "days": 6.0,
+      "crew": [
+        "Leonardo M.",
+        "Umberto F.",
+        "Gualtiero S.",
+        "Marco T."
+      ],
+      "n_photos": 1,
+      "photos": [
+        {
+          "src": "trips/img/cubalibre/01.jpg",
+          "w": 1280,
+          "h": 720
+        }
+      ]
+    },
+    {
+      "id": "anax",
+      "year": 2014,
+      "month": "August",
+      "country": "Greece",
+      "zone": "Sporades - GR",
+      "boat": "Sun Odyssey 49",
+      "name": "Anax",
+      "nm": 463,
+      "days": 20.0,
+      "crew": [
+        "Claudio C.",
+        "Paola C.",
+        "Margherita C.",
+        "Matilde C.",
+        "Filippo R.",
+        "Nicola R."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "blue-bird",
+      "year": 2015,
+      "month": "August",
+      "country": "Spain",
+      "zone": "Baleares - SP",
+      "boat": "Sun Odyssey 49",
+      "name": "Blue Bird",
+      "nm": 253,
+      "days": 12.0,
+      "crew": [
+        "Andrea A.",
+        "Marco T.",
+        "Riccardo B.",
+        "Carlo A."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "trocha",
+      "year": 2015,
+      "month": "August",
+      "country": "Spain",
+      "zone": "Baleares - SP",
+      "boat": "Jeanneau 53",
+      "name": "Trocha",
+      "nm": 395,
+      "days": 12.0,
+      "crew": [
+        "Silvano B.",
+        "Rebecca B.",
+        "Simona B.",
+        "Luca B.",
+        "Riccardo B.",
+        "Matilde C.",
+        "Margherita C.",
+        "Paola C.",
+        "Claudio C."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "aquarela",
+      "year": 2016,
+      "month": "August",
+      "country": "Spain",
+      "zone": "Baleares - SP",
+      "boat": "Sun Odyssey 49",
+      "name": "Aquarela",
+      "nm": 252,
+      "days": 13.0,
+      "crew": [
+        "Bernardo B.",
+        "Belinda B.",
+        "Chiara F.",
+        "A.",
+        "A."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "sorbe",
+      "year": 2017,
+      "month": "January",
+      "country": "Saint Vincent - France",
+      "zone": "Grenadines Caribbean",
+      "boat": "Lagoon 450",
+      "name": "Sorbe",
+      "nm": 271,
+      "days": 11.0,
+      "crew": [
+        "Michele M.",
+        "Monica M.",
+        "Riccardo B.",
+        "Luca B.",
+        "Matilde C.",
+        "Simona B.",
+        "Silvano B.",
+        "Rebecca B.",
+        "Gabriele M.",
+        "Ilaria M."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "capitan-nikos",
+      "year": 2017,
+      "month": "August",
+      "country": "Greece",
+      "zone": "Cyclades - GR",
+      "boat": "Gib Sea 45",
+      "name": "Capitan Nikos",
+      "nm": 165,
+      "days": 4.0,
+      "crew": [
+        "Cecilia R."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "showtime",
+      "year": 2017,
+      "month": "August",
+      "country": "Greece",
+      "zone": "Ionian - GR",
+      "boat": "Sun Odissey 469",
+      "name": "Showtime",
+      "nm": 351,
+      "days": 12.0,
+      "crew": [
+        "Claudio C.",
+        "Paola C.",
+        "Margherita C.",
+        "Matilde C.",
+        "Cecilia R."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "invitation",
+      "year": 2018,
+      "month": "August",
+      "country": "Spain",
+      "zone": "Baleares - SP",
+      "boat": "Dufour GL 500",
+      "name": "Invitation",
+      "nm": 470,
+      "days": 12.0,
+      "crew": [
+        "Bernardo B.",
+        "Sofia M.",
+        "Cecilia R.",
+        "Ludovica R.",
+        "Giacomo M.",
+        "Leonardo M.",
+        "Laura C."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "ondine",
+      "year": 2018,
+      "month": "August",
+      "country": "Croazia",
+      "zone": "Croazia CZ",
+      "boat": "Sun Odyssey 519",
+      "name": "Ondine",
+      "nm": 385,
+      "days": 11.0,
+      "crew": [
+        "Claudio C.",
+        "Paola C.",
+        "Margherita C.",
+        "Matilde C.",
+        "Cecilia R."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "lohengrin",
+      "year": 2019,
+      "month": "August",
+      "country": "Cuba",
+      "zone": "Cuba",
+      "boat": "Lagoon 450",
+      "name": "Lohengrin",
+      "nm": 390,
+      "days": 11.0,
+      "crew": [
+        "Riccardo B.",
+        "Cecilia R.",
+        "Margherita C.",
+        "Matilde C.",
+        "Luca B.",
+        "Rebecca B.",
+        "Gabriele M.",
+        "Ilaria M."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "alba",
+      "year": 2020,
+      "month": "August",
+      "country": "Italy - France",
+      "zone": "Sardegna & Corsica",
+      "boat": "Bali 4.1",
+      "name": "Alba",
+      "nm": 550,
+      "days": 20.0,
+      "crew": [
+        "Cecilia R.",
+        "Leonardo M.",
+        "Matilde R.",
+        "Sara B.",
+        "Alice S.",
+        "Beatrice F.",
+        "Sergio S.",
+        "Gualtiero S.",
+        "Marta A.",
+        "Martina G.",
+        "Giorgio M.",
+        "Giacomo B."
+      ],
+      "n_photos": 3,
+      "photos": [
+        {
+          "src": "trips/img/alba/01.jpg",
+          "w": 1280,
+          "h": 960
+        },
+        {
+          "src": "trips/img/alba/02.jpg",
+          "w": 1280,
+          "h": 960
+        },
+        {
+          "src": "trips/img/alba/03.jpg",
+          "w": 1280,
+          "h": 960
+        }
+      ]
+    },
+    {
+      "id": "silkwave",
+      "year": 2021,
+      "month": "August",
+      "country": "Italy",
+      "zone": "Sardegna",
+      "boat": "Bavaria 51 Cruiser",
+      "name": "SilkWave",
+      "nm": 320,
+      "days": 6.5,
+      "crew": [
+        "Andrea A.",
+        "Leonardo M.",
+        "Riccardo T.",
+        "Riccardo B."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "enya",
+      "year": 2021,
+      "month": "August",
+      "country": "Italy - France",
+      "zone": "Corsica & Sardegna",
+      "boat": "Bali 4.1",
+      "name": "Enya",
+      "nm": 430,
+      "days": 12.0,
+      "crew": [
+        "Pietro C.",
+        "Giacomo N.",
+        "Bernardo B.",
+        "Sofia M.",
+        "Jennifer S."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "mars-planet",
+      "year": 2021,
+      "month": "September",
+      "country": "Italy",
+      "zone": "Sicily-Egadi",
+      "boat": "Oceanis 48",
+      "name": "Mars Planet",
+      "nm": 140,
+      "days": 6.5,
+      "crew": [
+        "Claudio C.",
+        "Paola C.",
+        "Margherita C.",
+        "Matilde C.",
+        "Silvano B.",
+        "Riccardo B.",
+        "Simona B."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "challenger",
+      "year": 2022,
+      "month": "August",
+      "country": "Spain",
+      "zone": "Baleares - SP",
+      "boat": "Lagoon 450",
+      "name": "Challenger",
+      "nm": 110,
+      "days": 6.5,
+      "crew": [
+        "Leonardo M.",
+        "Umberto F.",
+        "Giacomo N.",
+        "Andrea A.",
+        "Giacomo B.",
+        "Riccardo T."
+      ],
+      "n_photos": 1,
+      "photos": [
+        {
+          "src": "trips/img/challenger/01.jpg",
+          "w": 960,
+          "h": 1280
+        }
+      ]
+    },
+    {
+      "id": "all-in",
+      "year": 2022,
+      "month": "August",
+      "country": "Greece",
+      "zone": "Sporades - GR",
+      "boat": "Lagoon 42",
+      "name": "All in",
+      "nm": 395,
+      "days": 11.0,
+      "crew": [
+        "Ginevra L.",
+        "Giacomo N.",
+        "Laura C.",
+        "Marta A.",
+        "Carlotta D.",
+        "Leonardo M.",
+        "Gualtiero S."
+      ],
+      "n_photos": 5,
+      "photos": [
+        {
+          "src": "trips/img/all-in/01.jpg",
+          "w": 597,
+          "h": 1280
+        },
+        {
+          "src": "trips/img/all-in/02.jpg",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "trips/img/all-in/03.jpg",
+          "w": 960,
+          "h": 1280
+        },
+        {
+          "src": "trips/img/all-in/04.jpg",
+          "w": 960,
+          "h": 1280
+        },
+        {
+          "src": "trips/img/all-in/05.jpg",
+          "w": 1280,
+          "h": 960
+        }
+      ]
+    },
+    {
+      "id": "isla",
+      "year": 2023,
+      "month": "August",
+      "country": "Italy",
+      "zone": "Sicily-Egadi",
+      "boat": "Fountain Pajot 40",
+      "name": "Isla",
+      "nm": 91,
+      "days": 6.5,
+      "crew": [
+        "Ginevra L.",
+        "Federico B.",
+        "Bernardo B.",
+        "Riccardo B.",
+        "Sofia M.",
+        "Giacomo N."
+      ],
+      "n_photos": 2,
+      "photos": [
+        {
+          "src": "trips/img/isla/01.jpg",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "src": "trips/img/isla/02.jpg",
+          "w": 768,
+          "h": 1024
+        }
+      ]
+    },
+    {
+      "id": "alexandros",
+      "year": 2024,
+      "month": "July",
+      "country": "Greece",
+      "zone": "Cyclades - GR",
+      "boat": "Lagoon 42",
+      "name": "Alexandros",
+      "nm": 230,
+      "days": 6.5,
+      "crew": [
+        "Ginevra L.",
+        "Tonino L.",
+        "Angela K.",
+        "Bernardo B."
+      ],
+      "n_photos": 0,
+      "photos": []
+    },
+    {
+      "id": "cari",
+      "year": 2024,
+      "month": "August",
+      "country": "Seychelles",
+      "zone": "Inner Islands",
+      "boat": "Lagoon 46",
+      "name": "Cari",
+      "nm": 140,
+      "days": 15.0,
+      "crew": [
+        "Ginevra L.",
+        "Giacomo N.",
+        "Bernardo B.",
+        "Sofia M.",
+        "Pietro C.",
+        "Jennifer S."
+      ],
+      "n_photos": 0,
+      "photos": []
+    }
+  ]
+}

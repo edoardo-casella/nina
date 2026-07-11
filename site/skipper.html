@@ -172,7 +172,9 @@ a.dec{text-decoration:none;color:inherit}
 /* crociere */
 .year{margin-top:1.2rem}.year:first-child{margin-top:0}
 .year h3{font:700 1.3rem/1 var(--mono);color:var(--gold);margin-bottom:.5rem}
-.trip{display:flex;gap:.7rem;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--hair)}
+.trip{display:flex;gap:.7rem;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--hair);text-decoration:none;color:inherit}
+a.trip:hover .pl>b{color:var(--accent)}
+.trip .go{color:var(--soft);font-weight:400}
 .trip:last-child{border-bottom:0}
 .trip .fl{flex:none;display:flex;gap:2px}
 .trip .pl{flex:1;min-width:0}.trip .pl b{font-weight:600}
@@ -389,6 +391,7 @@ function diffOf(zone, month) {
   return { ...DIFF[lvl], why };
 }
 
+const tslug = s => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 function tripsHTML(d) {
   const oavg = d.totals.days ? Math.round(d.totals.nm / d.totals.days) : null;
   const byYear = {};
@@ -398,11 +401,11 @@ function tripsHTML(d) {
       const avg = t.days ? Math.round(t.nm / t.days) : null;
       const p = pace(avg), df = diffOf(t.zone, t.month);
       return `
-      <div class="trip"><span class="fl">${flags(t.country) || "⚓"}</span>
-        <span class="pl"><b>${esc((t.zone || t.country || "").replace(/ ?-? ?(GR|CZ|SP)$/, ""))}</b>
+      <a class="trip" href="viaggio.html#${tslug(t.boat_name || t.zone)}"><span class="fl">${flags(t.country) || "⚓"}</span>
+        <span class="pl"><b>${esc((t.zone || t.country || "").replace(/ ?-? ?(GR|CZ|SP)$/, ""))} <span class="go">›</span></b>
           <span class="bl">${boatIcon(t.boat)} ${esc(t.boat || "")}${t.boat_name ? ` · <span class="water">${esc(t.boat_name)}</span>` : ""} · ${t.nm} nm${t.days ? ` · ${t.days} gg` : ""}</span>
           <span class="tags">${p ? `<span class="pace ${p.k}" title="${p.d}">${p.t}</span>` : ""}<span class="diff ${df.k}" title="${esc(df.why)}">⚓ ${df.t}</span></span></span>
-        <span class="mi">${avg ?? "—"}<em>nm/giorno</em></span></div>`;
+        <span class="mi">${avg ?? "—"}<em>nm/giorno</em></span></a>`;
     }).join("");
     return `<div class="year"><h3>${y}</h3>${rows}</div>`;
   }).join("");

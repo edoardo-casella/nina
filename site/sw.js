@@ -8,12 +8,12 @@
 // SHELL si bumpa a ogni release del guscio; DATA NON si rinomina mai
 // (l'activate cancella le cache con altri nomi: si perderebbe l'ultimo
 // briefing buono per l'offline).
-const SHELL = "nina-shell-v33";
+const SHELL = "nina-shell-v34";
 const DATA = "nina-data-v1";
-const FILES = ["./", "./index.html", "./skipper.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./theme.js", "./manifest.json",
+const FILES = ["./", "./index.html", "./skipper.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./viaggio.html", "./theme.js", "./manifest.json",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
 const DATAFILES = ["./data/briefing.json", "./data/weather.json", "./data/conti.json",
-                   "./data/program.json", "./data/destinations.json", "./data/skipper.json", "./data/crew.json"];
+                   "./data/program.json", "./data/destinations.json", "./data/skipper.json", "./data/crew.json", "./data/trips.json"];
 
 const isJson = r => r.ok && (r.headers.get("content-type") || "").includes("json");
 

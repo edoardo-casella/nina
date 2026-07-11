@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Viaggi · Plancia Niña</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.flag{width:26px;height:17px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.2),0 1px 2px rgba(0,0,0,.25);vertical-align:-2px;margin-right:.15rem}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin:1.5rem 0 1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.vhero{padding:1.6rem 1.1rem .2rem}
+.vhero .yr{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.vhero h1{font:700 2.2rem/1.03 var(--display);letter-spacing:.01em;margin:.4rem 0 .2rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.vhero .sub{color:var(--soft);font-size:.98rem}
+.vhero .sub b{color:var(--ink)}
+.vstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.2rem}
+.vstat{background:var(--panel);padding:.85rem .3rem;text-align:center}
+.vstat b{display:block;font:700 1.35rem/1 var(--mono);color:var(--ink)}
+.vstat i{display:block;font:700 .5rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font:600 .8rem/1 var(--body);background:var(--panel);border:1px solid var(--hair);border-radius:99px;padding:.36rem .7rem}
+.chip.me{border-color:var(--gold);color:var(--gold);font-weight:700}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;cursor:pointer;background:var(--sea-2);display:block}
+.noph{background:var(--sea-1);border:1px dashed var(--hair);border-radius:5px;padding:1rem;color:var(--soft);font-size:.9rem;text-align:center}
+.nav2{display:flex;justify-content:space-between;gap:.6rem;margin-top:1.6rem}
+.nav2 a{flex:1;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:.6rem .8rem;font-size:.86rem}
+.nav2 a small{display:block;font:700 .54rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft)}
+.nav2 a.next{text-align:right}
+/* directory */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.8rem}
+.tcard{background:var(--panel);border:1px solid var(--hair);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block}
+.tcard .ph{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--sea-1);display:flex;align-items:center;justify-content:center}
+.tcard .ph.none{color:var(--soft);font-size:1.6rem}
+.tcard .b{padding:.55rem .7rem}
+.tcard .b b{display:block;font-size:.95rem}
+.tcard .b span{font:700 .56rem/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.tcard .b .pc{color:var(--gold)}
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:80;background:rgba(3,7,14,.95);display:none;align-items:center;justify-content:center;flex-direction:column}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:82vh;object-fit:contain;border-radius:4px}
+#lb .x{position:absolute;top:.8rem;right:1rem;color:#fff;font-size:1.8rem;background:none;border:0;cursor:pointer;line-height:1}
+#lb .arr{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.4rem;background:none;border:0;cursor:pointer;padding:.5rem 1rem}
+#lb .arr.l{left:0} #lb .arr.r{right:0}
+#lb .cnt{color:#cfe0ee;font:600 .8rem/1 var(--mono);margin-top:.8rem}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="skipper.html">‹ Dossier skipper</a>
+  <span class="tag">⛵ I viaggi</span>
+</div></div>
+<main id="app"></main>
+<div id="lb" role="dialog" aria-modal="true">
+  <button class="x" aria-label="chiudi">✕</button>
+  <button class="arr l" aria-label="precedente">‹</button>
+  <img alt="">
+  <button class="arr r" aria-label="successiva">›</button>
+  <div class="cnt"></div>
+</div>
+
+<script>
+const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", Turkey: "tr" };
+const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia", France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", Turkey: "Turchia" };
+const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April: "aprile", May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre", October: "ottobre", November: "novembre", December: "dicembre" };
+const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
+const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";
+const flags = country => parts(country).map(flag1).join("");
+const cleanZone = z => (z || "").replace(/\s*-\s*(GR|SP|IT|TR|FR)\s*$/i, "").replace(/\s+CZ$/i, "").trim();
+const itCountry = c => parts(c).map(p => IT_NAME[p] || p).join(" · ");
+
+let LB = [], LBi = 0;
+function openLB(list, i) { LB = list; LBi = i; showLB(); document.getElementById("lb").classList.add("on"); }
+function showLB() {
+  const lb = document.getElementById("lb");
+  lb.querySelector("img").src = LB[LBi];
+  lb.querySelector(".cnt").textContent = (LBi + 1) + " / " + LB.length;
+}
+function moveLB(d) { LBi = (LBi + d + LB.length) % LB.length; showLB(); }
+(function () {
+  const lb = document.getElementById("lb");
+  lb.querySelector(".x").onclick = () => lb.classList.remove("on");
+  lb.querySelector(".arr.l").onclick = e => { e.stopPropagation(); moveLB(-1); };
+  lb.querySelector(".arr.r").onclick = e => { e.stopPropagation(); moveLB(1); };
+  lb.onclick = e => { if (e.target === lb || e.target.tagName === "IMG") lb.classList.remove("on"); };
+  document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("on")) return;
+    if (e.key === "Escape") lb.classList.remove("on");
+    if (e.key === "ArrowLeft") moveLB(-1);
+    if (e.key === "ArrowRight") moveLB(1);
+  });
+})();
+
+function tripPage(t, all) {
+  const idx = all.findIndex(x => x.id === t.id);
+  const prev = all[idx - 1], next = all[idx + 1];
+  const zone = cleanZone(t.zone);
+  const cat = /Lagoon|Bali|Fountain|Pajot/i.test(t.boat) ? "catamarano" : "monoscafo";
+  const crew = t.crew.map(c => `<span class="chip${/Edoardo/.test(c) ? " me" : ""}">${esc(c)}</span>`).join("");
+  const galId = "g_" + t.id;
+  const gal = t.photos && t.photos.length
+    ? `<div class="gal">${t.photos.map((p, i) => `<img src="${p.src}" alt="${esc(zone)} ${t.year}" loading="lazy" onclick="openLB(window.${galId},${i})">`).join("")}</div>`
+    : `<div class="noph">Nessuna foto per questo viaggio… ancora. 📷</div>`;
+  window[galId] = (t.photos || []).map(p => p.src);
+  return `
+  <div class="vhero">
+    <div class="yr">${MONTHS[t.month] || ""} ${t.year}</div>
+    <h1>${flags(t.country)} ${esc(zone)}</h1>
+    <div class="sub"><b>«${esc(t.name)}»</b> · ${esc(t.boat)} · ${cat} · ${itCountry(t.country)}</div>
+    <div class="vstats">
+      <div class="vstat"><b>${t.nm}</b><i>miglia</i></div>
+      <div class="vstat"><b>${Math.round(t.days)}</b><i>giorni</i></div>
+      <div class="vstat"><b>${t.crew.length}</b><i>equipaggio</i></div>
+      <div class="vstat"><b>${t.n_photos || 0}</b><i>foto</i></div>
+    </div>
+  </div>
+  <section>
+    <h2>📸 Foto del viaggio</h2>
+    ${gal}
+    <h2>⚓ L'equipaggio di quell'anno</h2>
+    <div class="chips">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>
+    <div class="nav2">
+      ${prev ? `<a href="#${prev.id}"><small>‹ ${prev.year}</small>${esc(cleanZone(prev.zone))}</a>` : "<span></span>"}
+      ${next ? `<a class="next" href="#${next.id}"><small>${next.year} ›</small>${esc(cleanZone(next.zone))}</a>` : "<span></span>"}
+    </div>
+  </section>
+  <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer>`;
+}
+
+function directory(all) {
+  const byYear = [...all].sort((a, b) => b.year - a.year || b.nm - a.nm);
+  const cards = byYear.map(t => {
+    const zone = cleanZone(t.zone);
+    const ph = t.photos && t.photos.length
+      ? `<img class="ph" src="${t.photos[0].src}" alt="${esc(zone)}" loading="lazy">`
+      : `<div class="ph none">${flags(t.country) || "⛵"}</div>`;
+    return `<a class="tcard" href="#${t.id}">${ph}<div class="b"><b>${flags(t.country)} ${esc(zone)}</b>
+      <span>${t.year} · ${t.nm} nm</span>${t.n_photos ? `<br><span class="pc">📷 ${t.n_photos} foto</span>` : ""}</div></a>`;
+  }).join("");
+  const withPh = all.filter(t => t.n_photos).length;
+  return `<div class="vhero"><div class="yr">Archivio · 2011–2024</div>
+    <h1>I viaggi</h1><div class="sub">25 crociere in 14 stagioni. ${withPh} con foto — le altre arriveranno.</div></div>
+    <section><div class="grid" style="margin-top:1rem">${cards}</div>
+    <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer></section>`;
+}
+
+let DATA = [];
+function route() {
+  const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+  const t = DATA.find(x => x.id === id);
+  document.getElementById("app").innerHTML = t ? tripPage(t, DATA) : directory(DATA);
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", () => { document.getElementById("lb").classList.remove("on"); route(); });
+fetch("data/trips.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
+  DATA = (d.trips || []).slice().sort((a, b) => a.year - b.year || a.nm - b.nm);
+  route();
+}).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Viaggi non disponibili offline.</p></section>`; });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>
