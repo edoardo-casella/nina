@@ -67,6 +67,9 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .plink:hover{color:var(--accent)}
 .story{background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--gold);border-radius:6px;padding:1rem 1.1rem;font-size:.96rem;line-height:1.62}
 .story b{color:var(--ink)}
+.route{width:100%;border:1px solid var(--hair);border-radius:8px;display:block;cursor:zoom-in;background:var(--sea-1)}
+.gmap{max-width:520px;margin:.4rem auto 0}
+.gcap{color:var(--soft);font-size:.85rem;text-align:center;margin:.6rem auto 0;max-width:520px}
 .nav2{display:flex;justify-content:space-between;gap:.6rem;margin-top:1.6rem}
 .nav2 a{flex:1;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:.6rem .8rem;font-size:.86rem}
 .nav2 a small{display:block;font:700 .54rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft)}
@@ -76,6 +79,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .tcard{background:var(--panel);border:1px solid var(--hair);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block}
 .tcard .ph{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--sea-1);display:flex;align-items:center;justify-content:center}
 .tcard .ph.none{color:var(--soft);font-size:1.6rem}
+.tcard .ph.rt{object-fit:contain;background:var(--sea-1)}
 .tcard .b{padding:.55rem .7rem}
 .tcard .b b{display:block;font-size:.95rem}
 .tcard .b span{font:700 .56rem/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
@@ -118,6 +122,16 @@ const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&g
 const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", Turkey: "tr" };
 const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia", France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", Turkey: "Turchia" };
 const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April: "aprile", May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre", October: "ottobre", November: "novembre", December: "dicembre" };
+// mappa viaggio (id = slug nome barca) -> immagine rotta in trips/routes/<slug>.png
+const ROUTE = {
+  nemo: "cyclades-11", camelia: "croazia-11", natfika: "cyclades-12", stephanie: "dodecaneso-12",
+  klaudia: "turkey-13", cubalibre: "baleares-14", anax: "sporades-14",
+  "blue-bird": "baleares-i-15", trocha: "baleare-ii-15", aquarela: "baleares-16",
+  sorbe: "caribe-17", "capitan-nikos": "cyclades-17", showtime: "ionian-17",
+  invitation: "baleares-18", ondine: "croazia-18", lohengrin: "cuba-19",
+  alba: "sardegna-20", enya: "corsica-21", silkwave: "sardegna-21", "mars-planet": "sicilia-21",
+  alexandros: "cyclades-2024"
+};
 const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
 const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";
 const flags = country => parts(country).map(flag1).join("");
@@ -234,6 +248,7 @@ function tripPage(t, all) {
     <div class="vtags">${boatIcon(t.boat)}${pc ? `<span class="pace ${pc.k}" title="${esc(pc.d)}">${pc.t}</span>` : ""}<span class="diff ${df.k}" title="${esc(df.why)}">⚓ ${df.t}</span></div>
   </div>
   <section>
+    ${ROUTE[t.id] ? `<h2>🗺️ La rotta</h2><img class="route" src="trips/routes/${ROUTE[t.id]}.png" alt="Rotta ${esc(zone)} ${t.year}" loading="lazy" onclick="openLB([{src:'trips/routes/${ROUTE[t.id]}.png',people:[]}],0)">` : ""}
     ${t.story ? `<h2>📖 ${esc(t.story.title || "Il racconto")}</h2><div class="story">${t.story.html}</div>` : ""}
     <h2>📸 Foto del viaggio</h2>
     ${gal}
@@ -255,7 +270,9 @@ function directory(all) {
     const zone = cleanZone(t.zone);
     const ph = t.photos && t.photos.length
       ? `<img class="ph" src="${t.photos[0].src}" alt="${esc(zone)}" loading="lazy">`
-      : `<div class="ph none">${flags(t.country) || "⛵"}</div>`;
+      : ROUTE[t.id]
+        ? `<img class="ph rt" src="trips/routes/${ROUTE[t.id]}.png" alt="Rotta ${esc(zone)}" loading="lazy">`
+        : `<div class="ph none">${flags(t.country) || "⛵"}</div>`;
     return `<a class="tcard" href="#${t.id}">${ph}<div class="b"><b>${flags(t.country)} ${esc(zone)}</b>
       <span>${t.name ? `«${esc(t.name)}» · ` : ""}${esc(t.boat || "")}</span><br>
       <span>${t.year} · ${t.nm} nm</span>${t.n_photos ? `<br><span class="pc">📷 ${t.n_photos} foto</span>` : ""}</div></a>`;
@@ -263,7 +280,11 @@ function directory(all) {
   const withPh = all.filter(t => t.n_photos).length;
   return `<div class="vhero"><div class="yr">Archivio · 2011–2024</div>
     <h1>I viaggi</h1><div class="sub">25 crociere in 14 stagioni. ${withPh} con foto — le altre arriveranno.</div></div>
-    <section><div class="grid" style="margin-top:1rem">${cards}</div>
+    <section>
+    <h2>🌍 Tutte le rotte · 2011–2024</h2>
+    <img class="route gmap" src="trips/routes/_global.png" alt="Tutte le rotte 2011–2024 · Mediterraneo, Cuba, Piccole Antille" loading="lazy" onclick="openLB([{src:'trips/routes/_global.png',people:[]}],0)">
+    <div class="gcap">Le tre aree navigate: Mediterraneo · Caraibi&nbsp;— Cuba · Piccole Antille. Tocca per ingrandire.</div>
+    <div class="grid" style="margin-top:1.4rem">${cards}</div>
     <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer></section>`;
 }
 

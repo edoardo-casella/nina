@@ -33,6 +33,21 @@ data/*.doc
 # build_crew.py): i dati finali finiscono in site/data/crew.json e trips.json
 data/photo-tags.json
 
+# Sorgenti e intermedi delle mappe-rotta (2011–2024): nel repo vanno solo i PNG
+# renderizzati in site/trips/routes/ e gli script render_routes.py / merge_percorsi.py.
+# Le tracce GPS grezze (KML/KMZ dei viaggi passati) e la basemap Natural Earth
+# restano LOCALI. NB: le rotte 2026 data/percorso-hotpoints.kml e data/rotte-nina.kml
+# sono tracciate a parte e non rientrano qui.
+data/route-images/
+data/geo/
+data/Percorsi Google Earth/
+data/Tutti i viaggi.kml
+data/Tutti i viaggi.kmz
+data/Viaggi in barca (2011-2024).kml
+
+# File stray non tracciato, origine ignota
+data/65bba01eeca560e2820bb0c1.webp
+
 # OS
 .DS_Store
 Thumbs.db
