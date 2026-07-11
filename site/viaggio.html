@@ -76,6 +76,11 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 #lb .arr{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.4rem;background:none;border:0;cursor:pointer;padding:.5rem 1rem}
 #lb .arr.l{left:0} #lb .arr.r{right:0}
 #lb .cnt{color:#cfe0ee;font:600 .8rem/1 var(--mono);margin-top:.8rem}
+#lb .lbppl{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;max-width:96vw;margin-top:.6rem;padding:0 .5rem}
+#lb .lbppl a{display:inline-flex;align-items:center;gap:.35rem;text-decoration:none;font:600 .8rem/1 var(--body);color:#eaf2fa;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:.22rem .62rem .22rem .24rem}
+#lb .lbppl a:hover{background:rgba(255,255,255,.22)}
+#lb .lbppl .cav{width:20px;height:20px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2)}
+#lb .lbppl .cav.ph{display:inline-flex;align-items:center;justify-content:center;font:700 .62rem/1 var(--display);color:#fff;background:var(--accent)}
 footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
 footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -93,6 +98,7 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
   <img alt="">
   <button class="arr r" aria-label="successiva">›</button>
   <div class="cnt"></div>
+  <div class="lbppl"></div>
 </div>
 
 <script>
@@ -110,8 +116,10 @@ let LB = [], LBi = 0;
 function openLB(list, i) { LB = list; LBi = i; showLB(); document.getElementById("lb").classList.add("on"); }
 function showLB() {
   const lb = document.getElementById("lb");
-  lb.querySelector("img").src = LB[LBi];
+  const cur = LB[LBi] || {};
+  lb.querySelector("img").src = cur.src || "";
   lb.querySelector(".cnt").textContent = (LBi + 1) + " / " + LB.length;
+  lb.querySelector(".lbppl").innerHTML = (cur.people || []).map(crewChipById).filter(Boolean).join("");
 }
 function moveLB(d) { LBi = (LBi + d + LB.length) % LB.length; showLB(); }
 (function () {
@@ -129,12 +137,12 @@ function moveLB(d) { LBi = (LBi + d + LB.length) % LB.length; showLB(); }
 })();
 
 const normName = s => (s || "").toLowerCase().normalize("NFD").replace(/[^a-z]/g, "");
-let CREWMAP = {};
+let CREWMAP = {}, CREWBYID = {};
 function buildCrewMap(people) {
-  CREWMAP = {}; const byId = {};
-  people.forEach(p => { byId[p.id] = p; CREWMAP[normName(p.name)] = p; });
+  CREWMAP = {}; CREWBYID = {};
+  people.forEach(p => { CREWBYID[p.id] = p; CREWMAP[normName(p.name)] = p; });
   // alias nickname 2026 vs nome registro nei viaggi
-  [["gabrielem", "gabri-m"], ["federicob", "fede-b"]].forEach(([n, id]) => { if (byId[id]) CREWMAP[n] = byId[id]; });
+  [["gabrielem", "gabri-m"], ["federicob", "fede-b"]].forEach(([n, id]) => { if (CREWBYID[id]) CREWMAP[n] = CREWBYID[id]; });
 }
 function crewChip(name) {
   const p = CREWMAP[normName(name)];
@@ -143,6 +151,15 @@ function crewChip(name) {
   if (p) { const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`; return `<a class="chip lk" href="${href}">${av}${esc(name)}</a>`; }
   return `<span class="chip lk"><span class="cav ph">${esc((name || "?").trim()[0])}</span>${esc(name)}</span>`;
 }
+// chip persona per id (foto taggate nella galleria/lightbox)
+function crewChipById(id) {
+  const p = CREWBYID[id];
+  if (!p) return "";
+  const photo = p.crew2026 && p.crew2026.photo;
+  const av = photo ? `<img class="cav" src="${photo}" alt="" loading="lazy">` : `<span class="cav ph">${esc((p.name || "?").trim()[0])}</span>`;
+  const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`;
+  return `<a class="chip lk" href="${href}">${av}${esc(p.name)}</a>`;
+}
 
 function tripPage(t, all) {
   const idx = all.findIndex(x => x.id === t.id);
@@ -150,11 +167,11 @@ function tripPage(t, all) {
   const zone = cleanZone(t.zone);
   const cat = /Lagoon|Bali|Fountain|Pajot/i.test(t.boat) ? "catamarano" : "monoscafo";
   const crew = t.crew.map(crewChip).join("");
-  const galId = "g_" + t.id;
+  const galId = "g_" + t.id.replace(/-/g, "_");   // niente trattini: window.g_all_in valido (non g_all-in)
   const gal = t.photos && t.photos.length
     ? `<div class="gal">${t.photos.map((p, i) => `<img src="${p.src}" alt="${esc(zone)} ${t.year}" loading="lazy" onclick="openLB(window.${galId},${i})">`).join("")}</div>`
     : `<div class="noph">Nessuna foto per questo viaggio… ancora. 📷</div>`;
-  window[galId] = (t.photos || []).map(p => p.src);
+  window[galId] = (t.photos || []).map(p => ({ src: p.src, people: p.people || [] }));
   return `
   <div class="vhero">
     <div class="yr">${MONTHS[t.month] || ""} ${t.year}</div>

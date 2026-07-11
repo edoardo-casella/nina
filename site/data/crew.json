@@ -28,7 +28,114 @@
     "role": "skipper",
     "photo": "skipper/img/edoardo-id.jpg",
     "link": "skipper.html"
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/camelia/01.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    },
+    {
+     "src": "trips/img/cubalibre/01.jpg",
+     "trip_id": "cubalibre",
+     "caption": "Spagna 2014"
+    },
+    {
+     "src": "trips/img/blue-bird/01.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/blue-bird/05.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/sorbe/03.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/04.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/05.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/06.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/07.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/08.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/alba/01.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/alba/02.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/silkwave/01.jpg",
+     "trip_id": "silkwave",
+     "caption": "Sardegna 2021"
+    },
+    {
+     "src": "trips/img/mars-planet/01.jpg",
+     "trip_id": "mars-planet",
+     "caption": "Sicilia 2021"
+    },
+    {
+     "src": "trips/img/challenger/01.jpg",
+     "trip_id": "challenger",
+     "caption": "Spagna 2022"
+    },
+    {
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/11.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/isla/02.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    }
+   ]
   },
   {
    "id": "matilde-c",
@@ -38,7 +145,19 @@
    "nm": 3468,
    "first": 2011,
    "last": 2019,
-   "rank": "cdr"
+   "rank": "cdr",
+   "photos": [
+    {
+     "src": "trips/img/camelia/01.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    },
+    {
+     "src": "trips/img/camelia/02.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    }
+   ]
   },
   {
    "id": "margherita-c",
@@ -48,7 +167,14 @@
    "nm": 3337,
    "first": 2011,
    "last": 2021,
-   "rank": "cdr"
+   "rank": "cdr",
+   "photos": [
+    {
+     "src": "trips/img/camelia/01.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    }
+   ]
   },
   {
    "id": "claudio-c",
@@ -58,7 +184,19 @@
    "nm": 2947,
    "first": 2011,
    "last": 2021,
-   "rank": "cdr"
+   "rank": "cdr",
+   "photos": [
+    {
+     "src": "trips/img/camelia/01.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    },
+    {
+     "src": "trips/img/camelia/02.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    }
+   ]
   },
   {
    "id": "paola-c",
@@ -68,7 +206,14 @@
    "nm": 2947,
    "first": 2011,
    "last": 2021,
-   "rank": "cdr"
+   "rank": "cdr",
+   "photos": [
+    {
+     "src": "trips/img/camelia/01.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    }
+   ]
   },
   {
    "id": "bernardo-b",
@@ -84,7 +229,14 @@
     "leave": "2026-08-21",
     "role": "skipper",
     "photo": "crew/img/bernardo-b.jpg"
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/isla/01.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    }
+   ]
   },
   {
    "id": "cecilia-r",
@@ -109,7 +261,59 @@
     "board": "2026-08-21",
     "leave": "2026-08-29",
     "role": "apprentice"
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/blue-bird/02.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/blue-bird/03.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/blue-bird/05.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/sorbe/04.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/07.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/08.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/09.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/silkwave/01.jpg",
+     "trip_id": "silkwave",
+     "caption": "Sardegna 2021"
+    },
+    {
+     "src": "trips/img/isla/01.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    },
+    {
+     "src": "trips/img/isla/02.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    }
+   ]
   },
   {
    "id": "leonardo-m",
@@ -119,7 +323,69 @@
    "nm": 2056,
    "first": 2014,
    "last": 2022,
-   "rank": "ltcdr"
+   "rank": "ltcdr",
+   "photos": [
+    {
+     "src": "trips/img/cubalibre/01.jpg",
+     "trip_id": "cubalibre",
+     "caption": "Spagna 2014"
+    },
+    {
+     "src": "trips/img/alba/01.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/alba/02.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/alba/03.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/silkwave/01.jpg",
+     "trip_id": "silkwave",
+     "caption": "Sardegna 2021"
+    },
+    {
+     "src": "trips/img/challenger/01.jpg",
+     "trip_id": "challenger",
+     "caption": "Spagna 2022"
+    },
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/05.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ]
   },
   {
    "id": "gabriele-b",
@@ -129,7 +395,14 @@
    "nm": 1213,
    "first": 2011,
    "last": 2013,
-   "rank": "lt"
+   "rank": "lt",
+   "photos": [
+    {
+     "src": "trips/img/camelia/02.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    }
+   ]
   },
   {
    "id": "giacomo-n",
@@ -147,7 +420,54 @@
     "photo": "crew/img/giacomo-n.jpg",
     "nick": "Jack",
     "note": "Habitué dei <a href=\"skipper.html#errori-fatali\">rapporti d'incidente</a> 😅 — il capitano ha una regola tutta sua su di lui."
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/all-in/01.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/02.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/05.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/isla/01.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    },
+    {
+     "src": "trips/img/isla/02.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    }
+   ]
   },
   {
    "id": "sofia-m",
@@ -173,7 +493,44 @@
     "leave": "2026-08-29",
     "role": "crew",
     "photo": "crew/img/ginevra-l.jpg"
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/11.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ]
   },
   {
    "id": "pietro-c",
@@ -193,7 +550,34 @@
    "nm": 1156,
    "first": 2014,
    "last": 2022,
-   "rank": "lt"
+   "rank": "lt",
+   "photos": [
+    {
+     "src": "trips/img/cubalibre/01.jpg",
+     "trip_id": "cubalibre",
+     "caption": "Spagna 2014"
+    },
+    {
+     "src": "trips/img/alba/02.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    },
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/05.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ]
   },
   {
    "id": "andrea-a",
@@ -208,7 +592,29 @@
     "board": "2026-08-22",
     "leave": "2026-08-29",
     "role": "crew"
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/nemo/01.jpg",
+     "trip_id": "nemo",
+     "caption": "Grecia 2011"
+    },
+    {
+     "src": "trips/img/blue-bird/02.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/blue-bird/04.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/silkwave/01.jpg",
+     "trip_id": "silkwave",
+     "caption": "Sardegna 2021"
+    }
+   ]
   },
   {
    "id": "luca-b",
@@ -218,7 +624,24 @@
    "nm": 1056,
    "first": 2015,
    "last": 2019,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "photos": [
+    {
+     "src": "trips/img/sorbe/04.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/07.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/09.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    }
+   ]
   },
   {
    "id": "rebecca-b",
@@ -248,7 +671,39 @@
    "nm": 945,
    "first": 2020,
    "last": 2022,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "photos": [
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ]
   },
   {
    "id": "nicola-r",
@@ -288,7 +743,19 @@
    "nm": 785,
    "first": 2011,
    "last": 2015,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "photos": [
+    {
+     "src": "trips/img/cubalibre/01.jpg",
+     "trip_id": "cubalibre",
+     "caption": "Spagna 2014"
+    },
+    {
+     "src": "trips/img/blue-bird/01.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    }
+   ]
   },
   {
    "id": "jennifer-s",
@@ -308,7 +775,14 @@
    "nm": 660,
    "first": 2020,
    "last": 2022,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "photos": [
+    {
+     "src": "trips/img/alba/02.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    }
+   ]
   },
   {
    "id": "laura-c",
@@ -318,7 +792,39 @@
    "nm": 865,
    "first": 2018,
    "last": 2022,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "photos": [
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ]
   },
   {
    "id": "carlo-a",
@@ -328,7 +834,24 @@
    "nm": 574,
    "first": 2011,
    "last": 2015,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "photos": [
+    {
+     "src": "trips/img/blue-bird/01.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/blue-bird/02.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/blue-bird/03.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    }
+   ]
   },
   {
    "id": "ilaria-m",
@@ -343,7 +866,19 @@
     "board": "2026-08-21",
     "leave": "2026-08-29",
     "role": "apprentice"
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/sorbe/03.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/07.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    }
+   ]
   },
   {
    "id": "gabri-m",
@@ -358,7 +893,29 @@
     "board": "2026-08-22",
     "leave": "2026-08-29",
     "role": "apprentice"
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/sorbe/03.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/04.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/07.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/09.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    }
+   ]
   },
   {
    "id": "matilde-r",
@@ -368,7 +925,14 @@
    "nm": 550,
    "first": 2020,
    "last": 2020,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "photos": [
+    {
+     "src": "trips/img/alba/03.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    }
+   ]
   },
   {
    "id": "sara-b",
@@ -378,7 +942,14 @@
    "nm": 550,
    "first": 2020,
    "last": 2020,
-   "rank": "ltjg"
+   "rank": "ltjg",
+   "photos": [
+    {
+     "src": "trips/img/alba/03.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna 2020"
+    }
+   ]
   },
   {
    "id": "alice-s",
@@ -448,7 +1019,14 @@
    "nm": 430,
    "first": 2021,
    "last": 2022,
-   "rank": "ensign"
+   "rank": "ensign",
+   "photos": [
+    {
+     "src": "trips/img/silkwave/01.jpg",
+     "trip_id": "silkwave",
+     "caption": "Sardegna 2021"
+    }
+   ]
   },
   {
    "id": "chiara-f",
@@ -468,7 +1046,14 @@
    "nm": 321,
    "first": 2014,
    "last": 2022,
-   "rank": "ensign"
+   "rank": "ensign",
+   "photos": [
+    {
+     "src": "trips/img/cubalibre/01.jpg",
+     "trip_id": "cubalibre",
+     "caption": "Spagna 2014"
+    }
+   ]
   },
   {
    "id": "ludovica-r",
@@ -498,7 +1083,39 @@
    "nm": 395,
    "first": 2022,
    "last": 2022,
-   "rank": "ensign"
+   "rank": "ensign",
+   "photos": [
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ]
   },
   {
    "id": "michele-m",
@@ -508,7 +1125,14 @@
    "nm": 271,
    "first": 2017,
    "last": 2017,
-   "rank": "ensign"
+   "rank": "ensign",
+   "photos": [
+    {
+     "src": "trips/img/sorbe/05.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    }
+   ]
   },
   {
    "id": "monica-m",
@@ -563,7 +1187,14 @@
     "board": "2026-08-15",
     "leave": "2026-08-29",
     "role": "crew"
-   }
+   },
+   "photos": [
+    {
+     "src": "trips/img/isla/02.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    }
+   ]
   },
   {
    "id": "tonino-l",

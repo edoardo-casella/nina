@@ -25,7 +25,11 @@
         {
           "src": "trips/img/nemo/01.jpg",
           "w": 1280,
-          "h": 856
+          "h": 856,
+          "people": [
+            "andrea-a"
+          ],
+          "caption": "Grecia 2011"
         }
       ]
     },
@@ -53,12 +57,26 @@
         {
           "src": "trips/img/camelia/01.jpg",
           "w": 597,
-          "h": 1280
+          "h": 1280,
+          "people": [
+            "claudio-c",
+            "margherita-c",
+            "matilde-c",
+            "paola-c",
+            "edo-c"
+          ],
+          "caption": "Croazia 2011"
         },
         {
           "src": "trips/img/camelia/02.jpg",
           "w": 848,
-          "h": 1280
+          "h": 1280,
+          "people": [
+            "claudio-c",
+            "matilde-c",
+            "gabriele-b"
+          ],
+          "caption": "Croazia 2011"
         }
       ]
     },
@@ -144,7 +162,15 @@
         {
           "src": "trips/img/cubalibre/01.jpg",
           "w": 1280,
-          "h": 720
+          "h": 720,
+          "people": [
+            "edo-c",
+            "umberto-f",
+            "leonardo-m",
+            "gualtiero-s",
+            "marco-t"
+          ],
+          "caption": "Spagna 2014"
         }
       ]
     },
@@ -185,8 +211,60 @@
         "Riccardo B.",
         "Carlo A."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 5,
+      "photos": [
+        {
+          "src": "trips/img/blue-bird/01.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [
+            "edo-c",
+            "marco-t",
+            "carlo-a"
+          ],
+          "caption": "Spagna 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/02.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [
+            "riccardo-b",
+            "andrea-a",
+            "carlo-a"
+          ],
+          "caption": "Spagna 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/03.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [
+            "riccardo-b",
+            "carlo-a"
+          ],
+          "caption": "Spagna 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/04.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [
+            "andrea-a"
+          ],
+          "caption": "Spagna 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/05.jpg",
+          "w": 960,
+          "h": 776,
+          "people": [
+            "edo-c",
+            "riccardo-b"
+          ],
+          "caption": "Spagna 2015"
+        }
+      ]
     },
     {
       "id": "trocha",
@@ -229,8 +307,16 @@
         "A.",
         "A."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 1,
+      "photos": [
+        {
+          "src": "trips/img/aquarela/01.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        }
+      ]
     },
     {
       "id": "sorbe",
@@ -254,8 +340,106 @@
         "Gabriele M.",
         "Ilaria M."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 10,
+      "photos": [
+        {
+          "src": "trips/img/sorbe/01.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/02.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/03.jpg",
+          "w": 850,
+          "h": 1280,
+          "people": [
+            "edo-c",
+            "ilaria-m",
+            "gabri-m"
+          ],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/04.jpg",
+          "w": 1280,
+          "h": 850,
+          "people": [
+            "edo-c",
+            "luca-b",
+            "riccardo-b",
+            "gabri-m"
+          ],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/05.jpg",
+          "w": 1280,
+          "h": 850,
+          "people": [
+            "edo-c",
+            "michele-m"
+          ],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/06.jpg",
+          "w": 1280,
+          "h": 850,
+          "people": [
+            "edo-c"
+          ],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/07.jpg",
+          "w": 1280,
+          "h": 850,
+          "people": [
+            "ilaria-m",
+            "gabri-m",
+            "edo-c",
+            "luca-b",
+            "riccardo-b"
+          ],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/08.jpg",
+          "w": 1280,
+          "h": 850,
+          "people": [
+            "riccardo-b",
+            "edo-c"
+          ],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/09.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [
+            "riccardo-b",
+            "luca-b",
+            "gabri-m"
+          ],
+          "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/10.jpg",
+          "w": 1280,
+          "h": 850,
+          "people": [],
+          "caption": "Grenadine 2017"
+        }
+      ]
     },
     {
       "id": "capitan-nikos",
@@ -335,8 +519,16 @@
         "L.",
         "Nicola R."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 1,
+      "photos": [
+        {
+          "src": "trips/img/ondine/01.jpg",
+          "w": 1280,
+          "h": 1189,
+          "people": [],
+          "caption": "Croazia 2018"
+        }
+      ]
     },
     {
       "id": "lohengrin",
@@ -390,17 +582,35 @@
         {
           "src": "trips/img/alba/01.jpg",
           "w": 1280,
-          "h": 960
+          "h": 960,
+          "people": [
+            "edo-c",
+            "leonardo-m"
+          ],
+          "caption": "Sardegna 2020"
         },
         {
           "src": "trips/img/alba/02.jpg",
           "w": 1280,
-          "h": 960
+          "h": 960,
+          "people": [
+            "leonardo-m",
+            "gualtiero-s",
+            "edo-c",
+            "giacomo-b"
+          ],
+          "caption": "Sardegna 2020"
         },
         {
           "src": "trips/img/alba/03.jpg",
           "w": 1280,
-          "h": 960
+          "h": 960,
+          "people": [
+            "leonardo-m",
+            "sara-b",
+            "matilde-r"
+          ],
+          "caption": "Sardegna 2020"
         }
       ]
     },
@@ -420,8 +630,22 @@
         "Riccardo T.",
         "Riccardo B."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 1,
+      "photos": [
+        {
+          "src": "trips/img/silkwave/01.jpg",
+          "w": 1280,
+          "h": 1280,
+          "people": [
+            "leonardo-m",
+            "riccardo-t",
+            "riccardo-b",
+            "andrea-a",
+            "edo-c"
+          ],
+          "caption": "Sardegna 2021"
+        }
+      ]
     },
     {
       "id": "enya",
@@ -440,8 +664,16 @@
         "Sofia M.",
         "Jennifer S."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 1,
+      "photos": [
+        {
+          "src": "trips/img/enya/01.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Corsica 2021"
+        }
+      ]
     },
     {
       "id": "mars-planet",
@@ -461,8 +693,53 @@
         "Riccardo B.",
         "Simona B."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 6,
+      "photos": [
+        {
+          "src": "trips/img/mars-planet/01.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [
+            "edo-c"
+          ],
+          "caption": "Sicilia 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/02.jpg",
+          "w": 1280,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/03.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/04.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/05.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/06.jpg",
+          "w": 1024,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia 2021"
+        }
+      ]
     },
     {
       "id": "challenger",
@@ -487,7 +764,12 @@
         {
           "src": "trips/img/challenger/01.jpg",
           "w": 960,
-          "h": 1280
+          "h": 1280,
+          "people": [
+            "edo-c",
+            "leonardo-m"
+          ],
+          "caption": "Spagna 2022"
         }
       ]
     },
@@ -510,32 +792,168 @@
         "Leonardo M.",
         "Gualtiero S."
       ],
-      "n_photos": 5,
+      "n_photos": 15,
       "photos": [
         {
           "src": "trips/img/all-in/01.jpg",
           "w": 597,
-          "h": 1280
+          "h": 1280,
+          "people": [
+            "giacomo-n"
+          ],
+          "caption": "Grecia 2022"
         },
         {
           "src": "trips/img/all-in/02.jpg",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "people": [
+            "giacomo-n"
+          ],
+          "caption": "Grecia 2022"
         },
         {
           "src": "trips/img/all-in/03.jpg",
           "w": 960,
-          "h": 1280
+          "h": 1280,
+          "people": [
+            "gualtiero-s",
+            "ginevra-l",
+            "leonardo-m",
+            "laura-c",
+            "marta-a",
+            "giacomo-n",
+            "carlotta-d"
+          ],
+          "caption": "Grecia 2022"
         },
         {
           "src": "trips/img/all-in/04.jpg",
           "w": 960,
-          "h": 1280
+          "h": 1280,
+          "people": [
+            "gualtiero-s",
+            "ginevra-l",
+            "leonardo-m",
+            "laura-c",
+            "marta-a",
+            "giacomo-n",
+            "carlotta-d"
+          ],
+          "caption": "Grecia 2022"
         },
         {
           "src": "trips/img/all-in/05.jpg",
           "w": 1280,
-          "h": 960
+          "h": 960,
+          "people": [
+            "leonardo-m",
+            "gualtiero-s",
+            "giacomo-n"
+          ],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/06.jpg",
+          "w": 1280,
+          "h": 852,
+          "people": [],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/07.jpg",
+          "w": 1280,
+          "h": 852,
+          "people": [],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/08.jpg",
+          "w": 1280,
+          "h": 852,
+          "people": [],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/09.jpg",
+          "w": 1280,
+          "h": 852,
+          "people": [],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/10.jpg",
+          "w": 744,
+          "h": 931,
+          "people": [
+            "edo-c",
+            "ginevra-l",
+            "laura-c",
+            "marta-a",
+            "carlotta-d"
+          ],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/11.jpg",
+          "w": 1280,
+          "h": 852,
+          "people": [
+            "ginevra-l",
+            "edo-c"
+          ],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/12.jpg",
+          "w": 675,
+          "h": 966,
+          "people": [],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/13.jpg",
+          "w": 1280,
+          "h": 852,
+          "people": [
+            "leonardo-m",
+            "ginevra-l",
+            "edo-c",
+            "laura-c",
+            "marta-a",
+            "carlotta-d",
+            "giacomo-n"
+          ],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/14.jpg",
+          "w": 1280,
+          "h": 852,
+          "people": [
+            "leonardo-m",
+            "ginevra-l",
+            "edo-c",
+            "laura-c",
+            "marta-a",
+            "carlotta-d",
+            "giacomo-n"
+          ],
+          "caption": "Grecia 2022"
+        },
+        {
+          "src": "trips/img/all-in/15.jpg",
+          "w": 1280,
+          "h": 852,
+          "people": [
+            "leonardo-m",
+            "ginevra-l",
+            "edo-c",
+            "laura-c",
+            "marta-a",
+            "carlotta-d"
+          ],
+          "caption": "Grecia 2022"
         }
       ]
     },
@@ -562,12 +980,25 @@
         {
           "src": "trips/img/isla/01.jpg",
           "w": 768,
-          "h": 1024
+          "h": 1024,
+          "people": [
+            "bernardo-b",
+            "giacomo-n",
+            "riccardo-b"
+          ],
+          "caption": "Sicilia 2023"
         },
         {
           "src": "trips/img/isla/02.jpg",
           "w": 768,
-          "h": 1024
+          "h": 1024,
+          "people": [
+            "edo-c",
+            "fede-b",
+            "giacomo-n",
+            "riccardo-b"
+          ],
+          "caption": "Sicilia 2023"
         }
       ]
     },
@@ -587,8 +1018,23 @@
         "Angela K.",
         "Bernardo B."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 2,
+      "photos": [
+        {
+          "src": "trips/img/alexandros/01.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia 2024"
+        },
+        {
+          "src": "trips/img/alexandros/02.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia 2024"
+        }
+      ]
     },
     {
       "id": "cari",

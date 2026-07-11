@@ -6,7 +6,11 @@ ROOT = r"c:\Users\Edo\OneDrive - Bologna Business School\1.Progettazione\99_AI_W
 CV = os.path.join(ROOT, "data", "Skipper CV Enriched.xlsx")
 import shutil, tempfile
 _cvtmp = os.path.join(tempfile.gettempdir(), "nina_cv_read.xlsx")
-shutil.copy(CV, _cvtmp)  # copia: il file OneDrive/Excel puo' essere lockato
+try:
+    shutil.copy(CV, _cvtmp)  # copia: il file OneDrive/Excel puo' essere lockato
+except PermissionError:
+    if not os.path.exists(_cvtmp): raise   # nessuna copia utilizzabile -> chiudi Excel
+    print("CV lockato da Excel/OneDrive: uso la copia temp esistente", _cvtmp)
 CREWJSON = os.path.join(ROOT, "site", "data", "crew.json")
 
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
@@ -94,13 +98,27 @@ for p in part:
     out.append({"id": slugify(nm.replace(".", "")) or ("p" + str(p)), "name": nm, **st,
                 "rank": rank_of(st["days"])})
 
+# foto taggate per persona (sidecar generato da build_trips.py) -> campo photos
+PHOTOTAGS = os.path.join(ROOT, "data", "photo-tags.json")
+by_person = {}
+if os.path.exists(PHOTOTAGS):
+    by_person = json.loads(io.open(PHOTOTAGS, encoding="utf-8").read()).get("by_person", {})
+else:
+    print("ATTENZIONE: data/photo-tags.json assente -> nessuna foto sui profili. Esegui prima build_trips.py.")
+n_photos = 0
+for x in out:
+    ph = by_person.get(x["id"], [])
+    if ph:
+        x["photos"] = ph; n_photos += len(ph)
+
 out.sort(key=lambda x: (-x["days"], -x["trips"]))
 data = {"generated_at": "2026-07-11",
         "ranks": {rid: lab for _, rid, lab in RANKS},
         "n_total": len(out),
         "people": out}
 io.open(CREWJSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=1))
-print("crew.json:", len(out), "persone. TOTAL_DAYS(Edo)=", TOTAL_DAYS)
+print("crew.json:", len(out), "persone. TOTAL_DAYS(Edo)=", TOTAL_DAYS,
+      "| foto sui profili:", n_photos, "su", sum(1 for x in out if x.get("photos")), "persone")
 rc = collections.Counter(x["rank"] for x in out)
 print("distribuzione gradi:", dict(rc))
 for x in out[:20]:

@@ -25,6 +25,10 @@ data/*.pdf
 data/*.docx
 data/*.doc
 
+# Intermedio di build (foto per persona, prodotto da build_trips.py e letto da
+# build_crew.py): i dati finali finiscono in site/data/crew.json e trips.json
+data/photo-tags.json
+
 # OS
 .DS_Store
 Thumbs.db

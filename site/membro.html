@@ -69,6 +69,12 @@ svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 .strip .av{width:56px;height:56px;border-radius:50%;object-fit:cover;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 1.3rem/1 var(--display);color:#fff;margin:0 auto .25rem}
 .strip small{font-size:.66rem;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem}
+.pgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.7rem}
+.pgal figure{margin:0;cursor:zoom-in}
+.pgal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block;background:var(--sea-2)}
+.pgal figcaption{margin-top:.28rem;font:700 .56rem/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.pgal figcaption a{color:var(--soft);text-decoration:none}
+.pgal figcaption a:hover{color:var(--accent)}
 .mcard{background:var(--panel);border:1px solid var(--hair);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block}
 .mcard .ph{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 2.6rem/1 var(--display);color:#fff}
 .mcard .b{padding:.6rem .7rem}
@@ -178,6 +184,8 @@ function memberPage(m, all) {
       <h2>Scheda personale</h2>
       ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED La scheda dal <b>questionario equipaggio</b> arriverà qui.<br><a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">Compila il questionario ›</a></div>`}`
     : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(RANK_LABEL[m.rank] || "")}</b>.</div>`}
+    ${(m.photos && m.photos.length) ? `<h2>📸 Foto</h2><div class="pgal">${m.photos.map(p =>
+      `<figure onclick="lbOne('${p.src}')"><img src="${p.src}" alt="${esc(p.caption || m.name)}" loading="lazy"><figcaption><a href="viaggio.html#${p.trip_id}" onclick="event.stopPropagation()">${esc(p.caption || "")} ›</a></figcaption></figure>`).join("")}</div>` : ""}
     ${strip ? `<h2>La ciurma 2026</h2><div class="strip">${strip}</div>` : ""}
   </section>
   <footer><a class="pl" href="${c ? "arrivi.html" : "skipper.html"}">‹ ${c ? "Torna alla ciurma" : "Torna alla classifica"}</a></footer>`;
