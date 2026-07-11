@@ -56,7 +56,7 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 </div></div>
 <main>
   <h1>Foto condivise</h1>
-  <p class="lead">Le foto di tutti, in un posto solo. Carica le tue con l'account Google e finiscono nella cartella comune della crociera.</p>
+  <p class="lead">Le foto di tutti, in un posto solo. Apri la cartella condivisa qui sotto e trascina le tue (serve un account Google).</p>
   <section id="app"></section>
 </main>
 
@@ -95,7 +95,7 @@ function render() {
     <div class="frame"><iframe src="${esc(formSrc(FORM_URL))}" height="720" title="Carica foto — modulo" loading="lazy">Caricamento…</iframe></div>`;
   if (FOLDER_ID) html += `<h2>🖼️ La galleria condivisa</h2>
     <div class="frame"><iframe src="https://drive.google.com/embeddedfolderview?id=${esc(FOLDER_ID)}#grid" height="620" title="Galleria Drive" loading="lazy">Caricamento…</iframe></div>
-    <a class="btn" href="https://drive.google.com/drive/folders/${esc(FOLDER_ID)}" target="_blank" rel="noopener">Apri la cartella su Drive ↗</a>`;
+    <a class="btn" href="https://drive.google.com/drive/folders/${esc(FOLDER_ID)}" target="_blank" rel="noopener">Apri la cartella e aggiungi le tue foto ↗</a>`;
   html += `<footer><a class="pl" href="index.html">‹ Torna alla Plancia</a></footer>`;
   app.innerHTML = html;
 }
