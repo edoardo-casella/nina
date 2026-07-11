@@ -198,6 +198,11 @@ a.dec{text-decoration:none;color:inherit}
 .incident .esito b{color:var(--rosso)}
 .incident .video{position:relative;margin-top:.9rem;border-radius:4px;overflow:hidden;aspect-ratio:16/9;background:#000}
 .incident .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.incident .shots{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.9rem}
+@media(max-width:460px){.incident .shots{grid-template-columns:1fr}}
+.incident .shots figure{margin:0}
+.incident .shots img{width:100%;height:auto;border-radius:4px;display:block;background:#0a1424}
+.incident .shots figcaption{font:italic 400 .72rem/1.35 var(--body);color:var(--soft);margin-top:.3rem}
 .vgrid{display:grid;gap:.8rem}
 .vgrid .video{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000}
 .vgrid .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -432,6 +437,12 @@ function mistakesHTML() {
     <p>Epilogo: barca alata con la gru, elica nuova, si riparte. Ma il canale si vendica: pieno di
     meduse che intasano le prese a mare. Aria condizionata KO, generatore KO, un'elica sola. Due o tre
     giorni di caldo bestiale in mezzo al canale.</p>
+    <div class="shots">
+      <figure><img src="skipper/img/ferragosto-gru.jpg" alt="Il catamarano «All in» sollevato dalla gru nel porto greco" loading="lazy">
+        <figcaption>L'«All in» alata con la gru per il cambio elica.</figcaption></figure>
+      <figure><img src="skipper/img/ferragosto-scafo.jpg" alt="Ispezione della carena in cantiere" loading="lazy">
+        <figcaption>Ispezione carena in cantiere — lo scafo, per la cronaca, si reggeva già da solo.</figcaption></figure>
+    </div>
     <div class="les"><b>Lezioni imparate</b>
       <ol><li>Mai lasciare Jack N solo in coperta.</li>
       <li>Mai ormeggiare a terra in un canale di marea fidandosi di poca ancora.</li>
