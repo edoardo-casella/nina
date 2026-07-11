@@ -132,6 +132,11 @@ svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible}
 .cm.me .cm-bar>i{background:linear-gradient(90deg,var(--gold),var(--gold-2))}
 .cm.me .cm-name,.cm.me .cm-n,.cm.me .cm-rank{color:var(--gold)}
 .cm-more{margin-top:.9rem;font-size:.83rem;color:var(--soft);line-height:1.5}
+.cm-toggle{display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;background:var(--panel);border:1px solid var(--hair);color:var(--soft);
+  font:700 .64rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:.55rem .95rem;border-radius:99px;cursor:pointer}
+.cm-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.cm-toggle .chev{font-size:.72em;transition:transform .15s}
+.cm-toggle .chev.up{transform:rotate(180deg)}
 
 /* DECORAZIONI */
 .medals{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:.7rem}
@@ -457,7 +462,7 @@ function crewmatesHTML() {
   if (!people.length) return "";
   const list = people.slice().sort((a, b) => b.days - a.days || b.trips - a.trips);
   const max = list[0].days || 1;
-  const rows = list.map((x, i) => {
+  const row = (x, i) => {
     const pct = Math.max(4, Math.round(x.days / max * 100));
     const yrs = x.first ? `${x.first}${x.last && x.last !== x.first ? "–" + x.last : ""}` : "";
     const href = (x.crew2026 && x.crew2026.link) || `membro.html#${x.id}`;
@@ -467,10 +472,24 @@ function crewmatesHTML() {
       <span class="cm-name">${esc(x.name)}${yrs ? ` <span class="cm-yr">${yrs}</span>` : ""}</span>
       <span class="cm-bar"><i style="width:${pct}%"></i></span>
       <span class="cm-n">${x.days}<em>giorni</em></span></a>`;
-  }).join("");
+  };
+  const HEAD = 6;                                   // podio compatto; il resto è comprimibile
+  const head = list.slice(0, HEAD).map(row).join("");
+  const rest = list.slice(HEAD);
+  const label = `Mostra tutta la ciurma (${list.length})`;
+  const more = rest.length
+    ? `<div class="cm-extra" id="cm-extra" hidden>${rest.map((x, i) => row(x, i + HEAD)).join("")}</div>
+    <button class="cm-toggle" type="button" data-label="${label}" onclick="toggleCrew(this)">${label} <span class="chev">▾</span></button>`
+    : "";
   return `<section><h2>La ciurma negli anni</h2>
-    <p class="cm-intro">Tutti i compagni di rotta, in ordine di <b>giorni in mare</b> con l'Ammiraglio — ognuno col suo <b>grado</b>, per anzianità. Tocca un nome per aprire la sua scheda.</p>
-    <div class="cmwrap">${rows}</div></section>`;
+    <p class="cm-intro">I compagni di rotta in ordine di <b>giorni in mare</b> con l'Ammiraglio — ognuno col suo <b>grado</b>. Tocca un nome per la scheda; apri per vederli tutti.</p>
+    <div class="cmwrap">${head}</div>${more}</section>`;
+}
+function toggleCrew(btn) {
+  const ex = document.getElementById("cm-extra");
+  if (!ex) return;
+  if (ex.hasAttribute("hidden")) { ex.removeAttribute("hidden"); btn.innerHTML = 'Mostra meno <span class="chev up">▾</span>'; }
+  else { ex.setAttribute("hidden", ""); btn.innerHTML = btn.dataset.label + ' <span class="chev">▾</span>'; }
 }
 
 function incidentBlock(a) {
