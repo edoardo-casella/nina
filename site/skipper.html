@@ -529,12 +529,6 @@ function dronesHTML() {
     <div class="drones">${cards}</div></section>`;
 }
 
-// età dallo (eventuale) campo d.birth ("YYYY-MM-DD"), calcolata live dal browser
-const ageFrom = iso => { const b = new Date(iso), n = new Date();
-  let a = n.getFullYear() - b.getFullYear();
-  if (n.getMonth() < b.getMonth() || (n.getMonth() === b.getMonth() && n.getDate() < b.getDate())) a--;
-  return a; };
-
 function render(d) {
   const t = d.totals;
   const { cur, next } = rankOf(t.nm);
@@ -571,8 +565,8 @@ function render(d) {
     <div class="stat"><b>${t.n_boats}</b><i>barche</i></div>
     <div class="stat"><b>${Math.round(t.nm / t.trips)}</b><i>nm / crociera</i></div>
     <div class="stat"><b>${Math.round(t.days)}</b><i>giorni in mare</i></div>
-    ${d.birth
-      ? `<div class="stat"><b>${ageFrom(d.birth)}</b><i>anni</i></div>`
+    ${d.birth_year
+      ? `<div class="stat"><b>${new Date().getFullYear() - d.birth_year}</b><i>anni</i></div>`
       : `<div class="stat"><b>${Math.max(...d.trips.map(x => x.nm))}</b><i>record nm</i></div>`}
   </div>
 
