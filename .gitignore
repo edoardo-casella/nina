@@ -18,6 +18,10 @@ data/*.local.*
 # versioni web ridimensionate in site/skipper/img/ e site/crew/img/
 data/Skipper Images/
 
+# Foto per viaggio (upload locale, una cartella per viaggio, pre-riempita dalle
+# foto del sito): restano LOCALI, nel repo vanno solo le versioni in site/trips/img/
+data/Viaggi/
+
 # Liste equipaggio e documenti personali (nomi completi, passaporti, DOB):
 # MAI nel repo pubblico. Nel sito vanno solo iniziali e foto ridotte.
 data/Crewlists/
