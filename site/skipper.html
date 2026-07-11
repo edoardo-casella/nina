@@ -187,6 +187,9 @@ a.dec{text-decoration:none;color:inherit}
 .incident .esito b{color:var(--rosso)}
 .incident .video{position:relative;margin-top:.9rem;border-radius:4px;overflow:hidden;aspect-ratio:16/9;background:#000}
 .incident .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vgrid{display:grid;gap:.8rem}
+.vgrid .video{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000}
+.vgrid .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 .ig{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:0 auto;padding:.9rem 1.4rem;border-radius:99px;
   text-decoration:none;font:700 .95rem/1 var(--body);color:#fff;background:linear-gradient(70deg,#f9ce34,#ee2a7b 45%,#6228d7);max-width:22rem}
@@ -467,6 +470,15 @@ function heroicsHTML() {
   </div></section>`;
 }
 
+// Video di viaggio (embed YouTube ufficiale)
+function travelVideosHTML() {
+  const vids = ["-VNIrtqXiYU", "ijOqcqKx3Zg", "wQEQF91ERPo"];
+  const cells = vids.map(id => `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${id}" title="Video di viaggio" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`).join("");
+  return `<section><h2>Video di viaggio</h2>
+    <p class="dossier-note">Le vacanze in barca in movimento — uno di questi è girato tra Sardegna e Corsica, casa della <span class="water">Niña</span>.</p>
+    <div class="vgrid">${cells}</div></section>`;
+}
+
 // Droni a bordo — la flotta aerea che firma le riprese
 function dronesHTML() {
   const fleet = [
@@ -531,6 +543,7 @@ function render(d) {
   ${theatres(d)}
   ${decorations(d)}
   ${galleryHTML(d)}
+  ${travelVideosHTML()}
   ${dronesHTML()}
   ${tripsHTML(d)}
   ${mistakesHTML()}
