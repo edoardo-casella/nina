@@ -1,0 +1,115 @@
+{
+  "anecdotes": [
+    {
+      "id": "fuoribordo-fantasma",
+      "title": "Il fuoribordo fantasma",
+      "kind": "errore",
+      "stamp": "Caso 01",
+      "meta": "🇻🇨 Saint Vincent e Grenadine · 2017 · Lagoon 450 «Sorbe»",
+      "flag": "🇻🇨",
+      "country": "Saint Vincent",
+      "year": 2017,
+      "place": "Grenadine",
+      "boat": "Lagoon 450",
+      "boat_name": "Sorbe",
+      "trip_id": "sorbe",
+      "people": [
+        "ilaria-m",
+        "gabri-m"
+      ],
+      "bodyHtml": "<p>Ormeggio alla banchina del benzinaio. Posizione stretta, vento forte e — dettaglio non\n    secondario — l'equipaggio (quella volta con <a class=\"plink\" href=\"membro.html#ilaria-m\"><b>Ilaria M</b></a> e <a class=\"plink\" href=\"membro.html#gabri-m\"><b>Gabriele</b></a>) che si dimentica i\n    parabordi. Nella manovra la barca sfiora il motore\n    fuoribordo del gommone di due sedicenti sommozzatori: due tipi che avevano tutta l'aria di\n    napoletani, ma in edizione caraibica.</p>\n    <p>Loro gridano al disastro. Il sospetto di bordo è un altro: che quel fuoribordo fosse già andato,\n    e che la «collisione» fosse più che altro l'occasione per farsi pagare un motore già rotto. Una\n    classica napoletanata, ai tropici. La barca l'ha toccato, sì — ma non abbastanza da meritare\n    tanto teatro.</p>\n    <figure class=\"oneshot\"><img class=\"zoom\" onclick=\"lbOne('skipper/img/napoletani.jpg')\" src=\"skipper/img/napoletani.jpg\" alt=\"Ormeggio alla banchina del benzinaio, Grenadine\" loading=\"lazy\">\n      <figcaption>La banchina del misfatto — parabordi rigorosamente altrove.</figcaption></figure>\n    <div class=\"les\"><b>Lezioni imparate</b>\n      <ol><li>Parabordi pronti sempre, per qualsiasi evenienza.</li>\n      <li>In banchina stretta con vento forte, la manovra non si improvvisa.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> un fuoribordo (forse) e una lezione sui parabordi che non si scorda più.</div>"
+    },
+    {
+      "id": "canale-ferragosto",
+      "title": "Il canale di Ferragosto",
+      "kind": "errore",
+      "stamp": "Caso 02",
+      "meta": "🇬🇷 Grecia · 2022 · Sporadi · Lagoon 42 «All in»",
+      "flag": "🇬🇷",
+      "country": "Greece",
+      "year": 2022,
+      "place": "Sporadi",
+      "boat": "Lagoon 42",
+      "boat_name": "All in",
+      "trip_id": "all-in",
+      "people": [
+        "giacomo-n"
+      ],
+      "bodyHtml": "<p>Rotta da Atene alle Sporadi per il canale di Calcide, il cui ponte si apre una sola volta a\n    notte, tra le 22 e le 23. Dettaglio scritto da nessuna parte: a Ferragosto non si apre. Lo skipper\n    si presenta al ponte proprio il 15 agosto e scopre l'amara verità.</p>\n    <p>Ripiego: ormeggio a terra dentro il canale, con poca ancora. Ma un canale di marea resta un\n    canale di marea: con la luna il vento gira dalla parte opposta. Ci si mette a terra con due cime e\n    mare piatto (le foto sono qui sopra, nella galleria).</p>\n    <p>Poi la trappola: pranzo pesante, capitano sotto coperta con l'aria condizionata — chilling\n    supremo. In coperta resta <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a> con tre signore a briscola. Nessuno si accorge del vento che\n    sale né delle cime finite in acqua: l'ormeggio aveva ceduto. Il capitano si sveglia per un «TOC»\n    sulla carena, vola ai comandi per non finire inscogliato, sacrifica un'elica — ma esce.</p>\n    <p>Epilogo: barca alata con la gru, elica nuova, si riparte. Ma il canale si vendica: pieno di\n    meduse che intasano le prese a mare. Aria condizionata KO, generatore KO, un'elica sola. Due o tre\n    giorni di caldo bestiale in mezzo al canale.</p>\n    <div class=\"shots\">\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/ferragosto-gru.jpg')\" src=\"skipper/img/ferragosto-gru.jpg\" alt=\"Il catamarano «All in» sollevato dalla gru nel porto greco\" loading=\"lazy\">\n        <figcaption>L'«All in» alata con la gru per il cambio elica.</figcaption></figure>\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/ferragosto-scafo.jpg')\" src=\"skipper/img/ferragosto-scafo.jpg\" alt=\"Ispezione della carena in cantiere\" loading=\"lazy\">\n        <figcaption>Ispezione carena in cantiere — lo scafo, per la cronaca, si reggeva già da solo.</figcaption></figure>\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/troubleshooting.jpg')\" src=\"skipper/img/troubleshooting.jpg\" alt=\"Troubleshooting nel canale di Calcide\" loading=\"lazy\">\n        <figcaption>Troubleshooting a oltranza: elica, meduse e generatore, un guaio alla volta.</figcaption></figure>\n    </div>\n    <div class=\"les\"><b>Lezioni imparate</b>\n      <ol><li>Mai lasciare <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a> solo in coperta.</li>\n      <li>Mai ormeggiare a terra in un canale di marea fidandosi di poca ancora.</li>\n      <li>Controllare feste comandate greche e maree prima di certi passaggi.</li>\n      <li>Dare. Più. Ancora.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> un'elica, due o tre giorni di vacanza e una nuova regola su <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a>.</div>"
+    },
+    {
+      "id": "grande-screzio",
+      "title": "Il grande screzio",
+      "kind": "errore",
+      "stamp": "Caso 03",
+      "meta": "🇸🇨 Seychelles · 2024 · Lagoon 46 «Cari»",
+      "flag": "🇸🇨",
+      "country": "Seychelles",
+      "year": 2024,
+      "place": null,
+      "boat": "Lagoon 46",
+      "boat_name": "Cari",
+      "trip_id": "cari",
+      "people": [
+        "ginevra-l",
+        "bernardo-b",
+        "gualtiero-s"
+      ],
+      "bodyHtml": "<p>La crociera più tumultuosa di tutte, e non per colpa del mare. Si parte con un volo interminabile\n    e un atterraggio all'alba a Mahé da cardiopalma: meteo estremo, il pilota tira su tutto e va in\n    <b>riattaccata</b> all'ultimo. Poi uno scalo non previsto a <b>Mauritius per rifornimento</b> —\n    carburante finito — con i nervi a fior di pelle, soprattutto per chi l'aereo lo teme già di suo\n    (<a class=\"plink\" href=\"membro.html#ginevra-l\"><b>Ginevra L.</b></a>).</p>\n    <p>A terra non va meglio: <b>spesa notturna a Mahé</b> con gli scaffali quasi vuoti, e la prima\n    frizione tra i salutisti di bordo e chi avrebbe caricato in barca qualunque cosa pur di mangiare.\n    Poi il meteo mette il sigillo: <b>sole quasi mai visto</b> per tutta la vacanza.</p>\n    <p>Il gran finale va in scena sulla spiaggia di <b>Grande Sœur</b> — isolotto privato a nord-est\n    di La Digue, tra i più belli delle Seychelles: granito rosso, sabbia bianca, tartarughe giganti. Lì\n    scoppia lo screzio epico tra <a class=\"plink\" href=\"membro.html#ginevra-l\"><b>Ginevra L.</b></a> e il co-skipper <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a> L'equipaggio si\n    spacca in due, e per il resto del viaggio non ci si parla più.</p>\n    <p>La pace, storica, arriva solo un anno dopo: <b>al matrimonio di <a class=\"plink\" href=\"membro.html#gualtiero-s\">Gualtiero S.</a></b>, a settembre 2025.\n    Oggi Ginevra e Bernardo sono di nuovo grandi amici — e la coppia che scoppia è tornata al suo posto.</p>\n    <div class=\"les\"><b>Lezioni imparate</b>\n      <ol><li>Le Seychelles fuori stagione sanno essere grigie: mettere in conto pioggia e vento.</li>\n      <li>La cambusa si fa a terra e con anticipo, non a mezzanotte con gli scaffali vuoti.</li>\n      <li>Su quattordici metri non esistono litigi «privati»: o si fa pace, o si soffre in sette.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> una crociera senza sole, un equipaggio muto per due settimane e una\n    pace siglata un anno dopo. Per il capitano, il dispiacere di vedere ai ferri corti il suo co-skipper e\n    la sua consorte — ma, come si dice, tutto è bene quel che finisce bene. 💙</div>"
+    },
+    {
+      "id": "veglia-serifos",
+      "title": "La veglia di Serifos",
+      "kind": "eroico",
+      "stamp": "Al valore",
+      "meta": "🇬🇷 Serifos · Cicladi · agosto",
+      "flag": "🇬🇷",
+      "country": "Greece",
+      "year": null,
+      "place": "Serifos · Cicladi",
+      "boat": null,
+      "boat_name": null,
+      "trip_id": "capitan-nikos",
+      "people": [],
+      "bodyHtml": "<p>Il Meltemi entra in scena e non se ne va più: <b>quattro giorni con mare forza 6 e raffiche\n    oltre i 50 nodi</b>. Lo skipper resta di guardia <b>quattro notti di fila</b>, praticamente senza\n    chiudere occhio, per tenere la barca all'ancora e l'equipaggio al sicuro — in barca con la\n    fidanzata dell'epoca.</p>\n    <p>Il gran finale, degno di un vero stratega: pur di non affrontare la tratta di rientro (e\n    soprattutto di non perdere l'aereo per la <b>crociera successiva</b>), chiama <b>due skipper</b>\n    che vengono a rilevare la barca, e abbandona la nave per correre in aeroporto. La priorità, sopra\n    ogni cosa: la prossima barca.</p>\n    <div class=\"les\"><b>Menzione d'onore</b>\n      <ol><li>Resistenza fuori scala: quattro notti in bianco sotto i 50 nodi.</li>\n      <li>Sangue freddo: barca e equipaggio portati a casa interi.</li>\n      <li>Senso delle priorità cristallino: l'aereo per la barca dopo non si perde.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> quattro notti di sonno perse, una barca salvata e un aereo preso al volo.</div>"
+    },
+    {
+      "id": "rogo-moneglia",
+      "title": "Il rogo di Moneglia",
+      "kind": "eroico",
+      "stamp": "Al valore",
+      "meta": "🇮🇹 Moneglia · Liguria · giugno 2023 · a bordo come ospiti",
+      "flag": "🇮🇹",
+      "country": "Italy",
+      "year": 2023,
+      "place": "Moneglia · Liguria",
+      "boat": null,
+      "boat_name": null,
+      "trip_id": null,
+      "people": [
+        "bernardo-b",
+        "giacomo-n"
+      ],
+      "bodyHtml": "<p>Trasferimento lungo la riviera di levante, a bordo come <b>ospiti</b> — non era la sua barca —\n    insieme a <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo Bolgeri</b></a> e <a class=\"plink\" href=\"membro.html#giacomo-n\"><b>Jack N</b></a>. Nel pomeriggio, dal vano motore, parte un incendio.</p>\n    <p>Mentre la gestione dell'emergenza latita, sono gli ospiti a prendere in mano la situazione:\n    <b>allarme dato, soccorsi chiamati, fiamme affrontate</b>. Quando il fuoco ha la meglio, l'<b>abbandono\n    nave</b> è ordinato: tutti in acqua, a nuoto verso riva.</p>\n    <p>Arriva il gommone della Capitaneria di Sestri Levante: <b>cinque persone illese</b>, solo un gran\n    spavento. Lo yacht, preso a rimorchio, affonda.</p>\n    <figure class=\"oneshot\"><img class=\"zoom\" onclick=\"lbOne('skipper/img/moneglia.jpg')\" src=\"skipper/img/moneglia.jpg\" alt=\"A terra dopo l'abbandono nave a Moneglia\" loading=\"lazy\">\n      <figcaption>A terra, sani e salvi.</figcaption></figure>\n    <div class=\"les\"><b>Menzione d'onore</b>\n      <ol><li>Sangue freddo da ospiti: allarme, soccorsi e nuotata, nell'ordine giusto.</li>\n      <li>Da passeggero non scegli il comandante, ma l'uscita la individui sempre.</li>\n      <li>Sicurezza prima, orgoglio poi.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> uno yacht sul fondo, cinque persone illese e una nuotata verso Moneglia.\n      <br><a href=\"https://www.primocanale.it/cronaca/27105-moneglia-e-affondato-lo-yacht-andato-a-fuoco-i-5-a-bordo-si-sono-buttati-in-mare.html\" target=\"_blank\" rel=\"noopener\">📰 L'articolo — Primocanale ↗</a></div>\n    <div class=\"video\"><iframe src=\"https://www.youtube-nocookie.com/embed/rglFQp34IFY\" title=\"Incendio yacht a Moneglia\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "obli-aperti",
+      "title": "Gli oblò aperti",
+      "kind": "leggenda",
+      "stamp": "Leggenda",
+      "meta": "⚓ Equipaggio Niña · leggenda di bordo",
+      "flag": "⚓",
+      "country": null,
+      "year": null,
+      "place": null,
+      "boat": null,
+      "boat_name": null,
+      "trip_id": null,
+      "people": [
+        "giacomo-n",
+        "riccardo-b"
+      ],
+      "bodyHtml": "<p>C'è chi controlla il meteo e chi controlla le cime. E poi c'è <a class=\"plink\" href=\"membro.html#giacomo-n\"><b>Jack N</b></a>, che prima di dormire lascia <b>gli oblò spalancati</b> — con qualsiasi previsione. Basta un'onda di traverso o uno spruzzo notturno e la sua cabina diventa una piscina: <b>lenzuola fradice, materasso inzuppato</b> e la ormai celebre corsa all'asciugatura all'alba.</p>\n    <p>Non è un caso isolato: alla stessa scuola di pensiero appartiene il collega <a class=\"plink\" href=\"membro.html#riccardo-b\"><b>Riccardo B</b></a>, altro fedele sostenitore dell'oblò aperto a ogni costo. Due allievi, una sola — bagnatissima — dottrina.</p>\n    <div class=\"les\"><b>Morale di bordo</b>\n      <ol><li>Ultimo giro prima di dormire: oblò e osteriggi <b>chiusi</b>.</li>\n      <li>Il materasso asciutto è un lusso che si conquista la sera prima.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> nessun danno alla barca, parecchi danni all'orgoglio — e lenzuola stese al sole a ogni scalo.</div>"
+    }
+  ]
+}

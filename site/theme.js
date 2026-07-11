@@ -20,7 +20,7 @@
   st.textContent = CSS;
   (document.head || document.documentElement).appendChild(st);
 
-  function mode() { try { return localStorage.getItem(KEY) || "auto"; } catch (e) { return "auto"; } }
+  function mode() { try { return localStorage.getItem(KEY) || "light"; } catch (e) { return "light"; } }
   function isDark(m) { return m === "dark" || (m === "auto" && mq.matches); }
   function apply() {
     var m = mode(), dark = isDark(m);

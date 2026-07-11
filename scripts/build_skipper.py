@@ -24,6 +24,8 @@ IMG_DIR = core.ROOT / "site" / "skipper" / "img"
 
 NAME = "Edoardo Casella"
 INSTAGRAM = "https://www.instagram.com/edoardocasella/"
+# la zona "Inner Islands" (crociera Seychelles) va mostrata come "Seychelles"
+ZONE_OVERRIDE = {"Inner Islands": "Seychelles"}
 # ordine di galleria: prima le due migliori, poi droni, poi archivio
 GALLERY_ORDER = ["cat-rada-turchese", "kayak-gabbiano", "drone-1", "drone-3",
                  "vela-2017", "caraibi-2017-1", "drone-2", "vela-2016-1",
@@ -55,12 +57,13 @@ def load_trips() -> list[dict]:
         year = num(r[idx["Anno"]])
         if year is None:                      # riga TOTAL o vuota
             continue
+        zone = str(r[idx["Zona"]]).strip() if r[idx["Zona"]] else None
         trips.append({
             "year": int(year),
             "month": str(r[idx["Mese"]]).strip() if r[idx["Mese"]] else None,
             "weeks": str(r[idx["Settimane"]]).strip() if r[idx.get("Settimane")] else None,
             "country": str(r[idx["Country"]]).strip() if r[idx["Country"]] else None,
-            "zone": str(r[idx["Zona"]]).strip() if r[idx["Zona"]] else None,
+            "zone": ZONE_OVERRIDE.get(zone, zone),
             "boat": str(r[idx["Imbarcazione"]]).strip() if r[idx["Imbarcazione"]] else None,
             "boat_name": str(r[idx["Nome Barca"]]).strip() if r[idx.get("Nome Barca")] else None,
             "nm": round(num(r[idx["Miglia stimate"]]) or 0),

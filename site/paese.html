@@ -108,7 +108,7 @@ function countryPage(iso, all) {
   const rows = list.map(t => {
     const avg = t.days ? Math.round(t.nm / t.days) : null, p = pace(avg);
     return `<a class="mrow" href="viaggio.html#${t.id}"><span class="fl">${flags(t.country)}</span>
-      <span class="mid"><b>${esc(cleanZone(t.zone))}</b><small>${esc(t.boat || "")} · ${t.nm} nm · ${Math.round(t.days)} gg${avg ? ` · ${avg} nm/g` : ""}</small></span>
+      <span class="mid"><b>${esc(cleanZone(t.zone))}</b><small>${t.name ? `«${esc(t.name)}» · ` : ""}${esc(t.boat || "")} · ${t.nm} nm · ${Math.round(t.days)} gg${avg ? ` · ${avg} nm/g` : ""}</small></span>
       ${p ? `<span class="pace ${p.k}">${p.t}</span>` : ""}<span class="yr">${t.year}</span><span class="go">›</span></a>`;
   }).join("");
   return `

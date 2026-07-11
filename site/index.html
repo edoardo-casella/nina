@@ -324,7 +324,7 @@ footer strong{color:var(--ink)}
 <footer>
   Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF). Bollettino ufficiale del mare: <a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">Aeronautica Militare</a>.<br><br>
   <span class="poweredby">powered by <span class="starlink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="12" rx="10.5" ry="4.4" transform="rotate(-28 12 12)"/><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/></svg>Starlink</span></span> — internet satellitare a bordo, anche al largo<br><br>
-  <a href="guida.html">🎒 Guida pre-partenza</a> · <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="viaggio.html">I viaggi</a> · <a href="avionica.html">Avionica a bordo</a> · <a href="membro.html">L'equipaggio</a> · <a href="arrivi.html">Arrivi &amp; partenze</a>
+  <a href="guida.html">🎒 Guida pre-partenza</a> · <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="aneddoti.html">📖 Aneddoti</a> · <a href="viaggio.html">I viaggi</a> · <a href="avionica.html">Avionica a bordo</a> · <a href="membro.html">L'equipaggio</a> · <a href="arrivi.html">Arrivi &amp; partenze</a>
 </footer>
 
 <script>
@@ -1047,7 +1047,7 @@ clockTimer.unref?.();
 
 // tema giorno/notte: auto sull'alba e il tramonto veri (day-mode leggibile al
 // sole, night-mode che non brucia la visione notturna), forzabile dal bottone
-function themeMode() { try { return localStorage.getItem("nina_theme") || "auto"; } catch { return "auto"; } }
+function themeMode() { try { return localStorage.getItem("nina_theme") || "light"; } catch { return "light"; } }
 function applyTheme() {
   const mode = themeMode();
   let dark;

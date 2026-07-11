@@ -12,6 +12,8 @@ except PermissionError:
     if not os.path.exists(_cvtmp): raise   # nessuna copia utilizzabile -> chiudi Excel
     print("CV lockato da Excel/OneDrive: uso la copia temp esistente", _cvtmp)
 CREWJSON = os.path.join(ROOT, "site", "data", "crew.json")
+# la zona "Inner Islands" (crociera Seychelles) va mostrata come "Seychelles"
+ZONE_OVERRIDE = {"Inner Islands": "Seychelles"}
 
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
 people = {}
@@ -25,7 +27,7 @@ for r in wb["Summary"].iter_rows(min_row=2, values_only=True):
     try: t = int(float(r[0]))
     except: continue
     trip_year[t] = int(float(r[1])); trip_days[t] = float(r[10]); trip_nm[t] = int(float(r[9]))
-    trip_name[t] = (r[8] or "").strip(); trip_zone[t] = (r[5] or "").strip()
+    trip_name[t] = (r[8] or "").strip(); _z = (r[5] or "").strip(); trip_zone[t] = ZONE_OVERRIDE.get(_z, _z)
     trip_country[t] = (r[4] or "").strip(); trip_boat[t] = (r[6] or "").strip()
 part = collections.defaultdict(list)       # pid -> [trip id]
 roster = collections.defaultdict(list)     # trip id -> [pid]  (per la co-navigazione)

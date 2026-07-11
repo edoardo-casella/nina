@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aneddoti · Plancia Niña</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43; --rosso:#C0392B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71; --rosso:#E2536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.water{font-style:italic}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin:1.5rem 0 1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.plink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
+.plink:hover{color:var(--accent)}
+/* hero */
+.ahero{padding:1.6rem 1.1rem .2rem}
+.ahero .yr{font:700 .62rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.ahero h1{font:700 2.2rem/1.02 var(--display);letter-spacing:.01em;margin:.35rem 0 .2rem}
+.ahero .sub{color:var(--soft)}
+/* incident (identico al dossier skipper) */
+.dossier-note{font-size:.92rem;color:var(--soft);margin-bottom:1.1rem;line-height:1.6}
+.incident{position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--hair);
+  border-left:3px solid var(--rosso);border-radius:4px;padding:1.05rem 1.1rem;margin-bottom:1rem}
+.incident.gold{border-left-color:var(--gold)}
+.incident.gold .stamp{border-color:var(--gold);color:var(--gold)}
+.incident.gold .les b,.incident.gold .esito b{color:var(--gold)}
+.incident.legend{border-left-color:var(--accent)}
+.incident.legend .stamp{border-color:var(--accent);color:var(--accent)}
+.incident.legend .les b,.incident.legend .esito b{color:var(--accent)}
+.incident .stamp{position:absolute;top:.8rem;right:.7rem;transform:rotate(7deg);border:2px solid var(--rosso);
+  color:var(--rosso);font:700 .56rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;
+  padding:.24rem .45rem;border-radius:3px;opacity:.8}
+.incident h3{font:700 1.18rem/1.2 var(--body);margin-bottom:.25rem;padding-right:5rem}
+.incident .meta{font:700 .6rem/1.3 var(--display);letter-spacing:.11em;text-transform:uppercase;color:var(--soft);margin-bottom:.7rem;display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.incident p{font-size:.94rem;line-height:1.65;margin-bottom:.55rem}
+.incident .les{border-top:1px dashed var(--hair);padding-top:.65rem;margin-top:.7rem}
+.incident .les b{font:700 .58rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--rosso)}
+.incident .les ol{margin:.45rem 0 0 1.1rem;font-size:.88rem;line-height:1.55}
+.incident .les li{margin-bottom:.25rem}
+.incident .esito{margin-top:.7rem;font:600 .82rem/1.5 var(--body);color:var(--ink)}
+.incident .esito b{color:var(--rosso)}
+.incident .video{position:relative;margin-top:.9rem;border-radius:4px;overflow:hidden;aspect-ratio:16/9;background:#000}
+.incident .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.incident .shots{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.9rem}
+@media(max-width:460px){.incident .shots{grid-template-columns:1fr}}
+.incident .shots figure{margin:0}
+.incident .shots img{width:100%;height:auto;border-radius:4px;display:block;background:#0a1424}
+.incident .shots figcaption{font:italic 400 .72rem/1.35 var(--body);color:var(--soft);margin-top:.3rem}
+.incident .oneshot{margin:.9rem 0 0}
+.incident .oneshot img{width:100%;max-width:460px;border-radius:4px;display:block}
+.incident .oneshot figcaption{font:italic 400 .72rem/1.35 var(--body);color:var(--soft);margin-top:.3rem}
+.incident .zoom{cursor:zoom-in}
+/* crediti aneddoto: persone taggate + viaggio collegato */
+.acredits{margin-top:1rem;display:flex;flex-direction:column;gap:.8rem}
+.crlab{font:700 .58rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.5rem;display:block}
+.pchips{display:flex;flex-wrap:wrap;gap:.5rem}
+.pchip{display:inline-flex;align-items:center;gap:.5rem;background:var(--panel);border:1px solid var(--hair);border-radius:99px;padding:.24rem .8rem .24rem .28rem;text-decoration:none;color:inherit}
+.pchip:hover{border-color:var(--accent)}
+.pchip .pav{width:32px;height:32px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 .85rem/1 var(--display);color:#fff}
+.pchip .pn{font-weight:600;font-size:.88rem}
+.triplink{display:inline-flex;align-items:center;gap:.5rem;background:var(--sea-1);border:1px solid var(--hair);border-radius:8px;padding:.6rem .8rem;text-decoration:none;color:inherit}
+.triplink:hover{border-color:var(--accent)}
+.triplink .tl-b{font-weight:600}
+.triplink .tl-b small{display:block;font:700 .56rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.triplink .go{margin-left:auto;color:var(--soft);font-weight:700}
+/* directory card */
+.agrid{display:grid;grid-template-columns:1fr;gap:.8rem}
+@media(min-width:560px){.agrid{grid-template-columns:1fr 1fr}}
+.acard{position:relative;display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--hair);
+  border-left:3px solid var(--rosso);border-radius:6px;padding:.95rem 1rem;transition:border-color .12s}
+.acard.gold{border-left-color:var(--gold)}
+.acard.legend{border-left-color:var(--accent)}
+.acard:hover{border-color:var(--accent)}
+.acard .kb{display:inline-block;font:700 .52rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
+  border-radius:99px;padding:.3rem .55rem;margin-bottom:.55rem;background:color-mix(in srgb,var(--rosso) 16%,transparent);color:var(--rosso)}
+.acard.gold .kb{background:color-mix(in srgb,var(--gold) 20%,transparent);color:var(--gold)}
+.acard.legend .kb{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.acard h3{font:700 1.08rem/1.18 var(--body);margin-bottom:.3rem}
+.acard .meta{font:700 .58rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);display:flex;gap:.35rem;flex-wrap:wrap}
+.acard .avs{display:flex;margin-top:.7rem}
+.acard .avs .pav{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--sea-2);border:2px solid var(--panel);margin-left:-8px;display:flex;align-items:center;justify-content:center;font:700 .72rem/1 var(--display);color:#fff}
+.acard .avs .pav:first-child{margin-left:0}
+.acard .go{position:absolute;right:.9rem;bottom:.8rem;color:var(--soft);font-weight:700}
+.anav{display:flex;justify-content:space-between;gap:.6rem;margin-top:1.2rem}
+.anav a{flex:1;background:var(--panel);border:1px solid var(--hair);border-radius:8px;padding:.6rem .8rem;text-decoration:none;color:inherit;font-size:.9rem}
+.anav a small{display:block;font:700 .56rem/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.anav a.next{text-align:right}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+#lb{position:fixed;inset:0;z-index:80;background:rgba(3,7,14,.95);display:none;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:90vh;object-fit:contain;border-radius:4px}
+#lb .x{position:absolute;top:.7rem;right:1rem;color:#fff;font-size:1.9rem;background:none;border:0;cursor:pointer;line-height:1}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="skipper.html">‹ Lo skipper</a>
+  <span class="tag">📖 Aneddoti Niña</span>
+</div></div>
+<main id="app"></main>
+<div id="lb"><button class="x" aria-label="chiudi">✕</button><img alt=""></div>
+
+<script>
+const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+const KIND = { errore: "Errore fatale", eroico: "Atto eroico", leggenda: "Leggenda di bordo" };
+const KCLASS = { eroico: " gold", leggenda: " legend" };
+
+function lbOne(src){ const lb=document.getElementById('lb'); lb.querySelector('img').src=src; lb.classList.add('on'); }
+(function(){ const lb=document.getElementById('lb'); lb.querySelector('.x').onclick=()=>lb.classList.remove('on'); lb.onclick=e=>{ if(e.target!==lb.querySelector('img')) lb.classList.remove('on'); }; document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); }); })();
+
+let ANEC = [], PEOPLE = new Map(), TRIPS = new Map();
+const initial = n => (String(n||"?").trim()[0] || "?").toUpperCase();
+function photoOf(m){ return (m && m.crew2026 && m.crew2026.photo) || (m && m.photo) || null; }
+function avatarMini(id, cls){
+  const m = PEOPLE.get(id);
+  const name = m ? m.name : id;
+  const ph = m ? photoOf(m) : null;
+  return ph ? `<img class="${cls}" src="${ph}" alt="${esc(name)}" loading="lazy">` : `<span class="${cls}">${esc(initial(name))}</span>`;
+}
+function personChip(id){
+  const m = PEOPLE.get(id);
+  const name = m ? m.name : id;
+  return `<a class="pchip" href="membro.html#${encodeURIComponent(id)}">${avatarMini(id,"pav")}<span class="pn">${esc(name)}</span></a>`;
+}
+function tripLink(a){
+  if (!a.trip_id) return "";
+  const t = TRIPS.get(a.trip_id);
+  if (!t) return "";
+  const boat = t.name ? `«${esc(t.name)}»${t.boat ? " · " + esc(t.boat) : ""}` : esc(t.boat || "");
+  const zone = esc((t.zone || t.country || "").replace(/\s*-\s*[A-Z]{2}\s*$/i, ""));
+  return `<a class="triplink" href="viaggio.html#${encodeURIComponent(a.trip_id)}">
+      <span class="tl-b">${zone}<small>⛵ ${boat}${t.year ? " · " + t.year : ""}</small></span><span class="go">›</span></a>`;
+}
+function incidentBlock(a){
+  return `<div class="incident${KCLASS[a.kind] || ""}"><span class="stamp">${esc(a.stamp)}</span>
+    <h3>${esc(a.title)}</h3>
+    <div class="meta">${a.meta}</div>
+    ${a.bodyHtml}</div>`;
+}
+
+function detailPage(a){
+  const idx = ANEC.findIndex(x => x.id === a.id);
+  const prev = ANEC[idx - 1], next = ANEC[idx + 1];
+  const people = a.people || [];
+  const credits = `<div class="acredits">
+    ${people.length ? `<div><span class="crlab">Chi c'era</span><div class="pchips">${people.map(personChip).join("")}</div></div>` : ""}
+    ${a.trip_id && TRIPS.get(a.trip_id) ? `<div><span class="crlab">Viaggio collegato</span>${tripLink(a)}</div>` : ""}
+  </div>`;
+  return `<div class="ahero"><div class="yr">${esc(KIND[a.kind] || "Aneddoto")}</div>
+      <h1>${esc(a.title)}</h1></div>
+    <section>
+      ${incidentBlock(a)}
+      ${credits}
+      <div class="anav">
+        ${prev ? `<a href="#${prev.id}"><small>‹ Precedente</small>${esc(prev.title)}</a>` : "<span></span>"}
+        ${next ? `<a class="next" href="#${next.id}"><small>Successivo ›</small>${esc(next.title)}</a>` : "<span></span>"}
+      </div>
+    </section>
+    <footer><a class="pl" href="aneddoti.html">‹ Tutti gli aneddoti</a></footer>`;
+}
+
+function card(a){
+  const avs = (a.people || []).slice(0, 5).map(id => avatarMini(id, "pav")).join("");
+  return `<a class="acard${KCLASS[a.kind] || ""}" href="#${a.id}">
+    <span class="kb">${esc(KIND[a.kind] || "Aneddoto")}</span>
+    <h3>${esc(a.title)}</h3>
+    <div class="meta">${a.meta}</div>
+    ${avs ? `<div class="avs">${avs}</div>` : ""}
+    <span class="go">›</span></a>`;
+}
+
+function directory(){
+  const errori = ANEC.filter(a => a.kind === "errore");
+  const eroici = ANEC.filter(a => a.kind === "eroico");
+  const leggende = ANEC.filter(a => a.kind === "leggenda");
+  const sec = (title, note, items) => items.length ? `<section><h2>${title}</h2>
+    <p class="dossier-note">${note}</p>
+    <div class="agrid">${items.map(card).join("")}</div></section>` : "";
+  return `<div class="ahero"><div class="yr">Registro di bordo · aneddoti</div>
+      <h1>Aneddoti</h1>
+      <div class="sub">Le storie di bordo — disastri raccontati con ironia, imprese di puro valore marinaresco e leggende dell'equipaggio. Ogni aneddoto è taggato con chi c'era e col viaggio a cui appartiene.</div></div>
+    ${sec("Gli errori fatali", "Il registro dei disastri, declassificato — perché sui propri errori è meglio riderci su.", errori)}
+    ${sec("Atti eroici", "Non solo disastri: agli atti risultano anche imprese di puro valore marinaresco.", eroici)}
+    ${sec("Leggende di bordo", "Le storie che l'equipaggio si tramanda — vizi, abitudini e imprese minori entrate nella mitologia della Niña.", leggende)}
+    <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
+}
+
+function route(){
+  const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+  const a = ANEC.find(x => x.id === id);
+  document.getElementById("app").innerHTML = a ? detailPage(a) : directory();
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", () => { document.getElementById("lb").classList.remove("on"); route(); });
+
+Promise.all([
+  fetch("data/anecdotes.json", { cache: "no-cache" }).then(r => r.json()),
+  fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({ people: [] })),
+  fetch("data/trips.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({ trips: [] })),
+]).then(([da, dc, dt]) => {
+  ANEC = da.anecdotes || [];
+  (dc.people || []).forEach(p => PEOPLE.set(p.id, p));
+  (dt.trips || []).forEach(t => TRIPS.set(t.id, t));
+  route();
+}).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Aneddoti non disponibili offline.</p></section>`; });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

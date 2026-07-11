@@ -239,9 +239,11 @@ function tripPage(t, all) {
     ${gal}
     <h2>⚓ L'equipaggio di quell'anno</h2>
     <div class="chips">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>
+    ${ANEC.filter(a => a.trip_id === t.id).length ? `<h2>📖 Aneddoti di questo viaggio</h2>
+    <div class="chips">${ANEC.filter(a => a.trip_id === t.id).map(a => `<a class="chip lk" href="aneddoti.html#${a.id}">${a.kind === "eroico" ? "🎖️" : "⚓"} ${esc(a.title)}</a>`).join("")}</div>` : ""}
     <div class="nav2">
-      ${prev ? `<a href="#${prev.id}"><small>‹ ${prev.year}</small>${esc(cleanZone(prev.zone))}</a>` : "<span></span>"}
-      ${next ? `<a class="next" href="#${next.id}"><small>${next.year} ›</small>${esc(cleanZone(next.zone))}</a>` : "<span></span>"}
+      ${prev ? `<a href="#${prev.id}"><small>‹ ${prev.year}</small>${esc(cleanZone(prev.zone))}${prev.name ? ` · «${esc(prev.name)}»` : ""}</a>` : "<span></span>"}
+      ${next ? `<a class="next" href="#${next.id}"><small>${next.year} ›</small>${esc(cleanZone(next.zone))}${next.name ? ` · «${esc(next.name)}»` : ""}</a>` : "<span></span>"}
     </div>
   </section>
   <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer>`;
@@ -255,6 +257,7 @@ function directory(all) {
       ? `<img class="ph" src="${t.photos[0].src}" alt="${esc(zone)}" loading="lazy">`
       : `<div class="ph none">${flags(t.country) || "⛵"}</div>`;
     return `<a class="tcard" href="#${t.id}">${ph}<div class="b"><b>${flags(t.country)} ${esc(zone)}</b>
+      <span>${t.name ? `«${esc(t.name)}» · ` : ""}${esc(t.boat || "")}</span><br>
       <span>${t.year} · ${t.nm} nm</span>${t.n_photos ? `<br><span class="pc">📷 ${t.n_photos} foto</span>` : ""}</div></a>`;
   }).join("");
   const withPh = all.filter(t => t.n_photos).length;
@@ -264,7 +267,7 @@ function directory(all) {
     <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer></section>`;
 }
 
-let DATA = [];
+let DATA = [], ANEC = [];
 function route() {
   const id = decodeURIComponent(location.hash.replace(/^#/, ""));
   const t = DATA.find(x => x.id === id);
@@ -275,8 +278,10 @@ window.addEventListener("hashchange", () => { document.getElementById("lb").clas
 Promise.all([
   fetch("data/trips.json", { cache: "no-cache" }).then(r => r.json()),
   fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({ people: [] })),
-]).then(([d, dc]) => {
+  fetch("data/anecdotes.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({ anecdotes: [] })),
+]).then(([d, dc, da]) => {
   buildCrewMap(dc.people || []);
+  ANEC = da.anecdotes || [];
   DATA = (d.trips || []).slice().sort((a, b) => a.year - b.year || a.nm - b.nm);
   route();
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Viaggi non disponibili offline.</p></section>`; });
