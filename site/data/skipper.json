@@ -342,5 +342,20 @@
     "skipper/img/vela-2016-1.jpg",
     "skipper/img/caraibi-2017-2.jpg",
     "skipper/img/vela-2016-2.jpg"
+  ],
+  "n_crewmates": 57,
+  "crewmates": [
+    {"name": "Edoardo C.", "trips": 25, "first": 2011, "last": 2024, "me": true},
+    {"name": "Matilde C.", "trips": 10, "first": 2011, "last": 2021},
+    {"name": "Bernardo B.", "trips": 9, "first": 2011, "last": 2024},
+    {"name": "Margherita C.", "trips": 9, "first": 2011, "last": 2021},
+    {"name": "Claudio C.", "trips": 8, "first": 2011, "last": 2021},
+    {"name": "Paola C.", "trips": 8, "first": 2011, "last": 2021},
+    {"name": "Riccardo B.", "trips": 7, "first": 2015, "last": 2023},
+    {"name": "Leonardo M.", "trips": 6, "first": 2014, "last": 2022},
+    {"name": "Cecilia R.", "trips": 6, "first": 2017, "last": 2020},
+    {"name": "Giacomo N.", "trips": 5, "first": 2021, "last": 2024},
+    {"name": "Ginevra L.", "trips": 4, "first": 2022, "last": 2024},
+    {"name": "Sofia M.", "trips": 4, "first": 2018, "last": 2024}
   ]
 }

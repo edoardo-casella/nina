@@ -109,6 +109,20 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .th .n span{font:600 .62rem/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
 .th .mi{font:700 .95rem/1 var(--mono);color:var(--gold)}
 
+/* la ciurma — classifica compagni di navigazione */
+.cm-intro{font-size:.95rem;color:var(--soft);margin-bottom:1rem;line-height:1.6}
+.cmwrap{display:flex;flex-direction:column;gap:.35rem}
+.cm{display:grid;grid-template-columns:1.5rem minmax(4.5rem,9rem) 1fr 1.7rem;align-items:center;gap:.55rem;padding:.28rem 0}
+.cm-rank{font:700 .82rem/1 var(--mono);color:var(--soft);text-align:center}
+.cm-name{font-size:.9rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cm-yr{font:400 .7rem/1 var(--mono);color:var(--soft)}
+.cm-bar{height:9px;background:var(--sea-2);border-radius:5px;overflow:hidden}
+.cm-bar>i{display:block;height:100%;background:var(--accent);border-radius:5px}
+.cm-n{font:700 .92rem/1 var(--mono);color:var(--ink);text-align:right}
+.cm.me .cm-bar>i{background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+.cm.me .cm-name,.cm.me .cm-n,.cm.me .cm-rank{color:var(--gold)}
+.cm-more{margin-top:.9rem;font-size:.83rem;color:var(--soft);line-height:1.5}
+
 /* DECORAZIONI */
 .medals{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:.7rem}
 .dec{text-align:center}
@@ -398,6 +412,28 @@ function tripsHTML(d) {
 }
 
 // Gli errori fatali — contenuto statico (aneddoti dello skipper, tono autoironico)
+// La ciurma negli anni: classifica compagni per numero di crociere (iniziali)
+function crewmatesHTML(d) {
+  const cm = d.crewmates || [];
+  if (!cm.length) return "";
+  const max = Math.max(...cm.map(x => x.trips));
+  const rows = cm.map((x, i) => {
+    const pct = Math.max(6, Math.round(x.trips / max * 100));
+    const yrs = x.first ? `${x.first}${x.last && x.last !== x.first ? "–" + x.last : ""}` : "";
+    return `<div class="cm ${x.me ? "me" : ""}">
+      <span class="cm-rank">${x.me ? "👑" : i}</span>
+      <span class="cm-name">${esc(x.name)}${yrs ? ` <span class="cm-yr">${yrs}</span>` : ""}</span>
+      <span class="cm-bar"><i style="width:${pct}%"></i></span>
+      <span class="cm-n">${x.trips}</span></div>`;
+  }).join("");
+  const others = Math.max(0, (d.n_crewmates || 0) - (cm.length - 1));
+  return `<section><h2>La ciurma negli anni</h2>
+    <p class="cm-intro">Chi ha condiviso più rotte con l'Ammiraglio in 14 stagioni di mare. In cima, ovviamente, c'è chi non ha mai saltato un imbarco.</p>
+    <div class="cmwrap">${rows}</div>
+    <p class="cm-more">👑 l'Ammiraglio, presente su tutte le <b>25</b> crociere${others > 0 ? ` · e altri <b>${others}</b> compagni saliti a bordo almeno una volta` : ""}.</p>
+  </section>`;
+}
+
 function mistakesHTML() {
   return `<section id="errori-fatali"><h2>Gli errori fatali</h2>
   <p class="dossier-note">Ogni comandante tiene, da qualche parte, il registro dei disastri.
@@ -572,6 +608,7 @@ function render(d) {
 
   <section><h2>Rapporto di servizio</h2><p class="lead">${lead(d)}</p></section>
   ${theatres(d)}
+  ${crewmatesHTML(d)}
   ${decorations(d)}
   ${galleryHTML(d)}
   ${travelVideosHTML()}
