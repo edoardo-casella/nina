@@ -1,23 +1,711 @@
 {
-  "generated_at": "2026-07-11",
-  "note": "x = volte già in barca con Edoardo; fy = primo anno. I nickname non trovati nel registro storico valgono come prima volta. Campo q = scheda dal questionario equipaggio (da compilare).",
-  "members": [
-    {"id": "edo-c", "name": "Edo C", "role": "skipper", "board": "2026-08-08", "leave": "2026-08-29", "x": 25, "fy": 2011, "photo": "skipper/img/edoardo-id.jpg", "link": "skipper.html"},
-    {"id": "bernardo-b", "name": "Bernardo B", "role": "skipper", "board": "2026-08-08", "leave": "2026-08-21", "x": 9, "fy": 2011, "photo": "crew/img/bernardo-b.jpg"},
-    {"id": "giacomo-n", "name": "Giacomo N", "nick": "Jack", "role": "crew", "board": "2026-08-08", "leave": "2026-08-17", "x": 5, "fy": 2021, "photo": "crew/img/giacomo-n.jpg", "note": "Habitué dei <a href=\"skipper.html#errori-fatali\">rapporti d'incidente</a> 😅 — il capitano ha una regola tutta sua su di lui."},
-    {"id": "ginevra-l", "name": "Ginevra L", "role": "crew", "board": "2026-08-08", "leave": "2026-08-29", "x": 4, "fy": 2022, "photo": "crew/img/ginevra-l.jpg"},
-    {"id": "bianca-b", "name": "Bianca B", "role": "crew", "board": "2026-08-08", "leave": "2026-08-21", "x": 0},
-    {"id": "mati-m", "name": "Mati M", "role": "crew", "board": "2026-08-08", "leave": "2026-08-17", "x": 0},
-    {"id": "davide", "name": "Davide", "role": "crew", "board": "2026-08-15", "leave": "2026-08-22", "x": 0},
-    {"id": "manlio", "name": "Manlio", "role": "crew", "board": "2026-08-15", "leave": "2026-08-22", "x": 0},
-    {"id": "fede-b", "name": "Fede B", "role": "crew", "board": "2026-08-15", "leave": "2026-08-29", "x": 1, "fy": 2023},
-    {"id": "giulia-n", "name": "Giulia N", "role": "crew", "board": "2026-08-15", "leave": "2026-08-29", "x": 0},
-    {"id": "fede-n", "name": "Fede N", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 0},
-    {"id": "ilaria-m", "name": "Ilaria M", "role": "apprentice", "board": "2026-08-21", "leave": "2026-08-29", "x": 2, "fy": 2017},
-    {"id": "lavinia-p", "name": "Lavinia P", "role": "crew", "board": "2026-08-21", "leave": "2026-08-29", "x": 0},
-    {"id": "riccardo-b", "name": "Riccardo B", "role": "apprentice", "board": "2026-08-21", "leave": "2026-08-29", "x": 7, "fy": 2015},
-    {"id": "andrea-a", "name": "Andrea A", "role": "crew", "board": "2026-08-22", "leave": "2026-08-29", "x": 4, "fy": 2011},
-    {"id": "gabri-m", "name": "Gabri M", "role": "apprentice", "board": "2026-08-22", "leave": "2026-08-29", "x": 2, "fy": 2017},
-    {"id": "simona-a", "name": "Simona A", "role": "crew", "board": "2026-08-22", "leave": "2026-08-29", "x": 0}
-  ]
+ "generated_at": "2026-07-11",
+ "ranks": {
+  "admiral": "Ammiraglio",
+  "capt": "Capitano di vascello",
+  "cdr": "Capitano di fregata",
+  "ltcdr": "Capitano di corvetta",
+  "lt": "Tenente di vascello",
+  "ltjg": "Sottotenente di vascello",
+  "ensign": "Guardiamarina",
+  "recruit": "Allievo"
+ },
+ "n_total": 64,
+ "people": [
+  {
+   "id": "edo-c",
+   "name": "Edo C",
+   "trips": 25,
+   "days": 290,
+   "first": 2011,
+   "last": 2024,
+   "rank": "admiral",
+   "me": true,
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-29",
+    "role": "skipper",
+    "x": 25,
+    "fy": 2011,
+    "photo": "skipper/img/edoardo-id.jpg",
+    "link": "skipper.html"
+   }
+  },
+  {
+   "id": "matilde-c",
+   "name": "Matilde C.",
+   "trips": 10,
+   "days": 142,
+   "first": 2011,
+   "last": 2021,
+   "rank": "capt"
+  },
+  {
+   "id": "margherita-c",
+   "name": "Margherita C.",
+   "trips": 9,
+   "days": 132,
+   "first": 2011,
+   "last": 2021,
+   "rank": "cdr"
+  },
+  {
+   "id": "claudio-c",
+   "name": "Claudio C.",
+   "trips": 8,
+   "days": 120,
+   "first": 2011,
+   "last": 2021,
+   "rank": "cdr"
+  },
+  {
+   "id": "paola-c",
+   "name": "Paola C.",
+   "trips": 8,
+   "days": 120,
+   "first": 2011,
+   "last": 2021,
+   "rank": "cdr"
+  },
+  {
+   "id": "bernardo-b",
+   "name": "Bernardo B",
+   "trips": 9,
+   "days": 110,
+   "first": 2011,
+   "last": 2024,
+   "rank": "cdr",
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-21",
+    "role": "skipper",
+    "x": 9,
+    "fy": 2011,
+    "photo": "crew/img/bernardo-b.jpg"
+   }
+  },
+  {
+   "id": "cecilia-r",
+   "name": "Cecilia R.",
+   "trips": 6,
+   "days": 70,
+   "first": 2017,
+   "last": 2020,
+   "rank": "ltcdr"
+  },
+  {
+   "id": "riccardo-b",
+   "name": "Riccardo B",
+   "trips": 7,
+   "days": 66,
+   "first": 2015,
+   "last": 2023,
+   "rank": "ltcdr",
+   "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
+    "role": "apprentice",
+    "x": 7,
+    "fy": 2015
+   }
+  },
+  {
+   "id": "leonardo-m",
+   "name": "Leonardo M.",
+   "trips": 6,
+   "days": 62,
+   "first": 2014,
+   "last": 2022,
+   "rank": "ltcdr"
+  },
+  {
+   "id": "gabriele-b",
+   "name": "Gabriele B.",
+   "trips": 3,
+   "days": 59,
+   "first": 2011,
+   "last": 2013,
+   "rank": "lt"
+  },
+  {
+   "id": "giacomo-n",
+   "name": "Giacomo N",
+   "trips": 5,
+   "days": 51,
+   "first": 2021,
+   "last": 2024,
+   "rank": "lt",
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-17",
+    "role": "crew",
+    "x": 5,
+    "fy": 2021,
+    "photo": "crew/img/giacomo-n.jpg",
+    "nick": "Jack",
+    "note": "Habitué dei <a href=\"skipper.html#errori-fatali\">rapporti d'incidente</a> 😅 — il capitano ha una regola tutta sua su di lui."
+   }
+  },
+  {
+   "id": "sofia-m",
+   "name": "Sofia M.",
+   "trips": 4,
+   "days": 46,
+   "first": 2018,
+   "last": 2024,
+   "rank": "lt"
+  },
+  {
+   "id": "ginevra-l",
+   "name": "Ginevra L",
+   "trips": 4,
+   "days": 39,
+   "first": 2022,
+   "last": 2024,
+   "rank": "lt",
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-29",
+    "role": "crew",
+    "x": 4,
+    "fy": 2022,
+    "photo": "crew/img/ginevra-l.jpg"
+   }
+  },
+  {
+   "id": "pietro-c",
+   "name": "Pietro C.",
+   "trips": 3,
+   "days": 38,
+   "first": 2011,
+   "last": 2024,
+   "rank": "lt"
+  },
+  {
+   "id": "gualtiero-s",
+   "name": "Gualtiero S.",
+   "trips": 3,
+   "days": 37,
+   "first": 2014,
+   "last": 2022,
+   "rank": "lt"
+  },
+  {
+   "id": "andrea-a",
+   "name": "Andrea A",
+   "trips": 4,
+   "days": 36,
+   "first": 2011,
+   "last": 2022,
+   "rank": "lt",
+   "crew2026": {
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
+    "role": "crew",
+    "x": 4,
+    "fy": 2011
+   }
+  },
+  {
+   "id": "luca-b",
+   "name": "Luca B.",
+   "trips": 3,
+   "days": 34,
+   "first": 2015,
+   "last": 2019,
+   "rank": "ltjg"
+  },
+  {
+   "id": "rebecca-b",
+   "name": "Rebecca B.",
+   "trips": 3,
+   "days": 34,
+   "first": 2015,
+   "last": 2019,
+   "rank": "ltjg"
+  },
+  {
+   "id": "belinda-b",
+   "name": "Belinda B.",
+   "trips": 2,
+   "days": 33,
+   "first": 2011,
+   "last": 2016,
+   "rank": "ltjg"
+  },
+  {
+   "id": "marta-a",
+   "name": "Marta A.",
+   "trips": 2,
+   "days": 31,
+   "first": 2020,
+   "last": 2022,
+   "rank": "ltjg"
+  },
+  {
+   "id": "silvano-b",
+   "name": "Silvano B.",
+   "trips": 3,
+   "days": 30,
+   "first": 2015,
+   "last": 2021,
+   "rank": "ltjg"
+  },
+  {
+   "id": "simona-b",
+   "name": "Simona B.",
+   "trips": 3,
+   "days": 30,
+   "first": 2015,
+   "last": 2021,
+   "rank": "ltjg"
+  },
+  {
+   "id": "marco-t",
+   "name": "Marco T.",
+   "trips": 3,
+   "days": 29,
+   "first": 2011,
+   "last": 2015,
+   "rank": "ltjg"
+  },
+  {
+   "id": "jennifer-s",
+   "name": "Jennifer S.",
+   "trips": 2,
+   "days": 27,
+   "first": 2021,
+   "last": 2024,
+   "rank": "ltjg"
+  },
+  {
+   "id": "giacomo-b",
+   "name": "Giacomo B.",
+   "trips": 2,
+   "days": 26,
+   "first": 2020,
+   "last": 2022,
+   "rank": "ltjg"
+  },
+  {
+   "id": "laura-c",
+   "name": "Laura C.",
+   "trips": 2,
+   "days": 23,
+   "first": 2018,
+   "last": 2022,
+   "rank": "ltjg"
+  },
+  {
+   "id": "carlo-a",
+   "name": "Carlo A.",
+   "trips": 2,
+   "days": 23,
+   "first": 2011,
+   "last": 2015,
+   "rank": "ltjg"
+  },
+  {
+   "id": "ilaria-m",
+   "name": "Ilaria M",
+   "trips": 2,
+   "days": 22,
+   "first": 2017,
+   "last": 2019,
+   "rank": "ltjg",
+   "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
+    "role": "apprentice",
+    "x": 2,
+    "fy": 2017
+   }
+  },
+  {
+   "id": "gabri-m",
+   "name": "Gabri M",
+   "trips": 2,
+   "days": 22,
+   "first": 2017,
+   "last": 2019,
+   "rank": "ltjg",
+   "crew2026": {
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
+    "role": "apprentice",
+    "x": 2,
+    "fy": 2017
+   }
+  },
+  {
+   "id": "matilde-r",
+   "name": "Matilde R.",
+   "trips": 1,
+   "days": 20,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ltjg"
+  },
+  {
+   "id": "sara-b",
+   "name": "Sara B.",
+   "trips": 1,
+   "days": 20,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ltjg"
+  },
+  {
+   "id": "alice-s",
+   "name": "Alice S.",
+   "trips": 1,
+   "days": 20,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ltjg"
+  },
+  {
+   "id": "beatrice-f",
+   "name": "Beatrice F.",
+   "trips": 1,
+   "days": 20,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ltjg"
+  },
+  {
+   "id": "sergio-s",
+   "name": "Sergio S.",
+   "trips": 1,
+   "days": 20,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ltjg"
+  },
+  {
+   "id": "martina-g",
+   "name": "Martina G.",
+   "trips": 1,
+   "days": 20,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ltjg"
+  },
+  {
+   "id": "giorgio-m",
+   "name": "Giorgio M.",
+   "trips": 1,
+   "days": 20,
+   "first": 2020,
+   "last": 2020,
+   "rank": "ltjg"
+  },
+  {
+   "id": "filippo-r",
+   "name": "Filippo R.",
+   "trips": 1,
+   "days": 20,
+   "first": 2014,
+   "last": 2014,
+   "rank": "ltjg"
+  },
+  {
+   "id": "nicola-r",
+   "name": "Nicola R.",
+   "trips": 1,
+   "days": 20,
+   "first": 2014,
+   "last": 2014,
+   "rank": "ltjg"
+  },
+  {
+   "id": "riccardo-t",
+   "name": "Riccardo T.",
+   "trips": 2,
+   "days": 13,
+   "first": 2021,
+   "last": 2022,
+   "rank": "ensign"
+  },
+  {
+   "id": "chiara-f",
+   "name": "Chiara F.",
+   "trips": 1,
+   "days": 13,
+   "first": 2016,
+   "last": 2016,
+   "rank": "ensign"
+  },
+  {
+   "id": "umberto-f",
+   "name": "Umberto F.",
+   "trips": 2,
+   "days": 12,
+   "first": 2014,
+   "last": 2022,
+   "rank": "ensign"
+  },
+  {
+   "id": "ludovica-r",
+   "name": "Ludovica R.",
+   "trips": 1,
+   "days": 12,
+   "first": 2018,
+   "last": 2018,
+   "rank": "ensign"
+  },
+  {
+   "id": "giacomo-m",
+   "name": "Giacomo M.",
+   "trips": 1,
+   "days": 12,
+   "first": 2018,
+   "last": 2018,
+   "rank": "ensign"
+  },
+  {
+   "id": "carlotta-d",
+   "name": "Carlotta D.",
+   "trips": 1,
+   "days": 11,
+   "first": 2022,
+   "last": 2022,
+   "rank": "ensign"
+  },
+  {
+   "id": "michele-m",
+   "name": "Michele M.",
+   "trips": 1,
+   "days": 11,
+   "first": 2017,
+   "last": 2017,
+   "rank": "ensign"
+  },
+  {
+   "id": "monica-m",
+   "name": "Monica M.",
+   "trips": 1,
+   "days": 11,
+   "first": 2017,
+   "last": 2017,
+   "rank": "ensign"
+  },
+  {
+   "id": "enrico-g",
+   "name": "Enrico G.",
+   "trips": 1,
+   "days": 11,
+   "first": 2011,
+   "last": 2011,
+   "rank": "ensign"
+  },
+  {
+   "id": "gianmarco-m",
+   "name": "Gianmarco M.",
+   "trips": 1,
+   "days": 11,
+   "first": 2011,
+   "last": 2011,
+   "rank": "ensign"
+  },
+  {
+   "id": "alberto-b",
+   "name": "Alberto B.",
+   "trips": 1,
+   "days": 11,
+   "first": 2011,
+   "last": 2011,
+   "rank": "ensign"
+  },
+  {
+   "id": "fede-b",
+   "name": "Fede B",
+   "trips": 1,
+   "days": 6,
+   "first": 2023,
+   "last": 2023,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-29",
+    "role": "crew",
+    "x": 1,
+    "fy": 2023
+   }
+  },
+  {
+   "id": "tonino-l",
+   "name": "Tonino L.",
+   "trips": 1,
+   "days": 6,
+   "first": 2024,
+   "last": 2024,
+   "rank": "recruit"
+  },
+  {
+   "id": "angela-k",
+   "name": "Angela K.",
+   "trips": 1,
+   "days": 6,
+   "first": 2024,
+   "last": 2024,
+   "rank": "recruit"
+  },
+  {
+   "id": "mirco-l",
+   "name": "Mirco L.",
+   "trips": 1,
+   "days": 6,
+   "first": 2012,
+   "last": 2012,
+   "rank": "recruit"
+  },
+  {
+   "id": "rebecca-l",
+   "name": "Rebecca L.",
+   "trips": 1,
+   "days": 6,
+   "first": 2012,
+   "last": 2012,
+   "rank": "recruit"
+  },
+  {
+   "id": "fabiana-f",
+   "name": "Fabiana F.",
+   "trips": 1,
+   "days": 6,
+   "first": 2012,
+   "last": 2012,
+   "rank": "recruit"
+  },
+  {
+   "id": "martina-r",
+   "name": "Martina R.",
+   "trips": 1,
+   "days": 6,
+   "first": 2012,
+   "last": 2012,
+   "rank": "recruit"
+  },
+  {
+   "id": "bianca-b",
+   "name": "Bianca B",
+   "trips": 0,
+   "days": 0,
+   "first": null,
+   "last": null,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-21",
+    "role": "crew",
+    "x": 0
+   }
+  },
+  {
+   "id": "mati-m",
+   "name": "Mati M",
+   "trips": 0,
+   "days": 0,
+   "first": null,
+   "last": null,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-17",
+    "role": "crew",
+    "x": 0
+   }
+  },
+  {
+   "id": "davide",
+   "name": "Davide",
+   "trips": 0,
+   "days": 0,
+   "first": null,
+   "last": null,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-22",
+    "role": "crew",
+    "x": 0
+   }
+  },
+  {
+   "id": "manlio",
+   "name": "Manlio",
+   "trips": 0,
+   "days": 0,
+   "first": null,
+   "last": null,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-22",
+    "role": "crew",
+    "x": 0
+   }
+  },
+  {
+   "id": "giulia-n",
+   "name": "Giulia N",
+   "trips": 0,
+   "days": 0,
+   "first": null,
+   "last": null,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-29",
+    "role": "crew",
+    "x": 0
+   }
+  },
+  {
+   "id": "fede-n",
+   "name": "Fede N",
+   "trips": 0,
+   "days": 0,
+   "first": null,
+   "last": null,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
+    "role": "crew",
+    "x": 0
+   }
+  },
+  {
+   "id": "lavinia-p",
+   "name": "Lavinia P",
+   "trips": 0,
+   "days": 0,
+   "first": null,
+   "last": null,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
+    "role": "crew",
+    "x": 0
+   }
+  },
+  {
+   "id": "simona-a",
+   "name": "Simona A",
+   "trips": 0,
+   "days": 0,
+   "first": null,
+   "last": null,
+   "rank": "recruit",
+   "crew2026": {
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
+    "role": "crew",
+    "x": 0
+   }
+  }
+ ]
 }

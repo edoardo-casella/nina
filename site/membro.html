@@ -47,6 +47,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .badge{display:inline-flex;align-items:center;gap:.3rem;margin-top:.6rem;font:700 .62rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:.32rem .7rem}
 .badge.vet{color:var(--gold);border:1px solid var(--gold)}
 .badge.rookie{color:var(--accent);border:1px solid var(--accent)}
+.rankrow{margin-top:.55rem}
+.rankbadge{display:inline-flex;align-items:center;gap:.35rem;font:700 .6rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:.28rem .6rem .28rem .4rem}
+.rankbadge b{font-weight:700}
+svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 /* stats */
 .mstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.3rem}
 .mstat{background:var(--panel);padding:.9rem .4rem;text-align:center}
@@ -101,52 +105,86 @@ const QFIELDS = [
   ["dieta", "Dieta / allergie"], ["valigia", "Non può mancare"], ["motto", "Motto"], ["funfact", "Fun fact"],
 ];
 
+// gradi navali (mostrine US Navy) per seniority = giorni in mare
+const RANKC = { gold: "#C9A227", silver: "#AEB6BD", edge: "rgba(0,0,0,.35)" };
+const RANK_LABEL = { admiral: "Ammiraglio", capt: "Capitano di vascello", cdr: "Capitano di fregata", ltcdr: "Capitano di corvetta", lt: "Tenente di vascello", ltjg: "Sottotenente di vascello", ensign: "Guardiamarina", recruit: "Allievo" };
+function starPath(cx, cy, r) { let p = ""; for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * 0.4 : r; p += (i ? "L" : "M") + (cx + rr * Math.cos(a)).toFixed(1) + " " + (cy + rr * Math.sin(a)).toFixed(1); } return p + "Z"; }
+function rankSVG(r) {
+  const G = RANKC.gold, S = RANKC.silver, E = RANKC.edge;
+  const open = '<svg viewBox="0 0 44 24" class="ins">', bar = (x, c) => `<rect x="${x}" y="4.5" width="5.5" height="15" rx="2" fill="${c}" stroke="${E}" stroke-width=".6"/>`;
+  const leaf = c => `<g transform="translate(22,12)"><path d="M0,-9 C3.2,-5 7,-4 5.6,0 C8,1.6 6.6,6 3,6.6 C3.6,9 0,9 0,9.6 C0,9 -3.6,9 -3,6.6 C-6.6,6 -8,1.6 -5.6,0 C-7,-4 -3.2,-5 0,-9 Z" fill="${c}" stroke="${E}" stroke-width=".6"/><path d="M0,-7 L0,8.6" stroke="${E}" stroke-width=".7" opacity=".45" fill="none"/></g>`;
+  switch (r) {
+    case "admiral": return open + [7, 18, 29, 40].map(x => `<path d="${starPath(x, 12, 4.4)}" fill="${G}" stroke="${E}" stroke-width=".4"/>`).join("") + "</svg>";
+    case "capt": return open + `<g fill="${S}" stroke="${E}" stroke-width=".5"><path d="M22,10.6 C15,8 7,9.4 3,13 C10,12 16,12.6 22,13.6 C28,12.6 34,12 41,13 C37,9.4 29,8 22,10.6 Z"/><circle cx="22" cy="8.4" r="2"/><path d="M22,6.8 L24.2,8 L22,9.2 Z"/></g></svg>`;
+    case "cdr": return open + leaf(S) + "</svg>";
+    case "ltcdr": return open + leaf(G) + "</svg>";
+    case "lt": return open + bar(16.2, S) + bar(23.2, S) + "</svg>";
+    case "ltjg": return open + bar(19.7, S) + "</svg>";
+    case "ensign": return open + bar(19.7, G) + "</svg>";
+    default: return open + `<circle cx="22" cy="12" r="3.4" fill="none" stroke="${S}" stroke-width="1.5" opacity=".55"/></svg>`;
+  }
+}
+const photoOf = m => (m.crew2026 && m.crew2026.photo) || m.photo || null;
+const avatarP = (m, cls) => photoOf(m)
+  ? `<img class="${cls}" src="${photoOf(m)}" alt="${esc(m.name)}" loading="lazy">`
+  : `<div class="${cls}">${initial(m)}</div>`;
+const rankBadge = m => `<span class="rankbadge">${rankSVG(m.rank)} <b>${esc(RANK_LABEL[m.rank] || "")}</b></span>`;
+
 function memberPage(m, all) {
-  const vet = m.x > 0
-    ? `<span class="badge vet">⚓ veterano · ${m.x}× · dal ${m.fy}</span>`
-    : `<span class="badge rookie">🌟 prima volta a bordo</span>`;
-  const q = m.q || {};
+  const c = m.crew2026 || null;
+  const roleTxt = c ? roleLabel(c.role) : "Compagno di rotta";
+  const yrs = m.first ? `${m.first}${m.last && m.last !== m.first ? "–" + m.last : ""}` : "";
+  const vet = (m.trips || 0) > 0
+    ? `<span class="badge vet">⚓ ${m.trips} crociere · ${m.days} giorni</span>`
+    : `<span class="badge rookie">\U0001F31F prima volta a bordo</span>`;
+  const others = all.filter(x => x.crew2026 && !x.crew2026.link && x.id !== m.id);
+  const strip = others.map(x =>
+    `<a href="#${x.id}" title="${esc(x.name)}">${avatarP(x, "av")}<small>${esc(x.name)}</small></a>`).join("");
+  const note = c && c.note ? c.note : null;
+  const q = (c && c.q) || {};
   const qrows = QFIELDS.filter(([k]) => q[k]).map(([k, lab]) =>
     `<div class="qrow"><b>${lab}</b><span>${esc(q[k])}</span></div>`).join("");
-  const others = all.filter(x => x.id !== m.id && !x.link);
-  const strip = others.map(x =>
-    `<a href="#${x.id}" title="${esc(x.name)}">${avatar(x, "av")}<small>${esc(x.name)}</small></a>`).join("");
+  const nn = c ? Math.round((day(c.leave) - day(c.board)) / 864e5) : 0;
   return `
   <div class="mhero">
-    ${avatar(m, m.photo ? "mphoto" : "mph-ph")}
+    ${avatarP(m, photoOf(m) ? "mphoto" : "mph-ph")}
     <div class="mhd">
-      <div class="role">${roleLabel(m.role)}</div>
+      <div class="role">${esc(roleTxt)}</div>
       <h1>${esc(m.name)}</h1>
-      ${m.nick ? `<div class="nick">detto “${esc(m.nick)}”</div>` : ""}
+      ${c && c.nick ? `<div class="nick">detto “${esc(c.nick)}”</div>` : ""}
+      <div class="rankrow">${rankBadge(m)}</div>
       ${vet}
     </div>
   </div>
   <section>
     <div class="mstats">
-      <div class="mstat"><b>${m.x || 0}</b><i>crociere con l'Ammiraglio</i></div>
-      <div class="mstat"><b>${nights(m)}</b><i>notti a bordo</i></div>
-      <div class="mstat"><b>${m.fy || "—"}</b><i>${m.x > 0 ? "prima volta" : "esordio"}</i></div>
+      <div class="mstat"><b>${m.trips || 0}</b><i>crociere con l'Ammiraglio</i></div>
+      <div class="mstat"><b>${m.days || 0}</b><i>giorni in mare</i></div>
+      <div class="mstat"><b>${yrs || "—"}</b><i>${m.trips > 0 ? "stagioni" : "esordio"}</i></div>
     </div>
-    ${m.note ? `<h2>In breve</h2><div class="card note">${m.note}</div>` : ""}
-    <h2>A bordo nel 2026</h2>
-    <div class="card">Sale a Cannigione il <b>${fmt(m.board)}</b> e sbarca il <b>${fmt(m.leave)}</b> — <b>${nights(m)} notti</b> di navigazione tra Corsica e Sardegna.</div>
-    <h2>Scheda personale</h2>
-    ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">🧭 La scheda dal <b>questionario equipaggio</b> arriverà qui.<br><a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">Compila il questionario ›</a></div>`}
-    ${strip ? `<h2>Il resto della ciurma</h2><div class="strip">${strip}</div>` : ""}
+    ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
+    ${c ? `<h2>A bordo nel 2026</h2>
+      <div class="card">Sale a Cannigione il <b>${fmt(c.board)}</b> e sbarca il <b>${fmt(c.leave)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>
+      <h2>Scheda personale</h2>
+      ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED La scheda dal <b>questionario equipaggio</b> arriverà qui.<br><a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">Compila il questionario ›</a></div>`}`
+    : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b> e <b>${m.days} giorni</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(RANK_LABEL[m.rank] || "")}</b>.</div>`}
+    ${strip ? `<h2>La ciurma 2026</h2><div class="strip">${strip}</div>` : ""}
   </section>
-  <footer><a class="pl" href="arrivi.html">‹ Torna alla ciurma</a></footer>`;
+  <footer><a class="pl" href="${c ? "arrivi.html" : "skipper.html"}">‹ ${c ? "Torna alla ciurma" : "Torna alla classifica"}</a></footer>`;
 }
 
 function directory(all) {
-  const cards = all.filter(m => !m.link || m.photo).map(m => {
-    const badge = m.x > 0 ? `<span class="vt">${m.x}× · dal ${m.fy}</span>` : `<span class="rk">prima volta</span>`;
-    const href = m.link || `#${m.id}`;
-    return `<a class="mcard" href="${href}">${avatar(m, "ph")}<div class="b"><b>${esc(m.name)}</b><span>${roleLabel(m.role)}</span><br>${badge}</div></a>`;
+  const crew = all.filter(m => m.crew2026);
+  const cards = crew.map(m => {
+    const c = m.crew2026;
+    const badge = (m.trips || 0) > 0 ? `<span class="vt">${m.trips}× · ${m.days} gg</span>` : `<span class="rk">prima volta</span>`;
+    const href = c.link || `#${m.id}`;
+    return `<a class="mcard" href="${href}">${avatarP(m, "ph")}<div class="b"><b>${esc(m.name)}</b><span>${esc(roleLabel(c.role))}</span><br>${badge}</div></a>`;
   }).join("");
   return `<div class="mhero"><div class="mhd"><div class="role">Equipaggio · Niña 2026</div>
-    <h1>La ciurma</h1><div class="nick">Una scheda per ognuno: foto, miglia insieme e, presto, i dati dal questionario.</div></div></div>
+    <h1>La ciurma</h1><div class="nick">Una scheda per ognuno: foto, giorni insieme, grado e — presto — i dati dal questionario.</div></div></div>
     <section><h2>I membri</h2><div class="grid">${cards}</div>
-    <p style="margin-top:1rem;font-size:.85rem;color:var(--soft)">Vedi anche <a href="arrivi.html">arrivi &amp; partenze</a> e la <a href="skipper.html">classifica compagni</a>.</p></section>
+    <p style="margin-top:1rem;font-size:.85rem;color:var(--soft)">Vedi anche <a href="arrivi.html">arrivi &amp; partenze</a> e la <a href="skipper.html">classifica completa coi gradi</a>.</p></section>
     <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
 }
 
@@ -154,13 +192,13 @@ let DATA = [];
 function route() {
   const id = decodeURIComponent(location.hash.replace(/^#/, ""));
   const m = DATA.find(x => x.id === id);
-  if (m && m.link) { location.replace(m.link); return; }
+  if (m && m.crew2026 && m.crew2026.link) { location.replace(m.crew2026.link); return; }
   document.getElementById("app").innerHTML = m ? memberPage(m, DATA) : directory(DATA);
   window.scrollTo(0, 0);
 }
 window.addEventListener("hashchange", route);
 fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
-  DATA = d.members || [];
+  DATA = d.people || [];
   route();
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Equipaggio non disponibile offline.</p></section>`; });
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
