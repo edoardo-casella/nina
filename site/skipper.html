@@ -52,6 +52,16 @@ a{color:var(--accent)}
 .rankttl b{display:block;font-size:1.05rem;letter-spacing:.14em;color:#fff;margin-top:.15rem}
 .stars{color:var(--gold-2);letter-spacing:.15em;font-size:.95rem;margin-top:.15rem}
 .hero h1{font:700 2.7rem/1 var(--display);letter-spacing:.01em;color:#fff;margin-top:.2rem}
+/* foto identificativa stile dossier anni '40 (stampa seppia spillata) */
+.idphoto{position:absolute;top:.9rem;right:.9rem;z-index:4;width:118px;margin:0;
+  padding:6px 6px 20px;background:#efe6d0;border:1px solid rgba(0,0,0,.25);border-radius:2px;
+  box-shadow:0 8px 22px rgba(0,0,0,.55);transform:rotate(3deg)}
+.idphoto::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-4deg);
+  width:34px;height:16px;background:rgba(210,225,235,.5);border:1px solid rgba(255,255,255,.4);border-radius:1px}
+.idphoto img{width:100%;display:block;filter:contrast(1.03)}
+.idphoto figcaption{position:absolute;left:0;right:0;bottom:4px;text-align:center;
+  font:400 .74rem/1 var(--body);font-style:italic;color:#6b573096}
+@media(max-width:400px){.idphoto{width:96px}}
 .hero .sub{margin-top:.5rem;font-size:1rem;color:#e6eef6}
 .ribbons{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
 .ribbons .flag{width:30px;height:20px}
@@ -175,6 +185,8 @@ a.dec{text-decoration:none;color:inherit}
 .incident .les li{margin-bottom:.25rem}
 .incident .esito{margin-top:.7rem;font:600 .82rem/1.5 var(--body);color:var(--ink)}
 .incident .esito b{color:var(--rosso)}
+.incident .video{position:relative;margin-top:.9rem;border-radius:4px;overflow:hidden;aspect-ratio:16/9;background:#000}
+.incident .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 .ig{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:0 auto;padding:.9rem 1.4rem;border-radius:99px;
   text-decoration:none;font:700 .95rem/1 var(--body);color:#fff;background:linear-gradient(70deg,#f9ce34,#ee2a7b 45%,#6228d7);max-width:22rem}
@@ -427,6 +439,7 @@ function mistakesHTML() {
       <li>Estintori giusti, al posto giusto, controllati.</li></ol></div>
     <div class="esito"><b>Bilancio:</b> uno yacht sul fondo, cinque persone illese e una nuotata verso Moneglia.
       <br><a href="https://www.primocanale.it/cronaca/27105-moneglia-e-affondato-lo-yacht-andato-a-fuoco-i-5-a-bordo-si-sono-buttati-in-mare.html" target="_blank" rel="noopener">📰 L'articolo, con le foto — Primocanale ↗</a></div>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/rglFQp34IFY" title="Incendio yacht a Moneglia" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div></section>`;
 }
 
@@ -488,6 +501,8 @@ function render(d) {
   <div class="hero">
     <img src="${hero}" alt="Niña in navigazione">
     <div class="grad"></div>
+    <figure class="idphoto"><img src="skipper/img/edoardo-id.jpg" alt="${esc(d.name)}">
+      <figcaption>Serifos</figcaption></figure>
     <div class="cap">
       <div class="rankline">${medalSVG}
         <div><div class="rankttl">Grado<b>${cur.name}</b></div>
