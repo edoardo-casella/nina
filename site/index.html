@@ -301,9 +301,7 @@ footer strong{color:var(--ink)}
 </div>
 
 <footer>
-  Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF), risoluzione d'onda ~5 km — sottocosta è indicativa.
-  Il bollettino ufficiale è quello del <a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">mare dell'Aeronautica Militare</a>, e prevale sempre su questa pagina.<br><br>
-  <strong>Questa pagina non è uno strumento di sicurezza.</strong> Il Sail Score dice quanto sarà bella una navigazione, non se è prudente farla. Decide lo skipper.<br><br>
+  Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF). Bollettino ufficiale del mare: <a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">Aeronautica Militare</a>.<br><br>
   <span class="poweredby">powered by <span class="starlink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="12" rx="10.5" ry="4.4" transform="rotate(-28 12 12)"/><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/></svg>Starlink</span></span> — internet satellitare a bordo, anche al largo<br><br>
   <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="avionica.html">Avionica a bordo</a> · <a href="arrivi.html">Arrivi &amp; partenze</a>
 </footer>
@@ -397,7 +395,7 @@ function waveRibbon(hours) {
     <div class="ribbon"><div class="strip">${cols}</div>
     <div class="axis vals">${vals}</div><div class="axis">${hourAxis(hours)}</div></div>
     <div class="legend"><span class="water">max <b>${max.toFixed(1)} m · mare ${smax}</b> (${SEA_NAME[smax]})</span>
-    <span>freccia = dove va l'onda</span><span>~5 km: sottocosta indicativa</span></div>`;
+    <span>freccia = dove va l'onda</span></div>`;
 }
 
 function skyStrip(hours) {
@@ -533,11 +531,11 @@ function toggleCrew(i) {
 const ACT_ICON = { bagno: "🏊", trekking: "🥾", bordo: "⚓", porto: "🧭", cambusa: "🛒" };
 const actLabels = a => (a || []).map(x => `${ACT_ICON[x] ?? "•"} ${x}`).join(" · ");
 
-// voto 1-5 delle destinazioni: STIMA da guide, si conferma a bordo
+// voto 1-5 delle destinazioni
 function stars(r) {
   if (r == null) return "";
   const full = Math.floor(r), half = r % 1 >= 0.5;
-  return `<span class="stars" title="voto ${r}/5 — indicativo, si conferma a bordo">${"★".repeat(full)}${half ? "½" : ""}<span class="off">${"★".repeat(5 - full - (half ? 1 : 0))}</span></span>`;
+  return `<span class="stars" title="voto ${r}/5">${"★".repeat(full)}${half ? "½" : ""}<span class="off">${"★".repeat(5 - full - (half ? 1 : 0))}</span></span>`;
 }
 const thumb = (p, alt) => p?.src
   ? `<img class="thumb" loading="lazy" src="${p.src}" alt="${esc(alt ?? "")}" onerror="this.remove()">` : "";
@@ -575,26 +573,24 @@ function execCard(b, wx) {
   }
   if (b.tonight && !b.leg?.night) parts.push(`Stanotte: <span class="water">${destLink(b.tonight.name, b.tonight.id)}</span> ${stars(b.tonight.rating)} <span class="dot ${b.tonight.light}"></span>.`);
   if (b.turns?.cucina_cena) parts.push(`Stasera in cucina: <b>${esc(b.turns.cucina_cena)}</b>.`);
-  return `<h2>La giornata in breve</h2><div class="exec">${parts.join(" ")}
-    ${steps.some(s => s.verify) ? `<p class="vflag" style="margin-top:.5rem;font-size:.8rem">⚑ Tappe stimate, da verificare su carta nautica.</p>` : ""}</div>`;
+  return `<h2>La giornata in breve</h2><div class="exec">${parts.join(" ")}</div>`;
 }
 
 function tappeTimeline(b) {
   const steps = b.steps || [];
   if (steps.length < 2) return "";
   const rows = steps.map(s => {
-    const flag = s.verify ? ` <span class="vflag">⚑</span>` : "";
     const moon = s.night_stay ? " ⚓🌙" : "";
     const acts = actLabels(s.activity);
     if (s.stay) return `<div class="dayrow"><em>${esc(s.slot)}</em>
-      <div><h3 class="water">${destLink(s.name, s.to_id)}${moon}${flag} ${stars(s.rating)}</h3>
+      <div><h3 class="water">${destLink(s.name, s.to_id)}${moon} ${stars(s.rating)}</h3>
       <p>in rada${acts ? " · " + acts : ""}</p></div>${thumb(s.photo, s.name)}</div>`;
     const plus = s.eta && s.depart && s.eta.slice(0, 10) !== s.depart.slice(0, 10) ? " +1" : "";
     const times = s.depart && s.eta ? `${s.depart.slice(11, 16)} → ${s.eta.slice(11, 16)}${plus}` : "";
     const badge = s.abort ? `<span class="badge" style="background:var(--rosso)">STOP</span>`
       : s.sail_pct != null ? `<span class="badge ${s.sail_pct >= 50 ? "sail" : "motor"}">${s.sail_pct >= 50 ? "vela" : "motore"}</span>` : "";
     return `<div class="dayrow"><em>${esc(s.slot)}</em>
-      <div><h3 class="water">${esc(s.frm)} → ${destLink(s.to, s.to_id)}${moon}${flag} ${stars(s.rating)}</h3>
+      <div><h3 class="water">${esc(s.frm)} → ${destLink(s.to, s.to_id)}${moon} ${stars(s.rating)}</h3>
       <p><span class="num">${s.nm} nm</span>${times ? ` · ${times}` : ""}${s.arrive_by ? ` · entro ${esc(s.arrive_by)}` : ""} ${badge}${acts ? `<br>${acts}` : ""}${s.abort && s.reason ? `<br><span class="vflag">${esc(s.reason)}</span>` : ""}</p></div>${thumb(s.photo, s.to)}</div>`;
   }).join("");
   return `<h2>Le tappe di oggi · <span class="num" style="text-transform:none">${b.day_nm ?? "—"} nm</span></h2><div class="tl">${rows}</div>`;
@@ -619,7 +615,7 @@ function programGrid(prog) {
     const dots = d.n_tappe > 1 ? ` <span style="color:var(--accent);letter-spacing:.1em">${"●".repeat(Math.min(d.n_tappe, 3))}</span>` : "";
     return `<div class="day ${d.tier}" title="${esc(tiers[d.tier] ?? "")} — tocca per la scheda"
       ${d.to_id ? `onclick="openDest('${d.to_id}')" style="cursor:pointer"` : ""}>
-      <em>${wd}${d.night ? " 🌙" : ""}${d.verify ? ` <span class="vflag">⚑</span>` : ""}</em>
+      <em>${wd}${d.night ? " 🌙" : ""}</em>
       <strong>${d.nm}<span style="font-size:.7rem"> nm</span>${dots}</strong>
       <span class="water">${route}</span>
       ${d.rating != null ? `<span style="font-style:normal">${stars(d.rating)}</span>` : ""}
@@ -633,8 +629,7 @@ function programGrid(prog) {
     <span><b style="color:var(--soft)">▔</b> solo programma</span>
     <span>● = tappe del giorno</span>
   </div>
-  ${prog.days.some(d => d.tier === "programma") ? `<p class="vflag" style="margin-top:.5rem;font-size:.8rem">Oltre ~10 giorni: solo programma, nessuna previsione affidabile.</p>` : ""}
-  ${prog.days.some(d => d.verify) ? `<p style="margin-top:.3rem;font-size:.76rem;color:var(--soft)">⚑ = tappe stimate, da verificare su carta nautica.</p>` : ""}`;
+  ${prog.days.some(d => d.tier === "programma") ? `<p class="vflag" style="margin-top:.5rem;font-size:.8rem">Oltre ~10 giorni: solo programma, nessuna previsione affidabile.</p>` : ""}`;
 }
 
 function dailyStrip(prog, kind) {
@@ -697,13 +692,12 @@ function destCatalog(prog) {
       ${d.photo?.src
         ? `<img class="dphoto" loading="lazy" src="${d.photo.src}" alt="${esc(d.name)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'dphoto none',textContent:'⚓'}))">`
         : `<div class="dphoto none">⚓</div>`}
-      <div class="dbody"><h3 class="water">${esc(d.name)}${d.verify ? ' <span class="vflag">⚑</span>' : ""}</h3>
+      <div class="dbody"><h3 class="water">${esc(d.name)}</h3>
       ${stars(d.rating)}
       ${d.notes ? `<p>${esc(d.notes)}</p>` : ""}</div>
     </div>`).join("");
   return `<h2>Destinazioni — schede, voti e foto</h2>
-  <p class="hint">Tocca una destinazione per la scheda: gallery, caratteristiche, storia e link.
-  Voto 1–5 indicativo (bozza da guide nautiche, si conferma a bordo — non è lo Shelter Score meteo).</p>
+  <p class="hint">Tocca una destinazione per la scheda: gallery, caratteristiche, storia e link.</p>
   <details open><summary>${ds.length} destinazioni, dalla più bella</summary><div class="dests">${cards}</div></details>`;
 }
 
@@ -769,12 +763,11 @@ function schedaHTML(id) {
     `<a href="https://duckduckgo.com/?q=${q}" target="_blank" rel="noopener">🔍 Cerca sul web</a>`,
   ].filter(Boolean).join("");
   return `
-    <h1 class="water">${esc(d.name)}${d.verify ? ' <span class="vflag">⚑</span>' : ""}</h1>
+    <h1 class="water">${esc(d.name)}</h1>
     <div class="sub">${d.rating != null ? stars(d.rating) : ""}${d.type ? `<span>${esc(d.type)}</span>` : ""}</div>
     ${gal ? `<div class="gal">${gal}</div>` : ""}
     ${d.notes ? `<h2>In breve</h2><p class="water" style="font-size:.9rem">${esc(d.notes)}</p>` : ""}
-    ${facts ? `<h2>Caratteristiche</h2><div class="leg"><div class="facts">${facts}</div>
-      ${d.verify ? `<p class="pwarn" style="color:var(--magenta)">⚑ Dati di fonda stimati: verifica su carta nautica.</p>` : ""}</div>` : ""}
+    ${facts ? `<h2>Caratteristiche</h2><div class="leg"><div class="facts">${facts}</div></div>` : ""}
     ${d.wiki ? `<h2>Storia e territorio</h2><div class="storia">${esc(d.wiki.extract)}
       <span class="src">da Wikipedia (${d.wiki.lang.toUpperCase()}) · <a href="${d.wiki.url}" target="_blank" rel="noopener">apri la voce</a></span></div>` : ""}
     <h2>Link</h2><div class="linkrow">${links}</div>`;
