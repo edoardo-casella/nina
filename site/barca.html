@@ -100,6 +100,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .note{background:var(--sea-1);border:1px dashed var(--hair);border-radius:4px;padding:.9rem 1rem;font-size:.9rem;color:var(--soft)}
 .video{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:16/9;background:#000}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.planimg{width:100%;max-width:560px;height:auto;display:block;margin:0 auto 1rem;
+  background:#fff;border:1px solid var(--hair);border-radius:4px;padding:.5rem}
 .plan{width:100%;max-width:300px;height:auto;display:block;margin:0 auto 1rem}
 .plan .hull,.plan .deck,.plan .tramp{fill:var(--sea-1);stroke:var(--gold);stroke-width:2;stroke-linejoin:round}
 .plan .tramp{fill:none;stroke-dasharray:3 3}
@@ -238,33 +240,14 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
   </section>
 
   <section><h2>Cabine e planimetria</h2>
-    <svg class="plan" viewBox="0 0 360 350" role="img" aria-label="Schema della barca vista dall'alto">
-      <path class="hull" d="M62 45 Q90 20 118 45 L118 300 Q90 320 62 300 Z"/>
-      <path class="hull" d="M242 45 Q270 20 298 45 L298 300 Q270 320 242 300 Z"/>
-      <path class="tramp" d="M120 55 L240 55 L240 95 L120 95 Z"/>
-      <rect class="deck" x="122" y="100" width="116" height="150" rx="8"/>
-      <rect class="deck" x="108" y="255" width="144" height="52" rx="8"/>
-      <line class="div" x1="62" y1="130" x2="118" y2="130"/>
-      <line class="div" x1="62" y1="215" x2="118" y2="215"/>
-      <line class="div" x1="242" y1="130" x2="298" y2="130"/>
-      <line class="div" x1="242" y1="215" x2="298" y2="215"/>
-      <text x="180" y="16" class="big">▲ prua</text>
-      <text x="180" y="80">prendisole</text>
-      <text x="180" y="165" class="big">salone</text>
-      <text x="180" y="180" class="big">cucina</text>
-      <text x="180" y="215" class="fly">flybridge sopra</text>
-      <text x="180" y="285" class="big">pozzetto</text>
-      <text x="90" y="90">cabina</text><text x="90" y="177">cabina</text><text x="90" y="262">cabina</text>
-      <text x="270" y="90">cabina</text><text x="270" y="177">cabina</text><text x="270" y="262">cabina</text>
-      <text x="180" y="335">poppa · plancette</text>
-    </svg>
+    <img class="planimg" src="barca/img/planimetria.webp" alt="Planimetria Dufour 48 Catamaran — vista dall'alto" loading="lazy">
     <ul class="cabinlist">
       <li><b>3×</b> cabina doppia — bagno privato</li>
       <li><b>1×</b> cabina doppia — bagno condiviso</li>
       <li><b>1×</b> cabina con letto a castello — bagno condiviso</li>
       <li><b>1×</b> cabina del marinaio — bagno privato</li>
     </ul>
-    <p class="note" style="margin-top:.8rem">Configurazione <b>6 cabine / 6 bagni</b>. Schema stilizzato (vista dall'alto), non in scala.</p>
+    <p class="note" style="margin-top:.8rem">Planimetria ufficiale del Dufour 48 Catamaran, configurazione <b>6 cabine / 6 bagni</b>.</p>
   </section>
 
   <section><h2>Dalle riviste</h2>

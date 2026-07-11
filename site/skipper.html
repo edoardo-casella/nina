@@ -241,9 +241,11 @@ const RANKS = [
   { min: 1600, name: "Nostromo", stars: 0 }, { min: 2600, name: "Guardiamarina", stars: 1 },
   { min: 3600, name: "Sottotenente di Vascello", stars: 1 }, { min: 4600, name: "Tenente di Vascello", stars: 2 },
   { min: 5600, name: "Capitano di Corvetta", stars: 2 }, { min: 6400, name: "Capitano di Fregata", stars: 3 },
-  { min: 7000, name: "Capitano di Vascello", stars: 3 }, { min: 7500, name: "Ammiraglio", stars: 4 },
+  { min: 7000, name: "Capitano di Vascello", stars: 3 }, { min: 7500, name: "Ammiraglio", stars: 5 },
   { min: 10000, name: "Comodoro", stars: 5 },   // livello massimo
 ];
+// separatore delle migliaia italiano (indipendente da Intl): 7735 -> 7.735
+const nfmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 function rankOf(nm) {
   let i = 0;
   for (let k = 0; k < RANKS.length; k++) if (nm >= RANKS[k].min) i = k;
@@ -266,7 +268,7 @@ let GAL = [];
 function lead(d) {
   const t = d.totals;
   return `Dal <b>${t.first_year}</b> ${d.name.split(" ")[0]} naviga ogni estate come skipper:
-    <b>${t.trips} crociere</b> e oltre <b>${(Math.floor(t.nm / 100) * 100).toLocaleString("it")} miglia</b>
+    <b>${t.trips} crociere</b> e oltre <b>${nfmt(Math.floor(t.nm / 100) * 100)} miglia</b>
     in <b>${t.seasons} stagioni</b>, dai mari greci alle Baleari, dai Caraibi a Cuba, dalla Corsica
     alle Seychelles. Al comando di <b>${t.n_boats} barche diverse</b> — monoscafi e catamarani da 40 a 54 piedi.`;
 }
@@ -289,8 +291,8 @@ function decorations(d) {
   const catTrips = d.trips.filter(x => CAT.some(b => (x.boat || "").startsWith(b.trim()))).length;
   const oceanic = d.trips.some(x => parts(x.country).some(c => OCEAN.has(c)));
   const meds = [
-    { on: t.nm >= 5000, icon: "🌊", ttl: "5.000 miglia", sub: `${t.nm.toLocaleString("it")} nm`,
-      why: `Oltre 5.000 miglia nautiche percorse in carriera (${t.nm.toLocaleString("it")} nm).` },
+    { on: t.nm >= 5000, icon: "🌊", ttl: "5.000 miglia", sub: `${nfmt(t.nm)} nm`,
+      why: `Oltre 5.000 miglia nautiche percorse in carriera (${nfmt(t.nm)} nm).` },
     { on: oceanic, icon: "🌍", ttl: "Acque oceaniche", sub: "Caraibi · Oceano Indiano",
       why: "Non solo Mediterraneo: navigazioni in Atlantico/Caraibi e Oceano Indiano." },
     { on: t.seasons >= 10, icon: "🎖️", ttl: "Veterano", sub: `${t.seasons} stagioni`,
@@ -509,7 +511,8 @@ function dronesHTML() {
 function render(d) {
   const t = d.totals;
   const { cur, next } = rankOf(t.nm);
-  const pct = next ? Math.max(4, Math.round((t.nm - cur.min) / (next.min - cur.min) * 100)) : 100;
+  // avanzamento = miglia percorse sul traguardo del grado massimo (barra piena, onesta)
+  const pct = next ? Math.round(t.nm / next.min * 100) : 100;
   const hero = d.gallery[0] || "icon-512.png";
   const allFlags = t.countries.filter(c => CC[c]).map(flag).join("");
   document.getElementById("app").innerHTML = `
@@ -523,20 +526,20 @@ function render(d) {
         <div><div class="rankttl">Grado<b>${cur.name}</b></div>
           <div class="stars">${"★".repeat(cur.stars) || "—"}${"☆".repeat(Math.max(0, 5 - cur.stars))}</div></div></div>
       <h1>${esc(d.name)}</h1>
-      <div class="sub">${t.trips} crociere · ${t.nm.toLocaleString("it")} miglia · ${t.n_countries} mari · al timone della <span class="water">Niña</span></div>
+      <div class="sub">${t.trips} crociere · ${nfmt(t.nm)} miglia · ${t.n_countries} mari · al timone della <span class="water">Niña</span></div>
       <div class="ribbons">${allFlags}</div>
     </div>
   </div>
 
   <div class="xp">
-    <div class="row"><span>Avanzamento grado</span><span>${next ? `<b>${t.nm.toLocaleString("it")}</b> / ${next.min.toLocaleString("it")} nm` : "Grado massimo"}</span></div>
+    <div class="row"><span>Avanzamento grado</span><span>${next ? `<b>${nfmt(t.nm)}</b> / ${nfmt(next.min)} nm · ${pct}%` : "Grado massimo"}</span></div>
     <div class="bar"><i style="width:${pct}%"></i></div>
     ${next ? `<div class="nextcap">↑ prossimo grado · ${esc(next.name)}${next.stars > cur.stars ? ` · ${next.stars}★` : ""}</div>` : ""}
   </div>
 
   <div class="stats">
     <div class="stat"><b>${t.trips}</b><i>crociere</i></div>
-    <div class="stat"><b>${t.nm.toLocaleString("it")}</b><i>miglia</i></div>
+    <div class="stat"><b>${nfmt(t.nm)}</b><i>miglia</i></div>
     <div class="stat"><b>${t.seasons}</b><i>stagioni</i></div>
     <div class="stat"><b>${t.n_countries}</b><i>mari</i></div>
     <div class="stat"><b>${t.n_boats}</b><i>barche</i></div>
