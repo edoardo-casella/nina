@@ -1675,7 +1675,7 @@
     "role": "crew",
     "photo": "crew/img/giacomo-n.jpg",
     "nick": "Jack",
-    "note": "Habitué dei <a href=\"skipper.html#errori-fatali\">rapporti d'incidente</a> 😅 — il capitano ha una regola tutta sua su di lui."
+    "note": "Habitué dei <a href=\"aneddoti.html#canale-ferragosto\">rapporti d'incidente</a> 😅 — il capitano ha una regola tutta sua su di lui."
    },
    "photos": [
     {
@@ -1726,7 +1726,7 @@
    ],
    "bio": {
     "epithet": "L'uomo della tecnologia",
-    "html": "L'uomo della tecnologia di bordo: manutenzione, droni, videomaker ufficiale di ogni vacanza. Prezioso assistente al meccanico e troubleshooter importante &mdash; un filo meno uomo-nautico, e da <b>non</b> lasciare in coperta quando c'è vento, perché tende a perdersi nel suo mondo (vedi <a class='plink' href='skipper.html#errori-fatali'>canale di Ferragosto</a>). A dieta di coca zero e merendine: è l'uomo delle merendine."
+    "html": "L'uomo della tecnologia di bordo: manutenzione, droni, videomaker ufficiale di ogni vacanza. Prezioso assistente al meccanico e troubleshooter importante &mdash; un filo meno uomo-nautico, e da <b>non</b> lasciare in coperta quando c'è vento, perché tende a perdersi nel suo mondo (vedi <a class='plink' href='aneddoti.html#canale-ferragosto'>canale di Ferragosto</a>). A dieta di coca zero e merendine: è l'uomo delle merendine."
    },
    "tags": [
     "Videomaker",
