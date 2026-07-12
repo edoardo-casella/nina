@@ -17,6 +17,15 @@
       "lat": null,
       "lon": null,
       "blurb": "Una settimana di primavera in barca: destinazione da votare tra Mediterraneo e Atlantico."
+    },
+    {
+      "id": "extreme-sailing-regatta-2027",
+      "title": "Extreme Sailing Regatta — Grecia 2027",
+      "when": "Giu → Lug 2027",
+      "area": "Grecia",
+      "lat": 37.2,
+      "lon": 25.1,
+      "blurb": "Match race in Grecia: due monoscafi identici, testa a testa per una settimana di regate uno contro l'altro. Sfida secca, in coppia — vince chi taglia primo la linea."
     }
   ]
 }
