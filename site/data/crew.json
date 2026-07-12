@@ -684,7 +684,8 @@
      "trips": 3,
      "days": 29
     }
-   ]
+   ],
+   "photo": "crew/img/margherita-c.jpg"
   },
   {
    "id": "claudio-c",
@@ -961,7 +962,8 @@
      "trips": 2,
      "days": 23
     }
-   ]
+   ],
+   "photo": "crew/img/paola-c.jpg"
   },
   {
    "id": "bernardo-b",
@@ -1493,7 +1495,8 @@
      "trips": 1,
      "days": 10
     }
-   ]
+   ],
+   "photo": "crew/img/gabriele-b.jpg"
   },
   {
    "id": "leonardo-m",
@@ -2150,7 +2153,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/pietro-c.jpg"
   },
   {
    "id": "andrea-a",
@@ -2688,7 +2692,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/marco-t.jpg"
   },
   {
    "id": "gualtiero-s",
@@ -2931,7 +2936,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/nicola-r.jpg"
   },
   {
    "id": "belinda-b",
@@ -3072,7 +3078,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/carlo-a.jpg"
   },
   {
    "id": "ilaria-m",
@@ -3165,7 +3172,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/ilaria-m.jpg"
   },
   {
    "id": "gabri-m",
@@ -4207,7 +4215,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/enrico-g.jpg"
   },
   {
    "id": "gianmarco-m",
@@ -4266,7 +4275,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/gianmarco-m.jpg"
   },
   {
    "id": "alberto-b",
@@ -4325,7 +4335,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/alberto-b.jpg"
   },
   {
    "id": "matilde-r",
@@ -4391,7 +4402,8 @@
      "trips": 1,
      "days": 10
     }
-   ]
+   ],
+   "photo": "crew/img/matilde-r.jpg"
   },
   {
    "id": "sara-b",
@@ -4462,7 +4474,8 @@
      "trips": 1,
      "days": 10
     }
-   ]
+   ],
+   "photo": "crew/img/sara-b.jpg"
   },
   {
    "id": "beatrice-f",
@@ -4821,7 +4834,8 @@
      "trips": 1,
      "days": 6
     }
-   ]
+   ],
+   "photo": "crew/img/fede-b.jpg"
   },
   {
    "id": "tonino-l",
