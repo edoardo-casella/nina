@@ -76,9 +76,9 @@ a{color:var(--accent)}
 .ribbons{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
 .ribbons .flag{width:30px;height:20px}
 /* statistiche extra nell'area libera a destra dell'hero (sotto la polaroid) */
-.herostats{position:absolute;right:1.2rem;bottom:1.3rem;z-index:5;display:flex;flex-direction:column;gap:.65rem;text-align:right;text-shadow:0 1px 5px rgba(0,0,0,.75)}
-.herostats b{display:block;font:700 1.55rem/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums}
-.herostats i{font:700 .5rem/1.25 var(--display);letter-spacing:.13em;text-transform:uppercase;color:var(--gold-2);font-style:normal}
+.herostats{position:absolute;right:1.15rem;bottom:1.15rem;z-index:5;display:flex;flex-direction:column;gap:.6rem;text-align:right;text-shadow:0 1px 6px rgba(0,0,0,.85)}
+.herostats b{display:block;font:700 1.3rem/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums}
+.herostats i{font:700 .47rem/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2);font-style:normal}
 @media(max-width:640px){.herostats{display:none}}
 
 /* progress */
@@ -93,7 +93,7 @@ a{color:var(--accent)}
 .xp .nextcap{margin-top:.5rem;font:700 .6rem/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 
 /* SERVICE RECORD stats */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:1px;background:var(--hair);border-bottom:1px solid var(--hair)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border-bottom:1px solid var(--hair)}
 .stat{background:var(--panel);padding:1.1rem .5rem;text-align:center}
 .stat b{display:block;font:700 1.75rem/1 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
 .stat i{display:block;font:700 .55rem/1.3 var(--display);letter-spacing:.13em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.45rem}
@@ -647,7 +647,6 @@ function render(d) {
       <div><b>${Math.round(t.days)}</b><i>giorni in mare</i></div>
       <div><b>${t.seasons}</b><i>stagioni</i></div>
       <div><b>${t.n_boats}</b><i>barche</i></div>
-      <div><b>${Math.round(t.nm / t.trips)}</b><i>nm / crociera</i></div>
     </div>
   </div>
 
