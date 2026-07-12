@@ -16,6 +16,8 @@ except PermissionError:
 CREWJSON = os.path.join(ROOT, "site", "data", "crew.json")
 # la zona "Inner Islands" (crociera Seychelles) va mostrata come "Seychelles"
 ZONE_OVERRIDE = {"Inner Islands": "Seychelles"}
+# Sorbe 2017: la rotta caraibica tocca Martinica (FR), Saint Vincent e Saint Lucia
+COUNTRY_OVERRIDE = {"Saint Vincent - France": "Saint Vincent - France - Saint Lucia"}
 
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
 people = {}
@@ -30,7 +32,7 @@ for r in wb["Summary"].iter_rows(min_row=2, values_only=True):
     except: continue
     trip_year[t] = int(float(r[1])); trip_days[t] = float(r[10]); trip_nm[t] = int(float(r[9]))
     trip_name[t] = (r[8] or "").strip(); _z = (r[5] or "").strip(); trip_zone[t] = ZONE_OVERRIDE.get(_z, _z)
-    trip_country[t] = (r[4] or "").strip(); trip_boat[t] = (r[6] or "").strip()
+    _c = (r[4] or "").strip(); trip_country[t] = COUNTRY_OVERRIDE.get(_c, _c); trip_boat[t] = (r[6] or "").strip()
 part = collections.defaultdict(list)       # pid -> [trip id]
 roster = collections.defaultdict(list)     # trip id -> [pid]  (per la co-navigazione)
 part_days, part_nm = {}, {}                 # (trip, pid) -> giorni/miglia PER-PERSONA

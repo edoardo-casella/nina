@@ -75,6 +75,11 @@ a{color:var(--accent)}
 .hero .sub{margin-top:.5rem;font-size:1rem;color:#e6eef6}
 .ribbons{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
 .ribbons .flag{width:30px;height:20px}
+/* statistiche extra nell'area libera a destra dell'hero (sotto la polaroid) */
+.herostats{position:absolute;right:1.2rem;bottom:1.3rem;z-index:5;display:flex;flex-direction:column;gap:.65rem;text-align:right;text-shadow:0 1px 5px rgba(0,0,0,.75)}
+.herostats b{display:block;font:700 1.55rem/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums}
+.herostats i{font:700 .5rem/1.25 var(--display);letter-spacing:.13em;text-transform:uppercase;color:var(--gold-2);font-style:normal}
+@media(max-width:640px){.herostats{display:none}}
 
 /* progress */
 .xp{padding:1.2rem 1.1rem;background:var(--panel);border-bottom:1px solid var(--hair)}
@@ -293,13 +298,13 @@ const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&g
 // codici ISO per le bandiere reali (SVG locali) — su Windows le emoji-bandiera
 // non si vedono, quindi usiamo immagini
 const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr",
-  Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", Turkey: "tr" };
+  Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", "Saint Lucia": "lc", Turkey: "tr" };
 const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia",
-  France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", Turkey: "Turchia" };
+  France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", "Saint Lucia": "Santa Lucia", Turkey: "Turchia" };
 const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April: "aprile",
   May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre",
   October: "ottobre", November: "novembre", December: "dicembre" };
-const OCEAN = new Set(["Cuba", "Saint Vincent", "Seychelles"]);
+const OCEAN = new Set(["Cuba", "Saint Vincent", "Saint Lucia", "Seychelles"]);
 const CAT = ["Lagoon", "Bali", "Fountain Pajot", "Fountain-Pajot", "Bali "];
 
 const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
@@ -636,6 +641,12 @@ function render(d) {
       <h1>${esc(d.name)}</h1>
       <div class="sub">${t.trips} crociere · ${nfmt(t.nm)} miglia · ${t.n_countries} mari · al timone della <span class="water">Niña</span></div>
       <div class="ribbons">${allFlags}</div>
+    </div>
+    <div class="herostats">
+      <div><b>${Math.round(t.days)}</b><i>giorni in mare</i></div>
+      <div><b>${t.seasons}</b><i>stagioni</i></div>
+      <div><b>${t.n_boats}</b><i>barche</i></div>
+      <div><b>${Math.round(t.nm / t.trips)}</b><i>nm / crociera</i></div>
     </div>
   </div>
 

@@ -81,8 +81,8 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 
 <script>
 const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
-const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", Turkey: "tr" };
-const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia", France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", Turkey: "Turchia" };
+const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", "Saint Lucia": "lc", Turkey: "tr" };
+const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia", France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", "Saint Lucia": "Santa Lucia", Turkey: "Turchia" };
 const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April: "aprile", May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre", October: "ottobre", November: "novembre", December: "dicembre" };
 const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
 const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";

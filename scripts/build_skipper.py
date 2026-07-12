@@ -26,6 +26,8 @@ NAME = "Edoardo Casella"
 INSTAGRAM = "https://www.instagram.com/edoardocasella/"
 # la zona "Inner Islands" (crociera Seychelles) va mostrata come "Seychelles"
 ZONE_OVERRIDE = {"Inner Islands": "Seychelles"}
+# Sorbe 2017: la rotta caraibica tocca Martinica (FR), Saint Vincent e Saint Lucia
+COUNTRY_OVERRIDE = {"Saint Vincent - France": "Saint Vincent - France - Saint Lucia"}
 # ordine di galleria: prima le due migliori, poi droni, poi archivio
 GALLERY_ORDER = ["cat-rada-turchese", "kayak-gabbiano", "drone-1", "drone-3",
                  "vela-2017", "caraibi-2017-1", "drone-2", "vela-2016-1",
@@ -62,7 +64,9 @@ def load_trips() -> list[dict]:
             "year": int(year),
             "month": str(r[idx["Mese"]]).strip() if r[idx["Mese"]] else None,
             "weeks": str(r[idx["Settimane"]]).strip() if r[idx.get("Settimane")] else None,
-            "country": str(r[idx["Country"]]).strip() if r[idx["Country"]] else None,
+            "country": COUNTRY_OVERRIDE.get(
+                str(r[idx["Country"]]).strip() if r[idx["Country"]] else None,
+                str(r[idx["Country"]]).strip() if r[idx["Country"]] else None),
             "zone": ZONE_OVERRIDE.get(zone, zone),
             "boat": str(r[idx["Imbarcazione"]]).strip() if r[idx["Imbarcazione"]] else None,
             "boat_name": str(r[idx["Nome Barca"]]).strip() if r[idx.get("Nome Barca")] else None,

@@ -133,7 +133,7 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
 const nfmt = n => String(Math.round(n || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 // bandiere + zona per il log viaggi (stessa logica di viaggio.html)
-const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", Turkey: "tr" };
+const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", "Saint Lucia": "lc", Turkey: "tr" };
 const partsC = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
 const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}">` : "";
 const flags = country => partsC(country).map(flag1).join("");
