@@ -1182,13 +1182,18 @@
       "fleet": [
         {
           "boat_name": "Regina V",
-          "note": "Barca gemella rivale — famiglie Mascagni e Brancaleoni",
+          "note": "Barca in coppia — famiglie Mascagni e Brancaleoni, giro delle Sporadi insieme",
           "people": [
             "michele-m",
             "monica-m",
+            "leonardo-m",
+            "gabri-m",
             "ilaria-m",
             "silvano-b",
-            "simona-b"
+            "simona-b",
+            "luca-b",
+            "riccardo-b",
+            "rebecca-b"
           ]
         }
       ],
