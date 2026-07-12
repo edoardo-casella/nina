@@ -417,7 +417,7 @@
         "A.",
         "A."
       ],
-      "n_photos": 2,
+      "n_photos": 8,
       "photos": [
         {
           "src": "trips/img/aquarela/01.jpg",
@@ -430,6 +430,48 @@
           "src": "trips/img/aquarela/02.jpg",
           "w": 1280,
           "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/03.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/04.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/05.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/06.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/07.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/08.jpg",
+          "w": 853,
+          "h": 1280,
           "people": [],
           "caption": "Baleari 2016"
         }
@@ -461,7 +503,7 @@
         "Gabriele M.",
         "Ilaria M."
       ],
-      "n_photos": 10,
+      "n_photos": 15,
       "photos": [
         {
           "src": "trips/img/sorbe/01.jpg",
@@ -559,6 +601,41 @@
           "h": 850,
           "people": [],
           "caption": "Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/11.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/12.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/13.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/14.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/15.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
         }
       ],
       "story": {
@@ -629,8 +706,44 @@
         "Leonardo M.",
         "Laura C."
       ],
-      "n_photos": 0,
-      "photos": [],
+      "n_photos": 5,
+      "photos": [
+        {
+          "src": "trips/img/invitation/01.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/02.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/03.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/04.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/05.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        }
+      ],
       "story": {
         "title": "La barca maledetta",
         "html": "Baleari, la crociera passata alla storia come &laquo;la barca maledetta&raquo;: tutte le coppie a bordo si sono lasciate&hellip; tranne una. <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> e <a class='plink' href='membro.html#laura-c'>Laura C.</a> sono sopravvissuti all'incantesimo &mdash; e nel 2026 si sposano."
@@ -656,7 +769,7 @@
         "L.",
         "Nicola R."
       ],
-      "n_photos": 2,
+      "n_photos": 6,
       "photos": [
         {
           "src": "trips/img/ondine/01.jpg",
@@ -672,6 +785,34 @@
           "people": [
             "edo-c"
           ],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/03.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/04.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/05.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/06.jpg",
+          "w": 1280,
+          "h": 848,
+          "people": [],
           "caption": "Croazia 2018"
         }
       ],
@@ -700,8 +841,51 @@
         "Gabriele M.",
         "Ilaria M."
       ],
-      "n_photos": 0,
-      "photos": [],
+      "n_photos": 6,
+      "photos": [
+        {
+          "src": "trips/img/lohengrin/01.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Cuba 2019"
+        },
+        {
+          "src": "trips/img/lohengrin/02.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Cuba 2019"
+        },
+        {
+          "src": "trips/img/lohengrin/03.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Cuba 2019"
+        },
+        {
+          "src": "trips/img/lohengrin/04.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Cuba 2019"
+        },
+        {
+          "src": "trips/img/lohengrin/05.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Cuba 2019"
+        },
+        {
+          "src": "trips/img/lohengrin/06.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Cuba 2019"
+        }
+      ],
       "story": {
         "title": "Caldo e isole deserte",
         "html": "Un viaggio incredibile a <b>Cuba</b>: mari deserti e un caldo davvero atroce. Highlight surreale: un'isola lontanissima da tutto, presidiata da guardie forestali cubane che &mdash; non arrivando i rifornimenti dalla terraferma &mdash; si cibavano di topi. Vela e civiltà, entrambe altrove."

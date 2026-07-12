@@ -545,7 +545,8 @@
      "trips": 3,
      "days": 34
     }
-   ]
+   ],
+   "photo": "crew/img/matilde-c.jpg"
   },
   {
    "id": "margherita-c",
@@ -1402,7 +1403,8 @@
      "trips": 3,
      "days": 29
     }
-   ]
+   ],
+   "photo": "crew/img/riccardo-b.jpg"
   },
   {
    "id": "gabriele-b",
@@ -1687,7 +1689,8 @@
      "trips": 2,
      "days": 14
     }
-   ]
+   ],
+   "photo": "crew/img/leonardo-m.jpg"
   },
   {
    "id": "giacomo-n",
@@ -2364,7 +2367,8 @@
      "trips": 2,
      "days": 23
     }
-   ]
+   ],
+   "photo": "crew/img/luca-b.jpg"
   },
   {
    "id": "rebecca-b",
@@ -3539,7 +3543,8 @@
      "trips": 1,
      "days": 10
     }
-   ]
+   ],
+   "photo": "crew/img/giacomo-b.jpg"
   },
   {
    "id": "alice-s",
@@ -4083,7 +4088,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/michele-m.jpg"
   },
   {
    "id": "monica-m",
