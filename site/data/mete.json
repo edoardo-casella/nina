@@ -81,8 +81,12 @@
       "name": "Golfo di Orosei (Sardegna)",
       "lat": 40.15,
       "lon": 9.65,
-      "done": false,
-      "trip_ids": []
+      "done": true,
+      "trip_ids": [
+        "silkwave",
+        "alba",
+        "enya"
+      ]
     },
     {
       "id": "costa-smeralda",
@@ -105,7 +109,7 @@
       "name": "Arcipelago Toscano / Isola d'Elba",
       "lat": 42.78,
       "lon": 10.28,
-      "done": false,
+      "done": true,
       "trip_ids": []
     },
     {
@@ -201,8 +205,11 @@
       "name": "Croazia – Kornati",
       "lat": 43.8,
       "lon": 15.35,
-      "done": false,
-      "trip_ids": []
+      "done": true,
+      "trip_ids": [
+        "camelia",
+        "ondine"
+      ]
     },
     {
       "id": "dalmazia",
@@ -224,8 +231,11 @@
       "name": "Croazia – Dubrovnik ed Elafiti",
       "lat": 42.65,
       "lon": 18.09,
-      "done": false,
-      "trip_ids": []
+      "done": true,
+      "trip_ids": [
+        "camelia",
+        "ondine"
+      ]
     },
     {
       "id": "istria-kvarner",
@@ -308,8 +318,11 @@
       "name": "Turchia – costa licia (Göcek, Fethiye, Kekova)",
       "lat": 36.55,
       "lon": 29.3,
-      "done": false,
-      "trip_ids": []
+      "done": true,
+      "trip_ids": [
+        "stephanie",
+        "klaudia"
+      ]
     },
     {
       "id": "malta",
@@ -378,12 +391,15 @@
     {
       "id": "sicilia-nw",
       "n": 29,
-      "area": "med-ovest",
+      "area": "med-italia",
       "name": "Sicilia nord-occidentale (Golfo di Castellammare, San Vito)",
       "lat": 38.15,
       "lon": 12.75,
-      "done": false,
-      "trip_ids": []
+      "done": true,
+      "trip_ids": [
+        "mars-planet",
+        "isla"
+      ]
     },
     {
       "id": "tunisia-kerkennah",
@@ -636,8 +652,10 @@
       "name": "Grenada e Tobago Cays",
       "lat": 12.1,
       "lon": -61.35,
-      "done": false,
-      "trip_ids": []
+      "done": true,
+      "trip_ids": [
+        "sorbe"
+      ]
     },
     {
       "id": "societa",

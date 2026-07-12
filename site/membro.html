@@ -67,6 +67,7 @@ svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 .tlrow{display:flex;align-items:center;gap:.55rem;background:var(--panel);border:1px solid var(--hair);border-radius:7px;padding:.55rem .7rem;text-decoration:none;color:inherit}
 .tlrow:hover{border-color:var(--accent)}
 .tlrow .fl{flex:none;display:inline-flex;align-items:center}
+.tlrow .tlface{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2);box-shadow:0 0 0 1px var(--hair)}
 .tlrow .z{flex:1;min-width:0}
 .tlrow .z b{display:block;font-size:.92rem}
 .tlrow .z small{color:var(--soft);font-size:.76rem}
@@ -144,12 +145,19 @@ function pace(a) {  // livello di attività = ritmo nm/giorno (come nel dossier 
   if (a < 40) return { k: "push", t: "Spinto" };
   return { k: "extreme", t: "Estremo" };
 }
-function tripRow(t) {
+function tripRow(t, m) {
   const avg = t.days ? Math.round(t.nm / t.days) : null, p = pace(avg);
   const bn = BOATNAME.get(t.id);                       // nome barca da trips.json
   const boatTxt = (bn ? `«${esc(bn)}»${t.boat ? " · " : ""}` : "") + esc(t.boat || "");
-  return `<a class="tlrow" href="viaggio.html#${t.id}"><span class="fl">${flags(t.country) || "⚓"}</span>` +
-    `<span class="z"><b>${esc(cleanZone(t.zone) || t.country || "")}</b><small>${boatTxt}${t.nm ? ` · ${t.nm} nm` : ""}</small></span>` +
+  const hasFace = !!(m && photoOf(m));                 // volto della persona sul viaggio (foto grande)
+  const face = hasFace
+    ? `<img class="tlface" src="${photoOf(m)}" alt="${esc(m.name)}" loading="lazy">`
+    : `<span class="fl">${flags(t.country) || "⚓"}</span>`;
+  const dur = t.days ? `${t.days} ${t.days === 1 ? "giorno" : "giorni"}` : "";   // durata del viaggio
+  const aboard = (t.pdays != null && t.days && t.pdays < t.days) ? ` · a bordo ${t.pdays} gg` : ""; // giorni a bordo di questa persona (se < viaggio)
+  return `<a class="tlrow" href="viaggio.html#${t.id}">${face}` +
+    `<span class="z"><b>${hasFace ? flags(t.country) : ""}${esc(cleanZone(t.zone) || t.country || "")}</b>` +
+    `<small>${boatTxt}${t.nm ? ` · ${t.nm} nm` : ""}${dur ? ` · ${dur}` : ""}${aboard}</small></span>` +
     `${p ? `<span class="pace ${p.k}">${p.t}</span>` : ""}<span class="y num">${t.year || ""}</span><span class="go">›</span></a>`;
 }
 // aneddoti taggati con questa persona (link alla pagina Aneddoti)
@@ -243,7 +251,7 @@ function memberPage(m, all) {
     </div>
     ${(m.tags && m.tags.length) ? `<div class="mtags">${m.tags.map(tg => `<span class="mtag">${esc(tg)}</span>`).join("")}</div>` : ""}
     ${m.bio ? `<h2>Ritratto di bordo</h2><div class="card bio"><span class="epithet">${esc(m.bio.epithet || "")}</span>${m.bio.html}</div>` : ""}
-    ${(m.trips_list && m.trips_list.length) ? `<h2>⛵ I viaggi insieme</h2><div class="tlog">${m.trips_list.map(tripRow).join("")}</div>` : ""}
+    ${(m.trips_list && m.trips_list.length) ? `<h2>⛵ I viaggi insieme</h2><div class="tlog">${m.trips_list.map(t => tripRow(t, m)).join("")}</div>` : ""}
     ${(m.companions && m.companions.length) ? `<h2>🔗 Con chi ha navigato di più</h2><div class="cchips">${m.companions.map(cp => compChip(cp, all)).join("")}</div>` : ""}
     ${anecFor(m.id).length ? `<h2>📖 Aneddoti</h2><div class="tlog">${anecFor(m.id).map(anecRow).join("")}</div>` : ""}
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}

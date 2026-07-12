@@ -99,6 +99,9 @@ svg.worldmap .grat{stroke:var(--hair);stroke-width:.4;opacity:.5;fill:none}
 .mrow.todo{opacity:.82}
 /* nuovi viaggi */
 .pintro{color:var(--soft);margin-bottom:1rem}
+/* "Nuovi viaggi" in evidenza in cima alla pagina */
+#nuovi-viaggi{margin:1.2rem 1.1rem 0;padding:1.1rem 1.1rem 1.4rem;background:linear-gradient(180deg,color-mix(in srgb,var(--gold) 12%,var(--panel)),var(--panel));border:1px solid color-mix(in srgb,var(--gold) 38%,var(--hair));border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+#nuovi-viaggi h2{margin-top:.2rem;color:var(--gold)}
 .banner{background:var(--sea-1);border:1px dashed var(--hair);border-radius:8px;padding:1rem;color:var(--soft);font-size:.9rem;margin-bottom:1rem}
 .banner b{color:var(--ink)}
 .pcards{display:grid;grid-template-columns:1fr;gap:.9rem}
@@ -322,6 +325,7 @@ function render() {
       <div class="progress"><div class="bar"><i style="width:${pct}%"></i></div>
         <div class="lab">${doneN}/${tot}<small>mete fatte</small></div></div>
     </div>
+    ${proposteHTML()}
     <section>
       <h2>La mappa delle mete</h2>
       <div class="legend">
@@ -334,7 +338,6 @@ function render() {
       <div class="areachips">${chips}</div>
     </section>
     <section><h2>Il check delle mete</h2>${checklistHTML()}</section>
-    ${proposteHTML()}
     <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
 
   // click delegato sui pin

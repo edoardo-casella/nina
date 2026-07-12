@@ -30,7 +30,8 @@
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "camelia",
@@ -39,7 +40,8 @@
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "natfika",
@@ -48,7 +50,8 @@
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "stephanie",
@@ -57,7 +60,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 19
+     "days": 19,
+     "pdays": 19
     },
     {
      "id": "klaudia",
@@ -66,7 +70,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "cubalibre",
@@ -75,7 +80,8 @@
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "anax",
@@ -84,7 +90,8 @@
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "blue-bird",
@@ -93,7 +100,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "trocha",
@@ -102,7 +110,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "aquarela",
@@ -111,7 +120,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 252,
-     "days": 13
+     "days": 13,
+     "pdays": 13
     },
     {
      "id": "sorbe",
@@ -120,7 +130,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "capitan-nikos",
@@ -129,7 +140,8 @@
      "country": "Greece",
      "boat": "Gib Sea 45",
      "nm": 165,
-     "days": 4
+     "days": 4,
+     "pdays": 4
     },
     {
      "id": "showtime",
@@ -138,7 +150,8 @@
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "invitation",
@@ -147,7 +160,8 @@
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "ondine",
@@ -156,7 +170,8 @@
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -165,7 +180,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "alba",
@@ -174,7 +190,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "silkwave",
@@ -183,7 +200,8 @@
      "country": "Italy",
      "boat": "Bavaria 51 Cruiser",
      "nm": 320,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "enya",
@@ -192,7 +210,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "mars-planet",
@@ -201,7 +220,8 @@
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "challenger",
@@ -210,7 +230,8 @@
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "all-in",
@@ -219,7 +240,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "isla",
@@ -228,7 +250,8 @@
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "alexandros",
@@ -237,7 +260,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "cari",
@@ -246,7 +270,8 @@
      "country": "Seychelles",
      "boat": "Lagoon 46",
      "nm": 140,
-     "days": 15
+     "days": 15,
+     "pdays": 15
     }
    ],
    "crew2026": {
@@ -421,7 +446,8 @@
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "stephanie",
@@ -430,7 +456,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 19
+     "days": 19,
+     "pdays": 19
     },
     {
      "id": "klaudia",
@@ -439,7 +466,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "anax",
@@ -448,7 +476,8 @@
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "trocha",
@@ -457,7 +486,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "sorbe",
@@ -466,7 +496,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "showtime",
@@ -475,7 +506,8 @@
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "ondine",
@@ -484,7 +516,8 @@
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -493,7 +526,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "photos": [
@@ -544,6 +578,78 @@
      "name": "Cecilia R.",
      "trips": 3,
      "days": 34
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 3,
+     "days": 34
+    },
+    {
+     "id": "nicola-r",
+     "name": "Nicola R.",
+     "trips": 2,
+     "days": 25
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "filippo-r",
+     "name": "Filippo R.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 10
     }
    ],
    "photo": "crew/img/matilde-c.jpg"
@@ -565,7 +671,8 @@
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "stephanie",
@@ -574,7 +681,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 19
+     "days": 19,
+     "pdays": 19
     },
     {
      "id": "klaudia",
@@ -583,7 +691,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "anax",
@@ -592,7 +701,8 @@
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "trocha",
@@ -601,7 +711,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "showtime",
@@ -610,7 +721,8 @@
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "ondine",
@@ -619,7 +731,8 @@
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -628,7 +741,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "mars-planet",
@@ -637,7 +751,8 @@
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "photos": [
@@ -683,6 +798,66 @@
      "name": "Riccardo B",
      "trips": 3,
      "days": 29
+    },
+    {
+     "id": "nicola-r",
+     "name": "Nicola R.",
+     "trips": 2,
+     "days": 25
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 2,
+     "days": 23
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "filippo-r",
+     "name": "Filippo R.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 10
     }
    ],
    "photo": "crew/img/margherita-c.jpg"
@@ -704,7 +879,8 @@
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "stephanie",
@@ -713,7 +889,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 19
+     "days": 19,
+     "pdays": 19
     },
     {
      "id": "klaudia",
@@ -722,7 +899,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "anax",
@@ -731,7 +909,8 @@
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "trocha",
@@ -740,7 +919,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "showtime",
@@ -749,7 +929,8 @@
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "ondine",
@@ -758,7 +939,8 @@
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "mars-planet",
@@ -767,7 +949,8 @@
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "photos": [
@@ -831,6 +1014,54 @@
      "name": "Cecilia R.",
      "trips": 2,
      "days": 23
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "filippo-r",
+     "name": "Filippo R.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 10
     }
    ],
    "photo": "crew/img/claudio-c.jpg"
@@ -852,7 +1083,8 @@
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "stephanie",
@@ -861,7 +1093,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 19
+     "days": 19,
+     "pdays": 19
     },
     {
      "id": "klaudia",
@@ -870,7 +1103,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "anax",
@@ -879,7 +1113,8 @@
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "trocha",
@@ -888,7 +1123,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "showtime",
@@ -897,7 +1133,8 @@
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "ondine",
@@ -906,7 +1143,8 @@
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "mars-planet",
@@ -915,7 +1153,8 @@
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "photos": [
@@ -961,6 +1200,54 @@
      "name": "Cecilia R.",
      "trips": 2,
      "days": 23
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "filippo-r",
+     "name": "Filippo R.",
+     "trips": 1,
+     "days": 14
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 10
     }
    ],
    "photo": "crew/img/paola-c.jpg"
@@ -982,7 +1269,8 @@
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     },
     {
      "id": "natfika",
@@ -991,7 +1279,8 @@
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "stephanie",
@@ -1000,7 +1289,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 19
+     "days": 19,
+     "pdays": 10
     },
     {
      "id": "aquarela",
@@ -1009,7 +1299,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 252,
-     "days": 13
+     "days": 13,
+     "pdays": 13
     },
     {
      "id": "invitation",
@@ -1018,7 +1309,8 @@
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "enya",
@@ -1027,7 +1319,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "isla",
@@ -1036,7 +1329,8 @@
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "alexandros",
@@ -1045,7 +1339,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "cari",
@@ -1054,7 +1349,8 @@
      "country": "Seychelles",
      "boat": "Lagoon 46",
      "nm": 140,
-     "days": 15
+     "days": 15,
+     "pdays": 15
     }
    ],
    "crew2026": {
@@ -1120,6 +1416,120 @@
      "name": "Belinda B.",
      "trips": 2,
      "days": 23
+    },
+    {
+     "id": "gabriele-b",
+     "name": "Gabriele B.",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 20
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "chiara-f",
+     "name": "Chiara F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "tonino-l",
+     "name": "Tonino L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "angela-k",
+     "name": "Angela K.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "mirco-l",
+     "name": "Mirco L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "rebecca-l",
+     "name": "Rebecca L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "fabiana-f",
+     "name": "Fabiana F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "martina-r",
+     "name": "Martina R.",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -1140,7 +1550,8 @@
      "country": "Greece",
      "boat": "Gib Sea 45",
      "nm": 165,
-     "days": 4
+     "days": 4,
+     "pdays": 4
     },
     {
      "id": "showtime",
@@ -1149,7 +1560,8 @@
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "invitation",
@@ -1158,7 +1570,8 @@
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "ondine",
@@ -1167,7 +1580,8 @@
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -1176,7 +1590,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "alba",
@@ -1185,7 +1600,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     }
    ],
    "companions": [
@@ -1224,6 +1640,126 @@
      "name": "Alice S.",
      "trips": 1,
      "days": 15
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "nicola-r",
+     "name": "Nicola R.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 7
     }
    ]
   },
@@ -1244,7 +1780,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "trocha",
@@ -1253,7 +1790,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "sorbe",
@@ -1262,7 +1800,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -1271,7 +1810,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "silkwave",
@@ -1280,7 +1820,8 @@
      "country": "Italy",
      "boat": "Bavaria 51 Cruiser",
      "nm": 320,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "mars-planet",
@@ -1289,7 +1830,8 @@
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "isla",
@@ -1298,7 +1840,8 @@
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "crew2026": {
@@ -1404,6 +1947,108 @@
      "name": "Simona B.",
      "trips": 3,
      "days": 29
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-t",
+     "name": "Riccardo T.",
+     "trips": 1,
+     "days": 6
     }
    ],
    "photo": "crew/img/riccardo-b.jpg"
@@ -1425,7 +2070,8 @@
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "stephanie",
@@ -1434,7 +2080,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 19
+     "days": 19,
+     "pdays": 19
     },
     {
      "id": "klaudia",
@@ -1443,7 +2090,8 @@
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     }
    ],
    "photos": [
@@ -1515,7 +2163,8 @@
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "invitation",
@@ -1524,7 +2173,8 @@
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
-     "days": 12
+     "days": 12,
+     "pdays": 7
     },
     {
      "id": "alba",
@@ -1533,7 +2183,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 20
     },
     {
      "id": "silkwave",
@@ -1542,7 +2193,8 @@
      "country": "Italy",
      "boat": "Bavaria 51 Cruiser",
      "nm": 320,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "challenger",
@@ -1551,7 +2203,8 @@
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "all-in",
@@ -1560,7 +2213,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "photos": [
@@ -1691,6 +2345,114 @@
      "name": "Giacomo N",
      "trips": 2,
      "days": 14
+    },
+    {
+     "id": "umberto-f",
+     "name": "Umberto F.",
+     "trips": 2,
+     "days": 12
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 2,
+     "days": 12
+    },
+    {
+     "id": "riccardo-t",
+     "name": "Riccardo T.",
+     "trips": 2,
+     "days": 12
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 15
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlotta-d",
+     "name": "Carlotta D.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 6
     }
    ],
    "photo": "crew/img/leonardo-m.jpg"
@@ -1712,7 +2474,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "challenger",
@@ -1721,7 +2484,8 @@
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "all-in",
@@ -1730,7 +2494,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
-     "days": 11
+     "days": 11,
+     "pdays": 8
     },
     {
      "id": "isla",
@@ -1739,7 +2504,8 @@
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "cari",
@@ -1748,7 +2514,8 @@
      "country": "Seychelles",
      "boat": "Lagoon 46",
      "nm": 140,
-     "days": 15
+     "days": 15,
+     "pdays": 15
     }
    ],
    "crew2026": {
@@ -1851,6 +2618,66 @@
      "name": "Leonardo M.",
      "trips": 2,
      "days": 14
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 8
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 8
+    },
+    {
+     "id": "carlotta-d",
+     "name": "Carlotta D.",
+     "trips": 1,
+     "days": 8
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 8
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "umberto-f",
+     "name": "Umberto F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-t",
+     "name": "Riccardo T.",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -1871,7 +2698,8 @@
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "enya",
@@ -1880,7 +2708,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "isla",
@@ -1889,7 +2718,8 @@
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "cari",
@@ -1898,7 +2728,8 @@
      "country": "Seychelles",
      "boat": "Lagoon 46",
      "nm": 140,
-     "days": 15
+     "days": 15,
+     "pdays": 15
     }
    ],
    "companions": [
@@ -1937,6 +2768,42 @@
      "name": "Cecilia R.",
      "trips": 1,
      "days": 12
+    },
+    {
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -1957,7 +2824,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "isla",
@@ -1966,7 +2834,8 @@
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "alexandros",
@@ -1975,7 +2844,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "cari",
@@ -1984,7 +2854,8 @@
      "country": "Seychelles",
      "boat": "Lagoon 46",
      "nm": 140,
-     "days": 15
+     "days": 15,
+     "pdays": 15
     }
    ],
    "crew2026": {
@@ -2075,6 +2946,54 @@
      "name": "Laura C.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlotta-d",
+     "name": "Carlotta D.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "tonino-l",
+     "name": "Tonino L.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "angela-k",
+     "name": "Angela K.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -2095,7 +3014,8 @@
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "enya",
@@ -2104,7 +3024,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "cari",
@@ -2113,7 +3034,8 @@
      "country": "Seychelles",
      "boat": "Lagoon 46",
      "nm": 140,
-     "days": 15
+     "days": 15,
+     "pdays": 15
     }
    ],
    "companions": [
@@ -2152,6 +3074,36 @@
      "name": "Marco T.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "enrico-g",
+     "name": "Enrico G.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gianmarco-m",
+     "name": "Gianmarco M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "alberto-b",
+     "name": "Alberto B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 1,
+     "days": 11
     }
    ],
    "photo": "crew/img/pietro-c.jpg"
@@ -2173,7 +3125,8 @@
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "blue-bird",
@@ -2182,7 +3135,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "silkwave",
@@ -2191,7 +3145,8 @@
      "country": "Italy",
      "boat": "Bavaria 51 Cruiser",
      "nm": 320,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "challenger",
@@ -2200,7 +3155,8 @@
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "crew2026": {
@@ -2275,6 +3231,42 @@
      "name": "Pietro C.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "enrico-g",
+     "name": "Enrico G.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gianmarco-m",
+     "name": "Gianmarco M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "alberto-b",
+     "name": "Alberto B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "umberto-f",
+     "name": "Umberto F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 6
     }
    ],
    "photo": "crew/img/andrea-a.jpg"
@@ -2296,7 +3288,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "sorbe",
@@ -2305,7 +3298,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -2314,7 +3308,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "photos": [
@@ -2370,6 +3365,48 @@
      "name": "Silvano B.",
      "trips": 2,
      "days": 23
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
     }
    ],
    "photo": "crew/img/luca-b.jpg"
@@ -2391,7 +3428,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "sorbe",
@@ -2400,7 +3438,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -2409,7 +3448,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "companions": [
@@ -2448,6 +3488,48 @@
      "name": "Silvano B.",
      "trips": 2,
      "days": 23
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 2,
+     "days": 22
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 1,
+     "days": 12
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -2468,7 +3550,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "sorbe",
@@ -2477,7 +3560,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "mars-planet",
@@ -2486,7 +3570,8 @@
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "companions": [
@@ -2525,6 +3610,42 @@
      "name": "Claudio C.",
      "trips": 2,
      "days": 18
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -2545,7 +3666,8 @@
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "sorbe",
@@ -2554,7 +3676,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "mars-planet",
@@ -2563,7 +3686,8 @@
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "companions": [
@@ -2602,6 +3726,42 @@
      "name": "Claudio C.",
      "trips": 2,
      "days": 18
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 2,
+     "days": 18
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -2622,7 +3782,8 @@
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "cubalibre",
@@ -2631,7 +3792,8 @@
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "blue-bird",
@@ -2640,7 +3802,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     }
    ],
    "photos": [
@@ -2691,6 +3854,30 @@
      "name": "Gianmarco M.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "alberto-b",
+     "name": "Alberto B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "umberto-f",
+     "name": "Umberto F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 6
     }
    ],
    "photo": "crew/img/marco-t.jpg"
@@ -2712,7 +3899,8 @@
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "alba",
@@ -2721,7 +3909,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     },
     {
      "id": "all-in",
@@ -2730,7 +3919,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "photos": [
@@ -2804,6 +3994,72 @@
      "name": "Cecilia R.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 8
+    },
+    {
+     "id": "umberto-f",
+     "name": "Umberto F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 6
     }
    ],
    "photo": "crew/img/gualtiero-s.jpg"
@@ -2825,7 +4081,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     },
     {
      "id": "cari",
@@ -2834,7 +4091,8 @@
      "country": "Seychelles",
      "boat": "Lagoon 46",
      "nm": 140,
-     "days": 15
+     "days": 15,
+     "pdays": 15
     }
    ],
    "companions": [
@@ -2887,7 +4145,8 @@
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 14
     },
     {
      "id": "ondine",
@@ -2896,7 +4155,8 @@
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "companions": [
@@ -2956,7 +4216,8 @@
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     },
     {
      "id": "aquarela",
@@ -2965,7 +4226,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 252,
-     "days": 13
+     "days": 13,
+     "pdays": 13
     }
    ],
    "companions": [
@@ -2992,6 +4254,24 @@
      "name": "Paola C.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "gabriele-b",
+     "name": "Gabriele B.",
+     "trips": 1,
+     "days": 10
     }
    ]
   },
@@ -3012,7 +4292,8 @@
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "blue-bird",
@@ -3021,7 +4302,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     }
    ],
    "photos": [
@@ -3077,6 +4359,12 @@
      "name": "Gianmarco M.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "alberto-b",
+     "name": "Alberto B.",
+     "trips": 1,
+     "days": 11
     }
    ],
    "photo": "crew/img/carlo-a.jpg"
@@ -3098,7 +4386,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -3107,7 +4396,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "crew2026": {
@@ -3171,6 +4461,36 @@
      "name": "Cecilia R.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 1,
+     "days": 11
     }
    ],
    "photo": "crew/img/ilaria-m.jpg"
@@ -3192,7 +4512,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     },
     {
      "id": "lohengrin",
@@ -3201,7 +4522,8 @@
      "country": "Cuba",
      "boat": "Lagoon 450",
      "nm": 390,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "crew2026": {
@@ -3275,6 +4597,36 @@
      "name": "Cecilia R.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -3295,7 +4647,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     },
     {
      "id": "all-in",
@@ -3304,7 +4657,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "photos": [
@@ -3375,6 +4729,60 @@
      "name": "Cecilia R.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "alice-s",
+     "name": "Alice S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 8
     }
    ]
   },
@@ -3395,7 +4803,8 @@
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
-     "days": 12
+     "days": 12,
+     "pdays": 7
     },
     {
      "id": "all-in",
@@ -3404,7 +4813,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "photos": [
@@ -3475,6 +4885,36 @@
      "name": "Giacomo N",
      "trips": 1,
      "days": 8
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
+     "trips": 1,
+     "days": 7
+    },
+    {
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
+     "trips": 1,
+     "days": 7
     }
    ]
   },
@@ -3495,7 +4935,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     },
     {
      "id": "challenger",
@@ -3504,7 +4945,8 @@
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "photos": [
@@ -3550,6 +4992,60 @@
      "name": "Beatrice F.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "umberto-f",
+     "name": "Umberto F.",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 6
+    },
+    {
+     "id": "riccardo-t",
+     "name": "Riccardo T.",
+     "trips": 1,
+     "days": 6
     }
    ],
    "photo": "crew/img/giacomo-b.jpg"
@@ -3571,7 +5067,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 15
     }
    ],
    "photos": [
@@ -3617,6 +5114,36 @@
      "name": "Sergio S.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
     }
    ]
   },
@@ -3637,7 +5164,8 @@
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
-     "days": 20
+     "days": 20,
+     "pdays": 14
     }
    ],
    "companions": [
@@ -3690,7 +5218,8 @@
      "country": "Italy",
      "boat": "Bavaria 51 Cruiser",
      "nm": 320,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "challenger",
@@ -3699,7 +5228,8 @@
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "photos": [
@@ -3765,7 +5295,8 @@
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "challenger",
@@ -3774,7 +5305,8 @@
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "photos": [
@@ -3820,6 +5352,12 @@
      "name": "Gualtiero S.",
      "trips": 1,
      "days": 6
+    },
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 6
     }
    ]
   },
@@ -3840,7 +5378,8 @@
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     }
    ],
    "companions": [
@@ -3899,7 +5438,8 @@
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
-     "days": 12
+     "days": 12,
+     "pdays": 12
     }
    ],
    "companions": [
@@ -3958,7 +5498,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "photos": [
@@ -4049,7 +5590,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "photos": [
@@ -4095,6 +5637,24 @@
      "name": "Silvano B.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 11
     }
    ],
    "photo": "crew/img/michele-m.jpg"
@@ -4116,7 +5676,8 @@
      "country": "Saint Vincent - France",
      "boat": "Lagoon 450",
      "nm": 271,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "companions": [
@@ -4155,6 +5716,24 @@
      "name": "Silvano B.",
      "trips": 1,
      "days": 11
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 11
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 11
     }
    ]
   },
@@ -4175,7 +5754,8 @@
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "companions": [
@@ -4235,7 +5815,8 @@
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "companions": [
@@ -4295,7 +5876,8 @@
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
-     "days": 11
+     "days": 11,
+     "pdays": 11
     }
    ],
    "companions": [
@@ -4355,7 +5937,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     }
    ],
    "photos": [
@@ -4401,6 +5984,36 @@
      "name": "Sergio S.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
     }
    ],
    "photo": "crew/img/matilde-r.jpg"
@@ -4422,7 +6035,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     }
    ],
    "photos": [
@@ -4473,6 +6087,36 @@
      "name": "Sergio S.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
     }
    ],
    "photo": "crew/img/sara-b.jpg"
@@ -4494,7 +6138,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     }
    ],
    "photos": [
@@ -4540,6 +6185,36 @@
      "name": "Sergio S.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
     }
    ]
   },
@@ -4560,7 +6235,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     }
    ],
    "photos": [
@@ -4606,6 +6282,36 @@
      "name": "Beatrice F.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
     }
    ]
   },
@@ -4626,7 +6332,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     }
    ],
    "companions": [
@@ -4663,6 +6370,36 @@
     {
      "id": "beatrice-f",
      "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
      "trips": 1,
      "days": 10
     }
@@ -4685,7 +6422,8 @@
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
-     "days": 20
+     "days": 20,
+     "pdays": 10
     }
    ],
    "companions": [
@@ -4724,6 +6462,36 @@
      "name": "Beatrice F.",
      "trips": 1,
      "days": 10
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10
     }
    ]
   },
@@ -4744,7 +6512,8 @@
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 252,
-     "days": 13
+     "days": 13,
+     "pdays": 10
     }
    ],
    "companions": [
@@ -4779,7 +6548,8 @@
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "crew2026": {
@@ -4854,7 +6624,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "companions": [
@@ -4895,7 +6666,8 @@
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "companions": [
@@ -4936,7 +6708,8 @@
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "companions": [
@@ -4983,7 +6756,8 @@
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "companions": [
@@ -5030,7 +6804,8 @@
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "companions": [
@@ -5077,7 +6852,8 @@
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
-     "days": 6
+     "days": 6,
+     "pdays": 6
     }
    ],
    "companions": [

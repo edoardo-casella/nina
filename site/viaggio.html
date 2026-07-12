@@ -59,6 +59,12 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .chip.lk:hover{border-color:var(--accent);color:var(--accent)}
 .cav{width:22px;height:22px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2)}
 .cav.ph{display:inline-flex;align-items:center;justify-content:center;font:700 .66rem/1 var(--display);color:#fff;background:var(--accent)}
+/* equipaggio di quell'anno: griglia di ritratti grandi (foto ~4x + nome sotto) */
+.crewgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:.9rem .5rem;margin-top:.3rem}
+.crewgrid .chip.lk{flex-direction:column;text-align:center;border:0;background:none;padding:.2rem;gap:.45rem;font-size:.74rem;line-height:1.16}
+.crewgrid .chip.lk:hover{color:var(--accent)}
+.crewgrid .cav{width:88px;height:88px}
+.crewgrid .cav.ph{font:700 2rem/1 var(--display)}
 .chip.me{border-color:var(--gold);color:var(--gold);font-weight:700}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
 .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;cursor:pointer;background:var(--sea-2);display:block}
@@ -173,7 +179,7 @@ function buildCrewMap(people) {
 }
 function crewChip(name) {
   const p = CREWMAP[normName(name)];
-  const photo = p && p.crew2026 && p.crew2026.photo;
+  const photo = p && ((p.crew2026 && p.crew2026.photo) || p.photo);
   const av = photo ? `<img class="cav" src="${photo}" alt="" loading="lazy">` : `<span class="cav ph">${esc((name || "?").trim()[0])}</span>`;
   if (p) { const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`; return `<a class="chip lk" href="${href}">${av}${esc(name)}</a>`; }
   return `<span class="chip lk"><span class="cav ph">${esc((name || "?").trim()[0])}</span>${esc(name)}</span>`;
@@ -182,7 +188,7 @@ function crewChip(name) {
 function crewChipById(id) {
   const p = CREWBYID[id];
   if (!p) return "";
-  const photo = p.crew2026 && p.crew2026.photo;
+  const photo = (p.crew2026 && p.crew2026.photo) || p.photo;
   const av = photo ? `<img class="cav" src="${photo}" alt="" loading="lazy">` : `<span class="cav ph">${esc((p.name || "?").trim()[0])}</span>`;
   const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`;
   return `<a class="chip lk" href="${href}">${av}${esc(p.name)}</a>`;
@@ -254,12 +260,12 @@ function tripPage(t, all) {
     <h2>📸 Foto del viaggio</h2>
     ${gal}
     <h2>⚓ L'equipaggio di quell'anno</h2>
-    <div class="chips">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>
+    <div class="crewgrid">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>
     ${ANEC.filter(a => a.trip_id === t.id).length ? `<h2>📖 Aneddoti di questo viaggio</h2>
     <div class="chips">${ANEC.filter(a => a.trip_id === t.id).map(a => `<a class="chip lk" href="aneddoti.html#${a.id}">${a.kind === "eroico" ? "🎖️" : "⚓"} ${esc(a.title)}</a>`).join("")}</div>` : ""}
     <div class="nav2">
-      ${prev ? `<a href="#${prev.id}"><small>‹ ${prev.year}</small>${esc(cleanZone(prev.zone))}${prev.name ? ` · «${esc(prev.name)}»` : ""}</a>` : "<span></span>"}
-      ${next ? `<a class="next" href="#${next.id}"><small>${next.year} ›</small>${esc(cleanZone(next.zone))}${next.name ? ` · «${esc(next.name)}»` : ""}</a>` : "<span></span>"}
+      ${prev ? `<a href="#${prev.id}"><small>‹ ${prev.year}</small>${flags(prev.country)}${esc(cleanZone(prev.zone))}${prev.name ? ` · «${esc(prev.name)}»` : ""}</a>` : "<span></span>"}
+      ${next ? `<a class="next" href="#${next.id}"><small>${next.year} ›</small>${flags(next.country)}${esc(cleanZone(next.zone))}${next.name ? ` · «${esc(next.name)}»` : ""}</a>` : "<span></span>"}
     </div>
   </section>
   <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer>`;

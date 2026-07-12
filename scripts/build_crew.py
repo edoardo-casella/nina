@@ -57,12 +57,13 @@ def stats(p):  # giorni/miglia PER-PERSONA (alcuni sono a bordo meno del totale 
     ys = [trip_year.get(t) for t in ts if trip_year.get(t)]
     return {"trips": len(ts), "days": days, "nm": nm, "first": min(ys) if ys else None, "last": max(ys) if ys else None}
 
-def trips_list_for(ts):  # log viaggi cliccabile: id-slug (parita' con build_trips), + boat/nm/days (per pace/icona)
+def trips_list_for(ts, pid=None):  # log viaggi cliccabile: id-slug (parita' con build_trips), + boat/nm/days (per pace/icona) + pdays (giorni a bordo di QUESTA persona; None -> intero viaggio)
     rows = []
     for t in sorted(ts, key=lambda t: (trip_year.get(t, 0), t)):
         rows.append({"id": slugify(trip_name.get(t, "")) or ("t" + str(t)),
                      "year": trip_year.get(t), "zone": trip_zone.get(t, ""), "country": trip_country.get(t, ""),
-                     "boat": trip_boat.get(t, ""), "nm": trip_nm.get(t, 0), "days": round(trip_days.get(t, 0))})
+                     "boat": trip_boat.get(t, ""), "nm": trip_nm.get(t, 0), "days": round(trip_days.get(t, 0)),
+                     "pdays": round(pdays(t, pid)) if pid is not None else round(trip_days.get(t, 0))})
     return rows
 
 def companions_for(p):  # con chi ha navigato di piu' (peso: n. viaggi condivisi, tie-break giorni)
@@ -73,7 +74,7 @@ def companions_for(p):  # con chi ha navigato di piu' (peso: n. viaggi condivisi
             if q == p: continue
             cnt[q] += 1
             dsum[q] += round(min(pdays(t, p), pdays(t, q)))
-    ranked = sorted(cnt, key=lambda q: (cnt[q], dsum[q]), reverse=True)[:6]
+    ranked = sorted(cnt, key=lambda q: (cnt[q], dsum[q]), reverse=True)  # TUTTI i co-naviganti (filtro id dopo l'ordinamento, non prima: altrimenti gli stub tagliavano il conteggio)
     res = []
     for q in ranked:
         qid = pid2id.get(q)
@@ -123,7 +124,7 @@ for m in members:
         tl = trips_list_for(list(trip_year.keys()))   # lo skipper c'e' su tutti i viaggi
     else:
         pid = match(nm); me = False
-        if pid: used_pids.add(pid); id2pid[m["id"]] = pid; st = stats(pid); tl = trips_list_for(part.get(pid, []))
+        if pid: used_pids.add(pid); id2pid[m["id"]] = pid; st = stats(pid); tl = trips_list_for(part.get(pid, []), pid)
         else: st = {"trips": 0, "days": 0, "nm": 0, "first": None, "last": None}; tl = []
     crew2026 = {k: m[k] for k in ("board", "leave", "role", "photo", "nick", "note", "link", "q") if k in m}
     out.append({"id": m["id"], "name": nm, **st, "rank": rank_of(st["days"], me),
@@ -137,7 +138,7 @@ for p in part:
     pid_id = slugify(nm.replace(".", "")) or ("p" + str(p))
     id2pid[pid_id] = p
     out.append({"id": pid_id, "name": nm, **st,
-                "rank": rank_of(st["days"]), "trips_list": trips_list_for(part.get(p, []))})
+                "rank": rank_of(st["days"]), "trips_list": trips_list_for(part.get(p, []), p)})
 
 # foto taggate per persona (sidecar generato da build_trips.py) -> campo photos
 PHOTOTAGS = os.path.join(ROOT, "data", "photo-tags.json")

@@ -116,8 +116,10 @@ a.th:hover .n b{color:var(--accent)}
 /* la ciurma — classifica compagni di navigazione (per giorni, con grado) */
 .cm-intro{font-size:.95rem;color:var(--soft);margin-bottom:1rem;line-height:1.6}
 .cmwrap{display:flex;flex-direction:column}
-.cm{display:grid;grid-template-columns:1.2rem 2.3rem minmax(6.5rem,10rem) minmax(2.5rem,7rem) 3.1rem;align-items:center;gap:.5rem;
+.cm{display:grid;grid-template-columns:1.2rem 2.2rem 2.3rem minmax(5.5rem,1fr) minmax(2.4rem,6rem) 3.7rem;align-items:center;gap:.5rem;
   padding:.4rem 0;text-decoration:none;color:inherit;border-bottom:1px solid var(--hair)}
+.cm-av{width:36px;height:36px;border-radius:50%;object-fit:cover;background:var(--sea-2);flex:none}
+.cm-av.ph{display:flex;align-items:center;justify-content:center;font:700 .82rem/1 var(--display);color:#fff;background:var(--accent)}
 .cm:last-child{border-bottom:0}
 a.cm:hover .cm-name{color:var(--accent)}
 .cm-rank{font:700 .78rem/1 var(--mono);color:var(--soft);text-align:center}
@@ -135,6 +137,11 @@ svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible}
 .cm-toggle{display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;background:var(--panel);border:1px solid var(--hair);color:var(--soft);
   font:700 .64rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:.55rem .95rem;border-radius:99px;cursor:pointer}
 .cm-toggle:hover{border-color:var(--accent);color:var(--accent)}
+/* barra di ordinamento classifica ciurma (giorni / miglia / paesi / media) */
+.cm-sortbar{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.9rem}
+.cm-sort{font:700 .6rem/1 var(--display);letter-spacing:.09em;text-transform:uppercase;background:var(--panel);border:1px solid var(--hair);color:var(--soft);border-radius:99px;padding:.5rem .85rem;cursor:pointer}
+.cm-sort:hover{border-color:var(--accent);color:var(--accent)}
+.cm-sort.on{background:var(--sea-2);color:var(--ink);border-color:var(--accent)}
 .cm-toggle .chev{font-size:.72em;transition:transform .15s}
 .cm-toggle .chev.up{transform:rotate(180deg)}
 
@@ -469,22 +476,42 @@ function rankSVG(r) {
   }
 }
 
-// La ciurma negli anni: classifica per giorni in mare, con grado (tutti, cliccabili)
-function crewmatesHTML() {
+// La ciurma negli anni: classifica ordinabile (giorni / miglia / paesi / media nm al giorno), con grado
+const cmCountries = x => {   // paesi distinti dai viaggi della persona (split 'Greece-Turkey' ecc.)
+  const s = new Set();
+  (x.trips_list || []).forEach(t => (t.country || "").split(/[-&]/).forEach(c => { c = c.trim(); if (c) s.add(c); }));
+  return s.size;
+};
+const cmAvatar = x => {       // foto profilo nella classifica (fallback iniziale)
+  const p = (x.crew2026 && x.crew2026.photo) || x.photo;
+  return p ? `<img class="cm-av" src="${p}" alt="" loading="lazy">`
+           : `<span class="cm-av ph">${esc((x.name || "?").trim()[0])}</span>`;
+};
+const CM_METRICS = {
+  days:      { label: "Giorni",     unit: "giorni", val: x => x.days || 0,                              fmt: v => nfmt(v) },
+  nm:        { label: "Miglia",     unit: "miglia", val: x => x.nm || 0,                                fmt: v => nfmt(v) },
+  countries: { label: "Paesi",      unit: "paesi",  val: x => cmCountries(x),                           fmt: v => v },
+  avg:       { label: "Media nm/g", unit: "nm/g",   val: x => x.days ? Math.round(x.nm / x.days) : 0,   fmt: v => v },
+};
+let CREWSORT = "days";
+function crewmatesInner(sortKey) {
+  const M = CM_METRICS[sortKey] || CM_METRICS.days;
   const people = (window.__CREW || []).filter(p => p.days != null);
   if (!people.length) return "";
-  const list = people.slice().sort((a, b) => b.days - a.days || b.trips - a.trips);
-  const max = list[0].days || 1;
+  const list = people.slice().sort((a, b) => M.val(b) - M.val(a) || b.days - a.days || b.trips - a.trips);
+  const max = M.val(list[0]) || 1;
   const row = (x, i) => {
-    const pct = Math.max(4, Math.round(x.days / max * 100));
+    const v = M.val(x);
+    const pct = Math.max(4, Math.round(v / max * 100));
     const yrs = x.first ? `${x.first}${x.last && x.last !== x.first ? "–" + x.last : ""}` : "";
     const href = (x.crew2026 && x.crew2026.link) || `membro.html#${x.id}`;
     return `<a class="cm ${x.me ? "me" : ""}" href="${href}" title="${esc(RANK_LABEL[x.rank] || "")}">
       <span class="cm-rank">${x.me ? "👑" : i}</span>
+      ${cmAvatar(x)}
       <span class="cm-ins">${rankSVG(x.rank)}</span>
       <span class="cm-name">${esc(x.name)}${yrs ? ` <span class="cm-yr">${yrs}</span>` : ""}</span>
       <span class="cm-bar"><i style="width:${pct}%"></i></span>
-      <span class="cm-n">${x.days}<em>giorni</em></span></a>`;
+      <span class="cm-n">${M.fmt(v)}<em>${M.unit}</em></span></a>`;
   };
   const HEAD = 6;                                   // podio compatto; il resto è comprimibile
   const head = list.slice(0, HEAD).map(row).join("");
@@ -494,9 +521,21 @@ function crewmatesHTML() {
     ? `<div class="cm-extra" id="cm-extra" hidden>${rest.map((x, i) => row(x, i + HEAD)).join("")}</div>
     <button class="cm-toggle" type="button" data-label="${label}" onclick="toggleCrew(this)">${label} <span class="chev">▾</span></button>`
     : "";
+  const tabs = Object.keys(CM_METRICS).map(k =>
+    `<button type="button" class="cm-sort${k === sortKey ? " on" : ""}" onclick="setCrewSort('${k}')">${esc(CM_METRICS[k].label)}</button>`).join("");
+  return `<div class="cm-sortbar">${tabs}</div><div class="cmwrap">${head}</div>${more}`;
+}
+function crewmatesHTML() {
+  if (!(window.__CREW || []).filter(p => p.days != null).length) return "";
   return `<section><h2>La ciurma negli anni</h2>
-    <p class="cm-intro">I compagni di rotta in ordine di <b>giorni in mare</b> con l'Ammiraglio — ognuno col suo <b>grado</b>. Tocca un nome per la scheda; apri per vederli tutti.</p>
-    <div class="cmwrap">${head}</div>${more}</section>`;
+    <p class="cm-intro">I compagni di rotta con l'Ammiraglio, ognuno col suo <b>grado</b>. Ordina per <b>giorni in mare</b>, miglia, paesi o media giornaliera; tocca un nome per la scheda.</p>
+    <div id="crewmates">${crewmatesInner(CREWSORT)}</div></section>`;
+}
+function setCrewSort(k) {
+  if (!CM_METRICS[k]) return;
+  CREWSORT = k;
+  const el = document.getElementById("crewmates");
+  if (el) el.innerHTML = crewmatesInner(k);
 }
 function toggleCrew(btn) {
   const ex = document.getElementById("cm-extra");
