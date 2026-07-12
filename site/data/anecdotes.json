@@ -221,11 +221,11 @@
       "title": "Wally pescato dal suo amo",
       "kind": "leggenda",
       "stamp": "Leggenda",
-      "meta": "⚓ Equipaggio Niña · maturità 2011",
-      "flag": "⚓",
-      "country": null,
+      "meta": "🇬🇷 Mykonos · Cicladi · maturità 2011",
+      "flag": "🇬🇷",
+      "country": "Greece",
       "year": 2011,
-      "place": null,
+      "place": "Mykonos · Cicladi",
       "boat": null,
       "boat_name": null,
       "trip_id": null,
@@ -233,7 +233,7 @@
         "gualtiero-s",
         "riccardo-t"
       ],
-      "bodyHtml": "<p>Il pescatore degli equipaggi all'opera: se di notte, in rada, senti dei pestoni sul ponte, è <a class=\"plink\" href=\"membro.html#gualtiero-s\"><b>Gualtiero S.</b></a> che cala le canne &mdash; veri diagrammi, sette-otto lenze insieme senza impigliare un amo.</p>\n<p>La scena cult, però, è una <b>maturità del 2011</b>, senza il capitano a bordo. Dopo qualche parola di troppo, <a class=\"plink\" href=\"membro.html#riccardo-t\"><b>Riccardo T.</b></a> lo butta in acqua proprio mentre la barca pesca a strascico &mdash; e il buon &laquo;Wally&raquo; finisce pescato dal suo stesso amo, impigliato in una mano.</p>\n<div class=\"les\"><b>Morale di bordo</b>\n  <ol><li>Non litigare col pescatore mentre le lenze sono in acqua.</li>\n  <li>Il mare, ogni tanto, restituisce le battute con gli interessi.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> un tuffo non richiesto, un amo in una mano e una leggenda di bordo.</div>"
+      "bodyHtml": "<p>Il pescatore degli equipaggi all'opera: se di notte, in rada, senti dei pestoni sul ponte, è <a class=\"plink\" href=\"membro.html#gualtiero-s\"><b>Gualtiero S.</b></a> che cala le canne &mdash; veri diagrammi, sette-otto lenze insieme senza impigliare un amo.</p>\n<p>La scena cult, però, è una <b>maturità del 2011</b>, senza il capitano a bordo. Dopo qualche parola di troppo, <a class=\"plink\" href=\"membro.html#riccardo-t\"><b>Riccardo T.</b></a> lo butta in acqua proprio mentre la barca pesca a strascico &mdash; e il buon &laquo;Wally&raquo; finisce pescato dal suo stesso amo, impigliato in una mano &mdash; con successiva corsa al pronto soccorso di Mykonos.</p>\n<div class=\"les\"><b>Morale di bordo</b>\n  <ol><li>Non litigare col pescatore mentre le lenze sono in acqua.</li>\n  <li>Il mare, ogni tanto, restituisce le battute con gli interessi.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> un tuffo non richiesto, un amo in una mano, un giro al pronto soccorso di Mykonos e una leggenda di bordo.</div>"
     }
   ]
 }

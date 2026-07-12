@@ -104,6 +104,26 @@
     "angela-k": {
       "epithet": "La saudade di bordo",
       "html": "La saudade che manca a ogni equipaggio ce la mette lei: spirito brasiliano e allegria contagiosa, trova sempre qualcosa di cui parlare, anche per ore. Occhio però: proverà a coinvolgerti in qualche business, tutto per avvicinarsi un po' di più al suo sogno di andare a vivere a Dubai."
+    },
+    "enrico-g": {
+      "epithet": "La Guercia",
+      "html": "Detto la Guercia. Odia il caldo: la cabina rovente per lui è semplicemente intollerabile. Uomo dal guardaroba prominente &mdash; per ogni viaggio avrà messo in valigia almeno una quindicina di outfit. È l'uomo della battuta tagliente, sempre pronta: molto ironico e vero showman in pubblico, con un soprannome affibbiato a ciascun membro dell'equipaggio."
+    },
+    "michele-m": {
+      "epithet": "Il guru (l'ammiraglio leggendario)",
+      "html": "Un ammiraglio leggendario, con centinaia di vacanze in barca e viaggi in ogni angolo del mondo a ruolino. È un po' il guru del settore: ha guidato l'iniziazione e la crescita dello skipper Edoardo. Memorabili le loro regate alle <b>Sporadi</b>. In più occasioni ha navigato <b>in flotta, sulla propria barca</b>, a fianco della Niña &mdash; a <b>Cuba</b> e alle Sporadi &mdash; con al seguito le famiglie Mascagni e Brancaleoni: non equipaggio della Niña, ma compagni di rotta di un'altra barca."
+    },
+    "pietro-c": {
+      "epithet": "Il nemico delle playlist",
+      "html": "Grande odiatore delle playlist dell'Ammiraglio. Memorabili i suoi piatti a base di würstel al viaggio di maturità, e altrettanto famose le sue ustioni da sole. Per il resto, un marinaio affidabile e scrupoloso."
+    },
+    "riccardo-t": {
+      "epithet": "L'uomo dell'ordine",
+      "html": "L'uomo dell'ordine e delle domande scomode, abbonato alle gavette dell'equipaggio &mdash; vittime predilette <a class='plink' href='membro.html#umberto-f'>Umberto F.</a> e <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> È lui il protagonista, insieme a <a class='plink' href='membro.html#gualtiero-s'>Gualtiero S.</a>, dell'<a class='plink' href='aneddoti.html#wally-pescato'>aneddoto del pesce Saba</a>: dopo un litigio butta il buon Saba in acqua mentre la barca pesca a strascico, e quello finisce pescato dai suoi stessi ami a una mano &mdash; con tanto di corsa al pronto soccorso di Mykonos."
+    },
+    "filippo-r": {
+      "epithet": "L'uomo dello sport",
+      "html": "L'uomo dello sport e delle domande scomode."
     }
   }
 }
