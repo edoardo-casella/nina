@@ -234,7 +234,9 @@ function tripPage(t, all) {
   const cat = /Lagoon|Bali|Fountain|Pajot/i.test(t.boat) ? "catamarano" : "monoscafo";
   const avg = t.days ? Math.round(t.nm / t.days) : null;
   const pc = pace(avg), df = diffOf(t.zone, t.month);
-  const crew = t.crew.map(crewChip).join("");
+  // lo skipper è a bordo di ogni viaggio (è il suo diario di rotta): lo aggiungiamo in testa
+  const crewAll = t.crew.some(n => normName(n) === "edoc") ? t.crew : ["Edo C", ...t.crew];
+  const crew = crewAll.map(crewChip).join("");
   const galId = "g_" + t.id.replace(/-/g, "_");   // niente trattini: window.g_all_in valido (non g_all-in)
   const gal = t.photos && t.photos.length
     ? `<div class="gal">${t.photos.map((p, i) => `<img src="${p.src}" alt="${esc(zone)} ${t.year}" loading="lazy" onclick="openLB(window.${galId},${i})">`).join("")}</div>`
@@ -249,7 +251,7 @@ function tripPage(t, all) {
       <div class="vstat"><b>${t.nm}</b><i>miglia</i></div>
       <div class="vstat"><b>${Math.round(t.days)}</b><i>giorni</i></div>
       <div class="vstat"><b>${avg ?? "—"}</b><i>nm/giorno</i></div>
-      <div class="vstat"><b>${t.crew.length}</b><i>equipaggio</i></div>
+      <div class="vstat"><b>${crewAll.length}</b><i>equipaggio</i></div>
       <div class="vstat"><b>${t.n_photos || 0}</b><i>foto</i></div>
     </div>
     <div class="vtags">${boatIcon(t.boat)}${pc ? `<span class="pace ${pc.k}" title="${esc(pc.d)}">${pc.t}</span>` : ""}<span class="diff ${df.k}" title="${esc(df.why)}">⚓ ${df.t}</span></div>
