@@ -8,7 +8,7 @@ render_routes.py — Genera immagini "nautico chiaro" delle rotte dei viaggi.
 - SOLO MARE: si disegna la rotta, poi la terraferma opaca SOPRA (Natural Earth 10m)
   -> gli attraversamenti di terra spariscono sotto la costa.
 - Output in staging: data/route-images/  (NON tocca il sito).
-    _global.png            mappa globale (2 pannelli: Mediterraneo + Caraibi)
+    _global.png            mappa globale (Mediterraneo + Caraibi + Oceano Indiano)
     <slug>.png             una rotta per viaggio
     routes.json            manifest slug -> metadati
 
@@ -211,13 +211,23 @@ def load_trips(kml_path: Path):
     trips = []
     seen_folders = set()
     for pm in root.iter(_Q("Placemark")):
-        ls = pm.find(".//" + _Q("LineString"))
-        if ls is None:
+        # LineString (rotta disegnata) oppure LinearRing (una "Misurazione" di
+        # Google Earth: anello chiuso). Entrambi hanno un <coordinates> identico.
+        geom = pm.find(".//" + _Q("LineString"))
+        is_ring = False
+        if geom is None:
+            geom = pm.find(".//" + _Q("LinearRing"))
+            is_ring = geom is not None
+        if geom is None:
             continue
-        coords_el = ls.find(_Q("coordinates"))
+        coords_el = geom.find(_Q("coordinates"))
         if coords_el is None or not coords_el.text:
             continue
         lonlat = coords_to_np(coords_el.text)
+        # anello chiuso -> apri la rotta togliendo il vertice di chiusura duplicato
+        # (altrimenti un segmento dritto ricongiunge l'ultimo punto al primo)
+        if is_ring and len(lonlat) >= 2 and np.allclose(lonlat[0], lonlat[-1]):
+            lonlat = lonlat[:-1]
         if len(lonlat) < 2:
             continue
         name = nearest_folder_name(pm)
@@ -226,11 +236,12 @@ def load_trips(kml_path: Path):
             name = (nm.text.strip() if nm is not None and nm.text else "Senza nome")
         name = name.replace("’", "'")
         seen_folders.add(name)
+        mean_lon = float(lonlat[:, 0].mean())
         trips.append({
             "name": name,
             "slug": slugify(name),
             "lonlat": lonlat,
-            "region": "caribbean" if lonlat[:, 0].mean() < -20 else "med",
+            "region": "caribbean" if mean_lon < -20 else "indian" if mean_lon > 40 else "med",
         })
 
     # cartelle senza traccia (nessuna LineString discendente)
@@ -240,7 +251,8 @@ def load_trips(kml_path: Path):
         nmtxt = nm.text.strip().replace("’", "'") if nm is not None and nm.text else None
         if not nmtxt:
             continue
-        has_line = next(folder.iter(_Q("LineString")), None) is not None
+        has_line = (next(folder.iter(_Q("LineString")), None) is not None
+                    or next(folder.iter(_Q("LinearRing")), None) is not None)
         if not has_line and nmtxt not in seen_folders:
             trackless.append(nmtxt)
 
@@ -888,17 +900,27 @@ def _region_panel(trips, polys, panel_w, S=2, pad=0.12, min_span=0.5, borders=No
 def render_global(trips, polys, borders=None):
     med = [t for t in trips if t["region"] == "med"]
     car = [t for t in trips if t["region"] == "caribbean"]
+    ind = [t for t in trips if t["region"] == "indian"]
     cuba = [t for t in car if t["lonlat"][:, 0].mean() < -70]
     gren = [t for t in car if t["lonlat"][:, 0].mean() >= -70]
+
+    # riga inferiore: mari lontani, un riquadro per gruppo (label, trips)
+    far = []
+    if cuba:
+        far.append(("Cuba", cuba))
+    if gren:
+        far.append(("Piccole Antille", gren))
+    if ind:
+        far.append(("Seychelles", ind))
 
     PANEL_W = 2200
     MARGIN = 60
     GAP = 40
-    half_w = (PANEL_W - GAP) // 2
+    n_far = max(len(far), 1)
+    far_w = (PANEL_W - GAP * (n_far - 1)) // n_far
     med_img = _region_panel(med, polys, PANEL_W, borders=borders) if med else None
-    cuba_img = _region_panel(cuba, polys, half_w, borders=borders) if cuba else None
-    gren_img = _region_panel(gren, polys, half_w, borders=borders) if gren else None
-    car_row_h = max([im.height for im in (cuba_img, gren_img) if im] or [0])
+    far_imgs = [(label, _region_panel(grp, polys, far_w, borders=borders)) for label, grp in far]
+    far_row_h = max([im.height for _, im in far_imgs] or [0])
 
     title_h = 116
     cap_h = 52
@@ -906,7 +928,7 @@ def render_global(trips, polys, borders=None):
     legend_h = 44 + legend_rows * 34
     total_w = PANEL_W + 2 * MARGIN
     total_h = (title_h + cap_h + (med_img.height if med_img else 0)
-               + cap_h + car_row_h + legend_h + MARGIN)
+               + (cap_h if far_imgs else 0) + far_row_h + legend_h + MARGIN)
     canvas = Image.new("RGB", (total_w, total_h), PARCHMENT)
     d = ImageDraw.Draw(canvas)
     cfont = _font(30, bold=True)
@@ -923,17 +945,17 @@ def render_global(trips, polys, borders=None):
     if med_img:
         frame(med_img, MARGIN, y)
         y += med_img.height
-    # Caraibi: due riquadri affiancati (Cuba | Piccole Antille)
-    d.text((MARGIN, y + 10), "Caraibi", font=cfont, fill=INK)
-    y += cap_h
-    if cuba_img:
-        frame(cuba_img, MARGIN, y)
-        _text_halo(d, (MARGIN + 90, y + 24), "Cuba", subfont, fill=INK, halo=(255, 255, 255), r=2)
-    if gren_img:
-        gx = MARGIN + half_w + GAP
-        frame(gren_img, gx, y)
-        _text_halo(d, (gx + 150, y + 24), "Piccole Antille", subfont, fill=INK, halo=(255, 255, 255), r=2)
-    y += car_row_h
+    # mari lontani: riquadri affiancati (Cuba | Piccole Antille | Seychelles)
+    if far_imgs:
+        d.text((MARGIN, y + 10), "Caraibi & Oceano Indiano" if ind else "Caraibi", font=cfont, fill=INK)
+        y += cap_h
+        for i, (label, im) in enumerate(far_imgs):
+            fx = MARGIN + i * (far_w + GAP)
+            frame(im, fx, y)
+            bb = subfont.getbbox(label)
+            _text_halo(d, (fx + (bb[2] - bb[0]) / 2 + 20, y + 24), label, subfont,
+                       fill=INK, halo=(255, 255, 255), r=2)
+        y += far_row_h
 
     # legenda (3 colonne, ordine alfabetico) = abbinamento colore->viaggio
     y += 30

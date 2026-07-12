@@ -130,7 +130,8 @@ const ROUTE = {
   sorbe: "caribe-17", "capitan-nikos": "cyclades-17", showtime: "ionian-17",
   invitation: "baleares-18", ondine: "croazia-18", lohengrin: "cuba-19",
   alba: "sardegna-20", enya: "corsica-21", silkwave: "sardegna-21", "mars-planet": "sicilia-21",
-  challenger: "baleari-22", isla: "sicilia-23", alexandros: "cyclades-2024"
+  challenger: "baleari-22", isla: "sicilia-23", "all-in": "sporades-22",
+  cari: "seychelles-24", alexandros: "cyclades-2024"
 };
 const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
 const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";
@@ -283,7 +284,7 @@ function directory(all) {
     <section>
     <h2>🌍 Tutte le rotte · 2011–2024</h2>
     <img class="route gmap" src="trips/routes/_global.png" alt="Tutte le rotte 2011–2024 · Mediterraneo, Cuba, Piccole Antille" loading="lazy" onclick="openLB([{src:'trips/routes/_global.png',people:[]}],0)">
-    <div class="gcap">Le tre aree navigate: Mediterraneo · Caraibi&nbsp;— Cuba · Piccole Antille. Tocca per ingrandire.</div>
+    <div class="gcap">Le aree navigate: Mediterraneo · Caraibi (Cuba, Piccole Antille) · Oceano Indiano (Seychelles). Tocca per ingrandire.</div>
     <div class="grid" style="margin-top:1.4rem">${cards}</div>
     <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer></section>`;
 }
