@@ -71,6 +71,15 @@ NICKS = {
     "umberto-f": ["Umbe", "Fasa"],
 }
 
+# Crew femminili (crew_id) -> per il "detto/detta" sui profili. Attaccato come "sex".
+FEM = {
+    "bianca-b", "fede-n", "ginevra-l", "giulia-n", "ilaria-m", "lavinia-p", "mati-m", "simona-a",
+    "alice-s", "angela-k", "beatrice-f", "belinda-b", "carlotta-d", "cecilia-r", "chiara-f",
+    "fabiana-f", "jennifer-s", "laura-c", "ludovica-r", "margherita-c", "marta-a", "martina-g",
+    "martina-r", "matilde-c", "matilde-r", "monica-m", "paola-c", "rebecca-b", "rebecca-l",
+    "sara-b", "simona-b", "sofia-m",
+}
+
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
 people = {}
 for r in wb["Passengers"].iter_rows(min_row=2, values_only=True):
@@ -224,6 +233,7 @@ for x in out:
     nk = NICKS.get(x["id"])
     if nk:
         x["nicks"] = nk; n_nicks += 1
+    x["sex"] = "f" if x["id"] in FEM else "m"
     comp = companions_for(id2pid.get(x["id"]))
     if comp:
         x["companions"] = comp; n_comp += 1

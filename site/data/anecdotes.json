@@ -33,7 +33,12 @@
       "boat_name": "All in",
       "trip_id": "all-in",
       "people": [
-        "giacomo-n"
+        "giacomo-n",
+        "leonardo-m",
+        "gualtiero-s",
+        "marta-a",
+        "laura-c",
+        "carlotta-d"
       ],
       "bodyHtml": "<p>Rotta da Atene alle Sporadi per il canale di Calcide, il cui ponte si apre una sola volta a\n    notte, tra le 22 e le 23. Dettaglio scritto da nessuna parte: a Ferragosto non si apre. Lo skipper\n    si presenta al ponte proprio il 15 agosto e scopre l'amara verità.</p>\n    <p>Ripiego: ormeggio a terra dentro il canale, con poca ancora. Ma un canale di marea resta un\n    canale di marea: con la luna il vento gira dalla parte opposta. Ci si mette a terra con due cime e\n    mare piatto (le foto sono qui sopra, nella galleria).</p>\n    <p>Poi la trappola: pranzo pesante, capitano sotto coperta con l'aria condizionata — chilling\n    supremo. In coperta resta <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a> con tre signore a briscola. Nessuno si accorge del vento che\n    sale né delle cime finite in acqua: l'ormeggio aveva ceduto. Il capitano si sveglia per un «TOC»\n    sulla carena, vola ai comandi per non finire inscogliato, sacrifica un'elica — ma esce.</p>\n    <p>Epilogo: barca alata con la gru, elica nuova, si riparte. Ma il canale si vendica: pieno di\n    meduse che intasano le prese a mare. Aria condizionata KO, generatore KO, un'elica sola. Due o tre\n    giorni di caldo bestiale in mezzo al canale.</p>\n    <div class=\"shots\">\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/ferragosto-gru.jpg')\" src=\"skipper/img/ferragosto-gru.jpg\" alt=\"Il catamarano «All in» sollevato dalla gru nel porto greco\" loading=\"lazy\">\n        <figcaption>L'«All in» alata con la gru per il cambio elica.</figcaption></figure>\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/ferragosto-scafo.jpg')\" src=\"skipper/img/ferragosto-scafo.jpg\" alt=\"Ispezione della carena in cantiere\" loading=\"lazy\">\n        <figcaption>Ispezione carena in cantiere — lo scafo, per la cronaca, si reggeva già da solo.</figcaption></figure>\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/troubleshooting.jpg')\" src=\"skipper/img/troubleshooting.jpg\" alt=\"Troubleshooting nel canale di Calcide\" loading=\"lazy\">\n        <figcaption>Troubleshooting a oltranza: elica, meduse e generatore, un guaio alla volta.</figcaption></figure>\n    </div>\n    <div class=\"les\"><b>Lezioni imparate</b>\n      <ol><li>Mai lasciare <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a> solo in coperta.</li>\n      <li>Mai ormeggiare a terra in un canale di marea fidandosi di poca ancora.</li>\n      <li>Controllare feste comandate greche e maree prima di certi passaggi.</li>\n      <li>Dare. Più. Ancora.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> un'elica, due o tre giorni di vacanza e una nuova regola su <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a>.</div>"
     },
@@ -189,6 +194,27 @@
         "chiara-f"
       ],
       "bodyHtml": "<p>Baleari 2016, un viaggio nato per lo <b>shooting</b> della nuova linea di costumi di <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a>, imprenditore del beachwear, che aveva scelto l'isola per legarci l'immagine del brand — e chiamato a bordo un'amica modella internazionale, <a class=\"plink\" href=\"membro.html#chiara-f\"><b>Chiara F.</b></a>, con tutto il team di fotografi.</p>\n<p>Partenza dal porto di Palma. Edoardo era arrivato dalla Sicilia e, da solo, aveva fatto tutta la cambusa e caricato la barca; il co-skipper <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a> atterra alle 11:30 su una barca già pronta a salpare. Nessuno dei due proprio brillante: Berna molla gli ormeggi e fa subito la fiancata alla barca di fianco, spazzando via tutti i parabordi. Nessuno si accorge di nulla, e i due partono in solitaria per la traversata notturna Maiorca→Ibiza, dove avrebbero imbarcato il resto dell'equipaggio.</p>\n<p>La traversata regala un'onda al traverso fastidiosissima. E dopo la consueta «buffata» dei due capitani, uno cede: <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a> cade e vomita copiosamente in mare. Arrivo alla prima cala di Ibiza — <b>Cala Sant Vicent</b> — esausti, con la risacca che non aiuta a smaltire nulla.</p>\n<p>Ripartiti e caricato l'equipaggio a Ibiza, ai comandi c'è Edoardo per entrare nella marina: porto stretto. E qui il gran finale — il gas del motore si blocca al massimo, incontrollabile dentro il porto. La barca va gestita come un transatlantico stile Titanic: uno sul motore a premere il gas a mano, uno sulla scaletta a fare da passaparola, il capitano a gridare «Avanti tutta! Indietro tutta!» fino a Formentera, dove sale il meccanico che sistema il misfatto. Anche questa, salvata.</p>\n<div class=\"les\"><b>Lezioni imparate</b>\n  <ol><li>Parabordi a bordo prima di mollare gli ormeggi — sempre.</li>\n  <li>Due capitani reduci da una notte «importante» non fanno un capitano lucido.</li>\n  <li>Anche col gas bloccato si entra in porto: motore a mano, passaparola e nervi saldi.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> una fiancata di parabordi, un co-skipper a mare (letteralmente), un motore imbizzarrito — e un ingresso in porto degno del Titanic, ma a lieto fine.</div>"
+    },
+    {
+      "id": "ancore-coticcio",
+      "title": "Le ancore di Coticcio",
+      "kind": "leggenda",
+      "stamp": "Leggenda",
+      "meta": "🇮🇹 Sardegna · 2020 · Cala Coticcio · Bali 4.1 «Alba»",
+      "flag": "🇮🇹",
+      "country": "Italy",
+      "year": 2020,
+      "place": "Cala Coticcio · La Maddalena",
+      "boat": "Bali 4.1",
+      "boat_name": "Alba",
+      "trip_id": "alba",
+      "people": [
+        "leonardo-m",
+        "giorgio-m",
+        "giacomo-b",
+        "gualtiero-s"
+      ],
+      "bodyHtml": "<p><b>Cala Coticcio</b>, gioiello di Caprera nell'arcipelago della Maddalena — e insieme incubo dei marinai: sul suo fondo le ancore si incastrano di continuo, e più d'uno è dovuto ripartire <b>tagliando la cima</b> pur di liberarsi.</p>\n<p>Proprio lì, <a class=\"plink\" href=\"membro.html#leonardo-m\"><b>Leonardo M.</b></a> e <a class=\"plink\" href=\"membro.html#giorgio-m\"><b>Giorgio M.</b></a> avvistano sul fondale <b>tre ancore abbandonate</b>. Richiamano il capitano, che arriva sul posto col tender insieme a <a class=\"plink\" href=\"membro.html#giacomo-b\"><b>Giacomo B.</b></a> e <a class=\"plink\" href=\"membro.html#gualtiero-s\"><b>Gualtiero S.</b></a> per tentare il recupero.</p>\n<p>A forza di immersioni alternate — Leonardo e Giorgio giù a turno — i nostri riportano a galla tutte e tre le <b>ancore giganti</b>, una delle quali storica, vecchissima.</p>\n<p>Il finale è degno di una vera leggenda: non riuscendo a spuntarne un buon prezzo, le ancore vengono depositate <b>in segreto in una rada</b>, in attesa di un compratore. Sono ancora lì — a disposizione, chissà, del prossimo equipaggio di passaggio in Sardegna.</p>\n<div class=\"les\"><b>Morale di bordo</b>\n  <ol><li>A Coticcio si molla poco e si controlla molto — o si finisce nella collezione del fondo.</li>\n  <li>Recuperare un tesoro è metà dell'opera: sul prezzo, i nostri hanno ancora da imparare.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> tre ancore giganti riportate a galla, una storica — e un tesoro sommerso che aspetta ancora il compratore in una rada segreta.</div>"
     }
   ]
 }
