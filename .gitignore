@@ -22,6 +22,10 @@ data/Skipper Images/
 # foto del sito): restano LOCALI, nel repo vanno solo le versioni in site/trips/img/
 data/Viaggi/
 
+# Ritratti/avatar dei passeggeri (upload locale, un file per persona): restano LOCALI,
+# nel repo vanno solo le versioni ridimensionate in site/crew/img/ (agganciate da build_crew).
+data/Profili/
+
 # Liste equipaggio e documenti personali (nomi completi, passaporti, DOB):
 # MAI nel repo pubblico. Nel sito vanno solo iniziali e foto ridotte.
 data/Crewlists/
