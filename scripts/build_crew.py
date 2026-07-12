@@ -141,6 +141,11 @@ def companions_for(p):  # con chi ha navigato di piu' (peso: n. viaggi condivisi
             dsum[q] += round(min(pdays(t, p), pdays(t, q)))
     ranked = sorted(cnt, key=lambda q: (cnt[q], dsum[q]), reverse=True)  # TUTTI i co-naviganti (filtro id dopo l'ordinamento, non prima: altrimenti gli stub tagliavano il conteggio)
     res = []
+    # lo skipper e' a bordo di OGNI crociera -> compagno di navigazione n.1 di chiunque
+    ts = part.get(p, [])
+    if ts:
+        res.append({"id": "edo-c", "name": id2name.get("edo-c", "Edo C"),
+                    "trips": len(ts), "days": round(sum(pdays(t, p) for t in ts))})
     for q in ranked:
         qid = pid2id.get(q)
         if qid: res.append({"id": qid, "name": id2name.get(qid, ""), "trips": cnt[q], "days": dsum[q]})
