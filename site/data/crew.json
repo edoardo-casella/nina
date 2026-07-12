@@ -5741,7 +5741,8 @@
      "trips": 1,
      "days": 8
     }
-   ]
+   ],
+   "photo": "crew/img/carlotta-d.jpg"
   },
   {
    "id": "michele-m",
@@ -6913,7 +6914,8 @@
      "trips": 1,
      "days": 6
     }
-   ]
+   ],
+   "photo": "crew/img/tonino-l.jpg"
   },
   {
    "id": "angela-k",
@@ -6959,7 +6961,8 @@
      "trips": 1,
      "days": 6
     }
-   ]
+   ],
+   "photo": "crew/img/angela-k.jpg"
   },
   {
    "id": "mirco-l",
