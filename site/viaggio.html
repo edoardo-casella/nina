@@ -128,6 +128,8 @@ const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&g
 const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", "Saint Lucia": "lc", Turkey: "tr" };
 const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia", France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", "Saint Lucia": "Santa Lucia", Turkey: "Turchia" };
 const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April: "aprile", May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre", October: "ottobre", November: "novembre", December: "dicembre" };
+// indice mese (0-11) per ordinare i viaggi in ordine di calendario dentro lo stesso anno
+const monthIdx = m => { const i = Object.keys(MONTHS).indexOf(m); return i < 0 ? 99 : i; };
 // mappa viaggio (id = slug nome barca) -> immagine rotta in trips/routes/<slug>.png
 const ROUTE = {
   nemo: "cyclades-11", camelia: "croazia-11", natfika: "cyclades-12", stephanie: "dodecaneso-12",
@@ -274,7 +276,7 @@ function tripPage(t, all) {
 }
 
 function directory(all) {
-  const byYear = [...all].sort((a, b) => b.year - a.year || b.nm - a.nm);
+  const byYear = [...all].sort((a, b) => b.year - a.year || monthIdx(a.month) - monthIdx(b.month));
   const cards = byYear.map(t => {
     const zone = cleanZone(t.zone);
     const ph = t.photos && t.photos.length
@@ -312,7 +314,7 @@ Promise.all([
 ]).then(([d, dc, da]) => {
   buildCrewMap(dc.people || []);
   ANEC = da.anecdotes || [];
-  DATA = (d.trips || []).slice().sort((a, b) => a.year - b.year || a.nm - b.nm);
+  DATA = (d.trips || []).slice().sort((a, b) => a.year - b.year || monthIdx(a.month) - monthIdx(b.month));
   route();
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Viaggi non disponibili offline.</p></section>`; });
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});

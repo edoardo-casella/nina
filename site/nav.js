@@ -22,6 +22,8 @@
   const css = `
   #nina-menu-btn{font-size:1.3rem;line-height:1;background:none;border:0;cursor:pointer;color:var(--soft,#7089a0);padding:0 .35rem;display:inline-flex;align-items:center}
   #nina-menu-btn:hover{color:var(--accent,#0a7)}
+  #nina-home-btn{font-size:1.2rem;line-height:1;text-decoration:none;padding:0 .25rem;display:inline-flex;align-items:center;transition:transform .12s}
+  #nina-home-btn:hover{transform:scale(1.12)}
   .top .wrap{justify-content:flex-start!important;gap:.55rem}
   .top .wrap .tag{margin-left:auto}
   #nina-nav{position:fixed;inset:0;z-index:90;background:rgba(3,7,14,.55);backdrop-filter:blur(2px);display:none}
@@ -52,7 +54,16 @@
   btn.id = "nina-menu-btn"; btn.type = "button"; btn.setAttribute("aria-label", "menu"); btn.textContent = "☰";
   btn.addEventListener("click", open);
   const bar = document.querySelector(".top .wrap") || document.querySelector("header .hdr") || document.querySelector("header");
-  if (bar) bar.insertBefore(btn, bar.firstChild);
-  else { btn.style.cssText = "position:fixed;top:.7rem;left:.7rem;z-index:91"; document.body.appendChild(btn); }
+  if (bar) {
+    bar.insertBefore(btn, bar.firstChild);
+    // tasto Home verso la plancia, sempre visibile (tranne che sulla plancia stessa)
+    if (here !== "index.html") {
+      const home = document.createElement("a");
+      home.id = "nina-home-btn"; home.href = "index.html";
+      home.title = "Torna alla plancia"; home.setAttribute("aria-label", "Plancia");
+      home.textContent = "🏠";
+      bar.insertBefore(home, btn.nextSibling);
+    }
+  } else { btn.style.cssText = "position:fixed;top:.7rem;left:.7rem;z-index:91"; document.body.appendChild(btn); }
   window.ninaMenu = { open, close };
 })();
