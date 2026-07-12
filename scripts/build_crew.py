@@ -19,6 +19,58 @@ ZONE_OVERRIDE = {"Inner Islands": "Seychelles"}
 # Sorbe 2017: la rotta caraibica tocca Martinica (FR), Saint Vincent e Saint Lucia
 COUNTRY_OVERRIDE = {"Saint Vincent - France": "Saint Vincent - France - Saint Lucia"}
 
+# Soprannomi per profilo (crew_id -> lista di nick). Embedded qui (non in data/)
+# perche' data/ e' condiviso via junction nei worktree: un file nuovo darebbe
+# conflitti al pull. Attaccati come campo "nicks" a ogni persona in crew.json.
+NICKS = {
+    "andrea-a": ["Abbute Puche", "Immortale di Secondigliano", "Vulcan", "Idris", "Aibs", "Abba"],
+    "bernardo-b": ["Berna"],
+    "bianca-b": ["Bibi"],
+    "edo-c": ["Edo"],
+    "fede-b": ["Fede"],
+    "fede-n": ["Fede"],
+    "gabri-m": ["Gastone", "Gustavo"],
+    "giacomo-n": ["Jack"],
+    "ginevra-l": ["Gine", "Gi", "Ginx"],
+    "giulia-n": ["Juliet"],
+    "ilaria-m": ["Ila"],
+    "lavinia-p": ["Peeiss"],
+    "mati-m": ["Mati"],
+    "riccardo-b": ["Branca"],
+    "simona-a": ["Simo"],
+    "alberto-b": ["Albi"],
+    "alice-s": ["Spampi"],
+    "angela-k": ["Angi"],
+    "beatrice-f": ["Bea"],
+    "belinda-b": ["Beli"],
+    "carlo-a": ["Kampione"],
+    "carlotta-d": ["Carlottina"],
+    "cecilia-r": ["Ceci"],
+    "claudio-c": ["Claude"],
+    "enrico-g": ["Guercia"],
+    "fabiana-f": ["Fabi"],
+    "filippo-r": ["Filo"],
+    "gabriele-b": ["Ga", "Il rosso"],
+    "giacomo-b": ["Jack", "Biso"],
+    "gianmarco-m": ["Mex"],
+    "gualtiero-s": ["Saba", "Gualti", "Walzer"],
+    "laura-c": ["Uein"],
+    "leonardo-m": ["Masca", "Beppe", "Giuseppe", "Leo"],
+    "luca-b": ["Giudeo"],
+    "marco-t": ["Tomma", "Kung"],
+    "margherita-c": ["Marghe"],
+    "marta-a": ["Martolina"],
+    "matilde-c": ["Mati"],
+    "michele-m": ["Mike"],
+    "nicola-r": ["Nick"],
+    "paola-c": ["Pola"],
+    "pietro-c": ["Callo"],
+    "riccardo-t": ["Tugos", "Tugno", "Ricky"],
+    "sara-b": ["Magu"],
+    "tonino-l": ["Tony"],
+    "umberto-f": ["Umbe", "Fasa"],
+}
+
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
 people = {}
 for r in wb["Passengers"].iter_rows(min_row=2, values_only=True):
@@ -158,7 +210,7 @@ TAGS = os.path.join(ROOT, "data", "crew-tags.json")
 tagmap = json.loads(io.open(TAGS, encoding="utf-8").read()).get("tags", {}) if os.path.exists(TAGS) else {}
 pid2id = {v: k for k, v in id2pid.items()}          # per companions_for
 id2name = {x["id"]: x["name"] for x in out}
-n_photos = n_bios = n_tags = n_comp = n_avatar = 0
+n_photos = n_bios = n_tags = n_comp = n_avatar = n_nicks = 0
 for x in out:
     ph = by_person.get(x["id"], [])
     if ph:
@@ -169,6 +221,9 @@ for x in out:
     tg = tagmap.get(x["id"])
     if tg:
         x["tags"] = tg; n_tags += 1
+    nk = NICKS.get(x["id"])
+    if nk:
+        x["nicks"] = nk; n_nicks += 1
     comp = companions_for(id2pid.get(x["id"]))
     if comp:
         x["companions"] = comp; n_comp += 1
@@ -186,7 +241,7 @@ data = {"generated_at": "2026-07-11",
 io.open(CREWJSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=1))
 print("crew.json:", len(out), "persone. TOTAL_DAYS(Edo)=", TOTAL_DAYS,
       "| foto:", n_photos, "su", sum(1 for x in out if x.get("photos")), "pers.",
-      "| bio:", n_bios, "| tags:", n_tags, "| companions:", n_comp,
+      "| bio:", n_bios, "| tags:", n_tags, "| nicks:", n_nicks, "| companions:", n_comp,
       "| trips_list:", sum(1 for x in out if x.get("trips_list")))
 rc = collections.Counter(x["rank"] for x in out)
 print("distribuzione gradi:", dict(rc))

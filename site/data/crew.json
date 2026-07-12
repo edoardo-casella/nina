@@ -427,6 +427,9 @@
      "trip_id": "isla",
      "caption": "Sicilia 2023"
     }
+   ],
+   "nicks": [
+    "Edo"
    ]
   },
   {
@@ -541,6 +544,9 @@
      "trip_id": "camelia",
      "caption": "Croazia 2011"
     }
+   ],
+   "nicks": [
+    "Mati"
    ],
    "companions": [
     {
@@ -762,6 +768,9 @@
      "caption": "Croazia 2011"
     }
    ],
+   "nicks": [
+    "Marghe"
+   ],
    "companions": [
     {
      "id": "matilde-c",
@@ -978,6 +987,9 @@
     "Velista",
     "Uomo rana"
    ],
+   "nicks": [
+    "Claude"
+   ],
    "companions": [
     {
      "id": "paola-c",
@@ -1163,6 +1175,9 @@
      "trip_id": "camelia",
      "caption": "Croazia 2011"
     }
+   ],
+   "nicks": [
+    "Pola"
    ],
    "companions": [
     {
@@ -1379,6 +1394,9 @@
     "Motorista",
     "Meccanico",
     "Comandante d'Elba"
+   ],
+   "nicks": [
+    "Berna"
    ],
    "companions": [
     {
@@ -1603,6 +1621,9 @@
      "days": 20,
      "pdays": 20
     }
+   ],
+   "nicks": [
+    "Ceci"
    ],
    "companions": [
     {
@@ -1911,6 +1932,9 @@
     "Aspirante comandante",
     "Goloso"
    ],
+   "nicks": [
+    "Branca"
+   ],
    "companions": [
     {
      "id": "matilde-c",
@@ -2105,6 +2129,10 @@
      "trip_id": "stephanie",
      "caption": "Grecia Cicladi-Dodecaneso 2012"
     }
+   ],
+   "nicks": [
+    "Ga",
+    "Il rosso"
    ],
    "companions": [
     {
@@ -2308,6 +2336,12 @@
     "Capitano",
     "Pescatore di ricci",
     "Tuffatore"
+   ],
+   "nicks": [
+    "Masca",
+    "Beppe",
+    "Giuseppe",
+    "Leo"
    ],
    "companions": [
     {
@@ -2581,6 +2615,9 @@
     "Videomaker",
     "Droni",
     "Troubleshooter"
+   ],
+   "nicks": [
+    "Jack"
    ],
    "companions": [
     {
@@ -2910,6 +2947,11 @@
     "Yoga",
     "SUP"
    ],
+   "nicks": [
+    "Gine",
+    "Gi",
+    "Ginx"
+   ],
    "companions": [
     {
      "id": "giacomo-n",
@@ -3037,6 +3079,9 @@
      "days": 15,
      "pdays": 15
     }
+   ],
+   "nicks": [
+    "Callo"
    ],
    "companions": [
     {
@@ -3195,6 +3240,14 @@
     "Re dell'aria condizionata",
     "Notturno"
    ],
+   "nicks": [
+    "Abbute Puche",
+    "Immortale di Secondigliano",
+    "Vulcan",
+    "Idris",
+    "Aibs",
+    "Abba"
+   ],
    "companions": [
     {
      "id": "marco-t",
@@ -3328,6 +3381,9 @@
      "trip_id": "sorbe",
      "caption": "Grenadine 2017"
     }
+   ],
+   "nicks": [
+    "Giudeo"
    ],
    "companions": [
     {
@@ -3818,6 +3874,10 @@
      "caption": "Spagna 2015"
     }
    ],
+   "nicks": [
+    "Tomma",
+    "Kung"
+   ],
    "companions": [
     {
      "id": "andrea-a",
@@ -3957,6 +4017,11 @@
    "tags": [
     "Pescatore",
     "Gran cuoco"
+   ],
+   "nicks": [
+    "Saba",
+    "Gualti",
+    "Walzer"
    ],
    "companions": [
     {
@@ -4159,6 +4224,9 @@
      "pdays": 11
     }
    ],
+   "nicks": [
+    "Nick"
+   ],
    "companions": [
     {
      "id": "claudio-c",
@@ -4229,6 +4297,9 @@
      "days": 13,
      "pdays": 13
     }
+   ],
+   "nicks": [
+    "Beli"
    ],
    "companions": [
     {
@@ -4322,6 +4393,9 @@
      "trip_id": "blue-bird",
      "caption": "Spagna 2015"
     }
+   ],
+   "nicks": [
+    "Kampione"
    ],
    "companions": [
     {
@@ -4424,6 +4498,9 @@
    "tags": [
     "Aspirante skipper",
     "Meditazione"
+   ],
+   "nicks": [
+    "Ila"
    ],
    "companions": [
     {
@@ -4561,6 +4638,10 @@
     "Uomo dei tuffi",
     "Marinaio polivalente"
    ],
+   "nicks": [
+    "Gastone",
+    "Gustavo"
+   ],
    "companions": [
     {
      "id": "riccardo-b",
@@ -4692,6 +4773,9 @@
      "trip_id": "all-in",
      "caption": "Grecia 2022"
     }
+   ],
+   "nicks": [
+    "Martolina"
    ],
    "companions": [
     {
@@ -4849,6 +4933,9 @@
      "caption": "Grecia 2022"
     }
    ],
+   "nicks": [
+    "Uein"
+   ],
    "companions": [
     {
      "id": "leonardo-m",
@@ -4955,6 +5042,10 @@
      "trip_id": "alba",
      "caption": "Sardegna 2020"
     }
+   ],
+   "nicks": [
+    "Jack",
+    "Biso"
    ],
    "companions": [
     {
@@ -5078,6 +5169,9 @@
      "caption": "Sardegna-Corsica 2020"
     }
    ],
+   "nicks": [
+    "Spampi"
+   ],
    "companions": [
     {
      "id": "cecilia-r",
@@ -5168,6 +5262,9 @@
      "pdays": 14
     }
    ],
+   "nicks": [
+    "Filo"
+   ],
    "companions": [
     {
      "id": "claudio-c",
@@ -5238,6 +5335,11 @@
      "trip_id": "silkwave",
      "caption": "Sardegna 2021"
     }
+   ],
+   "nicks": [
+    "Tugos",
+    "Tugno",
+    "Ricky"
    ],
    "companions": [
     {
@@ -5315,6 +5417,10 @@
      "trip_id": "cubalibre",
      "caption": "Spagna 2014"
     }
+   ],
+   "nicks": [
+    "Umbe",
+    "Fasa"
    ],
    "companions": [
     {
@@ -5534,6 +5640,9 @@
      "caption": "Grecia 2022"
     }
    ],
+   "nicks": [
+    "Carlottina"
+   ],
    "companions": [
     {
      "id": "ginevra-l",
@@ -5600,6 +5709,9 @@
      "trip_id": "sorbe",
      "caption": "Grenadine 2017"
     }
+   ],
+   "nicks": [
+    "Mike"
    ],
    "companions": [
     {
@@ -5758,6 +5870,9 @@
      "pdays": 11
     }
    ],
+   "nicks": [
+    "Guercia"
+   ],
    "companions": [
     {
      "id": "marco-t",
@@ -5819,6 +5934,9 @@
      "pdays": 11
     }
    ],
+   "nicks": [
+    "Mex"
+   ],
    "companions": [
     {
      "id": "marco-t",
@@ -5879,6 +5997,9 @@
      "days": 11,
      "pdays": 11
     }
+   ],
+   "nicks": [
+    "Albi"
    ],
    "companions": [
     {
@@ -6051,6 +6172,9 @@
      "caption": "Sardegna-Corsica 2020"
     }
    ],
+   "nicks": [
+    "Magu"
+   ],
    "companions": [
     {
      "id": "cecilia-r",
@@ -6148,6 +6272,9 @@
      "trip_id": "alba",
      "caption": "Sardegna-Corsica 2020"
     }
+   ],
+   "nicks": [
+    "Bea"
    ],
    "companions": [
     {
@@ -6573,6 +6700,9 @@
     "Gran nuotatore",
     "Anima della festa"
    ],
+   "nicks": [
+    "Fede"
+   ],
    "companions": [
     {
      "id": "ginevra-l",
@@ -6628,6 +6758,9 @@
      "pdays": 6
     }
    ],
+   "nicks": [
+    "Tony"
+   ],
    "companions": [
     {
      "id": "ginevra-l",
@@ -6669,6 +6802,9 @@
      "days": 6,
      "pdays": 6
     }
+   ],
+   "nicks": [
+    "Angi"
    ],
    "companions": [
     {
@@ -6808,6 +6944,9 @@
      "pdays": 6
     }
    ],
+   "nicks": [
+    "Fabi"
+   ],
    "companions": [
     {
      "id": "mirco-l",
@@ -6897,7 +7036,10 @@
     "board": "2026-08-08",
     "leave": "2026-08-21",
     "role": "crew"
-   }
+   },
+   "nicks": [
+    "Bibi"
+   ]
   },
   {
    "id": "mati-m",
@@ -6913,7 +7055,10 @@
     "board": "2026-08-08",
     "leave": "2026-08-17",
     "role": "crew"
-   }
+   },
+   "nicks": [
+    "Mati"
+   ]
   },
   {
    "id": "davide",
@@ -6961,7 +7106,10 @@
     "board": "2026-08-15",
     "leave": "2026-08-29",
     "role": "crew"
-   }
+   },
+   "nicks": [
+    "Juliet"
+   ]
   },
   {
    "id": "fede-n",
@@ -6977,7 +7125,10 @@
     "board": "2026-08-21",
     "leave": "2026-08-29",
     "role": "crew"
-   }
+   },
+   "nicks": [
+    "Fede"
+   ]
   },
   {
    "id": "lavinia-p",
@@ -6993,7 +7144,10 @@
     "board": "2026-08-21",
     "leave": "2026-08-29",
     "role": "crew"
-   }
+   },
+   "nicks": [
+    "Peeiss"
+   ]
   },
   {
    "id": "simona-a",
@@ -7009,7 +7163,10 @@
     "board": "2026-08-22",
     "leave": "2026-08-29",
     "role": "crew"
-   }
+   },
+   "nicks": [
+    "Simo"
+   ]
   }
  ]
 }

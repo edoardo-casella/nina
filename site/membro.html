@@ -232,7 +232,7 @@ function memberPage(m, all) {
     <div class="mhd">
       <div class="role">${esc(roleTxt)}</div>
       <h1>${esc(m.name)}</h1>
-      ${c && c.nick ? `<div class="nick">detto “${esc(c.nick)}”</div>` : ""}
+      ${(m.nicks && m.nicks.length) ? `<div class="nick">detto ${m.nicks.map(n => `“${esc(n)}”`).join(", ")}</div>` : (c && c.nick ? `<div class="nick">detto “${esc(c.nick)}”</div>` : "")}
       <div class="rankrow">${rankBadge(m)}</div>
       ${vet}
     </div>
