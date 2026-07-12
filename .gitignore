@@ -47,7 +47,7 @@ data/geo/
 data/Percorsi Google Earth/
 data/Tutti i viaggi.kml
 data/Tutti i viaggi.kmz
-data/Viaggi in barca (2011-2024).kml
+data/Viaggi in barca*.kml
 
 # File stray non tracciato, origine ignota
 data/65bba01eeca560e2820bb0c1.webp

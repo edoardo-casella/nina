@@ -959,10 +959,14 @@ def main():
     ap.add_argument("--only", action="append", default=[], help="genera solo il viaggio indicato (ripetibile)")
     ap.add_argument("--no-global", action="store_true", help="salta la mappa globale")
     ap.add_argument("--no-labels", action="store_true", help="senza nomi/POI OSM")
+    ap.add_argument("--source", default=None, help="KML sorgente alternativo (default: SRC_KML)")
     args = ap.parse_args()
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    trips, trackless = load_trips(SRC_KML)
+    src = Path(args.source) if args.source else SRC_KML
+    if not src.exists():
+        sys.exit(f"ERRORE: KML sorgente non trovato: {src}")
+    trips, trackless = load_trips(src)
     n = len(trips)
     for i, t in enumerate(trips):
         t["_hex"] = kml_color(i, n)[1]
@@ -1010,7 +1014,7 @@ def main():
             existing = {}
     existing.update(manifest)
     mf.write_text(json.dumps({
-        "source": SRC_KML.name,
+        "source": src.name,
         "style": "nautico-chiaro",
         "note": "Immagini in staging. Destinazione sito: site/trips/routes/ (NON site/trips/img). "
                 "Gli id-scheda del sito sono slug del nome barca: serve un ponte nome-KML -> boat-id.",
