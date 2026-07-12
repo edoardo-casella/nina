@@ -11,7 +11,9 @@
 import openpyxl, collections, os, glob, re, unicodedata, json
 from PIL import Image, ImageOps
 
-ROOT = r"c:\Users\Edo\OneDrive - Bologna Business School\1.Progettazione\99_AI_Workspace\35_SailingAgent"
+# ROOT = radice del repo (genitore di scripts/), relativo alla posizione dello
+# script: cosi' funziona anche dai git worktree fuori OneDrive, non solo qui.
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CV = os.path.join(ROOT, "data", "Skipper CV Enriched.xlsx")
 import shutil, tempfile
 _cvtmp = os.path.join(tempfile.gettempdir(), "nina_cv_read.xlsx")

@@ -19,7 +19,9 @@ Uso:  python scripts/add_trip_photos.py
 import openpyxl, collections, os, glob, re, unicodedata, json, sys, shutil, tempfile, subprocess
 from PIL import Image, ImageOps
 
-ROOT = r"c:\Users\Edo\OneDrive - Bologna Business School\1.Progettazione\99_AI_Workspace\35_SailingAgent"
+# ROOT = radice del repo (genitore di scripts/), relativo alla posizione dello
+# script: cosi' funziona anche dai git worktree fuori OneDrive, non solo qui.
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DRY = "--dry" in sys.argv
 CV = os.path.join(ROOT, "data", "Skipper CV Enriched.xlsx")
 TRIPS = os.path.join(ROOT, "site", "data", "trips.json")
