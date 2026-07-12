@@ -4905,7 +4905,8 @@
      "trips": 1,
      "days": 8
     }
-   ]
+   ],
+   "photo": "crew/img/marta-a.jpg"
   },
   {
    "id": "laura-c",
@@ -5280,7 +5281,8 @@
      "trips": 1,
      "days": 10
     }
-   ]
+   ],
+   "photo": "crew/img/alice-s.jpg"
   },
   {
    "id": "filippo-r",
@@ -5518,7 +5520,8 @@
      "trips": 1,
      "days": 6
     }
-   ]
+   ],
+   "photo": "crew/img/umberto-f.jpg"
   },
   {
    "id": "ludovica-r",
