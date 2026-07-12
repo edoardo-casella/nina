@@ -20,7 +20,7 @@
         "Alberto B.",
         "Carlo A."
       ],
-      "n_photos": 1,
+      "n_photos": 120,
       "photos": [
         {
           "src": "trips/img/nemo/01.jpg",
@@ -30,6 +30,839 @@
             "andrea-a"
           ],
           "caption": "Grecia 2011"
+        },
+        {
+          "src": "trips/img/nemo/02.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/03.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/04.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/05.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/06.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/07.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/08.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/09.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/10.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/11.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/12.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/13.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/14.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/15.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/16.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/17.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/18.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/19.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/20.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/21.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/22.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/23.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/24.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/25.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/26.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/27.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/28.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/29.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/30.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/31.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/32.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/33.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/34.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/35.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/36.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/37.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/38.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/39.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/40.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/41.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/42.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/43.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/44.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/45.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/46.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/47.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/48.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/49.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/50.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/51.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/52.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/53.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/54.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/55.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/56.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/57.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/58.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/59.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/60.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/61.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/62.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/63.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/64.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/65.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/66.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/67.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/68.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/69.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/70.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/71.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/72.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/73.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/74.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/75.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/76.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/77.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/78.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/79.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/80.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/81.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/82.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/83.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/84.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/85.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/86.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/87.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/88.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/89.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/90.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/91.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/92.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/93.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/94.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/95.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/96.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/97.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/98.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/99.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/100.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/101.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/102.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/103.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/104.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/105.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/106.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/107.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/108.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/109.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/110.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/111.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/112.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/113.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/114.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/115.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/116.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/117.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/118.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/119.jpg",
+          "w": 1280,
+          "h": 856,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
+        },
+        {
+          "src": "trips/img/nemo/120.jpg",
+          "w": 856,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Cicladi 2011"
         }
       ],
       "story": {
@@ -251,7 +1084,7 @@
         "Gualtiero S.",
         "Marco T."
       ],
-      "n_photos": 1,
+      "n_photos": 9,
       "photos": [
         {
           "src": "trips/img/cubalibre/01.jpg",
@@ -265,6 +1098,62 @@
             "marco-t"
           ],
           "caption": "Spagna 2014"
+        },
+        {
+          "src": "trips/img/cubalibre/02.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2014"
+        },
+        {
+          "src": "trips/img/cubalibre/03.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2014"
+        },
+        {
+          "src": "trips/img/cubalibre/04.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2014"
+        },
+        {
+          "src": "trips/img/cubalibre/05.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2014"
+        },
+        {
+          "src": "trips/img/cubalibre/06.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Baleari 2014"
+        },
+        {
+          "src": "trips/img/cubalibre/07.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2014"
+        },
+        {
+          "src": "trips/img/cubalibre/08.jpg",
+          "w": 1032,
+          "h": 581,
+          "people": [],
+          "caption": "Baleari 2014"
+        },
+        {
+          "src": "trips/img/cubalibre/09.jpg",
+          "w": 1280,
+          "h": 1280,
+          "people": [],
+          "caption": "Baleari 2014"
         }
       ],
       "story": {
@@ -290,8 +1179,19 @@
         "Filippo R.",
         "Nicola R."
       ],
-      "n_photos": 0,
-      "photos": [],
+      "n_photos": 1,
+      "photos": [
+        {
+          "src": "trips/img/anax/01.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [
+            "claudio-c",
+            "filippo-r"
+          ],
+          "caption": "Grecia Sporadi 2014"
+        }
+      ],
       "story": {
         "title": "Regate in flotta",
         "html": "Sporadi con la famiglia, ma soprattutto in flotta con l'altra barca: a bordo <a class='plink' href='membro.html#michele-m'>Michele M.</a>, <a class='plink' href='membro.html#riccardo-b'>Riccardo B.</a> e la sua famiglia. Vacanza di mare e di regate fittissime, Michele contro Edo, bolina dopo bolina."

@@ -980,6 +980,11 @@
      "src": "trips/img/stephanie/02.jpg",
      "trip_id": "stephanie",
      "caption": "Grecia Cicladi-Dodecaneso 2012"
+    },
+    {
+     "src": "trips/img/anax/01.jpg",
+     "trip_id": "anax",
+     "caption": "Grecia Sporadi 2014"
     }
    ],
    "bio": {
@@ -1789,7 +1794,8 @@
      "trips": 1,
      "days": 7
     }
-   ]
+   ],
+   "photo": "crew/img/cecilia-r.jpg"
   },
   {
    "id": "riccardo-b",
@@ -2854,7 +2860,8 @@
      "trips": 1,
      "days": 6
     }
-   ]
+   ],
+   "photo": "crew/img/sofia-m.jpg"
   },
   {
    "id": "ginevra-l",
@@ -3838,7 +3845,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/simona-b.jpg"
   },
   {
    "id": "marco-t",
@@ -4736,7 +4744,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/gabri-m.jpg"
   },
   {
    "id": "marta-a",
@@ -5032,7 +5041,8 @@
      "trips": 1,
      "days": 7
     }
-   ]
+   ],
+   "photo": "crew/img/laura-c.jpg"
   },
   {
    "id": "giacomo-b",
@@ -5293,6 +5303,13 @@
      "pdays": 14
     }
    ],
+   "photos": [
+    {
+     "src": "trips/img/anax/01.jpg",
+     "trip_id": "anax",
+     "caption": "Grecia Sporadi 2014"
+    }
+   ],
    "nicks": [
     "Filo"
    ],
@@ -5328,7 +5345,8 @@
      "trips": 1,
      "days": 14
     }
-   ]
+   ],
+   "photo": "crew/img/filippo-r.jpg"
   },
   {
    "id": "riccardo-t",
@@ -5411,7 +5429,8 @@
      "trips": 1,
      "days": 6
     }
-   ]
+   ],
+   "photo": "crew/img/riccardo-t.jpg"
   },
   {
    "id": "umberto-f",
@@ -5560,7 +5579,8 @@
      "trips": 1,
      "days": 7
     }
-   ]
+   ],
+   "photo": "crew/img/ludovica-r.jpg"
   },
   {
    "id": "giacomo-m",
@@ -5621,7 +5641,8 @@
      "trips": 1,
      "days": 7
     }
-   ]
+   ],
+   "photo": "crew/img/giacomo-m.jpg"
   },
   {
    "id": "carlotta-d",
