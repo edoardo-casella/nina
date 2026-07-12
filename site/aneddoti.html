@@ -131,6 +131,12 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
 const KIND = { errore: "Errore fatale", eroico: "Atto eroico", leggenda: "Leggenda di bordo" };
 const KCLASS = { eroico: " gold", leggenda: " legend" };
+// gli aneddoti del capitano (errori fatali + atti eroici) mettono SEMPRE lo skipper in "Chi c'era"
+const CAPTAIN_KINDS = new Set(["errore", "eroico"]);
+const anecPeople = a => {
+  const others = (a.people || []).filter(id => id !== "edo-c");
+  return CAPTAIN_KINDS.has(a.kind) ? ["edo-c", ...others] : others;
+};
 
 function lbOne(src){ const lb=document.getElementById('lb'); lb.querySelector('img').src=src; lb.classList.add('on'); }
 (function(){ const lb=document.getElementById('lb'); lb.querySelector('.x').onclick=()=>lb.classList.remove('on'); lb.onclick=e=>{ if(e.target!==lb.querySelector('img')) lb.classList.remove('on'); }; document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); }); })();
@@ -147,7 +153,8 @@ function avatarMini(id, cls){
 function personChip(id){
   const m = PEOPLE.get(id);
   const name = m ? m.name : id;
-  return `<a class="pchip" href="membro.html#${encodeURIComponent(id)}">${avatarMini(id,"pav")}<span class="pn">${esc(name)}</span></a>`;
+  const href = id === "edo-c" ? "skipper.html" : `membro.html#${encodeURIComponent(id)}`;
+  return `<a class="pchip" href="${href}">${avatarMini(id,"pav")}<span class="pn">${esc(name)}</span></a>`;
 }
 function tripLink(a){
   if (!a.trip_id) return "";
@@ -168,7 +175,7 @@ function incidentBlock(a){
 function detailPage(a){
   const idx = ANEC.findIndex(x => x.id === a.id);
   const prev = ANEC[idx - 1], next = ANEC[idx + 1];
-  const people = a.people || [];
+  const people = anecPeople(a);
   const credits = `<div class="acredits">
     ${people.length ? `<div><span class="crlab">Chi c'era</span><div class="pchips">${people.map(personChip).join("")}</div></div>` : ""}
     ${a.trip_id && TRIPS.get(a.trip_id) ? `<div><span class="crlab">Viaggio collegato</span>${tripLink(a)}</div>` : ""}
@@ -187,7 +194,7 @@ function detailPage(a){
 }
 
 function card(a){
-  const avs = (a.people || []).slice(0, 5).map(id => avatarMini(id, "pav")).join("");
+  const avs = anecPeople(a).slice(0, 5).map(id => avatarMini(id, "pav")).join("");
   return `<a class="acard${KCLASS[a.kind] || ""}" href="#${a.id}">
     <span class="kb">${esc(KIND[a.kind] || "Aneddoto")}</span>
     <h3>${esc(a.title)}</h3>
