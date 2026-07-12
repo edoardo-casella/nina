@@ -5,6 +5,7 @@
   const LINKS = [
     ["index.html", "Plancia", "🧭"],
     ["skipper.html", "Lo skipper", "🎖️"],
+    ["classifica.html", "Classifica", "🏆"],
     ["aneddoti.html", "Aneddoti", "📖"],
     ["viaggio.html", "I viaggi", "⛵"],
     ["paese.html", "I mari", "🌍"],

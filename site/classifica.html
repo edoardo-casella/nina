@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Classifica · Plancia Niña</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin:1.7rem 0 1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+/* --- classifica ciurma (stessa resa di skipper.html) --- */
+.cm-intro{font-size:.95rem;color:var(--soft);margin-bottom:1rem;line-height:1.6}
+.cm-sortbar{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.9rem}
+.cm-sort{font:700 .6rem/1 var(--display);letter-spacing:.09em;text-transform:uppercase;background:var(--panel);border:1px solid var(--hair);color:var(--soft);border-radius:99px;padding:.5rem .85rem;cursor:pointer}
+.cm-sort:hover{border-color:var(--accent);color:var(--accent)}
+.cm-sort.on{background:var(--sea-2);color:var(--ink);border-color:var(--accent)}
+.cmwrap{display:flex;flex-direction:column}
+.cm{display:grid;grid-template-columns:1.2rem 2.2rem 2.3rem minmax(5.5rem,1fr) minmax(2.4rem,6rem) 3.7rem;align-items:center;gap:.5rem;
+  padding:.4rem 0;text-decoration:none;color:inherit;border-bottom:1px solid var(--hair)}
+.cm-av{width:36px;height:36px;border-radius:50%;object-fit:cover;background:var(--sea-2);flex:none}
+.cm-av.ph{display:flex;align-items:center;justify-content:center;font:700 .82rem/1 var(--display);color:#fff;background:var(--accent)}
+.cm:last-child{border-bottom:0}
+a.cm:hover .cm-name{color:var(--accent)}
+.cm-rank{font:700 .78rem/1 var(--mono);color:var(--soft);text-align:center}
+.cm-ins{display:flex;justify-content:center}
+svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible}
+.cm-name{font-size:.9rem;font-weight:600;line-height:1.15;min-width:0}
+.cm-yr{display:block;font:400 .66rem/1.2 var(--mono);color:var(--soft)}
+.cm-bar{height:9px;background:var(--sea-2);border-radius:5px;overflow:hidden}
+.cm-bar>i{display:block;height:100%;background:var(--accent);border-radius:5px}
+.cm-n{font:700 .9rem/1 var(--mono);color:var(--ink);text-align:right}
+.cm-n em{font:400 .56rem/1 var(--display);color:var(--soft);font-style:normal;display:block;margin-top:.1rem}
+.cm.me .cm-bar>i{background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+.cm.me .cm-name,.cm.me .cm-n,.cm.me .cm-rank{color:var(--gold)}
+.cm-toggle{display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;background:var(--panel);border:1px solid var(--hair);color:var(--soft);
+  font:700 .64rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:.55rem .95rem;border-radius:99px;cursor:pointer}
+.cm-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.cm-toggle .chev{transition:transform .15s}.cm-toggle .chev.up{transform:rotate(180deg)}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="skipper.html">‹ Dossier skipper</a>
+  <span class="tag">🏆 Classifica</span>
+</div></div>
+<main id="app"><section><p style="padding:2rem 0">Carico la classifica…</p></section></main>
+
+<script>
+const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+const nfmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+// gradi navali (mostrine stile US Navy) per seniority = giorni in mare
+const RANKC = { gold: "#C9A227", silver: "#AEB6BD", edge: "rgba(0,0,0,.35)" };
+const RANK_LABEL = { admiral: "Ammiraglio", capt: "Capitano di vascello", cdr: "Capitano di fregata", ltcdr: "Capitano di corvetta", lt: "Tenente di vascello", ltjg: "Sottotenente di vascello", ensign: "Guardiamarina", recruit: "Allievo" };
+function starPath(cx, cy, r) { let p = ""; for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * 0.4 : r; p += (i ? "L" : "M") + (cx + rr * Math.cos(a)).toFixed(1) + " " + (cy + rr * Math.sin(a)).toFixed(1); } return p + "Z"; }
+function rankSVG(r) {
+  const G = RANKC.gold, S = RANKC.silver, E = RANKC.edge;
+  const open = '<svg viewBox="0 0 44 24" class="ins">', bar = (x, c) => `<rect x="${x}" y="4.5" width="5.5" height="15" rx="2" fill="${c}" stroke="${E}" stroke-width=".6"/>`;
+  const leaf = c => `<g transform="translate(22,12)"><path d="M0,-9 C3.2,-5 7,-4 5.6,0 C8,1.6 6.6,6 3,6.6 C3.6,9 0,9 0,9.6 C0,9 -3.6,9 -3,6.6 C-6.6,6 -8,1.6 -5.6,0 C-7,-4 -3.2,-5 0,-9 Z" fill="${c}" stroke="${E}" stroke-width=".6"/><path d="M0,-7 L0,8.6" stroke="${E}" stroke-width=".7" opacity=".45" fill="none"/></g>`;
+  switch (r) {
+    case "admiral": return open + [7, 18, 29, 40].map(x => `<path d="${starPath(x, 12, 4.4)}" fill="${G}" stroke="${E}" stroke-width=".4"/>`).join("") + "</svg>";
+    case "capt": return open + `<g fill="${S}" stroke="${E}" stroke-width=".5"><path d="M22,10.6 C15,8 7,9.4 3,13 C10,12 16,12.6 22,13.6 C28,12.6 34,12 41,13 C37,9.4 29,8 22,10.6 Z"/><circle cx="22" cy="8.4" r="2"/><path d="M22,6.8 L24.2,8 L22,9.2 Z"/></g></svg>`;
+    case "cdr": return open + leaf(S) + "</svg>";
+    case "ltcdr": return open + leaf(G) + "</svg>";
+    case "lt": return open + bar(16.2, S) + bar(23.2, S) + "</svg>";
+    case "ltjg": return open + bar(19.7, S) + "</svg>";
+    case "ensign": return open + bar(19.7, G) + "</svg>";
+    default: return open + `<circle cx="22" cy="12" r="3.4" fill="none" stroke="${S}" stroke-width="1.5" opacity=".55"/></svg>`;
+  }
+}
+
+// La ciurma negli anni: classifica ordinabile (giorni / miglia / paesi / media nm al giorno), con grado
+const cmCountries = x => {   // paesi distinti dai viaggi della persona (split 'Greece-Turkey' ecc.)
+  const s = new Set();
+  (x.trips_list || []).forEach(t => (t.country || "").split(/[-&]/).forEach(c => { c = c.trim(); if (c) s.add(c); }));
+  return s.size;
+};
+const cmAvatar = x => {       // foto profilo nella classifica (fallback iniziale)
+  const p = (x.crew2026 && x.crew2026.photo) || x.photo;
+  return p ? `<img class="cm-av" src="${p}" alt="" loading="lazy">`
+           : `<span class="cm-av ph">${esc((x.name || "?").trim()[0])}</span>`;
+};
+const CM_METRICS = {
+  days:      { label: "Giorni",     unit: "giorni", val: x => x.days || 0,                              fmt: v => nfmt(v) },
+  nm:        { label: "Miglia",     unit: "miglia", val: x => x.nm || 0,                                fmt: v => nfmt(v) },
+  countries: { label: "Paesi",      unit: "paesi",  val: x => cmCountries(x),                           fmt: v => v },
+  avg:       { label: "Media nm/g", unit: "nm/g",   val: x => x.days ? Math.round(x.nm / x.days) : 0,   fmt: v => v },
+};
+let CREWSORT = "days";
+function crewmatesInner(sortKey) {
+  const M = CM_METRICS[sortKey] || CM_METRICS.days;
+  const people = (window.__CREW || []).filter(p => p.days != null);
+  if (!people.length) return "";
+  const list = people.slice().sort((a, b) => M.val(b) - M.val(a) || b.days - a.days || b.trips - a.trips);
+  const max = M.val(list[0]) || 1;
+  const row = (x, i) => {
+    const v = M.val(x);
+    const pct = Math.max(4, Math.round(v / max * 100));
+    const yrs = x.first ? `${x.first}${x.last && x.last !== x.first ? "–" + x.last : ""}` : "";
+    const href = (x.crew2026 && x.crew2026.link) || `membro.html#${x.id}`;
+    return `<a class="cm ${x.me ? "me" : ""}" href="${href}" title="${esc(RANK_LABEL[x.rank] || "")}">
+      <span class="cm-rank">${x.me ? "👑" : i}</span>
+      ${cmAvatar(x)}
+      <span class="cm-ins">${rankSVG(x.rank)}</span>
+      <span class="cm-name">${esc(x.name)}${yrs ? ` <span class="cm-yr">${yrs}</span>` : ""}</span>
+      <span class="cm-bar"><i style="width:${pct}%"></i></span>
+      <span class="cm-n">${M.fmt(v)}<em>${M.unit}</em></span></a>`;
+  };
+  const HEAD = 6;
+  const head = list.slice(0, HEAD).map(row).join("");
+  const rest = list.slice(HEAD);
+  const label = `Mostra tutta la ciurma (${list.length})`;
+  const more = rest.length
+    ? `<div class="cm-extra" id="cm-extra" hidden>${rest.map((x, i) => row(x, i + HEAD)).join("")}</div>
+    <button class="cm-toggle" type="button" data-label="${label}" onclick="toggleCrew(this)">${label} <span class="chev">▾</span></button>`
+    : "";
+  const tabs = Object.keys(CM_METRICS).map(k =>
+    `<button type="button" class="cm-sort${k === sortKey ? " on" : ""}" onclick="setCrewSort('${k}')">${esc(CM_METRICS[k].label)}</button>`).join("");
+  return `<div class="cm-sortbar">${tabs}</div><div class="cmwrap">${head}</div>${more}`;
+}
+function crewmatesHTML() {
+  if (!(window.__CREW || []).filter(p => p.days != null).length)
+    return `<section><h2>🏆 La ciurma negli anni</h2><p class="cm-intro">Classifica non disponibile.</p></section>`;
+  return `<section id="ciurma"><h2>🏆 La ciurma negli anni</h2>
+    <p class="cm-intro">Tutti i compagni di rotta dell'Ammiraglio, ognuno col suo <b>grado</b>. Ordina per <b>giorni in mare</b>, miglia, paesi o media giornaliera; tocca un nome per la scheda.</p>
+    <div id="crewmates">${crewmatesInner(CREWSORT)}</div></section>`;
+}
+function setCrewSort(k) {
+  if (!CM_METRICS[k]) return;
+  CREWSORT = k;
+  const el = document.getElementById("crewmates");
+  if (el) el.innerHTML = crewmatesInner(k);
+}
+function toggleCrew(btn) {
+  const ex = document.getElementById("cm-extra");
+  if (!ex) return;
+  if (ex.hasAttribute("hidden")) { ex.removeAttribute("hidden"); btn.innerHTML = 'Mostra meno <span class="chev up">▾</span>'; }
+  else { ex.setAttribute("hidden", ""); btn.innerHTML = btn.dataset.label + ' <span class="chev">▾</span>'; }
+}
+
+function render() {
+  document.getElementById("app").innerHTML = crewmatesHTML()
+    + `<footer><a class="pl" href="skipper.html">‹ Torna al dossier skipper</a></footer>`;
+}
+fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
+  window.__CREW = d.people || [];
+  render();
+}).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Classifica non disponibile offline.</p></section>`; });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

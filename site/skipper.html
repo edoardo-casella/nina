@@ -534,6 +534,7 @@ function crewmatesHTML() {
   if (!(window.__CREW || []).filter(p => p.days != null).length) return "";
   return `<section id="ciurma"><h2>🏆 La ciurma negli anni</h2>
     <p class="cm-intro">I compagni di rotta con l'Ammiraglio, ognuno col suo <b>grado</b>. Ordina per <b>giorni in mare</b>, miglia, paesi o media giornaliera; tocca un nome per la scheda.</p>
+    <p style="margin:-.4rem 0 1rem;font-size:.85rem"><a href="classifica.html">Apri la classifica a pagina intera ›</a></p>
     <div id="crewmates">${crewmatesInner(CREWSORT)}</div></section>`;
 }
 function setCrewSort(k) {
