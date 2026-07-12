@@ -119,6 +119,13 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
 /* drill-down: quattro viste in una pagina, hash-router senza framework */
 header .tabs{max-width:640px;margin:0 auto;padding:0 1.1rem .6rem}
 header .tab{flex:1;text-align:center;text-decoration:none}
+/* scorciatoie di navigazione verso le altre sezioni (non piu' solo nell'hamburger) */
+.quicknav{display:flex;gap:.4rem;max-width:640px;margin:0 auto;padding:0 1.1rem .7rem;overflow-x:auto;scrollbar-width:none}
+.quicknav::-webkit-scrollbar{display:none}
+.quicknav a{flex:none;white-space:nowrap;font:700 .58rem/1 var(--display);letter-spacing:.07em;text-transform:uppercase;
+  color:var(--soft);text-decoration:none;background:var(--sea-1);border:1px solid var(--hair);border-radius:99px;
+  padding:.5rem .75rem;display:inline-flex;align-items:center;gap:.28rem}
+.quicknav a:hover{border-color:var(--accent);color:var(--accent)}
 main>section{display:none}
 main>section.on{display:block}
 
@@ -311,6 +318,14 @@ footer strong{color:var(--ink)}
   <a class="tab" id="nav-vento" href="#vento">Vento</a>
   <a class="tab" id="nav-mare" href="#mare">Mare</a>
   <a class="tab" id="nav-programma" href="#programma">Programma</a>
+</nav>
+<nav class="quicknav" aria-label="Sezioni del sito">
+  <a href="viaggio.html">⛵ I viaggi</a>
+  <a href="skipper.html#ciurma">🏆 Classifica</a>
+  <a href="mete.html">🗺️ Le mete</a>
+  <a href="membro.html">👥 La ciurma</a>
+  <a href="skipper.html">🎖️ Lo skipper</a>
+  <a href="aneddoti.html">📖 Aneddoti</a>
 </nav></header>
 
 <div id="flag"></div>

@@ -532,7 +532,7 @@ function crewmatesInner(sortKey) {
 }
 function crewmatesHTML() {
   if (!(window.__CREW || []).filter(p => p.days != null).length) return "";
-  return `<section><h2>La ciurma negli anni</h2>
+  return `<section id="ciurma"><h2>🏆 La ciurma negli anni</h2>
     <p class="cm-intro">I compagni di rotta con l'Ammiraglio, ognuno col suo <b>grado</b>. Ordina per <b>giorni in mare</b>, miglia, paesi o media giornaliera; tocca un nome per la scheda.</p>
     <div id="crewmates">${crewmatesInner(CREWSORT)}</div></section>`;
 }
@@ -719,6 +719,7 @@ lb.addEventListener("click", e => { if (e.target === lb) lbClose(); });
     try { window.__CREW = rc && rc.ok ? (await rc.json()).people : []; } catch (e) { window.__CREW = []; }
     try { window.__ANECDOTES = ra && ra.ok ? (await ra.json()).anecdotes : []; } catch (e) { window.__ANECDOTES = []; }
     render(await r.json());
+    if (location.hash) { const el = document.getElementById(location.hash.slice(1)); if (el) setTimeout(() => el.scrollIntoView(), 60); }
   } catch (e) {
     document.getElementById("app").innerHTML = `<div class="err"><strong>Scheda skipper non disponibile.</strong>
       Riprova sotto copertura di rete.<br><a href="index.html">‹ Torna alla Plancia</a></div>`;
