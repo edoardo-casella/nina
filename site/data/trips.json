@@ -1179,6 +1179,18 @@
         "Filippo R.",
         "Nicola R."
       ],
+      "fleet": [
+        {
+          "boat_name": "Regina V",
+          "note": "Barca gemella rivale — famiglie Mascagni e Brancaleoni",
+          "people": [
+            "michele-m",
+            "monica-m",
+            "silvano-b",
+            "simona-b"
+          ]
+        }
+      ],
       "n_photos": 1,
       "photos": [
         {
@@ -1743,8 +1755,8 @@
       ],
       "fleet": [
         {
-          "boat_name": null,
-          "note": "Seconda barca al seguito — famiglie Mascagni e Brancaleoni",
+          "boat_name": "Vienna",
+          "note": "Barca gemella — famiglie Mascagni e Brancaleoni",
           "people": [
             "michele-m",
             "monica-m",
