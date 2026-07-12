@@ -65,6 +65,13 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .legend{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.8rem;font-size:.74rem;color:var(--soft)}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:.3rem}
 .note{background:var(--sea-1);border:1px dashed var(--hair);border-radius:4px;padding:.85rem 1rem;font-size:.86rem;color:var(--soft);margin-top:1rem}
+/* occupazione: persone a bordo per notte (riga in fondo al gantt) */
+.gline.occ{align-items:flex-end;margin-top:.5rem}
+.occ .gname{align-self:center}
+.occt{height:46px}
+.ocell{position:absolute;bottom:0;background:var(--accent);border-radius:3px 3px 0 0;display:flex;align-items:center;justify-content:center;min-height:15px;border-right:2px solid var(--paper);overflow:visible}
+.ocell b{font:700 .64rem/1 var(--mono);color:#fff;text-shadow:0 1px 1px rgba(0,0,0,.25)}
+.occap{margin:.45rem 0 0 5.6rem;font-size:.72rem;color:var(--soft)}
 /* roster ciurma — veterani & matricole */
 .rintro{color:var(--soft);font-size:.9rem;margin-bottom:1rem}
 .rmember{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-bottom:1px solid var(--hair);text-decoration:none;color:inherit}
@@ -101,6 +108,8 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
   <section><h2>Chi c'è, e quando</h2>
     <div class="axis" id="axis"></div>
     <div id="gantt"></div>
+    <div class="gline occ"><span class="gname">A bordo</span><div class="gtrack occt" id="occ"></div></div>
+    <p class="occap" id="occap"></p>
     <div class="legend">
       <span><i style="background:var(--gold)"></i>skipper</span>
       <span><i style="background:#B08D57"></i>aspirante skipper</span>
@@ -183,6 +192,24 @@ document.getElementById("gantt").innerHTML = CREW.map(m => {
   return `<div class="gline"><span class="gname">${m.n}</span>
     <div class="gtrack">${marks}<div class="gbar ${rc(m.r)}" style="left:${l}%;width:${w}%" title="${m.n}: ${fmt(m.b)} → ${fmt(m.l)} (${nights} notti)"><b>${nights}</b></div></div></div>`;
 }).join("");
+
+// occupazione: quante persone dormono a bordo ogni notte (riga in fondo al gantt)
+(function () {
+  const counts = byDay(), maxC = Math.max(...counts);
+  const dateAt = d => new Date(day(START).getTime() + d * 864e5);
+  const dl = d => dateAt(d).toLocaleDateString("it", { day: "numeric", month: "short" });
+  const marks = ["2026-08-15", "2026-08-21", "2026-08-22"].map(dt => `<span class="mark" style="left:${off(dt) / SPAN * 100}%"></span>`).join("");
+  let html = marks, i = 0;
+  while (i < SPAN) {
+    let j = i; while (j + 1 < SPAN && counts[j + 1] === counts[i]) j++;
+    const c = counts[i], l = i / SPAN * 100, w = (j + 1 - i) / SPAN * 100, h = Math.round(c / maxC * 100);
+    const range = i === j ? dl(i) : `${dl(i)}–${dl(j)}`;
+    html += `<div class="ocell" style="left:${l}%;width:${w}%;height:${h}%" title="${range}: ${c} a bordo"><b>${c}</b></div>`;
+    i = j + 1;
+  }
+  document.getElementById("occ").innerHTML = html;
+  document.getElementById("occap").textContent = `Quante persone dormono a bordo ogni notte · max ${maxC}.`;
+})();
 
 // roster: la ciurma per anzianità (veterani prima), badge volte a bordo
 const dshort = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
