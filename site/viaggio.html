@@ -111,7 +111,7 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 </head>
 <body>
 <div class="top"><div class="wrap">
-  <a class="back" href="skipper.html">‹ Dossier skipper</a>
+  <a class="back" href="index.html">‹ Plancia</a>
   <span class="tag">⛵ I viaggi</span>
 </div></div>
 <main id="app"></main>
@@ -274,7 +274,7 @@ function tripPage(t, all) {
       ${next ? `<a class="next" href="#${next.id}"><small>${next.year} ›</small>${flags(next.country)}${esc(cleanZone(next.zone))}${next.name ? ` · «${esc(next.name)}»` : ""}</a>` : "<span></span>"}
     </div>
   </section>
-  <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer>`;
+  <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
 }
 
 function directory(all) {
@@ -298,7 +298,7 @@ function directory(all) {
     <img class="route gmap" src="trips/routes/_global.png" alt="Tutte le rotte 2011–2024 · Mediterraneo, Cuba, Piccole Antille" loading="lazy" onclick="openLB([{src:'trips/routes/_global.png',people:[]}],0)">
     <div class="gcap">Le aree navigate: Mediterraneo · Caraibi (Cuba, Piccole Antille) · Oceano Indiano (Seychelles). Tocca per ingrandire.</div>
     <div class="grid" style="margin-top:1.4rem">${cards}</div>
-    <footer><a class="pl" href="skipper.html">‹ Torna al dossier</a></footer></section>`;
+    <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer></section>`;
 }
 
 let DATA = [], ANEC = [];

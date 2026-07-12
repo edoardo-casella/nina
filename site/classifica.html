@@ -70,7 +70,7 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 </head>
 <body>
 <div class="top"><div class="wrap">
-  <a class="back" href="skipper.html">‹ Dossier skipper</a>
+  <a class="back" href="index.html">‹ Plancia</a>
   <span class="tag">🏆 Classifica</span>
 </div></div>
 <main id="app"><section><p style="padding:2rem 0">Carico la classifica…</p></section></main>
@@ -170,7 +170,7 @@ function toggleCrew(btn) {
 
 function render() {
   document.getElementById("app").innerHTML = crewmatesHTML()
-    + `<footer><a class="pl" href="skipper.html">‹ Torna al dossier skipper</a></footer>`;
+    + `<footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
 }
 fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
   window.__CREW = d.people || [];

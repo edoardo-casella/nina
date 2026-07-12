@@ -61,7 +61,7 @@
       const home = document.createElement("a");
       home.id = "nina-home-btn"; home.href = "index.html";
       home.title = "Torna alla plancia"; home.setAttribute("aria-label", "Plancia");
-      home.textContent = "🏠";
+      home.textContent = "⛵";
       bar.insertBefore(home, btn.nextSibling);
     }
   } else { btn.style.cssText = "position:fixed;top:.7rem;left:.7rem;z-index:91"; document.body.appendChild(btn); }
