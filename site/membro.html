@@ -155,6 +155,12 @@ function tripRow(t) {
     `<small>${boatTxt}${t.nm ? ` · ${t.nm} nm` : ""}${dur ? ` · ${dur}` : ""}${aboard}</small></span>` +
     `${p ? `<span class="pace ${p.k}">${p.t}</span>` : ""}<span class="y num">${t.year || ""}</span><span class="go">›</span></a>`;
 }
+function fleetRow(f) {   // viaggio in cui la persona era su UN'ALTRA barca (in flotta), non a bordo con noi
+  return `<a class="tlrow" href="viaggio.html#${f.id}"><span class="fl">${flags(f.country) || "🚩"}</span>` +
+    `<span class="z"><b>${esc(cleanZone(f.zone) || f.country || "")}</b>` +
+    `<small>${f.fleetBoat ? `«${esc(f.fleetBoat)}» · ` : ""}${esc(f.note || "Su un'altra barca")}${f.name ? ` · in flotta con «${esc(f.name)}»` : ""}</small></span>` +
+    `<span class="y num">${f.year || ""}</span><span class="go">›</span></a>`;
+}
 // aneddoti taggati con questa persona (link alla pagina Aneddoti)
 const anecFor = id => (ANEC || []).filter(a => (a.people || []).includes(id));
 function anecRow(a) {
@@ -247,6 +253,7 @@ function memberPage(m, all) {
     ${(m.tags && m.tags.length) ? `<div class="mtags">${m.tags.map(tg => `<span class="mtag">${esc(tg)}</span>`).join("")}</div>` : ""}
     ${m.bio ? `<h2>Ritratto di bordo</h2><div class="card bio"><span class="epithet">${esc(m.bio.epithet || "")}</span>${m.bio.html}</div>` : ""}
     ${(m.trips_list && m.trips_list.length) ? `<h2>⛵ I viaggi insieme</h2><div class="tlog">${m.trips_list.map(tripRow).join("")}</div>` : ""}
+    ${(FLEET.get(m.id) || []).length ? `<h2>🚩 In flotta insieme</h2><p style="color:var(--soft);font-size:.86rem;margin:-.3rem 0 .7rem">Non a bordo con l'Ammiraglio, ma in navigazione a fianco su un'altra barca — quindi fuori dai conteggi di giorni, miglia e grado.</p><div class="tlog">${(FLEET.get(m.id) || []).map(fleetRow).join("")}</div>` : ""}
     ${(m.companions && m.companions.length) ? `<h2>🔗 Con chi ha navigato di più</h2><div class="cchips">${m.companions.map(cp => compChip(cp, all)).join("")}</div>` : ""}
     ${anecFor(m.id).length ? `<h2>📖 Aneddoti</h2><div class="tlog">${anecFor(m.id).map(anecRow).join("")}</div>` : ""}
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
@@ -277,7 +284,7 @@ function directory(all) {
     <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
 }
 
-let DATA = [], BOATNAME = new Map(), ANEC = [];
+let DATA = [], BOATNAME = new Map(), FLEET = new Map(), ANEC = [];
 function route() {
   const id = decodeURIComponent(location.hash.replace(/^#/, ""));
   const m = DATA.find(x => x.id === id);
@@ -292,7 +299,13 @@ Promise.all([
   fetch("data/anecdotes.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({ anecdotes: [] })),
 ]).then(([d, dt, da]) => {
   DATA = d.people || [];
-  (dt.trips || []).forEach(t => BOATNAME.set(t.id, t.name));
+  (dt.trips || []).forEach(t => {
+    BOATNAME.set(t.id, t.name);
+    (t.fleet || []).forEach(f => (f.people || []).forEach(pid => {
+      if (!FLEET.has(pid)) FLEET.set(pid, []);
+      FLEET.get(pid).push({ id: t.id, year: t.year, zone: t.zone, country: t.country, name: t.name, boat: t.boat, note: f.note, fleetBoat: f.boat_name });
+    }));
+  });
   ANEC = da.anecdotes || [];
   route();
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Equipaggio non disponibile offline.</p></section>`; });

@@ -1741,6 +1741,18 @@
         "Gabriele M.",
         "Ilaria M."
       ],
+      "fleet": [
+        {
+          "boat_name": null,
+          "note": "Seconda barca al seguito — famiglie Mascagni e Brancaleoni",
+          "people": [
+            "michele-m",
+            "monica-m",
+            "silvano-b",
+            "simona-b"
+          ]
+        }
+      ],
       "n_photos": 6,
       "photos": [
         {

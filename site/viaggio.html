@@ -65,6 +65,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .crewgrid .chip.lk:hover{color:var(--accent)}
 .crewgrid .cav{width:88px;height:88px}
 .crewgrid .cav.ph{font:700 2rem/1 var(--display)}
+.fleetnote{font:600 .82rem/1.45 var(--body);color:var(--soft);margin:.1rem 0 .7rem}
 .chip.me{border-color:var(--gold);color:var(--gold);font-weight:700}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
 .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;cursor:pointer;background:var(--sea-2);display:block}
@@ -265,6 +266,7 @@ function tripPage(t, all) {
     ${gal}
     <h2>⚓ L'equipaggio di quell'anno</h2>
     <div class="crewgrid">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>
+    ${t.fleet && t.fleet.length ? `<h2>🚩 In flotta</h2>${t.fleet.map(f => `<div class="fleetnote">${f.boat_name ? `«${esc(f.boat_name)}» · ` : ""}${esc(f.note || "Altra barca al seguito")} &mdash; non equipaggio della «${esc(t.name)}»</div><div class="crewgrid">${(f.people || []).map(crewChipById).filter(Boolean).join("")}</div>`).join("")}` : ""}
     ${ANEC.filter(a => a.trip_id === t.id).length ? `<h2>📖 Aneddoti di questo viaggio</h2>
     <div class="chips">${ANEC.filter(a => a.trip_id === t.id).map(a => `<a class="chip lk" href="aneddoti.html#${a.id}">${a.kind === "eroico" ? "🎖️" : "⚓"} ${esc(a.title)}</a>`).join("")}</div>` : ""}
     <div class="nav2">
