@@ -10,7 +10,7 @@
   "ensign": "Guardiamarina",
   "recruit": "Allievo"
  },
- "n_total": 64,
+ "n_total": 66,
  "people": [
   {
    "id": "edo-c",
@@ -6082,6 +6082,64 @@
     }
    ],
    "photo": "crew/img/alberto-b.jpg"
+  },
+  {
+   "id": "agata",
+   "name": "Agata",
+   "pet": true,
+   "rank": "recruit",
+   "trips": 1,
+   "days": 11,
+   "nm": 385,
+   "first": 2018,
+   "last": 2018,
+   "trips_list": [
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11,
+     "pdays": 11
+    }
+   ],
+   "bio": {
+    "epithet": "Mascotte di bordo",
+    "html": "<p>Una delle due mascotte a quattro zampe di casa. La Croazia 2018 è stata il suo battesimo del mare: mare calmo, ritmi lenti e le prime lezioni di rollio.</p>"
+   },
+   "sex": "m",
+   "photo": "crew/img/agata.jpg"
+  },
+  {
+   "id": "leo",
+   "name": "Leo",
+   "pet": true,
+   "rank": "recruit",
+   "trips": 1,
+   "days": 11,
+   "nm": 385,
+   "first": 2018,
+   "last": 2018,
+   "trips_list": [
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia CZ",
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11,
+     "pdays": 11
+    }
+   ],
+   "bio": {
+    "epithet": "Mascotte di bordo",
+    "html": "<p>L'altra metà del duo di bordo. Croazia 2018, prima crociera in famiglia: acque tranquille per imparare a stare in coperta senza perdere l'equilibrio.</p>"
+   },
+   "sex": "m",
+   "photo": "crew/img/leo.jpg"
   },
   {
    "id": "matilde-r",

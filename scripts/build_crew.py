@@ -205,6 +205,27 @@ for p in part:
     out.append({"id": pid_id, "name": nm, **st,
                 "rank": rank_of(st["days"]), "trips_list": trips_list_for(part.get(p, []), p)})
 
+# cani di bordo: non sono nel registro Passengers, li aggiungiamo a mano come profili
+# (pet=True li tiene fuori dalla classifica ciurma; avatar auto-agganciato sotto da
+# site/crew/img/<id>.jpg). Presenti sull'Ondine, Croazia 2018.
+_DOG_TRIP = {"id": "ondine", "year": 2018, "zone": "Croazia CZ", "country": "Croazia",
+             "boat": "Sun Odyssey 519", "nm": 385, "days": 11, "pdays": 11}
+DOGS = [
+    {"id": "agata", "name": "Agata", "pet": True, "rank": "recruit",
+     "trips": 1, "days": 11, "nm": 385, "first": 2018, "last": 2018,
+     "trips_list": [dict(_DOG_TRIP)],
+     "bio": {"epithet": "Mascotte di bordo", "html":
+             "<p>Una delle due mascotte a quattro zampe di casa. La Croazia 2018 è stata il suo "
+             "battesimo del mare: mare calmo, ritmi lenti e le prime lezioni di rollio.</p>"}},
+    {"id": "leo", "name": "Leo", "pet": True, "rank": "recruit",
+     "trips": 1, "days": 11, "nm": 385, "first": 2018, "last": 2018,
+     "trips_list": [dict(_DOG_TRIP)],
+     "bio": {"epithet": "Mascotte di bordo", "html":
+             "<p>L'altra metà del duo di bordo. Croazia 2018, prima crociera in famiglia: acque "
+             "tranquille per imparare a stare in coperta senza perdere l'equilibrio.</p>"}},
+]
+out.extend(DOGS)
+
 # foto taggate per persona (sidecar generato da build_trips.py) -> campo photos
 PHOTOTAGS = os.path.join(ROOT, "data", "photo-tags.json")
 by_person = {}

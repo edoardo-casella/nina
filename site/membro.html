@@ -213,7 +213,7 @@ const rankBadge = m => `<span class="rankbadge">${rankSVG(m.rank)} <b>${esc(RANK
 
 function memberPage(m, all) {
   const c = m.crew2026 || null;
-  const roleTxt = c ? roleLabel(c.role) : "Compagno di rotta";
+  const roleTxt = m.pet ? "🐾 Cane di bordo" : (c ? roleLabel(c.role) : "Compagno di rotta");
   const yrs = m.first ? `${m.first}${m.last && m.last !== m.first ? "–" + m.last : ""}` : "";
   const vet = (m.trips || 0) > 0
     ? `<span class="badge vet">⚓ ${m.trips} crociere · ${m.days} giorni</span>`
