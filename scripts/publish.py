@@ -12,7 +12,7 @@ publish.py --approve). Il meteo e' un fatto e si aggiorna da solo; il piano e' u
 decisione e ha bisogno di un nome sopra.
 """
 from __future__ import annotations
-import argparse, datetime as dt, json, math, sys
+import argparse, datetime as dt, json, math, sys, urllib.error
 from pathlib import Path
 
 import core, routing, shelter, ledger, weather, photos
@@ -636,7 +636,16 @@ if __name__ == "__main__":
         print(f"Piano del {b['day']} approvato da {a.approve}")
         sys.exit(0)
 
-    briefing, wx, conti, program = build(a.day, a.offline)
+    try:
+        briefing, wx, conti, program = build(a.day, a.offline)
+    except (urllib.error.URLError, TimeoutError) as e:
+        # Meteo non raggiungibile (es. Open-Meteo down/timeout): NON far fallire il
+        # deploy. build() ritorna i dict ma non scrive nulla, quindi i JSON meteo
+        # committati (l'ultimo briefing buono, con la sua data: vecchio ma dichiarato)
+        # restano intatti e il deploy prosegue per pubblicare il resto del sito.
+        print(f"METEO non raggiungibile ({e}). Conservo l'ultimo briefing/meteo "
+              f"committato, salto la rigenerazione. Deploy comunque OK.", file=sys.stderr)
+        sys.exit(0)
     # schede dettaglio: join senza rete del file arricchito a mano (mai fetch qui)
     dests = build_destinations(core.load(), briefing["generated_at"])
     for name, obj in (("briefing", briefing), ("weather", wx), ("conti", conti),
