@@ -276,7 +276,7 @@ function tripPage(t, all) {
 }
 
 function directory(all) {
-  const byYear = [...all].sort((a, b) => b.year - a.year || monthIdx(a.month) - monthIdx(b.month));
+  const byYear = [...all].sort((a, b) => b.year - a.year || monthIdx(b.month) - monthIdx(a.month));
   const cards = byYear.map(t => {
     const zone = cleanZone(t.zone);
     const ph = t.photos && t.photos.length
