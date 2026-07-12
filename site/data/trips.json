@@ -938,7 +938,7 @@
         "Bernardo B.",
         "Martina R."
       ],
-      "n_photos": 4,
+      "n_photos": 5,
       "photos": [
         {
           "src": "trips/img/natfika/01.jpg",
@@ -967,6 +967,13 @@
           "h": 495,
           "people": [],
           "caption": "Grecia Cicladi 2012"
+        },
+        {
+          "src": "trips/img/natfika/05.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Grecia Cicladi 2012"
         }
       ],
       "story": {
@@ -992,7 +999,7 @@
         "Margherita C.",
         "Matilde C."
       ],
-      "n_photos": 6,
+      "n_photos": 7,
       "photos": [
         {
           "src": "trips/img/stephanie/01.jpg",
@@ -1010,7 +1017,8 @@
           "h": 956,
           "people": [
             "claudio-c",
-            "gabriele-b"
+            "gabriele-b",
+            "bernardo-b"
           ],
           "caption": "Grecia Cicladi-Dodecaneso 2012"
         },
@@ -1039,6 +1047,15 @@
           "src": "trips/img/stephanie/06.jpg",
           "w": 1280,
           "h": 956,
+          "people": [
+            "bernardo-b"
+          ],
+          "caption": "Grecia Cicladi-Dodecaneso 2012"
+        },
+        {
+          "src": "trips/img/stephanie/07.jpg",
+          "w": 960,
+          "h": 636,
           "people": [],
           "caption": "Grecia Cicladi-Dodecaneso 2012"
         }
@@ -1065,8 +1082,135 @@
         "Margherita C.",
         "Matilde C."
       ],
-      "n_photos": 0,
-      "photos": []
+      "n_photos": 18,
+      "photos": [
+        {
+          "src": "trips/img/klaudia/01.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/02.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/03.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/04.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/05.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/06.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/07.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/08.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/09.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/10.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/11.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/12.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/13.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/14.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/15.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/16.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/17.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        },
+        {
+          "src": "trips/img/klaudia/18.jpg",
+          "w": 1280,
+          "h": 956,
+          "people": [],
+          "caption": "Grecia-Turchia Dodecaneso 2013"
+        }
+      ]
     },
     {
       "id": "cubalibre",
@@ -1231,7 +1375,7 @@
         "Riccardo B.",
         "Carlo A."
       ],
-      "n_photos": 5,
+      "n_photos": 13,
       "photos": [
         {
           "src": "trips/img/blue-bird/01.jpg",
@@ -1283,6 +1427,62 @@
             "riccardo-b"
           ],
           "caption": "Spagna 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/06.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/07.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/08.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/09.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/10.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/11.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/12.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/blue-bird/13.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Baleari 2015"
         }
       ],
       "story": {
@@ -1311,8 +1511,64 @@
         "Paola C.",
         "Claudio C."
       ],
-      "n_photos": 0,
-      "photos": [],
+      "n_photos": 7,
+      "photos": [
+        {
+          "src": "trips/img/trocha/01.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/trocha/02.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/trocha/03.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/trocha/04.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/trocha/05.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/trocha/06.jpg",
+          "w": 1280,
+          "h": 848,
+          "people": [
+            "edo-c",
+            "riccardo-b"
+          ],
+          "caption": "Baleari 2015"
+        },
+        {
+          "src": "trips/img/trocha/07.jpg",
+          "w": 848,
+          "h": 1280,
+          "people": [
+            "edo-c",
+            "riccardo-b"
+          ],
+          "caption": "Baleari 2015"
+        }
+      ],
       "story": {
         "title": "Cruising di tutte le Baleari",
         "html": "Una vacanza di puro cruising, tutte le Baleari a passo di crociera. Molto bella, molto allettante: forse la più rilassata e godereccia del gruppo balearico."
@@ -1335,7 +1591,7 @@
         "Fabrizio",
         "La fotografa"
       ],
-      "n_photos": 8,
+      "n_photos": 10,
       "photos": [
         {
           "src": "trips/img/aquarela/01.jpg",
@@ -1392,6 +1648,20 @@
           "h": 1280,
           "people": [],
           "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/09.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
+        },
+        {
+          "src": "trips/img/aquarela/10.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2016"
         }
       ],
       "story": {
@@ -1421,7 +1691,7 @@
         "Gabriele M.",
         "Ilaria M."
       ],
-      "n_photos": 15,
+      "n_photos": 23,
       "photos": [
         {
           "src": "trips/img/sorbe/01.jpg",
@@ -1554,6 +1824,62 @@
           "h": 720,
           "people": [],
           "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/16.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/17.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/18.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/19.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/20.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/21.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/22.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
+        },
+        {
+          "src": "trips/img/sorbe/23.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Caraibi Grenadine 2017"
         }
       ],
       "story": {
@@ -1574,8 +1900,23 @@
       "crew": [
         "Cecilia R."
       ],
-      "n_photos": 0,
-      "photos": [],
+      "n_photos": 2,
+      "photos": [
+        {
+          "src": "trips/img/capitan-nikos/01.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grecia Cicladi 2017"
+        },
+        {
+          "src": "trips/img/capitan-nikos/02.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grecia Cicladi 2017"
+        }
+      ],
       "story": {
         "title": "La veglia di Serifos",
         "html": "Cicladi in pieno <b>Meltemi</b>: quattro giorni bloccati in rada a <b>Serifos</b> con mare forza 6 e raffiche oltre i 50 nodi, e quattro notti di guardia per tenere la barca all'ancora. Un'impresa di resistenza raccontata per esteso negli <a class='plink' href='aneddoti.html#veglia-serifos'>atti eroici</a> del dossier."
@@ -1598,8 +1939,58 @@
         "Matilde C.",
         "Cecilia R."
       ],
-      "n_photos": 0,
-      "photos": [],
+      "n_photos": 7,
+      "photos": [
+        {
+          "src": "trips/img/showtime/01.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grecia Ionie 2017"
+        },
+        {
+          "src": "trips/img/showtime/02.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grecia Ionie 2017"
+        },
+        {
+          "src": "trips/img/showtime/03.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grecia Ionie 2017"
+        },
+        {
+          "src": "trips/img/showtime/04.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grecia Ionie 2017"
+        },
+        {
+          "src": "trips/img/showtime/05.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grecia Ionie 2017"
+        },
+        {
+          "src": "trips/img/showtime/06.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Grecia Ionie 2017"
+        },
+        {
+          "src": "trips/img/showtime/07.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Grecia Ionie 2017"
+        }
+      ],
       "story": {
         "title": "Il malore in Ionio",
         "html": "Grecia con la famiglia, nel <b>mar Ionio</b>. Il capitano arriva reduce da una crociera stressantissima nelle Cicladi con la compagna di allora &mdash; quattro giorni inchiodati in rada dal mare grosso &mdash; e qui, finalmente al sicuro tra i suoi, si concede un piccolo riflesso vasovagale: il corpo che presenta il conto dello stress. Poi, relax vero."
@@ -1624,7 +2015,7 @@
         "Leonardo M.",
         "Laura C."
       ],
-      "n_photos": 5,
+      "n_photos": 22,
       "photos": [
         {
           "src": "trips/img/invitation/01.jpg",
@@ -1660,6 +2051,125 @@
           "h": 959,
           "people": [],
           "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/06.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/07.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/08.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/09.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/10.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/11.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/12.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/13.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/14.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/15.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/16.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/17.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/18.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/19.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/20.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/21.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
+        },
+        {
+          "src": "trips/img/invitation/22.jpg",
+          "w": 1280,
+          "h": 959,
+          "people": [],
+          "caption": "Baleari 2018"
         }
       ],
       "story": {
@@ -1687,7 +2197,7 @@
         "Leo",
         "Nicola R."
       ],
-      "n_photos": 6,
+      "n_photos": 10,
       "photos": [
         {
           "src": "trips/img/ondine/01.jpg",
@@ -1730,6 +2240,34 @@
           "src": "trips/img/ondine/06.jpg",
           "w": 1280,
           "h": 848,
+          "people": [],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/07.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/08.jpg",
+          "w": 1280,
+          "h": 720,
+          "people": [],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/09.jpg",
+          "w": 720,
+          "h": 1280,
+          "people": [],
+          "caption": "Croazia 2018"
+        },
+        {
+          "src": "trips/img/ondine/10.jpg",
+          "w": 1280,
+          "h": 720,
           "people": [],
           "caption": "Croazia 2018"
         }
@@ -1845,7 +2383,7 @@
         "Giorgio M.",
         "Giacomo B."
       ],
-      "n_photos": 15,
+      "n_photos": 58,
       "photos": [
         {
           "src": "trips/img/alba/01.jpg",
@@ -1986,6 +2524,307 @@
             "beatrice-f"
           ],
           "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/16.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/17.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/18.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/19.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/20.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/21.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/22.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/23.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/24.jpg",
+          "w": 853,
+          "h": 1280,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/25.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/26.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/27.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/28.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/29.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/30.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/31.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/32.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/33.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/34.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/35.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/36.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/37.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/38.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/39.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/40.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/41.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/42.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/43.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/44.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/45.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/46.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/47.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/48.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/49.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/50.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/51.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/52.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/53.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/54.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/55.jpg",
+          "w": 956,
+          "h": 1276,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/56.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/57.jpg",
+          "w": 320,
+          "h": 213,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
+        },
+        {
+          "src": "trips/img/alba/58.jpg",
+          "w": 956,
+          "h": 1276,
+          "people": [],
+          "caption": "Sardegna-Corsica 2020"
         }
       ],
       "story": {
@@ -2047,7 +2886,7 @@
         "Sofia M.",
         "Jennifer S."
       ],
-      "n_photos": 5,
+      "n_photos": 9,
       "photos": [
         {
           "src": "trips/img/enya/01.jpg",
@@ -2083,6 +2922,34 @@
           "h": 1280,
           "people": [],
           "caption": "Corsica-Sardegna 2021"
+        },
+        {
+          "src": "trips/img/enya/06.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Corsica-Sardegna 2021"
+        },
+        {
+          "src": "trips/img/enya/07.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Corsica-Sardegna 2021"
+        },
+        {
+          "src": "trips/img/enya/08.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Corsica-Sardegna 2021"
+        },
+        {
+          "src": "trips/img/enya/09.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Corsica-Sardegna 2021"
         }
       ],
       "story": {
@@ -2108,7 +2975,7 @@
         "Riccardo B.",
         "Simona B."
       ],
-      "n_photos": 6,
+      "n_photos": 28,
       "photos": [
         {
           "src": "trips/img/mars-planet/01.jpg",
@@ -2153,6 +3020,160 @@
           "h": 1280,
           "people": [],
           "caption": "Sicilia 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/07.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/08.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/09.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/10.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/11.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/12.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/13.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/14.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/15.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/16.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/17.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/18.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/19.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/20.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/21.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/22.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/23.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/24.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/25.jpg",
+          "w": 1024,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/26.jpg",
+          "w": 1280,
+          "h": 853,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/27.jpg",
+          "w": 848,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
+        },
+        {
+          "src": "trips/img/mars-planet/28.jpg",
+          "w": 848,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2021"
         }
       ],
       "story": {
@@ -2402,7 +3423,7 @@
         "Sofia M.",
         "Giacomo N."
       ],
-      "n_photos": 2,
+      "n_photos": 17,
       "photos": [
         {
           "src": "trips/img/isla/01.jpg",
@@ -2426,6 +3447,111 @@
             "riccardo-b"
           ],
           "caption": "Sicilia 2023"
+        },
+        {
+          "src": "trips/img/isla/03.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/04.jpg",
+          "w": 1024,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/05.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/06.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/07.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/08.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/09.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/10.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/11.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/12.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/13.jpg",
+          "w": 1280,
+          "h": 960,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/14.jpg",
+          "w": 1024,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/15.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/16.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
+        },
+        {
+          "src": "trips/img/isla/17.jpg",
+          "w": 960,
+          "h": 1280,
+          "people": [],
+          "caption": "Sicilia-Egadi 2023"
         }
       ],
       "story": {

@@ -308,6 +308,16 @@
      "caption": "Spagna 2015"
     },
     {
+     "src": "trips/img/trocha/06.jpg",
+     "trip_id": "trocha",
+     "caption": "Baleari 2015"
+    },
+    {
+     "src": "trips/img/trocha/07.jpg",
+     "trip_id": "trocha",
+     "caption": "Baleari 2015"
+    },
+    {
      "src": "trips/img/sorbe/03.jpg",
      "trip_id": "sorbe",
      "caption": "Grenadine 2017"
@@ -1427,6 +1437,16 @@
      "caption": "Grecia Cicladi-Dodecaneso 2012"
     },
     {
+     "src": "trips/img/stephanie/02.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
+    },
+    {
+     "src": "trips/img/stephanie/06.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
+    },
+    {
      "src": "trips/img/isla/01.jpg",
      "trip_id": "isla",
      "caption": "Sicilia 2023"
@@ -1946,6 +1966,16 @@
      "src": "trips/img/blue-bird/05.jpg",
      "trip_id": "blue-bird",
      "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/trocha/06.jpg",
+     "trip_id": "trocha",
+     "caption": "Baleari 2015"
+    },
+    {
+     "src": "trips/img/trocha/07.jpg",
+     "trip_id": "trocha",
+     "caption": "Baleari 2015"
     },
     {
      "src": "trips/img/sorbe/04.jpg",
