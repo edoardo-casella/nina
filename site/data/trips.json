@@ -1063,6 +1063,10 @@
       "story": {
         "title": "Bodrum e la pietra di Kalymnos",
         "html": "Grecia e Turchia con <a class='plink' href='membro.html#gabriele-b'>Gabriele B.</a> di nuovo guida spirituale e <a class='plink' href='membro.html#bernardo-b'>Bernardo</a> a bordo: sailing più deciso, perché qui il vento c'è. La prima barca assegnata, in realtà, era un'altra: sostituita per un'avaria ai motori. Si parte da <b>Bodrum</b>, un problema tecnico ai motori e un piccolo incidente in rada a <b>Kalymnos</b>: <a class='plink' href='membro.html#claudio-c'>Claudio C.</a> lega l'ormeggio a terra a una pietra&hellip; che decide di franare, facendo cedere tutto. Il vento forte mette alla prova l'equipaggio, che comunque ne esce."
+      },
+      "nm_by_country": {
+        "Greece": 261,
+        "Turkey": 114
       }
     },
     {
@@ -1210,7 +1214,11 @@
           "people": [],
           "caption": "Grecia-Turchia Dodecaneso 2013"
         }
-      ]
+      ],
+      "nm_by_country": {
+        "Greece": 133,
+        "Turkey": 242
+      }
     },
     {
       "id": "cubalibre",
@@ -1885,6 +1893,11 @@
       "story": {
         "title": "Capodanno alle Grenadine",
         "html": "Ai Caraibi con l'ammiraglio <a class='plink' href='membro.html#michele-m'>Michele M.</a>: un bel viaggio tra le <b>Grenadine</b>, a cavallo di Capodanno. Reso memorabile dal celebre <a class='plink' href='aneddoti.html#fuoribordo-fantasma'>incidente in porto</a> &mdash; il fuoribordo dei &laquo;pescatori napoletani&raquo;, edizione tropicale. Vacanza in stile <b>Kevin McCallister</b>: partenza il giorno di <b>Santo Stefano</b>, scalo a Parigi e poi mare."
+      },
+      "nm_by_country": {
+        "Saint Vincent": 177,
+        "France": 7,
+        "Saint Lucia": 87
       }
     },
     {
@@ -2830,6 +2843,10 @@
       "story": {
         "title": "La ripartenza post-Covid",
         "html": "Italia e Corsica, estate 2020: il grande ritorno in mare dopo il Covid. Partenza dall'hotel Micalosu e un viaggio bellissimo, pieno del sollievo di essere di nuovo a bordo. In questa crociera si alternarono due equipaggi distinti, con un <b>nodo core</b> fisso a fare da spola: Edo, <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> e <a class='plink' href='membro.html#cecilia-r'>Cecilia R.</a>"
+      },
+      "nm_by_country": {
+        "Italy": 414,
+        "France": 136
       }
     },
     {
@@ -2955,6 +2972,10 @@
       "story": {
         "title": "Il giro della Corsica col Maestrale",
         "html": "Da <b>Cannigione</b>, circumnavigazione della Corsica passando per l'<b>Asinara</b> e <b>Stintino</b>. Rientro con Maestrale fortissimo e il catamarano lanciato fino a <b>16 nodi</b>: adrenalina pura, timone stretto."
+      },
+      "nm_by_country": {
+        "Italy": 136,
+        "France": 294
       }
     },
     {

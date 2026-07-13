@@ -197,6 +197,16 @@ for f in sorted(srcs):
             save_opt(ImageOps.exif_transpose(Image.open(f)).convert("RGB"), os.path.join(SKIMG, outname))
             dossier_done.append(outname); break
 
+# ripartizione miglia per paese sui viaggi multi-paese, da data/miles-by-country.json
+# (generata da scripts/miles_by_country.py dai tracciati GPS Google Earth). Additivo,
+# per id: preserva nm_by_country anche se questo build viene rieseguito.
+MBC = os.path.join(ROOT, "data", "miles-by-country.json")
+if os.path.exists(MBC):
+    mbc = json.load(open(MBC, encoding="utf-8")).get("trips", {})
+    for t in out:
+        if t["id"] in mbc:
+            t["nm_by_country"] = mbc[t["id"]]["nm_by_country"]
+
 data = {"generated_at": "2026-07-11", "trips": out}
 with open(os.path.join(ROOT, "site", "data", "trips.json"), "w", encoding="utf-8") as fh:
     json.dump(data, fh, ensure_ascii=False, indent=2)

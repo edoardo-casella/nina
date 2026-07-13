@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-07-14",
+  "method": "nearest-country su tracciati GPS Google Earth (Natural Earth 10m), proporzione applicata al totale ufficiale del viaggio",
+  "source_kml": "data/Viaggi in barca (2011-2024)_last.kml",
+  "trips": {
+    "stephanie": {
+      "folder": "dodecaneso12",
+      "official_nm": 375,
+      "track_nm": 374.4,
+      "track_nm_by_country": {
+        "Greece": 260.2,
+        "Turkey": 114.2
+      },
+      "nm_by_country": {
+        "Greece": 261,
+        "Turkey": 114
+      },
+      "rings_kept": {
+        "Greece": 61,
+        "Turkey": 4
+      }
+    },
+    "klaudia": {
+      "folder": "turkey13",
+      "official_nm": 375,
+      "track_nm": 374.7,
+      "track_nm_by_country": {
+        "Greece": 132.9,
+        "Turkey": 241.8
+      },
+      "nm_by_country": {
+        "Greece": 133,
+        "Turkey": 242
+      },
+      "rings_kept": {
+        "Greece": 46,
+        "Turkey": 2
+      }
+    },
+    "sorbe": {
+      "folder": "caribe17",
+      "official_nm": 271,
+      "track_nm": 271.9,
+      "track_nm_by_country": {
+        "Saint Vincent": 178.0,
+        "France": 6.7,
+        "Saint Lucia": 87.2
+      },
+      "nm_by_country": {
+        "Saint Vincent": 177,
+        "France": 7,
+        "Saint Lucia": 87
+      },
+      "rings_kept": {
+        "Saint Vincent": 5,
+        "France": 7,
+        "Saint Lucia": 1
+      }
+    },
+    "alba": {
+      "folder": "sardegna20",
+      "official_nm": 550,
+      "track_nm": 506.4,
+      "track_nm_by_country": {
+        "Italy": 381.3,
+        "France": 125.1
+      },
+      "nm_by_country": {
+        "Italy": 414,
+        "France": 136
+      },
+      "rings_kept": {
+        "Italy": 15,
+        "France": 4
+      }
+    },
+    "enya": {
+      "folder": "corsica21",
+      "official_nm": 430,
+      "track_nm": 402.6,
+      "track_nm_by_country": {
+        "Italy": 127.6,
+        "France": 275.0
+      },
+      "nm_by_country": {
+        "Italy": 136,
+        "France": 294
+      },
+      "rings_kept": {
+        "Italy": 16,
+        "France": 4
+      }
+    }
+  }
+}

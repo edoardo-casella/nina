@@ -86,6 +86,9 @@ const CC = { Greece: "gr", Croazia: "hr", Spain: "es", Italy: "it", France: "fr"
 const IT_NAME = { Greece: "Grecia", Croazia: "Croazia", Spain: "Spagna", Italy: "Italia", France: "Francia", Cuba: "Cuba", Seychelles: "Seychelles", "Saint Vincent": "Saint Vincent", "Saint Lucia": "Santa Lucia", Turkey: "Turchia" };
 const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April: "aprile", May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre", October: "ottobre", November: "novembre", December: "dicembre" };
 const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
+// miglia attribuite a un singolo paese: sui viaggi multi-paese usa la ripartizione
+// nm_by_country (dai tracciati GPS); sui monopaese vale l'intero nm del viaggio.
+const nmIn = (t, c) => (t.nm_by_country && t.nm_by_country[c] != null) ? t.nm_by_country[c] : (t.nm || 0);
 const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";
 const flags = country => parts(country).map(flag1).join("");
 const cleanZone = z => (z || "").replace(/\s*-\s*(GR|SP|IT|TR|FR)\s*$/i, "").replace(/\s+CZ$/i, "").trim();
@@ -104,12 +107,13 @@ function countryPage(iso, all) {
   const en = ISO2EN[iso], itn = IT_NAME[en] || en;
   const list = all.filter(t => inCountry(t, iso)).sort((a, b) => a.year - b.year || a.nm - b.nm);
   if (!list.length) return directory(all);
-  const nm = list.reduce((s, t) => s + (t.nm || 0), 0);
+  const nm = list.reduce((s, t) => s + nmIn(t, en), 0);
   const ys = list.map(t => t.year);
   const rows = list.map(t => {
     const avg = t.days ? Math.round(t.nm / t.days) : null, p = pace(avg);
+    const multi = t.nm_by_country && parts(t.country).length > 1;
     return `<a class="mrow" href="viaggio.html#${t.id}"><span class="fl">${flags(t.country)}</span>
-      <span class="mid"><b>${esc(cleanZone(t.zone))}</b><small>${t.name ? `«${esc(t.name)}» · ` : ""}${esc(t.boat || "")} · ${t.nm} nm · ${Math.round(t.days)} gg${avg ? ` · ${avg} nm/g` : ""}</small></span>
+      <span class="mid"><b>${esc(cleanZone(t.zone))}</b><small>${t.name ? `«${esc(t.name)}» · ` : ""}${esc(t.boat || "")} · ${t.nm} nm${multi ? ` (${nmIn(t, en)} in ${esc(itn)})` : ""} · ${Math.round(t.days)} gg${avg ? ` · ${avg} nm/g` : ""}</small></span>
       ${p ? `<span class="pace ${p.k}">${p.t}</span>` : ""}<span class="yr">${t.year}</span><span class="go">›</span></a>`;
   }).join("");
   return `
@@ -131,7 +135,7 @@ function directory(all) {
   const by = {};
   all.forEach(t => parts(t.country).forEach(c => {
     if (!CC[c]) return;
-    (by[CC[c]] = by[CC[c]] || { n: 0, nm: 0 }).n++; by[CC[c]].nm += (t.nm || 0);
+    (by[CC[c]] = by[CC[c]] || { n: 0, nm: 0 }).n++; by[CC[c]].nm += nmIn(t, c);
   }));
   const cards = Object.entries(by).sort((a, b) => b[1].n - a[1].n || b[1].nm - a[1].nm).map(([iso, s]) => {
     const en = ISO2EN[iso];

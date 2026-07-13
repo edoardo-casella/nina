@@ -318,6 +318,9 @@ const OCEAN = new Set(["Cuba", "Saint Vincent", "Saint Lucia", "Seychelles"]);
 const CAT = ["Lagoon", "Bali", "Fountain Pajot", "Fountain-Pajot", "Bali "];
 
 const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
+// miglia attribuite a un singolo paese: sui viaggi multi-paese usa la ripartizione
+// nm_by_country (dai tracciati GPS); sui monopaese vale l'intero nm del viaggio.
+const nmIn = (t, c) => (t.nm_by_country && t.nm_by_country[c] != null) ? t.nm_by_country[c] : (t.nm || 0);
 const flag = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";
 const flags = country => parts(country).map(flag).join("");
 
@@ -363,7 +366,7 @@ function theatres(d) {
   const by = {};
   d.trips.forEach(t => parts(t.country).forEach(c => {
     if (!CC[c]) return;
-    (by[c] = by[c] || { n: 0, nm: 0 }).n++; by[c].nm += t.nm;
+    (by[c] = by[c] || { n: 0, nm: 0 }).n++; by[c].nm += nmIn(t, c);
   }));
   const rows = Object.entries(by).sort((a, b) => b[1].n - a[1].n || b[1].nm - a[1].nm).map(([c, s]) =>
     `<a class="th" href="paese.html#${CC[c]}">${flag(c)}<div class="n"><b>${esc(IT_NAME[c] || c)} <span class="go">›</span></b>
