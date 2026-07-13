@@ -273,7 +273,7 @@ function proposteHTML() {
   }).join("");
   const banner = !FORM_URL
     ? `<div class="banner">📝 <b>Adesioni in allestimento.</b> Il modulo di adesione e il contatore live arrivano appena colleghiamo il Google Form. Intanto, ecco le mete in cantiere.</div>`
-    : (!SHEET_CSV_URL ? `<div class="banner">Il <b>contatore interessati</b> si attiva quando pubblichiamo il foglio risposte in CSV.</div>` : "");
+    : "";
   return `<section id="nuovi-viaggi"><h2>Nuovi viaggi</h2>
     <p class="pintro">Le prossime avventure in cantiere. Se ti interessa una meta, fai un fischio: quando siamo abbastanza, si parte.</p>
     ${banner}
@@ -361,12 +361,12 @@ Promise.all([
   PROPOSTE = dp.proposte || [];
   (dt.trips || []).forEach(t => TRIPS.set(t.id, t));
   render();
-  if (SHEET_CSV_URL) {
-    fetch(SHEET_CSV_URL, { cache: "no-cache" }).then(r => r.text()).then(txt => {
-      COUNTS = countFromCSV(txt);
-      render();
-    }).catch(() => {});
-  }
+  // conteggio adesioni: da data/proposte_counts.json (generato leggendo il Google Form via API,
+  // connettore Drive). Fallback al CSV se SHEET_CSV_URL è impostato.
+  fetch("data/proposte_counts.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(d => {
+    if (d && d.counts) { COUNTS = d.counts; render(); return; }
+    if (SHEET_CSV_URL) return fetch(SHEET_CSV_URL, { cache: "no-cache" }).then(r => r.text()).then(txt => { COUNTS = countFromCSV(txt); render(); });
+  }).catch(() => {});
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Mete non disponibili offline.</p></section>`; });
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
