@@ -931,7 +931,9 @@ function render(b, wx, c, prog) {
     b.captains?.length ? "Capitani · " + b.captains.map(c =>
       /edoardo casella/i.test(c)
         ? `<a class="caplink" href="skipper.html">${esc(c)}</a>`
-        : esc(c)).join(" · ") : "";
+        : /bernardo bolgeri/i.test(c)
+          ? `<a class="caplink" href="membro.html#bernardo-b">${esc(c)}</a>`
+          : esc(c)).join(" · ") : "";
 
   const state = b.approved
     ? `<div class="flag ok"><b>Piano approvato</b>Confermato da ${esc(b.approved_by)}.</div>`
