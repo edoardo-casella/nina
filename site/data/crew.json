@@ -558,7 +558,7 @@
    ],
    "bio": {
     "epithet": "La lettrice di bordo",
-    "html": "La lettrice di bordo: la trovi sempre sul ponte, immancabilmente con un libro in mano. Chiedile qualsiasi recensione, ha già l'opinione pronta."
+    "html": "La lettrice di bordo: la trovi sempre sul ponte, immancabilmente con un libro in mano. Chiedile qualsiasi recensione, ha già l'opinione pronta. Insieme a <a class='plink' href='membro.html#paola-c'>Paola C.</a> e <a class='plink' href='membro.html#margherita-c'>Margherita C.</a>, gran consumatrice d'acqua di bordo &mdash; tra shampoo e docce, occhio al serbatoio."
    },
    "nicks": [
     "Mati"
@@ -792,7 +792,7 @@
    ],
    "bio": {
     "epithet": "La marinaia scrupolosa",
-    "html": "Una marinaia che si applica: versatile, attenta, premurosa e scrupolosa. Sempre disponibile, sempre sul pezzo &mdash; il tipo di compagna d'equipaggio su cui puoi contare in ogni momento."
+    "html": "Una marinaia che si applica: versatile, attenta, premurosa e scrupolosa. Sempre disponibile, sempre sul pezzo &mdash; il tipo di compagna d'equipaggio su cui puoi contare in ogni momento. Con <a class='plink' href='membro.html#paola-c'>Paola C.</a> e <a class='plink' href='membro.html#matilde-c'>Matilde C.</a>, una delle grandi consumatrici d'acqua di bordo &mdash; shampoo e docce a raffica, attenzione a non finire il serbatoio."
    },
    "nicks": [
     "Marghe"
@@ -1223,7 +1223,7 @@
    ],
    "bio": {
     "epithet": "La cuoca super ordinata",
-    "html": "La cuoca di bordo, detta Pola, e con lei la barca non è mai in disordine. Ha una sola, dichiarata paura: i topi. Quando ci si ormeggia a terra pretende le bottiglie a delimitare le scotte, così i topi non salgono a bordo. È la moglie di <a class='plink' href='membro.html#claudio-c'>Claudio C.</a>"
+    "html": "La cuoca di bordo, detta Pola, e con lei la barca non è mai in disordine. Ha una sola, dichiarata paura: i topi. Quando ci si ormeggia a terra pretende le bottiglie a delimitare le scotte, così i topi non salgono a bordo. È la moglie di <a class='plink' href='membro.html#claudio-c'>Claudio C.</a> Insieme a <a class='plink' href='membro.html#margherita-c'>Margherita C.</a> e <a class='plink' href='membro.html#matilde-c'>Matilde C.</a> forma il terzetto delle grandi consumatrici d'acqua di bordo &mdash; tra shampoo e docce, occhio a non prosciugare il serbatoio."
    },
    "nicks": [
     "Pola"
@@ -7293,8 +7293,13 @@
    ],
    "bio": {
     "epithet": "L'armatore esigente",
-    "html": "Marinaio esperto e molto esigente, marinaio ad honorem: predilige l'escursione e non lo puoi lasciare in rada per più di un'ora, o si annoia. Dal tavolo di bordo coordina senza sosta i suoi collaboratori della <b>D-NET</b>, tutto il giorno, a colpi di note vocali. Detesta andare a motore &mdash; citazione ufficiale: &laquo;odio il pum pum pum&raquo; &mdash; ed è un formidabile negoziatore di tariffe coi taxi a terra."
+    "html": "Marinaio esperto e molto esigente, marinaio ad honorem: predilige l'escursione e non lo puoi lasciare in rada per più di un'ora, o si annoia. Dal tavolo di bordo coordina senza sosta i suoi collaboratori tutto il giorno, a colpi di note vocali. Detesta andare a motore &mdash; citazione ufficiale: &laquo;odio il pum pum pum&raquo; &mdash; ed è un formidabile negoziatore di qualsiasi cosa, soprattutto di tariffe coi taxi a terra: lascia in mutande chiunque provi a vendergli qualcosa &mdash; prestare attenzione."
    },
+   "tags": [
+    "Super armatore",
+    "Commodoro ad honorem",
+    "Negoziatore"
+   ],
    "nicks": [
     "Tony"
    ],
