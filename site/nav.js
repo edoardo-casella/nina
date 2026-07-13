@@ -38,6 +38,11 @@
   .nn-a.on{background:var(--sea-2,#D8E4EE);color:var(--accent,#006B9F)}
   .nn-ic{width:1.6rem;text-align:center;font-size:1.1rem;flex:none}
   .nn-x{position:absolute;top:.6rem;right:.7rem;font-size:1.5rem;background:none;border:0;color:var(--soft,#7089a0);cursor:pointer;line-height:1}
+  .nn-quick{display:flex;gap:.4rem;max-width:720px;margin:0 auto;padding:.55rem 1.1rem;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--hair,#c4d2df);background:var(--paper,#fff)}
+  .nn-quick::-webkit-scrollbar{display:none}
+  .nn-quick a{flex:none;white-space:nowrap;font:700 .58rem/1 var(--display,system-ui);letter-spacing:.07em;text-transform:uppercase;color:var(--soft,#7089a0);text-decoration:none;background:var(--sea-1,#EEF4F9);border:1px solid var(--hair,#c4d2df);border-radius:99px;padding:.5rem .75rem;display:inline-flex;align-items:center;gap:.28rem}
+  .nn-quick a:hover{border-color:var(--accent,#0a7);color:var(--accent,#0a7)}
+  .nn-quick a.on{border-color:var(--accent,#0a7);color:var(--accent,#0a7);background:var(--sea-2,#D8E4EE)}
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}`;
   const style = document.createElement("style"); style.textContent = css; document.head.appendChild(style);
 
@@ -68,5 +73,29 @@
       bar.insertBefore(home, btn.nextSibling);
     }
   } else { btn.style.cssText = "position:fixed;top:.7rem;left:.7rem;z-index:91"; document.body.appendChild(btn); }
+  // Barra rapida delle sezioni (la stessa "quicknav" della plancia) su OGNI pagina
+  // tranne la plancia stessa (che ha gia' la sua). Unica sorgente qui: niente
+  // markup duplicato nelle singole pagine.
+  if (here !== "index.html") {
+    const QUICK = [
+      ["manifesto.html", "Cos'è Crewin", "⚓"],
+      ["unisciti.html", "Vuoi imbarcarti?", "✉️"],
+      ["viaggio.html", "I viaggi", "⛵"],
+      ["classifica.html", "Classifica", "🏆"],
+      ["mete.html", "Le mete", "🗺️"],
+      ["membro.html", "La ciurma", "👥"],
+      ["skipper.html", "Lo skipper", "🎖️"],
+      ["aneddoti.html", "Aneddoti", "📖"],
+    ];
+    const host = document.querySelector(".top") || document.querySelector("header");
+    if (host) {
+      const q = document.createElement("nav");
+      q.className = "nn-quick";
+      q.setAttribute("aria-label", "Sezioni");
+      q.innerHTML = QUICK.map(([h, t, ic]) => `<a class="${h === here ? "on" : ""}" href="${h}">${ic} ${t}</a>`).join("");
+      host.insertAdjacentElement("afterend", q);
+    }
+  }
+
   window.ninaMenu = { open, close };
 })();
