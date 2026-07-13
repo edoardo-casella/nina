@@ -450,8 +450,11 @@ function diffOf(zone, month) {
 const tslug = s => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 function tripsHTML(d) {
   const oavg = d.totals.days ? Math.round(d.totals.nm / d.totals.days) : null;
+  const mi = m => { const i = Object.keys(MONTHS).indexOf(m); return i < 0 ? 99 : i; };
   const byYear = {};
-  d.trips.slice().reverse().forEach(t => (byYear[t.year] = byYear[t.year] || []).push(t));
+  // ordine dal più recente al più vecchio, con il mese dentro lo stesso anno
+  d.trips.slice().sort((a, b) => b.year - a.year || mi(b.month) - mi(a.month))
+    .forEach(t => (byYear[t.year] = byYear[t.year] || []).push(t));
   const years = Object.keys(byYear).sort((a, b) => b - a).map(y => {
     const rows = byYear[y].map(t => {
       const avg = t.days ? Math.round(t.nm / t.days) : null;
