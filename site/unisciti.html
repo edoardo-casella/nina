@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vuoi imbarcarti? · Crewin</title>
+<meta name="description" content="Unisciti a Crewin: raccontaci qualcosa di te e ti scriviamo per la prossima occasione di andare in barca. Che tu sia alle prime uscite o abbia già la patente.">
+<meta property="og:title" content="Vuoi imbarcarti? · Crewin">
+<meta property="og:description" content="Unisciti alla ciurma di Crewin, la community di chi va per mare.">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+.hero{padding:2.2rem 1.1rem 1rem}
+.hero h1{font:700 clamp(1.8rem,7vw,2.6rem)/1.05 var(--display);letter-spacing:.02em}
+.hero .lead{margin:.9rem 0 0;color:var(--soft);font-size:1rem;line-height:1.7;max-width:54ch}
+form{display:grid;gap:.9rem;background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:1.1rem 1.1rem 1.2rem}
+.field{display:grid;gap:.35rem}
+label{font:700 .64rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+input,select,textarea{font:400 1rem/1.4 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--hair);border-radius:9px;padding:.7rem .8rem;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+textarea{resize:vertical;min-height:5.5rem}
+.hint{font-size:.78rem;color:var(--soft)}
+button{margin-top:.2rem;background:var(--accent);color:#fff;border:0;cursor:pointer;font:700 .78rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;padding:.95rem 1.1rem;border-radius:99px}
+button:hover{filter:brightness(1.06)}
+.note{font-size:.82rem;color:var(--soft);margin-top:.7rem;line-height:1.55}
+.alt{margin-top:1.4rem;border-top:1px dashed var(--hair);padding-top:1.2rem;color:var(--soft);font-size:.92rem;line-height:1.7}
+.alt a{font-weight:600}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia</a>
+  <span class="tag">✉️ Unisciti</span>
+</div></div>
+<main>
+  <section class="hero">
+    <h1>Vuoi imbarcarti?</h1>
+    <p class="lead">Che tu non sia mai salito su una barca o abbia già la patente, in Crewin c'è posto per te. Raccontaci qualcosa di te: ti ricontattiamo appena c'è un'occasione buona per andare in mare.</p>
+  </section>
+
+  <section>
+    <form id="join" novalidate>
+      <div class="field">
+        <label for="nome">Come ti chiami</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Nome e cognome" required>
+      </div>
+      <div class="field">
+        <label for="contatto">Come ti ricontattiamo</label>
+        <input id="contatto" name="contatto" type="text" autocomplete="email" placeholder="Email o telefono" required>
+      </div>
+      <div class="field">
+        <label for="esperienza">Esperienza in barca</label>
+        <select id="esperienza" name="esperienza">
+          <option value="Mai stato in barca, ma curioso/a">Mai stato in barca, ma curioso/a</option>
+          <option value="Qualche uscita">Qualche uscita</option>
+          <option value="Navigo spesso">Navigo spesso</option>
+          <option value="Ho la patente nautica">Ho la patente nautica</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="periodo">Quando saresti disponibile</label>
+        <input id="periodo" name="periodo" type="text" placeholder="Es. estate 2026, weekend, flessibile…">
+      </div>
+      <div class="field">
+        <label for="messaggio">Due righe su di te</label>
+        <textarea id="messaggio" name="messaggio" placeholder="Chi sei, perché vuoi imbarcarti, cosa ti piacerebbe…"></textarea>
+      </div>
+      <button type="submit">Invia la richiesta</button>
+      <p class="note" id="note">Premendo “Invia” si apre la tua app di posta con il messaggio già pronto: controlla e invia. Nessun dato viene salvato su questo sito.</p>
+    </form>
+
+    <div class="alt">
+      Preferisci fare da te? Scrivi a <a id="mail" href="mailto:edoardo.casella@gmail.com?subject=Crewin%20%E2%80%94%20vorrei%20imbarcarmi">edoardo.casella@gmail.com</a>
+      oppure manda un DM su <a href="https://www.instagram.com/edoardocasella/" target="_blank" rel="noopener">Instagram</a>.
+    </div>
+  </section>
+</main>
+
+<footer>
+  Crewin · la community di chi va per mare.<br>
+  <a class="pl" href="manifesto.html">‹ Cos'è Crewin</a>
+</footer>
+
+<script>
+// Form senza backend: compone una mail precompilata e apre il client di posta.
+const TO = "edoardo.casella@gmail.com";
+document.getElementById("join").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const f = e.target;
+  const nome = (f.nome.value || "").trim();
+  const contatto = (f.contatto.value || "").trim();
+  if (!nome || !contatto) {
+    document.getElementById("note").textContent = "Aggiungi almeno il tuo nome e un contatto, poi riprova.";
+    (!nome ? f.nome : f.contatto).focus();
+    return;
+  }
+  const body =
+    "Ciao, vorrei imbarcarmi con Crewin.\n\n" +
+    "Nome: " + nome + "\n" +
+    "Contatto: " + contatto + "\n" +
+    "Esperienza: " + f.esperienza.value + "\n" +
+    "Disponibilità: " + ((f.periodo.value || "").trim() || "—") + "\n\n" +
+    "Su di me:\n" + ((f.messaggio.value || "").trim() || "—") + "\n";
+  const url = "mailto:" + TO +
+    "?subject=" + encodeURIComponent("Crewin — vorrei imbarcarmi (" + nome + ")") +
+    "&body=" + encodeURIComponent(body);
+  window.location.href = url;
+  document.getElementById("note").textContent = "Si sta aprendo la tua app di posta con il messaggio pronto: controlla e invia. Se non succede nulla, scrivi pure a " + TO + ".";
+});
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

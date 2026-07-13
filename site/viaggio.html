@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Viaggi · Plancia Niña</title>
+<title>I viaggi · Crewin</title>
+<meta name="description" content="I viaggi della ciurma di Crewin: rotte, mappe, equipaggio e il racconto di ogni crociera. La community di chi vuole andare in barca.">
+<meta property="og:title" content="I viaggi · Crewin">
+<meta property="og:description" content="Rotte, mappe e racconti di ogni crociera.">
+<meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#0A1424">
 <script src="theme.js"></script>
+<script src="ranks.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -190,7 +195,7 @@ function crewChip(name, year) {
   let badge = "";
   if (p && year != null) {
     const g = gradeAt(p.track || "marinaio", histDays(p, year) + (p.ext_days || 0));
-    badge = `<span class="cg-rank" title="${esc(g[2])} · a fine ${year}">${rankSVG(g[1])}</span>`;
+    badge = `<span class="cg-rank" title="${esc(g[2])} · a fine ${year}${p.abilitato ? " · Abilitato al comando" : ""}">${rankSVG(g[1], p.abilitato)}</span>`;
   }
   if (p) { const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`; return `<a class="chip lk" href="${href}">${av}<span class="cg-nm">${esc(name)}</span>${badge}</a>`; }
   return `<span class="chip lk"><span class="cav ph">${esc((name || "?").trim()[0])}</span><span class="cg-nm">${esc(name)}</span></span>`;
@@ -208,42 +213,11 @@ function crewChipById(id) {
 // --- gradi a DUE CARRIERE, storicizzati -------------------------------------
 // il grado dell'equipaggio riflette la CARRIERA (comandante/marinaio/abilitato,
 // dalla persona) + l'esperienza (giorni) accumulata FINO all'anno del viaggio.
-const GRADES = {
-  marinaio: [[0, "mozzo", "Mozzo"], [7, "marinaio", "Marinaio"], [20, "marinaio-scelto", "Marinaio scelto"], [45, "nostromo", "Nostromo"], [80, "sottoten", "Sottotenente di vascello"], [130, "tenente", "Tenente di vascello"]],
-  comandante: [[0, "cap-corvetta", "Capitano di corvetta"], [70, "cap-fregata", "Capitano di fregata"], [140, "cap-vascello", "Capitano di vascello"], [220, "contrammiraglio", "Contrammiraglio"], [280, "ammiraglio", "Ammiraglio"], [560, "grande-ammiraglio", "Grande Ammiraglio"]],
-  abilitato: [[0, "abilitato", "Abilitato al comando"]],
-};
-function gradeAt(track, days) { const L = GRADES[track] || GRADES.marinaio; let g = L[0]; for (const s of L) if (days >= s[0]) g = s; return g; }
+// GRADES/gradeAt/starPath/rankSVG ora in ranks.js (modulo condiviso); histDays resta qui (usa trips_list)
 function histDays(p, year) {
   return ((p && p.trips_list) || []).filter(t => t.year <= year).reduce((s, t) => s + (t.pdays || 0), 0);
 }
-function starPath(cx, cy, r) { let p = ""; for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * 0.4 : r; p += (i ? "L" : "M") + (cx + rr * Math.cos(a)).toFixed(1) + " " + (cy + rr * Math.sin(a)).toFixed(1); } return p + "Z"; }
-function rankSVG(r) {
-  const G = "#C9A227", S = "#AEB6BD", E = "rgba(0,0,0,.35)";
-  const open = '<svg viewBox="0 0 44 24" class="ins">';
-  const bar = (x, c) => `<rect x="${x}" y="4.5" width="5.5" height="15" rx="2" fill="${c}" stroke="${E}" stroke-width=".6"/>`;
-  const chev = (cy, c) => `<path d="M13,${cy + 5} L22,${cy} L31,${cy + 5}" fill="none" stroke="${c}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>`;
-  const leaf = c => `<g transform="translate(22,12)"><path d="M0,-9 C3.2,-5 7,-4 5.6,0 C8,1.6 6.6,6 3,6.6 C3.6,9 0,9 0,9.6 C0,9 -3.6,9 -3,6.6 C-6.6,6 -8,1.6 -5.6,0 C-7,-4 -3.2,-5 0,-9 Z" fill="${c}" stroke="${E}" stroke-width=".6"/><path d="M0,-7 L0,8.6" stroke="${E}" stroke-width=".7" opacity=".45" fill="none"/></g>`;
-  const eagle = c => `<g fill="${c}" stroke="${E}" stroke-width=".5"><path d="M22,10.6 C15,8 7,9.4 3,13 C10,12 16,12.6 22,13.6 C28,12.6 34,12 41,13 C37,9.4 29,8 22,10.6 Z"/><circle cx="22" cy="8.4" r="2"/><path d="M22,6.8 L24.2,8 L22,9.2 Z"/></g>`;
-  const star = x => `<path d="${starPath(x, 12, 4.4)}" fill="${G}" stroke="${E}" stroke-width=".4"/>`;
-  const anchor = c => `<g transform="translate(22,12)" fill="none" stroke="${c}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="-7" r="2.1"/><line x1="0" y1="-4.9" x2="0" y2="7.6"/><path d="M-5.6,2.6 Q0,10.6 5.6,2.6"/><line x1="-3.7" y1="-1.2" x2="3.7" y2="-1.2"/></g>`;
-  switch (r) {
-    case "mozzo": return open + anchor(S) + "</svg>";
-    case "marinaio": return open + chev(11, S) + "</svg>";
-    case "marinaio-scelto": return open + chev(8, S) + chev(14, S) + "</svg>";
-    case "nostromo": return open + chev(5, S) + chev(11, S) + chev(17, S) + "</svg>";
-    case "sottoten": return open + bar(19.7, S) + "</svg>";
-    case "tenente": return open + bar(16.2, S) + bar(23.2, S) + "</svg>";
-    case "abilitato": return open + `<circle cx="22" cy="12" r="8.5" fill="none" stroke="${G}" stroke-width="1.4" stroke-dasharray="2.8 2.3"/>` + anchor(G) + "</svg>";
-    case "cap-corvetta": return open + leaf(G) + "</svg>";
-    case "cap-fregata": return open + eagle(G) + "</svg>";
-    case "cap-vascello": return open + star(22) + "</svg>";
-    case "contrammiraglio": return open + star(15) + star(29) + "</svg>";
-    case "ammiraglio": return open + [7, 18, 29, 40].map(star).join("") + "</svg>";
-    case "grande-ammiraglio": return open + `<ellipse cx="22" cy="12" rx="21" ry="11" fill="none" stroke="${G}" stroke-width="1" opacity=".65"/>` + [7, 18, 29, 40].map(star).join("") + "</svg>";
-    default: return open + `<circle cx="22" cy="12" r="3.4" fill="none" stroke="${S}" stroke-width="1.5" opacity=".55"/></svg>`;
-  }
-}
+// starPath/rankSVG: in ranks.js
 
 // paese cliccabile → paese.html#<iso>
 const countryLinks = c => parts(c).map(p => CC[p] ? `<a href="paese.html#${CC[p]}">${esc(IT_NAME[p] || p)}</a>` : esc(IT_NAME[p] || p)).join(" · ");

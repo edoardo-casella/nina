@@ -1,6 +1,7 @@
 {
-  "name": "Plancia Niña — dashboard di bordo live",
-  "short_name": "Plancia Niña",
+  "name": "Crewin — la community di chi vuole andare in barca",
+  "short_name": "Crewin",
+  "description": "Crewin: la community di chi va per mare. Ciurma, viaggi, classifica, mete e la plancia live della Niña.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#FBFDFF",

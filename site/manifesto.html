@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cos'è Crewin · Crewin</title>
+<meta name="description" content="Crewin è la community di chi vuole andare in barca: si naviga insieme, si cresce di grado con i giorni in mare, si scelgono le mete e si condividono foto e racconti.">
+<meta property="og:title" content="Crewin — la community di chi vuole andare in barca">
+<meta property="og:description" content="Si naviga insieme: ciurma, gradi, viaggi, mete e racconti.">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  margin:1.9rem 0 1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.hero{padding:2.4rem 1.1rem 1.4rem;text-align:center}
+.brand{font:700 clamp(2.6rem,12vw,4rem)/.95 var(--display);letter-spacing:.06em;text-transform:uppercase;
+  background:linear-gradient(120deg,var(--gold),var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{margin:.7rem 0 0;font:600 1.05rem/1.4 var(--body);color:var(--ink)}
+.lead{margin:1.1rem auto 0;max-width:52ch;color:var(--soft);font-size:1rem;line-height:1.7}
+.stat{margin:1.1rem auto 0;font:700 .66rem/1.4 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.val{list-style:none;display:grid;gap:.7rem}
+.val li{display:flex;gap:.75rem;align-items:flex-start;background:var(--panel);border:1px solid var(--hair);border-radius:12px;padding:.85rem 1rem}
+.val .ic{font-size:1.3rem;line-height:1.3;flex:none}
+.val b{display:block;margin-bottom:.15rem}
+.val span{color:var(--soft);font-size:.92rem;line-height:1.55}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr));gap:.6rem}
+.card{display:flex;flex-direction:column;gap:.2rem;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--hair);border-radius:12px;padding:.85rem .9rem}
+.card:hover{border-color:var(--accent)}
+.card .em{font-size:1.35rem}
+.card b{font-size:.95rem}
+.card small{color:var(--soft);font-size:.8rem;line-height:1.4}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;justify-content:space-between;
+  background:linear-gradient(120deg,color-mix(in srgb,var(--gold) 16%,var(--panel)),var(--panel));
+  border:1px solid var(--hair);border-radius:14px;padding:1.1rem 1.2rem}
+.cta b{font-size:1.05rem;display:block}
+.cta span{color:var(--soft);font-size:.9rem}
+.cta a{flex:none;background:var(--accent);color:#fff;text-decoration:none;font:700 .72rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;padding:.8rem 1.1rem;border-radius:99px}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia</a>
+  <span class="tag">⚓ Crewin</span>
+</div></div>
+<main>
+  <section class="hero">
+    <div class="brand">Crewin</div>
+    <p class="tagline">Trova la tua ciurma. Prendi il mare.</p>
+    <p class="lead">Crewin è la community di chi vuole andare in barca. È nata attorno alla <a href="barca.html">Niña</a> e alle sue crociere, ma non è una barca sola: è un gruppo di compagni di rotta che cresce a ogni miglio. Chi c'è già ha un grado, dei viaggi alle spalle e una storia da raccontare — chi arriva parte da lì.</p>
+    <p class="stat" id="stat" hidden></p>
+  </section>
+
+  <section>
+    <h2>⚓ Cosa siamo</h2>
+    <ul class="val">
+      <li><span class="ic">🧭</span><div><b>Si naviga insieme</b><span>Non è una barca, è una ciurma. Ci si conosce a bordo e si resta compagni di rotta anche a terra.</span></div></li>
+      <li><span class="ic">🎖️</span><div><b>Ognuno cresce col mare</b><span>Ogni giorno a bordo conta: si sale di grado, da mozzo a nostromo fino al comando. La <a href="classifica.html">classifica</a> tiene il conto.</span></div></li>
+      <li><span class="ic">🗺️</span><div><b>Le mete si scelgono insieme</b><span>La prossima rotta parte dalle proposte della ciurma: sulla <a href="mete.html">mappa delle mete</a> si vede dove siamo stati e dove vogliamo andare.</span></div></li>
+      <li><span class="ic">📖</span><div><b>Si torna con una storia</b><span>Foto, miglia e <a href="aneddoti.html">aneddoti</a> restano: la crociera finisce, la ciurma no.</span></div></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧭 Come funziona</h2>
+    <div class="cards">
+      <a class="card" href="membro.html"><span class="em">👥</span><b>La ciurma</b><small>Una scheda per ognuno: foto, giorni, grado.</small></a>
+      <a class="card" href="classifica.html"><span class="em">🏆</span><b>La classifica</b><small>La ciurma negli anni, per giorni in mare.</small></a>
+      <a class="card" href="viaggio.html"><span class="em">⛵</span><b>I viaggi</b><small>Rotte, mappe e racconti di ogni crociera.</small></a>
+      <a class="card" href="mete.html"><span class="em">🗺️</span><b>Le mete</b><small>Dove siamo stati, dove vogliamo andare.</small></a>
+      <a class="card" href="aneddoti.html"><span class="em">📖</span><b>Gli aneddoti</b><small>Errori memorabili e atti eroici.</small></a>
+      <a class="card" href="barca.html"><span class="em">🛥️</span><b>La barca</b><small>La Niña, Dufour 48 Catamaran.</small></a>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <div><b>Vuoi imbarcarti?</b><span>C'è posto anche per chi non è mai salito su una barca.</span></div>
+      <a href="unisciti.html">Unisciti alla ciurma ›</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Crewin · la community di chi va per mare.<br>
+  <a class="pl" href="index.html">‹ Torna alla plancia</a>
+</footer>
+
+<script>
+// stat live dalla ciurma (best-effort, non bloccante)
+const nfmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json()).then(d => {
+  const p = (d.people || []).filter(x => x.days != null && !x.pet);
+  if (!p.length) return;
+  const days = p.reduce((s, x) => s + (x.days || 0), 0);
+  const el = document.getElementById("stat");
+  if (el) { el.textContent = `${p.length} compagni di rotta · ${nfmt(days)} giorni in mare insieme`; el.hidden = false; }
+}).catch(() => {});
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

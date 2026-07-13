@@ -4,6 +4,8 @@
 (function () {
   const LINKS = [
     ["index.html", "Plancia", "🧭"],
+    ["manifesto.html", "Cos'è Crewin", "⚓"],
+    ["unisciti.html", "Vuoi imbarcarti?", "✉️"],
     ["skipper.html", "Lo skipper", "🎖️"],
     ["classifica.html", "Classifica", "🏆"],
     ["aneddoti.html", "Aneddoti", "📖"],
@@ -41,8 +43,9 @@
 
   const ov = document.createElement("div");
   ov.id = "nina-nav";
-  ov.innerHTML = `<div class="nn-panel"><button class="nn-x" aria-label="chiudi">✕</button><div class="nn-hd">Naviga · Niña</div>` +
+  ov.innerHTML = `<div class="nn-panel"><button class="nn-x" aria-label="chiudi">✕</button><div class="nn-hd">Naviga · Crewin</div>` +
     LINKS.map(([h, t, ic]) => `<a class="nn-a${h === here ? " on" : ""}" href="${h}"><span class="nn-ic">${ic}</span>${t}</a>`).join("") +
+    `<div class="nn-hd" style="margin-top:1.2rem">Crewin · la community di chi va per mare</div>` +
     `</div>`;
   document.body.appendChild(ov);
   const open = () => ov.classList.add("on");
