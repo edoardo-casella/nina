@@ -165,6 +165,10 @@ def match(name):  # voyage nickname -> registry pid
 # MARINAI: tutti gli altri -> carriera d'equipaggio (argento), tetto Tenente di vascello.
 COMMANDERS = {"edo-c", "claudio-c", "marco-t", "michele-m", "bernardo-b"}
 ABILITATI = {"riccardo-b", "ilaria-m", "gabri-m"}
+# esperienza ESTERNA ai viaggi con la Niña (altri comandi, barca propria, ecc.):
+# giorni "virtuali" aggiunti SOLO al calcolo del grado (le statistiche reali
+# di giorni/miglia restano quelle effettive). Es. Michele = super-commodoro.
+EXT_DAYS = {"michele-m": 600, "bernardo-b": 55}
 GRADES = {
     "marinaio": [
         (0, "mozzo", "Mozzo"), (7, "marinaio", "Marinaio"),
@@ -174,7 +178,7 @@ GRADES = {
     "comandante": [
         (0, "cap-corvetta", "Capitano di corvetta"), (70, "cap-fregata", "Capitano di fregata"),
         (140, "cap-vascello", "Capitano di vascello"), (220, "contrammiraglio", "Contrammiraglio"),
-        (280, "ammiraglio", "Ammiraglio"),
+        (280, "ammiraglio", "Ammiraglio"), (560, "grande-ammiraglio", "Grande Ammiraglio"),
     ],
     "abilitato": [(0, "abilitato", "Abilitato al comando")],
 }
@@ -182,12 +186,11 @@ def track_of(cid, me=False):
     if me or cid in COMMANDERS: return "comandante"
     if cid in ABILITATI: return "abilitato"
     return "marinaio"
-def grade_of(track, days, me=False):
+def grade_of(track, days):
     ladder = GRADES.get(track, GRADES["marinaio"])
     g = ladder[0]
     for step in ladder:
         if days >= step[0]: g = step
-    if me: g = ladder[-1]   # lo skipper e' all'apice della carriera di comando
     return g   # (min_days, id, label)
 
 cur = json.loads(io.open(CREWJSON, encoding="utf-8").read())
@@ -212,8 +215,10 @@ for m in members:
         if pid: used_pids.add(pid); id2pid[m["id"]] = pid; st = stats(pid); tl = trips_list_for(part.get(pid, []), pid)
         else: st = {"trips": 0, "days": 0, "nm": 0, "first": None, "last": None}; tl = []
     crew2026 = {k: m[k] for k in ("board", "leave", "role", "photo", "nick", "note", "link", "q") if k in m}
-    tr = track_of(m["id"], me); _, rid, rlab = grade_of(tr, st["days"], me)
+    tr = track_of(m["id"], me); ext = EXT_DAYS.get(m["id"], 0)
+    _, rid, rlab = grade_of(tr, st["days"] + ext)
     out.append({"id": m["id"], "name": nm, **st, "rank": rid, "rank_label": rlab, "track": tr,
+                **({"ext_days": ext} if ext else {}),
                 **({"me": True} if me else {}), "trips_list": tl, "crew2026": crew2026})
 # alumni: registro non nel crew 2026
 for p in part:
@@ -223,8 +228,10 @@ for p in part:
     st = stats(p); nm = pname(p)
     pid_id = slugify(nm.replace(".", "")) or ("p" + str(p))
     id2pid[pid_id] = p
-    tr = track_of(pid_id); _, rid, rlab = grade_of(tr, st["days"])
+    tr = track_of(pid_id); ext = EXT_DAYS.get(pid_id, 0)
+    _, rid, rlab = grade_of(tr, st["days"] + ext)
     out.append({"id": pid_id, "name": nm, **st, "rank": rid, "rank_label": rlab, "track": tr,
+                **({"ext_days": ext} if ext else {}),
                 "trips_list": trips_list_for(part.get(p, []), p)})
 
 # cani di bordo: non sono nel registro Passengers, li aggiungiamo a mano come profili

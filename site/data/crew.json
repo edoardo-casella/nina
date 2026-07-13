@@ -12,6 +12,7 @@
   "cap-vascello": "Capitano di vascello",
   "contrammiraglio": "Contrammiraglio",
   "ammiraglio": "Ammiraglio",
+  "grande-ammiraglio": "Grande Ammiraglio",
   "abilitato": "Abilitato al comando"
  },
  "n_total": 66,
@@ -1346,9 +1347,10 @@
    "nm": 2231,
    "first": 2011,
    "last": 2024,
-   "rank": "cap-fregata",
-   "rank_label": "Capitano di fregata",
+   "rank": "cap-vascello",
+   "rank_label": "Capitano di vascello",
    "track": "comandante",
+   "ext_days": 55,
    "trips_list": [
     {
      "id": "camelia",
@@ -6142,9 +6144,10 @@
    "nm": 271,
    "first": 2017,
    "last": 2017,
-   "rank": "cap-corvetta",
-   "rank_label": "Capitano di corvetta",
+   "rank": "grande-ammiraglio",
+   "rank_label": "Grande Ammiraglio",
    "track": "comandante",
+   "ext_days": 600,
    "trips_list": [
     {
      "id": "sorbe",

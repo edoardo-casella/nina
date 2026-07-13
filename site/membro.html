@@ -223,12 +223,13 @@ function rankSVG(r) {
     case "cap-vascello": return open + star(22) + "</svg>";
     case "contrammiraglio": return open + star(15) + star(29) + "</svg>";
     case "ammiraglio": return open + [7, 18, 29, 40].map(star).join("") + "</svg>";
+    case "grande-ammiraglio": return open + `<ellipse cx="22" cy="12" rx="21" ry="11" fill="none" stroke="${G}" stroke-width="1" opacity=".65"/>` + [7, 18, 29, 40].map(star).join("") + "</svg>";
     default: return open + `<circle cx="22" cy="12" r="3.4" fill="none" stroke="${S}" stroke-width="1.5" opacity=".55"/></svg>`;
   }
 }
 const GRADES = {
   marinaio: [[0, "mozzo", "Mozzo"], [7, "marinaio", "Marinaio"], [20, "marinaio-scelto", "Marinaio scelto"], [45, "nostromo", "Nostromo"], [80, "sottoten", "Sottotenente di vascello"], [130, "tenente", "Tenente di vascello"]],
-  comandante: [[0, "cap-corvetta", "Capitano di corvetta"], [70, "cap-fregata", "Capitano di fregata"], [140, "cap-vascello", "Capitano di vascello"], [220, "contrammiraglio", "Contrammiraglio"], [280, "ammiraglio", "Ammiraglio"]],
+  comandante: [[0, "cap-corvetta", "Capitano di corvetta"], [70, "cap-fregata", "Capitano di fregata"], [140, "cap-vascello", "Capitano di vascello"], [220, "contrammiraglio", "Contrammiraglio"], [280, "ammiraglio", "Ammiraglio"], [560, "grande-ammiraglio", "Grande Ammiraglio"]],
   abilitato: [[0, "abilitato", "Abilitato al comando"]],
 };
 const photoOf = m => (m.crew2026 && m.crew2026.photo) || m.photo || null;

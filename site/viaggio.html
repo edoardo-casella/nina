@@ -189,7 +189,7 @@ function crewChip(name, year) {
   const av = photo ? `<img class="cav" src="${photo}" alt="" loading="lazy">` : `<span class="cav ph">${esc((name || "?").trim()[0])}</span>`;
   let badge = "";
   if (p && year != null) {
-    const g = gradeAt(p.track || "marinaio", histDays(p, year));
+    const g = gradeAt(p.track || "marinaio", histDays(p, year) + (p.ext_days || 0));
     badge = `<span class="cg-rank" title="${esc(g[2])} · a fine ${year}">${rankSVG(g[1])}</span>`;
   }
   if (p) { const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`; return `<a class="chip lk" href="${href}">${av}<span class="cg-nm">${esc(name)}</span>${badge}</a>`; }
@@ -210,7 +210,7 @@ function crewChipById(id) {
 // dalla persona) + l'esperienza (giorni) accumulata FINO all'anno del viaggio.
 const GRADES = {
   marinaio: [[0, "mozzo", "Mozzo"], [7, "marinaio", "Marinaio"], [20, "marinaio-scelto", "Marinaio scelto"], [45, "nostromo", "Nostromo"], [80, "sottoten", "Sottotenente di vascello"], [130, "tenente", "Tenente di vascello"]],
-  comandante: [[0, "cap-corvetta", "Capitano di corvetta"], [70, "cap-fregata", "Capitano di fregata"], [140, "cap-vascello", "Capitano di vascello"], [220, "contrammiraglio", "Contrammiraglio"], [280, "ammiraglio", "Ammiraglio"]],
+  comandante: [[0, "cap-corvetta", "Capitano di corvetta"], [70, "cap-fregata", "Capitano di fregata"], [140, "cap-vascello", "Capitano di vascello"], [220, "contrammiraglio", "Contrammiraglio"], [280, "ammiraglio", "Ammiraglio"], [560, "grande-ammiraglio", "Grande Ammiraglio"]],
   abilitato: [[0, "abilitato", "Abilitato al comando"]],
 };
 function gradeAt(track, days) { const L = GRADES[track] || GRADES.marinaio; let g = L[0]; for (const s of L) if (days >= s[0]) g = s; return g; }
@@ -240,6 +240,7 @@ function rankSVG(r) {
     case "cap-vascello": return open + star(22) + "</svg>";
     case "contrammiraglio": return open + star(15) + star(29) + "</svg>";
     case "ammiraglio": return open + [7, 18, 29, 40].map(star).join("") + "</svg>";
+    case "grande-ammiraglio": return open + `<ellipse cx="22" cy="12" rx="21" ry="11" fill="none" stroke="${G}" stroke-width="1" opacity=".65"/>` + [7, 18, 29, 40].map(star).join("") + "</svg>";
     default: return open + `<circle cx="22" cy="12" r="3.4" fill="none" stroke="${S}" stroke-width="1.5" opacity=".55"/></svg>`;
   }
 }
