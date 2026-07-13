@@ -116,6 +116,7 @@ MAJOR_ISLANDS = [
     ("Grenada", 12.12, -61.68), ("Carriacou", 12.48, -61.45), ("Union Island", 12.60, -61.44),
     ("Mayreau", 12.64, -61.39), ("Canouan", 12.70, -61.33), ("Tobago Cays", 12.63, -61.35),
     ("Mustique", 12.88, -61.19), ("Bequia", 13.01, -61.24), ("Saint Vincent", 13.25, -61.20),
+    ("Santa Lucia", 13.91, -60.98), ("Martinica", 14.64, -61.02), ("Barbados", 13.19, -59.54),
     ("Cayo Largo", 21.62, -81.57), ("Isla de la Juventud", 21.70, -82.82),
 ]
 
@@ -136,7 +137,8 @@ COUNTRIES = [
     ("Malta", [(35.9, 14.45)]),
     ("Cuba", [(21.95, -79.4), (21.75, -80.7), (22.0, -78.3), (20.4, -76.8)]),
     ("Grenada", [(12.11, -61.70)]),
-    ("Saint Vincent", [(13.2, -61.2), (12.6, -61.47)]),
+    # Saint Vincent: gia' etichettata come isola (MAJOR_ISLANDS) a questa scala,
+    # il doppione "stato" si sovrapponeva -> tolto.
 ]
 
 # isole grandi da etichettare anche sulla mappa globale (scala d'insieme)
@@ -146,6 +148,43 @@ GLOBAL_ISLANDS = [
     ("Creta", 35.24, 24.80), ("Eubea", 38.55, 23.80), ("Rodi", 36.15, 27.95),
     ("Corfù", 39.62, 19.85), ("Cipro", 35.10, 33.20),
 ]
+
+SEA_INK = (150, 178, 200)   # nome del mare "in filigrana" sull'acqua (piu' scuro del SEA)
+
+# gazetteer dei mari/canali (name, [ancore lat,lon], kind).
+#   kind="sea"    -> bacino: disegnato anche sulla mappa globale d'insieme
+#   kind="strait" -> canale: solo sulle schede per-viaggio, corpo piu' piccolo
+# Il nome si scrive dove una delle ancore cade dentro la vista; se nessuna ancora
+# e' in vista (viste molto zoomate) si ripiega sul bacino piu' vicino al centro.
+SEA_LABELS = [
+    # Mediterraneo occidentale (Baleari / Sardegna / Corsica)
+    ("Mar Baleare",         [(39.5, 1.5), (39.0, 2.5), (38.8, 1.2), (40.0, 3.5)],                     "sea"),
+    ("Mar di Sardegna",     [(40.0, 7.2), (39.4, 8.0)],                                               "sea"),
+    ("Mar Ligure",          [(43.3, 8.6), (43.0, 9.2)],                                               "sea"),
+    ("Bocche di Bonifacio", [(41.30, 9.25)],                                                          "strait"),
+    # Tirreno / Sicilia
+    ("Mar Tirreno",         [(40.0, 12.2), (39.4, 13.0), (38.8, 12.9), (41.0, 11.6), (38.15, 12.9)],  "sea"),
+    ("Canale di Sicilia",   [(37.5, 12.2), (37.0, 12.0), (36.6, 11.6), (37.95, 12.15)],               "strait"),
+    # Adriatico
+    ("Mar Adriatico",       [(43.0, 15.6), (42.7, 17.2), (44.0, 14.6)],                               "sea"),
+    # Ionio
+    ("Mar Ionio",           [(38.4, 19.5), (38.0, 20.2), (37.8, 21.0), (39.0, 19.0)],                 "sea"),
+    # Egeo (Cicladi / Sporadi / Dodecaneso / Turchia)
+    ("Mar Egeo",            [(37.5, 25.0), (38.0, 24.5), (37.0, 25.6), (38.6, 24.8),
+                             (39.5, 24.2), (36.9, 26.0), (36.6, 27.5)],                               "sea"),
+    ("Mar di Creta",        [(35.9, 25.0), (36.0, 24.5), (36.0, 25.6)],                               "sea"),
+    ("Mar Mirtoo",          [(37.1, 23.4)],                                                           "sea"),
+    ("Mar Icario",          [(37.5, 26.4), (37.2, 26.8)],                                             "sea"),
+    # Caraibi (Grenadine / Cuba)
+    ("Mar dei Caraibi",     [(13.2, -62.2), (12.8, -61.9), (13.6, -60.7), (21.2, -81.5), (21.5, -80.2)], "sea"),
+    ("Canale di Santa Lucia", [(14.25, -61.0)],                                                       "strait"),
+    # Oceano Indiano (Seychelles)
+    ("Oceano Indiano",      [(-4.45, 55.6), (-4.6, 55.8)],                                            "sea"),
+]
+
+# bacini minori: mostrati sulle schede per-viaggio ma NON sulla mappa d'insieme,
+# dove a piccola scala si accavallerebbero (es. "di Sardeg-Mar Tirreno").
+_MINOR_ON_GLOBAL = {"Mar di Sardegna", "Mar Ligure", "Mar Mirtoo", "Mar Icario", "Mar di Creta"}
 
 # traslitterazione greco -> latino (i pochi nomi senza name:en/it)
 _GREEK = {"Α": "A", "Β": "V", "Γ": "G", "Δ": "D", "Ε": "E", "Ζ": "Z", "Η": "I",
@@ -561,10 +600,58 @@ def _emoji_font(size):
         return _font(size)
 
 
+def _sea_text(draw, xy, text, font, fill, tracking=0.0):
+    """Corsivo 'spaziato' centrato su xy — filigrana del mare (nessun alone).
+    Usa l'avanzamento (getlength) per gestire correttamente anche gli spazi."""
+    widths = [font.getlength(ch) for ch in text]
+    total = sum(widths) + tracking * max(len(text) - 1, 0)
+    x = xy[0] - total / 2.0
+    for ch, w in zip(text, widths):
+        draw.text((x, xy[1]), ch, font=font, fill=fill, anchor="lm")
+        x += w + tracking
+
+
+def draw_sea_labels(draw, view, proj1, W, H, base_size, only_seas=False):
+    """Nomi dei mari/canali dentro la vista (filigrana azzurra, sotto tutto il resto).
+    Se nessuna ancora cade in vista (viste molto zoomate) ripiega sul bacino piu'
+    vicino al centro, in alto sull'acqua."""
+    cx0 = (view["lo0"] + view["lo1"]) / 2.0
+    cy0 = (view["la0"] + view["la1"]) / 2.0
+    drawn_any = False
+    best = None
+    for name, anchors, kind in SEA_LABELS:
+        if only_seas and (kind != "sea" or name in _MINOR_ON_GLOBAL):
+            continue
+        placed_here = False
+        for lat, lon in anchors:
+            if kind == "sea":
+                d2 = (lon - cx0) ** 2 + (lat - cy0) ** 2
+                if best is None or d2 < best[0]:
+                    best = (d2, name)
+            if placed_here:
+                continue
+            if view["lo0"] <= lon <= view["lo1"] and view["la0"] <= lat <= view["la1"]:
+                p = proj1(np.array([[lon, lat]]))[0]
+                size = base_size if kind == "sea" else int(base_size * 0.66)
+                font = _font(size, italic=True)
+                tw = font.getlength(name)
+                px = min(max(float(p[0]), tw / 2 + 6), W - tw / 2 - 6)
+                py = min(max(float(p[1]), size), H - size)
+                _sea_text(draw, (px, py), name, font, SEA_INK, tracking=size * 0.16)
+                placed_here = True
+                drawn_any = True
+    if not drawn_any and best is not None:
+        font = _font(base_size, italic=True)
+        _sea_text(draw, (W / 2.0, H * 0.22), best[1], font, SEA_INK, tracking=base_size * 0.16)
+
+
 def annotate(img, view, dense, feats, W, H, borders=None):
     """Disegna stati/confini, isole, cale, paesi e punti cospicui sull'immagine 1x."""
     d = ImageDraw.Draw(img)
     proj1 = make_proj(view, W, H)
+
+    # nomi dei mari (filigrana sull'acqua) — sotto tutte le altre etichette
+    draw_sea_labels(d, view, proj1, W, H, base_size=max(38, W // 30))
 
     # confini di stato (tratteggiati), solo i segmenti in vista
     if borders:
@@ -862,6 +949,10 @@ def _region_panel(trips, polys, panel_w, S=2, pad=0.12, min_span=0.5, borders=No
 
     def _inview(lat, lon):
         return view["lo0"] <= lon <= view["lo1"] and view["la0"] <= lat <= view["la1"]
+
+    # nomi dei mari (solo bacini grandi alla scala d'insieme) — sotto tutto
+    draw_sea_labels(d1, view, proj1, panel_w, panel_h,
+                    base_size=max(20, panel_w // 46), only_seas=True)
 
     # confini di stato (tratteggiati)
     if borders:

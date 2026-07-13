@@ -401,8 +401,14 @@ function decorations(d) {
 function galleryHTML(d) {
   GAL = d.gallery || [];
   if (!GAL.length) return "";
-  const cells = GAL.map((src, i) => `<button onclick="lbOpen(${i})"><img loading="lazy" src="${src}" alt="Foto ${i + 1}"></button>`).join("");
-  return `<section><h2>In navigazione</h2><div class="grid">${cells}</div></section>`;
+  const HEAD = 6;                                   // galleria compatta di default; il resto è comprimibile
+  const cells = GAL.map((src, i) =>
+    `<button class="${i >= HEAD ? "g-extra" : ""}"${i >= HEAD ? " hidden" : ""} onclick="lbOpen(${i})"><img loading="lazy" src="${src}" alt="Foto ${i + 1}"></button>`).join("");
+  const label = `Mostra tutte le foto (${GAL.length})`;
+  const toggle = GAL.length > HEAD
+    ? `<button class="cm-toggle" type="button" data-label="${label}" onclick="toggleGallery(this)">${label} <span class="chev">▾</span></button>`
+    : "";
+  return `<section><h2>In navigazione</h2><div class="grid">${cells}</div>${toggle}</section>`;
 }
 
 // ritmo del viaggio dalla media giornaliera di miglia (nm/giorno)
@@ -553,6 +559,13 @@ function toggleCrew(btn) {
   if (!ex) return;
   if (ex.hasAttribute("hidden")) { ex.removeAttribute("hidden"); btn.innerHTML = 'Mostra meno <span class="chev up">▾</span>'; }
   else { ex.setAttribute("hidden", ""); btn.innerHTML = btn.dataset.label + ' <span class="chev">▾</span>'; }
+}
+function toggleGallery(btn) {
+  const extra = document.querySelectorAll(".grid .g-extra");
+  if (!extra.length) return;
+  const hidden = extra[0].hasAttribute("hidden");
+  extra.forEach(el => hidden ? el.removeAttribute("hidden") : el.setAttribute("hidden", ""));
+  btn.innerHTML = hidden ? 'Mostra meno <span class="chev up">▾</span>' : btn.dataset.label + ' <span class="chev">▾</span>';
 }
 
 function incidentBlock(a) {
