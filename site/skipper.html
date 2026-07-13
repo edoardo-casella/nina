@@ -533,7 +533,7 @@ function crewmatesInner(sortKey) {
     const pct = Math.max(4, Math.round(v / max * 100));
     const yrs = x.first ? `${x.first}${x.last && x.last !== x.first ? "–" + x.last : ""}` : "";
     const href = (x.crew2026 && x.crew2026.link) || `membro.html#${x.id}`;
-    return `<a class="cm ${x.me ? "me" : ""}" href="${href}" title="${esc(x.rank_label || "")}">
+    return `<a class="cm ${x.me ? "me" : ""}" href="${href}" title="${esc(x.rank_label || "")}${x.abilitato ? " · Abilitato al comando" : ""}">
       <span class="cm-rank">${x.me ? "👑" : i}</span>
       ${cmAvatar(x)}
       <span class="cm-ins">${rankSVG(x.rank)}</span>

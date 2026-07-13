@@ -273,7 +273,7 @@ function memberPage(m, all) {
       <div class="role">${esc(roleTxt)}</div>
       <h1>${esc(m.name)}</h1>
       ${(m.nicks && m.nicks.length) ? `<div class="nick">${m.sex === "f" ? "detta" : "detto"} ${m.nicks.map(n => `“${esc(n)}”`).join(", ")}</div>` : (c && c.nick ? `<div class="nick">${m.sex === "f" ? "detta" : "detto"} “${esc(c.nick)}”</div>` : "")}
-      <div class="rankrow">${rankBadge(m)}</div>
+      <div class="rankrow">${rankBadge(m)}${m.abilitato ? ` <span class="rankbadge abil">${rankSVG("abilitato")} <b>Abilitato al comando</b></span>` : ""}</div>
       ${rankProgHTML(m)}
       ${vet}
     </div>

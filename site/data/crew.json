@@ -1894,9 +1894,10 @@
    "nm": 1849,
    "first": 2015,
    "last": 2023,
-   "rank": "abilitato",
-   "rank_label": "Abilitato al comando",
-   "track": "abilitato",
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
+   "abilitato": true,
    "trips_list": [
     {
      "id": "blue-bird",
@@ -4752,9 +4753,10 @@
    "nm": 661,
    "first": 2017,
    "last": 2019,
-   "rank": "abilitato",
-   "rank_label": "Abilitato al comando",
-   "track": "abilitato",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
+   "abilitato": true,
    "trips_list": [
     {
      "id": "sorbe",
@@ -4890,9 +4892,10 @@
    "nm": 661,
    "first": 2017,
    "last": 2019,
-   "rank": "abilitato",
-   "rank_label": "Abilitato al comando",
-   "track": "abilitato",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
+   "abilitato": true,
    "trips_list": [
     {
      "id": "sorbe",

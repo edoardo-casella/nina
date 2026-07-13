@@ -184,8 +184,7 @@ GRADES = {
 }
 def track_of(cid, me=False):
     if me or cid in COMMANDERS: return "comandante"
-    if cid in ABILITATI: return "abilitato"
-    return "marinaio"
+    return "marinaio"   # gli ABILITATI restano marinai (tengono il grado) + flag abilitato
 def grade_of(track, days):
     ladder = GRADES.get(track, GRADES["marinaio"])
     g = ladder[0]
@@ -219,6 +218,7 @@ for m in members:
     _, rid, rlab = grade_of(tr, st["days"] + ext)
     out.append({"id": m["id"], "name": nm, **st, "rank": rid, "rank_label": rlab, "track": tr,
                 **({"ext_days": ext} if ext else {}),
+                **({"abilitato": True} if m["id"] in ABILITATI else {}),
                 **({"me": True} if me else {}), "trips_list": tl, "crew2026": crew2026})
 # alumni: registro non nel crew 2026
 for p in part:
@@ -232,6 +232,7 @@ for p in part:
     _, rid, rlab = grade_of(tr, st["days"] + ext)
     out.append({"id": pid_id, "name": nm, **st, "rank": rid, "rank_label": rlab, "track": tr,
                 **({"ext_days": ext} if ext else {}),
+                **({"abilitato": True} if pid_id in ABILITATI else {}),
                 "trips_list": trips_list_for(part.get(p, []), p)})
 
 # cani di bordo: non sono nel registro Passengers, li aggiungiamo a mano come profili
