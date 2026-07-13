@@ -1,22 +1,13 @@
 {
   "proposte": [
     {
-      "id": "bahamas-capodanno-2027",
-      "title": "Bahamas – Capodanno 2027",
-      "when": "Dic 2027 → Gen 2028",
+      "id": "bahamas-2027",
+      "title": "Bahamas 2027",
+      "when": "Pasqua o Natale 2027 (da decidere)",
       "area": "Caraibi",
       "lat": 24.2,
       "lon": -76.4,
-      "blurb": "Exuma: maiali che nuotano, iguane e acque turchesi per brindare all'anno nuovo all'ancora."
-    },
-    {
-      "id": "pasqua-2027",
-      "title": "Pasqua 2027 — meta da definire",
-      "when": "Apr 2027",
-      "area": "Mediterraneo",
-      "lat": null,
-      "lon": null,
-      "blurb": "Una settimana di primavera in barca: destinazione da votare tra Mediterraneo e Atlantico."
+      "blurb": "Exuma: maiali che nuotano, iguane e acque turchesi, una settimana all'ancora. Pasqua o Natale — un'occasione sola, lo decide la ciurma."
     },
     {
       "id": "extreme-sailing-regatta-2027",
