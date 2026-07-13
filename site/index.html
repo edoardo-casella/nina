@@ -55,7 +55,12 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
 .hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
 .brand{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none}
 .brand:hover{color:var(--gold-2)}
-.hdr-right{margin-left:auto;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;justify-content:flex-end}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;justify-content:flex-end}
+.hmeta{display:flex;flex-direction:column;align-items:flex-end;line-height:1.12}
+.hdr-right .clock{margin-top:0;font-size:.72rem}
+.hdr-right .cap{margin-top:0}
+.hdr-right .when{margin-left:0;font-size:.68rem;text-align:right}
+.hdr-right .theme{margin-left:0}
 .boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;
   color:var(--hdrtext);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:1px}
 .boat::after{content:"↗";font-size:.6em;color:var(--accent);margin-left:.2em;vertical-align:super;font-weight:700}
@@ -358,8 +363,7 @@ footer strong{color:var(--ink)}
   <div class="hdr-right">
     <a class="boat" id="boat" href="barca.html" title="La barca di quest'anno — Dufour 48 Catamaran">Niña</a><span class="live" id="live"></span>
     <div class="cap" id="captains"></div>
-    <div class="clock" id="clock"></div>
-    <span class="when" id="when">carico…</span>
+    <div class="hmeta"><span class="clock" id="clock"></span><span class="when" id="when">carico…</span></div>
     <button class="theme" id="themeBtn" onclick="cycleTheme()" title="Modalità tema: AUTO segue alba e tramonto, poi GIORNO e NOTTE">MODE · AUTO</button>
   </div>
 </div>
