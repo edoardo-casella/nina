@@ -2,23 +2,31 @@
 // Inietta un bottone ☰ nella barra in alto + un overlay con tutte le sezioni.
 // Nessuna dipendenza; usa le CSS var della pagina (con fallback) per il tema.
 (function () {
-  const LINKS = [
-    ["index.html", "Plancia", "🧭"],
-    ["manifesto.html", "Cos'è Crewin", "⚓"],
-    ["unisciti.html", "Vuoi imbarcarti?", "✉️"],
-    ["skipper.html", "Lo skipper", "🎖️"],
-    ["classifica.html", "Classifica", "🏆"],
-    ["aneddoti.html", "Aneddoti", "📖"],
-    ["viaggio.html", "I viaggi", "⛵"],
-    ["paese.html", "I mari", "🌍"],
-    ["mete.html", "Le mete", "🗺️"],
-    ["membro.html", "La ciurma", "👥"],
-    ["arrivi.html", "Arrivi & partenze", "🛟"],
-    ["barca.html", "La barca", "🛥️"],
-    ["guida.html", "Guida pre-partenza", "🎒"],
-    ["avionica.html", "Avionica a bordo", "🚁"],
-    ["foto.html", "Foto condivise", "📷"],
+  // Menu a due gruppi: pagine generiche della community + pagine del viaggio di quest'estate.
+  const GROUPS = [
+    { title: "Crewin · la community", links: [
+      ["manifesto.html", "Cos'è Crewin", "⚓"],
+      ["unisciti.html", "Vuoi imbarcarti?", "✉️"],
+      ["skipper.html", "Lo skipper", "🎖️"],
+      ["classifica.html", "Classifica", "🏆"],
+      ["aneddoti.html", "Aneddoti", "📖"],
+      ["viaggio.html", "I viaggi", "⛵"],
+      ["paese.html", "I mari", "🌍"],
+      ["mete.html", "Le mete", "🗺️"],
+    ] },
+    { title: "Estate 2026 · il viaggio", links: [
+      ["index.html#forecast", "Forecast", "⛅"],
+      ["index.html#programma", "Percorso", "🗓️"],
+      ["arrivi.html", "Arrivi & partenze", "🛟"],
+      ["membro.html", "La ciurma", "👥"],
+      ["barca.html", "La barca", "🛥️"],
+      ["guida.html", "Guida pre-partenza", "🎒"],
+      ["avionica.html", "Avionica a bordo", "🚁"],
+      ["foto.html", "Foto condivise", "📷"],
+    ] },
   ];
+  // barra rapida (chip): solo pagine vere, esclude Plancia e i tab #forecast/#programma
+  const BAND = GROUPS.flatMap(g => g.links).filter(([h]) => !h.startsWith("index.html"));
   const here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   const css = `
@@ -47,9 +55,10 @@
 
   const ov = document.createElement("div");
   ov.id = "nina-nav";
-  ov.innerHTML = `<div class="nn-panel"><button class="nn-x" aria-label="chiudi">✕</button><div class="nn-hd">Naviga · Crewin</div>` +
-    LINKS.map(([h, t, ic]) => `<a class="nn-a${h === here ? " on" : ""}" href="${h}"><span class="nn-ic">${ic}</span>${t}</a>`).join("") +
-    `<div class="nn-hd" style="margin-top:1.2rem">Crewin · la community di chi va in barca a vela</div>` +
+  const linkA = ([h, t, ic]) => `<a class="nn-a${h === here ? " on" : ""}" href="${h}"><span class="nn-ic">${ic}</span>${t}</a>`;
+  ov.innerHTML = `<div class="nn-panel"><button class="nn-x" aria-label="chiudi">✕</button>` +
+    linkA(["index.html", "Plancia", "🧭"]) +
+    GROUPS.map(g => `<div class="nn-hd" style="margin-top:1.1rem">${g.title}</div>` + g.links.map(linkA).join("")).join("") +
     `</div>`;
   document.body.appendChild(ov);
   const open = () => ov.classList.add("on");
@@ -76,14 +85,12 @@
   // tranne la plancia stessa (che ha gia' la sua). Unica sorgente qui: niente
   // markup duplicato nelle singole pagine.
   if (here !== "index.html") {
-    // tutte le sezioni (come l'hamburger), tranne la plancia stessa — sempre in sync con LINKS
-    const QUICK = LINKS.filter(([h]) => h !== "index.html");
     const host = document.querySelector(".top") || document.querySelector("header");
     if (host) {
       const q = document.createElement("nav");
       q.className = "nn-quick";
       q.setAttribute("aria-label", "Sezioni");
-      q.innerHTML = QUICK.map(([h, t, ic]) => `<a class="${h === here ? "on" : ""}" href="${h}">${ic} ${t}</a>`).join("");
+      q.innerHTML = BAND.map(([h, t, ic]) => `<a class="${h === here ? "on" : ""}" href="${h}">${ic} ${t}</a>`).join("");
       host.insertAdjacentElement("afterend", q);
     }
   }
