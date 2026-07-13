@@ -53,6 +53,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .mv .ar{color:var(--verde);font-weight:700;flex:none}
 .mv .de{color:var(--magenta);font-weight:700;flex:none}
 .mv .who{color:var(--ink)}
+.who a.wholink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--hair)}
+.who a.wholink:hover{color:var(--accent);border-color:var(--accent)}
 /* gantt */
 .axis{display:flex;margin:0 0 .3rem 6.8rem;position:relative;height:14px}
 .axis span{position:absolute;font:600 .58rem/1 var(--mono);color:var(--soft);transform:translateX(-50%)}
@@ -161,6 +163,7 @@ const rc = r => r === "skipper" ? "skip" : r === "apprentice" ? "app" : r === "m
 // avatar + link al profilo (foto convenzionale crew/img/<slug>.jpg, fallback a iniziale su errore)
 const slug = n => n.toLowerCase().replace(/\s+/g, "-");
 const mhref = m => m.n.startsWith("Edo ") ? "skipper.html" : `membro.html#${slug(m.n)}`;
+const nameLink = m => `<a class="wholink" href="${mhref(m)}">${m.n}</a>`;
 function imgFail(el){ const s = document.createElement("span"); s.className = el.className + " ph"; s.textContent = el.dataset.i || "?"; el.replaceWith(s); }
 const avatar = (m, cls) => `<img class="${cls}" src="${m.p || "crew/img/" + slug(m.n) + ".jpg"}" alt="" loading="lazy" data-i="${m.n[0]}" onerror="imgFail(this)">`;
 
@@ -182,8 +185,8 @@ function byDay() {
 // avvicendamenti: date con arrivi/partenze
 const dates = [...new Set(CREW.flatMap(m => [m.b, m.l]))].sort();
 document.getElementById("chg").innerHTML = dates.map(dt => {
-  const arr = CREW.filter(m => m.b === dt).map(m => m.n);
-  const dep = CREW.filter(m => m.l === dt).map(m => m.n);
+  const arr = CREW.filter(m => m.b === dt).map(nameLink);
+  const dep = CREW.filter(m => m.l === dt).map(nameLink);
   const big = arr.length + dep.length >= 4;
   return `<div class="chg"><div class="date">${fmt(dt)}${big ? '<em>cambio</em>' : ''}</div>
     ${arr.length ? `<div class="mv"><span class="ar">↑ ${arr.length}</span><span class="who"><b>Salgono:</b> ${arr.join(" · ")}</span></div>` : ""}
