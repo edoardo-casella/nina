@@ -1,17 +1,19 @@
 {
   "generated_by": "hand-authored — tag di profilo estratti dalle bio (solo gli 11 con descrizione).",
   "tags": {
-    "bernardo-b": ["Motorista", "Meccanico", "Fregata Bad Boys"],
-    "riccardo-b": ["Conviviale", "Timoniere", "Aspirante comandante", "Goloso"],
+    "bernardo-b": ["Meccanico troubleshooter", "Fregata Bad Boys", "Senatore di bordo"],
+    "riccardo-b": ["Conviviale", "Timoniere", "Aspirante comandante", "Goloso", "Senatore di bordo"],
     "andrea-a": ["Marinaio", "Re dell'aria condizionata", "Notturno"],
-    "leonardo-m": ["Uomo rana", "Capitano", "Pescatore di ricci", "Tuffatore"],
+    "leonardo-m": ["Uomo rana", "Capitano", "Pescatore di ricci", "Tuffatore", "Senatore di bordo"],
     "gualtiero-s": ["Pescatore", "Gran cuoco"],
-    "claudio-c": ["Velista", "Uomo rana"],
+    "claudio-c": ["Velista", "Uomo rana", "Senatore di bordo"],
     "giacomo-n": ["Videomaker", "Droni", "Troubleshooter"],
     "ginevra-l": ["Cuoca", "Yoga", "SUP"],
     "gabri-m": ["Uomo dei tuffi", "Marinaio polivalente"],
     "fede-b": ["Jolly", "Gran nuotatore", "Anima della festa"],
     "ilaria-m": ["Aspirante skipper", "Meditazione"],
-    "tonino-l": ["Super armatore", "Commodoro ad honorem", "Negoziatore"]
+    "tonino-l": ["Super armatore", "Commodoro ad honorem", "Negoziatore"],
+    "marco-t": ["Muscolare versatile", "Senatore di bordo"],
+    "michele-m": ["Guru", "Senatore di bordo"]
   }
 }

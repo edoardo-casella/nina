@@ -189,8 +189,8 @@ function crewChip(name, year) {
   const av = photo ? `<img class="cav" src="${photo}" alt="" loading="lazy">` : `<span class="cav ph">${esc((name || "?").trim()[0])}</span>`;
   let badge = "";
   if (p && year != null) {
-    const rk = p.me ? "admiral" : rankOfDays(histDays(p, year));
-    badge = `<span class="cg-rank" title="${esc(RANK_LABEL[rk] || "")}${p.me ? "" : " · a fine " + year}">${rankSVG(rk)}</span>`;
+    const rk = rankOfDays(histDays(p, year));
+    badge = `<span class="cg-rank" title="${esc(RANK_LABEL[rk] || "")} · a fine ${year}">${rankSVG(rk)}</span>`;
   }
   if (p) { const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`; return `<a class="chip lk" href="${href}">${av}<span class="cg-nm">${esc(name)}</span>${badge}</a>`; }
   return `<span class="chip lk"><span class="cav ph">${esc((name || "?").trim()[0])}</span><span class="cg-nm">${esc(name)}</span></span>`;

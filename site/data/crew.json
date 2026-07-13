@@ -1023,7 +1023,8 @@
    },
    "tags": [
     "Velista",
-    "Uomo rana"
+    "Uomo rana",
+    "Senatore di bordo"
    ],
    "nicks": [
     "Claude"
@@ -1453,13 +1454,13 @@
     }
    ],
    "bio": {
-    "epithet": "Il motorista",
-    "html": "Grande meccanico e uomo dei motori: quando devi entrare in porto con vento forte, o quando a bordo c'è un guaio tecnico, è lui l'uomo indispensabile. A tavola predilige il non-salutare e le scofanate di pasta. Incrocia nel Mediterraneo con sede a <b>Piombino</b>, sulla fregata &laquo;Bad Boys&raquo; insieme al socio &laquo;Il Meccanico Tuttofare&raquo;: una barca che sembra uscita dagli anni Ottanta, sempre &quot;ferma&quot; solo perché i guasti lui e il socio li risolvono direttamente in mare &mdash; ed è così che è diventato un meccanico vero. Difetti pochi, se non quando si impunta; e la tendenza a farsi distrarre dalle fidanzate. Uno dei migliori compagni di equipaggio che si possano avere a bordo."
+    "epithet": "Meccanico troubleshooter",
+    "html": "Grande meccanico e uomo dei motori: quando devi entrare in porto con vento forte, o quando a bordo c'è un guaio tecnico, è lui l'uomo indispensabile. A tavola predilige il non-salutare e le scofanate di pasta. Incrocia nel Mediterraneo con sede a <b>Piombino</b>, sulla fregata &laquo;Bad Boys&raquo; insieme al socio: una barca che sembra uscita dagli anni Ottanta, sempre &quot;ferma&quot; solo perché i guasti lui e il socio li risolvono direttamente in mare &mdash; ed è così che è diventato <b>&laquo;Il Meccanico Tuttofare&raquo;</b>, un meccanico vero. Difetti pochi, se non quando si impunta; e la tendenza a farsi distrarre dalle fidanzate. Uno dei migliori compagni di equipaggio che si possano avere a bordo."
    },
    "tags": [
-    "Motorista",
-    "Meccanico",
-    "Fregata Bad Boys"
+    "Meccanico troubleshooter",
+    "Fregata Bad Boys",
+    "Senatore di bordo"
    ],
    "nicks": [
     "Berna"
@@ -2021,7 +2022,8 @@
     "Conviviale",
     "Timoniere",
     "Aspirante comandante",
-    "Goloso"
+    "Goloso",
+    "Senatore di bordo"
    ],
    "nicks": [
     "Branca"
@@ -2444,7 +2446,8 @@
     "Uomo rana",
     "Capitano",
     "Pescatore di ricci",
-    "Tuffatore"
+    "Tuffatore",
+    "Senatore di bordo"
    ],
    "nicks": [
     "Masca",
@@ -4065,6 +4068,10 @@
     "epithet": "Il muscolare versatile",
     "html": "Marinaio instancabile e versatilissimo, muscolare e atletico, pronto a qualsiasi cosa. <b>Ex campione di MMA</b>: se a bordo ci sono attriti con un altro equipaggio, è lui l'uomo da mandare avanti. Non proprio un fenomeno d'ordine sottocoperta, ma un gran compagno di ballotte, simpatico da matti: sta bene tanto in una serata a Ibiza fino alle 7 del mattino &mdash; con rientro a nuoto &mdash; quanto in una vacanza tutta relax. Memorabili i suoi voli appeso a una cima all'albero e in equilibrio sul parabordo tondo usato come giostra, in mezzo al mare. Capitano con patente nautica, ma sulla vela ha ancora qualche capitolo da studiare. D'estate lo trovi a sfrecciare con le barche veloci dal porto di <b>Gioia Tauro</b>. Nella vita, dentista di altissimo livello."
    },
+   "tags": [
+    "Muscolare versatile",
+    "Senatore di bordo"
+   ],
    "nicks": [
     "Tomma",
     "Kung"
@@ -6081,6 +6088,10 @@
     "epithet": "Il guru (l'ammiraglio leggendario)",
     "html": "Un ammiraglio leggendario, con centinaia di vacanze in barca e viaggi in ogni angolo del mondo a ruolino. È un po' il guru del settore: ha guidato l'iniziazione e la crescita dello skipper Edoardo. Memorabili le loro regate alle <b>Sporadi</b>. In più occasioni ha navigato <b>in flotta, sulla propria barca</b>, a fianco della Niña &mdash; a <b>Cuba</b> e alle Sporadi &mdash; con al seguito le famiglie Mascagni e Brancaleoni: non equipaggio della Niña, ma compagni di rotta di un'altra barca."
    },
+   "tags": [
+    "Guru",
+    "Senatore di bordo"
+   ],
    "nicks": [
     "Mike"
    ],

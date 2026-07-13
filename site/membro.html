@@ -51,6 +51,11 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .rankbadge{display:inline-flex;align-items:center;gap:.35rem;font:700 .6rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:.28rem .6rem .28rem .4rem}
 .rankbadge b{font-weight:700}
 svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
+.rankprog{margin-top:.5rem;max-width:16rem}
+.rankprog .rp-bar{height:7px;background:var(--sea-2);border-radius:5px;overflow:hidden;border:1px solid var(--hair)}
+.rankprog .rp-bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-2));border-radius:5px}
+.rankprog .rp-cap{margin-top:.3rem;font:700 .58rem/1.3 var(--display);letter-spacing:.05em;text-transform:uppercase;color:var(--soft)}
+.rankprog .rp-cap b{color:var(--gold)}
 /* stats */
 .mstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:6px;overflow:hidden;margin-top:1.3rem}
 .mstat{background:var(--panel);padding:.9rem .4rem;text-align:center}
@@ -216,6 +221,23 @@ const avatarP = (m, cls) => photoOf(m)
   ? `<img class="${cls}" src="${photoOf(m)}" alt="${esc(m.name)}" loading="lazy">`
   : `<div class="${cls}">${initial(m)}</div>`;
 const rankBadge = m => `<span class="rankbadge">${rankSVG(m.rank)} <b>${esc(RANK_LABEL[m.rank] || "")}</b></span>`;
+// progressione verso il grado successivo (barra %) — dai giorni di carriera
+const RANK_STEPS_UP = [[0, "recruit"], [7, "ensign"], [18, "ltjg"], [35, "lt"], [60, "ltcdr"], [95, "cdr"], [140, "capt"], [250, "admiral"]];
+function rankProgress(days) {
+  let cur = RANK_STEPS_UP[0], next = null;
+  for (const step of RANK_STEPS_UP) { if (days >= step[0]) cur = step; else { next = step; break; } }
+  if (!next) return { pct: 100, toNext: 0, nextLabel: null };
+  const pct = Math.max(2, Math.min(100, Math.round((days - cur[0]) / (next[0] - cur[0]) * 100)));
+  return { pct, toNext: Math.max(0, Math.ceil(next[0] - days)), nextLabel: RANK_LABEL[next[1]] };
+}
+function rankProgHTML(m) {
+  if (m.pet) return "";
+  const pr = rankProgress(m.days || 0);
+  const cap = pr.nextLabel
+    ? `${pr.pct}% &middot; ancora <b>${pr.toNext} ${pr.toNext === 1 ? "giorno" : "giorni"}</b> a ${esc(pr.nextLabel)}`
+    : "Grado massimo raggiunto ⚓";
+  return `<div class="rankprog"><div class="rp-bar"><i style="width:${pr.pct}%"></i></div><div class="rp-cap">${cap}</div></div>`;
+}
 
 function memberPage(m, all) {
   const c = m.crew2026 || null;
@@ -240,6 +262,7 @@ function memberPage(m, all) {
       <h1>${esc(m.name)}</h1>
       ${(m.nicks && m.nicks.length) ? `<div class="nick">${m.sex === "f" ? "detta" : "detto"} ${m.nicks.map(n => `“${esc(n)}”`).join(", ")}</div>` : (c && c.nick ? `<div class="nick">${m.sex === "f" ? "detta" : "detto"} “${esc(c.nick)}”</div>` : "")}
       <div class="rankrow">${rankBadge(m)}</div>
+      ${rankProgHTML(m)}
       ${vet}
     </div>
   </div>
