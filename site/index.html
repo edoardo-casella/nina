@@ -52,7 +52,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 
 header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:10;
   border-bottom:2px solid var(--accent)}
-.hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem}
+.hdr{max-width:640px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.brand{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.brand:hover{color:var(--gold-2)}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;justify-content:flex-end}
 .boat{font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;
   color:var(--hdrtext);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:1px}
 .boat::after{content:"↗";font-size:.6em;color:var(--accent);margin-left:.2em;vertical-align:super;font-weight:700}
@@ -124,10 +127,10 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
 header .tabs{max-width:640px;margin:0 auto;padding:0 1.1rem .6rem}
 header .tab{flex:1;text-align:center;text-decoration:none}
 /* scorciatoie di navigazione verso le altre sezioni (non piu' solo nell'hamburger) */
-.quicknav{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;max-width:640px;margin:0 auto;padding:0 1.1rem .7rem}
+.quicknav{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;padding:.55rem 1.1rem;background:var(--sea-2);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
 .quicknav::-webkit-scrollbar{display:none}
 .quicknav a{flex:none;white-space:nowrap;font:700 .58rem/1 var(--display);letter-spacing:.07em;text-transform:uppercase;
-  color:var(--soft);text-decoration:none;background:var(--sea-1);border:1px solid var(--hair);border-radius:99px;
+  color:var(--soft);text-decoration:none;background:var(--panel);border:1px solid var(--hair);border-radius:99px;
   padding:.5rem .75rem;display:inline-flex;align-items:center;gap:.28rem}
 .quicknav a:hover{border-color:var(--accent);color:var(--accent)}
 main>section{display:none}
@@ -311,11 +314,14 @@ footer strong{color:var(--ink)}
 </head>
 <body>
 <header><div class="hdr">
-  <div><a href="manifesto.html" title="Crewin — la community di chi va in barca a vela" style="font:700 1.05rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-right:.5rem">Crewin</a><a class="boat" id="boat" href="barca.html" title="La barca — Dufour 48 Catamaran">Niña</a><span class="live" id="live"></span>
-  <div class="cap" id="captains"></div>
-  <div class="clock" id="clock"></div></div>
-  <span class="when" id="when">carico…</span>
-  <button class="theme" id="themeBtn" onclick="cycleTheme()" title="Tema: auto segue alba e tramonto">AUTO</button>
+  <a class="brand" href="manifesto.html" title="Crewin — la community di chi va in barca a vela">Crewin</a>
+  <div class="hdr-right">
+    <a class="boat" id="boat" href="barca.html" title="La barca di quest'anno — Dufour 48 Catamaran">Niña</a><span class="live" id="live"></span>
+    <div class="cap" id="captains"></div>
+    <div class="clock" id="clock"></div>
+    <span class="when" id="when">carico…</span>
+    <button class="theme" id="themeBtn" onclick="cycleTheme()" title="Tema: auto segue alba e tramonto">AUTO</button>
+  </div>
 </div>
 <nav class="tabs" id="mainnav">
   <a class="tab on" id="nav-oggi" href="#oggi">Oggi</a>
