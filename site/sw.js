@@ -8,7 +8,7 @@
 // SHELL si bumpa a ogni release del guscio; DATA NON si rinomina mai
 // (l'activate cancella le cache con altri nomi: si perderebbe l'ultimo
 // briefing buono per l'offline).
-const SHELL = "nina-shell-v66";
+const SHELL = "nina-shell-v67";
 const DATA = "nina-data-v1";
 const FILES = ["./", "./index.html", "./skipper.html", "./classifica.html", "./aneddoti.html", "./mete.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./viaggio.html", "./paese.html", "./foto.html", "./theme.js", "./nav.js", "./manifest.json",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
@@ -30,9 +30,15 @@ self.addEventListener("install", e => {
 });
 
 self.addEventListener("activate", e => {
-  e.waitUntil(caches.keys().then(ks =>
-    Promise.all(ks.filter(k => k !== SHELL && k !== DATA).map(k => caches.delete(k)))
-  ).then(() => self.clients.claim()));
+  e.waitUntil((async () => {
+    const ks = await caches.keys();
+    await Promise.all(ks.filter(k => k !== SHELL && k !== DATA).map(k => caches.delete(k)));
+    await self.clients.claim();
+    // guscio nuovo attivato: ricarica UNA volta le finestre aperte così prendono
+    // subito la versione appena deployata (niente client fermi su quella vecchia).
+    const wins = await self.clients.matchAll({ type: "window" });
+    for (const w of wins) { try { w.navigate(w.url); } catch (err) {} }
+  })());
 });
 
 self.addEventListener("fetch", e => {
