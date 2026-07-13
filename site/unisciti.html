@@ -68,35 +68,10 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
   </section>
 
   <section>
-    <form id="join" novalidate>
-      <div class="field">
-        <label for="nome">Come ti chiami</label>
-        <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Nome e cognome" required>
-      </div>
-      <div class="field">
-        <label for="contatto">Come ti ricontattiamo</label>
-        <input id="contatto" name="contatto" type="text" autocomplete="email" placeholder="Email o telefono" required>
-      </div>
-      <div class="field">
-        <label for="esperienza">Esperienza in barca</label>
-        <select id="esperienza" name="esperienza">
-          <option value="Mai stato in barca, ma curioso/a">Mai stato in barca, ma curioso/a</option>
-          <option value="Qualche uscita">Qualche uscita</option>
-          <option value="Navigo spesso">Navigo spesso</option>
-          <option value="Ho la patente nautica">Ho la patente nautica</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="periodo">Quando saresti disponibile</label>
-        <input id="periodo" name="periodo" type="text" placeholder="Es. estate 2026, weekend, flessibile…">
-      </div>
-      <div class="field">
-        <label for="messaggio">Due righe su di te</label>
-        <textarea id="messaggio" name="messaggio" placeholder="Chi sei, perché vuoi imbarcarti, cosa ti piacerebbe…"></textarea>
-      </div>
-      <button type="submit">Invia la richiesta</button>
-      <p class="note" id="note">Premendo “Invia” si apre la tua app di posta con il messaggio già pronto: controlla e invia. Nessun dato viene salvato su questo sito.</p>
-    </form>
+    <div class="gform" style="border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:var(--panel)">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBYBfM_tceRp0_DewphRvEMdbSMxRxfAHe9bTVJybhMfphOA/viewform?embedded=true" style="display:block;width:100%;height:1250px;border:0" title="Candidatura equipaggio · Crewin" loading="lazy">Caricamento del modulo…</iframe>
+    </div>
+    <p class="note">Le risposte arrivano direttamente nel modulo Google della ciurma. Nessun dato transita da questo sito.</p>
 
     <div class="alt">
       Preferisci fare da te? Scrivi a <a id="mail" href="mailto:edoardo.casella@gmail.com?subject=Crewin%20%E2%80%94%20vorrei%20imbarcarmi">edoardo.casella@gmail.com</a>
@@ -111,31 +86,7 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 </footer>
 
 <script>
-// Form senza backend: compone una mail precompilata e apre il client di posta.
-const TO = "edoardo.casella@gmail.com";
-document.getElementById("join").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const f = e.target;
-  const nome = (f.nome.value || "").trim();
-  const contatto = (f.contatto.value || "").trim();
-  if (!nome || !contatto) {
-    document.getElementById("note").textContent = "Aggiungi almeno il tuo nome e un contatto, poi riprova.";
-    (!nome ? f.nome : f.contatto).focus();
-    return;
-  }
-  const body =
-    "Ciao, vorrei imbarcarmi con Crewin.\n\n" +
-    "Nome: " + nome + "\n" +
-    "Contatto: " + contatto + "\n" +
-    "Esperienza: " + f.esperienza.value + "\n" +
-    "Disponibilità: " + ((f.periodo.value || "").trim() || "—") + "\n\n" +
-    "Su di me:\n" + ((f.messaggio.value || "").trim() || "—") + "\n";
-  const url = "mailto:" + TO +
-    "?subject=" + encodeURIComponent("Crewin — vorrei imbarcarmi (" + nome + ")") +
-    "&body=" + encodeURIComponent(body);
-  window.location.href = url;
-  document.getElementById("note").textContent = "Si sta aprendo la tua app di posta con il messaggio pronto: controlla e invia. Se non succede nulla, scrivi pure a " + TO + ".";
-});
+// Modulo candidatura: Google Form embeddato (creato via Google Forms API). Niente mailto qui.
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
 <script src="nav.js"></script>
