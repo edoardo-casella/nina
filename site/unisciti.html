@@ -53,6 +53,21 @@ button:hover{filter:brightness(1.06)}
 .alt a{font-weight:600}
 footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
 footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+.prossime{margin-top:2rem;border-top:1px dashed var(--hair);padding-top:1.4rem}
+.prossime h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin:0 0 .4rem;display:flex;align-items:center;gap:.5rem}
+.prossime .plead{color:var(--soft);font-size:.92rem;line-height:1.6;margin-bottom:1rem}
+.prox{display:grid;gap:.7rem}
+.pcard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:1rem 1.1rem;transition:border-color .12s}
+.pcard:hover{border-color:var(--accent)}
+.pwhen{font:700 .6rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.pcard h3{font:700 1.15rem/1.2 var(--display);margin:.32rem 0 .1rem;color:var(--ink)}
+.parea{font-size:.78rem;color:var(--soft)}
+.pblurb{font-size:.9rem;color:var(--soft);line-height:1.5;margin:.5rem 0 .75rem}
+.pfoot{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.pcount{font:600 .72rem/1 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
+.pcount b{color:var(--ink);font-family:var(--mono)}
+.pbtn{flex:none;font:700 .66rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--accent);border-radius:99px;padding:.6rem .95rem}
+.prox-all{display:inline-block;margin-top:1rem;font:700 .64rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -78,6 +93,13 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
       oppure manda un DM su <a href="https://www.instagram.com/edoardocasella/" target="_blank" rel="noopener">Instagram</a>.
     </div>
   </section>
+
+  <section class="prossime" id="prossime">
+    <h2>⚓ Le prossime mete</h2>
+    <p class="plead">Non solo la Niña 2026: ecco i viaggi in cantiere. Se ti gira, candidati anche per uno di questi — quando siamo abbastanza, si parte.</p>
+    <div class="prox" id="prox"><p class="plead">Carico le proposte…</p></div>
+    <a class="prox-all" href="mete.html#nuovi-viaggi">Vedi tutte le mete sulla mappa →</a>
+  </section>
 </main>
 
 <footer>
@@ -88,6 +110,31 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 <script>
 // Modulo candidatura: Google Form embeddato (creato via Google Forms API). Niente mailto qui.
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+
+// "Le prossime mete": le proposte + pulsante "Sono interessato" (form adesioni precompilato via prefill)
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdCyyAwMS04as8jTyBZDvK7tYTBIvI4bRHSRyUOSV_u3bJggQ/viewform";
+const PREFILL_ENTRY = "entry.712208507";
+const esc = s => String(s ?? "").replace(/[<>&"]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]));
+const formLink = p => { const sep = FORM_URL.includes("?") ? "&" : "?"; return `${FORM_URL}${sep}usp=pp_url&${encodeURIComponent(PREFILL_ENTRY)}=${encodeURIComponent(p.title)}`; };
+Promise.all([
+  fetch("data/proposte.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({ proposte: [] })),
+  fetch("data/proposte_counts.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).catch(() => null),
+]).then(([dp, dc]) => {
+  const props = dp.proposte || [], counts = (dc && dc.counts) || {};
+  const el = document.getElementById("prox");
+  if (!el) return;
+  if (!props.length) { el.innerHTML = ""; return; }
+  el.innerHTML = props.map(p => {
+    const n = counts[p.id];
+    return `<a class="pcard" href="${esc(formLink(p))}" target="_blank" rel="noopener">
+      <div class="pwhen">${esc(p.when || "")}</div>
+      <h3>${esc(p.title)}</h3>
+      <div class="parea">${esc(p.area || "")}</div>
+      <p class="pblurb">${esc(p.blurb || "")}</p>
+      <div class="pfoot"><span class="pcount">${n != null ? `<b>${n}</b> interessati` : ""}</span><span class="pbtn">Sono interessato ›</span></div>
+    </a>`;
+  }).join("");
+});
 </script>
 <script src="nav.js"></script>
 </body>
