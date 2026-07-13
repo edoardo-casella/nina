@@ -8,7 +8,7 @@
 // SHELL si bumpa a ogni release del guscio; DATA NON si rinomina mai
 // (l'activate cancella le cache con altri nomi: si perderebbe l'ultimo
 // briefing buono per l'offline).
-const SHELL = "nina-shell-v65";
+const SHELL = "nina-shell-v66";
 const DATA = "nina-data-v1";
 const FILES = ["./", "./index.html", "./skipper.html", "./classifica.html", "./aneddoti.html", "./mete.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./viaggio.html", "./paese.html", "./foto.html", "./theme.js", "./nav.js", "./manifest.json",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
@@ -54,6 +54,31 @@ self.addEventListener("fetch", e => {
     return;
   }
 
+  // PAGINE HTML (navigazioni): network-first con timeout. Online = sempre l'ultima
+  // versione appena deployata (niente hard-refresh dopo un aggiornamento); offline o
+  // rete lenta (>3.5s) = ultima versione buona dalla cache. In rada senza rete si apre
+  // comunque, e un deploy nuovo si vede subito appena c'e' segnale.
+  if (e.request.mode === "navigation") {
+    e.respondWith((async () => {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 3500);
+      try {
+        const net = await fetch(e.request, { signal: ctrl.signal });
+        clearTimeout(t);
+        if (net && net.ok) {
+          caches.open(SHELL).then(c => c.put(e.request, net.clone()));
+          return net;
+        }
+        return (await caches.match(e.request)) || net;
+      } catch (err) {
+        clearTimeout(t);
+        return (await caches.match(e.request)) || (await caches.match("./index.html")) || Response.error();
+      }
+    })());
+    return;
+  }
+
+  // altri asset del guscio (js, icone, manifest): stale-while-revalidate
   e.respondWith(caches.match(e.request).then(cached => {
     const fresh = fetch(e.request).then(r => {
       if (r.ok) {
