@@ -11,7 +11,8 @@
   ],
   "sim": true,
   "cruise_start": "2026-08-08",
-  "departure_at": "2026-08-08T17:00",
+  "departure_at": "2026-08-08T14:00",
+  "departure_place": "Cannigione",
   "position": {
     "id": "cannigione",
     "name": "Rada di Cannigione (test)",

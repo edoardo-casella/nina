@@ -80,14 +80,17 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
 .flag.ok{background:var(--verde)}
 .flag.sim{background:var(--land);color:var(--warmtx)}
 
-.count{background:var(--sea-1);border:1px solid var(--hair);border-left:3px solid var(--accent);
-  border-radius:3px;padding:.85rem 1rem;margin-top:1.1rem;display:flex;align-items:baseline;
-  gap:1rem;flex-wrap:wrap}
-.count b{font:700 1.5rem/1 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
-.count i{font:700 .6rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;
-  color:var(--soft);font-style:normal;display:block;margin-top:.25rem}
-.count .lbl{font:700 .68rem/1.4 var(--display);letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent);flex-basis:100%}
+.count{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 15%,var(--panel)),var(--panel));
+  border:1px solid var(--hair);border-radius:14px;padding:1rem 1.1rem;margin-top:1.1rem}
+.count-hd{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;margin-bottom:.85rem}
+.count-eye{font:700 .64rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.count-place{font:600 .92rem/1.3 var(--body);color:var(--ink)}
+.count-place time{color:var(--soft);font-family:var(--mono);font-size:.82rem}
+.count-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.count .ct{background:var(--panel);border:1px solid var(--hair);border-radius:10px;padding:.55rem .2rem;text-align:center}
+.count b{font:700 1.7rem/1 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink);display:block}
+.count i{font:700 .55rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--soft);font-style:normal;display:block;margin-top:.32rem}
 .crew-cta{display:flex;align-items:center;justify-content:center;gap:.5rem;
   margin-top:.7rem;padding:.8rem 1rem;background:var(--accent);color:var(--chiptx);
   font:700 .74rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
@@ -310,6 +313,43 @@ footer strong{color:var(--ink)}
 .adv-obj{margin-top:.7rem;padding-top:.6rem;border-top:1px dashed var(--hair);font-size:.86rem;line-height:1.5;color:var(--soft)}
 .adv-obj b{color:var(--ink)}
 .adv-src{margin-top:.45rem;font-size:.72rem;color:var(--soft)}
+
+/* CTA row del countdown + card "Adesso" a tessere */
+.cta-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+.cta-row .crew-cta{flex:1 1 12rem;margin-top:0}
+.cond{background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:.9rem 1rem;margin:.3rem 0 1rem}
+.cond-loc{font-size:.85rem;color:var(--soft);margin-bottom:.75rem}
+.cond-loc b{color:var(--ink);font-weight:700}
+.cond-loc span{font-family:var(--mono);font-size:.72rem}
+.cond-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(4.7rem,1fr));gap:.5rem}
+.ct2{background:var(--sea-1);border:1px solid var(--hair);border-radius:10px;padding:.6rem .3rem;
+  text-align:center;display:flex;flex-direction:column;align-items:center;gap:.18rem}
+.ct2 .ic{font-size:1.25rem;line-height:1}
+.ct2 b{font:700 1.05rem/1 var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
+.ct2 i{font:600 .56rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--soft);font-style:normal}
+
+/* grafico combinato vento + onda (tab Forecast) — colori via CSS var = tema-aware */
+.cchart{margin:.2rem 0 .3rem}
+.cchart svg{width:100%;height:auto;display:block;overflow:visible;background:var(--sea-1);border:1px solid var(--hair);border-radius:10px}
+.cchart .grid{stroke:var(--hair);stroke-width:1}
+.cchart .daysep{stroke:var(--hair);stroke-width:1;opacity:.7}
+.cchart .wind-area{fill:var(--accent);opacity:.13}
+.cchart .wind-line{stroke:var(--accent);stroke-width:2;fill:none;stroke-linejoin:round}
+.cchart .gust-line{stroke:var(--accent);stroke-width:1;stroke-dasharray:3 3;opacity:.5;fill:none}
+.cchart .wave-line{stroke:var(--verde);stroke-width:2.2;fill:none;stroke-linejoin:round}
+.cchart .nowline{stroke:var(--magenta);stroke-width:1;stroke-dasharray:2 2}
+.cchart text{font:600 9px var(--mono);fill:var(--soft)}
+.cchart .lab-wind{fill:var(--accent)}
+.cchart .lab-wave{fill:var(--verde)}
+.cchart .lab-day{font-weight:700;fill:var(--ink)}
+.cchart .lab-now{fill:var(--magenta);font-size:8px;font-weight:700}
+.cc-legend{display:flex;flex-wrap:wrap;gap:.35rem 1rem;margin-top:.5rem;font-size:.74rem;color:var(--soft);align-items:center}
+.cc-k{display:inline-flex;align-items:center;gap:.35rem}
+.cc-k em{font-style:normal;opacity:.8}
+.cc-k .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+.cc-k .sw.wind{background:var(--accent)}
+.cc-k .sw.wave{background:var(--verde)}
+.cc-max b{font-family:var(--mono);color:var(--ink)}
 </style>
 </head>
 <body>
@@ -320,13 +360,12 @@ footer strong{color:var(--ink)}
     <div class="cap" id="captains"></div>
     <div class="clock" id="clock"></div>
     <span class="when" id="when">carico…</span>
-    <button class="theme" id="themeBtn" onclick="cycleTheme()" title="Tema: auto segue alba e tramonto">AUTO</button>
+    <button class="theme" id="themeBtn" onclick="cycleTheme()" title="Modalità tema: AUTO segue alba e tramonto, poi GIORNO e NOTTE">MODE · AUTO</button>
   </div>
 </div>
 <nav class="tabs" id="mainnav">
   <a class="tab on" id="nav-oggi" href="#oggi">Oggi</a>
-  <a class="tab" id="nav-vento" href="#vento">Vento</a>
-  <a class="tab" id="nav-mare" href="#mare">Mare</a>
+  <a class="tab" id="nav-forecast" href="#forecast">Forecast</a>
   <a class="tab" id="nav-programma" href="#programma">Programma</a>
 </nav>
 <nav class="quicknav" aria-label="Sezioni del sito">
@@ -445,6 +484,91 @@ function waveRibbon(hours) {
     <div class="axis vals">${vals}</div><div class="axis">${hourAxis(hours)}</div></div>
     <div class="legend"><span class="water">max <b>${max.toFixed(1)} m · mare ${smax}</b> (${SEA_NAME[smax]})</span>
     <span>freccia = dove va l'onda</span></div>`;
+}
+
+// grafico combinato vento + onda su 48 ore (SVG inline, colori via CSS var = tema-aware)
+function combinedChart(hours) {
+  const H = (hours || []).filter(h => h && h.time);
+  if (H.length < 2) return "";
+  const W = 720, Ht = 210, padL = 30, padR = 32, padT = 14, padB = 26;
+  const iw = W - padL - padR, ih = Ht - padT - padB, n = H.length;
+  const windMax = Math.max(22, ...H.map(h => h.gust ?? h.tws ?? 0));
+  const waveVals = H.map(h => h.wave).filter(v => v != null);
+  const hasWave = waveVals.length > 1;
+  const waveMax = Math.max(1.2, ...(hasWave ? waveVals : [1.2]));
+  const X = i => padL + i / (n - 1) * iw;
+  const yW = kn => padT + ih - Math.max(0, kn) / windMax * ih;
+  const yS = m => padT + ih - Math.max(0, m) / waveMax * ih;
+  const tws = H.map((h, i) => `${X(i).toFixed(1)},${yW(h.tws ?? 0).toFixed(1)}`);
+  const area = `M${padL},${(padT + ih).toFixed(1)} L${tws.join(" L")} L${(padL + iw).toFixed(1)},${(padT + ih).toFixed(1)} Z`;
+  const windLine = "M" + tws.join(" L");
+  const gustLine = "M" + H.map((h, i) => `${X(i).toFixed(1)},${yW(h.gust ?? h.tws ?? 0).toFixed(1)}`).join(" L");
+  const waveLine = hasWave ? "M" + H.map((h, i) => `${X(i).toFixed(1)},${yS(h.wave ?? 0).toFixed(1)}`).join(" L") : "";
+  const grid = [0, .5, 1].map(f => {
+    const y = (padT + ih - f * ih).toFixed(1);
+    return `<line class="grid" x1="${padL}" y1="${y}" x2="${(padL + iw).toFixed(1)}" y2="${y}"/>
+      <text class="lab-wind" x="${padL - 4}" y="${(+y + 3).toFixed(1)}" text-anchor="end">${Math.round(f * windMax)}</text>
+      ${hasWave ? `<text class="lab-wave" x="${(padL + iw + 4).toFixed(1)}" y="${(+y + 3).toFixed(1)}" text-anchor="start">${(f * waveMax).toFixed(1)}</text>` : ""}`;
+  }).join("");
+  const days = H.map((h, i) => ({ h, i })).filter(o => o.h.time.slice(11, 16) === "00:00");
+  const dayMarks = days.map(o => {
+    const xx = X(o.i).toFixed(1);
+    return `<line class="daysep" x1="${xx}" y1="${padT}" x2="${xx}" y2="${(padT + ih).toFixed(1)}"/>
+      <text class="lab-day" x="${xx}" y="${Ht - 8}" text-anchor="middle">${dayLbl(o.h.time)}</text>`;
+  }).join("");
+  const now = Date.now();
+  let ni = 0, nb = 1e18;
+  H.forEach((h, i) => { const d = Math.abs(new Date(h.time) - now); if (d < nb) { nb = d; ni = i; } });
+  const nx = X(ni).toFixed(1);
+  const nowLine = `<line class="nowline" x1="${nx}" y1="${padT}" x2="${nx}" y2="${(padT + ih).toFixed(1)}"/>
+    <text class="lab-now" x="${nx}" y="${padT - 4}" text-anchor="middle">adesso</text>`;
+  const bw = iw / (n - 1);
+  const hover = H.map((h, i) => {
+    const x0 = (X(i) - bw / 2).toFixed(1);
+    const tip = `${dayLbl(h.time)} ${h.time.slice(11, 16)} — vento ${Math.round(h.tws)} kn${h.gust != null ? ` (raffiche ${Math.round(h.gust)})` : ""}${h.wave != null ? `, onda ${h.wave.toFixed(1)} m` : ""}`;
+    return `<rect x="${x0}" y="${padT}" width="${bw.toFixed(1)}" height="${ih}" fill="transparent"><title>${tip}</title></rect>`;
+  }).join("");
+  return `<div class="cchart">
+    <svg viewBox="0 0 ${W} ${Ht}" role="img" aria-label="Grafico combinato vento e onda, 48 ore">
+      ${grid}${dayMarks}
+      <path class="wind-area" d="${area}"/>
+      <path class="wind-line" d="${windLine}"/>
+      <path class="gust-line" d="${gustLine}"/>
+      ${waveLine ? `<path class="wave-line" d="${waveLine}"/>` : ""}
+      ${nowLine}${hover}
+    </svg>
+    <div class="cc-legend">
+      <span class="cc-k"><i class="sw wind"></i>Vento kn <em>(area · raffiche tratteggio)</em></span>
+      ${hasWave ? `<span class="cc-k"><i class="sw wave"></i>Onda m <em>(linea)</em></span>` : ""}
+      <span class="cc-max">max <b>${Math.round(windMax)} kn</b>${hasWave ? ` · <b>${waveMax.toFixed(1)} m</b>` : ""}</span>
+    </div>
+  </div>`;
+}
+
+// scheda "Adesso": condizioni correnti a tessere (piu' leggibile della vecchia nowbar)
+function condCard(b, wx) {
+  if (!b.now) return "";
+  const n = b.now, p = b.position || {};
+  let waveNow = null;
+  const hs = wx?.hours || [];
+  if (hs.length) {
+    const now = Date.now();
+    let best = null, bd = 1e18;
+    hs.forEach(h => { if (h.wave != null) { const d = Math.abs(new Date(h.time) - now); if (d < bd) { bd = d; best = h; } } });
+    if (best) waveNow = best.wave;
+  }
+  const tile = (ic, val, lab) => `<div class="ct2"><span class="ic">${ic}</span><b>${val}</b><i>${lab}</i></div>`;
+  return `<div class="cond">
+    <div class="cond-loc">📍 <b>${esc(p.name ?? "—")}</b> <span>${p.live ? `GPS · ${p.age_h} h fa` : "posizione da piano"}</span></div>
+    <div class="cond-tiles">
+      ${tile(wmoIcon(n.wmo), (n.temp != null ? Math.round(n.temp) + "°" : "—"), "cielo")}
+      ${tile("💨", Math.round(n.tws) + " kn", "vento " + comp(n.twd))}
+      ${waveNow != null ? tile("🌊", waveNow.toFixed(1) + " m", "onda") : ""}
+      ${n.sst != null ? tile("🌡️", Math.round(n.sst) + "°", "mare") : ""}
+      ${tile("💧", (n.rh ?? "—") + "%", "umidità")}
+      ${tile("☔", (n.rain ?? 0) + "", "mm/h")}
+    </div>
+  </div>`;
 }
 
 function skyStrip(hours) {
@@ -913,14 +1037,14 @@ document.addEventListener("keydown", e => {
 
 // ---- hash-router: si renderizza UNA volta, poi si mostra/nasconde (gli
 // iframe non si ricaricano, lo scroll di ogni tab si conserva)
-const TABS = ["oggi", "vento", "mare", "programma"];
+const TABS = ["oggi", "forecast", "programma"];
 let currentTab = null;
 const scrollMem = {};
 function route() {
   const h = location.hash.slice(1);
   if (h.startsWith("dest-")) { showScheda(h.slice(5)); return; }  // overlay: il tab sotto resta
   hideScheda();
-  const t = TABS.includes(h) ? h : "oggi";
+  const t = TABS.includes(h) ? h : (h === "vento" || h === "mare" ? "forecast" : "oggi");
   if (currentTab && currentTab !== t) scrollMem[currentTab] = window.scrollY;
   TABS.forEach(x => {
     document.getElementById("tab-" + x)?.classList.toggle("on", x === t);
@@ -960,26 +1084,27 @@ function render(b, wx, c, prog) {
   const oggi = `
   ${b.departure_at && new Date(b.departure_at) > new Date() ? `
   <div class="count" id="countdown" data-t="${esc(b.departure_at)}">
-    <span class="lbl">⏳ Mollo gli ormeggi — ${new Date(b.departure_at).toLocaleDateString("it", { day: "numeric", month: "long" })} ore ${b.departure_at.slice(11, 16)}</span>
-    <span><b data-u="g">—</b><i>giorni</i></span><span><b data-u="h">—</b><i>ore</i></span>
-    <span><b data-u="m">—</b><i>min</i></span><span><b data-u="s">—</b><i>sec</i></span>
+    <div class="count-hd">
+      <span class="count-eye">⛵ Si salpa</span>
+      <span class="count-place"><b>${esc(b.departure_place || "Cannigione")}</b> · <time>${new Date(b.departure_at).toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" })} · ore ${b.departure_at.slice(11, 16)}</time></span>
+    </div>
+    <div class="count-tiles">
+      <span class="ct"><b data-u="g">—</b><i>giorni</i></span><span class="ct"><b data-u="h">—</b><i>ore</i></span>
+      <span class="ct"><b data-u="m">—</b><i>min</i></span><span class="ct"><b data-u="s">—</b><i>sec</i></span>
+    </div>
   </div>
-  <a class="crew-cta" href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">🧭 Questionario equipaggio</a>
-  <a class="crew-cta" href="guida.html">🎒 Guida pre-partenza · valigia &amp; regole</a>` : ""}
+  <div class="cta-row">
+    <a class="crew-cta" href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">🧭 Questionario equipaggio</a>
+    <a class="crew-cta" href="guida.html">🎒 Guida pre-partenza</a>
+  </div>` : ""}
+  <h2>Adesso${b.position ? ` — <span style="text-transform:none;letter-spacing:0">${esc(b.position.name)}</span>` : ""}</h2>
+  ${condCard(b, wx)}
   ${execCard(b, wx)}
-  ${advisoryCard(b, prog)}
-  <h2>Oggi${b.position ? ` — <span style="text-transform:none;letter-spacing:0">${esc(b.position.name)}</span>` : ""}</h2>
-  ${b.now ? `<div class="nowbar">
-    <span>📍 <b>${esc(b.position?.name ?? "—")}</b> ${b.position?.live ? `(GPS, ${b.position.age_h} h fa)` : "(da piano)"}</span>
-    <span>${wmoIcon(b.now.wmo)} <b>${b.now.temp != null ? Math.round(b.now.temp) + "°" : "—"}</b></span>
-    <span>umidità <b>${b.now.rh ?? "—"}%</b></span>
-    <span>vento <b>${Math.round(b.now.tws)} kn</b> da ${comp(b.now.twd)}</span>
-    ${b.now.sst != null ? `<span title="temperatura superficiale, modello Open-Meteo">🌊 mare <b>${Math.round(b.now.sst)}°</b></span>` : ""}
-    <span>pioggia <b>${b.now.rain ?? 0} mm/h</b></span></div>` : ""}
   ${tappeTimeline(b)}
   ${(b.steps?.length ?? 0) > 1 && !b.rest ? "<h2>Tratta principale</h2>" : ""}
   ${legCard(b)}
   ${skyStrip(wx.hours)}
+  ${advisoryCard(b, prog)}
 
   <h2>Stanotte</h2>
   ${b.leg?.night ? `<p class="water" style="font-size:.95rem">🌙 In navigazione — arrivo all'alba a ${esc(b.leg.leg.split(/ (?:->|→) /)[1] ?? "destinazione")}. Turni di guardia decisi dagli skipper.</p>` :
@@ -999,21 +1124,21 @@ function render(b, wx, c, prog) {
 
   ${contiCard(c)}`;
 
-  const vento = `
-  <h2>Vento — 48 ore</h2>
-  ${ribbon(wx.hours)}
-  <p style="margin-top:.7rem;font-size:.82rem;color:var(--soft)">
+  const forecast = `
+  <h2>Forecast — vento &amp; mare · 48 ore</h2>
+  ${combinedChart(wx.hours)}
+  <p style="margin-top:.6rem;font-size:.82rem;color:var(--soft)">
     Accordo fra i modelli ECMWF e ICON: <strong>${esc(conf)}</strong>${b.confidence?.mean_spread_kn != null
       ? ` (scarto medio ${b.confidence.mean_spread_kn} kn)` : ""}.
     ${conf === "bassa" ? " Non pianificare oltre le 24 ore." : ""}
   </p>
+  <h2>Vento — 48 ore</h2>
+  ${ribbon(wx.hours)}
   ${dailyStrip(prog, "wind")}
-  ${windyMap(b.position, "wind", "Vento — mappa live")}`;
-
-  const mare = `
   ${waveRibbon(wx.hours)}
   ${dailyStrip(prog, "wave")}
   ${sstStrip(prog)}
+  ${windyMap(b.position, "wind", "Vento — mappa live")}
   ${windyMap(b.position, "waves", "Onde — mappa live")}`;
 
   const programma = `
@@ -1025,8 +1150,7 @@ function render(b, wx, c, prog) {
 
   document.getElementById("app").innerHTML = `
   <section id="tab-oggi">${oggi}</section>
-  <section id="tab-vento">${vento}</section>
-  <section id="tab-mare">${mare}</section>
+  <section id="tab-forecast">${forecast}</section>
   <section id="tab-programma">${programma}</section>`;
   route();
 }
@@ -1097,7 +1221,7 @@ function applyTheme() {
   } else dark = mode === "dark";
   if (document.documentElement?.dataset) document.documentElement.dataset.theme = dark ? "dark" : "light";
   const btn = document.getElementById("themeBtn");
-  if (btn) btn.textContent = mode === "auto" ? "AUTO" : (dark ? "NOTTE" : "GIORNO");
+  if (btn) btn.textContent = "MODE · " + (mode === "auto" ? "AUTO" : (dark ? "NOTTE" : "GIORNO"));
   const meta = document.querySelector?.('meta[name="theme-color"]');
   if (meta) meta.content = dark ? "#060D18" : "#FFFFFF";
 }
