@@ -377,6 +377,12 @@ footer strong{color:var(--ink)}
   <a href="membro.html">👥 La ciurma</a>
   <a href="skipper.html">🎖️ Lo skipper</a>
   <a href="aneddoti.html">📖 Aneddoti</a>
+  <a href="paese.html">🌍 I mari</a>
+  <a href="arrivi.html">🛟 Arrivi &amp; partenze</a>
+  <a href="barca.html">🛥️ La barca</a>
+  <a href="guida.html">🎒 Guida</a>
+  <a href="avionica.html">🚁 Avionica</a>
+  <a href="foto.html">📷 Foto</a>
 </nav></header>
 
 <div id="flag"></div>
@@ -1071,12 +1077,8 @@ function render(b, wx, c, prog) {
           ? `<a class="caplink" href="membro.html#bernardo-b">${esc(c)}</a>`
           : esc(c)).join(" · ") : "";
 
-  const state = b.approved
-    ? `<div class="flag ok"><b>Piano approvato</b>Confermato da ${esc(b.approved_by)}.</div>`
-    : `<div class="flag"><b>Proposta — non approvata</b>Generata dal meteo, non ancora confermata dallo skipper. Non salpate su questa pagina.</div>`;
-  const simFlag = b.sim
-    ? `<div class="flag sim"><b>Simulazione</b>Come se si salpasse oggi da ${esc(b.position?.name ?? "—")}: rotta e meteo sono reali, le date no. La crociera vera inizia ${b.cruise_start ? "l'" + new Date(b.cruise_start + "T12:00").toLocaleDateString("it", { day: "numeric", month: "long" }) : "—"}.</div>` : "";
-  document.getElementById("flag").innerHTML = simFlag + state;
+  // banner "Proposta — non approvata" e "Simulazione" rimossi su richiesta (sito community)
+  document.getElementById("flag").innerHTML = "";
 
   const conf = b.confidence?.confidence ?? "sconosciuta";
   const t = b.tonight, pb = b.plan_b, rada = t || (b.ranked && b.ranked[0]);

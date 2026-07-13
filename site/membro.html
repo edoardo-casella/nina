@@ -176,8 +176,10 @@ function fleetRow(f) {   // viaggio in cui la persona era su UN'ALTRA barca (in 
 // aneddoti taggati con questa persona (link alla pagina Aneddoti)
 const anecFor = id => (ANEC || []).filter(a => (a.people || []).includes(id));
 function anecRow(a) {
+  const fl = flags(a.country);   // bandiere = SVG locali (le emoji su Windows rendono come "GR/ES/IT")
+  const meta = (a.meta || "").replace(a.flag || " ", "").replace(/^\s*[·•]\s*/, "").trim();
   return `<a class="tlrow" href="aneddoti.html#${a.id}"><span class="fl">${a.kind === "eroico" ? "🎖️" : a.kind === "leggenda" ? "🌀" : "⚓"}</span>` +
-    `<span class="z"><b>${esc(a.title)}</b><small>${esc(a.meta || "")}</small></span>` +
+    `<span class="z"><b>${esc(a.title)}</b><small>${fl ? fl + " " : ""}${esc(meta)}</small></span>` +
     `<span class="go">›</span></a>`;
 }
 function compChip(cp, all) {

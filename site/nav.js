@@ -76,16 +76,8 @@
   // tranne la plancia stessa (che ha gia' la sua). Unica sorgente qui: niente
   // markup duplicato nelle singole pagine.
   if (here !== "index.html") {
-    const QUICK = [
-      ["manifesto.html", "Cos'è Crewin", "⚓"],
-      ["unisciti.html", "Vuoi imbarcarti?", "✉️"],
-      ["viaggio.html", "I viaggi", "⛵"],
-      ["classifica.html", "Classifica", "🏆"],
-      ["mete.html", "Le mete", "🗺️"],
-      ["membro.html", "La ciurma", "👥"],
-      ["skipper.html", "Lo skipper", "🎖️"],
-      ["aneddoti.html", "Aneddoti", "📖"],
-    ];
+    // tutte le sezioni (come l'hamburger), tranne la plancia stessa — sempre in sync con LINKS
+    const QUICK = LINKS.filter(([h]) => h !== "index.html");
     const host = document.querySelector(".top") || document.querySelector("header");
     if (host) {
       const q = document.createElement("nav");

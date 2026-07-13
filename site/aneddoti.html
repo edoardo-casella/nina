@@ -103,6 +103,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .acard.legend .kb{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
 .acard h3{font:700 1.08rem/1.18 var(--body);margin-bottom:.3rem}
 .acard .meta{font:700 .58rem/1.3 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);display:flex;gap:.35rem;flex-wrap:wrap}
+.flag{width:22px;height:14px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.18);flex:none}
 .acard .avs{display:flex;margin-top:.7rem}
 .acard .avs .pav{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--sea-2);border:2px solid var(--panel);margin-left:-8px;display:flex;align-items:center;justify-content:center;font:700 .72rem/1 var(--display);color:#fff}
 .acard .avs .pav:first-child{margin-left:0}
@@ -166,10 +167,17 @@ function tripLink(a){
   return `<a class="triplink" href="viaggio.html#${encodeURIComponent(a.trip_id)}">
       <span class="tl-b">${zone}<small>⛵ ${boat}${t.year ? " · " + t.year : ""}</small></span><span class="go">›</span></a>`;
 }
+// bandiera-paese come SVG locale (le emoji su Windows rendono come sigle "GR/ES/IT")
+const FCC = { Greece: "gr", Croazia: "hr", Croatia: "hr", Spain: "es", Italy: "it", France: "fr", Cuba: "cu", Seychelles: "sc", "Saint Vincent": "vc", "Saint Lucia": "lc", Turkey: "tr" };
+function flagMeta(a){
+  const meta = (a.flag ? String(a.meta || "").replace(a.flag, "") : String(a.meta || "")).replace(/^\s*[·•]\s*/, "").trim();
+  const cc = FCC[a.country];
+  return (cc ? `<img class="flag" src="skipper/flags/${cc}.svg" alt="${esc(a.country || "")}">` : "") + meta;
+}
 function incidentBlock(a){
   return `<div class="incident${KCLASS[a.kind] || ""}"><span class="stamp">${esc(a.stamp)}</span>
     <h3>${esc(a.title)}</h3>
-    <div class="meta">${a.meta}</div>
+    <div class="meta">${flagMeta(a)}</div>
     ${a.bodyHtml}</div>`;
 }
 
@@ -199,7 +207,7 @@ function card(a){
   return `<a class="acard${KCLASS[a.kind] || ""}" href="#${a.id}">
     <span class="kb">${esc(KIND[a.kind] || "Aneddoto")}</span>
     <h3>${esc(a.title)}</h3>
-    <div class="meta">${a.meta}</div>
+    <div class="meta">${flagMeta(a)}</div>
     ${avs ? `<div class="avs">${avs}</div>` : ""}
     <span class="go">›</span></a>`;
 }
