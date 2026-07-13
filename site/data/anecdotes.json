@@ -75,7 +75,9 @@
       "boat": null,
       "boat_name": null,
       "trip_id": "capitan-nikos",
-      "people": [],
+      "people": [
+        "cecilia-r"
+      ],
       "bodyHtml": "<p>Il Meltemi entra in scena e non se ne va più: <b>quattro giorni con mare forza 6 e raffiche\n    oltre i 50 nodi</b>. Lo skipper resta di guardia <b>quattro notti di fila</b>, praticamente senza\n    chiudere occhio, per tenere la barca all'ancora e l'equipaggio al sicuro — in barca con la\n    fidanzata dell'epoca.</p>\n    <p>Il gran finale, degno di un vero stratega: pur di non affrontare la tratta di rientro (e\n    soprattutto di non perdere l'aereo per la <b>crociera successiva</b>), chiama <b>due skipper</b>\n    che vengono a rilevare la barca, e abbandona la nave per correre in aeroporto. La priorità, sopra\n    ogni cosa: la prossima barca.</p>\n    <div class=\"les\"><b>Menzione d'onore</b>\n      <ol><li>Resistenza fuori scala: quattro notti in bianco sotto i 50 nodi.</li>\n      <li>Sangue freddo: barca e equipaggio portati a casa interi.</li>\n      <li>Senso delle priorità cristallino: l'aereo per la barca dopo non si perde.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> quattro notti di sonno perse, una barca salvata e un aereo preso al volo.</div>"
     },
     {
@@ -248,7 +250,12 @@
       "boat": "Oceanis 43",
       "boat_name": "Cubalibre",
       "trip_id": "cubalibre",
-      "people": [],
+      "people": [
+        "gualtiero-s",
+        "leonardo-m",
+        "umberto-f",
+        "marco-t"
+      ],
       "bodyHtml": "<p>Baleari 2014, la crociera dei quarant'anni. Davanti a un chiringuito di <b>Formentera</b>, due barche di romani stavano caricando decine di persone dalla spiaggia per la festa della settimana. Il nostro equipaggio se ne tornava a bordo tranquillo e un filo sconsolato: niente festa.</p><p>E qui l'intuizione da comandante. Preso dallo sconforto, il capitano decide di <b>mimetizzarsi tra i gommoni</b> delle altre due barche che facevano la spola con la costa: si infila nel via-vai e, invece di riempire le barche altrui, comincia a caricare gente sulla <b>nostra</b>. Cinque o sei tragitti dopo, eravamo in <b>quaranta a bordo</b>.</p><p>I ragazzi buttano la pasta &mdash; carbonare in coperta per trenta-quaranta affamati &mdash; e in rada a Formentera scoppia una festa che dura fino a notte fonda, prima di riportare tutti a <b>Es Pujols</b> e sbarcarli sani e salvi.</p><div class='les'><b>Menzione d'onore</b><ol><li>Colpo d'occhio e faccia tosta: una festa intera dirottata a bordo con l'infiltrazione perfetta.</li><li>Logistica da comandante: quaranta persone caricate, sfamate e riportate a terra senza un graffio.</li><li>Morale dell'equipaggio salvato in extremis.</li></ol></div><div class='esito'><b>Bilancio:</b> quaranta invitati a sorpresa, chili di carbonara e una festa in rada entrata nella leggenda &mdash; tutto per merito (e sfrontatezza) del capitano.</div>"
     }
   ]
