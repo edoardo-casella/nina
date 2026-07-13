@@ -1,14 +1,18 @@
 {
  "generated_at": "2026-07-11",
  "ranks": {
-  "admiral": "Ammiraglio",
-  "capt": "Capitano di vascello",
-  "cdr": "Capitano di fregata",
-  "ltcdr": "Capitano di corvetta",
-  "lt": "Tenente di vascello",
-  "ltjg": "Sottotenente di vascello",
-  "ensign": "Guardiamarina",
-  "recruit": "Allievo"
+  "mozzo": "Mozzo",
+  "marinaio": "Marinaio",
+  "marinaio-scelto": "Marinaio scelto",
+  "nostromo": "Nostromo",
+  "sottoten": "Sottotenente di vascello",
+  "tenente": "Tenente di vascello",
+  "cap-corvetta": "Capitano di corvetta",
+  "cap-fregata": "Capitano di fregata",
+  "cap-vascello": "Capitano di vascello",
+  "contrammiraglio": "Contrammiraglio",
+  "ammiraglio": "Ammiraglio",
+  "abilitato": "Abilitato al comando"
  },
  "n_total": 66,
  "people": [
@@ -20,7 +24,9 @@
    "nm": 7735,
    "first": 2011,
    "last": 2024,
-   "rank": "admiral",
+   "rank": "ammiraglio",
+   "rank_label": "Ammiraglio",
+   "track": "comandante",
    "me": true,
    "trips_list": [
     {
@@ -451,7 +457,9 @@
    "nm": 3468,
    "first": 2011,
    "last": 2019,
-   "rank": "cdr",
+   "rank": "tenente",
+   "rank_label": "Tenente di vascello",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "camelia",
@@ -690,7 +698,9 @@
    "nm": 3337,
    "first": 2011,
    "last": 2021,
-   "rank": "cdr",
+   "rank": "tenente",
+   "rank_label": "Tenente di vascello",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "camelia",
@@ -912,7 +922,9 @@
    "nm": 2947,
    "first": 2011,
    "last": 2021,
-   "rank": "cdr",
+   "rank": "cap-fregata",
+   "rank_label": "Capitano di fregata",
+   "track": "comandante",
    "trips_list": [
     {
      "id": "camelia",
@@ -1132,7 +1144,9 @@
    "nm": 2947,
    "first": 2011,
    "last": 2021,
-   "rank": "cdr",
+   "rank": "sottoten",
+   "rank_label": "Sottotenente di vascello",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "camelia",
@@ -1332,7 +1346,9 @@
    "nm": 2231,
    "first": 2011,
    "last": 2024,
-   "rank": "ltcdr",
+   "rank": "cap-fregata",
+   "rank_label": "Capitano di fregata",
+   "track": "comandante",
    "trips_list": [
     {
      "id": "camelia",
@@ -1633,7 +1649,9 @@
    "nm": 2311,
    "first": 2017,
    "last": 2020,
-   "rank": "ltcdr",
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "capitan-nikos",
@@ -1874,7 +1892,9 @@
    "nm": 1849,
    "first": 2015,
    "last": 2023,
-   "rank": "ltcdr",
+   "rank": "abilitato",
+   "rank_label": "Abilitato al comando",
+   "track": "abilitato",
    "trips_list": [
     {
      "id": "blue-bird",
@@ -2185,7 +2205,9 @@
    "nm": 1213,
    "first": 2011,
    "last": 2013,
-   "rank": "lt",
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "camelia",
@@ -2293,7 +2315,9 @@
    "nm": 1860,
    "first": 2014,
    "last": 2022,
-   "rank": "lt",
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "cubalibre",
@@ -2618,7 +2642,9 @@
    "nm": 1058,
    "first": 2021,
    "last": 2024,
-   "rank": "lt",
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "enya",
@@ -2852,7 +2878,9 @@
    "nm": 1131,
    "first": 2018,
    "last": 2024,
-   "rank": "lt",
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "invitation",
@@ -2986,7 +3014,9 @@
    "nm": 856,
    "first": 2022,
    "last": 2024,
-   "rank": "lt",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "all-in",
@@ -3188,7 +3218,9 @@
    "nm": 891,
    "first": 2011,
    "last": 2024,
-   "rank": "lt",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "nemo",
@@ -3313,7 +3345,9 @@
    "nm": 1004,
    "first": 2011,
    "last": 2022,
-   "rank": "lt",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "nemo",
@@ -3491,7 +3525,9 @@
    "nm": 1056,
    "first": 2015,
    "last": 2019,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "trocha",
@@ -3641,7 +3677,9 @@
    "nm": 1056,
    "first": 2015,
    "last": 2019,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "trocha",
@@ -3771,7 +3809,9 @@
    "nm": 806,
    "first": 2015,
    "last": 2021,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "trocha",
@@ -3895,7 +3935,9 @@
    "nm": 806,
    "first": 2015,
    "last": 2021,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "trocha",
@@ -4019,7 +4061,9 @@
    "nm": 785,
    "first": 2011,
    "last": 2015,
-   "rank": "ltjg",
+   "rank": "cap-corvetta",
+   "rank_label": "Capitano di corvetta",
+   "track": "comandante",
    "trips_list": [
     {
      "id": "nemo",
@@ -4155,7 +4199,9 @@
    "nm": 881,
    "first": 2014,
    "last": 2022,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "cubalibre",
@@ -4349,7 +4395,9 @@
    "nm": 570,
    "first": 2021,
    "last": 2024,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "enya",
@@ -4421,7 +4469,9 @@
    "nm": 709,
    "first": 2014,
    "last": 2018,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "anax",
@@ -4502,7 +4552,9 @@
    "nm": 484,
    "first": 2011,
    "last": 2016,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "camelia",
@@ -4588,7 +4640,9 @@
    "nm": 574,
    "first": 2011,
    "last": 2015,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "nemo",
@@ -4696,7 +4750,9 @@
    "nm": 661,
    "first": 2017,
    "last": 2019,
-   "rank": "ltjg",
+   "rank": "abilitato",
+   "rank_label": "Abilitato al comando",
+   "track": "abilitato",
    "trips_list": [
     {
      "id": "sorbe",
@@ -4832,7 +4888,9 @@
    "nm": 661,
    "first": 2017,
    "last": 2019,
-   "rank": "ltjg",
+   "rank": "abilitato",
+   "rank_label": "Abilitato al comando",
+   "track": "abilitato",
    "trips_list": [
     {
      "id": "sorbe",
@@ -4979,7 +5037,9 @@
    "nm": 670,
    "first": 2020,
    "last": 2022,
-   "rank": "ltjg",
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -5150,7 +5210,9 @@
    "nm": 669,
    "first": 2018,
    "last": 2022,
-   "rank": "ltjg",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "invitation",
@@ -5297,7 +5359,9 @@
    "nm": 385,
    "first": 2020,
    "last": 2022,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -5444,7 +5508,9 @@
    "nm": 412,
    "first": 2020,
    "last": 2020,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -5552,7 +5618,9 @@
    "nm": 324,
    "first": 2014,
    "last": 2014,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "anax",
@@ -5628,7 +5696,9 @@
    "nm": 430,
    "first": 2021,
    "last": 2022,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "silkwave",
@@ -5722,7 +5792,9 @@
    "nm": 321,
    "first": 2014,
    "last": 2022,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "cubalibre",
@@ -5821,7 +5893,9 @@
    "nm": 470,
    "first": 2018,
    "last": 2018,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "invitation",
@@ -5889,7 +5963,9 @@
    "nm": 470,
    "first": 2018,
    "last": 2018,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "invitation",
@@ -5957,7 +6033,9 @@
    "nm": 395,
    "first": 2022,
    "last": 2022,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "all-in",
@@ -6064,7 +6142,9 @@
    "nm": 271,
    "first": 2017,
    "last": 2017,
-   "rank": "ensign",
+   "rank": "cap-corvetta",
+   "rank_label": "Capitano di corvetta",
+   "track": "comandante",
    "trips_list": [
     {
      "id": "sorbe",
@@ -6168,7 +6248,9 @@
    "nm": 271,
    "first": 2017,
    "last": 2017,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "sorbe",
@@ -6254,7 +6336,9 @@
    "nm": 321,
    "first": 2011,
    "last": 2011,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "nemo",
@@ -6329,7 +6413,9 @@
    "nm": 321,
    "first": 2011,
    "last": 2011,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "nemo",
@@ -6400,7 +6486,9 @@
    "nm": 321,
    "first": 2011,
    "last": 2011,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "nemo",
@@ -6471,7 +6559,9 @@
    "id": "agata",
    "name": "Agata",
    "pet": true,
-   "rank": "recruit",
+   "track": "marinaio",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
    "trips": 1,
    "days": 11,
    "nm": 385,
@@ -6500,7 +6590,9 @@
    "id": "leo",
    "name": "Leo",
    "pet": true,
-   "rank": "recruit",
+   "track": "marinaio",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
    "trips": 1,
    "days": 11,
    "nm": 385,
@@ -6533,7 +6625,9 @@
    "nm": 275,
    "first": 2020,
    "last": 2020,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -6638,7 +6732,9 @@
    "nm": 275,
    "first": 2020,
    "last": 2020,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -6755,7 +6851,9 @@
    "nm": 275,
    "first": 2020,
    "last": 2020,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -6862,7 +6960,9 @@
    "nm": 275,
    "first": 2020,
    "last": 2020,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -6966,7 +7066,9 @@
    "nm": 275,
    "first": 2020,
    "last": 2020,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -7063,7 +7165,9 @@
    "nm": 275,
    "first": 2020,
    "last": 2020,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alba",
@@ -7160,7 +7264,9 @@
    "nm": 194,
    "first": 2016,
    "last": 2016,
-   "rank": "ensign",
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "aquarela",
@@ -7203,7 +7309,9 @@
    "nm": 91,
    "first": 2023,
    "last": 2023,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "isla",
@@ -7289,7 +7397,9 @@
    "nm": 230,
    "first": 2024,
    "last": 2024,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alexandros",
@@ -7351,7 +7461,9 @@
    "nm": 230,
    "first": 2024,
    "last": 2024,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "alexandros",
@@ -7408,7 +7520,9 @@
    "nm": 189,
    "first": 2012,
    "last": 2012,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "natfika",
@@ -7463,7 +7577,9 @@
    "nm": 189,
    "first": 2012,
    "last": 2012,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "natfika",
@@ -7518,7 +7634,9 @@
    "nm": 189,
    "first": 2012,
    "last": 2012,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "natfika",
@@ -7576,7 +7694,9 @@
    "nm": 189,
    "first": 2012,
    "last": 2012,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [
     {
      "id": "natfika",
@@ -7631,7 +7751,9 @@
    "nm": 0,
    "first": null,
    "last": null,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [],
    "crew2026": {
     "board": "2026-08-08",
@@ -7651,7 +7773,9 @@
    "nm": 0,
    "first": null,
    "last": null,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [],
    "crew2026": {
     "board": "2026-08-08",
@@ -7671,7 +7795,9 @@
    "nm": 0,
    "first": null,
    "last": null,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [],
    "crew2026": {
     "board": "2026-08-15",
@@ -7688,7 +7814,9 @@
    "nm": 0,
    "first": null,
    "last": null,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [],
    "crew2026": {
     "board": "2026-08-15",
@@ -7705,7 +7833,9 @@
    "nm": 0,
    "first": null,
    "last": null,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [],
    "crew2026": {
     "board": "2026-08-15",
@@ -7725,7 +7855,9 @@
    "nm": 0,
    "first": null,
    "last": null,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [],
    "crew2026": {
     "board": "2026-08-21",
@@ -7745,7 +7877,9 @@
    "nm": 0,
    "first": null,
    "last": null,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [],
    "crew2026": {
     "board": "2026-08-21",
@@ -7765,7 +7899,9 @@
    "nm": 0,
    "first": null,
    "last": null,
-   "rank": "recruit",
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
    "trips_list": [],
    "crew2026": {
     "board": "2026-08-22",

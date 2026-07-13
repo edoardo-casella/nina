@@ -158,22 +158,37 @@ def match(name):  # voyage nickname -> registry pid
     cands = [pid for pid, pp in people.items() if norm(pp["nom"]).startswith(first[:4]) and norm(pp["cog"])[:1] == si]
     return max(cands, key=lambda p: len(part.get(p, []))) if cands else None
 
-# gradi navali per giorni in barca
-RANKS = [  # (min_days, id, label)
-    (250, "admiral", "Ammiraglio"),
-    (140, "capt", "Capitano di vascello"),
-    (95,  "cdr", "Capitano di fregata"),
-    (60,  "ltcdr", "Capitano di corvetta"),
-    (35,  "lt", "Tenente di vascello"),
-    (18,  "ltjg", "Sottotenente di vascello"),
-    (7,   "ensign", "Guardiamarina"),
-    (0,   "recruit", "Allievo"),
-]
-def rank_of(days, me=False):
-    if me: return "admiral"
-    for md, rid, _ in RANKS:
-        if days >= md and rid != "admiral": return rid
-    return "recruit"
+# --- DUE CARRIERE DI GRADO --------------------------------------------------
+# COMANDANTI: chi ha preso il comando di una barca -> carriera "capitano" (oro).
+#   Anche al primo comando e' gia' comandante (Capitano di corvetta).
+# ABILITATI: ha la patente ma non ha ancora comandato -> grado "ponte".
+# MARINAI: tutti gli altri -> carriera d'equipaggio (argento), tetto Tenente di vascello.
+COMMANDERS = {"edo-c", "claudio-c", "marco-t", "michele-m", "bernardo-b"}
+ABILITATI = {"riccardo-b", "ilaria-m", "gabri-m"}
+GRADES = {
+    "marinaio": [
+        (0, "mozzo", "Mozzo"), (7, "marinaio", "Marinaio"),
+        (20, "marinaio-scelto", "Marinaio scelto"), (45, "nostromo", "Nostromo"),
+        (80, "sottoten", "Sottotenente di vascello"), (130, "tenente", "Tenente di vascello"),
+    ],
+    "comandante": [
+        (0, "cap-corvetta", "Capitano di corvetta"), (70, "cap-fregata", "Capitano di fregata"),
+        (140, "cap-vascello", "Capitano di vascello"), (220, "contrammiraglio", "Contrammiraglio"),
+        (280, "ammiraglio", "Ammiraglio"),
+    ],
+    "abilitato": [(0, "abilitato", "Abilitato al comando")],
+}
+def track_of(cid, me=False):
+    if me or cid in COMMANDERS: return "comandante"
+    if cid in ABILITATI: return "abilitato"
+    return "marinaio"
+def grade_of(track, days, me=False):
+    ladder = GRADES.get(track, GRADES["marinaio"])
+    g = ladder[0]
+    for step in ladder:
+        if days >= step[0]: g = step
+    if me: g = ladder[-1]   # lo skipper e' all'apice della carriera di comando
+    return g   # (min_days, id, label)
 
 cur = json.loads(io.open(CREWJSON, encoding="utf-8").read())
 # ricostruisce la lista membri 2026 dal file unificato (people con crew2026),
@@ -197,7 +212,8 @@ for m in members:
         if pid: used_pids.add(pid); id2pid[m["id"]] = pid; st = stats(pid); tl = trips_list_for(part.get(pid, []), pid)
         else: st = {"trips": 0, "days": 0, "nm": 0, "first": None, "last": None}; tl = []
     crew2026 = {k: m[k] for k in ("board", "leave", "role", "photo", "nick", "note", "link", "q") if k in m}
-    out.append({"id": m["id"], "name": nm, **st, "rank": rank_of(st["days"], me),
+    tr = track_of(m["id"], me); _, rid, rlab = grade_of(tr, st["days"], me)
+    out.append({"id": m["id"], "name": nm, **st, "rank": rid, "rank_label": rlab, "track": tr,
                 **({"me": True} if me else {}), "trips_list": tl, "crew2026": crew2026})
 # alumni: registro non nel crew 2026
 for p in part:
@@ -207,8 +223,9 @@ for p in part:
     st = stats(p); nm = pname(p)
     pid_id = slugify(nm.replace(".", "")) or ("p" + str(p))
     id2pid[pid_id] = p
-    out.append({"id": pid_id, "name": nm, **st,
-                "rank": rank_of(st["days"]), "trips_list": trips_list_for(part.get(p, []), p)})
+    tr = track_of(pid_id); _, rid, rlab = grade_of(tr, st["days"])
+    out.append({"id": pid_id, "name": nm, **st, "rank": rid, "rank_label": rlab, "track": tr,
+                "trips_list": trips_list_for(part.get(p, []), p)})
 
 # cani di bordo: non sono nel registro Passengers, li aggiungiamo a mano come profili
 # (pet=True li tiene fuori dalla classifica ciurma; avatar auto-agganciato sotto da
@@ -216,13 +233,13 @@ for p in part:
 _DOG_TRIP = {"id": "ondine", "year": 2018, "zone": "Croazia CZ", "country": "Croazia",
              "boat": "Sun Odyssey 519", "nm": 385, "days": 11, "pdays": 11}
 DOGS = [
-    {"id": "agata", "name": "Agata", "pet": True, "rank": "recruit",
+    {"id": "agata", "name": "Agata", "pet": True, "track": "marinaio", "rank": "mozzo", "rank_label": "Mozzo",
      "trips": 1, "days": 11, "nm": 385, "first": 2018, "last": 2018,
      "trips_list": [dict(_DOG_TRIP)],
      "bio": {"epithet": "Mascotte di bordo", "html":
              "<p>Una delle due mascotte a quattro zampe di casa. La Croazia 2018 è stata il suo "
              "battesimo del mare: mare calmo, ritmi lenti e le prime lezioni di rollio.</p>"}},
-    {"id": "leo", "name": "Leo", "pet": True, "rank": "recruit",
+    {"id": "leo", "name": "Leo", "pet": True, "track": "marinaio", "rank": "mozzo", "rank_label": "Mozzo",
      "trips": 1, "days": 11, "nm": 385, "first": 2018, "last": 2018,
      "trips_list": [dict(_DOG_TRIP)],
      "bio": {"epithet": "Mascotte di bordo", "html":
@@ -271,7 +288,7 @@ for x in out:
 
 out.sort(key=lambda x: (-x["days"], -x["trips"]))
 data = {"generated_at": "2026-07-11",
-        "ranks": {rid: lab for _, rid, lab in RANKS},
+        "ranks": {rid: lab for ladder in GRADES.values() for _, rid, lab in ladder},
         "n_total": len(out),
         "people": out}
 io.open(CREWJSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=1))

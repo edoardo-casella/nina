@@ -48,8 +48,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .badge.vet{color:var(--gold);border:1px solid var(--gold)}
 .badge.rookie{color:var(--accent);border:1px solid var(--accent)}
 .rankrow{margin-top:.55rem}
-.rankbadge{display:inline-flex;align-items:center;gap:.35rem;font:700 .6rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:.28rem .6rem .28rem .4rem}
+.rankbadge{display:inline-flex;align-items:center;gap:.35rem;font:700 .6rem/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:.28rem .6rem .28rem .4rem}
 .rankbadge b{font-weight:700}
+.rankbadge.cmd{color:var(--gold);border-color:var(--gold)}
+.rankbadge.abil{color:var(--gold);border-color:var(--gold);border-style:dashed}
 svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 .rankprog{margin-top:.5rem;max-width:16rem}
 .rankprog .rp-bar{height:7px;background:var(--sea-2);border-radius:5px;overflow:hidden;border:1px solid var(--hair)}
@@ -197,46 +199,55 @@ const QFIELDS = [
   ["dieta", "Dieta / allergie"], ["valigia", "Non può mancare"], ["motto", "Motto"], ["funfact", "Fun fact"],
 ];
 
-// gradi navali (mostrine US Navy) per seniority = giorni in mare
-const RANKC = { gold: "#C9A227", silver: "#AEB6BD", edge: "rgba(0,0,0,.35)" };
-const RANK_LABEL = { admiral: "Ammiraglio", capt: "Capitano di vascello", cdr: "Capitano di fregata", ltcdr: "Capitano di corvetta", lt: "Tenente di vascello", ltjg: "Sottotenente di vascello", ensign: "Guardiamarina", recruit: "Allievo" };
+// gradi navali a DUE CARRIERE — insegne argento (marinai) / oro (comandanti)
 function starPath(cx, cy, r) { let p = ""; for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * 0.4 : r; p += (i ? "L" : "M") + (cx + rr * Math.cos(a)).toFixed(1) + " " + (cy + rr * Math.sin(a)).toFixed(1); } return p + "Z"; }
 function rankSVG(r) {
-  const G = RANKC.gold, S = RANKC.silver, E = RANKC.edge;
-  const open = '<svg viewBox="0 0 44 24" class="ins">', bar = (x, c) => `<rect x="${x}" y="4.5" width="5.5" height="15" rx="2" fill="${c}" stroke="${E}" stroke-width=".6"/>`;
+  const G = "#C9A227", S = "#AEB6BD", E = "rgba(0,0,0,.35)";
+  const open = '<svg viewBox="0 0 44 24" class="ins">';
+  const bar = (x, c) => `<rect x="${x}" y="4.5" width="5.5" height="15" rx="2" fill="${c}" stroke="${E}" stroke-width=".6"/>`;
+  const chev = (cy, c) => `<path d="M13,${cy + 5} L22,${cy} L31,${cy + 5}" fill="none" stroke="${c}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>`;
   const leaf = c => `<g transform="translate(22,12)"><path d="M0,-9 C3.2,-5 7,-4 5.6,0 C8,1.6 6.6,6 3,6.6 C3.6,9 0,9 0,9.6 C0,9 -3.6,9 -3,6.6 C-6.6,6 -8,1.6 -5.6,0 C-7,-4 -3.2,-5 0,-9 Z" fill="${c}" stroke="${E}" stroke-width=".6"/><path d="M0,-7 L0,8.6" stroke="${E}" stroke-width=".7" opacity=".45" fill="none"/></g>`;
+  const eagle = c => `<g fill="${c}" stroke="${E}" stroke-width=".5"><path d="M22,10.6 C15,8 7,9.4 3,13 C10,12 16,12.6 22,13.6 C28,12.6 34,12 41,13 C37,9.4 29,8 22,10.6 Z"/><circle cx="22" cy="8.4" r="2"/><path d="M22,6.8 L24.2,8 L22,9.2 Z"/></g>`;
+  const star = x => `<path d="${starPath(x, 12, 4.4)}" fill="${G}" stroke="${E}" stroke-width=".4"/>`;
+  const anchor = c => `<g transform="translate(22,12)" fill="none" stroke="${c}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="-7" r="2.1"/><line x1="0" y1="-4.9" x2="0" y2="7.6"/><path d="M-5.6,2.6 Q0,10.6 5.6,2.6"/><line x1="-3.7" y1="-1.2" x2="3.7" y2="-1.2"/></g>`;
   switch (r) {
-    case "admiral": return open + [7, 18, 29, 40].map(x => `<path d="${starPath(x, 12, 4.4)}" fill="${G}" stroke="${E}" stroke-width=".4"/>`).join("") + "</svg>";
-    case "capt": return open + `<g fill="${S}" stroke="${E}" stroke-width=".5"><path d="M22,10.6 C15,8 7,9.4 3,13 C10,12 16,12.6 22,13.6 C28,12.6 34,12 41,13 C37,9.4 29,8 22,10.6 Z"/><circle cx="22" cy="8.4" r="2"/><path d="M22,6.8 L24.2,8 L22,9.2 Z"/></g></svg>`;
-    case "cdr": return open + leaf(S) + "</svg>";
-    case "ltcdr": return open + leaf(G) + "</svg>";
-    case "lt": return open + bar(16.2, S) + bar(23.2, S) + "</svg>";
-    case "ltjg": return open + bar(19.7, S) + "</svg>";
-    case "ensign": return open + bar(19.7, G) + "</svg>";
+    case "mozzo": return open + anchor(S) + "</svg>";
+    case "marinaio": return open + chev(11, S) + "</svg>";
+    case "marinaio-scelto": return open + chev(8, S) + chev(14, S) + "</svg>";
+    case "nostromo": return open + chev(5, S) + chev(11, S) + chev(17, S) + "</svg>";
+    case "sottoten": return open + bar(19.7, S) + "</svg>";
+    case "tenente": return open + bar(16.2, S) + bar(23.2, S) + "</svg>";
+    case "abilitato": return open + `<circle cx="22" cy="12" r="8.5" fill="none" stroke="${G}" stroke-width="1.4" stroke-dasharray="2.8 2.3"/>` + anchor(G) + "</svg>";
+    case "cap-corvetta": return open + leaf(G) + "</svg>";
+    case "cap-fregata": return open + eagle(G) + "</svg>";
+    case "cap-vascello": return open + star(22) + "</svg>";
+    case "contrammiraglio": return open + star(15) + star(29) + "</svg>";
+    case "ammiraglio": return open + [7, 18, 29, 40].map(star).join("") + "</svg>";
     default: return open + `<circle cx="22" cy="12" r="3.4" fill="none" stroke="${S}" stroke-width="1.5" opacity=".55"/></svg>`;
   }
 }
+const GRADES = {
+  marinaio: [[0, "mozzo", "Mozzo"], [7, "marinaio", "Marinaio"], [20, "marinaio-scelto", "Marinaio scelto"], [45, "nostromo", "Nostromo"], [80, "sottoten", "Sottotenente di vascello"], [130, "tenente", "Tenente di vascello"]],
+  comandante: [[0, "cap-corvetta", "Capitano di corvetta"], [70, "cap-fregata", "Capitano di fregata"], [140, "cap-vascello", "Capitano di vascello"], [220, "contrammiraglio", "Contrammiraglio"], [280, "ammiraglio", "Ammiraglio"]],
+  abilitato: [[0, "abilitato", "Abilitato al comando"]],
+};
 const photoOf = m => (m.crew2026 && m.crew2026.photo) || m.photo || null;
 const avatarP = (m, cls) => photoOf(m)
   ? `<img class="${cls}" src="${photoOf(m)}" alt="${esc(m.name)}" loading="lazy">`
   : `<div class="${cls}">${initial(m)}</div>`;
-const rankBadge = m => `<span class="rankbadge">${rankSVG(m.rank)} <b>${esc(RANK_LABEL[m.rank] || "")}</b></span>`;
-// progressione verso il grado successivo (barra %) — dai giorni di carriera
-const RANK_STEPS_UP = [[0, "recruit"], [7, "ensign"], [18, "ltjg"], [35, "lt"], [60, "ltcdr"], [95, "cdr"], [140, "capt"], [250, "admiral"]];
-function rankProgress(days) {
-  let cur = RANK_STEPS_UP[0], next = null;
-  for (const step of RANK_STEPS_UP) { if (days >= step[0]) cur = step; else { next = step; break; } }
-  if (!next) return { pct: 100, toNext: 0, nextLabel: null };
-  const pct = Math.max(2, Math.min(100, Math.round((days - cur[0]) / (next[0] - cur[0]) * 100)));
-  return { pct, toNext: Math.max(0, Math.ceil(next[0] - days)), nextLabel: RANK_LABEL[next[1]] };
-}
+const rankBadge = m => `<span class="rankbadge ${m.track === "comandante" ? "cmd" : m.track === "abilitato" ? "abil" : ""}">${rankSVG(m.rank)} <b>${esc(m.rank_label || "")}</b></span>`;
+// progressione verso il grado successivo (barra %), DENTRO la propria carriera
 function rankProgHTML(m) {
   if (m.pet) return "";
-  const pr = rankProgress(m.days || 0);
-  const cap = pr.nextLabel
-    ? `${pr.pct}% &middot; ancora <b>${pr.toNext} ${pr.toNext === 1 ? "giorno" : "giorni"}</b> a ${esc(pr.nextLabel)}`
-    : "Grado massimo raggiunto ⚓";
-  return `<div class="rankprog"><div class="rp-bar"><i style="width:${pr.pct}%"></i></div><div class="rp-cap">${cap}</div></div>`;
+  if (m.track === "abilitato") return `<div class="rankprog"><div class="rp-cap">Patente conseguita &middot; in attesa del primo comando</div></div>`;
+  const L = GRADES[m.track] || GRADES.marinaio, days = m.days || 0;
+  let i = 0; for (let k = 0; k < L.length; k++) if (days >= L[k][0]) i = k;
+  const next = L[i + 1] || null;
+  if (!next) return `<div class="rankprog"><div class="rp-bar"><i style="width:100%"></i></div><div class="rp-cap">${m.track === "comandante" ? "Comando al vertice ⚓" : "Vertice della carriera d'equipaggio"}</div></div>`;
+  const cur = L[i];
+  const pct = Math.max(3, Math.min(100, Math.round((days - cur[0]) / (next[0] - cur[0]) * 100)));
+  const toNext = Math.max(0, Math.ceil(next[0] - days));
+  return `<div class="rankprog"><div class="rp-bar"><i style="width:${pct}%"></i></div><div class="rp-cap">${pct}% &middot; ancora <b>${toNext} ${toNext === 1 ? "giorno" : "giorni"}</b> a ${esc(next[2])}</div></div>`;
 }
 
 function memberPage(m, all) {
@@ -284,7 +295,7 @@ function memberPage(m, all) {
       <div class="card">Sale a Cannigione il <b>${fmt(c.board)}</b> e sbarca il <b>${fmt(c.leave)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>
       <h2>Scheda personale</h2>
       ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED La scheda dal <b>questionario equipaggio</b> arriverà qui.<br><a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">Compila il questionario ›</a></div>`}`
-    : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(RANK_LABEL[m.rank] || "")}</b>.</div>`}
+    : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(m.rank_label || "")}</b>.</div>`}
     ${(m.photos && m.photos.length) ? `<h2>📸 Foto</h2><div class="pgal">${m.photos.map(p =>
       `<figure onclick="lbOne('${p.src}')"><img src="${p.src}" alt="${esc(p.caption || m.name)}" loading="lazy"><figcaption><a href="viaggio.html#${p.trip_id}" onclick="event.stopPropagation()">${esc(p.caption || "")}${BOATNAME.get(p.trip_id) ? ` · «${esc(BOATNAME.get(p.trip_id))}»` : ""} ›</a></figcaption></figure>`).join("")}</div>` : ""}
     ${strip ? `<h2>La ciurma 2026</h2><div class="strip">${strip}</div>` : ""}

@@ -189,8 +189,8 @@ function crewChip(name, year) {
   const av = photo ? `<img class="cav" src="${photo}" alt="" loading="lazy">` : `<span class="cav ph">${esc((name || "?").trim()[0])}</span>`;
   let badge = "";
   if (p && year != null) {
-    const rk = rankOfDays(histDays(p, year));
-    badge = `<span class="cg-rank" title="${esc(RANK_LABEL[rk] || "")} · a fine ${year}">${rankSVG(rk)}</span>`;
+    const g = gradeAt(p.track || "marinaio", histDays(p, year));
+    badge = `<span class="cg-rank" title="${esc(g[2])} · a fine ${year}">${rankSVG(g[1])}</span>`;
   }
   if (p) { const href = (p.crew2026 && p.crew2026.link) || `membro.html#${p.id}`; return `<a class="chip lk" href="${href}">${av}<span class="cg-nm">${esc(name)}</span>${badge}</a>`; }
   return `<span class="chip lk"><span class="cav ph">${esc((name || "?").trim()[0])}</span><span class="cg-nm">${esc(name)}</span></span>`;
@@ -205,29 +205,41 @@ function crewChipById(id) {
   return `<a class="chip lk" href="${href}">${av}${esc(p.name)}</a>`;
 }
 
-// --- gradi navali STORICIZZATI (insegne stile US Navy) ---------------------
-// il grado mostrato per l'equipaggio riflette l'esperienza (giorni in barca)
-// accumulata FINO all'anno del viaggio compreso, non il totale di carriera.
-const RANK_STEPS = [[250, "admiral"], [140, "capt"], [95, "cdr"], [60, "ltcdr"], [35, "lt"], [18, "ltjg"], [7, "ensign"], [0, "recruit"]];
-const rankOfDays = d => { for (const [md, id] of RANK_STEPS) if (d >= md) return id; return "recruit"; };
+// --- gradi a DUE CARRIERE, storicizzati -------------------------------------
+// il grado dell'equipaggio riflette la CARRIERA (comandante/marinaio/abilitato,
+// dalla persona) + l'esperienza (giorni) accumulata FINO all'anno del viaggio.
+const GRADES = {
+  marinaio: [[0, "mozzo", "Mozzo"], [7, "marinaio", "Marinaio"], [20, "marinaio-scelto", "Marinaio scelto"], [45, "nostromo", "Nostromo"], [80, "sottoten", "Sottotenente di vascello"], [130, "tenente", "Tenente di vascello"]],
+  comandante: [[0, "cap-corvetta", "Capitano di corvetta"], [70, "cap-fregata", "Capitano di fregata"], [140, "cap-vascello", "Capitano di vascello"], [220, "contrammiraglio", "Contrammiraglio"], [280, "ammiraglio", "Ammiraglio"]],
+  abilitato: [[0, "abilitato", "Abilitato al comando"]],
+};
+function gradeAt(track, days) { const L = GRADES[track] || GRADES.marinaio; let g = L[0]; for (const s of L) if (days >= s[0]) g = s; return g; }
 function histDays(p, year) {
   return ((p && p.trips_list) || []).filter(t => t.year <= year).reduce((s, t) => s + (t.pdays || 0), 0);
 }
-const RANKC = { gold: "#C9A227", silver: "#AEB6BD", edge: "rgba(0,0,0,.35)" };
-const RANK_LABEL = { admiral: "Ammiraglio", capt: "Capitano di vascello", cdr: "Capitano di fregata", ltcdr: "Capitano di corvetta", lt: "Tenente di vascello", ltjg: "Sottotenente di vascello", ensign: "Guardiamarina", recruit: "Allievo" };
 function starPath(cx, cy, r) { let p = ""; for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * 0.4 : r; p += (i ? "L" : "M") + (cx + rr * Math.cos(a)).toFixed(1) + " " + (cy + rr * Math.sin(a)).toFixed(1); } return p + "Z"; }
 function rankSVG(r) {
-  const G = RANKC.gold, S = RANKC.silver, E = RANKC.edge;
-  const open = '<svg viewBox="0 0 44 24" class="ins">', bar = (x, c) => `<rect x="${x}" y="4.5" width="5.5" height="15" rx="2" fill="${c}" stroke="${E}" stroke-width=".6"/>`;
+  const G = "#C9A227", S = "#AEB6BD", E = "rgba(0,0,0,.35)";
+  const open = '<svg viewBox="0 0 44 24" class="ins">';
+  const bar = (x, c) => `<rect x="${x}" y="4.5" width="5.5" height="15" rx="2" fill="${c}" stroke="${E}" stroke-width=".6"/>`;
+  const chev = (cy, c) => `<path d="M13,${cy + 5} L22,${cy} L31,${cy + 5}" fill="none" stroke="${c}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>`;
   const leaf = c => `<g transform="translate(22,12)"><path d="M0,-9 C3.2,-5 7,-4 5.6,0 C8,1.6 6.6,6 3,6.6 C3.6,9 0,9 0,9.6 C0,9 -3.6,9 -3,6.6 C-6.6,6 -8,1.6 -5.6,0 C-7,-4 -3.2,-5 0,-9 Z" fill="${c}" stroke="${E}" stroke-width=".6"/><path d="M0,-7 L0,8.6" stroke="${E}" stroke-width=".7" opacity=".45" fill="none"/></g>`;
+  const eagle = c => `<g fill="${c}" stroke="${E}" stroke-width=".5"><path d="M22,10.6 C15,8 7,9.4 3,13 C10,12 16,12.6 22,13.6 C28,12.6 34,12 41,13 C37,9.4 29,8 22,10.6 Z"/><circle cx="22" cy="8.4" r="2"/><path d="M22,6.8 L24.2,8 L22,9.2 Z"/></g>`;
+  const star = x => `<path d="${starPath(x, 12, 4.4)}" fill="${G}" stroke="${E}" stroke-width=".4"/>`;
+  const anchor = c => `<g transform="translate(22,12)" fill="none" stroke="${c}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="-7" r="2.1"/><line x1="0" y1="-4.9" x2="0" y2="7.6"/><path d="M-5.6,2.6 Q0,10.6 5.6,2.6"/><line x1="-3.7" y1="-1.2" x2="3.7" y2="-1.2"/></g>`;
   switch (r) {
-    case "admiral": return open + [7, 18, 29, 40].map(x => `<path d="${starPath(x, 12, 4.4)}" fill="${G}" stroke="${E}" stroke-width=".4"/>`).join("") + "</svg>";
-    case "capt": return open + `<g fill="${S}" stroke="${E}" stroke-width=".5"><path d="M22,10.6 C15,8 7,9.4 3,13 C10,12 16,12.6 22,13.6 C28,12.6 34,12 41,13 C37,9.4 29,8 22,10.6 Z"/><circle cx="22" cy="8.4" r="2"/><path d="M22,6.8 L24.2,8 L22,9.2 Z"/></g></svg>`;
-    case "cdr": return open + leaf(S) + "</svg>";
-    case "ltcdr": return open + leaf(G) + "</svg>";
-    case "lt": return open + bar(16.2, S) + bar(23.2, S) + "</svg>";
-    case "ltjg": return open + bar(19.7, S) + "</svg>";
-    case "ensign": return open + bar(19.7, G) + "</svg>";
+    case "mozzo": return open + anchor(S) + "</svg>";
+    case "marinaio": return open + chev(11, S) + "</svg>";
+    case "marinaio-scelto": return open + chev(8, S) + chev(14, S) + "</svg>";
+    case "nostromo": return open + chev(5, S) + chev(11, S) + chev(17, S) + "</svg>";
+    case "sottoten": return open + bar(19.7, S) + "</svg>";
+    case "tenente": return open + bar(16.2, S) + bar(23.2, S) + "</svg>";
+    case "abilitato": return open + `<circle cx="22" cy="12" r="8.5" fill="none" stroke="${G}" stroke-width="1.4" stroke-dasharray="2.8 2.3"/>` + anchor(G) + "</svg>";
+    case "cap-corvetta": return open + leaf(G) + "</svg>";
+    case "cap-fregata": return open + eagle(G) + "</svg>";
+    case "cap-vascello": return open + star(22) + "</svg>";
+    case "contrammiraglio": return open + star(15) + star(29) + "</svg>";
+    case "ammiraglio": return open + [7, 18, 29, 40].map(star).join("") + "</svg>";
     default: return open + `<circle cx="22" cy="12" r="3.4" fill="none" stroke="${S}" stroke-width="1.5" opacity=".55"/></svg>`;
   }
 }
