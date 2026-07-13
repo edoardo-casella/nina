@@ -54,10 +54,14 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .mv .de{color:var(--magenta);font-weight:700;flex:none}
 .mv .who{color:var(--ink)}
 /* gantt */
-.axis{display:flex;margin:0 0 .3rem 5.6rem;position:relative;height:14px}
+.axis{display:flex;margin:0 0 .3rem 6.8rem;position:relative;height:14px}
 .axis span{position:absolute;font:600 .58rem/1 var(--mono);color:var(--soft);transform:translateX(-50%)}
 .gline{display:flex;align-items:center;gap:.4rem;padding:.18rem 0}
-.gname{width:5.2rem;flex:none;font-size:.8rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gname{width:6.4rem;flex:none;display:flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600;white-space:nowrap;text-decoration:none;color:inherit;min-width:0}
+.gname .gnm{overflow:hidden;text-overflow:ellipsis;min-width:0}
+a.gname:hover .gnm{color:var(--accent)}
+.gav{width:22px;height:22px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2)}
+.gav.ph{display:flex;align-items:center;justify-content:center;font:700 .66rem/1 var(--display);color:#fff;background:var(--accent)}
 .gtrack{position:relative;flex:1;height:20px;background:var(--sea-1);border-radius:4px;overflow:hidden}
 .gtrack .mark{position:absolute;top:0;bottom:0;width:1px;background:var(--hair)}
 .gbar{position:absolute;top:2px;bottom:2px;border-radius:3px;background:var(--accent);display:flex;align-items:center;padding:0 .35rem;min-width:14px}
@@ -72,7 +76,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .occt{height:46px}
 .ocell{position:absolute;bottom:0;background:var(--accent);border-radius:3px 3px 0 0;display:flex;align-items:center;justify-content:center;min-height:15px;border-right:2px solid var(--paper);overflow:visible}
 .ocell b{font:700 .64rem/1 var(--mono);color:#fff;text-shadow:0 1px 1px rgba(0,0,0,.25)}
-.occap{margin:.45rem 0 0 5.6rem;font-size:.72rem;color:var(--soft)}
+.occap{margin:.45rem 0 0 6.8rem;font-size:.72rem;color:var(--soft)}
 /* roster ciurma — veterani & matricole */
 .rintro{color:var(--soft);font-size:.9rem;margin-bottom:1rem}
 .rmember{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-bottom:1px solid var(--hair);text-decoration:none;color:inherit}
@@ -154,6 +158,11 @@ const SPAN = off(END);
 const fmt = s => day(s).toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" });
 const RL = { skipper: "skipper", apprentice: "aspirante skipper", marinaio: "marinaio" };
 const rc = r => r === "skipper" ? "skip" : r === "apprentice" ? "app" : r === "marinaio" ? "mar" : "";
+// avatar + link al profilo (foto convenzionale crew/img/<slug>.jpg, fallback a iniziale su errore)
+const slug = n => n.toLowerCase().replace(/\s+/g, "-");
+const mhref = m => m.n.startsWith("Edo ") ? "skipper.html" : `membro.html#${slug(m.n)}`;
+function imgFail(el){ const s = document.createElement("span"); s.className = el.className + " ph"; s.textContent = el.dataset.i || "?"; el.replaceWith(s); }
+const avatar = (m, cls) => `<img class="${cls}" src="${m.p || "crew/img/" + slug(m.n) + ".jpg"}" alt="" loading="lazy" data-i="${m.n[0]}" onerror="imgFail(this)">`;
 
 // statistiche
 document.getElementById("stats").innerHTML =
@@ -190,7 +199,7 @@ document.getElementById("axis").innerHTML = ["2026-08-08","2026-08-15","2026-08-
 document.getElementById("gantt").innerHTML = CREW.map(m => {
   const l = off(m.b) / SPAN * 100, w = (off(m.l) - off(m.b)) / SPAN * 100, nights = off(m.l) - off(m.b);
   const marks = ["2026-08-15","2026-08-21","2026-08-22"].map(dt => `<span class="mark" style="left:${off(dt) / SPAN * 100}%"></span>`).join("");
-  return `<div class="gline"><span class="gname">${m.n}</span>
+  return `<div class="gline"><a class="gname" href="${mhref(m)}" title="${m.n}">${avatar(m, "gav")}<span class="gnm">${m.n}</span></a>
     <div class="gtrack">${marks}<div class="gbar ${rc(m.r)}" style="left:${l}%;width:${w}%" title="${m.n}: ${fmt(m.b)} → ${fmt(m.l)} (${nights} notti)"><b>${nights}</b></div></div></div>`;
 }).join("");
 
@@ -214,9 +223,6 @@ document.getElementById("gantt").innerHTML = CREW.map(m => {
 
 // roster: la ciurma per anzianità (veterani prima), badge volte a bordo
 const dshort = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
-const slug = n => n.toLowerCase().replace(/\s+/g, "-");
-const mhref = m => m.n.startsWith("Edo ") ? "skipper.html" : `membro.html#${slug(m.n)}`;
-const av = m => m.p ? `<img class="rav" src="${m.p}" alt="" loading="lazy">` : `<span class="rav ph">${m.n[0]}</span>`;
 document.getElementById("roster").innerHTML = [...CREW]
   .sort((a, b) => b.x - a.x || off(a.b) - off(b.b))
   .map(m => {
@@ -224,7 +230,7 @@ document.getElementById("roster").innerHTML = [...CREW]
     const badge = m.x > 0
       ? `<span class="vet">${m.x}× · dal ${m.fy}</span>`
       : `<span class="rookie">prima volta 🌟</span>`;
-    return `<a class="rmember" href="${mhref(m)}">${av(m)}
+    return `<a class="rmember" href="${mhref(m)}">${avatar(m, "rav")}
       <span class="rmid"><span class="rname">${m.n}${m.r !== "crew" ? ` <em>${RL[m.r] || m.r}</em>` : ""} <span class="rgo">›</span></span>
       <span class="rwhen">${nights} notti · ${dshort(m.b)}–${dshort(m.l)}</span></span>
       ${badge}</a>`;
