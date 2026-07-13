@@ -3881,7 +3881,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/silvano-b.jpg"
   },
   {
    "id": "simona-b",
@@ -6231,7 +6232,8 @@
      "trips": 1,
      "days": 11
     }
-   ]
+   ],
+   "photo": "crew/img/monica-m.jpg"
   },
   {
    "id": "enrico-g",
