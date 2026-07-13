@@ -79,6 +79,17 @@ def load_trips() -> list[dict]:
 
 def build() -> dict:
     trips = load_trips()
+    # ripartizione miglia per paese sui viaggi multi-paese, da site/data/trips.json
+    # (campo nm_by_country generato da scripts/miles_by_country.py dai tracciati GPS).
+    # Qui i trip non hanno id: si mappa per ANNO, applicando SOLO se i paesi del viaggio
+    # combaciano con le chiavi (cosi' un viaggio monopaese dello stesso anno non e' toccato).
+    tj_path = core.ROOT / "site" / "data" / "trips.json"
+    if tj_path.exists():
+        tj = json.loads(tj_path.read_text(encoding="utf-8")).get("trips", [])
+        ybc = {t["year"]: t["nm_by_country"] for t in tj if t.get("nm_by_country")}
+        for t in trips:
+            if t["year"] in ybc and set(clean_countries(t["country"] or "")) == set(ybc[t["year"]]):
+                t["nm_by_country"] = ybc[t["year"]]
     countries = sorted({c for t in trips for c in clean_countries(t["country"] or "")})
     boats = sorted({t["boat"] for t in trips if t["boat"]})
     totals = {

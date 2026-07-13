@@ -235,5 +235,21 @@ def main():
         io.open(TRIPS, "w", encoding="utf-8").write(json.dumps(trips, ensure_ascii=False, indent=2))
         print("iniettato nm_by_country in", TRIPS)
 
+    # inietta anche in skipper.json (fonte di skipper.html): i suoi trip non hanno
+    # id, si mappa per ANNO. Guardia: applica solo se i paesi del viaggio combaciano
+    # con le chiavi (cosi' il 2012 monopaese 'natfika' NON viene toccato, solo stephanie).
+    if "--write-skipper" in sys.argv:
+        SK = os.path.join(ROOT, "site", "data", "skipper.json")
+        sk = json.load(io.open(SK, encoding="utf-8"))
+        ybc = {by_id[tid]["year"]: a["nm_by_country"] for tid, a in audit.items()}
+        n = 0
+        for t in sk.get("trips", []):
+            y = t.get("year"); keys = set((ybc.get(y) or {}).keys())
+            toks = set(x.strip() for x in re.split(r"[-&]", t.get("country") or "") if x.strip())
+            if y in ybc and toks == keys:
+                t["nm_by_country"] = ybc[y]; n += 1
+        io.open(SK, "w", encoding="utf-8").write(json.dumps(sk, ensure_ascii=False, indent=2))
+        print(f"iniettato nm_by_country in {SK} ({n} viaggi)")
+
 if __name__ == "__main__":
     main()

@@ -88,7 +88,11 @@
       "boat": "Sun Odyssey 54",
       "boat_name": "Stephanie",
       "nm": 375,
-      "days": 19.0
+      "days": 19.0,
+      "nm_by_country": {
+        "Greece": 261,
+        "Turkey": 114
+      }
     },
     {
       "year": 2013,
@@ -99,7 +103,11 @@
       "boat": "Sun Odyssey 54",
       "boat_name": "Klaudia",
       "nm": 375,
-      "days": 20.0
+      "days": 20.0,
+      "nm_by_country": {
+        "Greece": 133,
+        "Turkey": 242
+      }
     },
     {
       "year": 2014,
@@ -187,7 +195,12 @@
       "boat": "Lagoon 450",
       "boat_name": "Sorbe",
       "nm": 271,
-      "days": 11.0
+      "days": 11.0,
+      "nm_by_country": {
+        "Saint Vincent": 177,
+        "France": 7,
+        "Saint Lucia": 87
+      }
     },
     {
       "year": 2018,
@@ -231,7 +244,11 @@
       "boat": "Bali 4.1",
       "boat_name": "Alba",
       "nm": 550,
-      "days": 20.0
+      "days": 20.0,
+      "nm_by_country": {
+        "Italy": 414,
+        "France": 136
+      }
     },
     {
       "year": 2021,
@@ -253,7 +270,11 @@
       "boat": "Bali 4.1",
       "boat_name": "Enya",
       "nm": 430,
-      "days": 12.0
+      "days": 12.0,
+      "nm_by_country": {
+        "Italy": 136,
+        "France": 294
+      }
     },
     {
       "year": 2021,
