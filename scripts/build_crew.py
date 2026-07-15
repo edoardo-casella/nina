@@ -67,6 +67,7 @@ NICKS = {
     "pietro-c": ["Callo"],
     "riccardo-t": ["Tugos", "Tugno", "Ricky"],
     "sara-b": ["Magu"],
+    "silvano-b": ["Nanu"],
     "tonino-l": ["Tony"],
     "umberto-f": ["Umbe", "Fasa"],
 }
