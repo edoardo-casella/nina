@@ -176,6 +176,16 @@ leggenda di bordo, con spiegazione) → domanda "Che tipo di storia è?". Le
 leggende appartengono alla community Crewin, non alla Niña (testo sezione).
 Gli aneddoti degli utenti si scrivono in stile blog: byline + contesto.
 
+**Like sugli aneddoti (Supabase, progetto `nina-crewin` ref `omxohvtjeanbdbxrdenx`,
+free tier)**: tabella `nina_likes` (unique anecdote_id+device_id), RLS insert-only per
+`anon` (serve il GRANT insert oltre alla policy), conteggi via vista `nina_likes_counts`
+(owner-rights). Client in aneddoti.html: chiave anon PUBBLICA nel sorgente (by design),
+POST semplice (409 = già votato — NON usare on_conflict/ignore-duplicates: con RLS
+senza policy select fallisce 42501), un like per dispositivo (`nina_device` +
+`nina_liked` in localStorage), conteggi patchati nel DOM da `loadLikes()`. Il sw
+ignora le richieste cross-origin (guard `url.origin !== location.origin`).
+Gestione DB via MCP Supabase (execute_sql/apply_migration).
+
 ## Piano di avvio (PROMPT.md) — stato
 
 Una cosa per volta, ogni passo confermato dallo skipper:

@@ -133,6 +133,14 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 .wall .avs .pav:first-child{margin-left:0}
 .wall .wtxt{flex:1;min-width:12rem;font-size:.92rem}
 .wall .ctabtn{white-space:nowrap}
+.likebtn{display:inline-flex;align-items:center;gap:.32rem;background:var(--panel);border:1px solid var(--hair);border-radius:99px;padding:.32rem .6rem;cursor:pointer;font:700 .72rem/1 var(--display);color:var(--soft)}
+.likebtn:hover{border-color:var(--accent);color:var(--accent)}
+.likebtn.on{border-color:var(--accent);color:var(--accent)}
+.likebtn.big{font-size:.85rem;padding:.5rem .85rem}
+.likebtn span:empty{display:none}
+.acard .likebtn{position:absolute;top:.7rem;right:.7rem}
+.likerow{display:flex;align-items:center;gap:.7rem;margin:1rem 0 .4rem}
+.likehint{font-size:.82rem;color:var(--soft)}
 </style>
 </head>
 <body>
@@ -186,6 +194,42 @@ function byline(a){
   const co = (a.coautori || []).map(id => `${avatarMini(id, "pav")} ${authorLink(id)}`).join(", ");
   return `<div class="abyline">${avatarMini(a.autore, "pav")}<span>✍️ ${who}${co ? ` · con la versione di ${co}` : ""}</span></div>`;
 }
+// --- like condivisi (Supabase, chiave anon PUBBLICA per design: RLS = solo insert) ---
+const LIKES_API = "https://omxohvtjeanbdbxrdenx.supabase.co/rest/v1";
+const LIKES_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9teG9odnRqZWFuYmRieHJkZW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxMzQ0ODAsImV4cCI6MjA5OTcxMDQ4MH0.1b6pejXL4kI7PzQEJbz1a5lrsxVylm5wmW71Uvu7Jlo";
+let LIKES = new Map();
+const likedSet = new Set(JSON.parse(localStorage.getItem("nina_liked") || "[]"));
+function deviceId(){
+  let d = localStorage.getItem("nina_device");
+  if (!d) { d = (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2) + "-" + Date.now()); localStorage.setItem("nina_device", d); }
+  return d;
+}
+function likeBtn(id, big){
+  const n = LIKES.get(id) || 0, on = likedSet.has(id);
+  return `<button class="likebtn${on ? " on" : ""}${big ? " big" : ""}" data-like="${id}" onclick="likeAnec(event,'${id}')" title="${on ? "Ti piace" : "Metti un like"}">${on ? "❤️" : "🤍"}<span>${n || ""}</span></button>`;
+}
+function likeAnec(e, id){
+  e.preventDefault(); e.stopPropagation();
+  if (likedSet.has(id)) return;
+  likedSet.add(id); localStorage.setItem("nina_liked", JSON.stringify([...likedSet]));
+  LIKES.set(id, (LIKES.get(id) || 0) + 1);
+  document.querySelectorAll(`[data-like="${id}"]`).forEach(b => { b.classList.add("on"); b.title = "Ti piace"; b.innerHTML = `❤️<span>${LIKES.get(id)}</span>`; });
+  fetch(`${LIKES_API}/nina_likes`, { method: "POST",
+    headers: { apikey: LIKES_KEY, Authorization: "Bearer " + LIKES_KEY, "Content-Type": "application/json" },
+    body: JSON.stringify({ anecdote_id: id, device_id: deviceId() })
+  }).catch(() => {});   // offline: il like resta locale; 409 = gia' registrato, va bene cosi'
+}
+async function loadLikes(){
+  try {
+    const r = await fetch(`${LIKES_API}/nina_likes_counts?select=*`, { headers: { apikey: LIKES_KEY } });
+    if (!r.ok) return;
+    LIKES = new Map((await r.json()).map(x => [x.anecdote_id, x.likes]));
+    document.querySelectorAll("[data-like]").forEach(b => {
+      const id = b.dataset.like, n = LIKES.get(id) || 0;
+      b.innerHTML = `${likedSet.has(id) ? "❤️" : "🤍"}<span>${n || ""}</span>`;
+    });
+  } catch (err) { /* senza rete i contatori restano vuoti */ }
+}
 // versione di un coautore: blocco firmato con la sua faccia
 function versionBlock(v){
   const m = PEOPLE.get(v.autore);
@@ -233,6 +277,7 @@ function detailPage(a){
     <section>
       ${byline(a)}
       ${incidentBlock(a)}
+      <div class="likerow">${likeBtn(a.id, true)}<span class="likehint">Ti ha fatto ridere? Lascia un like all'aneddoto.</span></div>
       ${credits}
       <div class="anav">
         ${prev ? `<a href="#${prev.id}"><small>‹ Precedente</small>${esc(prev.title)}</a>` : "<span></span>"}
@@ -250,6 +295,7 @@ function card(a){
     <div class="meta">${flagMeta(a)}</div>
     ${avs ? `<div class="avs">${avs}</div>` : ""}
     ${cardBy(a)}
+    ${likeBtn(a.id)}
     <span class="go">›</span></a>`;
 }
 
@@ -304,6 +350,7 @@ Promise.all([
   (dc.people || []).forEach(p => PEOPLE.set(p.id, p));
   (dt.trips || []).forEach(t => TRIPS.set(t.id, t));
   route();
+  loadLikes();   // conteggi like da Supabase (patch del DOM quando arrivano)
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Aneddoti non disponibili offline.</p></section>`; });
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
