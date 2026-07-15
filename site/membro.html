@@ -152,6 +152,14 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 .srow .sn{flex:1;min-width:0}.srow .sn b{display:block;font-size:.9rem}.srow .sn small{color:var(--soft);font-size:.72rem}
 .srow .sins .ins{display:block;height:16px;width:28px;overflow:visible}
 .srow .srk{font:700 .58rem/1.2 var(--display);letter-spacing:.07em;text-transform:uppercase;color:var(--soft);text-align:right;max-width:6.5rem}
+.qhint{margin:-.2rem 0 .55rem;font-size:.85rem;color:var(--soft)}
+.qchips{display:flex;flex-wrap:wrap;gap:.45rem}
+.qchip{display:inline-flex;align-items:center;gap:.4rem;background:var(--panel);border:1px solid var(--hair);border-radius:99px;padding:.42rem .75rem;cursor:pointer;font:600 .8rem/1 var(--body);color:inherit}
+.qchip:hover{border-color:var(--accent)}
+.qchip.on{border-color:var(--accent);color:var(--accent);font-weight:700}
+.qchip .qn{font:700 .68rem/1 var(--display);color:var(--soft);background:var(--sea-2);border-radius:99px;padding:.16rem .4rem}
+.qchip.on .qn{color:var(--accent)}
+.qchip .qn:empty{display:none}
 </style>
 </head>
 <body>
@@ -217,6 +225,51 @@ function compChip(cp, all) {
   return `<a class="cchip" href="${href}">${av}<span class="cn">${esc(cp.name)}<small>${parts.join(" · ")}</small></span></a>`;
 }
 function lbOne(src){ const lb=document.getElementById('lb'); lb.querySelector('img').src=src; lb.classList.add('on'); }
+// --- qualita' votabili dai visitatori (Supabase, stessa base dei like degli aneddoti;
+//     vocabolario CHIUSO, enforced anche server-side nella policy RLS) ---
+const Q_API = "https://omxohvtjeanbdbxrdenx.supabase.co/rest/v1";
+const Q_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9teG9odnRqZWFuYmRieHJkZW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxMzQ0ODAsImV4cCI6MjA5OTcxMDQ4MH0.1b6pejXL4kI7PzQEJbz1a5lrsxVylm5wmW71Uvu7Jlo";
+const QUALITIES = ["Mano ferma al timone", "Stratega di rotta", "Nervi saldi in burrasca", "Cuoco di bordo",
+  "Barman di rada", "Ciapinaro — risolve tutto", "Pesca miracolosa", "Tuffi da paura",
+  "Anima della festa", "Polleggio assoluto", "Occhio fotografico", "Jolly infaticabile"];
+let QVOTES = new Map();   // quality -> voti, del profilo correntemente aperto
+function qDeviceId(){
+  let d = localStorage.getItem("nina_device");
+  if (!d) { d = (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2) + "-" + Date.now()); localStorage.setItem("nina_device", d); }
+  return d;
+}
+const qVoted = () => JSON.parse(localStorage.getItem("nina_q_voted") || "{}");
+function renderQchips(mid){
+  const box = document.getElementById("qchips");
+  if (!box) return;
+  const mine = new Set(qVoted()[mid] || []);
+  const sorted = QUALITIES.slice().sort((a, b) => (QVOTES.get(b) || 0) - (QVOTES.get(a) || 0));
+  box.innerHTML = sorted.map(q => {
+    const n = QVOTES.get(q) || 0, on = mine.has(q);
+    return `<button class="qchip${on ? " on" : ""}" data-q="${esc(q)}" title="${on ? "Votata da te" : "Vota questa qualità"}" onclick="voteQuality(event,'${mid}',this.dataset.q)">${esc(q)}<span class="qn">${n || ""}</span></button>`;
+  }).join("");
+}
+async function loadQualities(mid){
+  try {
+    const r = await fetch(`${Q_API}/nina_qualities_counts?member_id=eq.${encodeURIComponent(mid)}&select=quality,votes`, { headers: { apikey: Q_KEY } });
+    if (!r.ok) return;
+    QVOTES = new Map((await r.json()).map(x => [x.quality, x.votes]));
+    renderQchips(mid);
+  } catch (err) { /* offline: chip senza conteggi */ }
+}
+function voteQuality(e, mid, q){
+  e.preventDefault();
+  const v = qVoted();
+  if ((v[mid] || []).includes(q)) return;
+  v[mid] = [...(v[mid] || []), q];
+  localStorage.setItem("nina_q_voted", JSON.stringify(v));
+  QVOTES.set(q, (QVOTES.get(q) || 0) + 1);
+  renderQchips(mid);
+  fetch(`${Q_API}/nina_qualities`, { method: "POST",
+    headers: { apikey: Q_KEY, Authorization: "Bearer " + Q_KEY, "Content-Type": "application/json" },
+    body: JSON.stringify({ member_id: mid, quality: q, device_id: qDeviceId() })
+  }).catch(() => {});   // offline: resta locale; 409 = gia' votata, va bene cosi'
+}
 // espandi/comprimi una galleria clippata (stessa semantica di toggleGallery in skipper.html)
 function toggleClip(btn) {
   const g = document.getElementById(btn.dataset.target);
@@ -309,6 +362,9 @@ function memberPage(m, all) {
     ${(m.trips_list && m.trips_list.length) ? `<h2>⛵ I viaggi insieme</h2><div class="tlog">${m.trips_list.map(tripRow).join("")}</div>` : ""}
     ${(FLEET.get(m.id) || []).length ? `<h2>🚩 In flotta insieme</h2><p style="color:var(--soft);font-size:.86rem;margin:-.3rem 0 .7rem">Non a bordo con l'Ammiraglio, ma in navigazione a fianco su un'altra barca — quindi fuori dai conteggi di giorni, miglia e grado.</p><div class="tlog">${(FLEET.get(m.id) || []).map(fleetRow).join("")}</div>` : ""}
     ${(m.companions && m.companions.length) ? `<h2>🔗 Con chi ha navigato di più</h2><div class="cchips">${m.companions.map(cp => compChip(cp, all)).join("")}</div>` : ""}
+    ${m.pet ? "" : `<h2>🏅 Le qualità secondo l'equipaggio</h2>
+    <p class="qhint">Vota le qualità di ${esc(m.name)} — un tocco per qualità, i conteggi sono di tutta la community.</p>
+    <div class="qchips" id="qchips"></div>`}
     ${anecFor(m.id).length ? `<h2>📖 Aneddoti</h2><div class="tlog">${anecFor(m.id).map(anecRow).join("")}</div>` : ""}
     ${m.pet ? "" : `<p class="ctaform"><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform?usp=pp_url&entry.929369460=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">📖 Racconta un aneddoto con ${esc(m.name)} ›</a><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSeddGG04_P3nrYI33cq2XGcqmPoqklj6DSmslrF-XDAj5luNw/viewform?usp=pp_url&entry.1740816767=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">✏️ Aggiungi qualcosa al profilo ›</a></p>`}
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
@@ -360,6 +416,7 @@ function route() {
   const m = DATA.find(x => x.id === id);
   if (m && m.crew2026 && m.crew2026.link) { location.replace(m.crew2026.link); return; }
   document.getElementById("app").innerHTML = m ? memberPage(m, DATA) : directory(DATA);
+  if (m && !m.pet) { QVOTES = new Map(); renderQchips(m.id); loadQualities(m.id); }
   window.scrollTo(0, 0);
 }
 window.addEventListener("hashchange", route);

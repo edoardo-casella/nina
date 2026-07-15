@@ -186,6 +186,14 @@ senza policy select fallisce 42501), un like per dispositivo (`nina_device` +
 ignora le richieste cross-origin (guard `url.origin !== location.origin`).
 Gestione DB via MCP Supabase (execute_sql/apply_migration).
 
+**Qualità votabili sui profili** (stessa base): tabella `nina_qualities` (unique
+member_id+quality+device_id), **vocabolario CHIUSO di 12 qualità enforced nella
+policy RLS** (client senza testo libero); vista `nina_qualities_counts`. Client in
+membro.html: sezione "🏅 Le qualità secondo l'equipaggio" (skip per i cani `m.pet`),
+chip ordinate per voti, un voto per qualità per dispositivo (`nina_q_voted`).
+Per AGGIUNGERE una qualità: migrazione che ricrea la policy con la lista nuova +
+aggiornare `QUALITIES` in membro.html — le due liste devono restare identiche.
+
 ## Piano di avvio (PROMPT.md) — stato
 
 Una cosa per volta, ogni passo confermato dallo skipper:
