@@ -1,5 +1,12 @@
 # Lancio crewin.it — runbook
 
+> **STATO 2026-07-15 — FASE A COMPLETATA (live senza dominio).** Area riservata attiva su
+> `https://edoardo-casella.github.io/nina/` — Supabase progetto **Plancia** (`nlbhhzjimsxakcugmrdy`,
+> Frankfurt): schema+RLS applicati, auth configurata (magic link → auth-callback), seed fatto
+> (edo-c admin + 2 email Jotform, 17 profili), secret CI attivi (upsert conti/arrivi = keep-alive),
+> RLS verificata (anonimo = 0 righe). Email: mailer integrato Supabase (~2-4/h) finché non c'è Resend.
+> **Restano: la Fase B qui sotto (dominio) + nota due-progetti in fondo.**
+
 Porta il sito da `edoardo-casella.github.io/nina` a **crewin.it** con area riservata
 (login magic-link, Supabase free). Il codice è già pronto sul branch: questo file è la
 sequenza dei passi — quelli marcati **[EDO]** sono manuali, il resto è verificabile da Claude Code.
@@ -102,6 +109,18 @@ Verifica: in Supabase Table Editor `members` ha lo skipper admin + le email Jotf
 | **Totale** | **~5 €** | **~15 €** |
 
 Upgrade solo se servono: Supabase Pro (25 $/mese) per backup automatici; GitHub Pro per repo privato.
+
+## Nota: DUE progetti Supabase (2026-07-15)
+
+Il sito usa due progetti su due account Supabase distinti:
+1. **Plancia** (`nlbhhzjimsxakcugmrdy`, account GitHub-login) — area riservata. Keep-alive: CI 2x/die.
+2. **nina-crewin** (`omxohvtjeanbdbxrdenx`, account preesistente con GestioneCondomini, connettore
+   claude.ai) — **like degli aneddoti** (tabella `nina_likes`, anon key hardcoded in aneddoti.html).
+   ⚠️ NESSUN keep-alive: senza traffico per 7 giorni il free tier lo PAUSA e i like spariscono
+   in silenzio (contatori a zero/offline). Opzioni: (a) consolidare i like dentro Plancia
+   (tabella+vista+RLS migrate, ripuntare LIKES_API, poi dismettere nina-crewin) — consigliato;
+   (b) aggiungere in update.yml un ping alla REST di nina-crewin. NON dismettere nina-crewin
+   prima di aver migrato i like.
 
 ## Note di sicurezza
 
