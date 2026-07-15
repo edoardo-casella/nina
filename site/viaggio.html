@@ -82,6 +82,16 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .chip.me{border-color:var(--gold);color:var(--gold);font-weight:700}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
 .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;cursor:pointer;background:var(--sea-2);display:block}
+/* galleria compatta: max ~3 righe desktop / 4 mobile, il resto dietro "Mostra tutte" */
+.gal.clip img:nth-child(n+13){display:none}
+@media(max-width:560px){.gal.clip img:nth-child(n+9){display:none}}
+.cm-toggle{display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;background:var(--panel);border:1px solid var(--hair);color:var(--soft);
+  font:700 .64rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:.55rem .95rem;border-radius:99px;cursor:pointer}
+.cm-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.cm-toggle .chev{font-size:.72em;transition:transform .15s}
+.cm-toggle .chev.up{transform:rotate(180deg)}
+.m-only{display:none!important}
+@media(max-width:560px){.m-only{display:inline-flex!important}}
 .noph{background:var(--sea-1);border:1px dashed var(--hair);border-radius:5px;padding:1rem;color:var(--soft);font-size:.9rem;text-align:center}
 .plink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
 .plink:hover{color:var(--accent)}
@@ -165,6 +175,14 @@ const itCountry = c => parts(c).map(p => IT_NAME[p] || p).join(" · ");
 
 let LB = [], LBi = 0;
 function openLB(list, i) { LB = list; LBi = i; showLB(); document.getElementById("lb").classList.add("on"); }
+// espandi/comprimi una galleria clippata (stessa semantica di toggleGallery in skipper.html)
+function toggleClip(btn) {
+  const g = document.getElementById(btn.dataset.target);
+  if (!g) return;
+  const expanding = g.classList.contains("clip");
+  g.classList.toggle("clip");
+  btn.innerHTML = expanding ? 'Mostra meno <span class="chev up">▾</span>' : btn.dataset.label + ' <span class="chev">▾</span>';
+}
 function showLB() {
   const lb = document.getElementById("lb");
   const cur = LB[LBi] || {};
@@ -277,8 +295,14 @@ function tripPage(t, all) {
     ? `<p class="crewnote">Due equipaggi si sono alternati nello stesso itinerario.</p><div class="crewturns">${t.crew_groups.map(g => `<div class="crewturn"><h3>${esc(g.label)}<span>${g.days} giorni</span></h3><div class="crewgrid">${(g.crew || []).map(n => crewChip(n, t.year)).join("")}</div></div>`).join("")}</div>`
     : `<div class="crewgrid">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>`;
   const galId = "g_" + t.id.replace(/-/g, "_");   // niente trattini: window.g_all_in valido (non g_all-in)
-  const gal = t.photos && t.photos.length
-    ? `<div class="gal">${t.photos.map((p, i) => `<img src="${p.src}" alt="${esc(zone)} ${t.year}" loading="lazy" onclick="openLB(window.${galId},${i})">`).join("")}</div>`
+  // galleria compatta: clip CSS a 12 foto (8 su mobile) + "Mostra tutte"; il lightbox
+  // naviga comunque l'array completo (gli indici non cambiano, le foto sono solo display:none)
+  const nph = (t.photos || []).length;
+  const galBtn = nph > 8
+    ? `<button class="cm-toggle${nph <= 12 ? " m-only" : ""}" type="button" data-label="Mostra tutte le foto (${nph})" data-target="tripgal" onclick="toggleClip(this)">Mostra tutte le foto (${nph}) <span class="chev">▾</span></button>`
+    : "";
+  const gal = nph
+    ? `<div class="gal${nph > 8 ? " clip" : ""}" id="tripgal">${t.photos.map((p, i) => `<img src="${p.src}" alt="${esc(zone)} ${t.year}" loading="lazy" onclick="openLB(window.${galId},${i})">`).join("")}</div>${galBtn}`
     : `<div class="noph">Nessuna foto per questo viaggio… ancora. 📷</div>`;
   window[galId] = (t.photos || []).map(p => ({ src: p.src, people: p.people || [] }));
   return `

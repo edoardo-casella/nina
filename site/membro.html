@@ -116,6 +116,16 @@ svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 .pgal figcaption{margin-top:.28rem;font:700 .56rem/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase}
 .pgal figcaption a{color:var(--soft);text-decoration:none}
 .pgal figcaption a:hover{color:var(--accent)}
+/* galleria compatta: max ~3 righe desktop / 4 mobile, il resto dietro "Mostra tutte" */
+.pgal.clip figure:nth-child(n+13){display:none}
+@media(max-width:560px){.pgal.clip figure:nth-child(n+9){display:none}}
+.cm-toggle{display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;background:var(--panel);border:1px solid var(--hair);color:var(--soft);
+  font:700 .64rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:.55rem .95rem;border-radius:99px;cursor:pointer}
+.cm-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.cm-toggle .chev{font-size:.72em;transition:transform .15s}
+.cm-toggle .chev.up{transform:rotate(180deg)}
+.m-only{display:none!important}
+@media(max-width:560px){.m-only{display:inline-flex!important}}
 .mcard{background:var(--panel);border:1px solid var(--hair);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block}
 .mcard .ph{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 2.6rem/1 var(--display);color:#fff}
 .mcard .b{padding:.6rem .7rem}
@@ -205,6 +215,14 @@ function compChip(cp, all) {
   return `<a class="cchip" href="${href}">${av}<span class="cn">${esc(cp.name)}<small>${parts.join(" · ")}</small></span></a>`;
 }
 function lbOne(src){ const lb=document.getElementById('lb'); lb.querySelector('img').src=src; lb.classList.add('on'); }
+// espandi/comprimi una galleria clippata (stessa semantica di toggleGallery in skipper.html)
+function toggleClip(btn) {
+  const g = document.getElementById(btn.dataset.target);
+  if (!g) return;
+  const expanding = g.classList.contains("clip");
+  g.classList.toggle("clip");
+  btn.innerHTML = expanding ? 'Mostra meno <span class="chev up">▾</span>' : btn.dataset.label + ' <span class="chev">▾</span>';
+}
 (function(){ const lb=document.getElementById('lb'); lb.querySelector('.x').onclick=()=>lb.classList.remove('on'); lb.onclick=e=>{ if(e.target!==lb.querySelector('.x')) lb.classList.remove('on'); }; document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); }); })();
 const day = s => new Date(s + "T12:00");
 const fmt = s => day(s).toLocaleDateString("it", { day: "numeric", month: "long" });
@@ -289,8 +307,8 @@ function memberPage(m, all) {
       <h2>Scheda personale</h2>
       ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED La scheda dal <b>questionario equipaggio</b> arriverà qui.<br><a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">Compila il questionario ›</a></div>`}`
     : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(m.rank_label || "")}</b>.</div>`}
-    ${(m.photos && m.photos.length) ? `<h2>📸 Foto</h2><div class="pgal">${m.photos.map(p =>
-      `<figure onclick="lbOne('${p.src}')"><img src="${p.src}" alt="${esc(p.caption || m.name)}" loading="lazy"><figcaption><a href="viaggio.html#${p.trip_id}" onclick="event.stopPropagation()">${esc(p.caption || "")}${BOATNAME.get(p.trip_id) ? ` · «${esc(BOATNAME.get(p.trip_id))}»` : ""} ›</a></figcaption></figure>`).join("")}</div>` : ""}
+    ${(m.photos && m.photos.length) ? `<h2>📸 Foto</h2><div class="pgal${m.photos.length > 8 ? " clip" : ""}" id="pgal">${m.photos.map(p =>
+      `<figure onclick="lbOne('${p.src}')"><img src="${p.src}" alt="${esc(p.caption || m.name)}" loading="lazy"><figcaption><a href="viaggio.html#${p.trip_id}" onclick="event.stopPropagation()">${esc(p.caption || "")}${BOATNAME.get(p.trip_id) ? ` · «${esc(BOATNAME.get(p.trip_id))}»` : ""} ›</a></figcaption></figure>`).join("")}</div>${m.photos.length > 8 ? `<button class="cm-toggle${m.photos.length <= 12 ? " m-only" : ""}" type="button" data-label="Mostra tutte le foto (${m.photos.length})" data-target="pgal" onclick="toggleClip(this)">Mostra tutte le foto (${m.photos.length}) <span class="chev">▾</span></button>` : ""}` : ""}
     ${strip ? `<h2>La ciurma 2026</h2><div class="strip">${strip}</div>` : ""}
   </section>
   <footer><a class="pl" href="${c ? "arrivi.html" : "skipper.html"}">‹ ${c ? "Torna alla ciurma" : "Torna alla classifica"}</a></footer>`;
