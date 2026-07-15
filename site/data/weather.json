@@ -1,35 +1,7 @@
 {
-  "generated_at": "2026-07-15T22:36+02:00",
+  "generated_at": "2026-07-16T00:42+02:00",
   "waypoint": "Cannigione",
   "hours": [
-    {
-      "time": "2026-07-15T22:00",
-      "tws": 3.5,
-      "twd": 289,
-      "gust": 15.0,
-      "rain": 0.0,
-      "temp": 30.1,
-      "rh": 50,
-      "wmo": 1,
-      "wave": 0.24,
-      "wave_dir": 285,
-      "wave_period": 3.0,
-      "sst": 26.6
-    },
-    {
-      "time": "2026-07-15T23:00",
-      "tws": 4.5,
-      "twd": 272,
-      "gust": 15.7,
-      "rain": 0.0,
-      "temp": 29.5,
-      "rh": 48,
-      "wmo": 1,
-      "wave": 0.26,
-      "wave_dir": 285,
-      "wave_period": 3.0,
-      "sst": 26.5
-    },
     {
       "time": "2026-07-16T00:00",
       "tws": 3.5,
@@ -673,24 +645,37 @@
       "wave_dir": 298,
       "wave_period": 2.65,
       "sst": 27.2
+    },
+    {
+      "time": "2026-07-17T22:00",
+      "tws": 4.4,
+      "twd": 315,
+      "gust": 9.7,
+      "rain": 0.0,
+      "temp": 30.4,
+      "rh": 65,
+      "wmo": 0,
+      "wave": 0.32,
+      "wave_dir": 300,
+      "wave_period": 2.7,
+      "sst": 27.1
+    },
+    {
+      "time": "2026-07-17T23:00",
+      "tws": 6.0,
+      "twd": 308,
+      "gust": 11.7,
+      "rain": 0.0,
+      "temp": 29.5,
+      "rh": 68,
+      "wmo": 0,
+      "wave": 0.42,
+      "wave_dir": 301,
+      "wave_period": 2.8,
+      "sst": 27.1
     }
   ],
   "astro": [
-    {
-      "date": "2026-07-15",
-      "sunrise": "06:02",
-      "sunset": "20:53",
-      "sunrise_az": 60,
-      "sunset_az": 300,
-      "moonrise": "06:58",
-      "moonset": "21:58",
-      "moonrise_az": 61,
-      "moonset_az": 295,
-      "moon_deg": 7.96,
-      "name": "Luna nuova",
-      "emoji": "🌑",
-      "illum_pct": 0
-    },
     {
       "date": "2026-07-16",
       "sunrise": "06:03",
@@ -765,6 +750,21 @@
       "name": "Primo quarto",
       "emoji": "🌓",
       "illum_pct": 35
+    },
+    {
+      "date": "2026-07-21",
+      "sunrise": "06:07",
+      "sunset": "20:49",
+      "sunrise_az": 62,
+      "sunset_az": 298,
+      "moonrise": "14:03",
+      "moonset": "00:21",
+      "moonrise_az": 111,
+      "moonset_az": 246,
+      "moon_deg": 84.39,
+      "name": "Primo quarto",
+      "emoji": "🌓",
+      "illum_pct": 45
     }
   ]
 }

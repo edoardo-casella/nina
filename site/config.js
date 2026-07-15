@@ -1,6 +1,6 @@
 // Config dell'area riservata (Supabase). Placeholder vuoti = area riservata
 // SPENTA: il sito pubblico funziona identico e nessuna UI di login compare.
-// Al go-live (vedi docs/LANCIO-CREWIN.md) si riempiono URL e anon key.
+// Al go-live (vedi docs/LANCIO-EVERYWAVES.md) si riempiono URL e anon key.
 // La anon key è pubblica per costruzione: la sicurezza sta nelle policy RLS.
 window.NINA_CONFIG = {
   SUPABASE_URL: "https://nlbhhzjimsxakcugmrdy.supabase.co",

@@ -1,4 +1,4 @@
-"""Seed una-tantum dell'area riservata Supabase (vedi docs/LANCIO-CREWIN.md).
+"""Seed una-tantum dell'area riservata Supabase (vedi docs/LANCIO-EVERYWAVES.md).
 
 Carica:
   - members : lo skipper (admin) + le email note dallo staging Jotform

@@ -173,7 +173,7 @@ directory sono ordinate per `added` desc; in cima c'è il "muro degli autori"
 (avatar + "X e Y hanno già messo a registro N storie — l'ultima <data>") con CTA
 al form. Il form aneddoti chiede anche il TIPO (errore fatale / atto eroico /
 leggenda di bordo, con spiegazione) → domanda "Che tipo di storia è?". Le
-leggende appartengono alla community Crewin, non alla Niña (testo sezione).
+leggende appartengono alla community Everywaves, non alla Niña (testo sezione).
 Gli aneddoti degli utenti si scrivono in stile blog: byline + contesto.
 
 **Like sugli aneddoti (Supabase, progetto `nina-crewin` ref `omxohvtjeanbdbxrdenx`,
