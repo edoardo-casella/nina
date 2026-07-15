@@ -132,6 +132,14 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .ctaform{margin:.2rem 0 1rem;display:flex;flex-wrap:wrap;gap:.5rem}
 .ctabtn{display:inline-block;background:var(--sea-1);border:1px solid var(--hair);border-radius:7px;padding:.55rem .9rem;font-weight:600;font-size:.88rem}
+.srows{display:flex;flex-direction:column;gap:.35rem;margin-top:.6rem}
+.srow{display:flex;align-items:center;gap:.6rem;background:var(--panel);border:1px solid var(--hair);border-radius:7px;padding:.45rem .6rem;color:inherit;text-decoration:none}
+.srow:hover{border-color:var(--accent)}
+.srow .pos{font:700 .72rem/1 var(--display);color:var(--soft);min-width:1.7rem;text-align:right}
+.srow .cav{width:34px;height:34px;border-radius:50%;object-fit:cover;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font-weight:700;flex:none}
+.srow .sn{flex:1;min-width:0}.srow .sn b{display:block;font-size:.9rem}.srow .sn small{color:var(--soft);font-size:.72rem}
+.srow .sins .ins{display:block;height:16px;width:28px;overflow:visible}
+.srow .srk{font:700 .58rem/1.2 var(--display);letter-spacing:.07em;text-transform:uppercase;color:var(--soft);text-align:right;max-width:6.5rem}
 </style>
 </head>
 <body>
@@ -296,10 +304,23 @@ function directory(all) {
     const href = c.link || `#${m.id}`;
     return `<a class="mcard" href="${href}">${avatarP(m, "ph")}<div class="b"><b>${esc(m.name)}</b><span>${esc(roleLabel(c.role))}</span><br>${badge}</div></a>`;
   }).join("");
-  return `<div class="mhero"><div class="mhd"><div class="role">Equipaggio · Niña 2026</div>
-    <h1>La ciurma</h1><div class="nick">Una scheda per ognuno: foto, giorni insieme, grado e — presto — i dati dal questionario.</div></div></div>
-    <section><h2>I membri</h2><div class="grid">${cards}</div>
-    <p style="margin-top:1rem;font-size:.85rem;color:var(--soft)">Vedi anche <a href="arrivi.html">arrivi &amp; partenze</a> e la <a href="skipper.html">classifica completa coi gradi</a>.</p></section>
+  // classifica storica: chiunque abbia almeno una crociera nel registro (2011-2024),
+  // veterani 2026 e skipper inclusi, cani esclusi; crew.json e' gia' in ordine di giorni
+  const storici = all.filter(m => (m.trips || 0) > 0 && !m.pet);
+  const srows = storici.map((m, i) => {
+    const href = (m.crew2026 && m.crew2026.link) || `#${m.id}`;
+    return `<a class="srow" href="${href}"><span class="pos num">${i + 1}</span>${avatarP(m, "cav")}
+    <span class="sn"><b>${esc(m.name)}</b><small>${m.trips} ${m.trips === 1 ? "crociera" : "crociere"} · ${m.days} gg · ${nfmt(m.nm)} nm</small></span>
+    <span class="sins">${rankSVG(m.rank, m.abilitato)}</span><span class="srk">${esc(m.rank_label || "")}</span></a>`;
+  }).join("");
+  return `<div class="mhero"><div class="mhd"><div class="role">La community · dal 2011</div>
+    <h1>La ciurma</h1><div class="nick">Una scheda per ognuno: foto, giorni insieme, grado e i dati dal questionario.</div></div></div>
+    <section><h2>L'equipaggio 2026</h2><div class="grid">${cards}</div>
+    <p style="margin-top:1rem;font-size:.85rem;color:var(--soft)">Vedi anche <a href="arrivi.html">arrivi &amp; partenze</a>.</p></section>
+    <section><h2>🏛️ Gli equipaggi storici</h2>
+    <p style="margin:-.2rem 0 .6rem;font-size:.85rem;color:var(--soft)">Tutti quelli che hanno navigato con la ciurma dal 2011, in ordine di giorni in mare.</p>
+    <div class="srows">${srows}</div>
+    <p class="ctaform"><a class="ctabtn" href="classifica.html">🏆 Classifica completa e ordinabile (miglia, mari, media) ›</a></p></section>
     <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
 }
 
