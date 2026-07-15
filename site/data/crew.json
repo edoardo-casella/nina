@@ -8218,7 +8218,15 @@
    "crew2026": {
     "board": "2026-08-15",
     "leave": "2026-08-29",
-    "role": "crew"
+    "role": "crew",
+    "q": {
+     "ruolo": "Jolly dichiarata: manovre, ormeggio, aiuto in cucina, musica, foto e cassa di bordo",
+     "esperienza": "4–10 volte in barca, 3–5 crociere da passeggera; timona e dà una mano alle manovre",
+     "specialita": "Pasta al pesce e calamari ripieni alla romagnola",
+     "valigia": "Tonno e uova",
+     "motto": "Non rompo",
+     "funfact": "Dorme nove ore a notte, ovunque sia l'ancoraggio"
+    }
    },
    "bio": {
     "epithet": "La jolly del polleggio",

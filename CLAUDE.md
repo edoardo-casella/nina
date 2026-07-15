@@ -122,7 +122,28 @@ per-profilo**: quando ci sono submission nuove l'agente pubblica direttamente.
 preferenze cambusa/bibite, adesioni economiche (assicurazione/SUP). Pubblicabili: bio, ruoli,
 aneddoti, nick, foto. Il blocco `riservati_non_pubblicare` dello staging resta fuori dal sito.
 Il connettore MCP Jotform legge le submission (`api_request GET form/<id>/submissions`) ma non
-scarica upload né cancella: per quello serve lo script con la key.
+scarica upload né cancella: per quello serve lo script con la key (env `JOTFORM_API_KEY`,
+variabile utente Windows, salvata 2026-07-15).
+
+**Foto profilo**: prima del push VERIFICARE VISIVAMENTE il ritratto (Read dell'immagine
+ottimizzata) — è già successo che un membro caricasse la foto della colazione. Se non è un
+ritratto: spostare in `data/jotform-inbox/` e segnalare a Edo.
+
+**Scheda personale sul profilo**: `crew2026.q` in `site/data/crew.json` (overlay manuale
+preservato da build_crew) con campi ruolo/esperienza/specialita/valigia/motto/funfact —
+compilarla dal questionario (mai `dieta`, resta privata).
+
+### Form aneddoti (registro di bordo)
+
+Form Jotform **261954209321354** "Aneddoti di bordo — Crewin", prefill via
+`?riferimento=<testo>` (unique name). CTA sul sito: `viaggio.html` ("C'eri anche tu?...",
+prefill «nome viaggio — zona anno»), `membro.html` ("Racconta un aneddoto su X", prefill
+membro), `aneddoti.html` ("Racconta il tuo"). Il piano FREE ha max 5 form: siamo a 4
+(questionario, aneddoti, 2 accrediti UnipolArena).
+**Le submission aneddoti hanno GATE EDITORIALE — mai auto-publish** (espongono terzi):
+l'agente prepara la bozza (anecdotes.json kind `leggenda` per storie non-skipper, o
+arricchimento bio) e la sottopone a Edo prima di pubblicare. L'autorizzazione automatica
+vale SOLO per i profili dal questionario equipaggio.
 
 ## Piano di avvio (PROMPT.md) — stato
 

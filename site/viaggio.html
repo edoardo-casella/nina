@@ -120,6 +120,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
 footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.ctaform{margin:.2rem 0 1rem}
+.ctabtn{display:inline-block;background:var(--sea-1);border:1px solid var(--hair);border-radius:7px;padding:.55rem .9rem;font-weight:600;font-size:.88rem}
 </style>
 </head>
 <body>
@@ -303,6 +305,7 @@ function tripPage(t, all) {
     ${t.fleet && t.fleet.length ? `<h2>🚩 In flotta</h2>${t.fleet.map(f => `<div class="fleetnote">${f.boat_name ? `«${esc(f.boat_name)}» · ` : ""}${esc(f.note || "Altra barca al seguito")} &mdash; non equipaggio della «${esc(t.name)}»</div><div class="crewgrid">${(f.people || []).map(crewChipById).filter(Boolean).join("")}</div>`).join("")}` : ""}
     ${ANEC.filter(a => a.trip_id === t.id).length ? `<h2>📖 Aneddoti di questo viaggio</h2>
     <div class="chips">${ANEC.filter(a => a.trip_id === t.id).map(a => `<a class="chip lk" href="aneddoti.html#${a.id}">${a.kind === "eroico" ? "🎖️" : "⚓"} ${esc(a.title)}</a>`).join("")}</div>` : ""}
+    <p class="ctaform"><a class="ctabtn" href="https://form.jotform.com/261954209321354?riferimento=${encodeURIComponent(`Viaggio: «${t.name}» — ${zone} ${t.year}`)}" target="_blank" rel="noopener">📖 C'eri anche tu? Racconta un aneddoto di questo viaggio ›</a></p>
     <div class="nav2">
       ${prev ? `<a href="#${prev.id}"><small>‹ ${prev.year}</small>${flags(prev.country)}${esc(cleanZone(prev.zone))}${prev.name ? ` · «${esc(prev.name)}»` : ""}</a>` : "<span></span>"}
       ${next ? `<a class="next" href="#${next.id}"><small>${next.year} ›</small>${flags(next.country)}${esc(cleanZone(next.zone))}${next.name ? ` · «${esc(next.name)}»` : ""}</a>` : "<span></span>"}

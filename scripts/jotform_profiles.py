@@ -146,8 +146,11 @@ def fetch_one(sub, ids):
         except (urllib.error.URLError, OSError) as e:
             print(f"  foto: download fallito ({e}) -> scaricala a mano dall'inbox Jotform")
             continue
-        if not ctype.startswith("image/"):
-            print(f"  foto: risposta {ctype} (login wall?) -> scaricala a mano dall'inbox Jotform")
+        # il login wall risponde text/html; il file vero arriva come image/* o octet-stream:
+        # fidati dei magic bytes, non del content-type
+        magic_ok = blob[:2] == b"\xff\xd8" or blob[:8] == b"\x89PNG\r\n\x1a\n" or blob[:4] == b"RIFF" or blob[4:12] == b"ftypheic"
+        if not magic_ok:
+            print(f"  foto: risposta {ctype}, non sembra un'immagine (login wall?) -> scaricala a mano dall'inbox Jotform")
             continue
         os.makedirs(PROFILI, exist_ok=True)
         io.open(dest, "wb").write(blob)

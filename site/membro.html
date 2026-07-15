@@ -130,6 +130,8 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 #lb img{max-width:96vw;max-height:90vh;object-fit:contain;border-radius:4px}
 #lb .x{position:absolute;top:.7rem;right:1rem;color:#fff;font-size:1.9rem;background:none;border:0;cursor:pointer;line-height:1}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.ctaform{margin:.2rem 0 1rem}
+.ctabtn{display:inline-block;background:var(--sea-1);border:1px solid var(--hair);border-radius:7px;padding:.55rem .9rem;font-weight:600;font-size:.88rem}
 </style>
 </head>
 <body>
@@ -272,6 +274,7 @@ function memberPage(m, all) {
     ${(FLEET.get(m.id) || []).length ? `<h2>🚩 In flotta insieme</h2><p style="color:var(--soft);font-size:.86rem;margin:-.3rem 0 .7rem">Non a bordo con l'Ammiraglio, ma in navigazione a fianco su un'altra barca — quindi fuori dai conteggi di giorni, miglia e grado.</p><div class="tlog">${(FLEET.get(m.id) || []).map(fleetRow).join("")}</div>` : ""}
     ${(m.companions && m.companions.length) ? `<h2>🔗 Con chi ha navigato di più</h2><div class="cchips">${m.companions.map(cp => compChip(cp, all)).join("")}</div>` : ""}
     ${anecFor(m.id).length ? `<h2>📖 Aneddoti</h2><div class="tlog">${anecFor(m.id).map(anecRow).join("")}</div>` : ""}
+    ${m.pet ? "" : `<p class="ctaform"><a class="ctabtn" href="https://form.jotform.com/261954209321354?riferimento=${encodeURIComponent("Membro: " + m.name)}" target="_blank" rel="noopener">➕ Racconta un aneddoto su ${esc(m.name)} ›</a></p>`}
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
     ${c ? `<h2>A bordo nel 2026</h2>
       <div class="card">Sale a Cannigione il <b>${fmt(c.board)}</b> e sbarca il <b>${fmt(c.leave)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>
