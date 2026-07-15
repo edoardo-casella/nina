@@ -29,7 +29,7 @@ NICKS = {
     "edo-c": ["Edo"],
     "fede-b": ["Fede"],
     "fede-n": ["Fede"],
-    "gabri-m": ["Gastone", "Gustavo"],
+    "gabri-m": ["Gastone", "Gustavo", "Gustav"],
     "giacomo-n": ["Jack"],
     "ginevra-l": ["Gine", "Gi", "Ginx"],
     "giulia-n": ["Juliet", "Giuli"],

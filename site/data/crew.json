@@ -5281,7 +5281,15 @@
    "crew2026": {
     "board": "2026-08-22",
     "leave": "2026-08-29",
-    "role": "apprentice"
+    "role": "apprentice",
+    "q": {
+     "ruolo": "Timoniere e navigatore; si candida anche a tender, cambusa, aperitivi e jolly",
+     "esperienza": "Più di 10 volte in barca, patente senza limiti dalla costa e scuola di vela",
+     "specialita": "Taglieri e crostini da aperitivo, guacamole; ai cocktail: mojito e caipirinha",
+     "valigia": "Tonno, fagioli e cipolla",
+     "motto": "Mangio anche i sassi",
+     "funfact": "Se non si alza dalla cuccetta, va svegliato con un lancio in mare"
+    }
    },
    "photos": [
     {
@@ -5311,11 +5319,15 @@
    },
    "tags": [
     "Uomo dei tuffi",
-    "Marinaio polivalente"
+    "Marinaio polivalente",
+    "Timoniere",
+    "Skipper del tender",
+    "Barman"
    ],
    "nicks": [
     "Gastone",
-    "Gustavo"
+    "Gustavo",
+    "Gustav"
    ],
    "sex": "m",
    "companions": [
