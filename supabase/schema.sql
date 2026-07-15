@@ -105,12 +105,13 @@ drop policy if exists access_requests_admin_all on public.access_requests;
 create policy access_requests_admin_all on public.access_requests
   for all to authenticated using (public.is_admin()) with check (public.is_admin());
 
--- profiles: i membri approvati leggono tutte le schede (è l'equipaggio),
--- ognuno aggiorna SOLO la propria; insert/gestione completa solo admin
--- (il seed passa dalla service key, che bypassa RLS).
+-- profiles: le schede sono PUBBLICHE (decisione Edo 2026-07-16 — come lo erano
+-- nel vecchio crew.json); ognuno aggiorna SOLO la propria; gestione completa
+-- solo admin (il seed passa dalla service key, che bypassa RLS).
 drop policy if exists profiles_select_members on public.profiles;
-create policy profiles_select_members on public.profiles
-  for select to authenticated using (public.is_approved());
+drop policy if exists profiles_select_public on public.profiles;
+create policy profiles_select_public on public.profiles
+  for select to anon, authenticated using (true);
 
 drop policy if exists profiles_update_own on public.profiles;
 create policy profiles_update_own on public.profiles
@@ -142,3 +143,4 @@ grant usage on schema public to anon, authenticated;
 grant select, insert, update on public.members, public.access_requests,
       public.profiles, public.private_blobs to authenticated;
 grant insert on public.access_requests to anon;
+grant select on public.profiles to anon;

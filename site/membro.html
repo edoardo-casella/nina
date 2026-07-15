@@ -289,7 +289,8 @@ const avatar = (m, cls) => m.photo
   ? `<img class="${cls}" src="${m.photo}" alt="${esc(m.name)}" loading="lazy">`
   : `<div class="${cls}">${initial(m)}</div>`;
 
-// Scheda personale: RISERVATA all'equipaggio. I campi arrivano da Supabase
+// Scheda personale: PUBBLICA (i membri la compilano sapendolo, da profilo.html).
+// Le DATE d'imbarco invece restano riservate. I campi arrivano da Supabase
 // (tabella profiles, editabile da profilo.html) dopo il login — niente più `q`
 // nel crew.json pubblico. Dieta/allergie NON esistono qui per contratto privacy.
 const QFIELDS = [
@@ -368,12 +369,12 @@ function memberPage(m, all) {
     ${anecFor(m.id).length ? `<h2>📖 Aneddoti</h2><div class="tlog">${anecFor(m.id).map(anecRow).join("")}</div>` : ""}
     ${m.pet ? "" : `<p class="ctaform"><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform?usp=pp_url&entry.929369460=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">📖 Racconta un aneddoto con ${esc(m.name)} ›</a><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSeddGG04_P3nrYI33cq2XGcqmPoqklj6DSmslrF-XDAj5luNw/viewform?usp=pp_url&entry.1740816767=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">✏️ Aggiungi qualcosa al profilo ›</a></p>`}
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
-    ${c ? (bd || qrows ? `${bd ? `<h2>A bordo nel 2026</h2>
-      <div class="card">Sale a Cannigione il <b>${fmt(bd.b)}</b> e sbarca il <b>${fmt(bd.l)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>` : ""}
+    ${c ? `${bd ? `<h2>A bordo nel 2026</h2>
+      <div class="card">Sale a Cannigione il <b>${fmt(bd.b)}</b> e sbarca il <b>${fmt(bd.l)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>`
+    : (window.ninaAuth && ninaAuth.enabled ? `<h2>A bordo nel 2026</h2>
+      <div class="q-empty">🔐 Le date d'imbarco sono riservate all'equipaggio — <a href="login.html">accedi all'area equipaggio ›</a></div>` : "")}
       <h2>Scheda personale</h2>
       ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED Ancora nessuna scheda. Se è la tua pagina, raccontati da <a href="profilo.html">Il mio profilo</a>.</div>`}`
-    : `<h2>A bordo nel 2026</h2>
-      <div class="q-empty">🔐 Date d'imbarco e scheda personale sono riservate all'equipaggio — <a href="login.html">accedi all'area equipaggio ›</a></div>`)
     : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(m.rank_label || "")}</b>.</div>`}
     ${(m.photos && m.photos.length) ? `<h2>📸 Foto</h2><div class="pgal${m.photos.length > 8 ? " clip" : ""}" id="pgal">${m.photos.map(p =>
       `<figure onclick="lbOne('${p.src}')"><img src="${p.src}" alt="${esc(p.caption || m.name)}" loading="lazy"><figcaption><a href="viaggio.html#${p.trip_id}" onclick="event.stopPropagation()">${esc(p.caption || "")}${BOATNAME.get(p.trip_id) ? ` · «${esc(BOATNAME.get(p.trip_id))}»` : ""} ›</a></figcaption></figure>`).join("")}</div>${m.photos.length > 8 ? `<button class="cm-toggle${m.photos.length <= 12 ? " m-only" : ""}" type="button" data-label="Mostra tutte le foto (${m.photos.length})" data-target="pgal" onclick="toggleClip(this)">Mostra tutte le foto (${m.photos.length}) <span class="chev">▾</span></button>` : ""}` : ""}
@@ -435,12 +436,12 @@ Promise.all([
   });
   ANEC = da.anecdotes || [];
   route();
-  // dati riservati (schede personali + date d'imbarco): con sessione approvata
-  // si caricano da Supabase e la pagina si ridisegna
+  // schede personali: PUBBLICHE, si caricano sempre; date d'imbarco (blob
+  // 'arrivi'): solo con sessione approvata. Poi la pagina si ridisegna.
   if (window.ninaAuth && ninaAuth.enabled) (async () => {
     try {
-      if (!(await ninaAuth.approvedMember())) return;
-      const [profiles, arrivi] = await Promise.all([ninaAuth.profilesMap(), ninaAuth.blob("arrivi")]);
+      const [profiles, member] = await Promise.all([ninaAuth.profilesMap(), ninaAuth.approvedMember()]);
+      const arrivi = member ? await ninaAuth.blob("arrivi") : null;
       if (profiles || arrivi) {
         PRIV = { profiles: profiles || {}, arrivi };
         const y = window.scrollY; route(); window.scrollTo(0, y);   // ridisegna senza far saltare la lettura

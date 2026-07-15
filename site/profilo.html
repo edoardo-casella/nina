@@ -63,7 +63,7 @@ footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--so
 <main>
   <section class="hero">
     <h1>Il mio profilo</h1>
-    <p class="lead">Questa è la tua scheda personale: la vede solo l'equipaggio, nella tua pagina della ciurma. Giorni, miglia e grado non si toccano — quelli si guadagnano navigando.</p>
+    <p class="lead">Questa è la tua scheda personale: compare <b>pubblicamente</b> nella tua pagina della ciurma, come foto e ritratto. Giorni, miglia e grado non si toccano — quelli si guadagnano navigando.</p>
   </section>
   <section id="app"><div class="card"><p style="color:var(--soft)">Un attimo…</p></div></section>
 </main>
@@ -109,7 +109,7 @@ async function render() {
     </div>`).join("")}
     <button type="submit">Salva il profilo</button>
     <p id="m" class="msg" role="status"></p>
-    <p class="note">La scheda compare in <a href="membro.html#${esc(member.crew_id)}">membro.html#${esc(member.crew_id)}</a>, visibile solo all'equipaggio.
+    <p class="note">La scheda compare nella <a href="membro.html#${esc(member.crew_id)}">tua pagina della ciurma</a>, visibile a tutti sul sito — scrivi solo ciò che vuoi rendere pubblico.
     Per foto e ritratto di bordo si passa ancora dal <a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">questionario</a>.</p>
   </form></div>`;
 
