@@ -120,6 +120,10 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 #lb .x{position:absolute;top:.7rem;right:1rem;color:#fff;font-size:1.9rem;background:none;border:0;cursor:pointer;line-height:1}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .ctabtn{display:inline-block;background:var(--sea-1);border:1px solid var(--hair);border-radius:7px;padding:.55rem .9rem;font-weight:600;font-size:.88rem}
+.abyline{margin:0 0 .8rem;font:600 .82rem/1.4 var(--body);color:var(--soft)}
+.cardby{margin-top:.35rem;font:700 .56rem/1 var(--display);letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
+.aversion{border-left:3px solid var(--accent);background:var(--sea-1);padding:.7rem .9rem .55rem;border-radius:0 7px 7px 0;margin-top:1rem}
+.aversion b{display:block;margin-bottom:.3rem}
 </style>
 </head>
 <body>
@@ -159,6 +163,26 @@ function personChip(id){
   const href = id === "edo-c" ? "skipper.html" : `membro.html#${encodeURIComponent(id)}`;
   return `<a class="pchip" href="${href}">${avatarMini(id,"pav")}<span class="pn">${esc(name)}</span></a>`;
 }
+function authorLink(id){
+  if (id === "edo-c") return `<a class="plink" href="skipper.html"><b>il capitano</b></a>`;
+  const m = PEOPLE.get(id);
+  return `<a class="plink" href="membro.html#${encodeURIComponent(id)}"><b>${esc(m ? m.name : id)}</b></a>`;
+}
+// attribuzione: autore (chi porta la storia) + coautori (chi aggiunge la sua versione)
+function byline(a){
+  if (!a.autore) return "";
+  const who = a.autore === "edo-c"
+    ? `Aneddoto scritto dal <a class="plink" href="skipper.html"><b>capitano</b></a>`
+    : `Raccontato da ${authorLink(a.autore)}`;
+  const co = (a.coautori || []).map(authorLink).join(", ");
+  return `<div class="abyline">✍️ ${who}${co ? ` · con la versione di ${co}` : ""}</div>`;
+}
+function cardBy(a){
+  if (!a.autore) return "";
+  const m = PEOPLE.get(a.autore);
+  const co = (a.coautori || []).length;
+  return `<div class="cardby">✍️ ${a.autore === "edo-c" ? "il capitano" : esc(m ? m.name : a.autore)}${co ? ` +${co}` : ""}</div>`;
+}
 function tripLink(a){
   if (!a.trip_id) return "";
   const t = TRIPS.get(a.trip_id);
@@ -193,6 +217,7 @@ function detailPage(a){
   return `<div class="ahero"><div class="yr">${esc(KIND[a.kind] || "Aneddoto")}</div>
       <h1>${esc(a.title)}</h1></div>
     <section>
+      ${byline(a)}
       ${incidentBlock(a)}
       ${credits}
       <div class="anav">
@@ -210,6 +235,7 @@ function card(a){
     <h3>${esc(a.title)}</h3>
     <div class="meta">${flagMeta(a)}</div>
     ${avs ? `<div class="avs">${avs}</div>` : ""}
+    ${cardBy(a)}
     <span class="go">›</span></a>`;
 }
 

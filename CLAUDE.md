@@ -160,6 +160,16 @@ l'agente prepara la bozza (anecdotes.json kind `leggenda` per storie non-skipper
 arricchimento bio) e la sottopone a Edo prima di pubblicare. L'autorizzazione automatica
 vale SOLO per i profili dal questionario equipaggio.
 
+**Autorialità degli aneddoti (regola Edo 2026-07-15)**: ogni aneddoto ha `autore`
+(crew_id di chi porta la storia; `edo-c` per i 13 storici dettati dal capitano) e
+`coautori[]`. Byline renderizzata su card ("✍️ il capitano +1" / "✍️ Gabri M") e
+dettaglio ("Aneddoto scritto dal capitano · con la versione di X" / "Raccontato da X").
+**Mai scartare un contributo come "duplicato"**: se la storia esiste già, chi la
+riporta diventa coautore e la sua versione si aggiunge in coda al `bodyHtml` come
+blocco firmato `<div class='aversion'><b>🗣️ La versione di X</b>…</div>` (CSS in
+aneddoti.html E skipper.html). Gli aneddoti degli utenti si scrivono in stile blog:
+byline + una riga di contesto che spiega la situazione, non il testo secco.
+
 ## Piano di avvio (PROMPT.md) — stato
 
 Una cosa per volta, ogni passo confermato dallo skipper:
