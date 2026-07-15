@@ -281,16 +281,26 @@ def grade_of(track, days):
 
 cur = json.loads(io.open(CREWJSON, encoding="utf-8").read())
 # ricostruisce la lista membri 2026 dal file unificato (people con crew2026),
-# preservando gli overlay manuali (role/photo/nick/note/link).
-# ATTENZIONE PRIVACY: board/leave (date d'imbarco) e q (scheda personale) NON
-# escono più nel crew.json pubblico — le date vivono in voyage.json e arrivano
-# al sito via blob riservato 'arrivi' (publish.py → Supabase); le schede vivono
-# nella tabella Supabase `profiles` (editor profilo.html, seed seed_supabase.py).
+# preservando gli overlay manuali (board/leave/role/photo/nick/note/link).
+# NOTA: la scheda personale `q` NON esce più nel crew.json — vive nella tabella
+# Supabase `profiles` (pubblica in lettura, editabile da profilo.html).
+# board/leave sono tornate pubbliche per decisione di Edo (2026-07-16).
 if "members" in cur:
     members = cur["members"]
 else:
     members = [{"id": p["id"], "name": p["name"], **p.get("crew2026", {})}
                for p in cur["people"] if "crew2026" in p]
+# board/leave: fonte autoritativa voyage.json (il crew.json corrente potrebbe
+# non averle: sono state riservate per un giorno e poi ri-pubblicate)
+try:
+    _voy = json.load(io.open(os.path.join(ROOT, "data", "voyage.json"), encoding="utf-8"))
+    _bl = {c["name"]: (c["board"], c["leave"]) for c in _voy.get("crew", [])
+           if c.get("board") and c.get("leave")}
+except Exception:
+    _bl = {}
+for _m in members:
+    if _m["name"] in _bl:
+        _m["board"], _m["leave"] = _bl[_m["name"]]
 used_pids = set()
 id2pid = {}   # crew_id -> registry pid (per companions)
 out = []
@@ -304,7 +314,7 @@ for m in members:
         pid = match(nm); me = False
         if pid: used_pids.add(pid); id2pid[m["id"]] = pid; st = stats(pid); tl = trips_list_for(part.get(pid, []), pid)
         else: st = {"trips": 0, "days": 0, "nm": 0, "first": None, "last": None}; tl = []
-    crew2026 = {k: m[k] for k in ("role", "photo", "nick", "note", "link") if k in m}
+    crew2026 = {k: m[k] for k in ("board", "leave", "role", "photo", "nick", "note", "link") if k in m}
     tr = track_of(m["id"], me); ext = EXT_DAYS.get(m["id"], 0)
     _, rid, rlab = grade_of(tr, st["days"] + ext)
     out.append({"id": m["id"], "name": nm, **st, "rank": rid, "rank_label": rlab, "track": tr,

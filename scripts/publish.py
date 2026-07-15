@@ -589,9 +589,8 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "tonight": tonight, "plan_b": plan_b, "ranked": ranked[:4],
         "outlook": outlook,
         "polar_estimated": v["boat"].get("polar_status", "stimata") == "stimata",
-        # niente board/leave: le date d'imbarco sono riservate (blob 'arrivi');
-        # qui resta solo chi c'e' OGGI, col suo ruolo e la cabina
-        "crew": [{"name": m["name"], "role": m["role"], "cabin": m.get("cabin")} for m in crew],
+        "crew": [{"name": m["name"], "role": m["role"], "board": m["board"],
+                  "leave": m["leave"], "cabin": m.get("cabin")} for m in crew],
         "turns": day_turns(crew, (dt.date.fromisoformat(day) - dt.date.fromisoformat(plan_all[0]["date"])).days
                            if plan_all else 0),
         "source": "Open-Meteo (ECMWF) — non ufficiale",
@@ -626,9 +625,10 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
 
 
 def build_arrivi(v, now: str) -> dict:
-    """Blob riservato per arrivi.html: date d'imbarco/sbarco per persona, con
-    anzianità e foto dal registro pubblico (crew.json). Shape del vecchio array
-    inline della pagina: {n, b, l, r, x, fy, p} — così il render non cambia."""
+    """Dati PUBBLICI per arrivi.html (decisione Edo 2026-07-16): date d'imbarco/
+    sbarco per persona, con anzianità e foto dal registro pubblico (crew.json).
+    Scritto in site/data/arrivi.json — statico, quindi offline-friendly in rada.
+    Shape del vecchio array inline della pagina: {n, b, l, r, x, fy, p}."""
     try:
         reg = {p["name"]: p for p in
                json.loads((SITE / "crew.json").read_text(encoding="utf-8"))["people"]}
@@ -705,11 +705,13 @@ if __name__ == "__main__":
     # schede dettaglio: join senza rete del file arricchito a mano (mai fetch qui)
     v = core.load()
     dests = build_destinations(v, briefing["generated_at"])
-    # i conti NON si scrivono più in site/: sono riservati e vanno su Supabase
+    # i conti NON si scrivono più in site/: sono riservati e vanno su Supabase;
+    # gli arrivi invece sono pubblici (arrivi.json)
     for name, obj in (("briefing", briefing), ("weather", wx),
-                      ("program", program), ("destinations", dests)):
+                      ("program", program), ("destinations", dests),
+                      ("arrivi", build_arrivi(v, briefing["generated_at"]))):
         (SITE / f"{name}.json").write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
-    supabase_upsert_blobs({"conti": conti, "arrivi": build_arrivi(v, briefing["generated_at"])})
+    supabase_upsert_blobs({"conti": conti})
     tag = briefing["leg"]["leg"] if briefing["leg"] else ("sosta" if briefing["rest"] else "—")
     print(f"Pubblicato {a.day}: {tag} | score {briefing['leg']['avg_score'] if briefing['leg'] else '—'} "
           f"| rada {briefing['tonight']['name'] if briefing['tonight'] else '—'} "

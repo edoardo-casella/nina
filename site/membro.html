@@ -297,9 +297,8 @@ const QFIELDS = [
   ["nick", "Nickname"], ["ruolo", "Ruolo a bordo"], ["esperienza", "Esperienza"], ["specialita", "Specialità"],
   ["valigia", "Non può mancare"], ["motto", "Motto"], ["funfact", "Fun fact"],
 ];
-// dati riservati caricati post-login: {profiles: {crew_id→riga}, arrivi: {crew: [{n,b,l,…}]}}
+// schede personali da Supabase (pubbliche), caricate async: {profiles: {crew_id→riga}}
 let PRIV = null;
-const privBoard = m => PRIV && PRIV.arrivi && (PRIV.arrivi.crew || []).find(x => x.n === m.name) || null;
 
 // gradi navali a DUE CARRIERE: GRADES/gradeAt/starPath/rankSVG ora in ranks.js (modulo condiviso)
 const photoOf = m => (m.crew2026 && m.crew2026.photo) || m.photo || null;
@@ -332,12 +331,12 @@ function memberPage(m, all) {
   const strip = others.map(x =>
     `<a href="#${x.id}" title="${esc(x.name)}">${avatarP(x, "av")}<small>${esc(x.name)}</small></a>`).join("");
   const note = c && c.note ? c.note : null;
-  // scheda e date: da Supabase (riservate); fallback a crew.json vecchi in cache
+  // scheda: da Supabase profiles (pubblica); fallback a crew.json vecchi in cache
   const q = (PRIV && PRIV.profiles && PRIV.profiles[m.id]) || (c && c.q) || {};
   const qrows = QFIELDS.filter(([k]) => q[k]).map(([k, lab]) =>
     `<div class="qrow"><b>${lab}</b><span>${esc(q[k])}</span></div>`).join("")
     + (q.instagram ? `<div class="qrow"><b>Instagram</b><span><a href="https://www.instagram.com/${esc(q.instagram)}/" target="_blank" rel="noopener">@${esc(q.instagram)}</a></span></div>` : "");
-  const bd = privBoard(m) || (c && c.board ? { b: c.board, l: c.leave } : null);
+  const bd = c && c.board ? { b: c.board, l: c.leave } : null;   // date pubbliche, da crew.json
   const nn = bd ? Math.round((day(bd.l) - day(bd.b)) / 864e5) : 0;
   return `
   <div class="mhero">
@@ -370,9 +369,7 @@ function memberPage(m, all) {
     ${m.pet ? "" : `<p class="ctaform"><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform?usp=pp_url&entry.929369460=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">📖 Racconta un aneddoto con ${esc(m.name)} ›</a><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSeddGG04_P3nrYI33cq2XGcqmPoqklj6DSmslrF-XDAj5luNw/viewform?usp=pp_url&entry.1740816767=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">✏️ Aggiungi qualcosa al profilo ›</a></p>`}
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
     ${c ? `${bd ? `<h2>A bordo nel 2026</h2>
-      <div class="card">Sale a Cannigione il <b>${fmt(bd.b)}</b> e sbarca il <b>${fmt(bd.l)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>`
-    : (window.ninaAuth && ninaAuth.enabled ? `<h2>A bordo nel 2026</h2>
-      <div class="q-empty">🔐 Le date d'imbarco sono riservate all'equipaggio — <a href="login.html">accedi all'area equipaggio ›</a></div>` : "")}
+      <div class="card">Sale a Cannigione il <b>${fmt(bd.b)}</b> e sbarca il <b>${fmt(bd.l)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>` : ""}
       <h2>Scheda personale</h2>
       ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED Ancora nessuna scheda. Se è la tua pagina, raccontati da <a href="profilo.html">Il mio profilo</a>.</div>`}`
     : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(m.rank_label || "")}</b>.</div>`}
@@ -436,17 +433,15 @@ Promise.all([
   });
   ANEC = da.anecdotes || [];
   route();
-  // schede personali: PUBBLICHE, si caricano sempre; date d'imbarco (blob
-  // 'arrivi'): solo con sessione approvata. Poi la pagina si ridisegna.
+  // schede personali (pubbliche): si caricano da Supabase e la pagina si ridisegna
   if (window.ninaAuth && ninaAuth.enabled) (async () => {
     try {
-      const [profiles, member] = await Promise.all([ninaAuth.profilesMap(), ninaAuth.approvedMember()]);
-      const arrivi = member ? await ninaAuth.blob("arrivi") : null;
-      if (profiles || arrivi) {
-        PRIV = { profiles: profiles || {}, arrivi };
+      const profiles = await ninaAuth.profilesMap();
+      if (profiles) {
+        PRIV = { profiles };
         const y = window.scrollY; route(); window.scrollTo(0, y);   // ridisegna senza far saltare la lettura
       }
-    } catch (err) { /* area riservata giù: la pagina pubblica resta valida */ }
+    } catch (err) { /* Supabase giù: la pagina resta valida senza schede */ }
   })();
 }).catch(() => { document.getElementById("app").innerHTML = `<section><p style="padding:2rem 0">Equipaggio non disponibile offline.</p></section>`; });
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});

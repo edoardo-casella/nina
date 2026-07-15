@@ -6,7 +6,8 @@
 --   access_requests richieste di accesso dal form pubblico di unisciti.html
 --   profiles        campi profilo EDITABILI dal membro (mai stats/gradi: quelli
 --                   restano calcolati nel crew.json statico; mai dieta/allergie)
---   private_blobs   payload JSON riservati scritti dalla CI ('conti', 'arrivi')
+--   private_blobs   payload JSON riservati scritti dalla CI (oggi solo 'conti';
+--                   gli arrivi sono tornati pubblici in site/data/arrivi.json)
 --
 -- Identità: auth.users si aggancia a members SOLO per email (auth.jwt()->>'email').
 -- Niente user_id da mantenere, niente trigger di linkage.

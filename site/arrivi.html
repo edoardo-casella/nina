@@ -9,8 +9,6 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#0A1424">
 <script src="theme.js"></script>
-<script src="config.js"></script>
-<script src="auth.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -138,10 +136,10 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 </main>
 
 <script>
-// Le date di imbarco/sbarco sono RISERVATE: niente più dati inline qui.
-// Arrivano dal blob 'arrivi' su Supabase (scritto dalla CI da voyage.json)
-// solo con una sessione approvata. Shape invariata: {n, b, l, r, x, fy, p}
-// (n = nome, b/l = imbarco/sbarco, r = ruolo, x = crociere fatte, fy = primo anno).
+// Dati PUBBLICI da data/arrivi.json (generato da publish.py da voyage.json —
+// niente più array inline da tenere in sync a mano). Network-first via SW con
+// fallback cache: in rada senza rete la pagina si apre con l'ultima copia.
+// Shape: {n, b, l, r, x, fy, p} (nome, imbarco/sbarco, ruolo, crociere, primo anno, foto).
 let CREW = [], START = "2026-08-08", END = "2026-08-29", SPAN = 21;
 const day = s => new Date(s + "T12:00");
 const off = s => Math.round((day(s) - day(START)) / 864e5);
@@ -236,35 +234,21 @@ function renderArrivi() {
     }).join("");
 }
 
-// bootstrap: pagina riservata all'equipaggio
+// bootstrap: dati pubblici, con fallback offline gestito dal service worker
 (async () => {
   const lock = document.getElementById("lock");
-  const showLock = html => {
-    document.querySelectorAll(".rsv").forEach(e => { e.hidden = true; });
-    lock.innerHTML = `<div class="chg" style="padding:1.1rem">${html}</div>`;
-    lock.hidden = false;
-  };
-  if (!window.ninaAuth || !ninaAuth.enabled) {
-    showLock(`🔐 Il dettaglio di arrivi e partenze è <b>riservato all'equipaggio</b>. L'area riservata apre a breve.`);
-    return;
-  }
-  showLock(`Un attimo — controllo chi sei…`);
   try {
-    const ok = await ninaAuth.approvedMember();
-    if (!ok) {
-      showLock(`🔐 Il dettaglio di arrivi e partenze (chi c'è e quando, notte per notte) è <b>riservato all'equipaggio</b>.<br>
-        <a href="login.html">Accedi all'area equipaggio ›</a> &nbsp;·&nbsp; <a href="unisciti.html#accesso">Chiedi l'accesso ›</a>`);
-      return;
-    }
-    const blob = await ninaAuth.blob("arrivi");
-    if (!blob || !(blob.crew || []).length) {
-      showLock(`I dati degli avvicendamenti non sono ancora stati pubblicati — riprova più tardi.`);
-      return;
-    }
-    CREW = blob.crew; START = blob.start || START; END = blob.end || END; SPAN = off(END);
+    const r = await fetch("data/arrivi.json", { cache: "no-cache" });
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    if (!(d.crew || []).length) throw new Error("vuoto");
+    CREW = d.crew; START = d.start || START; END = d.end || END; SPAN = off(END);
     renderArrivi();
   } catch (e) {
-    showLock(`L'area riservata non risponde — riprova tra un attimo.`);
+    document.querySelectorAll(".rsv").forEach(el => { el.hidden = true; });
+    lock.innerHTML = `<div class="chg" style="padding:1.1rem">Avvicendamenti non disponibili
+      (offline senza copia in cache, o deploy in corso) — riapri sotto copertura.</div>`;
+    lock.hidden = false;
   }
 })();
 

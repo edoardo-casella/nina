@@ -8,13 +8,13 @@
 // SHELL si bumpa a ogni release del guscio; DATA NON si rinomina mai
 // (l'activate cancella le cache con altri nomi: si perderebbe l'ultimo
 // briefing buono per l'offline).
-const SHELL = "nina-shell-v94";
+const SHELL = "nina-shell-v95";
 const DATA = "nina-data-v1";
 const FILES = ["./", "./index.html", "./skipper.html", "./classifica.html", "./aneddoti.html", "./mete.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./viaggio.html", "./paese.html", "./foto.html", "./manifesto.html", "./unisciti.html", "./login.html", "./profilo.html", "./privacy.html", "./theme.js", "./nav.js", "./ranks.js", "./config.js", "./auth.js", "./manifest.json",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
 // niente conti.json: i dati riservati (conti, arrivi) stanno su Supabase dietro
 // login e NON devono mai passare da questa cache
-const DATAFILES = ["./data/briefing.json", "./data/weather.json",
+const DATAFILES = ["./data/briefing.json", "./data/weather.json", "./data/arrivi.json",
                    "./data/program.json", "./data/destinations.json", "./data/skipper.json", "./data/crew.json", "./data/trips.json", "./data/anecdotes.json", "./data/mete.json", "./data/proposte.json", "./data/proposte_counts.json"];
 
 const isJson = r => r.ok && (r.headers.get("content-type") || "").includes("json");

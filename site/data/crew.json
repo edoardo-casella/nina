@@ -282,6 +282,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-29",
     "role": "skipper",
     "photo": "skipper/img/edoardo-id.jpg",
     "link": "skipper.html"
@@ -1510,6 +1512,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-21",
     "role": "skipper",
     "photo": "crew/img/bernardo-b.jpg"
    },
@@ -2088,6 +2092,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
     "role": "apprentice"
    },
    "photos": [
@@ -2874,6 +2880,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-17",
     "role": "crew",
     "photo": "crew/img/giacomo-n.jpg",
     "nick": "Jack",
@@ -3264,6 +3272,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-29",
     "role": "crew",
     "photo": "crew/img/ginevra-l.jpg"
    },
@@ -3620,6 +3630,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
     "role": "crew"
    },
    "photos": [
@@ -5116,6 +5128,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
     "role": "apprentice"
    },
    "photos": [
@@ -5265,6 +5279,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
     "role": "apprentice"
    },
    "photos": [
@@ -7669,6 +7685,8 @@
     }
    ],
    "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-29",
     "role": "crew"
    },
    "photos": [
@@ -8132,6 +8150,8 @@
    "track": "marinaio",
    "trips_list": [],
    "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-21",
     "role": "crew"
    },
    "nicks": [
@@ -8152,6 +8172,8 @@
    "track": "marinaio",
    "trips_list": [],
    "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-17",
     "role": "crew"
    },
    "nicks": [
@@ -8172,6 +8194,8 @@
    "track": "marinaio",
    "trips_list": [],
    "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-22",
     "role": "crew"
    },
    "sex": "m"
@@ -8189,6 +8213,8 @@
    "track": "marinaio",
    "trips_list": [],
    "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-22",
     "role": "crew"
    },
    "sex": "m"
@@ -8206,6 +8232,8 @@
    "track": "marinaio",
    "trips_list": [],
    "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-29",
     "role": "crew"
    },
    "bio": {
@@ -8239,6 +8267,8 @@
    "track": "marinaio",
    "trips_list": [],
    "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
     "role": "crew"
    },
    "nicks": [
@@ -8259,6 +8289,8 @@
    "track": "marinaio",
    "trips_list": [],
    "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
     "role": "crew"
    },
    "nicks": [
@@ -8279,6 +8311,8 @@
    "track": "marinaio",
    "trips_list": [],
    "crew2026": {
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
     "role": "crew"
    },
    "nicks": [

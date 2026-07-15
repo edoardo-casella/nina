@@ -3,8 +3,11 @@
 > **STATO 2026-07-15 — FASE A COMPLETATA (live senza dominio).** Area riservata attiva su
 > `https://edoardo-casella.github.io/nina/` — Supabase progetto **Plancia** (`nlbhhzjimsxakcugmrdy`,
 > Frankfurt): schema+RLS applicati, auth configurata (magic link → auth-callback), seed fatto
-> (edo-c admin + 2 email Jotform, 17 profili), secret CI attivi (upsert conti/arrivi = keep-alive),
-> RLS verificata (anonimo = 0 righe). Email: mailer integrato Supabase (~2-4/h) finché non c'è Resend.
+> (edo-c admin + 2 email Jotform, 17 profili), secret CI attivi (upsert conti = keep-alive),
+> RLS verificata. Email: mailer integrato Supabase (~2-4/h) finché non c'è Resend.
+> **Aggiornamento 2026-07-16 (decisioni Edo): schede personali PUBBLICHE (RLS select ad anon su
+> profiles) e arrivi/partenze + date d'imbarco di nuovo PUBBLICI (site/data/arrivi.json statico,
+> date in crew.json/briefing). Riservati: SOLO conti, editor profilo, admin.**
 > **Restano: la Fase B qui sotto (dominio) + nota due-progetti in fondo.**
 
 Porta il sito da `edoardo-casella.github.io/nina` a **crewin.it** con area riservata
@@ -127,7 +130,7 @@ Il sito usa due progetti su due account Supabase distinti:
 - La **anon key** in `config.js` è pubblica per design: senza sessione approvata le policy RLS
   restituiscono zero righe (`supabase/schema.sql`).
 - La **service_role key** vive SOLO nei GitHub Actions secrets e nelle env-var locali.
-- I dati riservati non sono mai nell'artifact statico: `conti.json` rimosso, `crew.json` senza
-  `q`/`board`/`leave`, `briefing.json` senza date d'imbarco, `program.json` con soli conteggi equipaggio.
+- I dati riservati non sono mai nell'artifact statico: `conti.json` rimosso (i conti vivono solo
+  nel blob Supabase dietro RLS). Schede, arrivi e date d'imbarco sono pubblici per scelta.
 - Storia git: le vecchie revisioni di `conti.json` (dati placeholder) e le 2 schede `q`
   (contenuto già autorizzato, iniziali) restano nella history — scelta consapevole, niente force-push.

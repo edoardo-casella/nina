@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T22:12+02:00",
+  "generated_at": "2026-07-15T22:36+02:00",
   "sim": true,
   "day": "2026-07-15",
   "start_date": "2026-07-15",
@@ -1003,7 +1003,10 @@
         42.252,
         8.6262
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Corsica_-_Piana_-_panoramio_-_gian_luca_bucci.jpg/500px-Corsica_-_Piana_-_panoramio_-_gian_luca_bucci.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Corsica_-_Piana_-_panoramio_-_gian_luca_bucci.jpg"
+      }
     },
     {
       "id": "sanguinaires",
@@ -1464,7 +1467,10 @@
         41.047,
         9.568
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/La_Maddalena%2C_isola_di_Soffi_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Soffi_%2802%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Soffi_(02).jpg"
+      }
     },
     {
       "id": "golfo_di_cugnana",
@@ -1477,7 +1483,10 @@
         41.021,
         9.529
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Olbia%2C_golfo_di_Cugnana_%2801%29.jpg/500px-Olbia%2C_golfo_di_Cugnana_%2801%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Olbia,_golfo_di_Cugnana_(01).jpg"
+      }
     },
     {
       "id": "cannigione",

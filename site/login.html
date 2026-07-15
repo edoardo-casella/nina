@@ -65,7 +65,7 @@ footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--so
 <main>
   <section class="hero">
     <h1>Area equipaggio</h1>
-    <p class="lead">La parte riservata di Crewin: cassa di bordo, arrivi &amp; partenze e la tua scheda personale da aggiornare. Si entra con la propria email, senza password.</p>
+    <p class="lead">La parte riservata di Crewin: la cassa di bordo e la tua scheda personale da aggiornare. Si entra con la propria email, senza password.</p>
   </section>
   <section id="app"><div class="card"><p style="color:var(--soft)">Un attimo…</p></div></section>
 </main>
@@ -129,7 +129,6 @@ async function render() {
         <a href="profilo.html">✏️ Il mio profilo — aggiorna la tua scheda</a>
         <a href="membro.html#${esc(member.crew_id)}">🧑‍✈️ La mia pagina nella ciurma</a>
         <a href="index.html#oggi">💰 Conti di bordo (nella Plancia)</a>
-        <a href="arrivi.html">🛟 Arrivi &amp; partenze</a>
         ${member.role === "admin" ? `<a href="admin.html">🎖️ Amministrazione — richieste e membri</a>` : ""}
       </div>
       <p style="margin-top:1.1rem"><button class="ghost" id="out">Esci</button></p></div>`;

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T22:12+02:00",
+  "generated_at": "2026-07-15T22:36+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-15",
@@ -383,31 +383,43 @@
     {
       "name": "Edo C",
       "role": "skipper",
+      "board": "2026-08-08",
+      "leave": "2026-08-29",
       "cabin": "Bagno privato"
     },
     {
       "name": "Ginevra L",
       "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-29",
       "cabin": "Bagno privato"
     },
     {
       "name": "Bernardo B",
       "role": "skipper",
+      "board": "2026-08-08",
+      "leave": "2026-08-21",
       "cabin": "Bagno privato"
     },
     {
       "name": "Bianca B",
       "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-21",
       "cabin": "Bagno privato"
     },
     {
       "name": "Giacomo N",
       "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-17",
       "cabin": "Bagno privato"
     },
     {
       "name": "Mati M",
       "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-17",
       "cabin": "Bagno privato"
     }
   ],
