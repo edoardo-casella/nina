@@ -120,10 +120,19 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 #lb .x{position:absolute;top:.7rem;right:1rem;color:#fff;font-size:1.9rem;background:none;border:0;cursor:pointer;line-height:1}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .ctabtn{display:inline-block;background:var(--sea-1);border:1px solid var(--hair);border-radius:7px;padding:.55rem .9rem;font-weight:600;font-size:.88rem}
-.abyline{margin:0 0 .8rem;font:600 .82rem/1.4 var(--body);color:var(--soft)}
+.abyline{margin:0 0 .8rem;font:600 .82rem/1.4 var(--body);color:var(--soft);display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.abyline .pav,.aversion .pav,.wall .pav{width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2);display:inline-flex;align-items:center;justify-content:center;font:700 .8rem/1 var(--display);color:#fff;vertical-align:middle}
+.abyline span .pav{width:22px;height:22px;font-size:.62rem}
 .cardby{margin-top:.35rem;font:700 .56rem/1 var(--display);letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
 .aversion{border-left:3px solid var(--accent);background:var(--sea-1);padding:.7rem .9rem .55rem;border-radius:0 7px 7px 0;margin-top:1rem}
-.aversion b{display:block;margin-bottom:.3rem}
+.aversion .avhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+.aversion .avhead b{margin:0}
+.wall{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;background:var(--sea-1);border:1px solid var(--accent);border-radius:9px;padding:.8rem .95rem;margin:1rem 0 .2rem}
+.wall .avs{display:flex}
+.wall .avs .pav{border:2px solid var(--panel);margin-left:-9px}
+.wall .avs .pav:first-child{margin-left:0}
+.wall .wtxt{flex:1;min-width:12rem;font-size:.92rem}
+.wall .ctabtn{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -174,8 +183,13 @@ function byline(a){
   const who = a.autore === "edo-c"
     ? `Aneddoto scritto dal <a class="plink" href="skipper.html"><b>capitano</b></a>`
     : `Raccontato da ${authorLink(a.autore)}`;
-  const co = (a.coautori || []).map(authorLink).join(", ");
-  return `<div class="abyline">✍️ ${who}${co ? ` · con la versione di ${co}` : ""}</div>`;
+  const co = (a.coautori || []).map(id => `${avatarMini(id, "pav")} ${authorLink(id)}`).join(", ");
+  return `<div class="abyline">${avatarMini(a.autore, "pav")}<span>✍️ ${who}${co ? ` · con la versione di ${co}` : ""}</span></div>`;
+}
+// versione di un coautore: blocco firmato con la sua faccia
+function versionBlock(v){
+  const m = PEOPLE.get(v.autore);
+  return `<div class="aversion"><div class="avhead">${avatarMini(v.autore, "pav")}<b>🗣️ La versione di ${esc(m ? m.name : v.autore)}</b></div>${v.html}</div>`;
 }
 function cardBy(a){
   if (!a.autore) return "";
@@ -203,7 +217,7 @@ function incidentBlock(a){
   return `<div class="incident${KCLASS[a.kind] || ""}"><span class="stamp">${esc(a.stamp)}</span>
     <h3>${esc(a.title)}</h3>
     <div class="meta">${flagMeta(a)}</div>
-    ${a.bodyHtml}</div>`;
+    ${a.bodyHtml}${(a.versioni || []).map(versionBlock).join("")}</div>`;
 }
 
 function detailPage(a){
@@ -240,18 +254,33 @@ function card(a){
 }
 
 function directory(){
-  const errori = ANEC.filter(a => a.kind === "errore");
-  const eroici = ANEC.filter(a => a.kind === "eroico");
-  const leggende = ANEC.filter(a => a.kind === "leggenda");
+  // ordinamento per data di inserimento (i piu' recenti in testa a ogni sezione)
+  const ANECS = ANEC.slice().sort((a, b) => (b.added || "").localeCompare(a.added || ""));
+  const errori = ANECS.filter(a => a.kind === "errore");
+  const eroici = ANECS.filter(a => a.kind === "eroico");
+  const leggende = ANECS.filter(a => a.kind === "leggenda");
+  // muro degli autori: chi ha gia' scritto, quante storie, quando l'ultima
+  const AUT = [...new Set(ANEC.flatMap(a => [a.autore, ...(a.coautori || [])]).filter(Boolean))];
+  const nome = id => id === "edo-c" ? "il capitano" : ((PEOPLE.get(id) || { name: id }).name);
+  const label = AUT.length <= 3
+    ? AUT.map(nome).join(" e ").replace(/^il capitano/, "Il capitano")
+    : `${AUT.length} membri dell'equipaggio`;
+  const last = ANEC.map(a => a.added || "").sort().pop() || "";
+  const oggi = new Date().toISOString().slice(0, 10);
+  const lastTxt = last === oggi ? "oggi" : "il " + new Date(last + "T12:00").toLocaleDateString("it-IT", { day: "numeric", month: "long" });
+  const wall = `<div class="wall"><div class="avs">${AUT.map(id => avatarMini(id, "pav")).join("")}</div>
+    <div class="wtxt"><b>${label}</b> ${AUT.length === 1 ? "ha" : "hanno"} già messo a registro <b>${ANEC.length} storie</b> — l'ultima ${lastTxt}. E tu c'eri…</div>
+    <a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform" target="_blank" rel="noopener">📖 Racconta la tua ›</a></div>`;
   const sec = (title, note, items) => items.length ? `<section><h2>${title}</h2>
     <p class="dossier-note">${note}</p>
     <div class="agrid">${items.map(card).join("")}</div></section>` : "";
   return `<div class="ahero"><div class="yr">Registro di bordo · aneddoti</div>
       <h1>Aneddoti</h1>
       <div class="sub">Le storie di bordo — disastri raccontati con ironia, imprese di puro valore marinaresco e leggende dell'equipaggio. Ogni aneddoto è taggato con chi c'era e col viaggio a cui appartiene.</div></div>
+    ${wall}
     ${sec("Gli errori fatali", "Il registro dei disastri, declassificato — perché sui propri errori è meglio riderci su.", errori)}
     ${sec("Atti eroici", "Non solo disastri: agli atti risultano anche imprese di puro valore marinaresco.", eroici)}
-    ${sec("Leggende di bordo", "Le storie che l'equipaggio si tramanda — vizi, abitudini e imprese minori entrate nella mitologia della Niña.", leggende)}
+    ${sec("Leggende di bordo", "Le storie che l'equipaggio si tramanda — vizi, abitudini e imprese entrate nella mitologia della community Crewin.", leggende)}
     <section><h2>Racconta il tuo</h2>
     <p class="dossier-note">Hai vissuto un momento da registro di bordo — o conosci una leggenda su qualcuno dell'equipaggio? Le storie migliori finiscono qui e sui profili, dopo la review del comandante.</p>
     <p><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform" target="_blank" rel="noopener">📖 Invia un aneddoto ›</a></p></section>

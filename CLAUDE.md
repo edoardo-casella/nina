@@ -161,14 +161,20 @@ arricchimento bio) e la sottopone a Edo prima di pubblicare. L'autorizzazione au
 vale SOLO per i profili dal questionario equipaggio.
 
 **Autorialità degli aneddoti (regola Edo 2026-07-15)**: ogni aneddoto ha `autore`
-(crew_id di chi porta la storia; `edo-c` per i 13 storici dettati dal capitano) e
-`coautori[]`. Byline renderizzata su card ("✍️ il capitano +1" / "✍️ Gabri M") e
-dettaglio ("Aneddoto scritto dal capitano · con la versione di X" / "Raccontato da X").
-**Mai scartare un contributo come "duplicato"**: se la storia esiste già, chi la
-riporta diventa coautore e la sua versione si aggiunge in coda al `bodyHtml` come
-blocco firmato `<div class='aversion'><b>🗣️ La versione di X</b>…</div>` (CSS in
-aneddoti.html E skipper.html). Gli aneddoti degli utenti si scrivono in stile blog:
-byline + una riga di contesto che spiega la situazione, non il testo secco.
+(crew_id di chi porta la storia; `edo-c` per i 13 storici dettati dal capitano),
+`coautori[]`, `added` (data inserimento YYYY-MM-DD) e `versioni[]` =
+`[{autore, html}]` — i punti di vista dei coautori, DATI STRUTTURATI (mai inline
+nel bodyHtml: il renderer ci mette l'avatar tondo). Byline con avatar su card
+("✍️ il capitano +1" / "✍️ Gabri M") e dettaglio; blocco versione `.aversion`
+con faccia renderizzato sia in aneddoti.html che in skipper.html (versionBlock).
+**Mai scartare un contributo come "duplicato"**: chi riporta una storia già a
+registro diventa coautore con la sua voce in `versioni[]`. Le sezioni della
+directory sono ordinate per `added` desc; in cima c'è il "muro degli autori"
+(avatar + "X e Y hanno già messo a registro N storie — l'ultima <data>") con CTA
+al form. Il form aneddoti chiede anche il TIPO (errore fatale / atto eroico /
+leggenda di bordo, con spiegazione) → domanda "Che tipo di storia è?". Le
+leggende appartengono alla community Crewin, non alla Niña (testo sezione).
+Gli aneddoti degli utenti si scrivono in stile blog: byline + contesto.
 
 ## Piano di avvio (PROMPT.md) — stato
 

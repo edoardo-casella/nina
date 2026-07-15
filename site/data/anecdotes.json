@@ -17,10 +17,17 @@
         "ilaria-m",
         "gabri-m"
       ],
-      "bodyHtml": "<p>Ormeggio alla banchina del benzinaio. Posizione stretta, vento forte e — dettaglio non\n    secondario — l'equipaggio (quella volta con <a class=\"plink\" href=\"membro.html#ilaria-m\"><b>Ilaria M</b></a> e <a class=\"plink\" href=\"membro.html#gabri-m\"><b>Gabriele</b></a>) che si dimentica i\n    parabordi. Nella manovra la barca sfiora il motore\n    fuoribordo del gommone di due sedicenti sommozzatori: due tipi che avevano tutta l'aria di\n    napoletani, ma in edizione caraibica.</p>\n    <p>Loro gridano al disastro. Il sospetto di bordo è un altro: che quel fuoribordo fosse già andato,\n    e che la «collisione» fosse più che altro l'occasione per farsi pagare un motore già rotto. Una\n    classica napoletanata, ai tropici. La barca l'ha toccato, sì — ma non abbastanza da meritare\n    tanto teatro.</p>\n    <figure class=\"oneshot\"><img class=\"zoom\" onclick=\"lbOne('skipper/img/napoletani.jpg')\" src=\"skipper/img/napoletani.jpg\" alt=\"Ormeggio alla banchina del benzinaio, Grenadine\" loading=\"lazy\">\n      <figcaption>La banchina del misfatto — parabordi rigorosamente altrove.</figcaption></figure>\n    <div class=\"les\"><b>Lezioni imparate</b>\n      <ol><li>Parabordi pronti sempre, per qualsiasi evenienza.</li>\n      <li>In banchina stretta con vento forte, la manovra non si improvvisa.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> un fuoribordo (forse) e una lezione sui parabordi che non si scorda più.</div><div class='aversion'><b>🗣️ La versione di Gabriele</b><p>Nel rapporto ufficiale si parla di «sfioramento». Nel suo questionario, Gabriele mette a verbale senza giri di parole: <i>«motore (carter) del gommone scassato in manovra, in porto»</i>. Il carter, in effetti, non si è mai più ripreso.</p></div>",
+      "bodyHtml": "<p>Ormeggio alla banchina del benzinaio. Posizione stretta, vento forte e — dettaglio non\n    secondario — l'equipaggio (quella volta con <a class=\"plink\" href=\"membro.html#ilaria-m\"><b>Ilaria M</b></a> e <a class=\"plink\" href=\"membro.html#gabri-m\"><b>Gabriele</b></a>) che si dimentica i\n    parabordi. Nella manovra la barca sfiora il motore\n    fuoribordo del gommone di due sedicenti sommozzatori: due tipi che avevano tutta l'aria di\n    napoletani, ma in edizione caraibica.</p>\n    <p>Loro gridano al disastro. Il sospetto di bordo è un altro: che quel fuoribordo fosse già andato,\n    e che la «collisione» fosse più che altro l'occasione per farsi pagare un motore già rotto. Una\n    classica napoletanata, ai tropici. La barca l'ha toccato, sì — ma non abbastanza da meritare\n    tanto teatro.</p>\n    <figure class=\"oneshot\"><img class=\"zoom\" onclick=\"lbOne('skipper/img/napoletani.jpg')\" src=\"skipper/img/napoletani.jpg\" alt=\"Ormeggio alla banchina del benzinaio, Grenadine\" loading=\"lazy\">\n      <figcaption>La banchina del misfatto — parabordi rigorosamente altrove.</figcaption></figure>\n    <div class=\"les\"><b>Lezioni imparate</b>\n      <ol><li>Parabordi pronti sempre, per qualsiasi evenienza.</li>\n      <li>In banchina stretta con vento forte, la manovra non si improvvisa.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> un fuoribordo (forse) e una lezione sui parabordi che non si scorda più.</div>",
       "autore": "edo-c",
       "coautori": [
         "gabri-m"
+      ],
+      "added": "2026-07-11",
+      "versioni": [
+        {
+          "autore": "gabri-m",
+          "html": "<p>Nel rapporto ufficiale si parla di «sfioramento». Nel suo questionario, Gabriele mette a verbale senza giri di parole: <i>«motore (carter) del gommone scassato in manovra, in porto»</i>. Il carter, in effetti, non si è mai più ripreso.</p>"
+        }
       ]
     },
     {
@@ -45,7 +52,8 @@
         "carlotta-d"
       ],
       "bodyHtml": "<p>Rotta da Atene alle Sporadi per il canale di Calcide, il cui ponte si apre una sola volta a\n    notte, tra le 22 e le 23. Dettaglio scritto da nessuna parte: a Ferragosto non si apre. Lo skipper\n    si presenta al ponte proprio il 15 agosto e scopre l'amara verità.</p>\n    <p>Ripiego: ormeggio a terra dentro il canale, con poca ancora. Ma un canale di marea resta un\n    canale di marea: con la luna il vento gira dalla parte opposta. Ci si mette a terra con due cime e\n    mare piatto (le foto sono qui sopra, nella galleria).</p>\n    <p>Poi la trappola: pranzo pesante, capitano sotto coperta con l'aria condizionata — chilling\n    supremo. In coperta resta <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a> con tre signore a briscola. Nessuno si accorge del vento che\n    sale né delle cime finite in acqua: l'ormeggio aveva ceduto. Il capitano si sveglia per un «TOC»\n    sulla carena, vola ai comandi per non finire inscogliato, sacrifica un'elica — ma esce.</p>\n    <p>Epilogo: barca alata con la gru, elica nuova, si riparte. Ma il canale si vendica: pieno di\n    meduse che intasano le prese a mare. Aria condizionata KO, generatore KO, un'elica sola. Due o tre\n    giorni di caldo bestiale in mezzo al canale.</p>\n    <div class=\"shots\">\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/ferragosto-gru.jpg')\" src=\"skipper/img/ferragosto-gru.jpg\" alt=\"Il catamarano «All in» sollevato dalla gru nel porto greco\" loading=\"lazy\">\n        <figcaption>L'«All in» alata con la gru per il cambio elica.</figcaption></figure>\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/ferragosto-scafo.jpg')\" src=\"skipper/img/ferragosto-scafo.jpg\" alt=\"Ispezione della carena in cantiere\" loading=\"lazy\">\n        <figcaption>Ispezione carena in cantiere — lo scafo, per la cronaca, si reggeva già da solo.</figcaption></figure>\n      <figure><img class=\"zoom\" onclick=\"lbOne('skipper/img/troubleshooting.jpg')\" src=\"skipper/img/troubleshooting.jpg\" alt=\"Troubleshooting nel canale di Calcide\" loading=\"lazy\">\n        <figcaption>Troubleshooting a oltranza: elica, meduse e generatore, un guaio alla volta.</figcaption></figure>\n    </div>\n    <div class=\"les\"><b>Lezioni imparate</b>\n      <ol><li>Mai lasciare <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a> solo in coperta.</li>\n      <li>Mai ormeggiare a terra in un canale di marea fidandosi di poca ancora.</li>\n      <li>Controllare feste comandate greche e maree prima di certi passaggi.</li>\n      <li>Dare. Più. Ancora.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> un'elica, due o tre giorni di vacanza e una nuova regola su <a class=\"plink\" href=\"membro.html#giacomo-n\">Jack N</a>.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "grande-screzio",
@@ -66,7 +74,8 @@
         "gualtiero-s"
       ],
       "bodyHtml": "<p>La crociera più tumultuosa di tutte, e non per colpa del mare. Si parte con un volo interminabile\n    e un atterraggio all'alba a Mahé da cardiopalma: meteo estremo, il pilota tira su tutto e va in\n    <b>riattaccata</b> all'ultimo. Poi uno scalo non previsto a <b>Mauritius per rifornimento</b> —\n    carburante finito — con i nervi a fior di pelle, soprattutto per chi l'aereo lo teme già di suo\n    (<a class=\"plink\" href=\"membro.html#ginevra-l\"><b>Ginevra L.</b></a>).</p>\n    <p>A terra non va meglio: <b>spesa notturna a Mahé</b> con gli scaffali quasi vuoti, e la prima\n    frizione tra i salutisti di bordo e chi avrebbe caricato in barca qualunque cosa pur di mangiare.\n    Poi il meteo mette il sigillo: <b>sole quasi mai visto</b> per tutta la vacanza.</p>\n    <p>Il gran finale va in scena sulla spiaggia di <b>Grande Sœur</b> — isolotto privato a nord-est\n    di La Digue, tra i più belli delle Seychelles: granito rosso, sabbia bianca, tartarughe giganti. Lì\n    scoppia lo screzio epico tra <a class=\"plink\" href=\"membro.html#ginevra-l\"><b>Ginevra L.</b></a> e il co-skipper <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a> L'equipaggio si\n    spacca in due, e per il resto del viaggio non ci si parla più.</p>\n    <p>La pace, storica, arriva solo un anno dopo: <b>al matrimonio di <a class=\"plink\" href=\"membro.html#gualtiero-s\">Gualtiero S.</a></b>, a settembre 2025.\n    Oggi Ginevra e Bernardo sono di nuovo grandi amici — e la coppia che scoppia è tornata al suo posto.</p>\n    <div class=\"les\"><b>Lezioni imparate</b>\n      <ol><li>Le Seychelles fuori stagione sanno essere grigie: mettere in conto pioggia e vento.</li>\n      <li>La cambusa si fa a terra e con anticipo, non a mezzanotte con gli scaffali vuoti.</li>\n      <li>Su quattordici metri non esistono litigi «privati»: o si fa pace, o si soffre in sette.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> una crociera senza sole, un equipaggio muto per due settimane e una\n    pace siglata un anno dopo. Per il capitano, il dispiacere di vedere ai ferri corti il suo co-skipper e\n    la sua consorte — ma, come si dice, tutto è bene quel che finisce bene. 💙</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "veglia-serifos",
@@ -85,7 +94,8 @@
         "cecilia-r"
       ],
       "bodyHtml": "<p>Il Meltemi entra in scena e non se ne va più: <b>quattro giorni con mare forza 6 e raffiche\n    oltre i 50 nodi</b>. Lo skipper resta di guardia <b>quattro notti di fila</b>, praticamente senza\n    chiudere occhio, per tenere la barca all'ancora e l'equipaggio al sicuro — in barca con la\n    fidanzata dell'epoca.</p>\n    <p>Il gran finale, degno di un vero stratega: pur di non affrontare la tratta di rientro (e\n    soprattutto di non perdere l'aereo per la <b>crociera successiva</b>), chiama <b>due skipper</b>\n    che vengono a rilevare la barca, e abbandona la nave per correre in aeroporto. La priorità, sopra\n    ogni cosa: la prossima barca.</p>\n    <div class=\"les\"><b>Menzione d'onore</b>\n      <ol><li>Resistenza fuori scala: quattro notti in bianco sotto i 50 nodi.</li>\n      <li>Sangue freddo: barca e equipaggio portati a casa interi.</li>\n      <li>Senso delle priorità cristallino: l'aereo per la barca dopo non si perde.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> quattro notti di sonno perse, una barca salvata e un aereo preso al volo.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "rogo-moneglia",
@@ -105,7 +115,8 @@
         "giacomo-n"
       ],
       "bodyHtml": "<p>Trasferimento lungo la riviera di levante, a bordo come <b>ospiti</b> — non era la sua barca —\n    insieme a <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo Bolgeri</b></a> e <a class=\"plink\" href=\"membro.html#giacomo-n\"><b>Jack N</b></a>. Nel pomeriggio, dal vano motore, parte un incendio.</p>\n    <p>Mentre la gestione dell'emergenza latita, sono gli ospiti a prendere in mano la situazione:\n    <b>allarme dato, soccorsi chiamati, fiamme affrontate</b>. Quando il fuoco ha la meglio, l'<b>abbandono\n    nave</b> è ordinato: tutti in acqua, a nuoto verso riva.</p>\n    <p>Arriva il gommone della Capitaneria di Sestri Levante: <b>cinque persone illese</b>, solo un gran\n    spavento. Lo yacht, preso a rimorchio, affonda.</p>\n    <figure class=\"oneshot\"><img class=\"zoom\" onclick=\"lbOne('skipper/img/moneglia.jpg')\" src=\"skipper/img/moneglia.jpg\" alt=\"A terra dopo l'abbandono nave a Moneglia\" loading=\"lazy\">\n      <figcaption>A terra, sani e salvi.</figcaption></figure>\n    <div class=\"les\"><b>Menzione d'onore</b>\n      <ol><li>Sangue freddo da ospiti: allarme, soccorsi e nuotata, nell'ordine giusto.</li>\n      <li>Da passeggero non scegli il comandante, ma l'uscita la individui sempre.</li>\n      <li>Sicurezza prima, orgoglio poi.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> uno yacht sul fondo, cinque persone illese e una nuotata verso Moneglia.\n      <br><a href=\"https://www.primocanale.it/cronaca/27105-moneglia-e-affondato-lo-yacht-andato-a-fuoco-i-5-a-bordo-si-sono-buttati-in-mare.html\" target=\"_blank\" rel=\"noopener\">📰 L'articolo — Primocanale ↗</a></div>\n    <div class=\"video\"><iframe src=\"https://www.youtube-nocookie.com/embed/rglFQp34IFY\" title=\"Incendio yacht a Moneglia\" loading=\"lazy\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "obli-aperti",
@@ -125,7 +136,8 @@
         "riccardo-b"
       ],
       "bodyHtml": "<p>C'è chi controlla il meteo e chi controlla le cime. E poi c'è <a class=\"plink\" href=\"membro.html#giacomo-n\"><b>Jack N</b></a>, che prima di dormire lascia <b>gli oblò spalancati</b> — con qualsiasi previsione. Basta un'onda di traverso o uno spruzzo notturno e la sua cabina diventa una piscina: <b>lenzuola fradice, materasso inzuppato</b> e la ormai celebre corsa all'asciugatura all'alba.</p>\n    <p>Non è un caso isolato: alla stessa scuola di pensiero appartiene il collega <a class=\"plink\" href=\"membro.html#riccardo-b\"><b>Riccardo B</b></a>, altro fedele sostenitore dell'oblò aperto a ogni costo. Due allievi, una sola — bagnatissima — dottrina.</p>\n    <div class=\"les\"><b>Morale di bordo</b>\n      <ol><li>Ultimo giro prima di dormire: oblò e osteriggi <b>chiusi</b>.</li>\n      <li>Il materasso asciutto è un lusso che si conquista la sera prima.</li></ol></div>\n    <div class=\"esito\"><b>Bilancio:</b> nessun danno alla barca, parecchi danni all'orgoglio — e lenzuola stese al sole a ogni scalo.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "trentasei-ore-bonaccia",
@@ -148,7 +160,8 @@
         "sofia-m"
       ],
       "bodyHtml": "<p>Trasferimento da Minorca a Maiorca, mare piatto come una tavola. Equipaggio ancora in sei — <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a>, <a class=\"plink\" href=\"membro.html#cecilia-r\"><b>Cecilia R.</b></a>, <a class=\"plink\" href=\"membro.html#ludovica-r\"><b>Ludovica R.</b></a>, <a class=\"plink\" href=\"membro.html#giacomo-m\"><b>Giacomo M.</b></a> e <a class=\"plink\" href=\"membro.html#sofia-m\"><b>Sofia M.</b></a> — con le ragazze serene in pozzetto a guardare Temptation Island. Mare così calmo che i due skipper decidono una notturna di quattordici-quindici ore fino a Formentera. Tutti a letto tranquilli.</p>\n<p>Nel cuore della notte, al largo di Cabrera, i motori si spengono. La scoperta: un serbatoio era <b>bucato</b> e aveva perso gasolio per strada — molto meno del previsto — e il secondo non partiva per una <b>bolla d'acqua</b> al suo interno. Barca senza propulsione, in mezzo al canale tra Maiorca e Ibiza.</p>\n<p>E lì la beffa: bonaccia totale, non un filo di vento. <b>Trentasei ore alla deriva</b>, senza servizi di bordo né elettricità — frigo spento, caldo bestiale — e l'assistenza del charter di Maiorca che non si fa viva.</p>\n<p>Dopo l'ennesima notte al timone, il miracolo: un alito di vento. La barca torna a muoversi verso Ibiza, e il meccanico di bordo <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a> recupera dal secondo serbatoio quel poco gasolio che basta ad accendere i motori ed entrare in porto. Rifornimento, e vacanza salva.</p>\n<div class=\"les\"><b>Lezioni imparate</b>\n  <ol><li>Prima di una notturna lunga, controllare davvero i serbatoi: livello, tenuta e acqua nel gasolio.</li>\n  <li>In bonaccia il motore è tutto: senza vento e senza gasolio si va solo dove porta la corrente.</li>\n  <li>Un buon meccanico a bordo vale quanto un buon skipper.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> trentasei ore alla deriva, un serbatoio bucato e uno pieno d'acqua — e la scoperta che <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a>, col gasolio, ci sa fare.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "tempesta-cala-portals",
@@ -169,7 +182,8 @@
         "laura-c"
       ],
       "bodyHtml": "<p>Dopo Formentera e Ibiza, con a bordo anche <a class=\"plink\" href=\"membro.html#leonardo-m\"><b>Leonardo M.</b></a> e <a class=\"plink\" href=\"membro.html#laura-c\"><b>Laura C.</b></a>, i nostri tornano verso Maiorca per l'ultima rada del viaggio: <b>Cala Portals Vells</b>, stretta ma consigliata e riparata — c'era un po' di vento.</p>\n<p>Nel cuore della notte scoppia una tempesta: pioggia e vento fortissimo. Un catamarano perde l'ormeggio e parte alla deriva dritto sulla nostra barca. Il capitano, che dormiva in plancia, se ne accorge in tempo: sveglia l'equipaggio e, a forza di braccia, lo spingono via evitando la collisione. Il catamarano si schianta rovinosamente su un'altra barca e la scaraventa sugli scogli.</p>\n<p>Nello stesso momento i nostri disancorano e salvano una coppia di pensionati spagnoli, anche loro alla deriva e in evidente difficoltà. Escono dalla rada proprio mentre entra la motovedetta della guardia costiera, arrivata per soccorrere le barche coinvolte.</p>\n<p>Fuori dalla rada, indenni, vanno a riancorare vicino al porto di Palma. Grande spavento, ma equipaggio pronto e reattivo: un atto a suo modo eroico. Eroi della missione: <a class=\"plink\" href=\"membro.html#leonardo-m\"><b>Leonardo M.</b></a> e <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a>.</p>\n<div class=\"les\"><b>Menzione d'onore</b>\n  <ol><li>Sangue freddo: un catamarano alla deriva schivato a mani nude, in piena tempesta.</li>\n  <li>Spirito marinaio: mollato l'ormeggio anche per salvare una coppia di sconosciuti in difficoltà.</li>\n  <li>Uscita pulita dalla rada, interi, mentre arrivavano i soccorsi.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> una notte di tempesta, una collisione schivata, due pensionati spagnoli salvati — e l'ancora ricalata al sicuro davanti a Palma.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "acque-nere",
@@ -188,7 +202,8 @@
         "pietro-c"
       ],
       "bodyHtml": "<p>Seychelles 2024, il viaggio della discordia — lo stesso dello screzio a Grande Sœur — con le tensioni di bordo già alte. E come se non bastasse, cede una tubatura dell'impianto di scarico delle acque nere.</p>\n<p>Il tubo si apre e scarica tutto in sentina: lo scafo diventa una camera a gas dall'odore terrificante, con dentro anche il «lascito» dei passeggeri precedenti. Una puzza pazzesca.</p>\n<p>Il capitano, <b>a mani nude</b>, rimette a posto il tubo e ripulisce a fondo tutta la sentina, liberandola dall'odore e permettendo alla vacanza di continuare. Un lavoro al cui confronto un'autospurgo tedesca fa un baffo — spalleggiato da <a class=\"plink\" href=\"membro.html#pietro-c\"><b>Pietro C.</b></a>.</p>\n<div class=\"les\"><b>Menzione d'onore</b>\n  <ol><li>Stomaco d'acciaio: tubatura delle acque nere rimessa a posto a mani nude.</li>\n  <li>Nessuno si tira indietro: sentina bonificata a fondo, vacanza salvata.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> una sentina bonificata, un odore leggendario sconfitto e una crociera che, tra uno screzio e una puzza, va comunque avanti.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "avanti-tutta",
@@ -208,7 +223,8 @@
         "chiara-f"
       ],
       "bodyHtml": "<p>Baleari 2016, un viaggio nato per lo <b>shooting</b> della nuova linea di costumi di <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a>, imprenditore del beachwear, che aveva scelto l'isola per legarci l'immagine del brand — e chiamato a bordo un'amica modella internazionale, <a class=\"plink\" href=\"membro.html#chiara-f\"><b>Chiara F.</b></a>, con tutto il team di fotografi.</p>\n<p>Partenza dal porto di Palma. Edoardo era arrivato dalla Sicilia e, da solo, aveva fatto tutta la cambusa e caricato la barca; il co-skipper <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a> atterra alle 11:30 su una barca già pronta a salpare. Nessuno dei due proprio brillante: Berna molla gli ormeggi e fa subito la fiancata alla barca di fianco, spazzando via tutti i parabordi. Nessuno si accorge di nulla, e i due partono in solitaria per la traversata notturna Maiorca→Ibiza, dove avrebbero imbarcato il resto dell'equipaggio.</p>\n<p>La traversata regala un'onda al traverso fastidiosissima. E dopo la consueta «buffata» dei due capitani, uno cede: <a class=\"plink\" href=\"membro.html#bernardo-b\"><b>Bernardo B.</b></a> cade e vomita copiosamente in mare. Arrivo alla prima cala di Ibiza — <b>Cala Sant Vicent</b> — esausti, con la risacca che non aiuta a smaltire nulla.</p>\n<p>Ripartiti e caricato l'equipaggio a Ibiza, ai comandi c'è Edoardo per entrare nella marina: porto stretto. E qui il gran finale — il gas del motore si blocca al massimo, incontrollabile dentro il porto. La barca va gestita come un transatlantico stile Titanic: uno sul motore a premere il gas a mano, uno sulla scaletta a fare da passaparola, il capitano a gridare «Avanti tutta! Indietro tutta!» fino a Formentera, dove sale il meccanico che sistema il misfatto. Anche questa, salvata.</p>\n<div class=\"les\"><b>Lezioni imparate</b>\n  <ol><li>Parabordi a bordo prima di mollare gli ormeggi — sempre.</li>\n  <li>Due capitani reduci da una notte «importante» non fanno un capitano lucido.</li>\n  <li>Anche col gas bloccato si entra in porto: motore a mano, passaparola e nervi saldi.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> una fiancata di parabordi, un co-skipper a mare (letteralmente), un motore imbizzarrito — e un ingresso in porto degno del Titanic, ma a lieto fine.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "ancore-coticcio",
@@ -230,7 +246,8 @@
         "gualtiero-s"
       ],
       "bodyHtml": "<p><b>Cala Coticcio</b>, gioiello di Caprera nell'arcipelago della Maddalena — e insieme incubo dei marinai: sul suo fondo le ancore si incastrano di continuo, e più d'uno è dovuto ripartire <b>tagliando la cima</b> pur di liberarsi.</p>\n<p>Proprio lì, <a class=\"plink\" href=\"membro.html#leonardo-m\"><b>Leonardo M.</b></a> e <a class=\"plink\" href=\"membro.html#giorgio-m\"><b>Giorgio M.</b></a> avvistano sul fondale <b>tre ancore abbandonate</b>. Richiamano il capitano, che arriva sul posto col tender insieme a <a class=\"plink\" href=\"membro.html#giacomo-b\"><b>Giacomo B.</b></a> e <a class=\"plink\" href=\"membro.html#gualtiero-s\"><b>Gualtiero S.</b></a> per tentare il recupero.</p>\n<p>A forza di immersioni alternate — Leonardo e Giorgio giù a turno — i nostri riportano a galla tutte e tre le <b>ancore giganti</b>, una delle quali storica, vecchissima.</p>\n<p>Il finale è degno di una vera leggenda: non riuscendo a spuntarne un buon prezzo, le ancore vengono depositate <b>in segreto in una rada</b>, in attesa di un compratore. Sono ancora lì — a disposizione, chissà, del prossimo equipaggio di passaggio in Sardegna.</p>\n<div class=\"les\"><b>Morale di bordo</b>\n  <ol><li>A Coticcio si molla poco e si controlla molto — o si finisce nella collezione del fondo.</li>\n  <li>Recuperare un tesoro è metà dell'opera: sul prezzo, i nostri hanno ancora da imparare.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> tre ancore giganti riportate a galla, una storica — e un tesoro sommerso che aspetta ancora il compratore in una rada segreta.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "wally-pescato",
@@ -250,7 +267,8 @@
         "riccardo-t"
       ],
       "bodyHtml": "<p>Il pescatore degli equipaggi all'opera: se di notte, in rada, senti dei pestoni sul ponte, è <a class=\"plink\" href=\"membro.html#gualtiero-s\"><b>Gualtiero S.</b></a> che cala le canne &mdash; veri diagrammi, sette-otto lenze insieme senza impigliare un amo.</p>\n<p>La scena cult, però, è una <b>maturità del 2011</b>, senza il capitano a bordo. Dopo qualche parola di troppo, <a class=\"plink\" href=\"membro.html#riccardo-t\"><b>Riccardo T.</b></a> lo butta in acqua proprio mentre la barca pesca a strascico &mdash; e il buon &laquo;Wally&raquo; finisce pescato dal suo stesso amo, impigliato in una mano &mdash; con successiva corsa al pronto soccorso di Mykonos.</p>\n<div class=\"les\"><b>Morale di bordo</b>\n  <ol><li>Non litigare col pescatore mentre le lenze sono in acqua.</li>\n  <li>Il mare, ogni tanto, restituisce le battute con gli interessi.</li></ol></div>\n<div class=\"esito\"><b>Bilancio:</b> un tuffo non richiesto, un amo in una mano, un giro al pronto soccorso di Mykonos e una leggenda di bordo.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "festa-dei-quaranta",
@@ -272,7 +290,8 @@
         "marco-t"
       ],
       "bodyHtml": "<p>Baleari 2014, la crociera dei quarant'anni. Davanti a un chiringuito di <b>Formentera</b>, due barche di romani stavano caricando decine di persone dalla spiaggia per la festa della settimana. Il nostro equipaggio se ne tornava a bordo tranquillo e un filo sconsolato: niente festa.</p><p>E qui l'intuizione da comandante. Preso dallo sconforto, il capitano decide di <b>mimetizzarsi tra i gommoni</b> delle altre due barche che facevano la spola con la costa: si infila nel via-vai e, invece di riempire le barche altrui, comincia a caricare gente sulla <b>nostra</b>. Cinque o sei tragitti dopo, eravamo in <b>quaranta a bordo</b>.</p><p>I ragazzi buttano la pasta &mdash; carbonare in coperta per trenta-quaranta affamati &mdash; e in rada a Formentera scoppia una festa che dura fino a notte fonda, prima di riportare tutti a <b>Es Pujols</b> e sbarcarli sani e salvi.</p><div class='les'><b>Menzione d'onore</b><ol><li>Colpo d'occhio e faccia tosta: una festa intera dirottata a bordo con l'infiltrazione perfetta.</li><li>Logistica da comandante: quaranta persone caricate, sfamate e riportate a terra senza un graffio.</li><li>Morale dell'equipaggio salvato in extremis.</li></ol></div><div class='esito'><b>Bilancio:</b> quaranta invitati a sorpresa, chili di carbonara e una festa in rada entrata nella leggenda &mdash; tutto per merito (e sfrontatezza) del capitano.</div>",
-      "autore": "edo-c"
+      "autore": "edo-c",
+      "added": "2026-07-11"
     },
     {
       "id": "felpone-tropicale",
@@ -291,7 +310,8 @@
         "gabri-m"
       ],
       "bodyHtml": "<p>Capodanno ai Caraibi: trenta gradi, tutti in costume col bicchiere in mano — e il comandante in <b>felpone</b>, con <b>40 di febbre</b>, che trema come una sartia al lasco. Nessuna concessione: presente al brindisi, presente alla rotta del giorno dopo.</p><p>Lo racconta <a class='plink' href='membro.html#gabri-m'><b>Gabriele</b></a>, che quella notte imparò che il comando non prevede giorni di malattia. La febbre passò; la leggenda del felpone tropicale no.</p>",
-      "autore": "gabri-m"
+      "autore": "gabri-m",
+      "added": "2026-07-15"
     },
     {
       "id": "regata-delle-uova",
@@ -310,7 +330,8 @@
         "gabri-m"
       ],
       "bodyHtml": "<p>Sporadi 2014, due barche in flotta: «Anax» e la gemella «Regina V». Basta un refolo buono e la crociera diventa regata; basta una regata e la cambusa diventa santabarbara: da un bordo all'altro partì un <b>bombardamento di uova</b> in piena regola.</p><p>Non è dato sapere chi vinse la regata. È dato sapere chi lavò le coperte.</p>",
-      "autore": "gabri-m"
+      "autore": "gabri-m",
+      "added": "2026-07-15"
     },
     {
       "id": "falo-sporadi",
@@ -329,7 +350,8 @@
         "gabri-m"
       ],
       "bodyHtml": "<p>La sera, la flotta delle Sporadi si riunisce a terra: legna raccolta lungo tutta la spiaggia, un <b>falò fuori scala</b> e due equipaggi attorno al fuoco fino a notte fonda — di quelle serate che tengono insieme una flotta più di qualsiasi VHF.</p>",
-      "autore": "gabri-m"
+      "autore": "gabri-m",
+      "added": "2026-07-15"
     },
     {
       "id": "barracuda-winch",
@@ -349,7 +371,8 @@
         "luca-b"
       ],
       "bodyHtml": "<p>Battuta di pesca fortunata ai Caraibi: i <b>barracuda</b> abboccano, salgono a bordo e — da manuale del vero pescatore — vanno finiti in fretta. Lo strumento più adatto a portata di mano? La <b>maniglia del winch</b>.</p><p><a class='plink' href='membro.html#gabri-m'><b>Gabriele</b></a> e <a class='plink' href='membro.html#luca-b'><b>Luca B.</b></a> eseguirono con zelo da macelleria navale: cena assicurata e <b>pozzetto da lavare come dopo un abbordaggio</b>. Teatro dell'impresa: le acque cubane del 2019.</p>",
-      "autore": "gabri-m"
+      "autore": "gabri-m",
+      "added": "2026-07-15"
     },
     {
       "id": "bonifica-della-rada",
@@ -369,7 +392,8 @@
         "silvano-b"
       ],
       "bodyHtml": "<p>Ci sono manovre che non compaiono su nessun manuale. Nelle acque delle Grenadine, <a class='plink' href='membro.html#silvano-b'><b>Silvano B.</b></a> lasciò in rada un'<b>opera di proporzioni ciclopiche</b> — le cronache parlano di oltre un metro — che rifiutava categoricamente di prendere il largo.</p><p>Fu <a class='plink' href='membro.html#gabri-m'><b>Gabriele</b></a> ad arruolare il tender: <b>l'elica come strumento di bonifica</b>, innumerevoli passaggi, finché la rada tornò balneabile. Missione compiuta. Da quel giorno, la <a class='plink' href='membro.html#silvano-b'>dieta perenne di Silvano</a> ha tutta un'altra plausibilità.</p>",
-      "autore": "gabri-m"
+      "autore": "gabri-m",
+      "added": "2026-07-15"
     }
   ]
 }

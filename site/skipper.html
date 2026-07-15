@@ -260,7 +260,9 @@ a.trip:hover .pl>b{color:var(--accent)}
 .incident .oneshot img{width:100%;max-width:460px;border-radius:4px;display:block}
 .incident .oneshot figcaption{font:italic 400 .72rem/1.35 var(--body);color:var(--soft);margin-top:.3rem}
 .aversion{border-left:3px solid var(--accent);background:var(--sea-1);padding:.7rem .9rem .55rem;border-radius:0 7px 7px 0;margin-top:1rem}
-.aversion b{display:block;margin-bottom:.3rem}
+.aversion .avhead{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+.aversion .avhead b{margin:0}
+.vpav{width:28px;height:28px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2);display:inline-flex;align-items:center;justify-content:center;font:700 .75rem/1 var(--display);color:#fff}
 .inc-link{color:inherit;text-decoration:none;border-bottom:2px solid color-mix(in srgb,var(--accent) 45%,transparent)}
 .inc-link:hover{color:var(--accent)}
 .inc-open{display:inline-block;margin-top:.7rem;font:700 .6rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid var(--hair);padding:.42rem .75rem;border-radius:99px}
@@ -563,11 +565,20 @@ function toggleGallery(btn) {
   btn.innerHTML = hidden ? 'Mostra meno <span class="chev up">▾</span>' : btn.dataset.label + ' <span class="chev">▾</span>';
 }
 
+// versione di un coautore dentro un aneddoto (stesso blocco di aneddoti.html, con la sua faccia)
+function versionBlock(v) {
+  const m = (window.__CREW || []).find(p => p.id === v.autore);
+  const name = m ? m.name : v.autore;
+  const ph = m && ((m.crew2026 && m.crew2026.photo) || m.photo);
+  const av = ph ? `<img class="vpav" src="${ph}" alt="${esc(name)}" loading="lazy">`
+               : `<span class="vpav">${esc(String(name).trim()[0].toUpperCase())}</span>`;
+  return `<div class="aversion"><div class="avhead">${av}<b>🗣️ La versione di ${esc(name)}</b></div>${v.html}</div>`;
+}
 function incidentBlock(a) {
   return `<div class="incident${a.kind === "eroico" ? " gold" : ""}"><span class="stamp">${esc(a.stamp)}</span>
     <h3><a class="inc-link" href="aneddoti.html#${a.id}">${esc(a.title)}</a></h3>
     <div class="meta">${a.meta}</div>
-    ${a.bodyHtml}
+    ${a.bodyHtml}${(a.versioni || []).map(versionBlock).join("")}
     <a class="inc-open" href="aneddoti.html#${a.id}">Apri la scheda aneddoto ›</a></div>`;
 }
 
