@@ -1,4 +1,9 @@
-# Lancio crewin.it — runbook
+# Lancio Crewin — runbook (dominio: everywaves.com)
+
+> **FASE B 2026-07-16: il dominio scelto è EVERYWAVES.COM** (comprato su GoDaddy; crewin.it
+> abbandonato — mai registrato). DNS: 4 A → GitHub Pages + CNAME www → @ su GoDaddy.
+> Custom domain impostato via API, `site/CNAME` nel repo, auth Supabase su everywaves.com.
+> Le sezioni sotto che citano "crewin.it" valgono lette come "everywaves.com".
 
 > **STATO 2026-07-15 — FASE A COMPLETATA (live senza dominio).** Area riservata attiva su
 > `https://edoardo-casella.github.io/nina/` — Supabase progetto **Plancia** (`nlbhhzjimsxakcugmrdy`,
