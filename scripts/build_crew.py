@@ -281,7 +281,11 @@ def grade_of(track, days):
 
 cur = json.loads(io.open(CREWJSON, encoding="utf-8").read())
 # ricostruisce la lista membri 2026 dal file unificato (people con crew2026),
-# preservando gli overlay manuali (board/leave/role/photo/nick/note/link/q)
+# preservando gli overlay manuali (role/photo/nick/note/link).
+# ATTENZIONE PRIVACY: board/leave (date d'imbarco) e q (scheda personale) NON
+# escono più nel crew.json pubblico — le date vivono in voyage.json e arrivano
+# al sito via blob riservato 'arrivi' (publish.py → Supabase); le schede vivono
+# nella tabella Supabase `profiles` (editor profilo.html, seed seed_supabase.py).
 if "members" in cur:
     members = cur["members"]
 else:
@@ -300,7 +304,7 @@ for m in members:
         pid = match(nm); me = False
         if pid: used_pids.add(pid); id2pid[m["id"]] = pid; st = stats(pid); tl = trips_list_for(part.get(pid, []), pid)
         else: st = {"trips": 0, "days": 0, "nm": 0, "first": None, "last": None}; tl = []
-    crew2026 = {k: m[k] for k in ("board", "leave", "role", "photo", "nick", "note", "link", "q") if k in m}
+    crew2026 = {k: m[k] for k in ("role", "photo", "nick", "note", "link") if k in m}
     tr = track_of(m["id"], me); ext = EXT_DAYS.get(m["id"], 0)
     _, rid, rlab = grade_of(tr, st["days"] + ext)
     out.append({"id": m["id"], "name": nm, **st, "rank": rid, "rank_label": rlab, "track": tr,

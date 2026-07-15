@@ -58,8 +58,14 @@ jobs:
       - name: Metti da parte il briefing committato
         run: cp site/data/briefing.json /tmp/old.json 2>/dev/null || true
 
+      # SUPABASE_*: publish.py carica i dati riservati (conti, arrivi) su
+      # Supabase — e il giro 2x/die fa da keep-alive del free tier. Se i secret
+      # non sono configurati lo step salta quella parte con un avviso.
       - name: Genera i JSON del briefing
-        env: { TZ: Europe/Rome }
+        env:
+          TZ: Europe/Rome
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python scripts/publish.py
 
       # Il piano resta "non approvato" finche' qualcuno non lo conferma:

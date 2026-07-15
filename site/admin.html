@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amministrazione · Crewin</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="icon-192.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --verde:#0A7A43; --magenta:#C2185B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --verde:#2FBF71; --magenta:#E8536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh;padding-bottom:3rem}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:1.4rem 1.1rem 0}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:.8rem;border-left:3px solid var(--gold);padding-left:.55rem}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:11px;padding:.9rem;margin-bottom:.7rem}
+.card b.who{font-size:1.02rem}
+.meta{font-size:.82rem;color:var(--soft);margin:.15rem 0 .5rem}
+.msgtxt{font-size:.9rem;margin-bottom:.6rem;white-space:pre-wrap}
+.row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+select,input{font:400 .95rem/1.3 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--hair);border-radius:8px;padding:.5rem .6rem}
+button{background:var(--accent);color:#fff;border:0;cursor:pointer;font:700 .68rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:.65rem .9rem;border-radius:99px}
+button.ghost{background:transparent;color:var(--soft);border:1px solid var(--hair)}
+button.warn{background:var(--magenta)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{text-align:left;padding:.45rem .4rem;border-bottom:1px solid var(--hair)}
+th{font:700 .58rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.st{font:700 .58rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:.25rem .5rem}
+.st.approved{color:var(--verde);border:1px solid var(--verde)}
+.st.pending{color:var(--gold);border:1px solid var(--gold)}
+.st.blocked{color:var(--magenta);border:1px solid var(--magenta)}
+.note{font-size:.8rem;color:var(--soft);margin:.6rem 0 1rem;line-height:1.5}
+.msg{font-size:.9rem;margin:.5rem 0}
+.msg.err{color:var(--magenta);font-weight:600}
+.msg.ok{color:var(--verde);font-weight:600}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="login.html">‹ Area equipaggio</a>
+  <span class="tag">🎖️ Amministrazione</span>
+</div></div>
+<main id="app"><section><div class="card"><p style="color:var(--soft)">Un attimo…</p></div></section></main>
+
+<script>
+const esc = s => String(s ?? "").replace(/[<>&"]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]));
+const fmtT = t => t ? new Date(t).toLocaleString("it", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "—";
+let C = null, IDS = [];
+
+async function crewIds() {
+  try {
+    const d = await fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json());
+    return (d.people || []).map(p => p.id).sort();
+  } catch (e) { return []; }
+}
+
+async function render() {
+  const app = document.getElementById("app");
+  if (!window.ninaAuth || !ninaAuth.enabled) { app.innerHTML = `<section><div class="card"><p>Area riservata non configurata.</p></div></section>`; return; }
+  const { session, member } = await ninaAuth.me();
+  if (!session || !member || member.role !== "admin" || member.status !== "approved") {
+    app.innerHTML = `<section><div class="card"><p>Questa pagina è riservata allo skipper. <a href="login.html">Area equipaggio ›</a></p></div></section>`; return;
+  }
+  C = await ninaAuth.client();
+  if (!IDS.length) IDS = await crewIds();
+
+  const [reqs, membs, blobs] = await Promise.all([
+    C.from("access_requests").select("*").order("created_at", { ascending: false }),
+    C.from("members").select("*").order("created_at", { ascending: false }),
+    C.from("private_blobs").select("key,updated_at"),
+  ]);
+  const rNew = (reqs.data || []).filter(r => r.status === "new");
+  const rOld = (reqs.data || []).filter(r => r.status !== "new");
+  const opts = sel => `<option value="">— scegli crew_id —</option>` +
+    IDS.map(i => `<option ${i === sel ? "selected" : ""}>${esc(i)}</option>`).join("");
+  // suggerimento: prova a indovinare il crew_id dal nome (nome-inizialecognome)
+  const guess = n => {
+    const p = String(n || "").trim().toLowerCase().split(/\s+/);
+    if (!p.length) return "";
+    const g = p[0] + (p[1] ? "-" + p[1][0] : "");
+    return IDS.includes(g) ? g : "";
+  };
+
+  app.innerHTML = `
+  <section><h2>Richieste di accesso ${rNew.length ? `· ${rNew.length}` : ""}</h2>
+    ${rNew.length ? rNew.map(r => `<div class="card">
+      <b class="who">${esc(r.name)}</b> — <span style="font-family:var(--mono)">${esc(r.email)}</span>
+      <div class="meta">${fmtT(r.created_at)}</div>
+      ${r.message ? `<div class="msgtxt">${esc(r.message)}</div>` : ""}
+      <div class="row">
+        <select id="sel-${r.id}">${opts(guess(r.name))}</select>
+        <button onclick="approve(${r.id})">Abilita</button>
+        <button class="ghost" onclick="reject(${r.id})">Rifiuta</button>
+      </div></div>`).join("")
+    : `<div class="card"><p style="color:var(--soft)">Nessuna richiesta in attesa.</p></div>`}
+    ${rOld.length ? `<details><summary class="note" style="cursor:pointer">Richieste già gestite (${rOld.length})</summary>
+      ${rOld.map(r => `<div class="card"><b>${esc(r.name)}</b> — ${esc(r.email)} · <i>${esc(r.status)}</i></div>`).join("")}</details>` : ""}
+    <p class="note">«Abilita» collega l'email a un <b>crew_id</b> e crea il membro come <i>approved</i>: da quel momento il suo login apre l'area riservata.</p>
+  </section>
+
+  <section><h2>Membri · ${(membs.data || []).length}</h2>
+    <div class="card" style="overflow-x:auto"><table><thead><tr><th>crew_id</th><th>email</th><th>stato</th><th></th></tr></thead><tbody>
+    ${(membs.data || []).map(m => `<tr>
+      <td style="font-family:var(--mono)">${esc(m.crew_id)}${m.role === "admin" ? " 🎖️" : ""}</td>
+      <td>${esc(m.email)}</td>
+      <td><span class="st ${esc(m.status)}">${esc(m.status)}</span></td>
+      <td>${m.role === "admin" ? "" : m.status === "blocked"
+        ? `<button class="ghost" onclick="setStatus('${esc(m.crew_id)}','approved')">Riattiva</button>`
+        : `<button class="ghost warn" onclick="setStatus('${esc(m.crew_id)}','blocked')" style="color:var(--magenta);border-color:var(--magenta)">Sospendi</button>`}</td>
+    </tr>`).join("")}</tbody></table></div>
+    <div class="card"><b>Aggiungi a mano</b>
+      <div class="row" style="margin-top:.5rem">
+        <select id="add-id">${opts("")}</select>
+        <input id="add-em" type="email" placeholder="email" style="flex:1;min-width:12rem">
+        <button onclick="addMember()">Aggiungi</button>
+      </div></div>
+  </section>
+
+  <section><h2>Dati riservati (CI)</h2>
+    <div class="card"><table><thead><tr><th>blob</th><th>ultimo aggiornamento</th></tr></thead><tbody>
+      ${["conti", "arrivi"].map(k => { const b = (blobs.data || []).find(x => x.key === k);
+        return `<tr><td style="font-family:var(--mono)">${k}</td><td>${b ? fmtT(b.updated_at) : "<i>mai scritto</i>"}</td></tr>`; }).join("")}
+    </tbody></table>
+    <p class="note" style="margin-bottom:0">Li scrive il workflow «Aggiorna briefing» due volte al giorno. Se «mai scritto», controlla i secret SUPABASE_* su GitHub.</p></div>
+  </section>
+  <section><p id="gm" class="msg" role="status"></p></section>`;
+}
+
+const gm = () => document.getElementById("gm");
+window.approve = async id => {
+  const sel = document.getElementById("sel-" + id);
+  const crew_id = sel.value;
+  if (!crew_id) { gm().className = "msg err"; gm().textContent = "Scegli prima il crew_id a cui collegare la richiesta."; return; }
+  const { data } = await C.from("access_requests").select("email").eq("id", id).limit(1);
+  const email = data && data[0] && data[0].email.trim().toLowerCase();
+  if (!email) return;
+  const up = await C.from("members").upsert({ crew_id, email, status: "approved" });
+  if (up.error) { gm().className = "msg err"; gm().textContent = "Errore: " + up.error.message; return; }
+  await C.from("access_requests").update({ status: "approved" }).eq("id", id);
+  gm().className = "msg ok"; gm().textContent = `${email} abilitato come ${crew_id} ⚓`;
+  render();
+};
+window.reject = async id => {
+  await C.from("access_requests").update({ status: "rejected" }).eq("id", id);
+  render();
+};
+window.setStatus = async (crew_id, status) => {
+  const v = await C.from("members").update({ status }).eq("crew_id", crew_id);
+  if (v.error) { gm().className = "msg err"; gm().textContent = "Errore: " + v.error.message; return; }
+  render();
+};
+window.addMember = async () => {
+  const crew_id = document.getElementById("add-id").value;
+  const email = document.getElementById("add-em").value.trim().toLowerCase();
+  if (!crew_id || !email) { gm().className = "msg err"; gm().textContent = "Servono crew_id ed email."; return; }
+  const up = await C.from("members").upsert({ crew_id, email, status: "approved" });
+  if (up.error) { gm().className = "msg err"; gm().textContent = "Errore: " + up.error.message; return; }
+  gm().className = "msg ok"; gm().textContent = `${email} abilitato come ${crew_id} ⚓`;
+  render();
+};
+
+render();
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

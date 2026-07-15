@@ -1,6 +1,7 @@
-"""Genera i quattro JSON che la dashboard legge (briefing, weather, conti,
-program). Girato da GitHub Actions due volte al giorno (12:00 e 20:00
-Europe/Rome) e da riga di comando quando serve.
+"""Genera i JSON pubblici che la dashboard legge (briefing, weather, program,
+destinations) e pubblica i dati RISERVATI (conti, arrivi) su Supabase, dove li
+vede solo l'equipaggio autenticato. Girato da GitHub Actions due volte al
+giorno (12:00 e 20:00 Europe/Rome) e da riga di comando quando serve.
 
   python scripts/publish.py                 # oggi, meteo reale
   python scripts/publish.py --day 2026-08-12
@@ -12,7 +13,7 @@ publish.py --approve). Il meteo e' un fatto e si aggiorna da solo; il piano e' u
 decisione e ha bisogno di un nome sopra.
 """
 from __future__ import annotations
-import argparse, datetime as dt, json, math, sys, urllib.error
+import argparse, datetime as dt, json, math, os, sys, urllib.error, urllib.request
 from pathlib import Path
 
 import core, routing, shelter, ledger, weather, photos
@@ -208,8 +209,10 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
                      "nm": round(tot, 1), "tappe": tappe, "n_tappe": len(tappe),
                      "verify": any(t["verify"] for t in tappe),
                      "tier": confidence_tier(i),
-                     "crew_delta": {"on": [m["name"] for m in v["crew"] if m["board"] == orig],
-                                    "off": [m["name"] for m in v["crew"] if m["leave"] == orig]},
+                     # solo CONTEGGI: i nomi con le date d'imbarco sono riservati
+                     # (vivono nel blob 'arrivi' dietro login)
+                     "crew_delta": {"on_n": sum(1 for m in v["crew"] if m["board"] == orig),
+                                    "off_n": sum(1 for m in v["crew"] if m["leave"] == orig)},
                      "wx": None, "wave": None, "sst": None, "_dest": dest_wp})
 
     wx_rows = [r for r in rows if r["tier"] != "programma"]
@@ -586,8 +589,9 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "tonight": tonight, "plan_b": plan_b, "ranked": ranked[:4],
         "outlook": outlook,
         "polar_estimated": v["boat"].get("polar_status", "stimata") == "stimata",
-        "crew": [{"name": m["name"], "role": m["role"], "board": m["board"],
-                  "leave": m["leave"], "cabin": m.get("cabin")} for m in crew],
+        # niente board/leave: le date d'imbarco sono riservate (blob 'arrivi');
+        # qui resta solo chi c'e' OGGI, col suo ruolo e la cabina
+        "crew": [{"name": m["name"], "role": m["role"], "cabin": m.get("cabin")} for m in crew],
         "turns": day_turns(crew, (dt.date.fromisoformat(day) - dt.date.fromisoformat(plan_all[0]["date"])).days
                            if plan_all else 0),
         "source": "Open-Meteo (ECMWF) — non ufficiale",
@@ -621,6 +625,57 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     return briefing, wx, conti, program
 
 
+def build_arrivi(v, now: str) -> dict:
+    """Blob riservato per arrivi.html: date d'imbarco/sbarco per persona, con
+    anzianità e foto dal registro pubblico (crew.json). Shape del vecchio array
+    inline della pagina: {n, b, l, r, x, fy, p} — così il render non cambia."""
+    try:
+        reg = {p["name"]: p for p in
+               json.loads((SITE / "crew.json").read_text(encoding="utf-8"))["people"]}
+    except Exception:
+        reg = {}
+    crew = []
+    for m in v["crew"]:
+        p = reg.get(m["name"], {})
+        c26 = p.get("crew2026", {})
+        row = {"n": m["name"], "b": m["board"], "l": m["leave"],
+               "r": c26.get("role", m.get("role", "crew")), "x": p.get("trips", 0)}
+        if p.get("first"): row["fy"] = p["first"]
+        photo = c26.get("photo") or p.get("photo")
+        if photo: row["p"] = photo
+        crew.append(row)
+    dates = sorted(d for m in v["crew"] for d in (m["board"], m["leave"]))
+    return {"generated_at": now, "start": dates[0], "end": dates[-1], "crew": crew}
+
+
+def supabase_upsert_blobs(blobs: dict) -> None:
+    """Scrive i payload riservati su Supabase (tabella private_blobs) via REST.
+    Serve la service key: su GitHub Actions arriva dai secret SUPABASE_URL /
+    SUPABASE_SERVICE_KEY, in locale da env-var. Se mancano si salta con un
+    avviso: il deploy del sito pubblico non deve MAI dipendere da questo.
+    Girando 2 volte al giorno fa anche da keep-alive del free tier (che
+    altrimenti pausa il progetto dopo 7 giorni di inattività)."""
+    url, key = os.environ.get("SUPABASE_URL"), os.environ.get("SUPABASE_SERVICE_KEY")
+    if not url or not key:
+        print("SUPABASE_URL/SUPABASE_SERVICE_KEY assenti: salto i dati riservati "
+              "(conti/arrivi restano quelli già pubblicati).", file=sys.stderr)
+        return
+    now = dt.datetime.now().astimezone().isoformat(timespec="seconds")
+    body = json.dumps([{"key": k, "payload": p, "updated_at": now}
+                       for k, p in blobs.items()], ensure_ascii=False).encode()
+    req = urllib.request.Request(
+        url.rstrip("/") + "/rest/v1/private_blobs", data=body, method="POST",
+        headers={"apikey": key, "Authorization": f"Bearer {key}",
+                 "Content-Type": "application/json",
+                 "Prefer": "resolution=merge-duplicates,return=minimal"})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            print(f"Dati riservati su Supabase aggiornati ({', '.join(blobs)}): HTTP {r.status}")
+    except Exception as e:
+        print(f"Supabase non raggiungibile ({e}): dati riservati NON aggiornati, "
+              f"deploy comunque OK.", file=sys.stderr)
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--day", default=dt.date.today().isoformat())
@@ -648,10 +703,13 @@ if __name__ == "__main__":
               f"committato, salto la rigenerazione. Deploy comunque OK.", file=sys.stderr)
         sys.exit(0)
     # schede dettaglio: join senza rete del file arricchito a mano (mai fetch qui)
-    dests = build_destinations(core.load(), briefing["generated_at"])
-    for name, obj in (("briefing", briefing), ("weather", wx), ("conti", conti),
+    v = core.load()
+    dests = build_destinations(v, briefing["generated_at"])
+    # i conti NON si scrivono più in site/: sono riservati e vanno su Supabase
+    for name, obj in (("briefing", briefing), ("weather", wx),
                       ("program", program), ("destinations", dests)):
         (SITE / f"{name}.json").write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
+    supabase_upsert_blobs({"conti": conti, "arrivi": build_arrivi(v, briefing["generated_at"])})
     tag = briefing["leg"]["leg"] if briefing["leg"] else ("sosta" if briefing["rest"] else "—")
     print(f"Pubblicato {a.day}: {tag} | score {briefing['leg']['avg_score'] if briefing['leg'] else '—'} "
           f"| rada {briefing['tonight']['name'] if briefing['tonight'] else '—'} "

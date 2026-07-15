@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-10T23:58+02:00",
+  "generated_at": "2026-07-15T22:12+02:00",
   "sim": true,
-  "day": "2026-07-10",
-  "start_date": "2026-07-10",
-  "end_date": "2026-07-31",
+  "day": "2026-07-15",
+  "start_date": "2026-07-15",
+  "end_date": "2026-08-05",
   "tiers": {
     "piena": "previsione affidabile (fino a ~7 giorni)",
     "degradata": "affidabilita' ridotta (8-10 giorni)",
@@ -11,7 +11,7 @@
   },
   "days": [
     {
-      "date": "2026-07-10",
+      "date": "2026-07-15",
       "rest": false,
       "night": false,
       "frm": "Cannigione",
@@ -49,34 +49,27 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on": [
-          "Edo C",
-          "Ginevra L",
-          "Bernardo B",
-          "Bianca B",
-          "Giacomo N",
-          "Mati M"
-        ],
-        "off": []
+        "on_n": 6,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 45,
-        "tmax": 31.0,
-        "tmin": 24.7,
+        "wmo": 3,
+        "tmax": 33.5,
+        "tmin": 25.3,
         "rain_prob": 0,
-        "wind_max": 14.1,
-        "gust_max": 27.0,
-        "wind_dir": 118
+        "wind_max": 8.3,
+        "gust_max": 15.9,
+        "wind_dir": 314
       },
       "wave": {
         "hmax": 0.48,
-        "dir": 157,
-        "period": 3.55
+        "dir": 201,
+        "period": 3.65
       },
-      "sst": 27.7
+      "sst": 26.9
     },
     {
-      "date": "2026-07-11",
+      "date": "2026-07-16",
       "rest": false,
       "night": false,
       "frm": "Cala Portese",
@@ -125,27 +118,27 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": {
         "wmo": 3,
-        "tmax": 28.2,
-        "tmin": 26.5,
-        "rain_prob": 13,
-        "wind_max": 14.8,
-        "gust_max": 20.4,
-        "wind_dir": 81
+        "tmax": 28.9,
+        "tmin": 26.4,
+        "rain_prob": 0,
+        "wind_max": 15.6,
+        "gust_max": 21.4,
+        "wind_dir": 26
       },
       "wave": {
-        "hmax": 0.72,
-        "dir": 91,
-        "period": 3.45
+        "hmax": 0.48,
+        "dir": 276,
+        "period": 3.3
       },
-      "sst": 26.8
+      "sst": 27.5
     },
     {
-      "date": "2026-07-12",
+      "date": "2026-07-17",
       "rest": false,
       "night": false,
       "frm": "Isole Lavezzi",
@@ -194,27 +187,27 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 31.3,
-        "tmin": 24.2,
-        "rain_prob": 3,
-        "wind_max": 11.0,
-        "gust_max": 21.8,
-        "wind_dir": 76
+        "wmo": 45,
+        "tmax": 33.1,
+        "tmin": 24.1,
+        "rain_prob": 0,
+        "wind_max": 13.0,
+        "gust_max": 25.3,
+        "wind_dir": 271
       },
       "wave": {
-        "hmax": 0.68,
-        "dir": 86,
-        "period": 3.4
+        "hmax": 0.44,
+        "dir": 316,
+        "period": 3.15
       },
-      "sst": 26.5
+      "sst": 27.3
     },
     {
-      "date": "2026-07-13",
+      "date": "2026-07-18",
       "rest": false,
       "night": false,
       "frm": "Bonifacio",
@@ -263,27 +256,27 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 35.7,
-        "tmin": 23.9,
+        "wmo": 2,
+        "tmax": 32.5,
+        "tmin": 25.1,
         "rain_prob": 0,
-        "wind_max": 9.2,
-        "gust_max": 18.9,
-        "wind_dir": 149
+        "wind_max": 9.9,
+        "gust_max": 20.6,
+        "wind_dir": 309
       },
       "wave": {
-        "hmax": 0.34,
-        "dir": 138,
-        "period": 4.15
+        "hmax": 0.48,
+        "dir": 262,
+        "period": 3.9
       },
-      "sst": 27.7
+      "sst": 27.8
     },
     {
-      "date": "2026-07-14",
+      "date": "2026-07-19",
       "rest": false,
       "night": false,
       "frm": "Tizzano",
@@ -321,27 +314,27 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 35.1,
-        "tmin": 24.0,
+        "wmo": 1,
+        "tmax": 31.2,
+        "tmin": 24.7,
         "rain_prob": 0,
-        "wind_max": 4.7,
-        "gust_max": 9.3,
-        "wind_dir": 114
+        "wind_max": 6.3,
+        "gust_max": 18.5,
+        "wind_dir": 299
       },
       "wave": {
-        "hmax": 0.12,
-        "dir": 225,
-        "period": 4.5
+        "hmax": 0.78,
+        "dir": 294,
+        "period": 5.0
       },
-      "sst": 28.6
+      "sst": 28.1
     },
     {
-      "date": "2026-07-15",
+      "date": "2026-07-20",
       "rest": false,
       "night": false,
       "frm": "Campomoro",
@@ -368,27 +361,27 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 35.7,
-        "tmin": 27.5,
+        "wmo": 2,
+        "tmax": 33.3,
+        "tmin": 24.9,
         "rain_prob": 0,
-        "wind_max": 4.7,
-        "gust_max": 15.6,
-        "wind_dir": 245
+        "wind_max": 6.2,
+        "gust_max": 13.5,
+        "wind_dir": 319
       },
       "wave": {
-        "hmax": 0.36,
-        "dir": 220,
-        "period": 4.75
+        "hmax": 0.66,
+        "dir": 293,
+        "period": 5.15
       },
-      "sst": 28.9
+      "sst": 28.7
     },
     {
-      "date": "2026-07-16",
+      "date": "2026-07-21",
       "rest": false,
       "night": false,
       "frm": "Isolella",
@@ -415,27 +408,27 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 36.8,
-        "tmin": 27.3,
+        "wmo": 2,
+        "tmax": 33.9,
+        "tmin": 24.3,
         "rain_prob": 0,
-        "wind_max": 5.6,
-        "gust_max": 17.9,
-        "wind_dir": 184
+        "wind_max": 5.3,
+        "gust_max": 14.4,
+        "wind_dir": 247
       },
       "wave": {
-        "hmax": 0.24,
-        "dir": 218,
-        "period": 4.25
+        "hmax": 0.48,
+        "dir": 286,
+        "period": 4.3
       },
-      "sst": 28.9
+      "sst": 28.2
     },
     {
-      "date": "2026-07-17",
+      "date": "2026-07-22",
       "rest": false,
       "night": false,
       "frm": "Girolata",
@@ -462,32 +455,27 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on": [
-          "Giulia N",
-          "Fede B",
-          "Manlio",
-          "Davide"
-        ],
-        "off": []
+        "on_n": 4,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 33.5,
-        "tmin": 25.9,
+        "wmo": 2,
+        "tmax": 32.5,
+        "tmin": 24.1,
         "rain_prob": 0,
-        "wind_max": 4.8,
-        "gust_max": 9.9,
-        "wind_dir": 283
+        "wind_max": 6.5,
+        "gust_max": 13.4,
+        "wind_dir": 18
       },
       "wave": {
-        "hmax": 0.08,
-        "dir": 252,
-        "period": 4.45
+        "hmax": 0.68,
+        "dir": 346,
+        "period": 4.25
       },
-      "sst": 29.1
+      "sst": 28.0
     },
     {
-      "date": "2026-07-18",
+      "date": "2026-07-23",
       "rest": false,
       "night": false,
       "frm": "San Fiorenzo",
@@ -525,23 +513,23 @@
       "verify": true,
       "tier": "degradata",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 28.6,
-        "tmin": 26.5,
-        "rain_prob": 0,
-        "wind_max": 14.3,
-        "gust_max": 18.7,
-        "wind_dir": 227
+        "wmo": 1,
+        "tmax": 26.1,
+        "tmin": 24.3,
+        "rain_prob": 6,
+        "wind_max": 9.7,
+        "gust_max": 13.0,
+        "wind_dir": 6
       },
       "wave": null,
       "sst": null
     },
     {
-      "date": "2026-07-19",
+      "date": "2026-07-24",
       "rest": false,
       "night": false,
       "frm": "Centuri",
@@ -568,26 +556,23 @@
       "verify": true,
       "tier": "degradata",
       "crew_delta": {
-        "on": [],
-        "off": [
-          "Giacomo N",
-          "Mati M"
-        ]
+        "on_n": 0,
+        "off_n": 2
       },
       "wx": {
         "wmo": 0,
-        "tmax": 37.4,
-        "tmin": 27.8,
-        "rain_prob": 0,
-        "wind_max": 1.9,
-        "gust_max": 15.7,
-        "wind_dir": 288
+        "tmax": 31.9,
+        "tmin": 23.6,
+        "rain_prob": 5,
+        "wind_max": 6.2,
+        "gust_max": 21.0,
+        "wind_dir": 162
       },
       "wave": null,
       "sst": null
     },
     {
-      "date": "2026-07-20",
+      "date": "2026-07-25",
       "rest": false,
       "night": true,
       "frm": "Erbalunga",
@@ -625,23 +610,23 @@
       "verify": true,
       "tier": "degradata",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 33.5,
-        "tmin": 27.4,
-        "rain_prob": 0,
-        "wind_max": 5.0,
-        "gust_max": 17.5,
-        "wind_dir": 65
+        "wmo": 0,
+        "tmax": 31.2,
+        "tmin": 23.6,
+        "rain_prob": 2,
+        "wind_max": 10.6,
+        "gust_max": 28.8,
+        "wind_dir": 145
       },
       "wave": null,
       "sst": null
     },
     {
-      "date": "2026-07-21",
+      "date": "2026-07-26",
       "rest": false,
       "night": false,
       "frm": "Favone",
@@ -690,15 +675,15 @@
       "verify": true,
       "tier": "programma",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": null,
       "wave": null,
       "sst": null
     },
     {
-      "date": "2026-07-22",
+      "date": "2026-07-27",
       "rest": false,
       "night": true,
       "frm": "Palombaggia",
@@ -736,15 +721,15 @@
       "verify": true,
       "tier": "programma",
       "crew_delta": {
-        "on": [],
-        "off": []
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": null,
       "wave": null,
       "sst": null
     },
     {
-      "date": "2026-07-23",
+      "date": "2026-07-28",
       "rest": true,
       "night": false,
       "frm": "Porto Rotondo",
@@ -774,16 +759,8 @@
       "verify": true,
       "tier": "programma",
       "crew_delta": {
-        "on": [
-          "Riccardo B",
-          "Fede N",
-          "Ilaria M",
-          "Lavinia P"
-        ],
-        "off": [
-          "Bernardo B",
-          "Bianca B"
-        ]
+        "on_n": 4,
+        "off_n": 2
       },
       "wx": null,
       "wave": null,
@@ -1215,7 +1192,10 @@
         41.672,
         9.39
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio.jpg"
+      }
     },
     {
       "id": "santa_manza",
@@ -1308,7 +1288,10 @@
         43.0079,
         9.4112
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cap_Corse_-_Barcaggio-cow_passing_l%27Acqua_Tignese_-_panoramio.jpg/500px-Cap_Corse_-_Barcaggio-cow_passing_l%27Acqua_Tignese_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Barcaggio-cow_passing_l%27Acqua_Tignese_-_panoramio.jpg"
+      }
     },
     {
       "id": "erbalunga",
@@ -1337,7 +1320,10 @@
         41.8,
         9.397
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Beach_of_Canella%2C_Sari-Solenzara%2C_France_%2852724277338%29.jpg/500px-Beach_of_Canella%2C_Sari-Solenzara%2C_France_%2852724277338%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Beach_of_Canella,_Sari-Solenzara,_France_(52724277338).jpg"
+      }
     },
     {
       "id": "fautea",
@@ -1350,7 +1336,10 @@
         41.7135,
         9.4045
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sunrise_At_Fautea_Beach_%28262708439%29.jpeg/500px-Sunrise_At_Fautea_Beach_%28262708439%29.jpeg",
+        "page": "https://commons.wikimedia.org/wiki/File:Sunrise_At_Fautea_Beach_(262708439).jpeg"
+      }
     },
     {
       "id": "porto_vecchio",
@@ -1427,7 +1416,10 @@
         42.9755,
         9.457
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Cap_Corse_-_Tamarone_beach-from_Monte_di_a_Guardia_-_panoramio.jpg/500px-Cap_Corse_-_Tamarone_beach-from_Monte_di_a_Guardia_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Tamarone_beach-from_Monte_di_a_Guardia_-_panoramio.jpg"
+      }
     },
     {
       "id": "favone",
@@ -1530,7 +1522,10 @@
         42.96098,
         9.45451
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cap_Corse_-_Macinaggio_-_main_street_-_panoramio.jpg/500px-Cap_Corse_-_Macinaggio_-_main_street_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Cap_Corse_-_Macinaggio_-_main_street_-_panoramio.jpg"
+      }
     },
     {
       "id": "bastia",
@@ -1559,7 +1554,10 @@
         41.8572,
         9.4037
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Rainy_day_in_Solenzara_-_panoramio.jpg/500px-Rainy_day_in_Solenzara_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Rainy_day_in_Solenzara_-_panoramio.jpg"
+      }
     },
     {
       "id": "foce_golo",
@@ -1572,7 +1570,10 @@
         42.5242,
         9.537
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Allium_corsicum_Jauzein_in_eastern_Corsica.jpg/500px-Allium_corsicum_Jauzein_in_eastern_Corsica.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Allium_corsicum_Jauzein_in_eastern_Corsica.jpg"
+      }
     },
     {
       "id": "campoloro",
@@ -1585,7 +1586,10 @@
         42.34135,
         9.539
       ],
-      "photo": null
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png",
+        "page": "https://commons.wikimedia.org/wiki/File:Endophloeus_markovichianus_(Piller_%26_Mitterpacher,_1783)_lateral_view_(23150294085).png"
+      }
     }
   ]
 }

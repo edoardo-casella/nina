@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il mio profilo · Crewin</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --verde:#0A7A43; --magenta:#C2185B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --verde:#2FBF71; --magenta:#E8536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.hero{padding:2rem 1.1rem .8rem}
+.hero h1{font:700 clamp(1.7rem,7vw,2.3rem)/1.05 var(--display)}
+.hero .lead{margin:.7rem 0 0;color:var(--soft);font-size:.95rem;line-height:1.7;max-width:56ch}
+section{padding:0 1.1rem 1.6rem}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:1.1rem}
+form{display:grid;gap:.9rem}
+.field{display:grid;gap:.35rem}
+label{font:700 .64rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+label small{text-transform:none;letter-spacing:0;font-weight:400;color:var(--soft)}
+input,textarea{font:400 1rem/1.4 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--hair);border-radius:9px;padding:.7rem .8rem;width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+textarea{resize:vertical;min-height:4.2rem}
+button{background:var(--accent);color:#fff;border:0;cursor:pointer;font:700 .78rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;padding:.95rem 1.1rem;border-radius:99px}
+button:hover{filter:brightness(1.06)}
+.msg{font-size:.92rem}
+.msg.ok{color:var(--verde);font-weight:600}
+.msg.err{color:var(--magenta);font-weight:600}
+.note{font-size:.8rem;color:var(--soft);line-height:1.55}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="login.html">‹ Area equipaggio</a>
+  <span class="tag">✏️ Il mio profilo</span>
+</div></div>
+<main>
+  <section class="hero">
+    <h1>Il mio profilo</h1>
+    <p class="lead">Questa è la tua scheda personale: la vede solo l'equipaggio, nella tua pagina della ciurma. Giorni, miglia e grado non si toccano — quelli si guadagnano navigando.</p>
+  </section>
+  <section id="app"><div class="card"><p style="color:var(--soft)">Un attimo…</p></div></section>
+</main>
+<footer>Crewin · <a href="privacy.html">privacy</a></footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[<>&"]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]));
+
+// campi editabili: SOLO questi finiscono in tabella (niente dieta/allergie,
+// niente stats). Etichette allineate alla scheda in membro.html.
+const FIELDS = [
+  ["nick", "Nickname", "Come ti chiama la ciurma", false],
+  ["instagram", "Instagram", "Solo lo username, senza @ (es. edoardocasella)", false],
+  ["ruolo", "Ruolo a bordo", "Es. addetta ai nodi, DJ di poppa, vedetta", false],
+  ["esperienza", "Esperienza", "In due righe: quanta barca hai fatto", true],
+  ["specialita", "Specialità", "La cosa che ti riesce meglio a bordo", true],
+  ["valigia", "Non può mancare", "L'oggetto che porti sempre in barca", false],
+  ["motto", "Motto", "", false],
+  ["funfact", "Fun fact", "Una cosa di te che pochi sanno", true],
+];
+
+async function render() {
+  const app = $("app");
+  if (!window.ninaAuth || !ninaAuth.enabled) {
+    app.innerHTML = `<div class="card"><p>L'area riservata non è ancora attiva.</p></div>`; return;
+  }
+  const { session, member } = await ninaAuth.me();
+  if (!session) { app.innerHTML = `<div class="card"><p>Per aggiornare il profilo devi <a href="login.html">entrare nell'area equipaggio</a>.</p></div>`; return; }
+  if (!member || member.status !== "approved") {
+    app.innerHTML = `<div class="card"><p>Il tuo accesso non è ancora abilitato — <a href="login.html">i dettagli qui</a>.</p></div>`; return;
+  }
+
+  const c = await ninaAuth.client();
+  const { data } = await c.from("profiles").select("*").eq("crew_id", member.crew_id).limit(1);
+  const p = (data && data[0]) || {};
+
+  app.innerHTML = `<div class="card"><form id="f">
+    ${FIELDS.map(([k, lab, hint, long]) => `<div class="field">
+      <label for="fl-${k}">${lab}${hint ? ` <small>— ${hint}</small>` : ""}</label>
+      ${long ? `<textarea id="fl-${k}" maxlength="400">${esc(p[k])}</textarea>`
+             : `<input id="fl-${k}" maxlength="120" value="${esc(p[k])}">`}
+    </div>`).join("")}
+    <button type="submit">Salva il profilo</button>
+    <p id="m" class="msg" role="status"></p>
+    <p class="note">La scheda compare in <a href="membro.html#${esc(member.crew_id)}">membro.html#${esc(member.crew_id)}</a>, visibile solo all'equipaggio.
+    Per foto e ritratto di bordo si passa ancora dal <a href="https://form.jotform.com/261907242193053" target="_blank" rel="noopener">questionario</a>.</p>
+  </form></div>`;
+
+  $("f").addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const m = $("m");
+    const upd = {};
+    FIELDS.forEach(([k]) => {
+      let v = $("fl-" + k).value.trim();
+      if (k === "instagram") v = v.replace(/^@+/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//i, "").replace(/\/+$/, "");
+      upd[k] = v || null;
+    });
+    m.className = "msg"; m.textContent = "Salvo…";
+    // upsert: il primo salvataggio crea la riga (policy insert_own), i successivi la aggiornano
+    const { error } = await c.from("profiles").upsert({ crew_id: member.crew_id, ...upd });
+    if (error) { m.className = "msg err"; m.textContent = "Errore nel salvataggio: " + error.message; return; }
+    m.className = "msg ok"; m.textContent = "Profilo salvato ⚓";
+  });
+}
+render();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

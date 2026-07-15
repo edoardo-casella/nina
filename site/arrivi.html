@@ -9,6 +9,8 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#0A1424">
 <script src="theme.js"></script>
+<script src="config.js"></script>
+<script src="auth.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -113,9 +115,10 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
     <h1>Arrivi & Partenze</h1>
     <p>Chi sale e chi scende, giorno per giorno. Crociera <b>8 – 29 agosto 2026</b>, imbarco e sbarco a Cannigione, avvicendamenti in Sardegna.</p>
   </div>
-  <div class="stats" id="stats"></div>
-  <section><h2>Avvicendamenti</h2><div id="chg"></div></section>
-  <section><h2>Chi c'è, e quando</h2>
+  <section id="lock" hidden></section>
+  <div class="stats rsv" id="stats"></div>
+  <section class="rsv"><h2>Avvicendamenti</h2><div id="chg"></div></section>
+  <section class="rsv"><h2>Chi c'è, e quando</h2>
     <div class="axis" id="axis"></div>
     <div id="gantt"></div>
     <div class="gline occ"><span class="gname">A bordo</span><div class="gtrack occt" id="occ"></div></div>
@@ -128,38 +131,20 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
     </div>
     <div class="note">Nomi e date dal registro equipaggio (nome + iniziale, come sulla plancia). Voli e logistica personale restano privati, fuori da questa pagina.</div>
   </section>
-  <section><h2>La ciurma · veterani &amp; matricole</h2>
+  <section class="rsv"><h2>La ciurma · veterani &amp; matricole</h2>
     <p class="rintro">Quante volte ognuno ha già navigato con l'Ammiraglio, e chi sale a bordo per la prima volta.</p>
     <div id="roster"></div></section>
   <footer>Registro avvicendamenti della crociera Niña.<br><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>
 </main>
 
 <script>
-// x = volte già in barca con Edoardo (dal registro storico); fy = primo anno.
-// I nickname non trovati nel registro storico valgono come "prima volta".
-const CREW = [
-  {n:"Giacomo N",b:"2026-08-08",l:"2026-08-17",r:"crew",x:5,fy:2021,p:"crew/img/giacomo-n.jpg"},
-  {n:"Mati M",b:"2026-08-08",l:"2026-08-17",r:"crew",x:0},
-  {n:"Bernardo B",b:"2026-08-08",l:"2026-08-21",r:"skipper",x:9,fy:2011,p:"crew/img/bernardo-b.jpg"},
-  {n:"Bianca B",b:"2026-08-08",l:"2026-08-21",r:"crew",x:0},
-  {n:"Edo C",b:"2026-08-08",l:"2026-08-29",r:"skipper",x:25,fy:2011,p:"skipper/img/edoardo-id.jpg"},
-  {n:"Ginevra L",b:"2026-08-08",l:"2026-08-29",r:"crew",x:4,fy:2022,p:"crew/img/ginevra-l.jpg"},
-  {n:"Davide",b:"2026-08-15",l:"2026-08-22",r:"crew",x:0},
-  {n:"Manlio",b:"2026-08-15",l:"2026-08-22",r:"crew",x:0},
-  {n:"Fede B",b:"2026-08-15",l:"2026-08-29",r:"crew",x:1,fy:2023},
-  {n:"Giulia N",b:"2026-08-15",l:"2026-08-29",r:"crew",x:0},
-  {n:"Fede N",b:"2026-08-21",l:"2026-08-29",r:"crew",x:0},
-  {n:"Ilaria M",b:"2026-08-21",l:"2026-08-29",r:"apprentice",x:2,fy:2017},
-  {n:"Lavinia P",b:"2026-08-21",l:"2026-08-29",r:"crew",x:0},
-  {n:"Riccardo B",b:"2026-08-21",l:"2026-08-29",r:"apprentice",x:7,fy:2015},
-  {n:"Andrea A",b:"2026-08-22",l:"2026-08-29",r:"crew",x:4,fy:2011},
-  {n:"Gabri M",b:"2026-08-22",l:"2026-08-29",r:"apprentice",x:2,fy:2017},
-  {n:"Simona A",b:"2026-08-22",l:"2026-08-29",r:"crew",x:0},
-];
-const START = "2026-08-08", END = "2026-08-29";
+// Le date di imbarco/sbarco sono RISERVATE: niente più dati inline qui.
+// Arrivano dal blob 'arrivi' su Supabase (scritto dalla CI da voyage.json)
+// solo con una sessione approvata. Shape invariata: {n, b, l, r, x, fy, p}
+// (n = nome, b/l = imbarco/sbarco, r = ruolo, x = crociere fatte, fy = primo anno).
+let CREW = [], START = "2026-08-08", END = "2026-08-29", SPAN = 21;
 const day = s => new Date(s + "T12:00");
 const off = s => Math.round((day(s) - day(START)) / 864e5);
-const SPAN = off(END);
 const fmt = s => day(s).toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" });
 const RL = { skipper: "skipper", apprentice: "aspirante skipper", marinaio: "marinaio" };
 const rc = r => r === "skipper" ? "skip" : r === "apprentice" ? "app" : r === "marinaio" ? "mar" : "";
@@ -170,14 +155,6 @@ const nameLink = m => `<a class="wholink" href="${mhref(m)}">${avatar(m, "wav")}
 function imgFail(el){ const s = document.createElement("span"); s.className = el.className + " ph"; s.textContent = el.dataset.i || "?"; el.replaceWith(s); }
 const avatar = (m, cls) => `<img class="${cls}" src="${m.p || "crew/img/" + slug(m.n) + ".jpg"}" alt="" loading="lazy" data-i="${m.n[0]}" onerror="imgFail(this)">`;
 
-// statistiche
-document.getElementById("stats").innerHTML =
-  `<div class="stat"><b>${CREW.length}</b><i>persone</i></div>
-   <div class="stat"><b>${CREW.filter(m => m.x > 0).length}</b><i>veterani</i></div>
-   <div class="stat"><b>${SPAN}</b><i>notti</i></div>
-   <div class="stat"><b>4</b><i>avvicendamenti</i></div>
-   <div class="stat"><b>${Math.max(...byDay())}</b><i>max a bordo</i></div>`;
-
 function byDay() {
   const counts = [];
   for (let d = 0; d <= SPAN; d++)
@@ -185,62 +162,111 @@ function byDay() {
   return counts;
 }
 
-// avvicendamenti: date con arrivi/partenze
-const dates = [...new Set(CREW.flatMap(m => [m.b, m.l]))].sort();
-document.getElementById("chg").innerHTML = dates.map(dt => {
-  const arr = CREW.filter(m => m.b === dt).map(nameLink);
-  const dep = CREW.filter(m => m.l === dt).map(nameLink);
-  const big = arr.length + dep.length >= 4;
-  return `<div class="chg"><div class="date">${fmt(dt)}${big ? '<em>cambio</em>' : ''}</div>
-    ${arr.length ? `<div class="mv"><span class="ar">↑ ${arr.length}</span><span class="who"><b>Salgono:</b> ${arr.join(" · ")}</span></div>` : ""}
-    ${dep.length ? `<div class="mv"><span class="de">↓ ${dep.length}</span><span class="who"><b>Scendono:</b> ${dep.join(" · ")}</span></div>` : ""}
-  </div>`;
-}).join("");
+// Tutto il rendering vive qui: si esegue SOLO quando il blob riservato è arrivato.
+function renderArrivi() {
+  document.getElementById("lock").hidden = true;
+  document.querySelectorAll(".rsv").forEach(e => { e.hidden = false; });
 
-// asse giorni (etichette ai cambi)
-document.getElementById("axis").innerHTML = ["2026-08-08","2026-08-15","2026-08-22","2026-08-29"]
-  .map(dt => `<span style="left:${off(dt) / SPAN * 100}%">${day(dt).getDate()}/8</span>`).join("");
+  // date di cambio calcolate dai dati (non più hardcoded)
+  const dates = [...new Set(CREW.flatMap(m => [m.b, m.l]))].sort();
+  const mid = dates.filter(d => d !== START && d !== END);
+  const markDates = [...new Set(CREW.map(m => m.b))].filter(d => d !== START).sort();
+  const marks = markDates.map(dt => `<span class="mark" style="left:${off(dt) / SPAN * 100}%"></span>`).join("");
 
-// gantt: una riga per persona
-document.getElementById("gantt").innerHTML = CREW.map(m => {
-  const l = off(m.b) / SPAN * 100, w = (off(m.l) - off(m.b)) / SPAN * 100, nights = off(m.l) - off(m.b);
-  const marks = ["2026-08-15","2026-08-21","2026-08-22"].map(dt => `<span class="mark" style="left:${off(dt) / SPAN * 100}%"></span>`).join("");
-  return `<div class="gline"><a class="gname" href="${mhref(m)}" title="${m.n}">${avatar(m, "gav")}<span class="gnm">${m.n}</span></a>
-    <div class="gtrack">${marks}<div class="gbar ${rc(m.r)}" style="left:${l}%;width:${w}%" title="${m.n}: ${fmt(m.b)} → ${fmt(m.l)} (${nights} notti)"><b>${nights}</b></div></div></div>`;
-}).join("");
+  // statistiche
+  document.getElementById("stats").innerHTML =
+    `<div class="stat"><b>${CREW.length}</b><i>persone</i></div>
+     <div class="stat"><b>${CREW.filter(m => m.x > 0).length}</b><i>veterani</i></div>
+     <div class="stat"><b>${SPAN}</b><i>notti</i></div>
+     <div class="stat"><b>${mid.length}</b><i>avvicendamenti</i></div>
+     <div class="stat"><b>${Math.max(...byDay())}</b><i>max a bordo</i></div>`;
 
-// occupazione: quante persone dormono a bordo ogni notte (riga in fondo al gantt)
-(function () {
-  const counts = byDay(), maxC = Math.max(...counts);
-  const dateAt = d => new Date(day(START).getTime() + d * 864e5);
-  const dl = d => dateAt(d).toLocaleDateString("it", { day: "numeric", month: "short" });
-  const marks = ["2026-08-15", "2026-08-21", "2026-08-22"].map(dt => `<span class="mark" style="left:${off(dt) / SPAN * 100}%"></span>`).join("");
-  let html = marks, i = 0;
-  while (i < SPAN) {
-    let j = i; while (j + 1 < SPAN && counts[j + 1] === counts[i]) j++;
-    const c = counts[i], l = i / SPAN * 100, w = (j + 1 - i) / SPAN * 100, h = Math.round(c / maxC * 100);
-    const range = i === j ? dl(i) : `${dl(i)}–${dl(j)}`;
-    html += `<div class="ocell" style="left:${l}%;width:${w}%;height:${h}%" title="${range}: ${c} a bordo"><b>${c}</b></div>`;
-    i = j + 1;
-  }
-  document.getElementById("occ").innerHTML = html;
-  document.getElementById("occap").textContent = `Quante persone dormono a bordo ogni notte · max ${maxC}.`;
-})();
-
-// roster: la ciurma per anzianità (veterani prima), badge volte a bordo
-const dshort = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
-document.getElementById("roster").innerHTML = [...CREW]
-  .sort((a, b) => b.x - a.x || off(a.b) - off(b.b))
-  .map(m => {
-    const nights = off(m.l) - off(m.b);
-    const badge = m.x > 0
-      ? `<span class="vet">${m.x}× · dal ${m.fy}</span>`
-      : `<span class="rookie">prima volta 🌟</span>`;
-    return `<a class="rmember" href="${mhref(m)}">${avatar(m, "rav")}
-      <span class="rmid"><span class="rname">${m.n}${m.r !== "crew" ? ` <em>${RL[m.r] || m.r}</em>` : ""} <span class="rgo">›</span></span>
-      <span class="rwhen">${nights} notti · ${dshort(m.b)}–${dshort(m.l)}</span></span>
-      ${badge}</a>`;
+  // avvicendamenti: date con arrivi/partenze
+  document.getElementById("chg").innerHTML = dates.map(dt => {
+    const arr = CREW.filter(m => m.b === dt).map(nameLink);
+    const dep = CREW.filter(m => m.l === dt).map(nameLink);
+    const big = arr.length + dep.length >= 4;
+    return `<div class="chg"><div class="date">${fmt(dt)}${big ? '<em>cambio</em>' : ''}</div>
+      ${arr.length ? `<div class="mv"><span class="ar">↑ ${arr.length}</span><span class="who"><b>Salgono:</b> ${arr.join(" · ")}</span></div>` : ""}
+      ${dep.length ? `<div class="mv"><span class="de">↓ ${dep.length}</span><span class="who"><b>Scendono:</b> ${dep.join(" · ")}</span></div>` : ""}
+    </div>`;
   }).join("");
+
+  // asse giorni: inizio, cambi, fine
+  document.getElementById("axis").innerHTML = [...new Set([START, ...markDates, END])].sort()
+    .map(dt => `<span style="left:${off(dt) / SPAN * 100}%">${day(dt).getDate()}/${day(dt).getMonth() + 1}</span>`).join("");
+
+  // gantt: una riga per persona
+  document.getElementById("gantt").innerHTML = CREW.map(m => {
+    const l = off(m.b) / SPAN * 100, w = (off(m.l) - off(m.b)) / SPAN * 100, nights = off(m.l) - off(m.b);
+    return `<div class="gline"><a class="gname" href="${mhref(m)}" title="${m.n}">${avatar(m, "gav")}<span class="gnm">${m.n}</span></a>
+      <div class="gtrack">${marks}<div class="gbar ${rc(m.r)}" style="left:${l}%;width:${w}%" title="${m.n}: ${fmt(m.b)} → ${fmt(m.l)} (${nights} notti)"><b>${nights}</b></div></div></div>`;
+  }).join("");
+
+  // occupazione: quante persone dormono a bordo ogni notte (riga in fondo al gantt)
+  (function () {
+    const counts = byDay(), maxC = Math.max(...counts);
+    const dateAt = d => new Date(day(START).getTime() + d * 864e5);
+    const dl = d => dateAt(d).toLocaleDateString("it", { day: "numeric", month: "short" });
+    let html = marks, i = 0;
+    while (i < SPAN) {
+      let j = i; while (j + 1 < SPAN && counts[j + 1] === counts[i]) j++;
+      const c = counts[i], l = i / SPAN * 100, w = (j + 1 - i) / SPAN * 100, h = Math.round(c / maxC * 100);
+      const range = i === j ? dl(i) : `${dl(i)}–${dl(j)}`;
+      html += `<div class="ocell" style="left:${l}%;width:${w}%;height:${h}%" title="${range}: ${c} a bordo"><b>${c}</b></div>`;
+      i = j + 1;
+    }
+    document.getElementById("occ").innerHTML = html;
+    document.getElementById("occap").textContent = `Quante persone dormono a bordo ogni notte · max ${maxC}.`;
+  })();
+
+  // roster: la ciurma per anzianità (veterani prima), badge volte a bordo
+  const dshort = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
+  document.getElementById("roster").innerHTML = [...CREW]
+    .sort((a, b) => b.x - a.x || off(a.b) - off(b.b))
+    .map(m => {
+      const nights = off(m.l) - off(m.b);
+      const badge = m.x > 0
+        ? `<span class="vet">${m.x}× · dal ${m.fy}</span>`
+        : `<span class="rookie">prima volta 🌟</span>`;
+      return `<a class="rmember" href="${mhref(m)}">${avatar(m, "rav")}
+        <span class="rmid"><span class="rname">${m.n}${m.r !== "crew" ? ` <em>${RL[m.r] || m.r}</em>` : ""} <span class="rgo">›</span></span>
+        <span class="rwhen">${nights} notti · ${dshort(m.b)}–${dshort(m.l)}</span></span>
+        ${badge}</a>`;
+    }).join("");
+}
+
+// bootstrap: pagina riservata all'equipaggio
+(async () => {
+  const lock = document.getElementById("lock");
+  const showLock = html => {
+    document.querySelectorAll(".rsv").forEach(e => { e.hidden = true; });
+    lock.innerHTML = `<div class="chg" style="padding:1.1rem">${html}</div>`;
+    lock.hidden = false;
+  };
+  if (!window.ninaAuth || !ninaAuth.enabled) {
+    showLock(`🔐 Il dettaglio di arrivi e partenze è <b>riservato all'equipaggio</b>. L'area riservata apre a breve.`);
+    return;
+  }
+  showLock(`Un attimo — controllo chi sei…`);
+  try {
+    const ok = await ninaAuth.approvedMember();
+    if (!ok) {
+      showLock(`🔐 Il dettaglio di arrivi e partenze (chi c'è e quando, notte per notte) è <b>riservato all'equipaggio</b>.<br>
+        <a href="login.html">Accedi all'area equipaggio ›</a> &nbsp;·&nbsp; <a href="unisciti.html#accesso">Chiedi l'accesso ›</a>`);
+      return;
+    }
+    const blob = await ninaAuth.blob("arrivi");
+    if (!blob || !(blob.crew || []).length) {
+      showLock(`I dati degli avvicendamenti non sono ancora stati pubblicati — riprova più tardi.`);
+      return;
+    }
+    CREW = blob.crew; START = blob.start || START; END = blob.end || END; SPAN = off(END);
+    renderArrivi();
+  } catch (e) {
+    showLock(`L'area riservata non risponde — riprova tra un attimo.`);
+  }
+})();
 
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>

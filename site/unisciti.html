@@ -13,6 +13,8 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#0A1424">
 <script src="theme.js"></script>
+<script src="config.js"></script>
+<script src="auth.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -104,6 +106,27 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
       oppure manda un DM su <a href="https://www.instagram.com/edoardocasella/" target="_blank" rel="noopener">Instagram</a>.
     </div>
   </section>
+
+  <section id="accesso" hidden>
+    <h2 class="formhd">🔐 Sei già della ciurma? Chiedi l'accesso all'area equipaggio</h2>
+    <form id="reqform" novalidate>
+      <div class="field"><label for="rq-nome">Nome e cognome</label>
+        <input id="rq-nome" maxlength="80" autocomplete="name" required></div>
+      <div class="field"><label for="rq-email">Email</label>
+        <input id="rq-email" type="email" maxlength="120" autocomplete="email" required>
+        <span class="hint">La stessa che userai per entrare: ti mandiamo lì il link d'accesso.</span></div>
+      <div class="field"><label for="rq-msg">Chi sei? (facoltativo)</label>
+        <textarea id="rq-msg" maxlength="400" placeholder="Es. sono la Giulia dell'estate 2024, quella dei nodi…"></textarea></div>
+      <!-- honeypot anti-bot: invisibile agli umani, i bot lo compilano -->
+      <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+        <label for="rq-web">Sito web</label><input id="rq-web" tabindex="-1" autocomplete="off"></div>
+      <button type="submit">Chiedi l'accesso</button>
+      <p class="hint" id="rq-msg-out" role="status"></p>
+    </form>
+    <p class="note">Lo skipper approva le richieste a mano: appena sei dentro, da
+    <a href="login.html">Area equipaggio</a> vedi conti di bordo, arrivi &amp; partenze e la tua scheda personale.
+    Come trattiamo i dati: <a href="privacy.html">privacy</a>.</p>
+  </section>
 </main>
 
 <footer>
@@ -141,6 +164,31 @@ Promise.all([
     </a>`;
   }).join("");
 });
+
+// Richiesta di accesso all'area equipaggio → Supabase access_requests.
+// La sezione compare solo se l'area riservata è configurata.
+(() => {
+  if (!window.ninaAuth || !ninaAuth.enabled) return;
+  document.getElementById("accesso").hidden = false;
+  document.getElementById("reqform").addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const out = document.getElementById("rq-msg-out");
+    const name = document.getElementById("rq-nome").value.trim();
+    const email = document.getElementById("rq-email").value.trim().toLowerCase();
+    const message = document.getElementById("rq-msg").value.trim();
+    if (document.getElementById("rq-web").value) return;          // honeypot: bot
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      out.textContent = "Servono nome e un'email valida."; return;
+    }
+    out.textContent = "Invio…";
+    const c = await ninaAuth.client();
+    if (!c) { out.textContent = "Rete assente: riprova tra un attimo."; return; }
+    const { error } = await c.from("access_requests").insert({ name, email, message: message || null });
+    if (error) { out.textContent = "Non sono riuscito a mandare la richiesta: " + error.message; return; }
+    document.getElementById("reqform").innerHTML =
+      `<p style="font-weight:600;color:var(--verde)">Richiesta inviata ⚓ Appena lo skipper ti abilita, entri da <a href="login.html">Area equipaggio</a>.</p>`;
+  });
+})();
 </script>
 <script src="nav.js"></script>
 </body>

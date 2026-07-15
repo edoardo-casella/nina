@@ -10,9 +10,11 @@
 // briefing buono per l'offline).
 const SHELL = "nina-shell-v93";
 const DATA = "nina-data-v1";
-const FILES = ["./", "./index.html", "./skipper.html", "./classifica.html", "./aneddoti.html", "./mete.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./viaggio.html", "./paese.html", "./foto.html", "./manifesto.html", "./unisciti.html", "./theme.js", "./nav.js", "./ranks.js", "./manifest.json",
+const FILES = ["./", "./index.html", "./skipper.html", "./classifica.html", "./aneddoti.html", "./mete.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./viaggio.html", "./paese.html", "./foto.html", "./manifesto.html", "./unisciti.html", "./login.html", "./profilo.html", "./privacy.html", "./theme.js", "./nav.js", "./ranks.js", "./config.js", "./auth.js", "./manifest.json",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
-const DATAFILES = ["./data/briefing.json", "./data/weather.json", "./data/conti.json",
+// niente conti.json: i dati riservati (conti, arrivi) stanno su Supabase dietro
+// login e NON devono mai passare da questa cache
+const DATAFILES = ["./data/briefing.json", "./data/weather.json",
                    "./data/program.json", "./data/destinations.json", "./data/skipper.json", "./data/crew.json", "./data/trips.json", "./data/anecdotes.json", "./data/mete.json", "./data/proposte.json", "./data/proposte_counts.json"];
 
 const isJson = r => r.ok && (r.headers.get("content-type") || "").includes("json");
@@ -33,6 +35,11 @@ self.addEventListener("activate", e => {
   e.waitUntil((async () => {
     const ks = await caches.keys();
     await Promise.all(ks.filter(k => k !== SHELL && k !== DATA).map(k => caches.delete(k)));
+    // bonifica: conti.json era precache-ato quando i conti erano un JSON statico;
+    // ora sono riservati e l'ultima copia va tolta anche dalla cache DATA
+    const data = await caches.open(DATA);
+    for (const req of await data.keys())
+      if (req.url.includes("/data/conti.json")) await data.delete(req);
     await self.clients.claim();
     // guscio nuovo attivato: ricarica UNA volta le finestre aperte così prendono
     // subito la versione appena deployata (niente client fermi su quella vecchia).
@@ -45,6 +52,13 @@ self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET") return;
   if (url.origin !== location.origin) return;   // API esterne (es. like su Supabase): mai dalla cache
+
+  // cross-origin: si intercettano SOLO i font (utili offline). Tutto il resto
+  // — Supabase (dati riservati!), CDN supabase-js — va diretto in rete e non
+  // tocca MAI queste cache.
+  if (url.origin !== location.origin) {
+    if (url.hostname !== "fonts.googleapis.com" && url.hostname !== "fonts.gstatic.com") return;
+  }
 
   if (url.pathname.includes("/data/")) {
     e.respondWith(

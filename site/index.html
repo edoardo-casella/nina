@@ -15,6 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<script src="auth.js"></script>
 <style>
 :root{
   /* GIORNO (default): leggibile in pieno sole — carta bianca, inchiostro nero,
@@ -750,9 +752,12 @@ function crewBlock(b) {
     const turni = Object.entries(b.turns || {}).filter(([, v]) => v === m.name)
       .map(([k]) => TURN_LABEL[k] ?? k);
     const ruolo = m.role === "skipper" ? "skipper (esente dai turni)" : m.role;
+    // le date di imbarco/sbarco sono riservate: il briefing pubblico non le
+    // contiene più (vivono in arrivi.html dietro login) — qui si mostrano solo
+    // se presenti (briefing vecchi in cache)
     return `<div class="crewcard" id="crew-${i}" hidden>
-      <b>${esc(m.name)}</b> — ${esc(ruolo)}${m.cabin ? ` · ${esc(m.cabin)}` : ""}<br>
-      A bordo dal ${fmtD(m.board)} al ${fmtD(m.leave)}${turni.length ? `<br>Turni di oggi: <b>${turni.join(" + ")}</b>` : ""}</div>`;
+      <b>${esc(m.name)}</b> — ${esc(ruolo)}${m.cabin ? ` · ${esc(m.cabin)}` : ""}${m.board ? `<br>
+      A bordo dal ${fmtD(m.board)} al ${fmtD(m.leave)}` : ""}${turni.length ? `<br>Turni di oggi: <b>${turni.join(" + ")}</b>` : ""}</div>`;
   }).join("");
   const turns = Object.entries(b.turns || {}).filter(([, v]) => v).map(([k, v]) =>
     `<details class="turn"><summary><em>${TURN_LABEL[k] ?? k}</em><span>${esc(v)}</span></summary>
@@ -841,10 +846,15 @@ function tappeTimeline(b) {
   return `<h2>Le tappe di oggi · <span class="num" style="text-transform:none">${b.day_nm ?? "—"} nm</span></h2><div class="tl">${rows}</div>`;
 }
 
-// Quote monetarie nascoste per ora — rimetti SHOW_CONTI a true per riattivare i "Conti".
-const SHOW_CONTI = false;
+// Conti di bordo: dati riservati all'equipaggio. Non viaggiano più in un JSON
+// statico — arrivano da Supabase (blob 'conti') solo con una sessione approvata,
+// e la pagina si ri-renderizza. Per gli altri: invito ad accedere.
 function contiCard(c) {
-  if (!SHOW_CONTI || !c) return "";
+  if (!c) {
+    if (!window.ninaAuth || !ninaAuth.enabled) return "";   // area riservata spenta: come prima
+    return `<h2>Conti</h2><p style="font-size:.9rem;color:var(--soft)">🔐 La cassa di bordo è riservata
+      all'equipaggio — <a href="login.html">accedi all'area equipaggio ›</a></p>`;
+  }
   return `<h2>Conti</h2>
   <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora</summary>
     <table><thead><tr><th>Nome</th><th>Notti</th><th>Quota</th></tr></thead><tbody>
@@ -871,9 +881,13 @@ function programGrid(prog) {
       : `<span style="font-style:normal;opacity:.75">— nessuna previsione</span>`;
     const waveLine = d.wave ? `<span style="font-style:normal">onda max ${d.wave.hmax.toFixed(1)} m</span>` : "";
     const sstLine = d.sst != null ? `<span style="font-style:normal">🌊 ${Math.round(d.sst)}°</span>` : "";
+    // crew_delta: dal program nuovo arrivano solo i CONTEGGI (on_n/off_n) — i
+    // nomi con le date di imbarco sono riservati; fallback alle liste per i
+    // program.json vecchi in cache
     const cd = d.crew_delta || {};
-    const crew = (cd.on?.length || cd.off?.length)
-      ? `<span style="font-style:normal;color:var(--warmtx);font-weight:600">equipaggio${cd.on?.length ? ` +${cd.on.length}` : ""}${cd.off?.length ? ` −${cd.off.length}` : ""}</span>` : "";
+    const onN = cd.on_n ?? cd.on?.length ?? 0, offN = cd.off_n ?? cd.off?.length ?? 0;
+    const crew = (onN || offN)
+      ? `<span style="font-style:normal;color:var(--warmtx);font-weight:600">equipaggio${onN ? ` +${onN}` : ""}${offN ? ` −${offN}` : ""}</span>` : "";
     return `<div class="day ${d.tier}" title="${esc(tiers[d.tier] ?? "")} — tocca per la scheda"
       ${d.to_id ? `onclick="openDest('${d.to_id}')" style="cursor:pointer"` : ""}>
       <em>${wd}${d.night ? " 🌙" : ""}${d.n_tappe > 1 ? ` · ${d.n_tappe} tappe` : ""}</em>
@@ -1166,8 +1180,10 @@ function render(b, wx, c, prog) {
   // diverse e all'equipaggio serve quella giusta
   let data, prog = null;
   try {
+    // niente più conti.json statico: i conti sono riservati e arrivano da
+    // Supabase dopo il login (vedi in fondo)
     data = window.__DATA ?? await Promise.all(
-      ["briefing", "weather", "conti"].map(n => fetch(`data/${n}.json`, { cache: "no-cache" }).then(r => {
+      ["briefing", "weather"].map(n => fetch(`data/${n}.json`, { cache: "no-cache" }).then(r => {
         if (!r.ok) throw new Error(n); return r.json();
       })));
   } catch (e) {
@@ -1192,7 +1208,16 @@ function render(b, wx, c, prog) {
   if (data) try {
     window.__astro = data[1]?.astro;
     applyTheme();
-    render(data[0], data[1], data[2], prog);
+    render(data[0], data[1], window.__conti ?? null, prog);
+    // conti riservati: con una sessione approvata si caricano da Supabase e la
+    // plancia si ridisegna con la cassa di bordo al suo posto
+    if (window.ninaAuth && ninaAuth.enabled) (async () => {
+      try {
+        if (!(await ninaAuth.approvedMember())) return;
+        const c = await ninaAuth.blob("conti");
+        if (c) { window.__conti = c; render(data[0], data[1], c, prog); }
+      } catch (err) { /* area riservata giù ≠ plancia giù: si resta sulla vista pubblica */ }
+    })();
   } catch (e) {
     document.getElementById("when").textContent = "errore di pagina";
     document.getElementById("app").innerHTML = `<div class="err">

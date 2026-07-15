@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy · Crewin</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="icon-192.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --panel:#FFFFFF; --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --panel:#0C1728; --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh;padding:0 1.1rem 3rem}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1{font:700 2rem/1.1 var(--display);padding:2rem 0 .4rem}
+h2{font:700 1.05rem/1.2 var(--display);margin:1.6rem 0 .4rem}
+p,li{color:var(--soft);font-size:.95rem}
+b{color:var(--ink)}
+ul{padding-left:1.2rem;display:grid;gap:.3rem}
+.upd{font-size:.8rem;color:var(--soft);margin-top:.4rem}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia</a>
+  <span class="tag">Privacy</span>
+</div></div>
+<main>
+  <h1>Privacy</h1>
+  <p class="upd">Informativa ai sensi degli artt. 13-14 del Regolamento (UE) 2016/679 (GDPR) · aggiornata a luglio 2026.</p>
+
+  <h2>Chi tratta i dati</h2>
+  <p>Il titolare del trattamento è <b>Edoardo Casella</b> (lo skipper), contattabile a
+  <a href="mailto:edoardo.casella@gmail.com">edoardo.casella@gmail.com</a>.
+  Crewin è una community amatoriale di persone che vanno in barca a vela insieme: questo sito non ha fini commerciali,
+  non usa pubblicità, non fa profilazione e non installa cookie di tracciamento.</p>
+
+  <h2>Quali dati e perché</h2>
+  <ul>
+    <li><b>Area equipaggio (login):</b> l'indirizzo email serve solo per farti entrare (link d'accesso via email)
+      e per collegarti alla tua scheda dell'equipaggio. Base giuridica: esecuzione della tua richiesta di accesso (art. 6.1.b).</li>
+    <li><b>Richieste di accesso:</b> nome, email e messaggio che invii dal modulo restano visibili solo allo skipper,
+      finché la richiesta non viene gestita.</li>
+    <li><b>Scheda personale (profilo):</b> i campi che compili tu (nickname, motto, esperienza…) sono visibili
+      <b>solo all'equipaggio autenticato</b>, mai in pubblico. Li puoi modificare o svuotare quando vuoi.</li>
+    <li><b>Contenuti pubblici del sito</b> (foto, nomi con iniziale, aneddoti, statistiche di navigazione):
+      pubblicati con il consenso raccolto tramite il questionario equipaggio. Dieta, allergie e contatti personali
+      non vengono mai pubblicati né mostrati nell'area riservata.</li>
+  </ul>
+
+  <h2>Dove stanno i dati</h2>
+  <p>Il sito pubblico è ospitato su <b>GitHub Pages</b>. I dati dell'area riservata (email, richieste, schede, cassa di bordo,
+  date d'imbarco) stanno su <b>Supabase</b> (server nell'Unione Europea) e le email di accesso partono tramite un
+  fornitore di invio email. Nessun dato viene venduto o condiviso con terzi per altri scopi.</p>
+
+  <h2>Per quanto tempo</h2>
+  <p>Finché fai parte della community o finché non chiedi la rimozione. Gli account inattivi e le richieste rifiutate
+  vengono ripuliti periodicamente.</p>
+
+  <h2>I tuoi diritti</h2>
+  <p>Puoi chiedere in ogni momento accesso, correzione, esportazione o cancellazione dei tuoi dati
+  (artt. 15-22 GDPR) scrivendo a <a href="mailto:edoardo.casella@gmail.com">edoardo.casella@gmail.com</a> —
+  di solito basta un messaggio in ciurma. Hai anche il diritto di reclamo al Garante per la protezione dei dati personali.</p>
+</main>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<script src="nav.js"></script>
+</body>
+</html>

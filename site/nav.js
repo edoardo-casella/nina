@@ -7,6 +7,7 @@
     { title: "Crewin · la community", links: [
       ["manifesto.html", "Cos'è Crewin", "⚓"],
       ["unisciti.html", "Vuoi imbarcarti?", "✉️"],
+      ["login.html", "Area equipaggio", "🔐"],
       ["skipper.html", "Lo skipper", "🎖️"],
       ["classifica.html", "Classifica", "🏆"],
       ["aneddoti.html", "Aneddoti", "📖"],

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Area equipaggio · Crewin</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --verde:#0A7A43; --magenta:#C2185B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --verde:#2FBF71; --magenta:#E8536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.hero{padding:2.2rem 1.1rem 1rem}
+.hero h1{font:700 clamp(1.8rem,7vw,2.4rem)/1.05 var(--display);letter-spacing:.02em}
+.hero .lead{margin:.8rem 0 0;color:var(--soft);font-size:.98rem;line-height:1.7;max-width:54ch}
+section{padding:0 1.1rem 1.6rem}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:1.1rem 1.1rem 1.2rem}
+.field{display:grid;gap:.35rem;margin-bottom:.9rem}
+label{font:700 .64rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+input{font:400 1rem/1.4 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--hair);border-radius:9px;padding:.7rem .8rem;width:100%}
+input:focus{outline:none;border-color:var(--accent)}
+button{background:var(--accent);color:#fff;border:0;cursor:pointer;font:700 .78rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;padding:.95rem 1.1rem;border-radius:99px}
+button:hover{filter:brightness(1.06)}
+button.ghost{background:transparent;color:var(--soft);border:1px solid var(--hair)}
+.note{font-size:.82rem;color:var(--soft);margin-top:.8rem;line-height:1.55}
+.msg{margin-top:.9rem;font-size:.92rem}
+.msg.ok{color:var(--verde);font-weight:600}
+.msg.err{color:var(--magenta);font-weight:600}
+.links{display:grid;gap:.6rem;margin-top:1rem}
+.links a{display:flex;align-items:center;gap:.6rem;background:var(--panel);border:1px solid var(--hair);border-radius:11px;padding:.85rem .9rem;text-decoration:none;color:var(--ink);font-weight:600}
+.links a:hover{border-color:var(--accent)}
+.pill{display:inline-block;font:700 .58rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:.3rem .55rem;margin-bottom:.7rem}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia</a>
+  <span class="tag">🔐 Area equipaggio</span>
+</div></div>
+<main>
+  <section class="hero">
+    <h1>Area equipaggio</h1>
+    <p class="lead">La parte riservata di Crewin: cassa di bordo, date di imbarco, schede personali della ciurma e il tuo profilo da aggiornare. Si entra con la propria email, senza password.</p>
+  </section>
+  <section id="app"><div class="card"><p style="color:var(--soft)">Un attimo…</p></div></section>
+</main>
+<footer>Crewin · <a href="privacy.html">privacy</a></footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[<>&"]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]));
+
+function loginForm(prefill) {
+  return `<div class="card">
+    <div class="field"><label for="em">La tua email</label>
+    <input id="em" type="email" autocomplete="email" placeholder="nome@esempio.it" value="${esc(prefill || "")}"></div>
+    <button id="go">Mandami il link d'accesso</button>
+    <p class="note">Ti arriva una mail con un link: lo apri e sei dentro, nessuna password da ricordare.
+    L'accesso funziona solo per chi è stato abilitato — se non lo sei ancora,
+    <a href="unisciti.html#accesso">chiedi l'accesso da qui</a>.</p>
+    <p id="m" class="msg" role="status"></p>
+  </div>`;
+}
+
+async function render() {
+  const app = $("app");
+  if (!window.ninaAuth || !ninaAuth.enabled) {
+    app.innerHTML = `<div class="card"><span class="pill">In allestimento</span>
+      <p>L'area riservata non è ancora attiva. Torna a trovarci tra poco — nel frattempo il resto del sito è tutto aperto.</p></div>`;
+    return;
+  }
+  const { session, member } = await ninaAuth.me();
+
+  if (!session) {
+    app.innerHTML = loginForm(localStorage.getItem("nina-email"));
+    $("go").addEventListener("click", async () => {
+      const email = $("em").value.trim().toLowerCase();
+      const m = $("m");
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { m.className = "msg err"; m.textContent = "Controlla l'email: non sembra valida."; return; }
+      m.className = "msg"; m.textContent = "Invio il link…";
+      const { error } = await ninaAuth.signIn(email);
+      if (error) { m.className = "msg err"; m.textContent = "Non sono riuscito a mandare il link: " + error.message; return; }
+      localStorage.setItem("nina-email", email);
+      m.className = "msg ok"; m.textContent = "Fatto! Controlla la posta (anche lo spam) e apri il link da questo dispositivo.";
+    });
+    return;
+  }
+
+  const email = session.user && session.user.email;
+  if (!member) {
+    app.innerHTML = `<div class="card"><span class="pill">Accesso non abilitato</span>
+      <p>Sei entrato come <b>${esc(email)}</b>, ma questo indirizzo non è ancora tra quelli dell'equipaggio.</p>
+      <p class="note">Se sei della ciurma, <a href="unisciti.html#accesso">manda la richiesta di accesso</a>:
+      appena lo skipper ti abilita, rientri da qui e trovi tutto.</p>
+      <p style="margin-top:1rem"><button class="ghost" id="out">Esci</button></p></div>`;
+  } else if (member.status !== "approved") {
+    app.innerHTML = `<div class="card"><span class="pill">${member.status === "blocked" ? "Accesso sospeso" : "In attesa di approvazione"}</span>
+      <p>Ciao <b>${esc(email)}</b> — la tua richiesta è registrata${member.status === "blocked" ? ", ma l'accesso è sospeso" : " e in attesa dell'ok dello skipper"}.</p>
+      <p style="margin-top:1rem"><button class="ghost" id="out">Esci</button></p></div>`;
+  } else {
+    app.innerHTML = `<div class="card"><span class="pill">A bordo</span>
+      <p>Ciao <b>${esc(email)}</b> — sei dentro. Da qui puoi raggiungere tutto ciò che è riservato all'equipaggio.</p>
+      <div class="links">
+        <a href="profilo.html">✏️ Il mio profilo — aggiorna la tua scheda</a>
+        <a href="membro.html#${esc(member.crew_id)}">🧑‍✈️ La mia pagina nella ciurma</a>
+        <a href="index.html#oggi">💰 Conti di bordo (nella Plancia)</a>
+        <a href="arrivi.html">🛟 Arrivi &amp; partenze</a>
+        ${member.role === "admin" ? `<a href="admin.html">🎖️ Amministrazione — richieste e membri</a>` : ""}
+      </div>
+      <p style="margin-top:1.1rem"><button class="ghost" id="out">Esci</button></p></div>`;
+  }
+  const out = $("out");
+  if (out) out.addEventListener("click", async () => { await ninaAuth.signOut(); render(); });
+}
+render();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>
