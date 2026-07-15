@@ -157,14 +157,16 @@ function pace(a) {  // livello di attività = ritmo nm/giorno (come nel dossier 
   return { k: "extreme", t: "Estremo" };
 }
 function tripRow(t) {
-  const avg = t.days ? Math.round(t.nm / t.days) : null, p = pace(avg);
+  const personalNm = t.pnm != null ? t.pnm : t.nm;
+  const personalDays = t.pdays != null ? t.pdays : t.days;
+  const avg = personalDays ? Math.round(personalNm / personalDays) : null, p = pace(avg);
   const bn = BOATNAME.get(t.id);                       // nome barca da trips.json
   const boatTxt = (bn ? `«${esc(bn)}»${t.boat ? " · " : ""}` : "") + esc(t.boat || "");
   const dur = t.days ? `${t.days} ${t.days === 1 ? "giorno" : "giorni"}` : "";   // durata del viaggio
   const aboard = (t.pdays != null && t.days && t.pdays < t.days) ? ` · a bordo ${t.pdays} gg` : ""; // giorni a bordo di questa persona (se < viaggio)
   return `<a class="tlrow" href="viaggio.html#${t.id}"><span class="fl">${flags(t.country) || "⚓"}</span>` +
     `<span class="z"><b>${esc(cleanZone(t.zone) || t.country || "")}</b>` +
-    `<small>${boatTxt}${t.nm ? ` · ${t.nm} nm` : ""}${dur ? ` · ${dur}` : ""}${aboard}</small></span>` +
+    `<small>${boatTxt}${personalNm ? ` · ${personalNm} nm personali` : ""}${dur ? ` · ${dur}` : ""}${aboard}</small></span>` +
     `${p ? `<span class="pace ${p.k}">${p.t}</span>` : ""}<span class="y num">${t.year || ""}</span><span class="go">›</span></a>`;
 }
 function fleetRow(f) {   // viaggio in cui la persona era su UN'ALTRA barca (in flotta), non a bordo con noi
@@ -186,7 +188,11 @@ function compChip(cp, all) {
   const p = all.find(x => x.id === cp.id);
   const av = p ? avatarP(p, "cav") : `<span class="cav">${esc((cp.name || "?").trim()[0])}</span>`;
   const href = (p && p.crew2026 && p.crew2026.link) || `#${cp.id}`;
-  return `<a class="cchip" href="${href}">${av}<span class="cn">${esc(cp.name)}<small>${cp.trips} ${cp.trips === 1 ? "viaggio" : "viaggi"}</small></span></a>`;
+  // viaggi/giorni/miglia CONDIVISI: nei viaggi con avvicendamenti contano solo i turni fatti insieme
+  const parts = [`${cp.trips} ${cp.trips === 1 ? "viaggio" : "viaggi"}`];
+  if (cp.days != null) parts.push(`${cp.days} gg`);
+  if (cp.nm != null) parts.push(`${cp.nm} nm`);
+  return `<a class="cchip" href="${href}">${av}<span class="cn">${esc(cp.name)}<small>${parts.join(" · ")}</small></span></a>`;
 }
 function lbOne(src){ const lb=document.getElementById('lb'); lb.querySelector('img').src=src; lb.classList.add('on'); }
 (function(){ const lb=document.getElementById('lb'); lb.querySelector('.x').onclick=()=>lb.classList.remove('on'); lb.onclick=e=>{ if(e.target!==lb.querySelector('.x')) lb.classList.remove('on'); }; document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); }); })();

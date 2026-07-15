@@ -8,7 +8,12 @@
 # foto rinominate/rimosse) -> questo build ora produce ~15 foto invece delle 52 online.
 # NON rieseguirlo: cancellerebbe ~37 foto + i loro tag dal sito. Per AGGIUNGERE foto
 # nuove usa scripts/add_trip_photos.py (append-only, preserva le foto e i tag esistenti).
-import openpyxl, collections, os, glob, re, unicodedata, json
+import openpyxl, collections, os, glob, re, unicodedata, json, sys
+
+if "--force" not in sys.argv:
+    sys.exit("BLOCCATO: data/Skipper Images/ e' incompleta rispetto al sito (vedi header):\n"
+             "un rebuild cancellerebbe foto e tag pubblicati (successo il 2026-07-15, recuperato da git).\n"
+             "Per aggiungere foto usa scripts/add_trip_photos.py; per rigenerare davvero tutto: --force.")
 from PIL import Image, ImageOps
 
 # ROOT = radice del repo (genitore di scripts/), relativo alla posizione dello
@@ -76,6 +81,14 @@ def resolve_pid(fullname):
 def crew_id_of(pid):
     pp = people[pid]; cid = slug(pp["nom"] + " " + pp["cog"][:1])
     return ALIAS.get(cid, cid)
+
+# Overlay autoritativo per i viaggi con cambi di equipaggio. Il roster unificato
+# resta disponibile per compatibilita', mentre crew_groups permette alla pagina
+# viaggio di mostrare chiaramente ogni turno.
+GROUPS_FILE = os.path.join(ROOT, "data", "trip-crew-groups.json")
+group_cfg = json.load(open(GROUPS_FILE, encoding="utf-8")).get("trips", {}) if os.path.exists(GROUPS_FILE) else {}
+display_by_cid = {crew_id_of(pid): ini(pid) for pid in people}
+display_by_cid["edo-c"] = "Edo C"
 
 KW = {"grecia": "Greece", "croazia": "Croazia", "spagna": "Spain", "sardegna": "Italy",
       "sicilia": "Italy", "grenadine": "Saint Vincent", "baleari": "Spain", "corsica": "France"}
@@ -159,6 +172,21 @@ def ham(a, b): return bin(a ^ b).count("1")
 out, dedup_log = [], []
 for t in sorted(trips):
     m = trips[t]; tid = slug(m["name"]) or ("t" + str(t))
+    group_spec = group_cfg.get(tid)
+    crew_groups_out = []
+    if group_spec:
+        if group_spec.get("trip_id") is not None and int(group_spec["trip_id"]) != t:
+            raise ValueError(f"Configurazione equipaggi {tid}: trip_id {group_spec['trip_id']} non corrisponde a {t}")
+        for g in group_spec.get("groups", []):
+            unknown = [cid for cid in g.get("crew", []) if cid not in display_by_cid]
+            if unknown:
+                raise ValueError(f"{tid}/{g.get('id')}: crew id sconosciuti: {', '.join(unknown)}")
+            crew_groups_out.append({"id": g["id"], "label": g["label"], "days": g["days"],
+                                    "crew": [display_by_cid[cid] for cid in g["crew"]]})
+        configured = list(dict.fromkeys(cid for g in group_spec.get("groups", []) for cid in g.get("crew", []) if cid != "edo-c"))
+        trip_crew = [display_by_cid[cid] for cid in configured]
+    else:
+        trip_crew = [ini(p) for p in crew.get(t, [])]
     phs = []
     items = photos.get(t, [])
     if items:
@@ -183,7 +211,8 @@ for t in sorted(trips):
             kept.append((h, len(phs) - 1))
     out.append({"id": tid, "year": m["year"], "month": m["month"], "country": m["country"],
                 "zone": ZONE_OVERRIDE.get(tid, m["zone"]), "boat": m["boat"], "name": m["name"], "nm": m["nm"],
-                "days": round(m["days"], 1), "crew": [ini(p) for p in crew.get(t, [])],
+                "days": round(m["days"], 1), "crew": trip_crew,
+                **({"crew_groups": crew_groups_out} if crew_groups_out else {}),
                 "n_photos": len(phs), "photos": phs,
                 **({"story": stories[tid]} if tid in stories else {})})
 

@@ -578,115 +578,134 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 9,
-     "days": 136
+     "days": 136,
+     "nm": 3468
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 8,
-     "days": 125
+     "days": 125,
+     "nm": 3197
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 7,
-     "days": 114
+     "days": 114,
+     "nm": 2807
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 7,
-     "days": 114
+     "days": 114,
+     "nm": 2807
     },
     {
      "id": "gabriele-b",
      "name": "Gabriele B.",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1126
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "belinda-b",
      "name": "Belinda B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     }
    ],
    "photo": "crew/img/matilde-c.jpg"
@@ -814,103 +833,120 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 9,
-     "days": 132
+     "days": 132,
+     "nm": 3337
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 8,
-     "days": 125
+     "days": 125,
+     "nm": 3197
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 8,
-     "days": 120
+     "days": 120,
+     "nm": 2947
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 8,
-     "days": 120
+     "days": 120,
+     "nm": 2947
     },
     {
      "id": "gabriele-b",
      "name": "Gabriele B.",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1126
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 914
     },
     {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 785
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 785
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "belinda-b",
      "name": "Belinda B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     }
    ],
    "photo": "crew/img/margherita-c.jpg"
@@ -1048,91 +1084,106 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 8,
-     "days": 120
+     "days": 120,
+     "nm": 2947
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 8,
-     "days": 120
+     "days": 120,
+     "nm": 2947
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 8,
-     "days": 120
+     "days": 120,
+     "nm": 2947
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 7,
-     "days": 114
+     "days": 114,
+     "nm": 2807
     },
     {
      "id": "gabriele-b",
      "name": "Gabriele B.",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 736
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 524
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 395
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 395
     },
     {
      "id": "belinda-b",
      "name": "Belinda B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     }
    ],
    "photo": "crew/img/claudio-c.jpg"
@@ -1250,91 +1301,106 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 8,
-     "days": 120
+     "days": 120,
+     "nm": 2947
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 8,
-     "days": 120
+     "days": 120,
+     "nm": 2947
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 8,
-     "days": 120
+     "days": 120,
+     "nm": 2947
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 7,
-     "days": 114
+     "days": 114,
+     "nm": 2807
     },
     {
      "id": "gabriele-b",
      "name": "Gabriele B.",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 736
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 524
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 395
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 395
     },
     {
      "id": "belinda-b",
      "name": "Belinda B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     }
    ],
    "photo": "crew/img/paola-c.jpg"
@@ -1360,7 +1426,8 @@
      "boat": "Cyclades 50",
      "nm": 463,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 232
     },
     {
      "id": "natfika",
@@ -1380,7 +1447,8 @@
      "boat": "Sun Odyssey 54",
      "nm": 375,
      "days": 19,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 197
     },
     {
      "id": "aquarela",
@@ -1489,157 +1557,183 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 9,
-     "days": 91
+     "days": 91,
+     "nm": 2231
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 4,
-     "days": 45
+     "days": 45,
+     "nm": 1131
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 3,
-     "days": 33
+     "days": 33,
+     "nm": 661
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 3,
-     "days": 27
+     "days": 27,
+     "nm": 461
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "jennifer-s",
      "name": "Jennifer S.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "belinda-b",
      "name": "Belinda B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 484
     },
     {
      "id": "gabriele-b",
      "name": "Gabriele B.",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "ludovica-r",
      "name": "Ludovica R.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "giacomo-m",
      "name": "Giacomo M.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "chiara-f",
      "name": "Chiara F.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 194
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "tonino-l",
      "name": "Tonino L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "angela-k",
      "name": "Angela K.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "fede-b",
      "name": "Fede B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "mirco-l",
      "name": "Mirco L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "rebecca-l",
      "name": "Rebecca L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "fabiana-f",
      "name": "Fabiana F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "martina-r",
      "name": "Martina R.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     }
    ]
   },
@@ -1725,163 +1819,190 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 6,
-     "days": 70
+     "days": 70,
+     "nm": 2311
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1126
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1126
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 824
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 736
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 736
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 15
+     "days": 15,
+     "nm": 412
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "ludovica-r",
      "name": "Ludovica R.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "giacomo-m",
      "name": "Giacomo M.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 1,
-     "days": 11
-    },
-    {
-     "id": "matilde-r",
-     "name": "Matilde R.",
-     "trips": 1,
-     "days": 10
+     "days": 11,
+     "nm": 385
     },
     {
      "id": "sara-b",
      "name": "Sara B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
+     "id": "matilde-r",
+     "name": "Matilde R.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "sergio-s",
      "name": "Sergio S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "martina-g",
      "name": "Martina G.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giorgio-m",
      "name": "Giorgio M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     }
    ],
    "photo": "crew/img/cecilia-r.jpg"
@@ -2057,145 +2178,169 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 7,
-     "days": 65
+     "days": 65,
+     "nm": 1849
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 914
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 795
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 795
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 524
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 524
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 573
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 253
     },
     {
      "id": "carlo-a",
      "name": "Carlo A.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 253
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "fede-b",
      "name": "Fede B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 320
     },
     {
      "id": "riccardo-t",
      "name": "Riccardo T.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 320
     }
    ],
    "photo": "crew/img/riccardo-b.jpg"
@@ -2269,43 +2414,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 3,
-     "days": 59
+     "days": 59,
+     "nm": 1213
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 2,
-     "days": 20
+     "days": 20,
+     "nm": 429
     },
     {
      "id": "belinda-b",
      "name": "Belinda B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     }
    ],
    "photo": "crew/img/gabriele-b.jpg"
@@ -2340,7 +2492,8 @@
      "boat": "Dufour GL 500",
      "nm": 470,
      "days": 12,
-     "pdays": 7
+     "pdays": 7,
+     "pnm": 274
     },
     {
      "id": "alba",
@@ -2488,151 +2641,176 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 6,
-     "days": 57
+     "days": 57,
+     "nm": 1860
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 3,
-     "days": 27
+     "days": 27,
+     "nm": 881
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 824
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 2,
-     "days": 21
+     "days": 21,
+     "nm": 670
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 669
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 2,
-     "days": 16
+     "days": 16,
+     "nm": 385
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 2,
-     "days": 14
+     "days": 14,
+     "nm": 397
     },
     {
      "id": "umberto-f",
      "name": "Umberto F.",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 321
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 430
     },
     {
      "id": "riccardo-t",
      "name": "Riccardo T.",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 430
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 15
+     "days": 15,
+     "nm": 412
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "carlotta-d",
      "name": "Carlotta D.",
      "trips": 1,
-     "days": 11
-    },
-    {
-     "id": "matilde-r",
-     "name": "Matilde R.",
-     "trips": 1,
-     "days": 10
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "sara-b",
      "name": "Sara B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
+     "id": "matilde-r",
+     "name": "Matilde R.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "sergio-s",
      "name": "Sergio S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "martina-g",
      "name": "Martina G.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giorgio-m",
      "name": "Giorgio M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "ludovica-r",
      "name": "Ludovica R.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "giacomo-m",
      "name": "Giacomo M.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 320
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 211
     }
    ],
    "photo": "crew/img/leonardo-m.jpg"
@@ -2677,7 +2855,8 @@
      "boat": "Lagoon 42",
      "nm": 395,
      "days": 11,
-     "pdays": 8
+     "pdays": 8,
+     "pnm": 287
     },
     {
      "id": "isla",
@@ -2773,103 +2952,120 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 5,
-     "days": 48
+     "days": 48,
+     "nm": 1058
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 3,
-     "days": 33
+     "days": 33,
+     "nm": 661
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 3,
-     "days": 33
+     "days": 33,
+     "nm": 661
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 518
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "jennifer-s",
      "name": "Jennifer S.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 14
+     "days": 14,
+     "nm": 397
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 8
+     "days": 8,
+     "nm": 287
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 8
+     "days": 8,
+     "nm": 287
     },
     {
      "id": "carlotta-d",
      "name": "Carlotta D.",
      "trips": 1,
-     "days": 8
+     "days": 8,
+     "nm": 287
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 8
+     "days": 8,
+     "nm": 287
     },
     {
      "id": "fede-b",
      "name": "Fede B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "umberto-f",
      "name": "Umberto F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "riccardo-t",
      "name": "Riccardo T.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     }
    ]
   },
@@ -2932,79 +3128,92 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 4,
-     "days": 46
+     "days": 46,
+     "nm": 1131
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 4,
-     "days": 45
+     "days": 45,
+     "nm": 1131
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 3,
-     "days": 33
+     "days": 33,
+     "nm": 661
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "jennifer-s",
      "name": "Jennifer S.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 2,
-     "days": 21
+     "days": 21,
+     "nm": 231
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "ludovica-r",
      "name": "Ludovica R.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "giacomo-m",
      "name": "Giacomo M.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "fede-b",
      "name": "Fede B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     }
    ],
    "photo": "crew/img/sofia-m.jpg"
@@ -3125,91 +3334,106 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 4,
-     "days": 39
+     "days": 39,
+     "nm": 856
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 518
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 3,
-     "days": 27
+     "days": 27,
+     "nm": 461
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 2,
-     "days": 21
+     "days": 21,
+     "nm": 231
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 1,
-     "days": 15
+     "days": 15,
+     "nm": 140
     },
     {
      "id": "jennifer-s",
      "name": "Jennifer S.",
      "trips": 1,
-     "days": 15
+     "days": 15,
+     "nm": 140
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "carlotta-d",
      "name": "Carlotta D.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "tonino-l",
      "name": "Tonino L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "angela-k",
      "name": "Angela K.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "fede-b",
      "name": "Fede B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     }
    ]
   },
@@ -3269,73 +3493,85 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 3,
-     "days": 38
+     "days": 38,
+     "nm": 891
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "jennifer-s",
      "name": "Jennifer S.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 15
+     "days": 15,
+     "nm": 140
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "enrico-g",
      "name": "Enrico G.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "gianmarco-m",
      "name": "Gianmarco M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "alberto-b",
      "name": "Alberto B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "carlo-a",
      "name": "Carlo A.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     }
    ],
    "photo": "crew/img/pietro-c.jpg"
@@ -3443,79 +3679,92 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 4,
-     "days": 36
+     "days": 36,
+     "nm": 1004
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 574
     },
     {
      "id": "carlo-a",
      "name": "Carlo A.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 574
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 573
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 430
     },
     {
      "id": "riccardo-t",
      "name": "Riccardo T.",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 430
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "enrico-g",
      "name": "Enrico G.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "gianmarco-m",
      "name": "Gianmarco M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "alberto-b",
      "name": "Alberto B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "umberto-f",
      "name": "Umberto F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     }
    ],
    "photo": "crew/img/andrea-a.jpg"
@@ -3589,85 +3838,99 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 785
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 395
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 395
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     }
    ],
    "photo": "crew/img/luca-b.jpg"
@@ -3721,85 +3984,99 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 3,
-     "days": 34
+     "days": 34,
+     "nm": 1056
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 785
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 395
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 395
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     }
    ],
    "photo": "crew/img/rebecca-b.jpg"
@@ -3853,79 +4130,92 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 3,
-     "days": 30
+     "days": 30,
+     "nm": 806
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 795
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 806
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     }
    ],
    "photo": "crew/img/silvano-b.jpg"
@@ -3979,79 +4269,92 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 3,
-     "days": 30
+     "days": 30,
+     "nm": 806
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 806
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 795
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 666
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     }
    ],
    "photo": "crew/img/simona-b.jpg"
@@ -4129,67 +4432,78 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 3,
-     "days": 29
+     "days": 29,
+     "nm": 785
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 574
     },
     {
      "id": "carlo-a",
      "name": "Carlo A.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 574
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 253
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "enrico-g",
      "name": "Enrico G.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "gianmarco-m",
      "name": "Gianmarco M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "alberto-b",
      "name": "Alberto B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 211
     },
     {
      "id": "umberto-f",
      "name": "Umberto F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 211
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 211
     }
    ],
    "photo": "crew/img/marco-t.jpg"
@@ -4224,7 +4538,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     },
     {
      "id": "all-in",
@@ -4283,109 +4598,99 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 3,
-     "days": 27
+     "days": 27,
+     "nm": 881
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 3,
-     "days": 27
+     "days": 27,
+     "nm": 881
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 2,
-     "days": 21
+     "days": 21,
+     "nm": 670
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "carlotta-d",
      "name": "Carlotta D.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "matilde-r",
-     "name": "Matilde R.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sara-b",
-     "name": "Sara B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sergio-s",
-     "name": "Sergio S.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "martina-g",
      "name": "Martina G.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giorgio-m",
      "name": "Giorgio M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 8
+     "days": 8,
+     "nm": 287
     },
     {
      "id": "umberto-f",
      "name": "Umberto F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 211
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 211
     }
    ],
    "photo": "crew/img/gualtiero-s.jpg"
@@ -4429,37 +4734,43 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 2,
-     "days": 27
+     "days": 27,
+     "nm": 570
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 15
+     "days": 15,
+     "nm": 140
     }
    ],
    "photo": "crew/img/jennifer-s.jpg"
@@ -4484,7 +4795,8 @@
      "boat": "Sun Odyssey 49",
      "nm": 463,
      "days": 20,
-     "pdays": 14
+     "pdays": 14,
+     "pnm": 324
     },
     {
      "id": "ondine",
@@ -4506,43 +4818,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 2,
-     "days": 25
+     "days": 25,
+     "nm": 709
     },
     {
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 385
     }
    ],
    "photo": "crew/img/nicola-r.jpg"
@@ -4567,7 +4886,8 @@
      "boat": "Cyclades 50",
      "nm": 463,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 232
     },
     {
      "id": "aquarela",
@@ -4589,49 +4909,57 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 484
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 484
     },
     {
      "id": "chiara-f",
      "name": "Chiara F.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 194
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     },
     {
      "id": "gabriele-b",
      "name": "Gabriele B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 232
     }
    ]
   },
@@ -4698,49 +5026,57 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 574
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 574
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 2,
-     "days": 23
+     "days": 23,
+     "nm": 574
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 253
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "enrico-g",
      "name": "Enrico G.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "gianmarco-m",
      "name": "Gianmarco M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "alberto-b",
      "name": "Alberto B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     }
    ],
    "photo": "crew/img/carlo-a.jpg"
@@ -4813,73 +5149,85 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     }
    ],
    "photo": "crew/img/ilaria-m.jpg"
@@ -4963,73 +5311,85 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 2,
-     "days": 22
+     "days": 22,
+     "nm": 661
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 390
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     }
    ],
    "photo": "crew/img/gabri-m.jpg"
@@ -5054,7 +5414,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     },
     {
      "id": "all-in",
@@ -5112,97 +5473,85 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 21
+     "days": 21,
+     "nm": 670
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 21
+     "days": 21,
+     "nm": 670
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 2,
-     "days": 21
+     "days": 21,
+     "nm": 670
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "carlotta-d",
      "name": "Carlotta D.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "matilde-r",
-     "name": "Matilde R.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sara-b",
-     "name": "Sara B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sergio-s",
-     "name": "Sergio S.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "martina-g",
      "name": "Martina G.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giorgio-m",
      "name": "Giorgio M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 8
+     "days": 8,
+     "nm": 287
     }
    ],
    "photo": "crew/img/marta-a.jpg"
@@ -5227,7 +5576,8 @@
      "boat": "Dufour GL 500",
      "nm": 470,
      "days": 12,
-     "pdays": 7
+     "pdays": 7,
+     "pnm": 274
     },
     {
      "id": "all-in",
@@ -5285,73 +5635,85 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 669
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 18
+     "days": 18,
+     "nm": 669
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "carlotta-d",
      "name": "Carlotta D.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 8
+     "days": 8,
+     "nm": 287
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "ludovica-r",
      "name": "Ludovica R.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "giacomo-m",
      "name": "Giacomo M.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     }
    ],
    "photo": "crew/img/laura-c.jpg"
@@ -5376,7 +5738,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     },
     {
      "id": "challenger",
@@ -5410,97 +5773,85 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 16
+     "days": 16,
+     "nm": 385
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 16
+     "days": 16,
+     "nm": 385
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "matilde-r",
-     "name": "Matilde R.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sara-b",
-     "name": "Sara B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sergio-s",
-     "name": "Sergio S.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "martina-g",
      "name": "Martina G.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giorgio-m",
      "name": "Giorgio M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "umberto-f",
      "name": "Umberto F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "riccardo-t",
      "name": "Riccardo T.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     }
    ],
    "photo": "crew/img/giacomo-b.jpg"
@@ -5525,7 +5876,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 15
+     "pdays": 15,
+     "pnm": 412
     }
    ],
    "photos": [
@@ -5544,73 +5896,85 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 15
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 15
+     "days": 15,
+     "nm": 412
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 15
+     "days": 15,
+     "nm": 412
     },
     {
-     "id": "matilde-r",
-     "name": "Matilde R.",
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
+     "days": 15,
+     "nm": 412
     },
     {
      "id": "sara-b",
      "name": "Sara B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
+     "id": "matilde-r",
+     "name": "Matilde R.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "sergio-s",
      "name": "Sergio S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "martina-g",
      "name": "Martina G.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giorgio-m",
      "name": "Giorgio M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     }
    ],
    "photo": "crew/img/alice-s.jpg"
@@ -5635,7 +5999,8 @@
      "boat": "Sun Odyssey 49",
      "nm": 463,
      "days": 20,
-     "pdays": 14
+     "pdays": 14,
+     "pnm": 324
     }
    ],
    "photos": [
@@ -5658,37 +6023,43 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "margherita-c",
      "name": "Margherita C.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     },
     {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 1,
-     "days": 14
+     "days": 14,
+     "nm": 324
     }
    ],
    "photo": "crew/img/filippo-r.jpg"
@@ -5748,43 +6119,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 13
+     "days": 13,
+     "nm": 430
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 430
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 430
     },
     {
      "id": "umberto-f",
      "name": "Umberto F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 320
     }
    ],
    "photo": "crew/img/riccardo-t.jpg"
@@ -5843,49 +6221,57 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 321
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 12
+     "days": 12,
+     "nm": 321
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "riccardo-t",
      "name": "Riccardo T.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 110
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 211
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 211
     }
    ],
    "photo": "crew/img/umberto-f.jpg"
@@ -5919,43 +6305,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "giacomo-m",
      "name": "Giacomo M.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     }
    ],
    "photo": "crew/img/ludovica-r.jpg"
@@ -5989,43 +6382,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "ludovica-r",
      "name": "Ludovica R.",
      "trips": 1,
-     "days": 12
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 7
+     "days": 7,
+     "nm": 274
     }
    ],
    "photo": "crew/img/giacomo-m.jpg"
@@ -6098,43 +6498,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 8
+     "days": 8,
+     "nm": 287
     }
    ],
    "photo": "crew/img/carlotta-d.jpg"
@@ -6187,61 +6594,71 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "monica-m",
      "name": "Monica M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     }
    ],
    "photo": "crew/img/michele-m.jpg"
@@ -6275,61 +6692,71 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "michele-m",
      "name": "Michele M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "luca-b",
      "name": "Luca B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "matilde-c",
      "name": "Matilde C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "simona-b",
      "name": "Simona B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "silvano-b",
      "name": "Silvano B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "rebecca-b",
      "name": "Rebecca B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "gabri-m",
      "name": "Gabri M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     },
     {
      "id": "ilaria-m",
      "name": "Ilaria M",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 271
     }
    ],
    "photo": "crew/img/monica-m.jpg"
@@ -6370,43 +6797,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "gianmarco-m",
      "name": "Gianmarco M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "alberto-b",
      "name": "Alberto B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "carlo-a",
      "name": "Carlo A.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     }
    ],
    "photo": "crew/img/enrico-g.jpg"
@@ -6447,43 +6881,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "enrico-g",
      "name": "Enrico G.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "alberto-b",
      "name": "Alberto B.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "carlo-a",
      "name": "Carlo A.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     }
    ],
    "photo": "crew/img/gianmarco-m.jpg"
@@ -6524,43 +6965,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "marco-t",
      "name": "Marco T.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "enrico-g",
      "name": "Enrico G.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "gianmarco-m",
      "name": "Gianmarco M.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "andrea-a",
      "name": "Andrea A",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     },
     {
      "id": "carlo-a",
      "name": "Carlo A.",
      "trips": 1,
-     "days": 11
+     "days": 11,
+     "nm": 321
     }
    ],
    "photo": "crew/img/alberto-b.jpg"
@@ -6647,7 +7095,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     }
    ],
    "photos": [
@@ -6663,73 +7112,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "sara-b",
-     "name": "Sara B.",
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
+     "id": "sara-b",
+     "name": "Sara B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "sergio-s",
      "name": "Sergio S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "gualtiero-s",
-     "name": "Gualtiero S.",
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "marta-a",
-     "name": "Marta A.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "martina-g",
-     "name": "Martina G.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "giorgio-m",
-     "name": "Giorgio M.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "giacomo-b",
-     "name": "Giacomo B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     }
    ],
    "photo": "crew/img/matilde-r.jpg"
@@ -6754,7 +7180,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     }
    ],
    "photos": [
@@ -6782,73 +7209,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "matilde-r",
-     "name": "Matilde R.",
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
+     "id": "matilde-r",
+     "name": "Matilde R.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "sergio-s",
      "name": "Sergio S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "gualtiero-s",
-     "name": "Gualtiero S.",
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "marta-a",
-     "name": "Marta A.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "martina-g",
-     "name": "Martina G.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "giorgio-m",
-     "name": "Giorgio M.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "giacomo-b",
-     "name": "Giacomo B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     }
    ],
    "photo": "crew/img/sara-b.jpg"
@@ -6873,7 +7277,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     }
    ],
    "photos": [
@@ -6892,73 +7297,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "matilde-r",
-     "name": "Matilde R.",
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sara-b",
-     "name": "Sara B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "sergio-s",
      "name": "Sergio S.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "gualtiero-s",
-     "name": "Gualtiero S.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "marta-a",
-     "name": "Marta A.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "martina-g",
-     "name": "Martina G.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "giorgio-m",
-     "name": "Giorgio M.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "giacomo-b",
-     "name": "Giacomo B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     }
    ]
   },
@@ -6982,7 +7364,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     }
    ],
    "photos": [
@@ -6998,73 +7381,50 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "matilde-r",
-     "name": "Matilde R.",
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sara-b",
-     "name": "Sara B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "sara-b",
+     "name": "Sara B.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "matilde-r",
+     "name": "Matilde R.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "beatrice-f",
      "name": "Beatrice F.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "gualtiero-s",
-     "name": "Gualtiero S.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "marta-a",
-     "name": "Marta A.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "martina-g",
-     "name": "Martina G.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "giorgio-m",
-     "name": "Giorgio M.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "giacomo-b",
-     "name": "Giacomo B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     }
    ]
   },
@@ -7088,7 +7448,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     }
    ],
    "sex": "f",
@@ -7097,73 +7458,57 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "matilde-r",
-     "name": "Matilde R.",
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sara-b",
-     "name": "Sara B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sergio-s",
-     "name": "Sergio S.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giorgio-m",
      "name": "Giorgio M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     }
    ]
   },
@@ -7187,7 +7532,8 @@
      "boat": "Bali 4.1",
      "nm": 550,
      "days": 20,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 275
     }
    ],
    "sex": "m",
@@ -7196,73 +7542,57 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "matilde-r",
-     "name": "Matilde R.",
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sara-b",
-     "name": "Sara B.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
-     "trips": 1,
-     "days": 10
-    },
-    {
-     "id": "sergio-s",
-     "name": "Sergio S.",
-     "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "martina-g",
      "name": "Martina G.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     },
     {
      "id": "giacomo-b",
      "name": "Giacomo B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 275
     }
    ]
   },
@@ -7286,7 +7616,8 @@
      "boat": "Sun Odyssey 49",
      "nm": 252,
      "days": 13,
-     "pdays": 10
+     "pdays": 10,
+     "pnm": 194
     }
    ],
    "sex": "f",
@@ -7295,19 +7626,22 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 194
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 194
     },
     {
      "id": "belinda-b",
      "name": "Belinda B.",
      "trips": 1,
-     "days": 10
+     "days": 10,
+     "nm": 194
     }
    ]
   },
@@ -7364,37 +7698,43 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "sofia-m",
      "name": "Sofia M.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 91
     }
    ],
    "photo": "crew/img/fede-b.jpg"
@@ -7440,25 +7780,29 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "angela-k",
      "name": "Angela K.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     }
    ],
    "photo": "crew/img/tonino-l.jpg"
@@ -7499,25 +7843,29 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "tonino-l",
      "name": "Tonino L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 230
     }
    ],
    "photo": "crew/img/angela-k.jpg"
@@ -7551,31 +7899,36 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "rebecca-l",
      "name": "Rebecca L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "fabiana-f",
      "name": "Fabiana F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "martina-r",
      "name": "Martina R.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     }
    ]
   },
@@ -7608,31 +7961,36 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "mirco-l",
      "name": "Mirco L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "fabiana-f",
      "name": "Fabiana F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "martina-r",
      "name": "Martina R.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     }
    ]
   },
@@ -7668,31 +8026,36 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "mirco-l",
      "name": "Mirco L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "rebecca-l",
      "name": "Rebecca L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "martina-r",
      "name": "Martina R.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     }
    ]
   },
@@ -7725,31 +8088,36 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "mirco-l",
      "name": "Mirco L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "rebecca-l",
      "name": "Rebecca L.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "fabiana-f",
      "name": "Fabiana F.",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 6
+     "days": 6,
+     "nm": 189
     }
    ]
   },

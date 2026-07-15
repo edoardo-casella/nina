@@ -73,6 +73,11 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .crewgrid .cg-nm{display:block}
 .crewgrid .cg-rank{line-height:0;margin-top:-.15rem}
 .crewgrid .cg-rank .ins{display:block;height:15px;width:26px;margin:0 auto;overflow:visible}
+.crewturns{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:.8rem;margin-top:.7rem}
+.crewturn{background:var(--sea-1);border:1px solid var(--hair);border-radius:7px;padding:.85rem}
+.crewturn h3{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;margin:0 0 .55rem;font-size:.95rem}
+.crewturn h3 span{font:700 .58rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.crewnote{color:var(--soft);font-size:.9rem;margin:-.2rem 0 .4rem}
 .fleetnote{font:600 .82rem/1.45 var(--body);color:var(--soft);margin:.1rem 0 .7rem}
 .chip.me{border-color:var(--gold);color:var(--gold);font-weight:700}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
@@ -259,9 +264,16 @@ function tripPage(t, all) {
   const cat = /Lagoon|Bali|Fountain|Pajot/i.test(t.boat) ? "catamarano" : "monoscafo";
   const avg = t.days ? Math.round(t.nm / t.days) : null;
   const pc = pace(avg), df = diffOf(t.zone, t.month);
-  // lo skipper è a bordo di ogni viaggio (è il suo diario di rotta): lo aggiungiamo in testa
-  const crewAll = t.crew.some(n => normName(n) === "edoc") ? t.crew : ["Edo C", ...t.crew];
+  // Nei viaggi normali lo skipper viene aggiunto in testa; nei viaggi con
+  // avvicendamenti ogni turno contiene gia' l'elenco completo.
+  const grouped = Array.isArray(t.crew_groups) && t.crew_groups.length > 0;
+  const crewAll = grouped
+    ? [...new Map(t.crew_groups.flatMap(g => g.crew || []).map(n => [normName(n), n])).values()]
+    : (t.crew.some(n => normName(n) === "edoc") ? t.crew : ["Edo C", ...t.crew]);
   const crew = crewAll.map(n => crewChip(n, t.year)).join("");
+  const crewMarkup = grouped
+    ? `<p class="crewnote">Due equipaggi si sono alternati nello stesso itinerario.</p><div class="crewturns">${t.crew_groups.map(g => `<div class="crewturn"><h3>${esc(g.label)}<span>${g.days} giorni</span></h3><div class="crewgrid">${(g.crew || []).map(n => crewChip(n, t.year)).join("")}</div></div>`).join("")}</div>`
+    : `<div class="crewgrid">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>`;
   const galId = "g_" + t.id.replace(/-/g, "_");   // niente trattini: window.g_all_in valido (non g_all-in)
   const gal = t.photos && t.photos.length
     ? `<div class="gal">${t.photos.map((p, i) => `<img src="${p.src}" alt="${esc(zone)} ${t.year}" loading="lazy" onclick="openLB(window.${galId},${i})">`).join("")}</div>`
@@ -276,7 +288,7 @@ function tripPage(t, all) {
       <div class="vstat"><b>${t.nm}</b><i>miglia</i></div>
       <div class="vstat"><b>${Math.round(t.days)}</b><i>giorni</i></div>
       <div class="vstat"><b>${avg ?? "—"}</b><i>nm/giorno</i></div>
-      <div class="vstat"><b>${crewAll.length}</b><i>equipaggio</i></div>
+      <div class="vstat"><b>${crewAll.length}</b><i>${grouped ? "persone" : "equipaggio"}</i></div>
       <div class="vstat"><b>${t.n_photos || 0}</b><i>foto</i></div>
     </div>
     <div class="vtags">${boatIcon(t.boat)}${pc ? `<span class="pace ${pc.k}" title="${esc(pc.d)}">${pc.t}</span>` : ""}<span class="diff ${df.k}" title="${esc(df.why)}">⚓ ${df.t}</span></div>
@@ -286,8 +298,8 @@ function tripPage(t, all) {
     ${t.story ? `<h2>📖 ${esc(t.story.title || "Il racconto")}</h2><div class="story">${t.story.html}</div>` : ""}
     <h2>📸 Foto del viaggio</h2>
     ${gal}
-    <h2>⚓ L'equipaggio di quell'anno</h2>
-    <div class="crewgrid">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>
+    <h2>⚓ ${grouped ? "I due equipaggi" : "L'equipaggio di quell'anno"}</h2>
+    ${crewMarkup}
     ${t.fleet && t.fleet.length ? `<h2>🚩 In flotta</h2>${t.fleet.map(f => `<div class="fleetnote">${f.boat_name ? `«${esc(f.boat_name)}» · ` : ""}${esc(f.note || "Altra barca al seguito")} &mdash; non equipaggio della «${esc(t.name)}»</div><div class="crewgrid">${(f.people || []).map(crewChipById).filter(Boolean).join("")}</div>`).join("")}` : ""}
     ${ANEC.filter(a => a.trip_id === t.id).length ? `<h2>📖 Aneddoti di questo viaggio</h2>
     <div class="chips">${ANEC.filter(a => a.trip_id === t.id).map(a => `<a class="chip lk" href="aneddoti.html#${a.id}">${a.kind === "eroico" ? "🎖️" : "⚓"} ${esc(a.title)}</a>`).join("")}</div>` : ""}

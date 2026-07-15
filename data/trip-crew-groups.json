@@ -1,0 +1,41 @@
+{
+  "_README": "Sovrascrive il roster dei viaggi con cambi di equipaggio. I giorni e le miglia personali sono calcolati sommando i turni realmente condivisi; le miglia di ogni turno sono proporzionali alla sua durata rispetto al viaggio completo.",
+  "trips": {
+    "alba": {
+      "trip_id": 19,
+      "groups": [
+        {
+          "id": "crew-1",
+          "label": "Equipaggio 1",
+          "days": 10,
+          "crew": [
+            "edo-c",
+            "leonardo-m",
+            "cecilia-r",
+            "alice-s",
+            "sara-b",
+            "matilde-r",
+            "sergio-s",
+            "beatrice-f"
+          ]
+        },
+        {
+          "id": "crew-2",
+          "label": "Equipaggio 2",
+          "days": 10,
+          "crew": [
+            "edo-c",
+            "leonardo-m",
+            "cecilia-r",
+            "alice-s",
+            "gualtiero-s",
+            "marta-a",
+            "martina-g",
+            "giorgio-m",
+            "giacomo-b"
+          ]
+        }
+      ]
+    }
+  }
+}

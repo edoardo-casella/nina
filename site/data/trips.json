@@ -2383,13 +2383,13 @@
       "nm": 550,
       "days": 20.0,
       "crew": [
-        "Cecilia R.",
         "Leonardo M.",
-        "Matilde R.",
-        "Sara B.",
+        "Cecilia R.",
         "Alice S.",
-        "Beatrice F.",
+        "Sara B.",
+        "Matilde R.",
         "Sergio S.",
+        "Beatrice F.",
         "Gualtiero S.",
         "Marta A.",
         "Martina G.",
@@ -2842,12 +2842,45 @@
       ],
       "story": {
         "title": "La ripartenza post-Covid",
-        "html": "Italia e Corsica, estate 2020: il grande ritorno in mare dopo il Covid. Partenza dall'hotel Micalosu e un viaggio bellissimo, pieno del sollievo di essere di nuovo a bordo. In questa crociera si alternarono due equipaggi distinti, con un <b>nodo core</b> fisso a fare da spola: Edo, <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> e <a class='plink' href='membro.html#cecilia-r'>Cecilia R.</a>"
+        "html": "Italia e Corsica, estate 2020: il grande ritorno in mare dopo il Covid. Partenza dall'hotel Micalosu e un viaggio bellissimo, pieno del sollievo di essere di nuovo a bordo. In questa crociera si alternarono due equipaggi distinti, con un <b>nodo core</b> fisso a fare da spola: Edo, <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a>, <a class='plink' href='membro.html#cecilia-r'>Cecilia R.</a> e <a class='plink' href='membro.html#alice-s'>Alice S.</a>"
       },
       "nm_by_country": {
         "Italy": 414,
         "France": 136
-      }
+      },
+      "crew_groups": [
+        {
+          "id": "crew-1",
+          "label": "Equipaggio 1",
+          "days": 10,
+          "crew": [
+            "Edo C",
+            "Leonardo M.",
+            "Cecilia R.",
+            "Alice S.",
+            "Sara B.",
+            "Matilde R.",
+            "Sergio S.",
+            "Beatrice F."
+          ]
+        },
+        {
+          "id": "crew-2",
+          "label": "Equipaggio 2",
+          "days": 10,
+          "crew": [
+            "Edo C",
+            "Leonardo M.",
+            "Cecilia R.",
+            "Alice S.",
+            "Gualtiero S.",
+            "Marta A.",
+            "Martina G.",
+            "Giorgio M.",
+            "Giacomo B."
+          ]
+        }
+      ]
     },
     {
       "id": "silkwave",

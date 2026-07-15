@@ -109,6 +109,65 @@ for r in wb["Participations"].iter_rows(min_row=2, values_only=True):
 
 def norm(s): return "".join(c for c in unicodedata.normalize("NFD", (s or "").lower()) if c.isalnum())
 def slugify(s): return re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", s.lower()).encode("ascii", "ignore").decode()).strip("-")
+
+# I viaggi con avvicendamenti sono descritti in un sidecar testuale e versionabile.
+# Il foglio Excel conserva il registro storico, ma non rappresenta quali persone
+# abbiano realmente condiviso ciascun turno: senza questo overlay tutti i nomi del
+# viaggio verrebbero considerati compagni tra loro.
+GROUPS_FILE = os.path.join(ROOT, "data", "trip-crew-groups.json")
+group_cfg = json.loads(io.open(GROUPS_FILE, encoding="utf-8").read()).get("trips", {}) if os.path.exists(GROUPS_FILE) else {}
+crew_groups = {}  # trip numerico -> [{days, pids}], usato anche per la co-navigazione
+cid_alias = {"edoardo-c": "edo-c", "gabriele-m": "gabri-m", "federico-b": "fede-b"}
+pid_by_cid = {}
+for pid, pp in people.items():
+    cid = slugify(pp["nom"] + " " + pp["cog"][:1])
+    pid_by_cid[cid_alias.get(cid, cid)] = pid
+
+for trip_slug, spec in group_cfg.items():
+    matches = [t for t, name in trip_name.items() if slugify(name) == trip_slug]
+    if len(matches) != 1:
+        raise ValueError(f"Configurazione equipaggi {trip_slug}: viaggio non trovato o ambiguo")
+    t = matches[0]
+    if spec.get("trip_id") is not None and int(spec["trip_id"]) != t:
+        raise ValueError(f"Configurazione equipaggi {trip_slug}: trip_id {spec['trip_id']} non corrisponde a {t}")
+    parsed, person_days = [], collections.Counter()
+    for g in spec.get("groups", []):
+        days = float(g["days"])
+        if days <= 0:
+            raise ValueError(f"{trip_slug}/{g.get('id')}: days deve essere positivo")
+        pids = []
+        for cid in g.get("crew", []):
+            if cid == "edo-c":
+                continue  # lo skipper e' fuori dal foglio Passengers ed e' gestito a parte
+            pid = pid_by_cid.get(cid)
+            if pid is None:
+                raise ValueError(f"{trip_slug}/{g.get('id')}: crew id sconosciuto {cid}")
+            pids.append(pid); person_days[pid] += days
+        parsed.append({"days": days, "pids": pids})
+    if abs(sum(g["days"] for g in parsed) - trip_days[t]) > 0.01:
+        raise ValueError(f"{trip_slug}: la durata dei turni non coincide con i {trip_days[t]:g} giorni del viaggio")
+
+    # La configurazione e' autoritativa: rimuove anche partecipazioni spurie dal
+    # registro (per Alba 2020, Giacomo B.) e aggiunge eventuali persone mancanti.
+    desired = set(person_days)
+    for pid in list(roster.get(t, [])):
+        if pid not in desired:
+            part[pid] = [x for x in part.get(pid, []) if x != t]
+            part_days.pop((t, pid), None); part_nm.pop((t, pid), None)
+    roster[t] = list(dict.fromkeys(pid for g in parsed for pid in g["pids"]))
+    for pid, days in person_days.items():
+        if t not in part[pid]: part[pid].append(t)
+        excel_days = part_days.get((t, pid))
+        if excel_days is not None and excel_days < days:
+            # Il registro Excel e' piu' preciso della somma dei turni (Alba 2020,
+            # Alice S.: nel nucleo di entrambi i turni ma a bordo 15 giorni su 20).
+            if part_nm.get((t, pid)) is None:
+                part_nm[(t, pid)] = trip_nm[t] * excel_days / trip_days[t]
+            continue
+        part_days[(t, pid)] = days
+        part_nm[(t, pid)] = trip_nm[t] * days / trip_days[t]
+    crew_groups[t] = parsed
+
 def pname(p):
     pp = people[p]; return (pp["nom"] + " " + (pp["cog"][:1] + "." if pp["cog"] else "")).strip() or pp["cog"] or ("#" + str(p))
 
@@ -125,30 +184,57 @@ def stats(p):  # giorni/miglia PER-PERSONA (alcuni sono a bordo meno del totale 
 def trips_list_for(ts, pid=None):  # log viaggi cliccabile: id-slug (parita' con build_trips), + boat/nm/days (per pace/icona) + pdays (giorni a bordo di QUESTA persona; None -> intero viaggio)
     rows = []
     for t in sorted(ts, key=lambda t: (trip_year.get(t, 0), t)):
-        rows.append({"id": slugify(trip_name.get(t, "")) or ("t" + str(t)),
-                     "year": trip_year.get(t), "zone": trip_zone.get(t, ""), "country": trip_country.get(t, ""),
-                     "boat": trip_boat.get(t, ""), "nm": trip_nm.get(t, 0), "days": round(trip_days.get(t, 0)),
-                     "pdays": round(pdays(t, pid)) if pid is not None else round(trip_days.get(t, 0))})
+        row = {"id": slugify(trip_name.get(t, "")) or ("t" + str(t)),
+               "year": trip_year.get(t), "zone": trip_zone.get(t, ""), "country": trip_country.get(t, ""),
+               "boat": trip_boat.get(t, ""), "nm": trip_nm.get(t, 0), "days": round(trip_days.get(t, 0)),
+               "pdays": round(pdays(t, pid)) if pid is not None else round(trip_days.get(t, 0))}
+        # Per chi ha partecipato solo a un turno, conserva anche le miglia
+        # personali. Per i viaggi interi `nm` e' gia' il valore corretto.
+        if pid is not None and row["pdays"] < row["days"]:
+            row["pnm"] = round(pnm(t, pid))
+        rows.append(row)
     return rows
 
 def companions_for(p):  # con chi ha navigato di piu' (peso: n. viaggi condivisi, tie-break giorni)
     if p is None: return []
-    cnt, dsum = collections.Counter(), collections.Counter()
+    cnt, dsum, nsum = collections.Counter(), collections.Counter(), collections.Counter()
     for t in part.get(p, []):
-        for q in roster.get(t, []):
-            if q == p: continue
-            cnt[q] += 1
-            dsum[q] += round(min(pdays(t, p), pdays(t, q)))
+        if t in crew_groups:
+            # Conta solo le persone presenti nello stesso turno. Chi era nel core
+            # di entrambi i turni condivide 20 giorni; gli altri soltanto i 10
+            # giorni del proprio equipaggio. Il viaggio condiviso conta una volta.
+            # Le miglia di ogni turno sono proporzionali alla sua durata.
+            shared_days, shared_nm = collections.Counter(), collections.Counter()
+            for g in crew_groups[t]:
+                if p in g["pids"]:
+                    g_nm = trip_nm.get(t, 0) * g["days"] / trip_days[t] if trip_days.get(t) else 0
+                    for q in g["pids"]:
+                        if q != p:
+                            shared_days[q] += g["days"]; shared_nm[q] += g_nm
+            for q, days in shared_days.items():
+                # cap alla partecipazione reale: chi ha fatto meno giorni dei suoi
+                # turni (registro Excel) non puo' condividere piu' di quelli
+                cnt[q] += 1
+                dsum[q] += round(min(days, pdays(t, p), pdays(t, q)))
+                nsum[q] += round(min(shared_nm[q], pnm(t, p), pnm(t, q)))
+        else:
+            for q in roster.get(t, []):
+                if q == p: continue
+                cnt[q] += 1
+                dsum[q] += round(min(pdays(t, p), pdays(t, q)))
+                nsum[q] += round(min(pnm(t, p), pnm(t, q)))
     ranked = sorted(cnt, key=lambda q: (cnt[q], dsum[q]), reverse=True)  # TUTTI i co-naviganti (filtro id dopo l'ordinamento, non prima: altrimenti gli stub tagliavano il conteggio)
     res = []
     # lo skipper e' a bordo di OGNI crociera -> compagno di navigazione n.1 di chiunque
+    # (fa il viaggio intero: le miglia condivise coincidono con le miglia personali di p)
     ts = part.get(p, [])
     if ts:
         res.append({"id": "edo-c", "name": id2name.get("edo-c", "Edo C"),
-                    "trips": len(ts), "days": round(sum(pdays(t, p) for t in ts))})
+                    "trips": len(ts), "days": round(sum(pdays(t, p) for t in ts)),
+                    "nm": round(sum(pnm(t, p) for t in ts))})
     for q in ranked:
         qid = pid2id.get(q)
-        if qid: res.append({"id": qid, "name": id2name.get(qid, ""), "trips": cnt[q], "days": dsum[q]})
+        if qid: res.append({"id": qid, "name": id2name.get(qid, ""), "trips": cnt[q], "days": dsum[q], "nm": nsum[q]})
     return res
 
 def match(name):  # voyage nickname -> registry pid
