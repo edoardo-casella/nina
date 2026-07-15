@@ -26,6 +26,10 @@ data/Viaggi/
 # nel repo vanno solo le versioni ridimensionate in site/crew/img/ (agganciate da build_crew).
 data/Profili/
 
+# Staging del questionario equipaggio Jotform (jotform_profiles.py --fetch):
+# contiene email e dati sanitari (allergie) -> MAI nel repo pubblico.
+data/jotform-inbox/
+
 # Liste equipaggio e documenti personali (nomi completi, passaporti, DOB):
 # MAI nel repo pubblico. Nel sito vanno solo iniziali e foto ridotte.
 data/Crewlists/

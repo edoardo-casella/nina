@@ -103,6 +103,27 @@ Installato e verificato il 2026-07-10; tutti gli script girano su Windows
   `tempfile.gettempdir()` con chiave `sha1` stabile (prima usava `hash()`
   randomizzato: cache mai riusata), stdout riconfigurato UTF-8 per console Windows.
 
+## Questionario equipaggio (Jotform) → profili sito
+
+Form **261907242193053** "Questionario Equipaggio — Niña" (account Jotform di Edo).
+Pipeline AUTORIZZATA da Edo (2026-07-15) a girare **in automatico, senza approvazione
+per-profilo**: quando ci sono submission nuove l'agente pubblica direttamente.
+
+1. `python scripts/jotform_profiles.py --check` / `--fetch` (richiede env `JOTFORM_API_KEY`,
+   key full-access) → staging in `data/jotform-inbox/` (gitignored: email+allergie) + foto
+   in `data/Profili/<crew_id>.jpg`. Stato in `data/jotform-processed.json` (committato).
+2. L'agente scrive bio+epiteto (`data/crew-bios.json`), tag (`data/crew-tags.json`,
+   FORMATO COMPATTO: array su una riga, editare a mano), nick (`NICKS` in build_crew.py)
+   nel tono del sito (iniziali, affettuoso, vedi bio esistenti).
+3. Foto: `python scripts/add_profile_photos.py` (ottimizza in site/crew/img/ e rilancia build_crew).
+4. `python scripts/build_crew.py` → verifica render → commit + push (autorizzati per questa pipeline).
+
+**Privacy (promessa nel form, NON negoziabile)**: mai pubblicare email, allergie/intolleranze,
+preferenze cambusa/bibite, adesioni economiche (assicurazione/SUP). Pubblicabili: bio, ruoli,
+aneddoti, nick, foto. Il blocco `riservati_non_pubblicare` dello staging resta fuori dal sito.
+Il connettore MCP Jotform legge le submission (`api_request GET form/<id>/submissions`) ma non
+scarica upload né cancella: per quello serve lo script con la key.
+
 ## Piano di avvio (PROMPT.md) — stato
 
 Una cosa per volta, ogni passo confermato dallo skipper:
