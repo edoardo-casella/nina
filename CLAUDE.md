@@ -133,13 +133,21 @@ ritratto: spostare in `data/jotform-inbox/` e segnalare a Edo.
 preservato da build_crew) con campi ruolo/esperienza/specialita/valigia/motto/funfact —
 compilarla dal questionario (mai `dieta`, resta privata).
 
-### Form aneddoti (registro di bordo)
+### Form aneddoti (registro di bordo) — Google Forms
 
-Form Jotform **261954209321354** "Aneddoti di bordo — Crewin", prefill via
-`?riferimento=<testo>` (unique name). CTA sul sito: `viaggio.html` ("C'eri anche tu?...",
-prefill «nome viaggio — zona anno»), `membro.html` ("Racconta un aneddoto su X", prefill
-membro), `aneddoti.html` ("Racconta il tuo"). Il piano FREE ha max 5 form: siamo a 4
-(questionario, aneddoti, 2 accrediti UnipolArena).
+**Piattaforma form: Google Forms per tutto il nuovo** (scelta di Edo 2026-07-15: i
+connettori Google sono già autorizzati). Il questionario equipaggio resta su Jotform
+(risposte già in corso + la Forms API non sa creare domande file-upload per la foto).
+
+Form Google **"Aneddoti di bordo — Crewin"**, formId `1aa2DMLIC3rSznibC9rb4CPGnK1YZTdi6ZA2M7DznMMs`,
+responder `https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform`,
+prefill `?usp=pp_url&entry.1120053238=<testo>`. CTA sul sito: `viaggio.html` ("C'eri anche
+tu?...", prefill «Viaggio: nome — zona anno»), `membro.html` ("Racconta un aneddoto su X",
+prefill «Membro: nome»), `aneddoti.html` ("Racconta il tuo").
+Accesso API: OAuth (progetto OpenClaw-Vanessa), **refresh token in
+`Desktop/Backupagent/gforms_token.json`** (scope forms.body + forms.responses.readonly) —
+lettura risposte: `GET forms/<formId>/responses` senza nuovo consenso. In alternativa
+collegare lo Sheet risposte e leggerlo col connettore Drive.
 **Le submission aneddoti hanno GATE EDITORIALE — mai auto-publish** (espongono terzi):
 l'agente prepara la bozza (anecdotes.json kind `leggenda` per storie non-skipper, o
 arricchimento bio) e la sottopone a Edo prima di pubblicare. L'autorizzazione automatica

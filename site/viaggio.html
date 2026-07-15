@@ -305,7 +305,7 @@ function tripPage(t, all) {
     ${t.fleet && t.fleet.length ? `<h2>🚩 In flotta</h2>${t.fleet.map(f => `<div class="fleetnote">${f.boat_name ? `«${esc(f.boat_name)}» · ` : ""}${esc(f.note || "Altra barca al seguito")} &mdash; non equipaggio della «${esc(t.name)}»</div><div class="crewgrid">${(f.people || []).map(crewChipById).filter(Boolean).join("")}</div>`).join("")}` : ""}
     ${ANEC.filter(a => a.trip_id === t.id).length ? `<h2>📖 Aneddoti di questo viaggio</h2>
     <div class="chips">${ANEC.filter(a => a.trip_id === t.id).map(a => `<a class="chip lk" href="aneddoti.html#${a.id}">${a.kind === "eroico" ? "🎖️" : "⚓"} ${esc(a.title)}</a>`).join("")}</div>` : ""}
-    <p class="ctaform"><a class="ctabtn" href="https://form.jotform.com/261954209321354?riferimento=${encodeURIComponent(`Viaggio: «${t.name}» — ${zone} ${t.year}`)}" target="_blank" rel="noopener">📖 C'eri anche tu? Racconta un aneddoto di questo viaggio ›</a></p>
+    <p class="ctaform"><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform?usp=pp_url&entry.1120053238=${encodeURIComponent(`Viaggio: «${t.name}» — ${zone} ${t.year}`)}" target="_blank" rel="noopener">📖 C'eri anche tu? Racconta un aneddoto di questo viaggio ›</a></p>
     <div class="nav2">
       ${prev ? `<a href="#${prev.id}"><small>‹ ${prev.year}</small>${flags(prev.country)}${esc(cleanZone(prev.zone))}${prev.name ? ` · «${esc(prev.name)}»` : ""}</a>` : "<span></span>"}
       ${next ? `<a class="next" href="#${next.id}"><small>${next.year} ›</small>${flags(next.country)}${esc(cleanZone(next.zone))}${next.name ? ` · «${esc(next.name)}»` : ""}</a>` : "<span></span>"}
