@@ -139,11 +139,18 @@ compilarla dal questionario (mai `dieta`, resta privata).
 connettori Google sono già autorizzati). Il questionario equipaggio resta su Jotform
 (risposte già in corso + la Forms API non sa creare domande file-upload per la foto).
 
-Form Google **"Aneddoti di bordo — Crewin"**, formId `1aa2DMLIC3rSznibC9rb4CPGnK1YZTdi6ZA2M7DznMMs`,
-responder `https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform`,
-prefill `?usp=pp_url&entry.1120053238=<testo>`. CTA sul sito: `viaggio.html` ("C'eri anche
-tu?...", prefill «Viaggio: nome — zona anno»), `membro.html` ("Racconta un aneddoto su X",
-prefill «Membro: nome»), `aneddoti.html` ("Racconta il tuo").
+Due form Google, entrambi con review del comandante:
+
+1. **"Aneddoti di bordo — Crewin"** formId `1aa2DMLIC3rSznibC9rb4CPGnK1YZTdi6ZA2M7DznMMs`,
+   responder `…/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform`.
+   Campi: **viaggio (OBBLIGATORIO** — ogni aneddoto appartiene a una rotta, richiesta Edo
+   2026-07-15; entry `1120053238`), racconto (obbl.), chi c'era (entry `929369460`), autore.
+   CTA: `viaggio.html` (prefill viaggio), `membro.html` ("Racconta un aneddoto con X",
+   prefill CHI C'ERA col nome — il viaggio lo indica l'utente), `aneddoti.html`.
+2. **"Il profilo di bordo — Crewin"** formId `17ekHZs0sxlKnfkyI1wHCx5NhuOEOMW-9gH_RXPtme3w`,
+   responder `…/e/1FAIpQLSeddGG04_P3nrYI33cq2XGcqmPoqklj6DSmslrF-XDAj5luNw/viewform` —
+   aggiunte/correzioni sui membri. Campi: membro (obbl., entry `1740816767`), contributo
+   (obbl.), autore. CTA: `membro.html` ("Aggiungi qualcosa al profilo", prefill membro).
 Accesso API: OAuth (progetto OpenClaw-Vanessa), **refresh token in
 `Desktop/Backupagent/gforms_token.json`** (scope forms.body + forms.responses.readonly) —
 lettura risposte: `GET forms/<formId>/responses` senza nuovo consenso. In alternativa
