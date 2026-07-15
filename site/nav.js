@@ -4,8 +4,8 @@
 (function () {
   // Menu a due gruppi: pagine generiche della community + pagine del viaggio di quest'estate.
   const GROUPS = [
-    { title: "Crewin · la community", links: [
-      ["manifesto.html", "Cos'è Crewin", "⚓"],
+    { title: "Everywaves · la community", links: [
+      ["manifesto.html", "Cos'è Everywaves", "⚓"],
       ["unisciti.html", "Vuoi imbarcarti?", "✉️"],
       ["login.html", "Area equipaggio", "🔐"],
       ["skipper.html", "Lo skipper", "🎖️"],

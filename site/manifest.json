@@ -1,7 +1,7 @@
 {
-  "name": "Crewin — la community di chi vuole andare in barca a vela",
-  "short_name": "Crewin",
-  "description": "Crewin: la community di chi vuole andare in barca a vela. Ciurma, viaggi, classifica, mete e la plancia live della Niña, la barca di quest'anno.",
+  "name": "Everywaves — la community di chi vuole andare in barca a vela",
+  "short_name": "Everywaves",
+  "description": "Everywaves: la community di chi vuole andare in barca a vela. Ciurma, viaggi, classifica, mete e la plancia live della Niña, la barca di quest'anno.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#FBFDFF",

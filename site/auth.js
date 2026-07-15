@@ -1,4 +1,4 @@
-// Area riservata Crewin — modulo condiviso (vanilla, zero build).
+// Area riservata Everywaves — modulo condiviso (vanilla, zero build).
 // Carica supabase-js dal CDN SOLO se config.js è compilato; altrimenti ogni
 // funzione degrada a "non configurato" e le pagine restano quelle pubbliche.
 // Login: magic link via email (PKCE) → auth-callback.html (query ?code=,
@@ -45,7 +45,7 @@
   }
 
   // magic link: atterra su auth-callback.html accanto alla pagina corrente
-  // (funziona sia su crewin.it/ sia su github.io/nina/)
+  // (funziona sia su everywaves.com/ sia su github.io/nina/)
   async function signIn(email) {
     const c = await client(); if (!c) return { error: { message: "Area riservata non configurata." } };
     return c.auth.signInWithOtp({
