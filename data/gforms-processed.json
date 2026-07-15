@@ -1,0 +1,18 @@
+{
+ "_readme": "Risposte dei Google Form gia' processate (sync via connettore Drive sugli Sheet collegati).",
+ "aneddoti": {
+  "sheet_id": "1oc_ek1_U-UyquqwtV0MWiccahBLQKcNQ5eIB4A3DRW8",
+  "processed": []
+ },
+ "profilo_di_bordo": {
+  "sheet_id": "1JzwZO3uQIQQCVeeosqVDuFe0voCFF49YrCsIBsWxjZc",
+  "processed": [
+   {
+    "ts": "7/16/2026 0:42:08",
+    "membro": "Ginevra L",
+    "autore": "Gine",
+    "esito": "pubblicato come funfact scheda (ok Edo 2026-07-16)"
+   }
+  ]
+ }
+}
