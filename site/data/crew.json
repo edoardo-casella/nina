@@ -8220,8 +8220,20 @@
     "leave": "2026-08-29",
     "role": "crew"
    },
+   "bio": {
+    "epithet": "La jolly del polleggio",
+    "html": "Prima crociera con la Niña, ma non la prima volta in barca: alle spalle una traversata <b>Montenegro&ndash;Grecia</b> e la mano già ferma al timone. Si è candidata praticamente a tutto &mdash; manovre, ormeggio, cucina, musica, foto e perfino la cassa di bordo &mdash; con una sola regola non negoziabile: rispettare il polleggio. In cucina niente pose da chef: la sua pasta con pomodorini, capperi e acciughe è già in menu, e se il pescato collabora promette il ragù bianco di pesce spada e i calamari ripieni alla romagnola. Dorme nove ore a notte e non se ne vergogna; pregio dichiarato: &laquo;non rompo&raquo;."
+   },
+   "tags": [
+    "Timoniera",
+    "DJ di bordo",
+    "Foto & blog",
+    "Cassiera",
+    "Jolly"
+   ],
    "nicks": [
-    "Juliet"
+    "Juliet",
+    "Giuli"
    ],
    "sex": "f"
   },

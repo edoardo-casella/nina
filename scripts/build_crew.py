@@ -32,7 +32,7 @@ NICKS = {
     "gabri-m": ["Gastone", "Gustavo"],
     "giacomo-n": ["Jack"],
     "ginevra-l": ["Gine", "Gi", "Ginx"],
-    "giulia-n": ["Juliet"],
+    "giulia-n": ["Juliet", "Giuli"],
     "ilaria-m": ["Ila"],
     "lavinia-p": ["Peeiss"],
     "mati-m": ["Mati"],
