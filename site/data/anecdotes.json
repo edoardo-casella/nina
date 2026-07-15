@@ -336,19 +336,19 @@
       "title": "I barracuda e la maniglia del winch",
       "kind": "leggenda",
       "stamp": "Leggenda",
-      "meta": "🌴 Caraibi · Grenadine 2017 o Cuba 2019 — gli storici di bordo dibattono",
-      "flag": "🎣",
-      "country": null,
-      "year": null,
-      "place": "Caraibi",
-      "boat": null,
-      "boat_name": null,
-      "trip_id": null,
+      "meta": "🇨🇺 Cuba · 2019 · Lagoon 450 «Lohengrin»",
+      "flag": "🇨🇺",
+      "country": "Cuba",
+      "year": 2019,
+      "place": "Cuba",
+      "boat": "Lagoon 450",
+      "boat_name": "Lohengrin",
+      "trip_id": "lohengrin",
       "people": [
         "gabri-m",
         "luca-b"
       ],
-      "bodyHtml": "<p>Battuta di pesca fortunata ai Caraibi: i <b>barracuda</b> abboccano, salgono a bordo e — da manuale del vero pescatore — vanno finiti in fretta. Lo strumento più adatto a portata di mano? La <b>maniglia del winch</b>.</p><p><a class='plink' href='membro.html#gabri-m'><b>Gabriele</b></a> e <a class='plink' href='membro.html#luca-b'><b>Luca B.</b></a> eseguirono con zelo da macelleria navale: cena assicurata e <b>pozzetto da lavare come dopo un abbordaggio</b>. Su quale crociera sia successo — Grenadine o Cuba — gli storici di bordo ancora dibattono.</p>",
+      "bodyHtml": "<p>Battuta di pesca fortunata ai Caraibi: i <b>barracuda</b> abboccano, salgono a bordo e — da manuale del vero pescatore — vanno finiti in fretta. Lo strumento più adatto a portata di mano? La <b>maniglia del winch</b>.</p><p><a class='plink' href='membro.html#gabri-m'><b>Gabriele</b></a> e <a class='plink' href='membro.html#luca-b'><b>Luca B.</b></a> eseguirono con zelo da macelleria navale: cena assicurata e <b>pozzetto da lavare come dopo un abbordaggio</b>. Teatro dell'impresa: le acque cubane del 2019.</p>",
       "autore": "gabri-m"
     },
     {
