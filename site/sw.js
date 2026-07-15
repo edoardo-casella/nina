@@ -51,11 +51,10 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET") return;
-  if (url.origin !== location.origin) return;   // API esterne (es. like su Supabase): mai dalla cache
 
   // cross-origin: si intercettano SOLO i font (utili offline). Tutto il resto
-  // — Supabase (dati riservati!), CDN supabase-js — va diretto in rete e non
-  // tocca MAI queste cache.
+  // — Supabase (dati riservati, like), CDN supabase-js — va diretto in rete e
+  // non tocca MAI queste cache.
   if (url.origin !== location.origin) {
     if (url.hostname !== "fonts.googleapis.com" && url.hostname !== "fonts.gstatic.com") return;
   }
