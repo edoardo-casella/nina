@@ -1,1594 +1,1594 @@
 {
-  "_README": "Crew e date REALI (step 2, 2026-07-10) con iniziali al posto dei nomi (repo pubblico; legenda in data/crew-legend.local.md, fuori repo). Charter gestito nell'Excel — fa fede il foglio Bonifici — e NON ripartito da ledger.py, che gestisce solo le spese comuni di bordo. Diete: da raccogliere, default onnivoro. Waypoint ancora approssimati (verify:true); plan vuoto fino allo step 3 (Percorso + KML).",
-  "name": "Corsica & La Maddalena 2026",
-  "start_date": "2026-08-08",
-  "end_date": "2026-08-29",
-  "base": "Cannigione",
-  "currency": "EUR",
-  "boat": {
-    "model": "Dufour 48 Catamaran",
-    "name": "Niña",
-    "year": 2023,
-    "type": "catamaran",
-    "polar_file": "dufour48cat.pol",
-    "draft_m": 1.35,
-    "cruise_motor_kn": 7.2,
-    "fuel_lph": 6.0,
-    "max_tws_comfort_kn": 22,
-    "max_tws_safe_kn": 28,
-    "max_wave_comfort_m": 1.2,
-    "min_tws_sailing_kn": 7,
-    "berths": 11,
-    "min_sail_speed_kn": 6.5,
-    "polar_status": "stimata-v2 (derated da fonti online 2026-07-10, da validare a bordo)"
+ "_README": "Crew e date REALI (step 2, 2026-07-10) con iniziali al posto dei nomi (repo pubblico; legenda in data/crew-legend.local.md, fuori repo). Charter gestito nell'Excel — fa fede il foglio Bonifici — e NON ripartito da ledger.py, che gestisce solo le spese comuni di bordo. Diete: da raccogliere, default onnivoro. Waypoint ancora approssimati (verify:true); plan vuoto fino allo step 3 (Percorso + KML).",
+ "name": "Corsica & La Maddalena 2026",
+ "start_date": "2026-08-08",
+ "end_date": "2026-08-29",
+ "base": "Cannigione",
+ "currency": "EUR",
+ "boat": {
+  "model": "Dufour 48 Catamaran",
+  "name": "Niña",
+  "year": 2023,
+  "type": "catamaran",
+  "polar_file": "dufour48cat.pol",
+  "draft_m": 1.35,
+  "cruise_motor_kn": 7.2,
+  "fuel_lph": 6.0,
+  "max_tws_comfort_kn": 22,
+  "max_tws_safe_kn": 28,
+  "max_wave_comfort_m": 1.2,
+  "min_tws_sailing_kn": 7,
+  "berths": 11,
+  "min_sail_speed_kn": 6.5,
+  "polar_status": "stimata-v2 (derated da fonti online 2026-07-10, da validare a bordo)"
+ },
+ "crew": [
+  {
+   "id": "ec",
+   "name": "Edo C",
+   "board": "2026-08-08",
+   "leave": "2026-08-29",
+   "role": "skipper",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": []
   },
-  "crew": [
+  {
+   "id": "gl",
+   "name": "Ginevra L",
+   "board": "2026-08-08",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "beb",
+   "name": "Bernardo B",
+   "board": "2026-08-08",
+   "leave": "2026-08-21",
+   "role": "skipper",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": []
+  },
+  {
+   "id": "bib",
+   "name": "Bianca B",
+   "board": "2026-08-08",
+   "leave": "2026-08-21",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "gn",
+   "name": "Giacomo N",
+   "board": "2026-08-08",
+   "leave": "2026-08-17",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "mm",
+   "name": "Matilde C.",
+   "board": "2026-08-08",
+   "leave": "2026-08-15",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "gin",
+   "name": "Giulia N",
+   "board": "2026-08-15",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Castello letto 2",
+   "weight": 0.7,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "fb",
+   "name": "Fede B",
+   "board": "2026-08-15",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Castello letto 1",
+   "weight": 0.8,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "man",
+   "name": "Manlio",
+   "board": "2026-08-15",
+   "leave": "2026-08-22",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "dav",
+   "name": "Davide",
+   "board": "2026-08-15",
+   "leave": "2026-08-22",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "rb",
+   "name": "Riccardo B",
+   "board": "2026-08-21",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Doppia bagno condiviso",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "fn",
+   "name": "Fede N",
+   "board": "2026-08-21",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Doppia bagno condiviso",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "im",
+   "name": "Ilaria M",
+   "board": "2026-08-21",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "mlp",
+   "name": "Lavinia P",
+   "board": "2026-08-21",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "aa",
+   "name": "Andrea A",
+   "board": "2026-08-22",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "sa",
+   "name": "Simona A",
+   "board": "2026-08-22",
+   "leave": "2026-08-29",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "gm",
+   "name": "Gabri M",
+   "board": "2026-08-22",
+   "leave": "2026-08-29",
+   "role": "marinaio",
+   "diet": "onnivoro",
+   "cabin": "Skipper / Marinaio",
+   "weight": 0.7,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  }
+ ],
+ "costs": {
+  "fixed": [],
+  "variable_budget": [
+   {
+    "label": "Cambusa",
+    "eur_per_person_day": 22
+   },
+   {
+    "label": "Gasolio",
+    "eur_per_person_day": 6
+   },
+   {
+    "label": "Ormeggi/boe",
+    "eur_per_person_day": 5
+   },
+   {
+    "label": "Extra (bar, taxi)",
+    "eur_per_person_day": 8
+   }
+  ]
+ },
+ "expenses": [],
+ "waypoints": [
+  {
+   "id": "cannigione",
+   "name": "Cannigione",
+   "lat": 41.1069,
+   "lon": 9.4404,
+   "type": "port",
+   "verify": true,
+   "rating": 2.5
+  },
+  {
+   "id": "spargi",
+   "name": "Cala Corsara (Spargi)",
+   "lat": 41.2311,
+   "lon": 9.3389,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "budelli",
+   "name": "Cala Roto (Budelli)",
+   "lat": 41.2789,
+   "lon": 9.3556,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "santamaria",
+   "name": "Cala Santa Maria",
+   "lat": 41.295,
+   "lon": 9.39,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 4.5
+  },
+  {
+   "id": "lavezzi",
+   "name": "Isole Lavezzi",
+   "lat": 41.3392,
+   "lon": 9.2544,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "bonifacio",
+   "name": "Bonifacio",
+   "lat": 41.3872,
+   "lon": 9.1592,
+   "type": "port",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "rondinara",
+   "name": "Baie de Rondinara",
+   "lat": 41.4767,
+   "lon": 9.2775,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "porto_vecchio",
+   "name": "Golfe de Porto-Vecchio",
+   "lat": 41.58,
+   "lon": 9.305,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 3
+  },
+  {
+   "id": "sanguinaires",
+   "name": "Iles Sanguinaires",
+   "lat": 41.885,
+   "lon": 8.585,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "ajaccio",
+   "name": "Ajaccio",
+   "lat": 41.92,
+   "lon": 8.74,
+   "type": "port",
+   "verify": true,
+   "rating": 2.5
+  },
+  {
+   "id": "bastia",
+   "name": "Bastia",
+   "lat": 42.7,
+   "lon": 9.455,
+   "type": "port",
+   "verify": true,
+   "rating": 2
+  },
+  {
+   "id": "coticcio",
+   "name": "Cala Coticcio (Caprera)",
+   "lat": 41.2075,
+   "lon": 9.465,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "mortorio",
+   "name": "Isola Mortorio",
+   "lat": 41.0783,
+   "lon": 9.575,
+   "type": "anchorage",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "corsica_isola_piana",
+   "name": "Corsica- Isola Piana",
+   "lat": 41.37452,
+   "lon": 9.22525,
+   "type": "anchorage",
+   "notes": "",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "cr_bonifacio",
+   "name": "CR- Bonifacio",
+   "lat": 41.3891,
+   "lon": 9.15456,
+   "type": "anchorage",
+   "notes": "",
+   "verify": true
+  },
+  {
+   "id": "cr_roccapina_nord",
+   "name": "CR - Roccapina Nord",
+   "lat": 41.50003,
+   "lon": 8.91714,
+   "type": "anchorage",
+   "notes": "",
+   "verify": true,
+   "rating": 4.5
+  },
+  {
+   "id": "cala_portese",
+   "name": "Cala Portese",
+   "lat": 41.1831,
+   "lon": 9.4633,
+   "type": "anchorage",
+   "notes": "Fondo sabbia bianca, ben ridossata; campo boe estivo del Parco La Maddalena (ancoraggio consentito fuori boe), molto affollata in agosto [coord. da verificare]",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "porto_palma",
+   "name": "Porto Palma",
+   "lat": 41.1892,
+   "lon": 9.4505,
+   "type": "anchorage",
+   "notes": "Ridossata da tutto tranne S; miglior tenuta lato E in 5-9 m sabbia (chiazze posidonia/fango); boe estive; base velica CVC con regate mag-ott",
+   "verify": true,
+   "rating": 3
+  },
+  {
+   "id": "capo_pertusato",
+   "name": "Capo Pertusato",
+   "lat": 41.3675,
+   "lon": 9.1844,
+   "type": "landmark",
+   "notes": "Landmark: faro su falesia 66 m slm, estremita sud della Corsica; nessun ancoraggio, doppiare con margine con mistral/libeccio",
+   "verify": true
+  },
+  {
+   "id": "santa_manza",
+   "name": "Santa Manza",
+   "lat": 41.4087,
+   "lon": 9.2203,
+   "type": "anchorage",
+   "notes": "Sabbia buona tenuta ~6 m, ottimo riparo da W/mistral ma aperto a NE; ZMEL Bonifacio Marina 15 boe (obbligatorie per unita >24 m); zona kite/windsurf",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "marmorata",
+   "name": "Marmorata",
+   "lat": 41.25,
+   "lon": 9.238,
+   "type": "anchorage",
+   "notes": "Sabbia e posidonia, ancorare sulle chiazze chiare in 5-6 m; ridosso da maestrale subito a S dell'isolotto maggiore; passaggio isolotti-costa con fondale ~1 m, non tentare",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "porto_madonna",
+   "name": "Porto Madonna",
+   "lat": 41.288,
+   "lon": 9.357,
+   "type": "mooring",
+   "notes": "Ormeggio SOLO su boe del Parco (a pagamento, poche rispetto alla domanda, ~7 m sabbia/posidonia); zona piscine naturali interdetta a navigazione/ancoraggio, accesso solo a remi/nuoto; permesso Parco o [coord. da verifica",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "santa_giulia",
+   "name": "Santa Giulia",
+   "lat": 41.524,
+   "lon": 9.2783,
+   "type": "mooring",
+   "notes": "ZMEL organizzata: 30 boe visitatori per taglia (3xx <9m, 2xx 9-15m, 1xx 15-20m), seguire i marker a 300 m dalla riva sud; baia sabbiosa poco profonda, aperta a E",
+   "verify": true,
+   "rating": 4.5
+  },
+  {
+   "id": "cala_rossa",
+   "name": "Cala Rossa",
+   "lat": 41.617,
+   "lon": 9.3325,
+   "type": "mooring",
+   "notes": "Cala quasi interamente occupata dal campo boe ANCRE (boe visitatori prenotabili online); fuori boe ancorare su sabbia 4-8 m; buon ridosso da N/NW, aperta a S [coord. da verificare]",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "san_ciprianu",
+   "name": "San Ciprianu",
+   "lat": 41.6283,
+   "lon": 9.3533,
+   "type": "anchorage",
+   "notes": "Baia a mezzaluna ben protetta, sabbia e posidonia (qualche roccia verso il fondo della baia); isolotto San Ciprianu all'ingresso; buona tappa a 4 M dal porto di Porto-Vecchio [coord. da verificare]",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "cala_di_conca",
+   "name": "Cala di Conca",
+   "lat": 41.5746,
+   "lon": 8.8036,
+   "type": "anchorage",
+   "notes": "Cala stretta, fondo sabbia 2-16 m; buon ridosso da maestrale ma aperta a libeccio/onda; scoglio affiorante a 1.8 m circa 400 m a WSW dell'ingresso; affollata in agosto.",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "tizzano",
+   "name": "Tizzano",
+   "lat": 41.5398,
+   "lon": 8.8501,
+   "type": "anchorage",
+   "notes": "Ancorare all'ingresso della cala fuori dal porticciolo, 3-8 m solo su sabbia; esposto a SW; secca di 1.5 m circa 200 m a S della punta W dell'ingresso; pontili interni max 1.5 m pescaggio. [coord. da verificare]",
+   "verify": true,
+   "rating": 3
+  },
+  {
+   "id": "cala_longa_tizzano",
+   "name": "Cala Longa Tizzano",
+   "lat": 41.5549,
+   "lon": 8.8161,
+   "type": "anchorage",
+   "notes": "Caletta selvaggia presso Punta di Capicciolu tra Tizzano e Senetosa, ben ridossata dai venti, usata come rifugio; sabbia; nessun servizio; da non confondere con la Cala Longa di Bonifacio. [coord. da verificare]",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "capo_senetosa",
+   "name": "Capo Senetosa",
+   "lat": 41.55851,
+   "lon": 8.79419,
+   "type": "landmark",
+   "notes": "Faro bianco a doppia torre; attenzione agli scogli Les Moines a S del capo; ancoraggi adiacenti: Cala di Conca a N, Cala Longa/Cala di Barcaju a E.",
+   "verify": true
+  },
+  {
+   "id": "campomoro",
+   "name": "Campomoro",
+   "lat": 41.6342,
+   "lon": 8.8098,
+   "type": "anchorage",
+   "notes": "Fondo sabbia con chiazze di posidonia/alga 5-15 m (fino a 30 m piu' fuori); ottimo ridosso da W/SW, esposto a NW; divieto di ancoraggio entro 300 m dalla spiaggia (fascia balneare/allevamento). [coord. da verificare]",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "capo_di_muro",
+   "name": "Capo di Muro",
+   "lat": 41.7461,
+   "lon": 8.67314,
+   "type": "landmark",
+   "notes": "Limite S del golfo di Ajaccio, faro sulla punta W; ridosso piu' vicino nell'anse de Cala d'Orzu subito a SE del capo (sabbia, aperta a S). [coord. da verificare]",
+   "verify": true
+  },
+  {
+   "id": "isolella",
+   "name": "Isolella",
+   "lat": 41.83733,
+   "lon": 8.76,
+   "type": "mooring",
+   "notes": "Campo boe comunale (ZMEL Pietrosella, ~400 gavitelli totali con Stagnola e Ste-Barbe, mag-ott); vietato ancorare fuori dalle boe e entro 300 m dalle spiagge; boa assegnata dal gestore. [coord. da verificare]",
+   "verify": true,
+   "rating": 3
+  },
+  {
+   "id": "anse_chiuni",
+   "name": "Anse Chiuni",
+   "lat": 42.1701,
+   "lon": 8.5895,
+   "type": "anchorage",
+   "notes": "Baia ben protetta e poco profonda tra Punta d'Orchinu e Punta Omigna, fondo sabbia 3-6 m, buona tenuta; apre a W (attenzione con ponente/onda residua).",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "girolata",
+   "name": "Girolata",
+   "lat": 42.34917,
+   "lon": 8.61306,
+   "type": "mooring",
+   "notes": "Ormeggio solo su gavitello (capitaneria 7/7 8-20, mag-set, anche boe superyacht max 30 m); ancoraggio libero di fatto vietato/limitato per posidonia e spazio; in agosto arrivare presto.",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "scandola",
+   "name": "Scandola",
+   "lat": 42.37863,
+   "lon": 8.54901,
+   "type": "landmark",
+   "notes": "Riserva integrale: divieto assoluto di sosta/ancoraggio giorno e notte, pesca e sbarco; zona interdetta rinforzata attorno alla punta (nidi di falco pescatore); transito max 5 kn, organi basaltici a v",
+   "verify": true
+  },
+  {
+   "id": "calvi_alga",
+   "name": "Calvi Alga",
+   "lat": 42.5628,
+   "lon": 8.7277,
+   "type": "anchorage",
+   "notes": "Fondo sabbia con chiazze di posidonia, 3-8 m; ottimo ridosso da libeccio (SW), aperta a N/NE; in alternativa lato N di Punta Oscelluccia.",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "san_fiorenzo",
+   "name": "San Fiorenzo",
+   "lat": 42.6858,
+   "lon": 9.2815,
+   "type": "anchorage",
+   "notes": "Ancorare su 5-6 m sabbia e alghe, fondale degrada dolcemente; riparata da W/SW/S/SE/E, da abbandonare con previsione di N/NE. [coord. da verificare]",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "saleccia",
+   "name": "Saleccia",
+   "lat": 42.72867,
+   "lon": 9.205,
+   "type": "anchorage",
+   "notes": "Fondo sabbia, buona tenuta, ma rada aperta: solo con meteo stabile e mare calmo; in estate ancorare oltre la fascia balneare 300 m.",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "lotu",
+   "name": "Lotu",
+   "lat": 42.7225,
+   "lon": 9.2328,
+   "type": "anchorage",
+   "notes": "Sabbia, buona tenuta; obbligo ancoraggio oltre 300 m dalla spiaggia; protetta da W/SW, esposta a N-NW. [coord. da verificare]",
+   "verify": true,
+   "rating": 4.5
+  },
+  {
+   "id": "malfalco",
+   "name": "Malfalco",
+   "lat": 42.7236,
+   "lon": 9.118,
+   "type": "anchorage",
+   "notes": "Cala stretta: si dà fondo al centro su 2-3 m sabbia/roccia; ridosso discreto da W moderato, esposta a risacca con NW-NE, rollio con mistral. [coord. da verificare]",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "centuri",
+   "name": "Centuri",
+   "lat": 42.9662,
+   "lon": 9.3504,
+   "type": "port",
+   "notes": "Porticciolo minuscolo (max ~10 m, pescaggio max 2 m, 0,8 m minimo): in agosto quasi sempre pieno; le barche a vela ancorano fuori davanti al porto su sabbia, solo con calma da W.",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "barcaggio",
+   "name": "Barcaggio",
+   "lat": 43.0079,
+   "lon": 9.4112,
+   "type": "anchorage",
+   "notes": "Fondo sabbia con alghe e rocce, bassi fondali; rada aperta a quasi tutti i venti e a corrente del canale della Giraglia: solo sosta diurna con mare calmo, ridosso da SE a NE della spiaggia.",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "giraglia",
+   "name": "Giraglia",
+   "lat": 43.02667,
+   "lon": 9.40556,
+   "type": "landmark",
+   "notes": "Landmark: isolotto con faro e torre genovese ~1 NM a N di Barcaggio; canale con corrente e mare confuso con vento contro corrente, tenersi larghi dai bassi lato Corsica.",
+   "verify": true
+  },
+  {
+   "id": "macinaggio",
+   "name": "Macinaggio",
+   "lat": 42.96098,
+   "lon": 9.45451,
+   "type": "port",
+   "notes": "Marina ~585 posti, base classica prima/dopo il doppiaggio del Capo; in agosto prenotare; ancoraggio possibile nella baia a N del porto su sabbia.",
+   "verify": true,
+   "rating": 2.5
+  },
+  {
+   "id": "tamarone",
+   "name": "Tamarone",
+   "lat": 42.9755,
+   "lon": 9.457,
+   "type": "anchorage",
+   "notes": "Fondo sabbia con chiazze di roccia/posidonia, 3-6 m; buon ridosso da W/SW (libeccio), aperta a E-NE; comoda alternativa gratuita a Macinaggio. [coord. da verificare]",
+   "verify": true,
+   "rating": 3
+  },
+  {
+   "id": "erbalunga",
+   "name": "Erbalunga",
+   "lat": 42.7742,
+   "lon": 9.4787,
+   "type": "anchorage",
+   "notes": "Rada aperta appena a N/E del porticciolo (porto solo <8 m). Fondo sabbia e roccia, tenuta discreta; ridossata solo da venti occidentali, evitare con vento da E. [coord. da verificare]",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "foce_golo",
+   "name": "Foce Golo",
+   "lat": 42.5242,
+   "lon": 9.537,
+   "type": "anchorage",
+   "notes": "Costa sabbiosa rettilinea completamente aperta: solo sosta diurna con mare calmo. Possibili banchi di sabbia mobili davanti alla foce, avvicinarsi con ecoscandaglio. [coord. da verificare]",
+   "verify": true,
+   "rating": 1.5
+  },
+  {
+   "id": "campoloro",
+   "name": "Campoloro",
+   "lat": 42.34135,
+   "lon": 9.539,
+   "type": "port",
+   "notes": "Unico porto-rifugio tra Bastia e Solenzara sulla costa orientale. Entrata con risacca in caso di forte vento da E/SE; carburante e servizi disponibili.",
+   "verify": true,
+   "rating": 1.5
+  },
+  {
+   "id": "solenzara",
+   "name": "Solenzara",
+   "lat": 41.8572,
+   "lon": 9.4037,
+   "type": "port",
+   "notes": "Marina 450 posti, 8 pontili. In alternativa rada sabbiosa a S della foce del fiume Solenzara utilizzabile solo con tempo stabile.",
+   "verify": true,
+   "rating": 2
+  },
+  {
+   "id": "canella",
+   "name": "Canella",
+   "lat": 41.8,
+   "lon": 9.397,
+   "type": "anchorage",
+   "notes": "Cala ben protetta da W/SW (libeccio), fondo sabbia con buona tenuta; aperta a E. Fondale basso vicino a riva, molto frequentata in agosto.",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "favone",
+   "name": "Favone",
+   "lat": 41.7742,
+   "lon": 9.3986,
+   "type": "anchorage",
+   "notes": "Baia sabbiosa con buona tenuta, riparata da W; aperta a E-NE. Verificare posidonia prima di dare fondo; Navily mouillage #8055.",
+   "verify": true,
+   "rating": 3
+  },
+  {
+   "id": "fautea",
+   "name": "Fautea",
+   "lat": 41.7135,
+   "lon": 9.4045,
+   "type": "anchorage",
+   "notes": "Ancoraggio nella baia a S della torre genovese del 1592, fondo sabbia; sito protetto Conservatoire du Littoral. Riparo discreto con tempo buono ma esposto a E, tenibile di notte solo con meteo stabile [coord. da verifica",
+   "verify": true,
+   "rating": 3.5
+  },
+  {
+   "id": "pinarello",
+   "name": "Pinarello",
+   "lat": 41.672,
+   "lon": 9.39,
+   "type": "anchorage",
+   "notes": "Punto migliore ai due lati del passo tra isola di Pinarellu (torre genovese) e terraferma; fondo sabbia e roccia. Buona protezione da SW ma raffiche; attenzione allo scoglio Roscana e ai sub. Non teni [coord. da verifica",
+   "verify": true,
+   "rating": 4
+  },
+  {
+   "id": "palombaggia",
+   "name": "Palombaggia",
+   "lat": 41.5555,
+   "lon": 9.3305,
+   "type": "anchorage",
+   "notes": "Dare fondo solo su sabbia: le praterie di posidonia sono balisate e l'ancoraggio sopra e' vietato (arrete prefettizio 2023; >24 m vietato tra Punta Chiappa e Capicciolu). Riparata da NW dalla penisola",
+   "verify": true,
+   "rating": 5
+  },
+  {
+   "id": "ficajola",
+   "name": "Ficajola",
+   "lat": 42.252,
+   "lon": 8.6262,
+   "type": "anchorage",
+   "notes": "Caletta minuscola sotto le Calanche di Piana (golfo di Porto), fondo sabbia/roccia, spazio per pochissime barche. Solo sosta diurna con mare calmo: completamente esposta a W/SW e alla risacca da ponen [coord. da verifica",
+   "verify": true,
+   "rating": 4.5
+  },
+  {
+   "id": "porto_rotondo",
+   "name": "Porto Rotondo",
+   "lat": 41.0315,
+   "lon": 9.5485,
+   "type": "port",
+   "notes": "Marina + rada; base logistica drop-off/pickup 21-22/8, aeroporto Olbia ~20 min [coord. da verificare]",
+   "verify": true,
+   "rating": 3
+  },
+  {
+   "id": "golfo_di_marinella",
+   "name": "Golfo di Marinella",
+   "lat": 41.047,
+   "lon": 9.568,
+   "type": "anchorage",
+   "notes": "Baia sabbiosa ampia, buona tenuta; comoda per transfer aeroporto [coord. da verificare]",
+   "verify": true,
+   "rating": 3
+  },
+  {
+   "id": "golfo_di_cugnana",
+   "name": "Golfo di Cugnana",
+   "lat": 41.021,
+   "lon": 9.529,
+   "type": "anchorage",
+   "notes": "Golfo riparato a S di Porto Rotondo; alternativa per la notte [coord. da verificare]",
+   "verify": true,
+   "rating": 3
+  }
+ ],
+ "plan": [
+  {
+   "date": "2026-08-08",
+   "from": "cannigione",
+   "to": "cala_portese",
+   "rest": false,
+   "steps": [
     {
-      "id": "ec",
-      "name": "Edo C",
-      "board": "2026-08-08",
-      "leave": "2026-08-29",
-      "role": "skipper",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": []
+     "slot": "mattina",
+     "from": "cannigione",
+     "to": "coticcio",
+     "depart_at": "08:00",
+     "arrive_by": "08:45",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
     },
     {
-      "id": "gl",
-      "name": "Ginevra L",
-      "board": "2026-08-08",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "beb",
-      "name": "Bernardo B",
-      "board": "2026-08-08",
-      "leave": "2026-08-21",
-      "role": "skipper",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": []
-    },
-    {
-      "id": "bib",
-      "name": "Bianca B",
-      "board": "2026-08-08",
-      "leave": "2026-08-21",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "gn",
-      "name": "Giacomo N",
-      "board": "2026-08-08",
-      "leave": "2026-08-17",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "mm",
-      "name": "Mati M",
-      "board": "2026-08-08",
-      "leave": "2026-08-17",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "gin",
-      "name": "Giulia N",
-      "board": "2026-08-15",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Castello letto 2",
-      "weight": 0.7,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "fb",
-      "name": "Fede B",
-      "board": "2026-08-15",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Castello letto 1",
-      "weight": 0.8,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "man",
-      "name": "Manlio",
-      "board": "2026-08-15",
-      "leave": "2026-08-22",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "dav",
-      "name": "Davide",
-      "board": "2026-08-15",
-      "leave": "2026-08-22",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "rb",
-      "name": "Riccardo B",
-      "board": "2026-08-21",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Doppia bagno condiviso",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "fn",
-      "name": "Fede N",
-      "board": "2026-08-21",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Doppia bagno condiviso",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "im",
-      "name": "Ilaria M",
-      "board": "2026-08-21",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "mlp",
-      "name": "Lavinia P",
-      "board": "2026-08-21",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "aa",
-      "name": "Andrea A",
-      "board": "2026-08-22",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "sa",
-      "name": "Simona A",
-      "board": "2026-08-22",
-      "leave": "2026-08-29",
-      "role": "crew",
-      "diet": "onnivoro",
-      "cabin": "Bagno privato",
-      "weight": 1,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
-    },
-    {
-      "id": "gm",
-      "name": "Gabri M",
-      "board": "2026-08-22",
-      "leave": "2026-08-29",
-      "role": "marinaio",
-      "diet": "onnivoro",
-      "cabin": "Skipper / Marinaio",
-      "weight": 0.7,
-      "duties": [
-        "cucina",
-        "pulizie",
-        "check"
-      ]
+     "slot": "sera",
+     "from": "coticcio",
+     "to": "cala_portese",
+     "depart_at": "17:15",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
     }
-  ],
-  "costs": {
-    "fixed": [],
-    "variable_budget": [
-      {
-        "label": "Cambusa",
-        "eur_per_person_day": 22
-      },
-      {
-        "label": "Gasolio",
-        "eur_per_person_day": 6
-      },
-      {
-        "label": "Ormeggi/boe",
-        "eur_per_person_day": 5
-      },
-      {
-        "label": "Extra (bar, taxi)",
-        "eur_per_person_day": 8
-      }
-    ]
+   ]
   },
-  "expenses": [],
-  "waypoints": [
+  {
+   "date": "2026-08-09",
+   "from": "cala_portese",
+   "to": "lavezzi",
+   "rest": false,
+   "steps": [
     {
-      "id": "cannigione",
-      "name": "Cannigione",
-      "lat": 41.1069,
-      "lon": 9.4404,
-      "type": "port",
-      "verify": true,
-      "rating": 2.5
+     "slot": "mattina",
+     "from": "cala_portese",
+     "to": "spargi",
+     "depart_at": "08:00",
+     "arrive_by": "09:00",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
     },
     {
-      "id": "spargi",
-      "name": "Cala Corsara (Spargi)",
-      "lat": 41.2311,
-      "lon": 9.3389,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 5
+     "slot": "pomeriggio",
+     "from": "spargi",
+     "to": "marmorata",
+     "depart_at": "10:45",
+     "arrive_by": "11:15",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
     },
     {
-      "id": "budelli",
-      "name": "Cala Roto (Budelli)",
-      "lat": 41.2789,
-      "lon": 9.3556,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "santamaria",
-      "name": "Cala Santa Maria",
-      "lat": 41.295,
-      "lon": 9.39,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 4.5
-    },
-    {
-      "id": "lavezzi",
-      "name": "Isole Lavezzi",
-      "lat": 41.3392,
-      "lon": 9.2544,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "bonifacio",
-      "name": "Bonifacio",
-      "lat": 41.3872,
-      "lon": 9.1592,
-      "type": "port",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "rondinara",
-      "name": "Baie de Rondinara",
-      "lat": 41.4767,
-      "lon": 9.2775,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "porto_vecchio",
-      "name": "Golfe de Porto-Vecchio",
-      "lat": 41.58,
-      "lon": 9.305,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 3
-    },
-    {
-      "id": "sanguinaires",
-      "name": "Iles Sanguinaires",
-      "lat": 41.885,
-      "lon": 8.585,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "ajaccio",
-      "name": "Ajaccio",
-      "lat": 41.92,
-      "lon": 8.74,
-      "type": "port",
-      "verify": true,
-      "rating": 2.5
-    },
-    {
-      "id": "bastia",
-      "name": "Bastia",
-      "lat": 42.7,
-      "lon": 9.455,
-      "type": "port",
-      "verify": true,
-      "rating": 2
-    },
-    {
-      "id": "coticcio",
-      "name": "Cala Coticcio (Caprera)",
-      "lat": 41.2075,
-      "lon": 9.465,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "mortorio",
-      "name": "Isola Mortorio",
-      "lat": 41.0783,
-      "lon": 9.575,
-      "type": "anchorage",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "corsica_isola_piana",
-      "name": "Corsica- Isola Piana",
-      "lat": 41.37452,
-      "lon": 9.22525,
-      "type": "anchorage",
-      "notes": "",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "cr_bonifacio",
-      "name": "CR- Bonifacio",
-      "lat": 41.3891,
-      "lon": 9.15456,
-      "type": "anchorage",
-      "notes": "",
-      "verify": true
-    },
-    {
-      "id": "cr_roccapina_nord",
-      "name": "CR - Roccapina Nord",
-      "lat": 41.50003,
-      "lon": 8.91714,
-      "type": "anchorage",
-      "notes": "",
-      "verify": true,
-      "rating": 4.5
-    },
-    {
-      "id": "cala_portese",
-      "name": "Cala Portese",
-      "lat": 41.1831,
-      "lon": 9.4633,
-      "type": "anchorage",
-      "notes": "Fondo sabbia bianca, ben ridossata; campo boe estivo del Parco La Maddalena (ancoraggio consentito fuori boe), molto affollata in agosto [coord. da verificare]",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "porto_palma",
-      "name": "Porto Palma",
-      "lat": 41.1892,
-      "lon": 9.4505,
-      "type": "anchorage",
-      "notes": "Ridossata da tutto tranne S; miglior tenuta lato E in 5-9 m sabbia (chiazze posidonia/fango); boe estive; base velica CVC con regate mag-ott",
-      "verify": true,
-      "rating": 3
-    },
-    {
-      "id": "capo_pertusato",
-      "name": "Capo Pertusato",
-      "lat": 41.3675,
-      "lon": 9.1844,
-      "type": "landmark",
-      "notes": "Landmark: faro su falesia 66 m slm, estremita sud della Corsica; nessun ancoraggio, doppiare con margine con mistral/libeccio",
-      "verify": true
-    },
-    {
-      "id": "santa_manza",
-      "name": "Santa Manza",
-      "lat": 41.4087,
-      "lon": 9.2203,
-      "type": "anchorage",
-      "notes": "Sabbia buona tenuta ~6 m, ottimo riparo da W/mistral ma aperto a NE; ZMEL Bonifacio Marina 15 boe (obbligatorie per unita >24 m); zona kite/windsurf",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "marmorata",
-      "name": "Marmorata",
-      "lat": 41.25,
-      "lon": 9.238,
-      "type": "anchorage",
-      "notes": "Sabbia e posidonia, ancorare sulle chiazze chiare in 5-6 m; ridosso da maestrale subito a S dell'isolotto maggiore; passaggio isolotti-costa con fondale ~1 m, non tentare",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "porto_madonna",
-      "name": "Porto Madonna",
-      "lat": 41.288,
-      "lon": 9.357,
-      "type": "mooring",
-      "notes": "Ormeggio SOLO su boe del Parco (a pagamento, poche rispetto alla domanda, ~7 m sabbia/posidonia); zona piscine naturali interdetta a navigazione/ancoraggio, accesso solo a remi/nuoto; permesso Parco o [coord. da verifica",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "santa_giulia",
-      "name": "Santa Giulia",
-      "lat": 41.524,
-      "lon": 9.2783,
-      "type": "mooring",
-      "notes": "ZMEL organizzata: 30 boe visitatori per taglia (3xx <9m, 2xx 9-15m, 1xx 15-20m), seguire i marker a 300 m dalla riva sud; baia sabbiosa poco profonda, aperta a E",
-      "verify": true,
-      "rating": 4.5
-    },
-    {
-      "id": "cala_rossa",
-      "name": "Cala Rossa",
-      "lat": 41.617,
-      "lon": 9.3325,
-      "type": "mooring",
-      "notes": "Cala quasi interamente occupata dal campo boe ANCRE (boe visitatori prenotabili online); fuori boe ancorare su sabbia 4-8 m; buon ridosso da N/NW, aperta a S [coord. da verificare]",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "san_ciprianu",
-      "name": "San Ciprianu",
-      "lat": 41.6283,
-      "lon": 9.3533,
-      "type": "anchorage",
-      "notes": "Baia a mezzaluna ben protetta, sabbia e posidonia (qualche roccia verso il fondo della baia); isolotto San Ciprianu all'ingresso; buona tappa a 4 M dal porto di Porto-Vecchio [coord. da verificare]",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "cala_di_conca",
-      "name": "Cala di Conca",
-      "lat": 41.5746,
-      "lon": 8.8036,
-      "type": "anchorage",
-      "notes": "Cala stretta, fondo sabbia 2-16 m; buon ridosso da maestrale ma aperta a libeccio/onda; scoglio affiorante a 1.8 m circa 400 m a WSW dell'ingresso; affollata in agosto.",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "tizzano",
-      "name": "Tizzano",
-      "lat": 41.5398,
-      "lon": 8.8501,
-      "type": "anchorage",
-      "notes": "Ancorare all'ingresso della cala fuori dal porticciolo, 3-8 m solo su sabbia; esposto a SW; secca di 1.5 m circa 200 m a S della punta W dell'ingresso; pontili interni max 1.5 m pescaggio. [coord. da verificare]",
-      "verify": true,
-      "rating": 3
-    },
-    {
-      "id": "cala_longa_tizzano",
-      "name": "Cala Longa Tizzano",
-      "lat": 41.5549,
-      "lon": 8.8161,
-      "type": "anchorage",
-      "notes": "Caletta selvaggia presso Punta di Capicciolu tra Tizzano e Senetosa, ben ridossata dai venti, usata come rifugio; sabbia; nessun servizio; da non confondere con la Cala Longa di Bonifacio. [coord. da verificare]",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "capo_senetosa",
-      "name": "Capo Senetosa",
-      "lat": 41.55851,
-      "lon": 8.79419,
-      "type": "landmark",
-      "notes": "Faro bianco a doppia torre; attenzione agli scogli Les Moines a S del capo; ancoraggi adiacenti: Cala di Conca a N, Cala Longa/Cala di Barcaju a E.",
-      "verify": true
-    },
-    {
-      "id": "campomoro",
-      "name": "Campomoro",
-      "lat": 41.6342,
-      "lon": 8.8098,
-      "type": "anchorage",
-      "notes": "Fondo sabbia con chiazze di posidonia/alga 5-15 m (fino a 30 m piu' fuori); ottimo ridosso da W/SW, esposto a NW; divieto di ancoraggio entro 300 m dalla spiaggia (fascia balneare/allevamento). [coord. da verificare]",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "capo_di_muro",
-      "name": "Capo di Muro",
-      "lat": 41.7461,
-      "lon": 8.67314,
-      "type": "landmark",
-      "notes": "Limite S del golfo di Ajaccio, faro sulla punta W; ridosso piu' vicino nell'anse de Cala d'Orzu subito a SE del capo (sabbia, aperta a S). [coord. da verificare]",
-      "verify": true
-    },
-    {
-      "id": "isolella",
-      "name": "Isolella",
-      "lat": 41.83733,
-      "lon": 8.76,
-      "type": "mooring",
-      "notes": "Campo boe comunale (ZMEL Pietrosella, ~400 gavitelli totali con Stagnola e Ste-Barbe, mag-ott); vietato ancorare fuori dalle boe e entro 300 m dalle spiagge; boa assegnata dal gestore. [coord. da verificare]",
-      "verify": true,
-      "rating": 3
-    },
-    {
-      "id": "anse_chiuni",
-      "name": "Anse Chiuni",
-      "lat": 42.1701,
-      "lon": 8.5895,
-      "type": "anchorage",
-      "notes": "Baia ben protetta e poco profonda tra Punta d'Orchinu e Punta Omigna, fondo sabbia 3-6 m, buona tenuta; apre a W (attenzione con ponente/onda residua).",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "girolata",
-      "name": "Girolata",
-      "lat": 42.34917,
-      "lon": 8.61306,
-      "type": "mooring",
-      "notes": "Ormeggio solo su gavitello (capitaneria 7/7 8-20, mag-set, anche boe superyacht max 30 m); ancoraggio libero di fatto vietato/limitato per posidonia e spazio; in agosto arrivare presto.",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "scandola",
-      "name": "Scandola",
-      "lat": 42.37863,
-      "lon": 8.54901,
-      "type": "landmark",
-      "notes": "Riserva integrale: divieto assoluto di sosta/ancoraggio giorno e notte, pesca e sbarco; zona interdetta rinforzata attorno alla punta (nidi di falco pescatore); transito max 5 kn, organi basaltici a v",
-      "verify": true
-    },
-    {
-      "id": "calvi_alga",
-      "name": "Calvi Alga",
-      "lat": 42.5628,
-      "lon": 8.7277,
-      "type": "anchorage",
-      "notes": "Fondo sabbia con chiazze di posidonia, 3-8 m; ottimo ridosso da libeccio (SW), aperta a N/NE; in alternativa lato N di Punta Oscelluccia.",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "san_fiorenzo",
-      "name": "San Fiorenzo",
-      "lat": 42.6858,
-      "lon": 9.2815,
-      "type": "anchorage",
-      "notes": "Ancorare su 5-6 m sabbia e alghe, fondale degrada dolcemente; riparata da W/SW/S/SE/E, da abbandonare con previsione di N/NE. [coord. da verificare]",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "saleccia",
-      "name": "Saleccia",
-      "lat": 42.72867,
-      "lon": 9.205,
-      "type": "anchorage",
-      "notes": "Fondo sabbia, buona tenuta, ma rada aperta: solo con meteo stabile e mare calmo; in estate ancorare oltre la fascia balneare 300 m.",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "lotu",
-      "name": "Lotu",
-      "lat": 42.7225,
-      "lon": 9.2328,
-      "type": "anchorage",
-      "notes": "Sabbia, buona tenuta; obbligo ancoraggio oltre 300 m dalla spiaggia; protetta da W/SW, esposta a N-NW. [coord. da verificare]",
-      "verify": true,
-      "rating": 4.5
-    },
-    {
-      "id": "malfalco",
-      "name": "Malfalco",
-      "lat": 42.7236,
-      "lon": 9.118,
-      "type": "anchorage",
-      "notes": "Cala stretta: si dà fondo al centro su 2-3 m sabbia/roccia; ridosso discreto da W moderato, esposta a risacca con NW-NE, rollio con mistral. [coord. da verificare]",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "centuri",
-      "name": "Centuri",
-      "lat": 42.9662,
-      "lon": 9.3504,
-      "type": "port",
-      "notes": "Porticciolo minuscolo (max ~10 m, pescaggio max 2 m, 0,8 m minimo): in agosto quasi sempre pieno; le barche a vela ancorano fuori davanti al porto su sabbia, solo con calma da W.",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "barcaggio",
-      "name": "Barcaggio",
-      "lat": 43.0079,
-      "lon": 9.4112,
-      "type": "anchorage",
-      "notes": "Fondo sabbia con alghe e rocce, bassi fondali; rada aperta a quasi tutti i venti e a corrente del canale della Giraglia: solo sosta diurna con mare calmo, ridosso da SE a NE della spiaggia.",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "giraglia",
-      "name": "Giraglia",
-      "lat": 43.02667,
-      "lon": 9.40556,
-      "type": "landmark",
-      "notes": "Landmark: isolotto con faro e torre genovese ~1 NM a N di Barcaggio; canale con corrente e mare confuso con vento contro corrente, tenersi larghi dai bassi lato Corsica.",
-      "verify": true
-    },
-    {
-      "id": "macinaggio",
-      "name": "Macinaggio",
-      "lat": 42.96098,
-      "lon": 9.45451,
-      "type": "port",
-      "notes": "Marina ~585 posti, base classica prima/dopo il doppiaggio del Capo; in agosto prenotare; ancoraggio possibile nella baia a N del porto su sabbia.",
-      "verify": true,
-      "rating": 2.5
-    },
-    {
-      "id": "tamarone",
-      "name": "Tamarone",
-      "lat": 42.9755,
-      "lon": 9.457,
-      "type": "anchorage",
-      "notes": "Fondo sabbia con chiazze di roccia/posidonia, 3-6 m; buon ridosso da W/SW (libeccio), aperta a E-NE; comoda alternativa gratuita a Macinaggio. [coord. da verificare]",
-      "verify": true,
-      "rating": 3
-    },
-    {
-      "id": "erbalunga",
-      "name": "Erbalunga",
-      "lat": 42.7742,
-      "lon": 9.4787,
-      "type": "anchorage",
-      "notes": "Rada aperta appena a N/E del porticciolo (porto solo <8 m). Fondo sabbia e roccia, tenuta discreta; ridossata solo da venti occidentali, evitare con vento da E. [coord. da verificare]",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "foce_golo",
-      "name": "Foce Golo",
-      "lat": 42.5242,
-      "lon": 9.537,
-      "type": "anchorage",
-      "notes": "Costa sabbiosa rettilinea completamente aperta: solo sosta diurna con mare calmo. Possibili banchi di sabbia mobili davanti alla foce, avvicinarsi con ecoscandaglio. [coord. da verificare]",
-      "verify": true,
-      "rating": 1.5
-    },
-    {
-      "id": "campoloro",
-      "name": "Campoloro",
-      "lat": 42.34135,
-      "lon": 9.539,
-      "type": "port",
-      "notes": "Unico porto-rifugio tra Bastia e Solenzara sulla costa orientale. Entrata con risacca in caso di forte vento da E/SE; carburante e servizi disponibili.",
-      "verify": true,
-      "rating": 1.5
-    },
-    {
-      "id": "solenzara",
-      "name": "Solenzara",
-      "lat": 41.8572,
-      "lon": 9.4037,
-      "type": "port",
-      "notes": "Marina 450 posti, 8 pontili. In alternativa rada sabbiosa a S della foce del fiume Solenzara utilizzabile solo con tempo stabile.",
-      "verify": true,
-      "rating": 2
-    },
-    {
-      "id": "canella",
-      "name": "Canella",
-      "lat": 41.8,
-      "lon": 9.397,
-      "type": "anchorage",
-      "notes": "Cala ben protetta da W/SW (libeccio), fondo sabbia con buona tenuta; aperta a E. Fondale basso vicino a riva, molto frequentata in agosto.",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "favone",
-      "name": "Favone",
-      "lat": 41.7742,
-      "lon": 9.3986,
-      "type": "anchorage",
-      "notes": "Baia sabbiosa con buona tenuta, riparata da W; aperta a E-NE. Verificare posidonia prima di dare fondo; Navily mouillage #8055.",
-      "verify": true,
-      "rating": 3
-    },
-    {
-      "id": "fautea",
-      "name": "Fautea",
-      "lat": 41.7135,
-      "lon": 9.4045,
-      "type": "anchorage",
-      "notes": "Ancoraggio nella baia a S della torre genovese del 1592, fondo sabbia; sito protetto Conservatoire du Littoral. Riparo discreto con tempo buono ma esposto a E, tenibile di notte solo con meteo stabile [coord. da verifica",
-      "verify": true,
-      "rating": 3.5
-    },
-    {
-      "id": "pinarello",
-      "name": "Pinarello",
-      "lat": 41.672,
-      "lon": 9.39,
-      "type": "anchorage",
-      "notes": "Punto migliore ai due lati del passo tra isola di Pinarellu (torre genovese) e terraferma; fondo sabbia e roccia. Buona protezione da SW ma raffiche; attenzione allo scoglio Roscana e ai sub. Non teni [coord. da verifica",
-      "verify": true,
-      "rating": 4
-    },
-    {
-      "id": "palombaggia",
-      "name": "Palombaggia",
-      "lat": 41.5555,
-      "lon": 9.3305,
-      "type": "anchorage",
-      "notes": "Dare fondo solo su sabbia: le praterie di posidonia sono balisate e l'ancoraggio sopra e' vietato (arrete prefettizio 2023; >24 m vietato tra Punta Chiappa e Capicciolu). Riparata da NW dalla penisola",
-      "verify": true,
-      "rating": 5
-    },
-    {
-      "id": "ficajola",
-      "name": "Ficajola",
-      "lat": 42.252,
-      "lon": 8.6262,
-      "type": "anchorage",
-      "notes": "Caletta minuscola sotto le Calanche di Piana (golfo di Porto), fondo sabbia/roccia, spazio per pochissime barche. Solo sosta diurna con mare calmo: completamente esposta a W/SW e alla risacca da ponen [coord. da verifica",
-      "verify": true,
-      "rating": 4.5
-    },
-    {
-      "id": "porto_rotondo",
-      "name": "Porto Rotondo",
-      "lat": 41.0315,
-      "lon": 9.5485,
-      "type": "port",
-      "notes": "Marina + rada; base logistica drop-off/pickup 21-22/8, aeroporto Olbia ~20 min [coord. da verificare]",
-      "verify": true,
-      "rating": 3
-    },
-    {
-      "id": "golfo_di_marinella",
-      "name": "Golfo di Marinella",
-      "lat": 41.047,
-      "lon": 9.568,
-      "type": "anchorage",
-      "notes": "Baia sabbiosa ampia, buona tenuta; comoda per transfer aeroporto [coord. da verificare]",
-      "verify": true,
-      "rating": 3
-    },
-    {
-      "id": "golfo_di_cugnana",
-      "name": "Golfo di Cugnana",
-      "lat": 41.021,
-      "lon": 9.529,
-      "type": "anchorage",
-      "notes": "Golfo riparato a S di Porto Rotondo; alternativa per la notte [coord. da verificare]",
-      "verify": true,
-      "rating": 3
+     "slot": "sera",
+     "from": "marmorata",
+     "to": "lavezzi",
+     "depart_at": "16:45",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
     }
-  ],
-  "plan": [
+   ]
+  },
+  {
+   "date": "2026-08-10",
+   "from": "lavezzi",
+   "to": "bonifacio",
+   "rest": false,
+   "steps": [
     {
-      "date": "2026-08-08",
-      "from": "cannigione",
-      "to": "cala_portese",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "cannigione",
-          "to": "coticcio",
-          "depart_at": "08:00",
-          "arrive_by": "08:45",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "coticcio",
-          "to": "cala_portese",
-          "depart_at": "17:15",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
+     "slot": "mattina",
+     "from": "lavezzi",
+     "to": "corsica_isola_piana",
+     "depart_at": "08:00",
+     "arrive_by": "08:15",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
     },
     {
-      "date": "2026-08-09",
-      "from": "cala_portese",
-      "to": "lavezzi",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "cala_portese",
-          "to": "spargi",
-          "depart_at": "08:00",
-          "arrive_by": "09:00",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "spargi",
-          "to": "marmorata",
-          "depart_at": "10:45",
-          "arrive_by": "11:15",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "marmorata",
-          "to": "lavezzi",
-          "depart_at": "16:45",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
+     "slot": "pomeriggio",
+     "from": "corsica_isola_piana",
+     "to": "santa_manza",
+     "depart_at": "10:00",
+     "arrive_by": "10:30",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
     },
     {
-      "date": "2026-08-10",
-      "from": "lavezzi",
-      "to": "bonifacio",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "lavezzi",
-          "to": "corsica_isola_piana",
-          "depart_at": "08:00",
-          "arrive_by": "08:15",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "corsica_isola_piana",
-          "to": "santa_manza",
-          "depart_at": "10:00",
-          "arrive_by": "10:30",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "santa_manza",
-          "to": "bonifacio",
-          "depart_at": "17:00",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-11",
-      "from": "bonifacio",
-      "to": "tizzano",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "bonifacio",
-          "to": "cr_roccapina_nord",
-          "depart_at": "08:00",
-          "arrive_by": "09:45",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "cr_roccapina_nord",
-          "to": "cala_longa_tizzano",
-          "depart_at": "11:30",
-          "arrive_by": "12:15",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "cala_longa_tizzano",
-          "to": "tizzano",
-          "depart_at": "17:15",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-12",
-      "from": "tizzano",
-      "to": "campomoro",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "tizzano",
-          "to": "cala_longa_tizzano",
-          "depart_at": "08:00",
-          "arrive_by": "08:15",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "cala_longa_tizzano",
-          "to": "campomoro",
-          "depart_at": "16:45",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-13",
-      "from": "campomoro",
-      "to": "isolella",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "giornata",
-          "from": "campomoro",
-          "to": "isolella",
-          "depart_at": "08:00",
-          "arrive_by": "09:45",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-14",
-      "from": "isolella",
-      "to": "girolata",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "giornata",
-          "from": "isolella",
-          "to": "girolata",
-          "depart_at": "08:00",
-          "arrive_by": "12:15",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-15",
-      "from": "girolata",
-      "to": "san_fiorenzo",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "giornata",
-          "from": "girolata",
-          "to": "san_fiorenzo",
-          "depart_at": "08:00",
-          "arrive_by": "13:00",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-16",
-      "from": "san_fiorenzo",
-      "to": "centuri",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "san_fiorenzo",
-          "to": "saleccia",
-          "depart_at": "08:00",
-          "arrive_by": "08:30",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "saleccia",
-          "to": "centuri",
-          "depart_at": "15:15",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-17",
-      "from": "centuri",
-      "to": "erbalunga",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "giornata",
-          "from": "centuri",
-          "to": "erbalunga",
-          "depart_at": "08:00",
-          "arrive_by": "09:45",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-18",
-      "from": "erbalunga",
-      "to": "favone",
-      "rest": false,
-      "night": true,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "erbalunga",
-          "to": "erbalunga",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "erbalunga",
-          "to": "favone",
-          "depart_at": "20:00",
-          "activity": [],
-          "night_stay": false,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-19",
-      "from": "favone",
-      "to": "palombaggia",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "favone",
-          "to": "fautea",
-          "depart_at": "08:00",
-          "arrive_by": "08:30",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "fautea",
-          "to": "san_ciprianu",
-          "depart_at": "10:15",
-          "arrive_by": "11:00",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "san_ciprianu",
-          "to": "palombaggia",
-          "depart_at": "17:00",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-20",
-      "from": "palombaggia",
-      "to": "porto_rotondo",
-      "rest": false,
-      "night": true,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "palombaggia",
-          "to": "palombaggia",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "palombaggia",
-          "to": "porto_rotondo",
-          "depart_at": "20:00",
-          "activity": [],
-          "night_stay": false,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-21",
-      "from": "porto_rotondo",
-      "to": "porto_rotondo",
-      "rest": true,
-      "steps": [
-        {
-          "slot": "giornata",
-          "from": "porto_rotondo",
-          "to": "porto_rotondo",
-          "activity": [
-            "bordo",
-            "porto"
-          ],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-22",
-      "from": "porto_rotondo",
-      "to": "porto_rotondo",
-      "rest": true,
-      "steps": [
-        {
-          "slot": "giornata",
-          "from": "porto_rotondo",
-          "to": "porto_rotondo",
-          "activity": [
-            "bordo",
-            "porto"
-          ],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-23",
-      "from": "porto_rotondo",
-      "to": "porto_palma",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "porto_rotondo",
-          "to": "mortorio",
-          "depart_at": "08:00",
-          "arrive_by": "08:30",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "mortorio",
-          "to": "coticcio",
-          "depart_at": "10:15",
-          "arrive_by": "11:30",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "coticcio",
-          "to": "porto_palma",
-          "depart_at": "17:15",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-24",
-      "from": "porto_palma",
-      "to": "porto_madonna",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "porto_palma",
-          "to": "coticcio",
-          "depart_at": "08:00",
-          "arrive_by": "08:15",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "coticcio",
-          "to": "spargi",
-          "depart_at": "10:00",
-          "arrive_by": "10:45",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "spargi",
-          "to": "porto_madonna",
-          "depart_at": "17:00",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-25",
-      "from": "porto_madonna",
-      "to": "corsica_isola_piana",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "porto_madonna",
-          "to": "santamaria",
-          "depart_at": "08:00",
-          "arrive_by": "08:15",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "santamaria",
-          "to": "lavezzi",
-          "depart_at": "10:00",
-          "arrive_by": "11:00",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "lavezzi",
-          "to": "corsica_isola_piana",
-          "depart_at": "17:15",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-26",
-      "from": "corsica_isola_piana",
-      "to": "rondinara",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "corsica_isola_piana",
-          "to": "santa_manza",
-          "depart_at": "08:00",
-          "arrive_by": "08:15",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "santa_manza",
-          "to": "rondinara",
-          "depart_at": "16:45",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-27",
-      "from": "rondinara",
-      "to": "marmorata",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "rondinara",
-          "to": "santa_manza",
-          "depart_at": "08:00",
-          "arrive_by": "08:45",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "santa_manza",
-          "to": "lavezzi",
-          "depart_at": "10:30",
-          "arrive_by": "11:00",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "lavezzi",
-          "to": "marmorata",
-          "depart_at": "16:45",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-28",
-      "from": "marmorata",
-      "to": "coticcio",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "marmorata",
-          "to": "spargi",
-          "depart_at": "08:00",
-          "arrive_by": "08:45",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "from": "spargi",
-          "to": "budelli",
-          "depart_at": "10:30",
-          "arrive_by": "10:45",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "budelli",
-          "to": "coticcio",
-          "depart_at": "16:30",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
-    },
-    {
-      "date": "2026-08-29",
-      "from": "coticcio",
-      "to": "cannigione",
-      "rest": false,
-      "steps": [
-        {
-          "slot": "mattina",
-          "from": "coticcio",
-          "to": "cala_portese",
-          "depart_at": "08:00",
-          "arrive_by": "08:15",
-          "activity": [
-            "bagno"
-          ],
-          "night_stay": false,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "from": "cala_portese",
-          "to": "cannigione",
-          "depart_at": "16:45",
-          "arrive_by": "17:30",
-          "activity": [],
-          "night_stay": true,
-          "verify": true
-        }
-      ]
+     "slot": "sera",
+     "from": "santa_manza",
+     "to": "bonifacio",
+     "depart_at": "17:00",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
     }
-  ],
-  "logbook": [],
-  "preferences": {
-    "max_daily_nm": 30,
-    "prefer_sailing_over_motor": true,
-    "night_sailing": "solo tratte flaggate night, mare piatto",
-    "swim_stops_per_day": 2,
-    "latest_anchor_time": "17:30",
-    "earliest_departure": "08:00",
-    "night_max_wave_m": 0.5,
-    "night_departure_window": [
-      "20:00",
-      "23:00"
-    ]
+   ]
   },
-  "updated_at": "2026-07-10T16:42:50",
-  "charter": {
-    "_nota": "Autorita': Excel 'Summer 26.xlsx', foglio Bonifici (fuori repo). Non entra nelle quote di ledger.py.",
-    "totale_eur": 31246,
-    "settimane": [
-      {
-        "periodo": "2026-08-08 -> 2026-08-15",
-        "eur": 11373
-      },
-      {
-        "periodo": "2026-08-15 -> 2026-08-22",
-        "eur": 10373
-      },
-      {
-        "periodo": "2026-08-22 -> 2026-08-29",
-        "eur": 9500
-      }
-    ]
+  {
+   "date": "2026-08-11",
+   "from": "bonifacio",
+   "to": "tizzano",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "bonifacio",
+     "to": "cr_roccapina_nord",
+     "depart_at": "08:00",
+     "arrive_by": "09:45",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "pomeriggio",
+     "from": "cr_roccapina_nord",
+     "to": "cala_longa_tizzano",
+     "depart_at": "11:30",
+     "arrive_by": "12:15",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "cala_longa_tizzano",
+     "to": "tizzano",
+     "depart_at": "17:15",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
   },
-  "captains": [
-    "Edoardo Casella",
-    "Bernardo Bolgeri"
-  ],
-  "departure_at": "2026-08-08T14:00",
-  "departure_place": "Cannigione"
+  {
+   "date": "2026-08-12",
+   "from": "tizzano",
+   "to": "campomoro",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "tizzano",
+     "to": "cala_longa_tizzano",
+     "depart_at": "08:00",
+     "arrive_by": "08:15",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "cala_longa_tizzano",
+     "to": "campomoro",
+     "depart_at": "16:45",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-13",
+   "from": "campomoro",
+   "to": "isolella",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "giornata",
+     "from": "campomoro",
+     "to": "isolella",
+     "depart_at": "08:00",
+     "arrive_by": "09:45",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-14",
+   "from": "isolella",
+   "to": "girolata",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "giornata",
+     "from": "isolella",
+     "to": "girolata",
+     "depart_at": "08:00",
+     "arrive_by": "12:15",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-15",
+   "from": "girolata",
+   "to": "san_fiorenzo",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "giornata",
+     "from": "girolata",
+     "to": "san_fiorenzo",
+     "depart_at": "08:00",
+     "arrive_by": "13:00",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-16",
+   "from": "san_fiorenzo",
+   "to": "centuri",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "san_fiorenzo",
+     "to": "saleccia",
+     "depart_at": "08:00",
+     "arrive_by": "08:30",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "saleccia",
+     "to": "centuri",
+     "depart_at": "15:15",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-17",
+   "from": "centuri",
+   "to": "erbalunga",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "giornata",
+     "from": "centuri",
+     "to": "erbalunga",
+     "depart_at": "08:00",
+     "arrive_by": "09:45",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-18",
+   "from": "erbalunga",
+   "to": "favone",
+   "rest": false,
+   "night": true,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "erbalunga",
+     "to": "erbalunga",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "erbalunga",
+     "to": "favone",
+     "depart_at": "20:00",
+     "activity": [],
+     "night_stay": false,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-19",
+   "from": "favone",
+   "to": "palombaggia",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "favone",
+     "to": "fautea",
+     "depart_at": "08:00",
+     "arrive_by": "08:30",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "pomeriggio",
+     "from": "fautea",
+     "to": "san_ciprianu",
+     "depart_at": "10:15",
+     "arrive_by": "11:00",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "san_ciprianu",
+     "to": "palombaggia",
+     "depart_at": "17:00",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-20",
+   "from": "palombaggia",
+   "to": "porto_rotondo",
+   "rest": false,
+   "night": true,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "palombaggia",
+     "to": "palombaggia",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "palombaggia",
+     "to": "porto_rotondo",
+     "depart_at": "20:00",
+     "activity": [],
+     "night_stay": false,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-21",
+   "from": "porto_rotondo",
+   "to": "porto_rotondo",
+   "rest": true,
+   "steps": [
+    {
+     "slot": "giornata",
+     "from": "porto_rotondo",
+     "to": "porto_rotondo",
+     "activity": [
+      "bordo",
+      "porto"
+     ],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-22",
+   "from": "porto_rotondo",
+   "to": "porto_rotondo",
+   "rest": true,
+   "steps": [
+    {
+     "slot": "giornata",
+     "from": "porto_rotondo",
+     "to": "porto_rotondo",
+     "activity": [
+      "bordo",
+      "porto"
+     ],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-23",
+   "from": "porto_rotondo",
+   "to": "porto_palma",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "porto_rotondo",
+     "to": "mortorio",
+     "depart_at": "08:00",
+     "arrive_by": "08:30",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "pomeriggio",
+     "from": "mortorio",
+     "to": "coticcio",
+     "depart_at": "10:15",
+     "arrive_by": "11:30",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "coticcio",
+     "to": "porto_palma",
+     "depart_at": "17:15",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-24",
+   "from": "porto_palma",
+   "to": "porto_madonna",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "porto_palma",
+     "to": "coticcio",
+     "depart_at": "08:00",
+     "arrive_by": "08:15",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "pomeriggio",
+     "from": "coticcio",
+     "to": "spargi",
+     "depart_at": "10:00",
+     "arrive_by": "10:45",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "spargi",
+     "to": "porto_madonna",
+     "depart_at": "17:00",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-25",
+   "from": "porto_madonna",
+   "to": "corsica_isola_piana",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "porto_madonna",
+     "to": "santamaria",
+     "depart_at": "08:00",
+     "arrive_by": "08:15",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "pomeriggio",
+     "from": "santamaria",
+     "to": "lavezzi",
+     "depart_at": "10:00",
+     "arrive_by": "11:00",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "lavezzi",
+     "to": "corsica_isola_piana",
+     "depart_at": "17:15",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-26",
+   "from": "corsica_isola_piana",
+   "to": "rondinara",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "corsica_isola_piana",
+     "to": "santa_manza",
+     "depart_at": "08:00",
+     "arrive_by": "08:15",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "santa_manza",
+     "to": "rondinara",
+     "depart_at": "16:45",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-27",
+   "from": "rondinara",
+   "to": "marmorata",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "rondinara",
+     "to": "santa_manza",
+     "depart_at": "08:00",
+     "arrive_by": "08:45",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "pomeriggio",
+     "from": "santa_manza",
+     "to": "lavezzi",
+     "depart_at": "10:30",
+     "arrive_by": "11:00",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "lavezzi",
+     "to": "marmorata",
+     "depart_at": "16:45",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-28",
+   "from": "marmorata",
+   "to": "coticcio",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "marmorata",
+     "to": "spargi",
+     "depart_at": "08:00",
+     "arrive_by": "08:45",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "pomeriggio",
+     "from": "spargi",
+     "to": "budelli",
+     "depart_at": "10:30",
+     "arrive_by": "10:45",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "budelli",
+     "to": "coticcio",
+     "depart_at": "16:30",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-29",
+   "from": "coticcio",
+   "to": "cannigione",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "coticcio",
+     "to": "cala_portese",
+     "depart_at": "08:00",
+     "arrive_by": "08:15",
+     "activity": [
+      "bagno"
+     ],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "cala_portese",
+     "to": "cannigione",
+     "depart_at": "16:45",
+     "arrive_by": "17:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  }
+ ],
+ "logbook": [],
+ "preferences": {
+  "max_daily_nm": 30,
+  "prefer_sailing_over_motor": true,
+  "night_sailing": "solo tratte flaggate night, mare piatto",
+  "swim_stops_per_day": 2,
+  "latest_anchor_time": "17:30",
+  "earliest_departure": "08:00",
+  "night_max_wave_m": 0.5,
+  "night_departure_window": [
+   "20:00",
+   "23:00"
+  ]
+ },
+ "updated_at": "2026-07-10T16:42:50",
+ "charter": {
+  "_nota": "Autorita': Excel 'Summer 26.xlsx', foglio Bonifici (fuori repo). Non entra nelle quote di ledger.py.",
+  "totale_eur": 31246,
+  "settimane": [
+   {
+    "periodo": "2026-08-08 -> 2026-08-15",
+    "eur": 11373
+   },
+   {
+    "periodo": "2026-08-15 -> 2026-08-22",
+    "eur": 10373
+   },
+   {
+    "periodo": "2026-08-22 -> 2026-08-29",
+    "eur": 9500
+   }
+  ]
+ },
+ "captains": [
+  "Edoardo Casella",
+  "Bernardo Bolgeri"
+ ],
+ "departure_at": "2026-08-08T14:00",
+ "departure_place": "Cannigione"
 }
