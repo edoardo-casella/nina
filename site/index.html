@@ -855,11 +855,20 @@ function contiCard(c) {
     return `<h2>Conti</h2><p style="font-size:.9rem;color:var(--soft)">🔐 La cassa di bordo è riservata
       all'equipaggio — <a href="login.html">accedi all'area equipaggio ›</a></p>`;
   }
+  // vista personale: quota del membro loggato in chiaro + riga evidenziata
+  const me = window.__myName || null;
+  const mine = me && c.per_person.find(p => p.name === me);
+  const upd = c.generated_at ? `<span style="font-size:.72rem;color:var(--soft)"> · aggiornata ${new Date(c.generated_at).toLocaleString("it", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span>` : "";
   return `<h2>Conti</h2>
-  <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora</summary>
+  ${mine ? `<p style="margin:-.2rem 0 .5rem;font-size:.95rem"><b>La tua quota: ${Math.round(mine.total)} €</b>
+    <span style="color:var(--soft)">(${mine.nights} ${mine.nights === 1 ? "notte" : "notti"} a bordo)</span></p>` : ""}
+  <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora${upd}</summary>
     <table><thead><tr><th>Nome</th><th>Notti</th><th>Quota</th></tr></thead><tbody>
-      ${c.per_person.map(p => `<tr><td>${esc(p.name)}</td><td>${p.nights}</td><td>${Math.round(p.total)} €</td></tr>`).join("")}
+      ${c.per_person.map(p => `<tr${me === p.name ? ` style="font-weight:700;color:var(--accent)"` : ""}><td>${esc(p.name)}${me === p.name ? " · tu" : ""}</td><td>${p.nights}</td><td>${Math.round(p.total)} €</td></tr>`).join("")}
     </tbody></table>
+    ${(c.expenses && c.expenses.length) ? `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Spese registrate:</p>
+      <table><tbody>${c.expenses.map(e => `<tr><td>${e.date ? esc(e.date) + " · " : ""}${esc(e.desc)}${e.paid_by ? ` <span style="color:var(--soft)">(${esc(e.paid_by)})</span>` : ""}</td><td class="num">${e.amount.toFixed(2)} €</td></tr>`).join("")}</tbody></table>`
+    : `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Nessuna spesa ancora registrata: quote da preventivo (fisso + budget variabile).</p>`}
     ${c.transfers.length ? `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Per pareggiare:</p>
       <table><tbody>${c.transfers.map(t => `<tr><td>${esc(t.from)} → ${esc(t.to)}</td><td>${t.amount.toFixed(2)} €</td></tr>`).join("")}</tbody></table>` : ""}
   </details>`;
@@ -1213,7 +1222,14 @@ function render(b, wx, c, prog) {
     // plancia si ridisegna con la cassa di bordo al suo posto
     if (window.ninaAuth && ninaAuth.enabled) (async () => {
       try {
-        if (!(await ninaAuth.approvedMember())) return;
+        const member = await ninaAuth.approvedMember();
+        if (!member) return;
+        // nome del membro (per "la tua quota"): crew_id -> name via crew.json
+        try {
+          const cj = await fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json());
+          const p = (cj.people || []).find(x => x.id === member.crew_id);
+          if (p) window.__myName = p.name;
+        } catch (e) { /* senza nome: niente evidenziazione, tabella comunque completa */ }
         const c = await ninaAuth.blob("conti");
         if (c) { window.__conti = c; render(data[0], data[1], c, prog); }
       } catch (err) { /* area riservata giù ≠ plancia giù: si resta sulla vista pubblica */ }

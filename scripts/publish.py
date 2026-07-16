@@ -614,12 +614,17 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
           "astro": astro}
     sh = ledger.shares(v)
     st = ledger.settle(v)
+    _name = {m["id"]: m["name"] for m in v["crew"]}
     conti = {"generated_at": now, "person_nights": sh["total_person_nights"],
              "per_person": list(sh["per_person"].values()),
              "spent": st["total_spent"],
              "transfers": [{"from": next(m["name"] for m in v["crew"] if m["id"] == t["from"]),
                             "to": next(m["name"] for m in v["crew"] if m["id"] == t["to"]),
-                            "amount": t["amount"]} for t in st["transfers"]]}
+                            "amount": t["amount"]} for t in st["transfers"]],
+             # elenco spese per la vista personale nell'area equipaggio
+             "expenses": [{"date": e.get("date"), "desc": e.get("desc") or e.get("what") or e.get("label") or "spesa",
+                           "amount": e["amount"], "paid_by": _name.get(e.get("paid_by"), e.get("paid_by"))}
+                          for e in v.get("expenses", [])]}
     program = build_program(v, plan_all, day, offset, offline, now)
     return briefing, wx, conti, program
 
