@@ -96,5 +96,77 @@
     }
   }
 
+  // ── Tondino sessione (in alto a destra, su OGNI pagina) ────────────────────
+  // Stato a colpo d'occhio: sagoma grigia = non loggato (porta al login);
+  // foto tonda = membro dentro, con menu profilo/admin/esci. nav.js carica da
+  // solo config.js + auth.js sulle pagine che non li includono.
+  const chipCss = `
+  #nina-me{width:30px;height:30px;border-radius:50%;flex:none;cursor:pointer;border:2px solid var(--hair,#c4d2df);
+    background:var(--sea-2,#D8E4EE);display:inline-flex;align-items:center;justify-content:center;
+    font-size:.95rem;color:var(--soft,#7089a0);text-decoration:none;overflow:hidden;padding:0;margin-left:.55rem}
+  #nina-me img{width:100%;height:100%;object-fit:cover;display:block}
+  #nina-me.in{border-color:var(--verde,#0A7A43)}
+  #nina-me.wait{border-color:var(--gold,#B8860B)}
+  #nina-me-menu{position:fixed;top:3.2rem;right:.8rem;z-index:95;min-width:200px;background:var(--panel,#fff);
+    border:1px solid var(--hair,#c4d2df);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:.4rem;display:none}
+  #nina-me-menu.on{display:block}
+  #nina-me-menu .hd{font:700 .6rem/1 var(--display,system-ui);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--soft,#7089a0);padding:.5rem .6rem .4rem;border-bottom:1px solid var(--hair,#c4d2df);margin-bottom:.25rem}
+  #nina-me-menu a,#nina-me-menu button{display:flex;width:100%;align-items:center;gap:.5rem;padding:.55rem .6rem;
+    border-radius:8px;text-decoration:none;color:var(--ink,#0B1320);font:600 .92rem/1.2 var(--body,system-ui);
+    background:none;border:0;cursor:pointer;text-align:left}
+  #nina-me-menu a:hover,#nina-me-menu button:hover{background:var(--sea-1,#EEF4F9)}`;
+  style.textContent += chipCss;
+
+  const loadScript = src => new Promise(res => {
+    const s = document.createElement("script"); s.src = src;
+    s.onload = res; s.onerror = res; document.head.appendChild(s);
+  });
+
+  (async () => {
+    if (!bar) return;
+    if (!window.NINA_CONFIG) await loadScript("config.js");
+    if (!window.ninaAuth) await loadScript("auth.js");
+    if (!window.ninaAuth || !ninaAuth.enabled) return;   // area riservata spenta: niente tondino
+
+    const chip = document.createElement("a");
+    chip.id = "nina-me"; chip.href = "login.html";
+    chip.title = "Area equipaggio"; chip.setAttribute("aria-label", "Area equipaggio");
+    chip.textContent = "👤";
+    bar.appendChild(chip);
+
+    const session = await ninaAuth.session();
+    if (!session) return;                                 // sagoma grigia → login
+    const { member } = await ninaAuth.me();
+    if (!member || member.status !== "approved") { chip.classList.add("wait"); chip.title = "In attesa di approvazione"; return; }
+
+    // membro dentro: foto (o iniziale) + menu
+    chip.classList.add("in");
+    let name = member.crew_id;
+    try {
+      const cj = await fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json());
+      const p = (cj.people || []).find(x => x.id === member.crew_id);
+      if (p) {
+        name = p.name;
+        const ph = (p.crew2026 && p.crew2026.photo) || p.photo;
+        if (ph) chip.innerHTML = `<img src="${ph}" alt="${name}">`;
+        else chip.textContent = (name[0] || "⚓").toUpperCase();
+      }
+    } catch (e) { /* senza foto: resta l'icona */ }
+
+    const menu = document.createElement("div");
+    menu.id = "nina-me-menu";
+    menu.innerHTML = `<div class="hd">${name}${member.role === "admin" ? " · skipper" : ""}</div>
+      <a href="profilo.html">✏️ Il mio profilo</a>
+      <a href="membro.html#${member.crew_id}">🧑‍✈️ La mia pagina</a>
+      <a href="index.html#oggi">💰 Conti di bordo</a>
+      ${member.role === "admin" ? `<a href="admin.html">🎖️ Amministrazione</a>` : ""}
+      <button type="button" id="nina-out">🚪 Esci</button>`;
+    document.body.appendChild(menu);
+    chip.addEventListener("click", e => { e.preventDefault(); menu.classList.toggle("on"); });
+    document.addEventListener("click", e => { if (!menu.contains(e.target) && e.target !== chip && !chip.contains(e.target)) menu.classList.remove("on"); });
+    document.getElementById("nina-out").addEventListener("click", async () => { await ninaAuth.signOut(); location.reload(); });
+  })();
+
   window.ninaMenu = { open, close };
 })();
