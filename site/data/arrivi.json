@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T18:41+02:00",
+  "generated_at": "2026-07-16T18:53+02:00",
   "start": "2026-08-08",
   "end": "2026-08-29",
   "crew": [
@@ -47,11 +47,13 @@
       "p": "crew/img/giacomo-n.jpg"
     },
     {
-      "n": "Mati M",
+      "n": "Matilde C.",
       "b": "2026-08-08",
-      "l": "2026-08-17",
+      "l": "2026-08-15",
       "r": "crew",
-      "x": 0
+      "x": 9,
+      "fy": 2011,
+      "p": "crew/img/matilde-c.jpg"
     },
     {
       "n": "Giulia N",

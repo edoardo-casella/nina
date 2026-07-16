@@ -35,7 +35,6 @@ NICKS = {
     "giulia-n": ["Juliet", "Giuli"],
     "ilaria-m": ["Ila"],
     "lavinia-p": ["Peeiss"],
-    "mati-m": ["Mati"],
     "riccardo-b": ["Branca"],
     "simona-a": ["Simo"],
     "alberto-b": ["Albi"],
@@ -74,7 +73,7 @@ NICKS = {
 
 # Crew femminili (crew_id) -> per il "detto/detta" sui profili. Attaccato come "sex".
 FEM = {
-    "bianca-b", "fede-n", "ginevra-l", "giulia-n", "ilaria-m", "lavinia-p", "mati-m", "simona-a",
+    "bianca-b", "fede-n", "ginevra-l", "giulia-n", "ilaria-m", "lavinia-p", "simona-a",
     "alice-s", "angela-k", "beatrice-f", "belinda-b", "carlotta-d", "cecilia-r", "chiara-f",
     "fabiana-f", "jennifer-s", "laura-c", "ludovica-r", "margherita-c", "marta-a", "martina-g",
     "martina-r", "matilde-c", "matilde-r", "monica-m", "paola-c", "rebecca-b", "rebecca-l",

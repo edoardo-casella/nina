@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T18:41+02:00",
+  "generated_at": "2026-07-16T18:53+02:00",
   "sim": true,
   "day": "2026-07-16",
   "start_date": "2026-07-16",
@@ -456,7 +456,7 @@
       "tier": "piena",
       "crew_delta": {
         "on_n": 4,
-        "off_n": 0
+        "off_n": 1
       },
       "wx": {
         "wmo": 3,
@@ -557,7 +557,7 @@
       "tier": "degradata",
       "crew_delta": {
         "on_n": 0,
-        "off_n": 2
+        "off_n": 1
       },
       "wx": {
         "wmo": 1,
