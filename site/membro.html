@@ -368,11 +368,11 @@ function memberPage(m, all) {
     ${anecFor(m.id).length ? `<h2>📖 Aneddoti</h2><div class="tlog">${anecFor(m.id).map(anecRow).join("")}</div>` : ""}
     ${m.pet ? "" : `<p class="ctaform"><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJ4TT9B_OmPnKZaKm436Eb8_QHQjx4zyaESe6drJyRHAeTjA/viewform?usp=pp_url&entry.929369460=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">📖 Racconta un aneddoto con ${esc(m.name)} ›</a><a class="ctabtn" href="https://docs.google.com/forms/d/e/1FAIpQLSeddGG04_P3nrYI33cq2XGcqmPoqklj6DSmslrF-XDAj5luNw/viewform?usp=pp_url&entry.1740816767=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">✏️ Aggiungi qualcosa al profilo ›</a></p>`}
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
-    ${c ? `${bd ? `<h2>A bordo nel 2026</h2>
+    ${c && bd ? `<h2>A bordo nel 2026</h2>
       <div class="card">Sale a Cannigione il <b>${fmt(bd.b)}</b> e sbarca il <b>${fmt(bd.l)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>` : ""}
-      <h2>Scheda personale</h2>
-      ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED Ancora nessuna scheda. Se è la tua pagina, raccontati da <a href="profilo.html">Il mio profilo</a>.</div>`}`
-    : `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(m.rank_label || "")}</b>.</div>`}
+    ${!c ? `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(m.rank_label || "")}</b>.</div>` : ""}
+    ${(c || qrows) ? `<h2>Scheda personale</h2>
+      ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED Ancora nessuna scheda. Se è la tua pagina, raccontati da <a href="profilo.html">Il mio profilo</a>.</div>`}` : ""}
     ${(m.photos && m.photos.length) ? `<h2>📸 Foto</h2><div class="pgal${m.photos.length > 8 ? " clip" : ""}" id="pgal">${m.photos.map(p =>
       `<figure onclick="lbOne('${p.src}')"><img src="${p.src}" alt="${esc(p.caption || m.name)}" loading="lazy"><figcaption><a href="viaggio.html#${p.trip_id}" onclick="event.stopPropagation()">${esc(p.caption || "")}${BOATNAME.get(p.trip_id) ? ` · «${esc(BOATNAME.get(p.trip_id))}»` : ""} ›</a></figcaption></figure>`).join("")}</div>${m.photos.length > 8 ? `<button class="cm-toggle${m.photos.length <= 12 ? " m-only" : ""}" type="button" data-label="Mostra tutte le foto (${m.photos.length})" data-target="pgal" onclick="toggleClip(this)">Mostra tutte le foto (${m.photos.length}) <span class="chev">▾</span></button>` : ""}` : ""}
     ${strip ? `<h2>La ciurma 2026</h2><div class="strip">${strip}</div>` : ""}

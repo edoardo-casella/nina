@@ -60,7 +60,7 @@ NICKS = {
     "marco-t": ["Tomma", "Kung"],
     "margherita-c": ["Marghe"],
     "marta-a": ["Martolina"],
-    "matilde-c": ["Mati"],
+    "matilde-c": ["Titti", "Mati"],
     "michele-m": ["Mike"],
     "nicola-r": ["Nick"],
     "paola-c": ["Pola"],

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T12:00+02:00",
+  "generated_at": "2026-07-16T18:41+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-16",
@@ -29,7 +29,7 @@
     "depart": "2026-07-16T08:00",
     "eta": "2026-07-16T08:51",
     "hours": 0.9,
-    "avg_score": 36,
+    "avg_score": 37,
     "sail_pct": 0,
     "abort": false,
     "detail": [],
@@ -52,15 +52,15 @@
     "to": "Cala Coticcio (Caprera)"
   },
   "leg_sailing": {
-    "andatura": "bolina",
-    "twa": 4,
+    "andatura": "bolina larga",
+    "twa": 72,
     "vela": false,
     "avg_kn": 6.8
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 2.5,
-    "max_spread_kn": 10.8,
+    "mean_spread_kn": 2.2,
+    "max_spread_kn": 8.1,
     "confidence": "alta"
   },
   "steps": [
@@ -71,7 +71,7 @@
       "depart": "2026-07-16T08:00",
       "eta": "2026-07-16T08:51",
       "hours": 0.9,
-      "avg_score": 36,
+      "avg_score": 37,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -129,9 +129,9 @@
     "name": "Isola Mortorio",
     "score": 100,
     "light": "verde",
-    "margin_deg": 97,
+    "margin_deg": 106,
     "fetch_km": 20,
-    "why": "vento 83° a 97° dal settore esposto",
+    "why": "vento 74° a 106° dal settore esposto",
     "holding": "sabbia",
     "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
     "verify": true,
@@ -147,9 +147,9 @@
       "name": "Isola Mortorio",
       "score": 100,
       "light": "verde",
-      "margin_deg": 97,
+      "margin_deg": 106,
       "fetch_km": 20,
-      "why": "vento 83° a 97° dal settore esposto",
+      "why": "vento 74° a 106° dal settore esposto",
       "holding": "sabbia",
       "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
       "verify": true,
@@ -164,9 +164,9 @@
       "name": "Iles Sanguinaires",
       "score": 100,
       "light": "verde",
-      "margin_deg": 103,
+      "margin_deg": 94,
       "fetch_km": 80,
-      "why": "vento 83° a 103° dal settore esposto",
+      "why": "vento 74° a 94° dal settore esposto",
       "holding": "sabbia/roccia",
       "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
       "verify": true,
@@ -177,37 +177,37 @@
       }
     },
     {
-      "id": "budelli",
-      "name": "Cala Roto (Budelli)",
-      "score": 92,
+      "id": "spargi",
+      "name": "Cala Corsara (Spargi)",
+      "score": 93,
       "light": "verde",
-      "margin_deg": 0,
-      "fetch_km": 15,
-      "why": "vento 83° entra in rada (settore 30-130°), fetch 15 km",
-      "holding": "sabbia",
-      "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
+      "margin_deg": 76,
+      "fetch_km": 25,
+      "why": "vento 74° a 76° dal settore esposto",
+      "holding": "sabbia, buona",
+      "notes": "Riparo eccellente da Maestrale. Boe parco a pagamento.",
       "verify": true,
       "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg/500px-La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena_-_Isola_di_Spargi_(11).jpg"
       }
     },
     {
-      "id": "coticcio",
-      "name": "Cala Coticcio (Caprera)",
-      "score": 92,
+      "id": "cannigione",
+      "name": "Cannigione",
+      "score": 93,
       "light": "verde",
-      "margin_deg": 0,
-      "fetch_km": 12,
-      "why": "vento 83° entra in rada (settore 40-140°), fetch 12 km",
-      "holding": "sabbia",
-      "notes": "Sosta diurna. Sbarco a terra regolamentato.",
+      "margin_deg": 76,
+      "fetch_km": 8,
+      "why": "vento 74° a 76° dal settore esposto",
+      "holding": "fango, ottima",
+      "notes": "Base charter, riparo quasi totale.",
       "verify": true,
-      "rating": 5,
+      "rating": 2.5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(03).jpg"
       }
     }
   ],
@@ -228,12 +228,12 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 30.1,
-        "tmin": 26.3,
+        "tmax": 30.5,
+        "tmin": 26.6,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 18.0,
-        "gust_max": 24.1,
+        "wind_max": 17.6,
+        "gust_max": 23.5,
         "wind_dir": 273
       },
       "sailing": {
@@ -241,7 +241,7 @@
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 14.4,
+        "tws_est": 14.1,
         "twd": 273
       }
     },
@@ -261,21 +261,21 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 30.9,
-        "tmin": 25.3,
+        "tmax": 31.7,
+        "tmin": 25.5,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 13.6,
-        "gust_max": 26.6,
-        "wind_dir": 260
+        "wind_max": 11.6,
+        "gust_max": 24.9,
+        "wind_dir": 257
       },
       "sailing": {
-        "twa": 44,
+        "twa": 47,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 10.9,
-        "twd": 260
+        "tws_est": 9.3,
+        "twd": 257
       }
     },
     {
@@ -293,22 +293,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 33.0,
-        "tmin": 24.0,
+        "wmo": 3,
+        "tmax": 33.7,
+        "tmin": 25.3,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 9.9,
-        "gust_max": 21.2,
-        "wind_dir": 316
+        "wind_max": 9.8,
+        "gust_max": 21.0,
+        "wind_dir": 315
       },
       "sailing": {
-        "twa": 13,
+        "twa": 12,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 7.9,
-        "twd": 316
+        "tws_est": 7.8,
+        "twd": 315
       }
     },
     {
@@ -326,22 +326,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 32.1,
-        "tmin": 25.1,
+        "wmo": 1,
+        "tmax": 31.0,
+        "tmin": 25.6,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 5.9,
-        "gust_max": 26.4,
-        "wind_dir": 306
+        "wind_max": 6.8,
+        "gust_max": 17.3,
+        "wind_dir": 297
       },
       "sailing": {
-        "twa": 36,
+        "twa": 45,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 4.7,
-        "twd": 306
+        "tws_est": 5.4,
+        "twd": 297
       }
     },
     {
@@ -359,22 +359,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 33.1,
-        "tmin": 24.8,
-        "rain_mm": 0.0,
+        "wmo": 80,
+        "tmax": 30.5,
+        "tmin": 24.4,
+        "rain_mm": 0.75,
         "rain_prob": 0,
-        "wind_max": 7.6,
-        "gust_max": 15.7,
-        "wind_dir": 330
+        "wind_max": 8.6,
+        "gust_max": 28.8,
+        "wind_dir": 315
       },
       "sailing": {
-        "twa": 20,
+        "twa": 35,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 6.1,
-        "twd": 330
+        "tws_est": 6.9,
+        "twd": 315
       }
     }
   ],
@@ -434,12 +434,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 33.5,
-    "rh": 51,
+    "temp": 32.2,
+    "rh": 50,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 6.1,
-    "twd": 53,
-    "sst": 26.8
+    "tws": 6.3,
+    "twd": 99,
+    "sst": 27.2
   }
 }
