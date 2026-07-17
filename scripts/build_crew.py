@@ -23,6 +23,7 @@ COUNTRY_OVERRIDE = {"Saint Vincent - France": "Saint Vincent - France - Saint Lu
 # perche' data/ e' condiviso via junction nei worktree: un file nuovo darebbe
 # conflitti al pull. Attaccati come campo "nicks" a ogni persona in crew.json.
 NICKS = {
+    "antonio-v": ["Anto"],
     "andrea-a": ["Abbute Puche", "Immortale di Secondigliano", "Vulcan", "Idris", "Aibs", "Abba"],
     "bernardo-b": ["Berna"],
     "bianca-b": ["Bibi"],
