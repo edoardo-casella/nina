@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T16:04+02:00",
+  "generated_at": "2026-07-17T22:22+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-17",
@@ -59,8 +59,8 @@
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 3.5,
-    "max_spread_kn": 9.0,
+    "mean_spread_kn": 3.1,
+    "max_spread_kn": 10.5,
     "confidence": "media"
   },
   "steps": [
@@ -129,9 +129,9 @@
     "name": "Cala Corsara (Spargi)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 106,
+    "margin_deg": 94,
     "fetch_km": 25,
-    "why": "vento 356° a 106° dal settore esposto",
+    "why": "vento 344° a 94° dal settore esposto",
     "holding": "sabbia, buona",
     "notes": "Riparo eccellente da Maestrale. Boe parco a pagamento.",
     "verify": true,
@@ -147,9 +147,9 @@
       "name": "Cala Corsara (Spargi)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 106,
+      "margin_deg": 94,
       "fetch_km": 25,
-      "why": "vento 356° a 106° dal settore esposto",
+      "why": "vento 344° a 94° dal settore esposto",
       "holding": "sabbia, buona",
       "notes": "Riparo eccellente da Maestrale. Boe parco a pagamento.",
       "verify": true,
@@ -164,9 +164,9 @@
       "name": "Cala Santa Maria",
       "score": 100,
       "light": "verde",
-      "margin_deg": 136,
+      "margin_deg": 124,
       "fetch_km": 20,
-      "why": "vento 356° a 136° dal settore esposto",
+      "why": "vento 344° a 124° dal settore esposto",
       "holding": "sabbia, ottima",
       "notes": "Ampia, riparata da N e NW.",
       "verify": true,
@@ -181,9 +181,9 @@
       "name": "Cannigione",
       "score": 100,
       "light": "verde",
-      "margin_deg": 154,
+      "margin_deg": 144,
       "fetch_km": 8,
-      "why": "vento 356° a 154° dal settore esposto",
+      "why": "vento 344° a 144° dal settore esposto",
       "holding": "fango, ottima",
       "notes": "Base charter, riparo quasi totale.",
       "verify": true,
@@ -194,20 +194,20 @@
       }
     },
     {
-      "id": "mortorio",
-      "name": "Isola Mortorio",
-      "score": 93,
+      "id": "rondinara",
+      "name": "Baie de Rondinara",
+      "score": 98,
       "light": "verde",
-      "margin_deg": 76,
-      "fetch_km": 20,
-      "why": "vento 356° a 76° dal settore esposto",
-      "holding": "sabbia",
-      "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
+      "margin_deg": 86,
+      "fetch_km": 40,
+      "why": "vento 344° a 86° dal settore esposto",
+      "holding": "sabbia, ottima",
+      "notes": "Rifugio classico da Maestrale. Affollata in agosto.",
       "verify": true,
-      "rating": 4,
+      "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
       }
     }
   ],
@@ -227,13 +227,13 @@
         "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 29.2,
-        "tmin": 26.5,
+        "wmo": 2,
+        "tmax": 29.3,
+        "tmin": 26.6,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 18.5,
-        "gust_max": 24.7,
+        "wind_max": 17.7,
+        "gust_max": 23.5,
         "wind_dir": 261
       },
       "sailing": {
@@ -241,7 +241,7 @@
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 14.8,
+        "tws_est": 14.2,
         "twd": 261
       }
     },
@@ -261,12 +261,12 @@
       },
       "wx": {
         "wmo": 3,
-        "tmax": 31.6,
-        "tmin": 25.7,
+        "tmax": 31.7,
+        "tmin": 25.9,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 14.9,
-        "gust_max": 28.0,
+        "wind_max": 14.4,
+        "gust_max": 29.2,
         "wind_dir": 260
       },
       "sailing": {
@@ -274,7 +274,7 @@
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 11.9,
+        "tws_est": 11.5,
         "twd": 260
       }
     },
@@ -293,22 +293,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 33.8,
-        "tmin": 25.3,
+        "wmo": 3,
+        "tmax": 34.2,
+        "tmin": 24.5,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 7.3,
-        "gust_max": 25.3,
-        "wind_dir": 318
+        "wind_max": 11.0,
+        "gust_max": 24.7,
+        "wind_dir": 319
       },
       "sailing": {
-        "twa": 15,
+        "twa": 16,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 5.8,
-        "twd": 318
+        "tws_est": 8.8,
+        "twd": 319
       }
     },
     {
@@ -326,22 +326,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 30.1,
-        "tmin": 25.2,
+        "wmo": 3,
+        "tmax": 30.8,
+        "tmin": 25.6,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 8.7,
-        "gust_max": 20.4,
-        "wind_dir": 302
+        "wind_max": 7.6,
+        "gust_max": 22.4,
+        "wind_dir": 311
       },
       "sailing": {
-        "twa": 40,
+        "twa": 31,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 7.0,
-        "twd": 302
+        "tws_est": 6.1,
+        "twd": 311
       }
     },
     {
@@ -360,21 +360,21 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 30.8,
-        "tmin": 23.2,
+        "tmax": 30.3,
+        "tmin": 23.7,
         "rain_mm": 0.0,
-        "rain_prob": 0,
-        "wind_max": 7.9,
-        "gust_max": 16.1,
-        "wind_dir": 184
+        "rain_prob": 4,
+        "wind_max": 7.2,
+        "gust_max": 15.3,
+        "wind_dir": 218
       },
       "sailing": {
-        "twa": 166,
-        "andatura": "poppa",
+        "twa": 132,
+        "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 6.3,
-        "twd": 184
+        "tws_est": 5.8,
+        "twd": 218
       }
     }
   ],
@@ -441,12 +441,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 34.9,
-    "rh": 48,
+    "temp": 31.4,
+    "rh": 52,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 8.4,
-    "twd": 93,
-    "sst": 27.0
+    "tws": 4.9,
+    "twd": 323,
+    "sst": 26.9
   }
 }

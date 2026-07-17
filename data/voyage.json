@@ -166,21 +166,6 @@
    ]
   },
   {
-   "id": "dav",
-   "name": "Davide",
-   "board": "2026-08-15",
-   "leave": "2026-08-22",
-   "role": "crew",
-   "diet": "onnivoro",
-   "cabin": "Bagno privato",
-   "weight": 1,
-   "duties": [
-    "cucina",
-    "pulizie",
-    "check"
-   ]
-  },
-  {
    "id": "rb",
    "name": "Riccardo B",
    "board": "2026-08-21",

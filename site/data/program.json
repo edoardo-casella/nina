@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T16:04+02:00",
+  "generated_at": "2026-07-17T22:22+02:00",
   "sim": true,
   "day": "2026-07-17",
   "start_date": "2026-07-17",
@@ -54,12 +54,12 @@
       },
       "wx": {
         "wmo": 45,
-        "tmax": 36.0,
+        "tmax": 36.2,
         "tmin": 25.3,
         "rain_prob": 0,
         "wind_max": 8.9,
-        "gust_max": 17.9,
-        "wind_dir": 291
+        "gust_max": 16.5,
+        "wind_dir": 290
       },
       "wave": {
         "hmax": 0.66,
@@ -122,12 +122,12 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 29.2,
-        "tmin": 26.5,
+        "wmo": 2,
+        "tmax": 29.3,
+        "tmin": 26.6,
         "rain_prob": 0,
-        "wind_max": 18.5,
-        "gust_max": 24.7,
+        "wind_max": 17.7,
+        "gust_max": 23.5,
         "wind_dir": 261
       },
       "wave": {
@@ -192,11 +192,11 @@
       },
       "wx": {
         "wmo": 3,
-        "tmax": 31.6,
-        "tmin": 25.7,
+        "tmax": 31.7,
+        "tmin": 25.9,
         "rain_prob": 0,
-        "wind_max": 14.9,
-        "gust_max": 28.0,
+        "wind_max": 14.4,
+        "gust_max": 29.2,
         "wind_dir": 260
       },
       "wave": {
@@ -260,13 +260,13 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 33.8,
-        "tmin": 25.3,
+        "wmo": 3,
+        "tmax": 34.2,
+        "tmin": 24.5,
         "rain_prob": 0,
-        "wind_max": 7.3,
-        "gust_max": 25.3,
-        "wind_dir": 318
+        "wind_max": 11.0,
+        "gust_max": 24.7,
+        "wind_dir": 319
       },
       "wave": {
         "hmax": 0.34,
@@ -318,13 +318,13 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 30.1,
-        "tmin": 25.2,
+        "wmo": 3,
+        "tmax": 30.8,
+        "tmin": 25.6,
         "rain_prob": 0,
-        "wind_max": 8.7,
-        "gust_max": 20.4,
-        "wind_dir": 302
+        "wind_max": 7.6,
+        "gust_max": 22.4,
+        "wind_dir": 311
       },
       "wave": {
         "hmax": 0.8,
@@ -366,12 +366,12 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 30.8,
-        "tmin": 23.2,
-        "rain_prob": 0,
-        "wind_max": 7.9,
-        "gust_max": 16.1,
-        "wind_dir": 184
+        "tmax": 30.3,
+        "tmin": 23.7,
+        "rain_prob": 4,
+        "wind_max": 7.2,
+        "gust_max": 15.3,
+        "wind_dir": 218
       },
       "wave": {
         "hmax": 0.96,
@@ -412,13 +412,13 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 28.1,
-        "tmin": 23.3,
-        "rain_prob": 9,
-        "wind_max": 9.2,
-        "gust_max": 26.0,
-        "wind_dir": 25
+        "wmo": 95,
+        "tmax": 26.6,
+        "tmin": 22.0,
+        "rain_prob": 8,
+        "wind_max": 7.3,
+        "gust_max": 21.8,
+        "wind_dir": 233
       },
       "wave": {
         "hmax": 0.98,
@@ -455,17 +455,17 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on_n": 5,
+        "on_n": 4,
         "off_n": 1
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 31.1,
-        "tmin": 20.9,
-        "rain_prob": 32,
-        "wind_max": 6.7,
-        "gust_max": 17.3,
-        "wind_dir": 243
+        "wmo": 1,
+        "tmax": 27.8,
+        "tmin": 21.6,
+        "rain_prob": 46,
+        "wind_max": 6.3,
+        "gust_max": 12.2,
+        "wind_dir": 319
       },
       "wave": {
         "hmax": 0.66,
@@ -518,12 +518,12 @@
       },
       "wx": {
         "wmo": 1,
-        "tmax": 25.4,
-        "tmin": 24.8,
+        "tmax": 26.3,
+        "tmin": 23.3,
         "rain_prob": 3,
-        "wind_max": 11.9,
-        "gust_max": 15.9,
-        "wind_dir": 239
+        "wind_max": 14.5,
+        "gust_max": 21.2,
+        "wind_dir": 236
       },
       "wave": null,
       "sst": null
@@ -560,13 +560,13 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 31.2,
-        "tmin": 24.1,
+        "wmo": 0,
+        "tmax": 31.7,
+        "tmin": 23.9,
         "rain_prob": 6,
-        "wind_max": 3.9,
-        "gust_max": 15.9,
-        "wind_dir": 114
+        "wind_max": 4.3,
+        "gust_max": 15.7,
+        "wind_dir": 129
       },
       "wave": null,
       "sst": null
@@ -614,13 +614,13 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 51,
-        "tmax": 28.1,
-        "tmin": 22.8,
+        "wmo": 0,
+        "tmax": 30.9,
+        "tmin": 24.0,
         "rain_prob": 4,
-        "wind_max": 9.6,
-        "gust_max": 26.0,
-        "wind_dir": 180
+        "wind_max": 6.0,
+        "gust_max": 20.8,
+        "wind_dir": 86
       },
       "wave": null,
       "sst": null
