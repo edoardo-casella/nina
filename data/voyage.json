@@ -79,7 +79,7 @@
    "id": "gn",
    "name": "Giacomo N",
    "board": "2026-08-08",
-   "leave": "2026-08-17",
+   "leave": "2026-08-16",
    "role": "crew",
    "diet": "onnivoro",
    "cabin": "Bagno privato",
@@ -98,6 +98,21 @@
    "role": "crew",
    "diet": "onnivoro",
    "cabin": "Bagno privato",
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "mtm",
+   "name": "Matilde M",
+   "board": "2026-08-08",
+   "leave": "2026-08-16",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": null,
    "weight": 1,
    "duties": [
     "cucina",

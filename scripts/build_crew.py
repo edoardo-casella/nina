@@ -60,6 +60,7 @@ NICKS = {
     "margherita-c": ["Marghe"],
     "marta-a": ["Martolina"],
     "matilde-c": ["Titti", "Mati"],
+    "matilde-m": ["Mati"],
     "michele-m": ["Mike"],
     "nicola-r": ["Nick"],
     "paola-c": ["Pola"],
@@ -76,7 +77,7 @@ FEM = {
     "bianca-b", "fede-n", "ginevra-l", "giulia-n", "ilaria-m", "lavinia-p", "simona-a",
     "alice-s", "angela-k", "beatrice-f", "belinda-b", "carlotta-d", "cecilia-r", "chiara-f",
     "fabiana-f", "jennifer-s", "laura-c", "ludovica-r", "margherita-c", "marta-a", "martina-g",
-    "martina-r", "matilde-c", "matilde-r", "monica-m", "paola-c", "rebecca-b", "rebecca-l",
+    "martina-r", "matilde-c", "matilde-m", "matilde-r", "monica-m", "paola-c", "rebecca-b", "rebecca-l",
     "sara-b", "simona-b", "sofia-m",
 }
 
