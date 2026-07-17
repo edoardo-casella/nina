@@ -326,7 +326,7 @@ function memberPage(m, all) {
   const yrs = m.first ? `${m.first}${m.last && m.last !== m.first ? "–" + m.last : ""}` : "";
   const vet = (m.trips || 0) > 0
     ? `<span class="badge vet">⚓ ${m.trips} crociere · ${m.days} giorni</span>`
-    : `<span class="badge rookie">\U0001F31F prima volta a bordo</span>`;
+    : `<span class="badge rookie">🌟 prima volta a bordo</span>`;
   const others = all.filter(x => x.crew2026 && !x.crew2026.link && x.id !== m.id);
   const strip = others.map(x =>
     `<a href="#${x.id}" title="${esc(x.name)}">${avatarP(x, "av")}<small>${esc(x.name)}</small></a>`).join("");
@@ -372,7 +372,7 @@ function memberPage(m, all) {
       <div class="card">Sale a Cannigione il <b>${fmt(bd.b)}</b> e sbarca il <b>${fmt(bd.l)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>` : ""}
     ${!c ? `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(m.rank_label || "")}</b>.</div>` : ""}
     ${(c || qrows) ? `<h2>Scheda personale</h2>
-      ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">\U0001F9ED Ancora nessuna scheda. Se è la tua pagina, raccontati da <a href="profilo.html">Il mio profilo</a>.</div>`}` : ""}
+      ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">🧭 Ancora nessuna scheda. Se è la tua pagina, raccontati da <a href="profilo.html">Il mio profilo</a>.</div>`}` : ""}
     ${(m.photos && m.photos.length) ? `<h2>📸 Foto</h2><div class="pgal${m.photos.length > 8 ? " clip" : ""}" id="pgal">${m.photos.map(p =>
       `<figure onclick="lbOne('${p.src}')"><img src="${p.src}" alt="${esc(p.caption || m.name)}" loading="lazy"><figcaption><a href="viaggio.html#${p.trip_id}" onclick="event.stopPropagation()">${esc(p.caption || "")}${BOATNAME.get(p.trip_id) ? ` · «${esc(BOATNAME.get(p.trip_id))}»` : ""} ›</a></figcaption></figure>`).join("")}</div>${m.photos.length > 8 ? `<button class="cm-toggle${m.photos.length <= 12 ? " m-only" : ""}" type="button" data-label="Mostra tutte le foto (${m.photos.length})" data-target="pgal" onclick="toggleClip(this)">Mostra tutte le foto (${m.photos.length}) <span class="chev">▾</span></button>` : ""}` : ""}
     ${strip ? `<h2>La ciurma 2026</h2><div class="strip">${strip}</div>` : ""}
