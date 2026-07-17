@@ -1,21 +1,104 @@
 {
-  "generated_by": "hand-authored — tag di profilo estratti dalle bio (solo gli 11 con descrizione).",
-  "tags": {
-    "bernardo-b": ["Meccanico troubleshooter", "Fregata Bad Boys", "Senatore di bordo"],
-    "riccardo-b": ["Conviviale", "Timoniere", "Aspirante comandante", "Goloso", "Senatore di bordo"],
-    "andrea-a": ["Marinaio", "Re dell'aria condizionata", "Notturno"],
-    "leonardo-m": ["Uomo rana", "Capitano", "Pescatore di ricci", "Tuffatore", "Senatore di bordo"],
-    "gualtiero-s": ["Pescatore", "Gran cuoco"],
-    "claudio-c": ["Velista", "Uomo rana", "Senatore di bordo"],
-    "giacomo-n": ["Videomaker", "Droni", "Troubleshooter"],
-    "ginevra-l": ["Cuoca", "Yoga", "SUP"],
-    "gabri-m": ["Uomo dei tuffi", "Marinaio polivalente", "Timoniere", "Skipper del tender", "Barman"],
-    "fede-b": ["Jolly", "Gran nuotatore", "Anima della festa"],
-    "ilaria-m": ["Aspirante skipper", "Meditazione"],
-    "tonino-l": ["Super armatore", "Commodoro ad honorem", "Negoziatore"],
-    "marco-t": ["Muscolare versatile", "Senatore di bordo"],
-    "michele-m": ["Guru", "Senatore di bordo"],
-    "giulia-n": ["Timoniera", "DJ di bordo", "Foto & blog", "Cassiera", "Jolly"],
-    "silvano-b": ["Ciapinaro", "Marinaio diurno", "Sempre a dieta"]
-  }
+ "generated_by": "hand-authored — tag di profilo estratti dalle bio (solo gli 11 con descrizione).",
+ "tags": {
+  "bernardo-b": [
+   "Meccanico troubleshooter",
+   "Fregata Bad Boys",
+   "Senatore di bordo"
+  ],
+  "riccardo-b": [
+   "Conviviale",
+   "Timoniere",
+   "Aspirante comandante",
+   "Goloso",
+   "Senatore di bordo"
+  ],
+  "andrea-a": [
+   "Marinaio",
+   "Re dell'aria condizionata",
+   "Notturno"
+  ],
+  "leonardo-m": [
+   "Uomo rana",
+   "Capitano",
+   "Pescatore di ricci",
+   "Tuffatore",
+   "Senatore di bordo"
+  ],
+  "gualtiero-s": [
+   "Pescatore",
+   "Gran cuoco"
+  ],
+  "claudio-c": [
+   "Velista",
+   "Uomo rana",
+   "Senatore di bordo"
+  ],
+  "giacomo-n": [
+   "Videomaker",
+   "Droni",
+   "Troubleshooter"
+  ],
+  "ginevra-l": [
+   "Cuoca",
+   "Yoga",
+   "SUP",
+   "Cambusa",
+   "Navigazione notturna"
+  ],
+  "gabri-m": [
+   "Uomo dei tuffi",
+   "Marinaio polivalente",
+   "Timoniere",
+   "Skipper del tender",
+   "Barman"
+  ],
+  "fede-b": [
+   "Jolly",
+   "Gran nuotatore",
+   "Anima della festa",
+   "Aspirante timoniere"
+  ],
+  "ilaria-m": [
+   "Aspirante skipper",
+   "Meditazione",
+   "Cuoca di bordo",
+   "Nottambula"
+  ],
+  "tonino-l": [
+   "Super armatore",
+   "Commodoro ad honorem",
+   "Negoziatore"
+  ],
+  "marco-t": [
+   "Muscolare versatile",
+   "Senatore di bordo"
+  ],
+  "michele-m": [
+   "Guru",
+   "Senatore di bordo"
+  ],
+  "giulia-n": [
+   "Timoniera",
+   "DJ di bordo",
+   "Foto & blog",
+   "Cassiera",
+   "Jolly"
+  ],
+  "silvano-b": [
+   "Ciapinaro",
+   "Marinaio diurno",
+   "Sempre a dieta"
+  ],
+  "matilde-c": [
+   "Aperitivi",
+   "Foto di bordo",
+   "Nottambula"
+  ],
+  "antonio-v": [
+   "Cucina semplice",
+   "DJ di bordo",
+   "Anima libera"
+  ]
+ }
 }
