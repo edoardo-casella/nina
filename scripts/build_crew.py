@@ -15,7 +15,18 @@ except PermissionError:
     print("CV lockato da Excel/OneDrive: uso la copia temp esistente", _cvtmp)
 CREWJSON = os.path.join(ROOT, "site", "data", "crew.json")
 # la zona "Inner Islands" (crociera Seychelles) va mostrata come "Seychelles"
-ZONE_OVERRIDE = {"Inner Islands": "Seychelles"}
+ZONE_OVERRIDE = {"Inner Islands": "Seychelles",
+                 "Cyclades - GR": "Cicladi",
+                 "Cyclades - Dodecanese GR": "Cicladi e Dodecaneso",
+                 "Dodecanese - Turkey": "Dodecaneso e Turchia",
+                 "Sporades - GR": "Sporadi",
+                 "Ionian - GR": "Ionio",
+                 "Baleares - SP": "Baleari",
+                 "Croazia CZ": "Croazia",
+                 "Grenadines Caribbean": "Grenadine",
+                 "Sicily-Egadi": "Sicilia ed Egadi",
+                 "Sardegna & Corsica": "Sardegna e Corsica",
+                 "Corsica & Sardegna": "Sardegna e Corsica"}
 # Sorbe 2017: la rotta caraibica tocca Martinica (FR), Saint Vincent e Saint Lucia
 COUNTRY_OVERRIDE = {"Saint Vincent - France": "Saint Vincent - France - Saint Lucia"}
 
@@ -340,7 +351,7 @@ for p in part:
 # cani di bordo: non sono nel registro Passengers, li aggiungiamo a mano come profili
 # (pet=True li tiene fuori dalla classifica ciurma; avatar auto-agganciato sotto da
 # site/crew/img/<id>.jpg). Presenti sull'Ondine, Croazia 2018.
-_DOG_TRIP = {"id": "ondine", "year": 2018, "zone": "Croazia CZ", "country": "Croazia",
+_DOG_TRIP = {"id": "ondine", "year": 2018, "zone": "Croazia", "country": "Croazia",
              "boat": "Sun Odyssey 519", "nm": 385, "days": 11, "pdays": 11}
 DOGS = [
     {"id": "agata", "name": "Agata", "pet": True, "track": "marinaio", "rank": "mozzo", "rank_label": "Mozzo",

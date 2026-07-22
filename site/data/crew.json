@@ -33,7 +33,7 @@
     {
      "id": "nemo",
      "year": 2011,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
@@ -43,7 +43,7 @@
     {
      "id": "camelia",
      "year": 2011,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
@@ -53,7 +53,7 @@
     {
      "id": "natfika",
      "year": 2012,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
@@ -63,7 +63,7 @@
     {
      "id": "stephanie",
      "year": 2012,
-     "zone": "Cyclades - Dodecanese GR",
+     "zone": "Cicladi e Dodecaneso",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -73,7 +73,7 @@
     {
      "id": "klaudia",
      "year": 2013,
-     "zone": "Dodecanese - Turkey",
+     "zone": "Dodecaneso e Turchia",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -83,7 +83,7 @@
     {
      "id": "cubalibre",
      "year": 2014,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
@@ -93,7 +93,7 @@
     {
      "id": "anax",
      "year": 2014,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
@@ -103,7 +103,7 @@
     {
      "id": "blue-bird",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
@@ -113,7 +113,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -123,7 +123,7 @@
     {
      "id": "aquarela",
      "year": 2016,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 252,
@@ -133,7 +133,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -143,7 +143,7 @@
     {
      "id": "capitan-nikos",
      "year": 2017,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Gib Sea 45",
      "nm": 165,
@@ -153,7 +153,7 @@
     {
      "id": "showtime",
      "year": 2017,
-     "zone": "Ionian - GR",
+     "zone": "Ionio",
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
@@ -163,7 +163,7 @@
     {
      "id": "invitation",
      "year": 2018,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
@@ -173,7 +173,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -193,7 +193,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -213,7 +213,7 @@
     {
      "id": "enya",
      "year": 2021,
-     "zone": "Corsica & Sardegna",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
@@ -223,7 +223,7 @@
     {
      "id": "mars-planet",
      "year": 2021,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
@@ -233,7 +233,7 @@
     {
      "id": "challenger",
      "year": 2022,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
@@ -243,7 +243,7 @@
     {
      "id": "all-in",
      "year": 2022,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
@@ -253,7 +253,7 @@
     {
      "id": "isla",
      "year": 2023,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
@@ -263,7 +263,7 @@
     {
      "id": "alexandros",
      "year": 2024,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
@@ -465,7 +465,7 @@
     {
      "id": "camelia",
      "year": 2011,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
@@ -475,7 +475,7 @@
     {
      "id": "stephanie",
      "year": 2012,
-     "zone": "Cyclades - Dodecanese GR",
+     "zone": "Cicladi e Dodecaneso",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -485,7 +485,7 @@
     {
      "id": "klaudia",
      "year": 2013,
-     "zone": "Dodecanese - Turkey",
+     "zone": "Dodecaneso e Turchia",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -495,7 +495,7 @@
     {
      "id": "anax",
      "year": 2014,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
@@ -505,7 +505,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -515,7 +515,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -525,7 +525,7 @@
     {
      "id": "showtime",
      "year": 2017,
-     "zone": "Ionian - GR",
+     "zone": "Ionio",
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
@@ -535,7 +535,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -736,7 +736,7 @@
     {
      "id": "camelia",
      "year": 2011,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
@@ -746,7 +746,7 @@
     {
      "id": "stephanie",
      "year": 2012,
-     "zone": "Cyclades - Dodecanese GR",
+     "zone": "Cicladi e Dodecaneso",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -756,7 +756,7 @@
     {
      "id": "klaudia",
      "year": 2013,
-     "zone": "Dodecanese - Turkey",
+     "zone": "Dodecaneso e Turchia",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -766,7 +766,7 @@
     {
      "id": "anax",
      "year": 2014,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
@@ -776,7 +776,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -786,7 +786,7 @@
     {
      "id": "showtime",
      "year": 2017,
-     "zone": "Ionian - GR",
+     "zone": "Ionio",
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
@@ -796,7 +796,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -816,7 +816,7 @@
     {
      "id": "mars-planet",
      "year": 2021,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
@@ -977,7 +977,7 @@
     {
      "id": "camelia",
      "year": 2011,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
@@ -987,7 +987,7 @@
     {
      "id": "stephanie",
      "year": 2012,
-     "zone": "Cyclades - Dodecanese GR",
+     "zone": "Cicladi e Dodecaneso",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -997,7 +997,7 @@
     {
      "id": "klaudia",
      "year": 2013,
-     "zone": "Dodecanese - Turkey",
+     "zone": "Dodecaneso e Turchia",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -1007,7 +1007,7 @@
     {
      "id": "anax",
      "year": 2014,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
@@ -1017,7 +1017,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -1027,7 +1027,7 @@
     {
      "id": "showtime",
      "year": 2017,
-     "zone": "Ionian - GR",
+     "zone": "Ionio",
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
@@ -1037,7 +1037,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -1047,7 +1047,7 @@
     {
      "id": "mars-planet",
      "year": 2021,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
@@ -1214,7 +1214,7 @@
     {
      "id": "camelia",
      "year": 2011,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
@@ -1224,7 +1224,7 @@
     {
      "id": "stephanie",
      "year": 2012,
-     "zone": "Cyclades - Dodecanese GR",
+     "zone": "Cicladi e Dodecaneso",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -1234,7 +1234,7 @@
     {
      "id": "klaudia",
      "year": 2013,
-     "zone": "Dodecanese - Turkey",
+     "zone": "Dodecaneso e Turchia",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -1244,7 +1244,7 @@
     {
      "id": "anax",
      "year": 2014,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
@@ -1254,7 +1254,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -1264,7 +1264,7 @@
     {
      "id": "showtime",
      "year": 2017,
-     "zone": "Ionian - GR",
+     "zone": "Ionio",
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
@@ -1274,7 +1274,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -1284,7 +1284,7 @@
     {
      "id": "mars-planet",
      "year": 2021,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
@@ -1432,7 +1432,7 @@
     {
      "id": "camelia",
      "year": 2011,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
@@ -1443,7 +1443,7 @@
     {
      "id": "natfika",
      "year": 2012,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
@@ -1453,7 +1453,7 @@
     {
      "id": "stephanie",
      "year": 2012,
-     "zone": "Cyclades - Dodecanese GR",
+     "zone": "Cicladi e Dodecaneso",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -1464,7 +1464,7 @@
     {
      "id": "aquarela",
      "year": 2016,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 252,
@@ -1474,7 +1474,7 @@
     {
      "id": "invitation",
      "year": 2018,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
@@ -1484,7 +1484,7 @@
     {
      "id": "enya",
      "year": 2021,
-     "zone": "Corsica & Sardegna",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
@@ -1494,7 +1494,7 @@
     {
      "id": "isla",
      "year": 2023,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
@@ -1504,7 +1504,7 @@
     {
      "id": "alexandros",
      "year": 2024,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
@@ -1763,7 +1763,7 @@
     {
      "id": "capitan-nikos",
      "year": 2017,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Gib Sea 45",
      "nm": 165,
@@ -1773,7 +1773,7 @@
     {
      "id": "showtime",
      "year": 2017,
-     "zone": "Ionian - GR",
+     "zone": "Ionio",
      "country": "Greece",
      "boat": "Sun Odissey 469",
      "nm": 351,
@@ -1783,7 +1783,7 @@
     {
      "id": "invitation",
      "year": 2018,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
@@ -1793,7 +1793,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -1813,7 +1813,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -2034,7 +2034,7 @@
     {
      "id": "blue-bird",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
@@ -2044,7 +2044,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -2054,7 +2054,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -2084,7 +2084,7 @@
     {
      "id": "mars-planet",
      "year": 2021,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
@@ -2094,7 +2094,7 @@
     {
      "id": "isla",
      "year": 2023,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
@@ -2371,7 +2371,7 @@
     {
      "id": "camelia",
      "year": 2011,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
@@ -2381,7 +2381,7 @@
     {
      "id": "stephanie",
      "year": 2012,
-     "zone": "Cyclades - Dodecanese GR",
+     "zone": "Cicladi e Dodecaneso",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -2391,7 +2391,7 @@
     {
      "id": "klaudia",
      "year": 2013,
-     "zone": "Dodecanese - Turkey",
+     "zone": "Dodecaneso e Turchia",
      "country": "Greece-Turkey",
      "boat": "Sun Odyssey 54",
      "nm": 375,
@@ -2488,7 +2488,7 @@
     {
      "id": "cubalibre",
      "year": 2014,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
@@ -2498,7 +2498,7 @@
     {
      "id": "invitation",
      "year": 2018,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
@@ -2509,7 +2509,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -2529,7 +2529,7 @@
     {
      "id": "challenger",
      "year": 2022,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
@@ -2539,7 +2539,7 @@
     {
      "id": "all-in",
      "year": 2022,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
@@ -2841,7 +2841,7 @@
     {
      "id": "enya",
      "year": 2021,
-     "zone": "Corsica & Sardegna",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
@@ -2851,7 +2851,7 @@
     {
      "id": "challenger",
      "year": 2022,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
@@ -2861,7 +2861,7 @@
     {
      "id": "all-in",
      "year": 2022,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
@@ -2872,7 +2872,7 @@
     {
      "id": "isla",
      "year": 2023,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
@@ -3095,7 +3095,7 @@
     {
      "id": "invitation",
      "year": 2018,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
@@ -3105,7 +3105,7 @@
     {
      "id": "enya",
      "year": 2021,
-     "zone": "Corsica & Sardegna",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
@@ -3115,7 +3115,7 @@
     {
      "id": "isla",
      "year": 2023,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
@@ -3244,7 +3244,7 @@
     {
      "id": "all-in",
      "year": 2022,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
@@ -3254,7 +3254,7 @@
     {
      "id": "isla",
      "year": 2023,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
@@ -3264,7 +3264,7 @@
     {
      "id": "alexandros",
      "year": 2024,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
@@ -3465,7 +3465,7 @@
     {
      "id": "nemo",
      "year": 2011,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
@@ -3475,7 +3475,7 @@
     {
      "id": "enya",
      "year": 2021,
-     "zone": "Corsica & Sardegna",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
@@ -3604,7 +3604,7 @@
     {
      "id": "nemo",
      "year": 2011,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
@@ -3614,7 +3614,7 @@
     {
      "id": "blue-bird",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
@@ -3634,7 +3634,7 @@
     {
      "id": "challenger",
      "year": 2022,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
@@ -3797,7 +3797,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -3807,7 +3807,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -3963,7 +3963,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -3973,7 +3973,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -4109,7 +4109,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -4119,7 +4119,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -4129,7 +4129,7 @@
     {
      "id": "mars-planet",
      "year": 2021,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
@@ -4261,7 +4261,7 @@
     {
      "id": "trocha",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Jeanneau 53",
      "nm": 395,
@@ -4271,7 +4271,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -4281,7 +4281,7 @@
     {
      "id": "mars-planet",
      "year": 2021,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Oceanis 48",
      "nm": 140,
@@ -4400,7 +4400,7 @@
     {
      "id": "nemo",
      "year": 2011,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
@@ -4410,7 +4410,7 @@
     {
      "id": "cubalibre",
      "year": 2014,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
@@ -4420,7 +4420,7 @@
     {
      "id": "blue-bird",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
@@ -4549,7 +4549,7 @@
     {
      "id": "cubalibre",
      "year": 2014,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
@@ -4559,7 +4559,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -4570,7 +4570,7 @@
     {
      "id": "all-in",
      "year": 2022,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
@@ -4736,7 +4736,7 @@
     {
      "id": "enya",
      "year": 2021,
-     "zone": "Corsica & Sardegna",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 430,
@@ -4816,7 +4816,7 @@
     {
      "id": "anax",
      "year": 2014,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
@@ -4827,7 +4827,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -4907,7 +4907,7 @@
     {
      "id": "camelia",
      "year": 2011,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Cyclades 50",
      "nm": 463,
@@ -4918,7 +4918,7 @@
     {
      "id": "aquarela",
      "year": 2016,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 252,
@@ -5004,7 +5004,7 @@
     {
      "id": "nemo",
      "year": 2011,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
@@ -5014,7 +5014,7 @@
     {
      "id": "blue-bird",
      "year": 2015,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 253,
@@ -5123,7 +5123,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -5276,7 +5276,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -5441,7 +5441,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -5452,7 +5452,7 @@
     {
      "id": "all-in",
      "year": 2022,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
@@ -5603,7 +5603,7 @@
     {
      "id": "invitation",
      "year": 2018,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
@@ -5614,7 +5614,7 @@
     {
      "id": "all-in",
      "year": 2022,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
@@ -5765,7 +5765,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -5776,7 +5776,7 @@
     {
      "id": "challenger",
      "year": 2022,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
@@ -5903,7 +5903,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -6026,7 +6026,7 @@
     {
      "id": "anax",
      "year": 2014,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Sun Odyssey 49",
      "nm": 463,
@@ -6121,7 +6121,7 @@
     {
      "id": "challenger",
      "year": 2022,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
@@ -6214,7 +6214,7 @@
     {
      "id": "cubalibre",
      "year": 2014,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Oceanis 43",
      "nm": 211,
@@ -6224,7 +6224,7 @@
     {
      "id": "challenger",
      "year": 2022,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Lagoon 450",
      "nm": 110,
@@ -6323,7 +6323,7 @@
     {
      "id": "invitation",
      "year": 2018,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
@@ -6400,7 +6400,7 @@
     {
      "id": "invitation",
      "year": 2018,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Dufour GL 500",
      "nm": 470,
@@ -6477,7 +6477,7 @@
     {
      "id": "all-in",
      "year": 2022,
-     "zone": "Sporades - GR",
+     "zone": "Sporadi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 395,
@@ -6594,7 +6594,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -6710,7 +6710,7 @@
     {
      "id": "sorbe",
      "year": 2017,
-     "zone": "Grenadines Caribbean",
+     "zone": "Grenadine",
      "country": "Saint Vincent - France - Saint Lucia",
      "boat": "Lagoon 450",
      "nm": 271,
@@ -6808,7 +6808,7 @@
     {
      "id": "nemo",
      "year": 2011,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
@@ -6892,7 +6892,7 @@
     {
      "id": "nemo",
      "year": 2011,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
@@ -6976,7 +6976,7 @@
     {
      "id": "nemo",
      "year": 2011,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 440",
      "nm": 321,
@@ -7061,7 +7061,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -7092,7 +7092,7 @@
     {
      "id": "ondine",
      "year": 2018,
-     "zone": "Croazia CZ",
+     "zone": "Croazia",
      "country": "Croazia",
      "boat": "Sun Odyssey 519",
      "nm": 385,
@@ -7122,7 +7122,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -7207,7 +7207,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -7304,7 +7304,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -7391,7 +7391,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -7475,7 +7475,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -7559,7 +7559,7 @@
     {
      "id": "alba",
      "year": 2020,
-     "zone": "Sardegna & Corsica",
+     "zone": "Sardegna e Corsica",
      "country": "Italy - France",
      "boat": "Bali 4.1",
      "nm": 550,
@@ -7643,7 +7643,7 @@
     {
      "id": "aquarela",
      "year": 2016,
-     "zone": "Baleares - SP",
+     "zone": "Baleari",
      "country": "Spain",
      "boat": "Sun Odyssey 49",
      "nm": 252,
@@ -7692,7 +7692,7 @@
     {
      "id": "isla",
      "year": 2023,
-     "zone": "Sicily-Egadi",
+     "zone": "Sicilia ed Egadi",
      "country": "Italy",
      "boat": "Fountain Pajot 40",
      "nm": 91,
@@ -7787,7 +7787,7 @@
     {
      "id": "alexandros",
      "year": 2024,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
@@ -7855,7 +7855,7 @@
     {
      "id": "alexandros",
      "year": 2024,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Lagoon 42",
      "nm": 230,
@@ -7918,7 +7918,7 @@
     {
      "id": "natfika",
      "year": 2012,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
@@ -7980,7 +7980,7 @@
     {
      "id": "natfika",
      "year": 2012,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
@@ -8042,7 +8042,7 @@
     {
      "id": "natfika",
      "year": 2012,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,
@@ -8107,7 +8107,7 @@
     {
      "id": "natfika",
      "year": 2012,
-     "zone": "Cyclades - GR",
+     "zone": "Cicladi",
      "country": "Greece",
      "boat": "Bavaria 50",
      "nm": 189,

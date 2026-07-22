@@ -32,7 +32,9 @@ IMGROOT = os.path.join(ROOT, "data", "Skipper Images")
 OUTIMG = os.path.join(ROOT, "site", "trips", "img")
 STORIES = os.path.join(ROOT, "data", "trip-stories.json")   # racconti scritti a mano
 stories = json.load(open(STORIES, encoding="utf-8")).get("stories", {}) if os.path.exists(STORIES) else {}
-ZONE_OVERRIDE = {"cari": "Seychelles"}   # la zona "Inner Islands" della crociera Seychelles va mostrata come "Seychelles"
+ZONE_OVERRIDE = {"cari": "Seychelles"}
+ZONE_NAME_IT = { "Cyclades - GR": "Cicladi", "Cyclades - Dodecanese GR": "Cicladi e Dodecaneso", "Dodecanese - Turkey": "Dodecaneso e Turchia", "Sporades - GR": "Sporadi", "Ionian - GR": "Ionio", "Baleares - SP": "Baleari", "Croazia CZ": "Croazia", "Grenadines Caribbean": "Grenadine", "Sicily-Egadi": "Sicilia ed Egadi", "Sardegna & Corsica": "Sardegna e Corsica", "Corsica & Sardegna": "Sardegna e Corsica" }   # convenzione nomi zone in italiano (2026-07-22)
+   # la zona "Inner Islands" della crociera Seychelles va mostrata come "Seychelles"
 
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
 people = {}
@@ -210,7 +212,7 @@ for t in sorted(trips):
                         "people": list(dict.fromkeys(it["cids"])), "caption": it["kw"].title() + " " + str(m["year"])})
             kept.append((h, len(phs) - 1))
     out.append({"id": tid, "year": m["year"], "month": m["month"], "country": m["country"],
-                "zone": ZONE_OVERRIDE.get(tid, m["zone"]), "boat": m["boat"], "name": m["name"], "nm": m["nm"],
+                "zone": ZONE_NAME_IT.get(ZONE_OVERRIDE.get(tid, m["zone"]), ZONE_OVERRIDE.get(tid, m["zone"])), "boat": m["boat"], "name": m["name"], "nm": m["nm"],
                 "days": round(m["days"], 1), "crew": trip_crew,
                 **({"crew_groups": crew_groups_out} if crew_groups_out else {}),
                 "n_photos": len(phs), "photos": phs,
