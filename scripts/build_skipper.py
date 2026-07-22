@@ -22,7 +22,7 @@ CV = core.DATA / "Skipper CV.xlsx"
 OUT = core.ROOT / "site" / "data" / "skipper.json"
 IMG_DIR = core.ROOT / "site" / "skipper" / "img"
 
-NAME = "Edoardo Casella"
+NAME = "Edoardo C."   # convenzione sito: nome + iniziale (2026-07-23)
 INSTAGRAM = "https://www.instagram.com/edoardocasella/"
 # la zona "Inner Islands" (crociera Seychelles) va mostrata come "Seychelles"
 ZONE_OVERRIDE = {"Inner Islands": "Seychelles"}

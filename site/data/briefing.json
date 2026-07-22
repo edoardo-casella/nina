@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-22T20:16+02:00",
+  "generated_at": "2026-07-23T00:03+02:00",
   "approved": false,
   "approved_by": null,
-  "day": "2026-07-22",
+  "day": "2026-07-23",
   "boat": "Niña",
   "voyage": "Corsica & La Maddalena 2026",
   "captains": [
-    "Edoardo Casella",
+    "Edoardo C.",
     "Bernardo Bolgeri"
   ],
   "sim": true,
@@ -26,10 +26,10 @@
     "leg": "Cannigione -> Cala Coticcio (Caprera)",
     "nm": 6.1,
     "cog": 10,
-    "depart": "2026-07-22T08:00",
-    "eta": "2026-07-22T08:51",
+    "depart": "2026-07-23T08:00",
+    "eta": "2026-07-23T08:51",
     "hours": 0.9,
-    "avg_score": 34,
+    "avg_score": 35,
     "sail_pct": 0,
     "abort": false,
     "detail": [],
@@ -53,14 +53,14 @@
   },
   "leg_sailing": {
     "andatura": "traverso",
-    "twa": 109,
+    "twa": 92,
     "vela": false,
     "avg_kn": 6.8
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 1.2,
-    "max_spread_kn": 5.9,
+    "mean_spread_kn": 1.7,
+    "max_spread_kn": 10.1,
     "confidence": "alta"
   },
   "steps": [
@@ -68,10 +68,10 @@
       "leg": "Cannigione -> Cala Coticcio (Caprera)",
       "nm": 6.1,
       "cog": 10,
-      "depart": "2026-07-22T08:00",
-      "eta": "2026-07-22T08:51",
+      "depart": "2026-07-23T08:00",
+      "eta": "2026-07-23T08:51",
       "hours": 0.9,
-      "avg_score": 34,
+      "avg_score": 35,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -97,10 +97,10 @@
       "leg": "Cala Coticcio (Caprera) -> Cala Portese",
       "nm": 1.5,
       "cog": 183,
-      "depart": "2026-07-22T17:15",
-      "eta": "2026-07-22T17:27",
+      "depart": "2026-07-23T17:15",
+      "eta": "2026-07-23T17:27",
       "hours": 0.2,
-      "avg_score": 34,
+      "avg_score": 33,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -125,31 +125,48 @@
   "stop_reason": null,
   "tonight": null,
   "plan_b": {
-    "id": "rondinara",
-    "name": "Baie de Rondinara",
+    "id": "budelli",
+    "name": "Cala Roto (Budelli)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 124,
-    "fetch_km": 40,
-    "why": "vento 306° a 124° dal settore esposto",
-    "holding": "sabbia, ottima",
-    "notes": "Rifugio classico da Maestrale. Affollata in agosto.",
+    "margin_deg": 99,
+    "fetch_km": 15,
+    "why": "vento 291° a 99° dal settore esposto",
+    "holding": "sabbia",
+    "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
     "verify": true,
     "rating": 5,
     "photo": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg",
-      "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
     }
   },
   "ranked": [
+    {
+      "id": "budelli",
+      "name": "Cala Roto (Budelli)",
+      "score": 100,
+      "light": "verde",
+      "margin_deg": 99,
+      "fetch_km": 15,
+      "why": "vento 291° a 99° dal settore esposto",
+      "holding": "sabbia",
+      "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
+      "verify": true,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+      }
+    },
     {
       "id": "rondinara",
       "name": "Baie de Rondinara",
       "score": 100,
       "light": "verde",
-      "margin_deg": 124,
+      "margin_deg": 139,
       "fetch_km": 40,
-      "why": "vento 306° a 124° dal settore esposto",
+      "why": "vento 291° a 139° dal settore esposto",
       "holding": "sabbia, ottima",
       "notes": "Rifugio classico da Maestrale. Affollata in agosto.",
       "verify": true,
@@ -164,9 +181,9 @@
       "name": "Golfe de Porto-Vecchio",
       "score": 100,
       "light": "verde",
-      "margin_deg": 94,
+      "margin_deg": 109,
       "fetch_km": 30,
-      "why": "vento 306° a 94° dal settore esposto",
+      "why": "vento 291° a 109° dal settore esposto",
       "holding": "fango/sabbia",
       "notes": "Molte cale interne, riparo in quasi ogni condizione.",
       "verify": true,
@@ -181,9 +198,9 @@
       "name": "Cala Coticcio (Caprera)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 94,
+      "margin_deg": 109,
       "fetch_km": 12,
-      "why": "vento 306° a 94° dal settore esposto",
+      "why": "vento 291° a 109° dal settore esposto",
       "holding": "sabbia",
       "notes": "Sosta diurna. Sbarco a terra regolamentato.",
       "verify": true,
@@ -192,28 +209,11 @@
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
         "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
       }
-    },
-    {
-      "id": "cannigione",
-      "name": "Cannigione",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 106,
-      "fetch_km": 8,
-      "why": "vento 306° a 106° dal settore esposto",
-      "holding": "fango, ottima",
-      "notes": "Base charter, riparo quasi totale.",
-      "verify": true,
-      "rating": 2.5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(03).jpg"
-      }
     }
   ],
   "outlook": [
     {
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "rest": false,
       "night": false,
       "frm": "Cala Portese",
@@ -228,25 +228,25 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.4,
-        "tmin": 26.7,
+        "tmax": 28.3,
+        "tmin": 27.1,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 19.2,
-        "gust_max": 25.1,
-        "wind_dir": 266
+        "wind_max": 15.5,
+        "gust_max": 20.4,
+        "wind_dir": 27
       },
       "sailing": {
-        "twa": 49,
-        "andatura": "bolina",
+        "twa": 72,
+        "andatura": "bolina larga",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 15.4,
-        "twd": 266
+        "tws_est": 12.4,
+        "twd": 27
       }
     },
     {
-      "date": "2026-07-24",
+      "date": "2026-07-25",
       "rest": false,
       "night": false,
       "frm": "Isole Lavezzi",
@@ -260,26 +260,26 @@
         "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 30.5,
-        "tmin": 22.9,
+        "wmo": 3,
+        "tmax": 30.6,
+        "tmin": 23.7,
         "rain_mm": 0.0,
-        "rain_prob": 0,
-        "wind_max": 11.4,
-        "gust_max": 22.2,
-        "wind_dir": 79
+        "rain_prob": 7,
+        "wind_max": 12.5,
+        "gust_max": 24.1,
+        "wind_dir": 71
       },
       "sailing": {
-        "twa": 135,
+        "twa": 127,
         "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 9.1,
-        "twd": 79
+        "tws_est": 10.0,
+        "twd": 71
       }
     },
     {
-      "date": "2026-07-25",
+      "date": "2026-07-26",
       "rest": false,
       "night": false,
       "frm": "Bonifacio",
@@ -293,26 +293,26 @@
         "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 35.7,
-        "tmin": 26.1,
-        "rain_mm": 0.0,
-        "rain_prob": 28,
-        "wind_max": 12.5,
-        "gust_max": 26.2,
-        "wind_dir": 125
+        "wmo": 80,
+        "tmax": 28.1,
+        "tmin": 24.4,
+        "rain_mm": 6.1,
+        "rain_prob": 40,
+        "wind_max": 14.4,
+        "gust_max": 29.7,
+        "wind_dir": 294
       },
       "sailing": {
-        "twa": 178,
-        "andatura": "poppa",
+        "twa": 9,
+        "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 10.0,
-        "twd": 125
+        "tws_est": 11.5,
+        "twd": 294
       }
     },
     {
-      "date": "2026-07-26",
+      "date": "2026-07-27",
       "rest": false,
       "night": false,
       "frm": "Tizzano",
@@ -326,26 +326,26 @@
         "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
       },
       "wx": {
-        "wmo": 81,
-        "tmax": 27.4,
-        "tmin": 24.8,
-        "rain_mm": 12.6,
-        "rain_prob": 49,
-        "wind_max": 13.5,
-        "gust_max": 24.7,
-        "wind_dir": 301
+        "wmo": 2,
+        "tmax": 28.5,
+        "tmin": 23.6,
+        "rain_mm": 0.0,
+        "rain_prob": 3,
+        "wind_max": 10.9,
+        "gust_max": 21.4,
+        "wind_dir": 303
       },
       "sailing": {
-        "twa": 41,
+        "twa": 39,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 10.8,
-        "twd": 301
+        "tws_est": 8.7,
+        "twd": 303
       }
     },
     {
-      "date": "2026-07-27",
+      "date": "2026-07-28",
       "rest": false,
       "night": false,
       "frm": "Campomoro",
@@ -360,21 +360,21 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.8,
-        "tmin": 24.0,
+        "tmax": 31.0,
+        "tmin": 24.7,
         "rain_mm": 0.0,
-        "rain_prob": 5,
-        "wind_max": 7.4,
-        "gust_max": 16.1,
-        "wind_dir": 279
+        "rain_prob": 3,
+        "wind_max": 6.4,
+        "gust_max": 13.2,
+        "wind_dir": 133
       },
       "sailing": {
-        "twa": 71,
-        "andatura": "bolina larga",
+        "twa": 143,
+        "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 5.9,
-        "twd": 279
+        "tws_est": 5.1,
+        "twd": 133
       }
     }
   ],
@@ -441,12 +441,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 32.0,
-    "rh": 39,
+    "temp": 27.0,
+    "rh": 64,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 10.6,
-    "twd": 306,
-    "sst": 27.5
+    "tws": 1.7,
+    "twd": 297,
+    "sst": 27.4
   }
 }
