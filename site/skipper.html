@@ -467,7 +467,8 @@ function tripsHTML(d) {
   // ordine dal più recente al più vecchio, con il mese dentro lo stesso anno
   d.trips.slice().sort((a, b) => b.year - a.year || mi(b.month) - mi(a.month))
     .forEach(t => (byYear[t.year] = byYear[t.year] || []).push(t));
-  const years = Object.keys(byYear).sort((a, b) => b - a).map(y => {
+  const ykeys = Object.keys(byYear).sort((a, b) => b - a);
+  const years = ykeys.map((y, yi) => {
     const rows = byYear[y].map(t => {
       const avg = t.days ? Math.round(t.nm / t.days) : null;
       const p = pace(avg), df = diffOf(t.zone, t.month);
@@ -478,12 +479,16 @@ function tripsHTML(d) {
           <span class="tags">${p ? `<span class="pace ${p.k}" title="${p.d}">${p.t}</span>` : ""}<span class="diff ${df.k}" title="${esc(df.why)}">⚓ ${df.t}</span></span></span>
         <span class="mi">${avg ?? "—"}<em>nm/giorno</em></span></a>`;
     }).join("");
-    return `<div class="year"><h3>${y}</h3>${rows}</div>`;
+    return `<div class="year${yi >= 5 ? " y-extra" : ""}"${yi >= 5 ? " hidden" : ""}><h3>${y}</h3>${rows}</div>`;
   }).join("");
+  const ylabel = `Mostra tutte le stagioni (dal ${ykeys[ykeys.length - 1]})`;
+  const ytoggle = ykeys.length > 5
+    ? `<button class="cm-toggle" type="button" data-label="${ylabel}" onclick="toggleYears(this)">${ylabel} <span class="chev">▾</span></button>`
+    : "";
   const legend = `<div class="paceleg">
     <span class="pace chill">Chilling</span><span class="pace cruise">Crociera</span><span class="pace push">Spinto</span><span class="pace extreme">Estremo</span>
     <em>Ritmo = miglia ÷ giorni di navigazione. ⚓ = esperienza richiesta dalla zona (Principiante → Lupo di mare, dal vento tipico): passa sopra per il dettaglio.</em></div>`;
-  return `<section><h2>Registro di bordo · media ${oavg} nm/giorno</h2>${legend}${years}</section>`;
+  return `<section><h2>Registro di bordo · media ${oavg} nm/giorno</h2>${legend}${years}${ytoggle}</section>`;
 }
 
 // Aneddoti (errori fatali + atti eroici): ora in data/anecdotes.json
@@ -559,6 +564,15 @@ function toggleCrew(btn) {
 }
 function toggleGallery(btn) {
   const extra = document.querySelectorAll(".grid .g-extra");
+  if (!extra.length) return;
+  const hidden = extra[0].hasAttribute("hidden");
+  extra.forEach(el => hidden ? el.removeAttribute("hidden") : el.setAttribute("hidden", ""));
+  btn.innerHTML = hidden ? 'Mostra meno <span class="chev up">▾</span>' : btn.dataset.label + ' <span class="chev">▾</span>';
+}
+
+// registro di bordo: le stagioni più vecchie sono ripiegate (stesso pattern della galleria)
+function toggleYears(btn) {
+  const extra = document.querySelectorAll(".y-extra");
   if (!extra.length) return;
   const hidden = extra[0].hasAttribute("hidden");
   extra.forEach(el => hidden ? el.removeAttribute("hidden") : el.setAttribute("hidden", ""));
@@ -689,6 +703,7 @@ function render(d) {
     <div class="row"><span>Avanzamento grado</span><span>${next ? `<b>${nfmt(t.nm)}</b> / ${nfmt(next.min)} nm · ${pct}%` : "Grado massimo"}</span></div>
     <div class="bar"><i style="width:${pct}%"></i></div>
     ${next ? `<div class="nextcap">↑ prossimo grado · ${esc(next.name)}${next.stars > cur.stars ? ` · ${next.stars}★` : ""}</div>` : ""}
+    <div class="nextcap" style="opacity:.7">i gradi si calcolano su giorni e miglia in mare — stessa formula per tutta la <a href="classifica.html">ciurma</a></div>
   </div>
 
   <div class="stats">
@@ -701,8 +716,11 @@ function render(d) {
     <div class="stat"><b>${Math.round(t.days)}</b><i>giorni in mare</i></div>
     ${d.birth_year
       ? `<div class="stat"><b>${new Date().getFullYear() - d.birth_year}</b><i>anni</i></div>`
-      : `<div class="stat"><b>${Math.max(...d.trips.map(x => x.nm))}</b><i>record nm</i></div>`}
+      : `<div class="stat"><b>${(window.__CREW || []).filter(p => !p.pet && !p.me && (p.trips || 0) > 0).length || "—"}</b><i>compagni di rotta</i></div>`}
   </div>
+
+  <p class="dossier-note" style="margin:.9rem 1.1rem 0;text-align:center">Il capitano sbaglia anche lui:
+    <a href="#errori-fatali">gli errori fatali sono a registro ›</a></p>
 
   <section><h2>Rapporto di servizio</h2><p class="lead">${lead(d)}</p></section>
   ${portraitHTML()}
