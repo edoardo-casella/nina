@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T12:32+02:00",
+  "generated_at": "2026-07-23T14:53+02:00",
   "start": "2026-08-08",
   "end": "2026-08-29",
   "crew": [
@@ -10,7 +10,8 @@
       "r": "skipper",
       "x": 25,
       "fy": 2011,
-      "p": "skipper/img/edoardo-id.jpg"
+      "p": "skipper/img/edoardo-id.jpg",
+      "id": "edo-c"
     },
     {
       "n": "Ginevra L",
@@ -19,7 +20,8 @@
       "r": "crew",
       "x": 4,
       "fy": 2022,
-      "p": "crew/img/ginevra-l.jpg"
+      "p": "crew/img/ginevra-l.jpg",
+      "id": "ginevra-l"
     },
     {
       "n": "Bernardo B",
@@ -28,14 +30,16 @@
       "r": "skipper",
       "x": 9,
       "fy": 2011,
-      "p": "crew/img/bernardo-b.jpg"
+      "p": "crew/img/bernardo-b.jpg",
+      "id": "bernardo-b"
     },
     {
       "n": "Bianca M",
       "b": "2026-08-08",
       "l": "2026-08-21",
       "r": "crew",
-      "x": 0
+      "x": 0,
+      "id": "bianca-m"
     },
     {
       "n": "Giacomo N",
@@ -44,7 +48,8 @@
       "r": "crew",
       "x": 5,
       "fy": 2021,
-      "p": "crew/img/giacomo-n.jpg"
+      "p": "crew/img/giacomo-n.jpg",
+      "id": "giacomo-n"
     },
     {
       "n": "Matilde C.",
@@ -53,7 +58,8 @@
       "r": "crew",
       "x": 9,
       "fy": 2011,
-      "p": "crew/img/matilde-c.jpg"
+      "p": "crew/img/matilde-c.jpg",
+      "id": "matilde-c"
     },
     {
       "n": "Matilde M",
@@ -61,7 +67,8 @@
       "l": "2026-08-16",
       "r": "crew",
       "x": 0,
-      "p": "crew/img/matilde-m.jpg"
+      "p": "crew/img/matilde-m.jpg",
+      "id": "matilde-m"
     },
     {
       "n": "Giulia N",
@@ -69,7 +76,8 @@
       "l": "2026-08-29",
       "r": "crew",
       "x": 0,
-      "p": "crew/img/giulia-n.jpg"
+      "p": "crew/img/giulia-n.jpg",
+      "id": "giulia-n"
     },
     {
       "n": "Fede B",
@@ -78,14 +86,16 @@
       "r": "crew",
       "x": 1,
       "fy": 2023,
-      "p": "crew/img/fede-b.jpg"
+      "p": "crew/img/fede-b.jpg",
+      "id": "fede-b"
     },
     {
       "n": "Manlio",
       "b": "2026-08-15",
       "l": "2026-08-22",
       "r": "crew",
-      "x": 0
+      "x": 0,
+      "id": "manlio"
     },
     {
       "n": "Riccardo B",
@@ -94,14 +104,16 @@
       "r": "apprentice",
       "x": 7,
       "fy": 2015,
-      "p": "crew/img/riccardo-b.jpg"
+      "p": "crew/img/riccardo-b.jpg",
+      "id": "riccardo-b"
     },
     {
       "n": "Fede N",
       "b": "2026-08-22",
       "l": "2026-08-29",
       "r": "crew",
-      "x": 0
+      "x": 0,
+      "id": "fede-n"
     },
     {
       "n": "Ilaria M",
@@ -110,7 +122,8 @@
       "r": "apprentice",
       "x": 2,
       "fy": 2017,
-      "p": "crew/img/ilaria-m.jpg"
+      "p": "crew/img/ilaria-m.jpg",
+      "id": "ilaria-m"
     },
     {
       "n": "Lavinia P",
@@ -118,7 +131,8 @@
       "l": "2026-08-29",
       "r": "crew",
       "x": 0,
-      "p": "crew/img/lavinia-p.jpg"
+      "p": "crew/img/lavinia-p.jpg",
+      "id": "lavinia-p"
     },
     {
       "n": "Andrea A",
@@ -127,14 +141,16 @@
       "r": "crew",
       "x": 4,
       "fy": 2011,
-      "p": "crew/img/andrea-a.jpg"
+      "p": "crew/img/andrea-a.jpg",
+      "id": "andrea-a"
     },
     {
       "n": "Simona A",
       "b": "2026-08-22",
       "l": "2026-08-29",
       "r": "crew",
-      "x": 0
+      "x": 0,
+      "id": "simona-a"
     },
     {
       "n": "Gabri M",
@@ -143,7 +159,8 @@
       "r": "apprentice",
       "x": 2,
       "fy": 2017,
-      "p": "crew/img/gabri-m.jpg"
+      "p": "crew/img/gabri-m.jpg",
+      "id": "gabri-m"
     },
     {
       "n": "Antonio V",
@@ -151,14 +168,16 @@
       "l": "2026-08-22",
       "r": "crew",
       "x": 0,
-      "p": "crew/img/antonio-v.jpg"
+      "p": "crew/img/antonio-v.jpg",
+      "id": "antonio-v"
     },
     {
       "n": "Lorenzo C.",
       "b": "2026-08-08",
       "l": "2026-08-15",
       "r": "crew",
-      "x": 0
+      "x": 0,
+      "id": "lorenzo-c"
     },
     {
       "n": "Ilaria C.",
@@ -166,7 +185,8 @@
       "l": "2026-08-15",
       "r": "crew",
       "x": 0,
-      "p": "crew/img/ilaria-c.jpg"
+      "p": "crew/img/ilaria-c.jpg",
+      "id": "ilaria-c"
     }
   ]
 }

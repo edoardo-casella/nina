@@ -146,12 +146,15 @@ const off = s => Math.round((day(s) - day(START)) / 864e5);
 const fmt = s => day(s).toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" });
 const RL = { skipper: "skipper", apprentice: "aspirante skipper", marinaio: "marinaio" };
 const rc = r => r === "skipper" ? "skip" : r === "apprentice" ? "app" : r === "marinaio" ? "mar" : "";
-// avatar + link al profilo (foto convenzionale crew/img/<slug>.jpg, fallback a iniziale su errore)
+// avatar + link al profilo. Usa sempre l'id vero (m.id) quando presente: la label
+// m.n e' per l'occhio umano e puo' contenere un punto ("Matilde C.") che romperebbe
+// il link se derivato per slug. slug(m.n) resta solo un fallback per dati vecchi.
 const slug = n => n.toLowerCase().replace(/\s+/g, "-");
-const mhref = m => m.n.startsWith("Edo ") ? "skipper.html" : `membro.html#${slug(m.n)}`;
+const cid = m => m.id || slug(m.n);
+const mhref = m => m.n.startsWith("Edo ") ? "skipper.html" : `membro.html#${cid(m)}`;
 const nameLink = m => `<a class="wholink" href="${mhref(m)}">${avatar(m, "wav")}<span class="wn">${m.n}</span></a>`;
 function imgFail(el){ const s = document.createElement("span"); s.className = el.className + " ph"; s.textContent = el.dataset.i || "?"; el.replaceWith(s); }
-const avatar = (m, cls) => `<img class="${cls}" src="${m.p || "crew/img/" + slug(m.n) + ".jpg"}" alt="" loading="lazy" data-i="${m.n[0]}" onerror="imgFail(this)">`;
+const avatar = (m, cls) => `<img class="${cls}" src="${m.p || "crew/img/" + cid(m) + ".jpg"}" alt="" loading="lazy" data-i="${m.n[0]}" onerror="imgFail(this)">`;
 
 function byDay() {
   const counts = [];

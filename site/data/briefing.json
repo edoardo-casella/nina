@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T12:32+02:00",
+  "generated_at": "2026-07-23T14:53+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-23",
@@ -59,8 +59,8 @@
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 2.1,
-    "max_spread_kn": 9.0,
+    "mean_spread_kn": 2.0,
+    "max_spread_kn": 11.5,
     "confidence": "alta"
   },
   "steps": [
@@ -229,20 +229,20 @@
       "wx": {
         "wmo": 2,
         "tmax": 28.2,
-        "tmin": 26.8,
+        "tmin": 26.9,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 15.9,
-        "gust_max": 20.8,
-        "wind_dir": 9
+        "wind_max": 15.8,
+        "gust_max": 20.6,
+        "wind_dir": 13
       },
       "sailing": {
-        "twa": 54,
-        "andatura": "bolina",
+        "twa": 58,
+        "andatura": "bolina larga",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 12.7,
-        "twd": 9
+        "tws_est": 12.6,
+        "twd": 13
       }
     },
     {
@@ -262,20 +262,20 @@
       "wx": {
         "wmo": 3,
         "tmax": 30.5,
-        "tmin": 22.8,
+        "tmin": 22.9,
         "rain_mm": 0.0,
         "rain_prob": 10,
-        "wind_max": 13.1,
-        "gust_max": 25.1,
-        "wind_dir": 70
+        "wind_max": 12.3,
+        "gust_max": 26.2,
+        "wind_dir": 71
       },
       "sailing": {
-        "twa": 126,
+        "twa": 127,
         "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 10.5,
-        "twd": 70
+        "tws_est": 9.8,
+        "twd": 71
       }
     },
     {
@@ -295,11 +295,11 @@
       "wx": {
         "wmo": 80,
         "tmax": 28.0,
-        "tmin": 24.1,
-        "rain_mm": 2.8,
+        "tmin": 24.6,
+        "rain_mm": 5.0,
         "rain_prob": 55,
-        "wind_max": 14.8,
-        "gust_max": 32.3,
+        "wind_max": 14.9,
+        "gust_max": 31.1,
         "wind_dir": 294
       },
       "sailing": {
@@ -307,7 +307,7 @@
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 11.8,
+        "tws_est": 11.9,
         "twd": 294
       }
     },
@@ -327,21 +327,21 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.0,
-        "tmin": 23.5,
+        "tmax": 28.6,
+        "tmin": 24.1,
         "rain_mm": 0.0,
         "rain_prob": 5,
-        "wind_max": 9.9,
-        "gust_max": 19.8,
-        "wind_dir": 290
+        "wind_max": 8.8,
+        "gust_max": 17.3,
+        "wind_dir": 285
       },
       "sailing": {
-        "twa": 52,
-        "andatura": "bolina",
+        "twa": 57,
+        "andatura": "bolina larga",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 7.9,
-        "twd": 290
+        "tws_est": 7.0,
+        "twd": 285
       }
     },
     {
@@ -361,20 +361,20 @@
       "wx": {
         "wmo": 2,
         "tmax": 31.4,
-        "tmin": 23.6,
+        "tmin": 22.4,
         "rain_mm": 0.0,
         "rain_prob": 0,
         "wind_max": 5.7,
         "gust_max": 12.2,
-        "wind_dir": 196
+        "wind_dir": 167
       },
       "sailing": {
-        "twa": 154,
+        "twa": 177,
         "andatura": "poppa",
         "vela": false,
         "boat_kn": 7.2,
         "tws_est": 4.6,
-        "twd": 196
+        "twd": 167
       }
     }
   ],
@@ -455,12 +455,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 35.9,
-    "rh": 21,
+    "temp": 37.7,
+    "rh": 15,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 6.7,
-    "twd": 316,
-    "sst": 27.3
+    "tws": 5.8,
+    "twd": 320,
+    "sst": 27.7
   }
 }

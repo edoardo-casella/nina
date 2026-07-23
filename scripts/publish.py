@@ -633,7 +633,9 @@ def build_arrivi(v, now: str) -> dict:
     """Dati PUBBLICI per arrivi.html (decisione Edo 2026-07-16): date d'imbarco/
     sbarco per persona, con anzianità e foto dal registro pubblico (crew.json).
     Scritto in site/data/arrivi.json — statico, quindi offline-friendly in rada.
-    Shape del vecchio array inline della pagina: {n, b, l, r, x, fy, p}."""
+    Shape del vecchio array inline della pagina: {n, b, l, r, x, fy, p, id}.
+    'id' e' il crew_id vero (non una slug della label 'n', che puo' contenere
+    un punto — es. "Matilde C." — e rompere silenziosamente il link a membro.html)."""
     try:
         reg = {p["name"]: p for p in
                json.loads((SITE / "crew.json").read_text(encoding="utf-8"))["people"]}
@@ -648,6 +650,7 @@ def build_arrivi(v, now: str) -> dict:
         if p.get("first"): row["fy"] = p["first"]
         photo = c26.get("photo") or p.get("photo")
         if photo: row["p"] = photo
+        if p.get("id"): row["id"] = p["id"]
         crew.append(row)
     dates = sorted(d for m in v["crew"] for d in (m["board"], m["leave"]))
     return {"generated_at": now, "start": dates[0], "end": dates[-1], "crew": crew}
