@@ -22,7 +22,7 @@ if "%CLAUDE_CODE_OAUTH_TOKEN%"=="" (
 )
 
 echo [%date% %time%] form-sync START >> "%LOG%\form-sync.log"
-call claude -p "/form-sync" --permission-mode bypassPermissions --max-turns 30 --output-format json >> "%LOG%\form-sync.log" 2>&1
+call claude -p "/form-sync" --permission-mode bypassPermissions --max-turns 50 --output-format json >> "%LOG%\form-sync.log" 2>&1
 set "RC=%ERRORLEVEL%"
 echo [%date% %time%] form-sync END rc=%RC% >> "%LOG%\form-sync.log"
 
