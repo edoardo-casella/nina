@@ -56,7 +56,7 @@ RISERVATI = {
     "cheTipo": "spiagge", "cheProfondita": "profondita", "Sup": "giochi_acqua",
     "assicurazioneCasco": "assicurazione_casco", "supA": "sup_quota",
 }
-CID_ALIAS = {"edoardo-c": "edo-c", "gabriele-m": "gabri-m", "federico-b": "fede-b"}
+CID_ALIAS = {"edoardo-c": "edo-c", "gabriele-m": "gabri-m", "federico-b": "fede-b", "maria-p": "lavinia-p"}
 
 
 def slugify(s):

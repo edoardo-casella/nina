@@ -46,7 +46,7 @@ NICKS = {
     "ginevra-l": ["Gine", "Gi", "Ginx"],
     "giulia-n": ["Juliet", "Giuli"],
     "ilaria-m": ["Ila"],
-    "lavinia-p": ["Peeiss"],
+    "lavinia-p": ["Peeiss", "Peis"],
     "riccardo-b": ["Branca"],
     "simona-a": ["Simo"],
     "alberto-b": ["Albi"],

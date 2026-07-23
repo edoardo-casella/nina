@@ -8269,10 +8269,16 @@
     "leave": "2026-08-29",
     "role": "crew"
    },
-   "nicks": [
-    "Peeiss"
+   "tags": [
+    "Pastoni epici",
+    "Lettrice al sole"
    ],
-   "sex": "f"
+   "nicks": [
+    "Peeiss",
+    "Peis"
+   ],
+   "sex": "f",
+   "photo": "crew/img/lavinia-p.jpg"
   },
   {
    "id": "simona-a",
