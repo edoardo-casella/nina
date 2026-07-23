@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T10:18+02:00",
+  "generated_at": "2026-07-23T10:40+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-23",
@@ -402,7 +402,7 @@
       "cabin": "Bagno privato"
     },
     {
-      "name": "Bianca B",
+      "name": "Bianca M",
       "role": "crew",
       "board": "2026-08-08",
       "leave": "2026-08-21",
@@ -446,7 +446,7 @@
   ],
   "turns": {
     "cucina_pranzo": "Ginevra L",
-    "cucina_cena": "Bianca B",
+    "cucina_cena": "Bianca M",
     "pulizie_pranzo": "Giacomo N",
     "pulizie_cena": "Matilde C.",
     "check_mattina": "Matilde M",
