@@ -15,7 +15,7 @@
   "grande-ammiraglio": "Grande Ammiraglio",
   "abilitato": "Abilitato al comando"
  },
- "n_total": 66,
+ "n_total": 68,
  "people": [
   {
    "id": "edo-c",
@@ -8349,6 +8349,46 @@
    ],
    "sex": "m",
    "photo": "crew/img/antonio-v.jpg"
+  },
+  {
+   "id": "lorenzo-c",
+   "name": "Lorenzo C.",
+   "trips": 0,
+   "days": 0,
+   "nm": 0,
+   "first": null,
+   "last": null,
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
+   "trips_list": [],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-15",
+    "role": "crew",
+    "note": "Sbarca a Bastia (Corsica) il 15 agosto."
+   },
+   "sex": "m"
+  },
+  {
+   "id": "ilaria-c",
+   "name": "Ilaria C.",
+   "trips": 0,
+   "days": 0,
+   "nm": 0,
+   "first": null,
+   "last": null,
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
+   "trips_list": [],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-15",
+    "role": "crew",
+    "note": "Sbarca a Bastia (Corsica) il 15 agosto."
+   },
+   "sex": "f"
   }
  ]
 }

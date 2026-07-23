@@ -284,6 +284,36 @@
     "pulizie",
     "check"
    ]
+  },
+  {
+   "id": "loc",
+   "name": "Lorenzo C.",
+   "board": "2026-08-08",
+   "leave": "2026-08-15",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": null,
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
+   "id": "ilc",
+   "name": "Ilaria C.",
+   "board": "2026-08-08",
+   "leave": "2026-08-15",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": null,
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
   }
  ],
  "costs": {

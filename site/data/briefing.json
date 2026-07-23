@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T00:08+02:00",
+  "generated_at": "2026-07-23T10:18+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-23",
@@ -53,14 +53,14 @@
   },
   "leg_sailing": {
     "andatura": "traverso",
-    "twa": 92,
+    "twa": 99,
     "vela": false,
     "avg_kn": 6.8
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 1.7,
-    "max_spread_kn": 10.1,
+    "mean_spread_kn": 2.1,
+    "max_spread_kn": 9.0,
     "confidence": "alta"
   },
   "steps": [
@@ -100,7 +100,7 @@
       "depart": "2026-07-23T17:15",
       "eta": "2026-07-23T17:27",
       "hours": 0.2,
-      "avg_score": 33,
+      "avg_score": 34,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -129,9 +129,9 @@
     "name": "Cala Roto (Budelli)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 99,
+    "margin_deg": 98,
     "fetch_km": 15,
-    "why": "vento 291° a 99° dal settore esposto",
+    "why": "vento 292° a 98° dal settore esposto",
     "holding": "sabbia",
     "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
     "verify": true,
@@ -147,9 +147,9 @@
       "name": "Cala Roto (Budelli)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 99,
+      "margin_deg": 98,
       "fetch_km": 15,
-      "why": "vento 291° a 99° dal settore esposto",
+      "why": "vento 292° a 98° dal settore esposto",
       "holding": "sabbia",
       "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
       "verify": true,
@@ -164,9 +164,9 @@
       "name": "Baie de Rondinara",
       "score": 100,
       "light": "verde",
-      "margin_deg": 139,
+      "margin_deg": 138,
       "fetch_km": 40,
-      "why": "vento 291° a 139° dal settore esposto",
+      "why": "vento 292° a 138° dal settore esposto",
       "holding": "sabbia, ottima",
       "notes": "Rifugio classico da Maestrale. Affollata in agosto.",
       "verify": true,
@@ -181,9 +181,9 @@
       "name": "Golfe de Porto-Vecchio",
       "score": 100,
       "light": "verde",
-      "margin_deg": 109,
+      "margin_deg": 108,
       "fetch_km": 30,
-      "why": "vento 291° a 109° dal settore esposto",
+      "why": "vento 292° a 108° dal settore esposto",
       "holding": "fango/sabbia",
       "notes": "Molte cale interne, riparo in quasi ogni condizione.",
       "verify": true,
@@ -198,9 +198,9 @@
       "name": "Cala Coticcio (Caprera)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 109,
+      "margin_deg": 108,
       "fetch_km": 12,
-      "why": "vento 291° a 109° dal settore esposto",
+      "why": "vento 292° a 108° dal settore esposto",
       "holding": "sabbia",
       "notes": "Sosta diurna. Sbarco a terra regolamentato.",
       "verify": true,
@@ -228,21 +228,21 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.3,
-        "tmin": 27.1,
+        "tmax": 28.2,
+        "tmin": 26.8,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 15.5,
-        "gust_max": 20.4,
-        "wind_dir": 27
+        "wind_max": 15.9,
+        "gust_max": 20.8,
+        "wind_dir": 9
       },
       "sailing": {
-        "twa": 72,
-        "andatura": "bolina larga",
+        "twa": 54,
+        "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 12.4,
-        "twd": 27
+        "tws_est": 12.7,
+        "twd": 9
       }
     },
     {
@@ -261,21 +261,21 @@
       },
       "wx": {
         "wmo": 3,
-        "tmax": 30.6,
-        "tmin": 23.7,
+        "tmax": 30.5,
+        "tmin": 22.8,
         "rain_mm": 0.0,
-        "rain_prob": 7,
-        "wind_max": 12.5,
-        "gust_max": 24.1,
-        "wind_dir": 71
+        "rain_prob": 10,
+        "wind_max": 13.1,
+        "gust_max": 25.1,
+        "wind_dir": 70
       },
       "sailing": {
-        "twa": 127,
+        "twa": 126,
         "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 10.0,
-        "twd": 71
+        "tws_est": 10.5,
+        "twd": 70
       }
     },
     {
@@ -294,12 +294,12 @@
       },
       "wx": {
         "wmo": 80,
-        "tmax": 28.1,
-        "tmin": 24.4,
-        "rain_mm": 6.1,
-        "rain_prob": 40,
-        "wind_max": 14.4,
-        "gust_max": 29.7,
+        "tmax": 28.0,
+        "tmin": 24.1,
+        "rain_mm": 2.8,
+        "rain_prob": 44,
+        "wind_max": 14.8,
+        "gust_max": 32.3,
         "wind_dir": 294
       },
       "sailing": {
@@ -307,7 +307,7 @@
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 11.5,
+        "tws_est": 11.8,
         "twd": 294
       }
     },
@@ -327,21 +327,21 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.5,
-        "tmin": 23.6,
+        "tmax": 28.0,
+        "tmin": 23.5,
         "rain_mm": 0.0,
-        "rain_prob": 3,
-        "wind_max": 10.9,
-        "gust_max": 21.4,
-        "wind_dir": 303
+        "rain_prob": 8,
+        "wind_max": 9.9,
+        "gust_max": 19.8,
+        "wind_dir": 290
       },
       "sailing": {
-        "twa": 39,
+        "twa": 52,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 8.7,
-        "twd": 303
+        "tws_est": 7.9,
+        "twd": 290
       }
     },
     {
@@ -360,21 +360,21 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 31.0,
-        "tmin": 24.7,
+        "tmax": 31.4,
+        "tmin": 23.6,
         "rain_mm": 0.0,
-        "rain_prob": 3,
-        "wind_max": 6.4,
-        "gust_max": 13.2,
-        "wind_dir": 133
+        "rain_prob": 0,
+        "wind_max": 5.7,
+        "gust_max": 12.2,
+        "wind_dir": 196
       },
       "sailing": {
-        "twa": 143,
-        "andatura": "lasco",
+        "twa": 154,
+        "andatura": "poppa",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 5.1,
-        "twd": 133
+        "tws_est": 4.6,
+        "twd": 196
       }
     }
   ],
@@ -428,6 +428,20 @@
       "board": "2026-08-08",
       "leave": "2026-08-16",
       "cabin": null
+    },
+    {
+      "name": "Lorenzo C.",
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-15",
+      "cabin": null
+    },
+    {
+      "name": "Ilaria C.",
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-15",
+      "cabin": null
     }
   ],
   "turns": {
@@ -436,17 +450,17 @@
     "pulizie_pranzo": "Giacomo N",
     "pulizie_cena": "Matilde C.",
     "check_mattina": "Matilde M",
-    "check_pomeriggio": "Ginevra L"
+    "check_pomeriggio": "Lorenzo C."
   },
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 27.0,
-    "rh": 64,
+    "temp": 31.9,
+    "rh": 38,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 1.7,
-    "twd": 297,
-    "sst": 27.4
+    "tws": 6.4,
+    "twd": 301,
+    "sst": 27.2
   }
 }
