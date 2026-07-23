@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T11:33+02:00",
+  "generated_at": "2026-07-23T11:39+02:00",
   "sim": true,
   "day": "2026-07-23",
   "start_date": "2026-07-23",
@@ -759,7 +759,7 @@
       "verify": true,
       "tier": "programma",
       "crew_delta": {
-        "on_n": 4,
+        "on_n": 2,
         "off_n": 2
       },
       "wx": null,
