@@ -82,6 +82,7 @@ NICKS = {
     "silvano-b": ["il nano", "Nanu"],
     "tonino-l": ["Tony"],
     "umberto-f": ["Umbe", "Fasa"],
+    "lorenzo-c": ["Costanz"],
 }
 
 # Crew femminili (crew_id) -> per il "detto/detta" sui profili. Attaccato come "sex".

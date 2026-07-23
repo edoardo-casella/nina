@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-23T14:53+02:00",
+  "generated_at": "2026-07-24T00:02+02:00",
   "sim": true,
-  "day": "2026-07-23",
-  "start_date": "2026-07-23",
-  "end_date": "2026-08-13",
+  "day": "2026-07-24",
+  "start_date": "2026-07-24",
+  "end_date": "2026-08-14",
   "tiers": {
     "piena": "previsione affidabile (fino a ~7 giorni)",
     "degradata": "affidabilita' ridotta (8-10 giorni)",
@@ -11,7 +11,7 @@
   },
   "days": [
     {
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "rest": false,
       "night": false,
       "frm": "Cannigione",
@@ -53,23 +53,23 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 35.1,
-        "tmin": 25.4,
+        "wmo": 2,
+        "tmax": 31.2,
+        "tmin": 24.6,
         "rain_prob": 0,
-        "wind_max": 14.9,
-        "gust_max": 28.0,
-        "wind_dir": 278
+        "wind_max": 9.8,
+        "gust_max": 18.5,
+        "wind_dir": 27
       },
       "wave": {
-        "hmax": 0.76,
-        "dir": 273,
-        "period": 3.35
+        "hmax": 0.54,
+        "dir": 303,
+        "period": 3.8
       },
-      "sst": 27.8
+      "sst": 27.9
     },
     {
-      "date": "2026-07-24",
+      "date": "2026-07-25",
       "rest": false,
       "night": false,
       "frm": "Cala Portese",
@@ -123,22 +123,22 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.2,
-        "tmin": 26.9,
-        "rain_prob": 0,
-        "wind_max": 15.8,
-        "gust_max": 20.6,
-        "wind_dir": 13
+        "tmax": 30.3,
+        "tmin": 27.1,
+        "rain_prob": 3,
+        "wind_max": 12.6,
+        "gust_max": 16.7,
+        "wind_dir": 95
       },
       "wave": {
-        "hmax": 0.56,
-        "dir": 301,
-        "period": 4.2
+        "hmax": 0.72,
+        "dir": 72,
+        "period": 4.3
       },
-      "sst": 27.5
+      "sst": 27.7
     },
     {
-      "date": "2026-07-25",
+      "date": "2026-07-26",
       "rest": false,
       "night": false,
       "frm": "Isole Lavezzi",
@@ -191,23 +191,23 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 30.5,
-        "tmin": 22.9,
-        "rain_prob": 10,
-        "wind_max": 12.3,
-        "gust_max": 26.2,
-        "wind_dir": 71
+        "wmo": 96,
+        "tmax": 27.3,
+        "tmin": 24.5,
+        "rain_prob": 45,
+        "wind_max": 19.3,
+        "gust_max": 38.5,
+        "wind_dir": 273
       },
       "wave": {
-        "hmax": 0.76,
-        "dir": 70,
-        "period": 3.95
+        "hmax": 1.74,
+        "dir": 263,
+        "period": 5.8
       },
-      "sst": 27.3
+      "sst": 27.2
     },
     {
-      "date": "2026-07-26",
+      "date": "2026-07-27",
       "rest": false,
       "night": false,
       "frm": "Bonifacio",
@@ -260,23 +260,23 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 80,
-        "tmax": 28.0,
-        "tmin": 24.6,
-        "rain_prob": 55,
-        "wind_max": 14.9,
-        "gust_max": 31.1,
-        "wind_dir": 294
+        "wmo": 2,
+        "tmax": 29.6,
+        "tmin": 24.9,
+        "rain_prob": 3,
+        "wind_max": 12.8,
+        "gust_max": 26.0,
+        "wind_dir": 304
       },
       "wave": {
-        "hmax": 1.86,
-        "dir": 256,
-        "period": 6.45
+        "hmax": 2.32,
+        "dir": 285,
+        "period": 6.75
       },
-      "sst": 26.7
+      "sst": 26.3
     },
     {
-      "date": "2026-07-27",
+      "date": "2026-07-28",
       "rest": false,
       "night": false,
       "frm": "Tizzano",
@@ -319,22 +319,22 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.6,
-        "tmin": 24.1,
-        "rain_prob": 5,
-        "wind_max": 8.8,
-        "gust_max": 17.3,
-        "wind_dir": 285
+        "tmax": 29.7,
+        "tmin": 22.8,
+        "rain_prob": 0,
+        "wind_max": 6.7,
+        "gust_max": 13.2,
+        "wind_dir": 278
       },
       "wave": {
-        "hmax": 2.16,
-        "dir": 283,
-        "period": 6.9
+        "hmax": 1.5,
+        "dir": 280,
+        "period": 6.5
       },
-      "sst": 26.5
+      "sst": 26.9
     },
     {
-      "date": "2026-07-28",
+      "date": "2026-07-29",
       "rest": false,
       "night": false,
       "frm": "Campomoro",
@@ -365,23 +365,23 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 31.4,
-        "tmin": 22.4,
-        "rain_prob": 0,
-        "wind_max": 5.7,
-        "gust_max": 12.2,
-        "wind_dir": 167
+        "wmo": 1,
+        "tmax": 32.9,
+        "tmin": 25.1,
+        "rain_prob": 4,
+        "wind_max": 5.5,
+        "gust_max": 12.1,
+        "wind_dir": 315
       },
       "wave": {
-        "hmax": 1.42,
-        "dir": 274,
-        "period": 6.4
+        "hmax": 0.52,
+        "dir": 265,
+        "period": 4.8
       },
-      "sst": 28.0
+      "sst": 28.2
     },
     {
-      "date": "2026-07-29",
+      "date": "2026-07-30",
       "rest": false,
       "night": false,
       "frm": "Isolella",
@@ -412,23 +412,23 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 2,
+        "wmo": 1,
         "tmax": 34.1,
-        "tmin": 23.9,
+        "tmin": 24.1,
         "rain_prob": 0,
-        "wind_max": 6.0,
-        "gust_max": 16.1,
-        "wind_dir": 268
+        "wind_max": 5.4,
+        "gust_max": 15.0,
+        "wind_dir": 261
       },
       "wave": {
-        "hmax": 0.46,
-        "dir": 257,
-        "period": 4.75
+        "hmax": 0.1,
+        "dir": 254,
+        "period": 3.9
       },
-      "sst": 28.1
+      "sst": 28.3
     },
     {
-      "date": "2026-07-30",
+      "date": "2026-07-31",
       "rest": false,
       "night": false,
       "frm": "Girolata",
@@ -459,23 +459,23 @@
         "off_n": 3
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 35.7,
-        "tmin": 26.6,
-        "rain_prob": 2,
-        "wind_max": 5.2,
-        "gust_max": 19.6,
-        "wind_dir": 286
+        "wmo": 0,
+        "tmax": 39.8,
+        "tmin": 24.6,
+        "rain_prob": 0,
+        "wind_max": 3.7,
+        "gust_max": 20.2,
+        "wind_dir": 5
       },
       "wave": {
-        "hmax": 0.08,
-        "dir": 253,
-        "period": 3.65
+        "hmax": 0.04,
+        "dir": 256,
+        "period": 4.05
       },
-      "sst": 28.4
+      "sst": 28.3
     },
     {
-      "date": "2026-07-31",
+      "date": "2026-08-01",
       "rest": false,
       "night": false,
       "frm": "San Fiorenzo",
@@ -518,18 +518,18 @@
       },
       "wx": {
         "wmo": 0,
-        "tmax": 27.0,
-        "tmin": 26.0,
+        "tmax": 28.3,
+        "tmin": 27.5,
         "rain_prob": 0,
-        "wind_max": 8.2,
-        "gust_max": 12.2,
-        "wind_dir": 274
+        "wind_max": 9.6,
+        "gust_max": 13.0,
+        "wind_dir": 258
       },
       "wave": null,
       "sst": null
     },
     {
-      "date": "2026-08-01",
+      "date": "2026-08-02",
       "rest": false,
       "night": false,
       "frm": "Centuri",
@@ -561,18 +561,18 @@
       },
       "wx": {
         "wmo": 0,
-        "tmax": 36.8,
-        "tmin": 25.2,
+        "tmax": 40.4,
+        "tmin": 27.1,
         "rain_prob": 0,
-        "wind_max": 4.2,
-        "gust_max": 16.9,
-        "wind_dir": 285
+        "wind_max": 3.3,
+        "gust_max": 12.8,
+        "wind_dir": 286
       },
       "wave": null,
       "sst": null
     },
     {
-      "date": "2026-08-02",
+      "date": "2026-08-03",
       "rest": false,
       "night": true,
       "frm": "Erbalunga",
@@ -615,18 +615,18 @@
       },
       "wx": {
         "wmo": 0,
-        "tmax": 33.4,
-        "tmin": 27.2,
+        "tmax": 35.7,
+        "tmin": 29.3,
         "rain_prob": 0,
-        "wind_max": 5.5,
+        "wind_max": 5.3,
         "gust_max": 15.9,
-        "wind_dir": 68
+        "wind_dir": 90
       },
       "wave": null,
       "sst": null
     },
     {
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "rest": false,
       "night": false,
       "frm": "Favone",
@@ -683,7 +683,7 @@
       "sst": null
     },
     {
-      "date": "2026-08-04",
+      "date": "2026-08-05",
       "rest": false,
       "night": true,
       "frm": "Palombaggia",
@@ -729,7 +729,7 @@
       "sst": null
     },
     {
-      "date": "2026-08-05",
+      "date": "2026-08-06",
       "rest": true,
       "night": false,
       "frm": "Porto Rotondo",

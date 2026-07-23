@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-23T14:53+02:00",
+  "generated_at": "2026-07-24T00:02+02:00",
   "approved": false,
   "approved_by": null,
-  "day": "2026-07-23",
+  "day": "2026-07-24",
   "boat": "Niña",
   "voyage": "Corsica & La Maddalena 2026",
   "captains": [
@@ -26,10 +26,10 @@
     "leg": "Cannigione -> Cala Coticcio (Caprera)",
     "nm": 6.1,
     "cog": 10,
-    "depart": "2026-07-23T08:00",
-    "eta": "2026-07-23T08:51",
+    "depart": "2026-07-24T08:00",
+    "eta": "2026-07-24T08:51",
     "hours": 0.9,
-    "avg_score": 35,
+    "avg_score": 38,
     "sail_pct": 0,
     "abort": false,
     "detail": [],
@@ -53,14 +53,14 @@
   },
   "leg_sailing": {
     "andatura": "traverso",
-    "twa": 99,
+    "twa": 93,
     "vela": false,
     "avg_kn": 6.8
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 2.0,
-    "max_spread_kn": 11.5,
+    "mean_spread_kn": 2.3,
+    "max_spread_kn": 10.3,
     "confidence": "alta"
   },
   "steps": [
@@ -68,10 +68,10 @@
       "leg": "Cannigione -> Cala Coticcio (Caprera)",
       "nm": 6.1,
       "cog": 10,
-      "depart": "2026-07-23T08:00",
-      "eta": "2026-07-23T08:51",
+      "depart": "2026-07-24T08:00",
+      "eta": "2026-07-24T08:51",
       "hours": 0.9,
-      "avg_score": 35,
+      "avg_score": 38,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -97,10 +97,10 @@
       "leg": "Cala Coticcio (Caprera) -> Cala Portese",
       "nm": 1.5,
       "cog": 183,
-      "depart": "2026-07-23T17:15",
-      "eta": "2026-07-23T17:27",
+      "depart": "2026-07-24T17:15",
+      "eta": "2026-07-24T17:27",
       "hours": 0.2,
-      "avg_score": 34,
+      "avg_score": 35,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -125,82 +125,65 @@
   "stop_reason": null,
   "tonight": null,
   "plan_b": {
-    "id": "budelli",
-    "name": "Cala Roto (Budelli)",
+    "id": "lavezzi",
+    "name": "Cala Lazarina (Lavezzi)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 98,
-    "fetch_km": 15,
-    "why": "vento 292° a 98° dal settore esposto",
-    "holding": "sabbia",
-    "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
+    "margin_deg": 100,
+    "fetch_km": 30,
+    "why": "vento 120° a 100° dal settore esposto",
+    "holding": "sabbia tra roccia",
+    "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
     "verify": true,
     "rating": 5,
     "photo": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
-      "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
     }
   },
   "ranked": [
     {
-      "id": "budelli",
-      "name": "Cala Roto (Budelli)",
+      "id": "lavezzi",
+      "name": "Cala Lazarina (Lavezzi)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 98,
-      "fetch_km": 15,
-      "why": "vento 292° a 98° dal settore esposto",
-      "holding": "sabbia",
-      "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
-      "verify": true,
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
-      }
-    },
-    {
-      "id": "rondinara",
-      "name": "Baie de Rondinara",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 138,
-      "fetch_km": 40,
-      "why": "vento 292° a 138° dal settore esposto",
-      "holding": "sabbia, ottima",
-      "notes": "Rifugio classico da Maestrale. Affollata in agosto.",
-      "verify": true,
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
-      }
-    },
-    {
-      "id": "porto_vecchio",
-      "name": "Golfe de Porto-Vecchio",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 108,
+      "margin_deg": 100,
       "fetch_km": 30,
-      "why": "vento 292° a 108° dal settore esposto",
-      "holding": "fango/sabbia",
-      "notes": "Molte cale interne, riparo in quasi ogni condizione.",
+      "why": "vento 120° a 100° dal settore esposto",
+      "holding": "sabbia tra roccia",
+      "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
       "verify": true,
-      "rating": 3,
+      "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg/500px-Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Baie_de_Porto-Vecchio,_Corse_-_Patrick_Nouhailler_-_panoramio.jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+      }
+    },
+    {
+      "id": "sanguinaires",
+      "name": "Iles Sanguinaires",
+      "score": 95,
+      "light": "verde",
+      "margin_deg": 80,
+      "fetch_km": 80,
+      "why": "vento 120° a 80° dal settore esposto",
+      "holding": "sabbia/roccia",
+      "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
+      "verify": true,
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
       }
     },
     {
       "id": "coticcio",
       "name": "Cala Coticcio (Caprera)",
-      "score": 100,
+      "score": 94,
       "light": "verde",
-      "margin_deg": 108,
+      "margin_deg": 0,
       "fetch_km": 12,
-      "why": "vento 292° a 108° dal settore esposto",
+      "why": "vento 120° entra in rada (settore 40-140°), fetch 12 km",
       "holding": "sabbia",
       "notes": "Sosta diurna. Sbarco a terra regolamentato.",
       "verify": true,
@@ -209,11 +192,28 @@
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
         "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
       }
+    },
+    {
+      "id": "budelli",
+      "name": "Cala Roto (Budelli)",
+      "score": 93,
+      "light": "verde",
+      "margin_deg": 0,
+      "fetch_km": 15,
+      "why": "vento 120° entra in rada (settore 30-130°), fetch 15 km",
+      "holding": "sabbia",
+      "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
+      "verify": true,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+      }
     }
   ],
   "outlook": [
     {
-      "date": "2026-07-24",
+      "date": "2026-07-25",
       "rest": false,
       "night": false,
       "frm": "Cala Portese",
@@ -228,25 +228,25 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.2,
-        "tmin": 26.9,
+        "tmax": 30.3,
+        "tmin": 27.1,
         "rain_mm": 0.0,
-        "rain_prob": 0,
-        "wind_max": 15.8,
-        "gust_max": 20.6,
-        "wind_dir": 13
+        "rain_prob": 3,
+        "wind_max": 12.6,
+        "gust_max": 16.7,
+        "wind_dir": 95
       },
       "sailing": {
-        "twa": 58,
-        "andatura": "bolina larga",
+        "twa": 140,
+        "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 12.6,
-        "twd": 13
+        "tws_est": 10.1,
+        "twd": 95
       }
     },
     {
-      "date": "2026-07-25",
+      "date": "2026-07-26",
       "rest": false,
       "night": false,
       "frm": "Isole Lavezzi",
@@ -260,26 +260,26 @@
         "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
       },
       "wx": {
-        "wmo": 3,
-        "tmax": 30.5,
-        "tmin": 22.9,
-        "rain_mm": 0.0,
-        "rain_prob": 10,
-        "wind_max": 12.3,
-        "gust_max": 26.2,
-        "wind_dir": 71
+        "wmo": 96,
+        "tmax": 27.3,
+        "tmin": 24.5,
+        "rain_mm": 12.1,
+        "rain_prob": 45,
+        "wind_max": 19.3,
+        "gust_max": 38.5,
+        "wind_dir": 273
       },
       "sailing": {
-        "twa": 127,
-        "andatura": "lasco",
+        "twa": 31,
+        "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 9.8,
-        "twd": 71
+        "tws_est": 15.4,
+        "twd": 273
       }
     },
     {
-      "date": "2026-07-26",
+      "date": "2026-07-27",
       "rest": false,
       "night": false,
       "frm": "Bonifacio",
@@ -293,26 +293,26 @@
         "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
       },
       "wx": {
-        "wmo": 80,
-        "tmax": 28.0,
-        "tmin": 24.6,
-        "rain_mm": 5.0,
-        "rain_prob": 55,
-        "wind_max": 14.9,
-        "gust_max": 31.1,
-        "wind_dir": 294
+        "wmo": 2,
+        "tmax": 29.6,
+        "tmin": 24.9,
+        "rain_mm": 0.0,
+        "rain_prob": 3,
+        "wind_max": 12.8,
+        "gust_max": 26.0,
+        "wind_dir": 304
       },
       "sailing": {
-        "twa": 9,
+        "twa": 1,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 11.9,
-        "twd": 294
+        "tws_est": 10.2,
+        "twd": 304
       }
     },
     {
-      "date": "2026-07-27",
+      "date": "2026-07-28",
       "rest": false,
       "night": false,
       "frm": "Tizzano",
@@ -327,25 +327,25 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 28.6,
-        "tmin": 24.1,
+        "tmax": 29.7,
+        "tmin": 22.8,
         "rain_mm": 0.0,
-        "rain_prob": 5,
-        "wind_max": 8.8,
-        "gust_max": 17.3,
-        "wind_dir": 285
+        "rain_prob": 0,
+        "wind_max": 6.7,
+        "gust_max": 13.2,
+        "wind_dir": 278
       },
       "sailing": {
-        "twa": 57,
+        "twa": 64,
         "andatura": "bolina larga",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 7.0,
-        "twd": 285
+        "tws_est": 5.4,
+        "twd": 278
       }
     },
     {
-      "date": "2026-07-28",
+      "date": "2026-07-29",
       "rest": false,
       "night": false,
       "frm": "Campomoro",
@@ -359,22 +359,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 31.4,
-        "tmin": 22.4,
+        "wmo": 1,
+        "tmax": 32.9,
+        "tmin": 25.1,
         "rain_mm": 0.0,
-        "rain_prob": 0,
-        "wind_max": 5.7,
-        "gust_max": 12.2,
-        "wind_dir": 167
+        "rain_prob": 4,
+        "wind_max": 5.5,
+        "gust_max": 12.1,
+        "wind_dir": 315
       },
       "sailing": {
-        "twa": 177,
-        "andatura": "poppa",
+        "twa": 35,
+        "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 4.6,
-        "twd": 167
+        "tws_est": 4.4,
+        "twd": 315
       }
     }
   ],
@@ -455,12 +455,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 37.7,
-    "rh": 15,
+    "temp": 26.4,
+    "rh": 57,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 5.8,
-    "twd": 320,
-    "sst": 27.7
+    "tws": 7.6,
+    "twd": 274,
+    "sst": 27.6
   }
 }

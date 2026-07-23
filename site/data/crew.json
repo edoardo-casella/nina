@@ -8375,7 +8375,15 @@
     "role": "crew",
     "note": "Sbarca a Bastia (Corsica) il 15 agosto."
    },
-   "sex": "m"
+   "tags": [
+    "Ormeggi",
+    "Skipper del tender"
+   ],
+   "nicks": [
+    "Costanz"
+   ],
+   "sex": "m",
+   "photo": "crew/img/lorenzo-c.jpg"
   },
   {
    "id": "ilaria-c",
