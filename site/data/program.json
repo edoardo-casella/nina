@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T11:04+02:00",
+  "generated_at": "2026-07-23T11:33+02:00",
   "sim": true,
   "day": "2026-07-23",
   "start_date": "2026-07-23",
@@ -263,7 +263,7 @@
         "wmo": 80,
         "tmax": 28.0,
         "tmin": 24.1,
-        "rain_prob": 44,
+        "rain_prob": 55,
         "wind_max": 14.8,
         "gust_max": 32.3,
         "wind_dir": 294
@@ -321,7 +321,7 @@
         "wmo": 2,
         "tmax": 28.0,
         "tmin": 23.5,
-        "rain_prob": 8,
+        "rain_prob": 5,
         "wind_max": 9.9,
         "gust_max": 19.8,
         "wind_dir": 290
