@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T11:39+02:00",
+  "generated_at": "2026-07-23T12:21+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-23",
@@ -455,12 +455,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 34.3,
-    "rh": 27,
+    "temp": 35.9,
+    "rh": 21,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 7.0,
-    "twd": 312,
+    "tws": 6.7,
+    "twd": 316,
     "sst": 27.3
   }
 }
