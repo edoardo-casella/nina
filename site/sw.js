@@ -8,9 +8,9 @@
 // SHELL si bumpa a ogni release del guscio; DATA NON si rinomina mai
 // (l'activate cancella le cache con altri nomi: si perderebbe l'ultimo
 // briefing buono per l'offline).
-const SHELL = "nina-shell-v98";
+const SHELL = "nina-shell-v99";
 const DATA = "nina-data-v1";
-const FILES = ["./", "./index.html", "./skipper.html", "./classifica.html", "./aneddoti.html", "./mete.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./viaggio.html", "./paese.html", "./foto.html", "./manifesto.html", "./unisciti.html", "./login.html", "./profilo.html", "./privacy.html", "./theme.js", "./nav.js", "./ranks.js", "./config.js", "./auth.js", "./manifest.json",
+const FILES = ["./", "./index.html", "./skipper.html", "./classifica.html", "./aneddoti.html", "./mete.html", "./barca.html", "./arrivi.html", "./avionica.html", "./guida.html", "./membro.html", "./viaggio.html", "./paese.html", "./foto.html", "./manifesto.html", "./unisciti.html", "./login.html", "./profilo.html", "./privacy.html", "./cielo.html", "./theme.js", "./nav.js", "./ranks.js", "./config.js", "./auth.js", "./manifest.json",
                "./icon-192.png", "./icon-512.png", "./icon-180.png"];
 // niente conti.json: i dati riservati (conti, arrivi) stanno su Supabase dietro
 // login e NON devono mai passare da questa cache

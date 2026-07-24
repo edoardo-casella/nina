@@ -614,6 +614,8 @@ function skyStrip(hours) {
     ? `<h2>Cielo e temperatura</h2><div class="ribbon"><div class="sky">${slots.join("")}</div></div>` : "";
 }
 
+const azLabel = d => d == null ? "" : ` · ${comp(d)} ${Math.round(d)}°`;
+const sunsetBadge = r => r && r.sunset_view ? ` <span title="vista libera sul tramonto">🌅</span>` : "";
 function astroCard(astro, day) {
   if (!astro || !astro.length) return "";
   const t = astro.find(a => a.date === day) ?? astro[0];
@@ -621,10 +623,10 @@ function astroCard(astro, day) {
     `${a.emoji} ${new Date(a.date + "T12:00").toLocaleDateString("it", { weekday: "short" })}`).join(" · ");
   return `<h2>Sole e luna</h2>
   <div class="leg"><div class="facts">
-    <div class="fact"><b>${esc(t.sunrise ?? "—")}</b><i>alba${t.sunrise_az != null ? " · " + comp(t.sunrise_az) : ""}</i></div>
-    <div class="fact"><b>${esc(t.sunset ?? "—")}</b><i>tramonto${t.sunset_az != null ? " · " + comp(t.sunset_az) : ""}</i></div>
-    <div class="fact"><b>${esc(t.moonrise ?? "—")}</b><i>sorge luna${t.moonrise_az != null ? " · " + comp(t.moonrise_az) : ""}</i></div>
-    <div class="fact"><b>${esc(t.moonset ?? "—")}</b><i>cala luna${t.moonset_az != null ? " · " + comp(t.moonset_az) : ""}</i></div>
+    <div class="fact"><b>${esc(t.sunrise ?? "—")}</b><i>alba${azLabel(t.sunrise_az)}</i></div>
+    <div class="fact"><b>${esc(t.sunset ?? "—")}</b><i>tramonto${azLabel(t.sunset_az)}</i></div>
+    <div class="fact"><b>${esc(t.moonrise ?? "—")}</b><i>sorge luna${azLabel(t.moonrise_az)}</i></div>
+    <div class="fact"><b>${esc(t.moonset ?? "—")}</b><i>cala luna${azLabel(t.moonset_az)}</i></div>
     <div class="fact"><b>${t.emoji ?? "—"}${t.illum_pct != null ? " " + t.illum_pct + "%" : ""}</b><i>${esc(t.name ?? "fase n/d")}</i></div>
   </div>
   ${next ? `<p style="margin-top:.7rem;font-size:.8rem;color:var(--soft)">Prossime notti: ${next}</p>` : ""}
@@ -1159,13 +1161,13 @@ function render(b, wx, c, prog) {
   <h2>Stanotte</h2>
   ${b.leg?.night ? `<p class="water" style="font-size:.95rem">🌙 In navigazione — arrivo all'alba a ${esc(b.leg.leg.split(/ (?:->|→) /)[1] ?? "destinazione")}. Turni di guardia decisi dagli skipper.</p>` :
   rada ? `<div class="rada"><div class="dot ${rada.light}"></div>
-      <div><h3>${destLink(rada.name, rada.id)} ${stars(rada.rating)}</h3><p class="water">${esc(rada.why)} · fondo ${esc(rada.holding)}</p>
+      <div><h3>${destLink(rada.name, rada.id)} ${stars(rada.rating)}${sunsetBadge(rada)}</h3><p class="water">${esc(rada.why)} · fondo ${esc(rada.holding)}</p>
       ${!t ? `<p style="font-size:.78rem;color:var(--soft)">la più riparata col vento previsto — la tappa esatta la fissa il piano</p>` : ""}</div>
       ${thumb(rada.photo, rada.name)}<div class="pts num">${rada.score}</div></div>` : `<p>Rada non definita.</p>`}
-  ${pb && pb.id !== rada?.id ? `<div class="b-plan"><b>Piano B</b><span class="water">${destLink(pb.name, pb.id)}</span> — ${esc(pb.why)}.</div>` : ""}
+  ${pb && pb.id !== rada?.id ? `<div class="b-plan"><b>Piano B</b><span class="water">${destLink(pb.name, pb.id)}</span>${sunsetBadge(pb)} — ${esc(pb.why)}.</div>` : ""}
   <details><summary>Le altre rade con questo vento</summary>
     ${b.ranked.filter(r => r.id !== rada?.id && r.id !== pb?.id).map(r => `<div class="rada"><div class="dot ${r.light}"></div>
-      <div><h3>${destLink(r.name, r.id)}</h3><p class="water">${esc(r.why)}</p></div>
+      <div><h3>${destLink(r.name, r.id)}${sunsetBadge(r)}</h3><p class="water">${esc(r.why)}</p></div>
       <div class="pts num">${r.score}</div></div>`).join("")}
   </details>
 

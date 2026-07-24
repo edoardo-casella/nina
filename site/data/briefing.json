@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T00:02+02:00",
+  "generated_at": "2026-07-24T11:42+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-24",
@@ -53,14 +53,14 @@
   },
   "leg_sailing": {
     "andatura": "traverso",
-    "twa": 93,
+    "twa": 103,
     "vela": false,
     "avg_kn": 6.8
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 2.3,
-    "max_spread_kn": 10.3,
+    "mean_spread_kn": 1.9,
+    "max_spread_kn": 7.4,
     "confidence": "alta"
   },
   "steps": [
@@ -129,12 +129,14 @@
     "name": "Cala Lazarina (Lavezzi)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 100,
+    "margin_deg": 86,
     "fetch_km": 30,
-    "why": "vento 120° a 100° dal settore esposto",
+    "why": "vento 106° a 86° dal settore esposto",
     "holding": "sabbia tra roccia",
     "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
     "verify": true,
+    "sunset_view": true,
+    "sunset_bonus": 6,
     "rating": 5,
     "photo": {
       "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
@@ -147,12 +149,14 @@
       "name": "Cala Lazarina (Lavezzi)",
       "score": 100,
       "light": "verde",
-      "margin_deg": 100,
+      "margin_deg": 86,
       "fetch_km": 30,
-      "why": "vento 120° a 100° dal settore esposto",
+      "why": "vento 106° a 86° dal settore esposto",
       "holding": "sabbia tra roccia",
       "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
       "verify": true,
+      "sunset_view": true,
+      "sunset_bonus": 6,
       "rating": 5,
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
@@ -162,14 +166,16 @@
     {
       "id": "sanguinaires",
       "name": "Iles Sanguinaires",
-      "score": 95,
+      "score": 100,
       "light": "verde",
-      "margin_deg": 80,
+      "margin_deg": 94,
       "fetch_km": 80,
-      "why": "vento 120° a 80° dal settore esposto",
+      "why": "vento 106° a 94° dal settore esposto",
       "holding": "sabbia/roccia",
       "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
       "verify": true,
+      "sunset_view": true,
+      "sunset_bonus": 6,
       "rating": 4,
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
@@ -177,37 +183,41 @@
       }
     },
     {
-      "id": "coticcio",
-      "name": "Cala Coticcio (Caprera)",
-      "score": 94,
-      "light": "verde",
-      "margin_deg": 0,
-      "fetch_km": 12,
-      "why": "vento 120° entra in rada (settore 40-140°), fetch 12 km",
-      "holding": "sabbia",
-      "notes": "Sosta diurna. Sbarco a terra regolamentato.",
-      "verify": true,
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
-      }
-    },
-    {
       "id": "budelli",
       "name": "Cala Roto (Budelli)",
-      "score": 93,
+      "score": 92,
       "light": "verde",
       "margin_deg": 0,
       "fetch_km": 15,
-      "why": "vento 120° entra in rada (settore 30-130°), fetch 15 km",
+      "why": "vento 106° entra in rada (settore 30-130°), fetch 15 km",
       "holding": "sabbia",
       "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
       "verify": true,
+      "sunset_view": false,
+      "sunset_bonus": 0,
       "rating": 5,
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
         "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+      }
+    },
+    {
+      "id": "coticcio",
+      "name": "Cala Coticcio (Caprera)",
+      "score": 92,
+      "light": "verde",
+      "margin_deg": 0,
+      "fetch_km": 12,
+      "why": "vento 106° entra in rada (settore 40-140°), fetch 12 km",
+      "holding": "sabbia",
+      "notes": "Sosta diurna. Sbarco a terra regolamentato.",
+      "verify": true,
+      "sunset_view": false,
+      "sunset_bonus": 0,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
       }
     }
   ],
@@ -229,20 +239,20 @@
       "wx": {
         "wmo": 2,
         "tmax": 30.3,
-        "tmin": 27.1,
+        "tmin": 26.5,
         "rain_mm": 0.0,
-        "rain_prob": 3,
-        "wind_max": 12.6,
-        "gust_max": 16.7,
-        "wind_dir": 95
+        "rain_prob": 0,
+        "wind_max": 11.9,
+        "gust_max": 15.7,
+        "wind_dir": 96
       },
       "sailing": {
-        "twa": 140,
+        "twa": 141,
         "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 10.1,
-        "twd": 95
+        "tws_est": 9.5,
+        "twd": 96
       }
     },
     {
@@ -260,13 +270,13 @@
         "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
       },
       "wx": {
-        "wmo": 96,
-        "tmax": 27.3,
-        "tmin": 24.5,
-        "rain_mm": 12.1,
-        "rain_prob": 45,
-        "wind_max": 19.3,
-        "gust_max": 38.5,
+        "wmo": 80,
+        "tmax": 27.9,
+        "tmin": 24.8,
+        "rain_mm": 3.9,
+        "rain_prob": 23,
+        "wind_max": 17.2,
+        "gust_max": 34.0,
         "wind_dir": 273
       },
       "sailing": {
@@ -274,7 +284,7 @@
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 15.4,
+        "tws_est": 13.8,
         "twd": 273
       }
     },
@@ -294,21 +304,21 @@
       },
       "wx": {
         "wmo": 2,
-        "tmax": 29.6,
-        "tmin": 24.9,
+        "tmax": 30.0,
+        "tmin": 23.0,
         "rain_mm": 0.0,
-        "rain_prob": 3,
-        "wind_max": 12.8,
-        "gust_max": 26.0,
-        "wind_dir": 304
+        "rain_prob": 8,
+        "wind_max": 11.7,
+        "gust_max": 24.3,
+        "wind_dir": 308
       },
       "sailing": {
-        "twa": 1,
+        "twa": 5,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 10.2,
-        "twd": 304
+        "tws_est": 9.4,
+        "twd": 308
       }
     },
     {
@@ -326,22 +336,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 29.7,
-        "tmin": 22.8,
+        "wmo": 1,
+        "tmax": 30.1,
+        "tmin": 21.9,
         "rain_mm": 0.0,
-        "rain_prob": 0,
-        "wind_max": 6.7,
-        "gust_max": 13.2,
-        "wind_dir": 278
+        "rain_prob": 5,
+        "wind_max": 5.8,
+        "gust_max": 11.9,
+        "wind_dir": 175
       },
       "sailing": {
-        "twa": 64,
-        "andatura": "bolina larga",
+        "twa": 167,
+        "andatura": "poppa",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 5.4,
-        "twd": 278
+        "tws_est": 4.6,
+        "twd": 175
       }
     },
     {
@@ -360,21 +370,21 @@
       },
       "wx": {
         "wmo": 1,
-        "tmax": 32.9,
-        "tmin": 25.1,
+        "tmax": 32.6,
+        "tmin": 24.9,
         "rain_mm": 0.0,
-        "rain_prob": 4,
-        "wind_max": 5.5,
-        "gust_max": 12.1,
-        "wind_dir": 315
+        "rain_prob": 0,
+        "wind_max": 5.9,
+        "gust_max": 12.8,
+        "wind_dir": 320
       },
       "sailing": {
-        "twa": 35,
+        "twa": 30,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 4.4,
-        "twd": 315
+        "tws_est": 4.7,
+        "twd": 320
       }
     }
   ],
@@ -455,12 +465,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 26.4,
-    "rh": 57,
+    "temp": 30.7,
+    "rh": 49,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 7.6,
-    "twd": 274,
+    "tws": 6.8,
+    "twd": 39,
     "sst": 27.6
   }
 }

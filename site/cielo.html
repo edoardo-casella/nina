@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cielo del giorno · Everywaves</title>
+<meta name="description" content="Alba, tramonto e luna giorno per giorno, con la direzione in gradi, e quali rade guardano il tramonto.">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F;
+  --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43; --magenta:#C2185B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7;
+  --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71; --magenta:#E8536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair)}
+.wrap{max-width:720px;margin:0 auto}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.head{padding:1.6rem 1.1rem 1rem}
+.head h1{font:700 2rem/1.05 var(--display);letter-spacing:.01em}
+.head p{margin-top:.5rem;color:var(--soft);font-size:.95rem}
+section{padding:1.1rem 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.day{background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:.85rem .95rem;margin-bottom:.7rem}
+.day .hd{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;margin-bottom:.6rem}
+.day .dt{font:700 .95rem/1 var(--display);letter-spacing:.02em}
+.day .dt em{font-style:normal;color:var(--soft);font-weight:400;margin-left:.4rem;font-size:.82rem}
+.day .to{font-size:.8rem;color:var(--soft);text-align:right}
+.astro-row{display:flex;flex-wrap:wrap;gap:.5rem}
+.af{flex:1;min-width:120px;background:var(--sea-1);border-radius:4px;padding:.5rem .65rem}
+.af b{display:block;font:700 .92rem/1 var(--mono)}
+.af i{display:block;font-style:normal;font-size:.72rem;color:var(--soft);margin-top:.25rem}
+.sunset-tag{display:inline-flex;align-items:center;gap:.25rem;font:700 .6rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:.22rem .5rem .22rem .4rem;margin-top:.55rem}
+.moon{display:flex;align-items:center;gap:.5rem;margin-top:.55rem;font-size:.82rem;color:var(--soft)}
+.moon b{font-size:1.15rem}
+.note{background:var(--sea-1);border:1px dashed var(--hair);border-radius:4px;padding:.85rem 1rem;font-size:.86rem;color:var(--soft);margin-top:1rem}
+footer{display:block;padding:2rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia</a>
+  <span class="tag">🌇 Cielo del giorno</span>
+</div></div>
+
+<main>
+  <div class="head">
+    <h1>Alba, tramonto e luna</h1>
+    <p>Orari e direzioni (in gradi veri) lungo le prossime due settimane. La 🌅 segna le notti in cui la rada in programma guarda libera verso il tramonto.</p>
+  </div>
+  <section><h2>Prossimi 14 giorni</h2>
+    <div id="days"><p style="color:var(--soft);font-size:.9rem">Caricamento…</p></div>
+    <p class="note">La vista sul tramonto è verificata solo per le rade catalogate (settore d'orizzonte noto); per le altre destinazioni resta "n/d" anche quando i dati di alba/tramonto sono disponibili.</p>
+  </section>
+  <footer>Effemeridi da met.no.<br><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>
+</main>
+
+<script>
+const esc = s => (s ?? "").toString().replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const comp = d => ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSO","SO","OSO","O","ONO","NO","NNO"][Math.round(d / 22.5) % 16];
+const azLabel = d => d == null ? "—" : `${comp(d)} ${Math.round(d)}°`;
+const dfmt = s => new Date(s + "T12:00").toLocaleDateString("it", { weekday: "short", day: "numeric", month: "short" });
+
+function dayCard(r) {
+  const a = r.astro;
+  if (!a) return `<div class="day"><div class="hd"><span class="dt">${dfmt(r.date)}</span><span class="to">${esc(r.to)}</span></div>
+    <p style="font-size:.82rem;color:var(--soft)">Effemeridi non disponibili per questo giorno.</p></div>`;
+  const moon = a.emoji ? `<div class="moon"><b>${a.emoji}</b><span>${esc(a.name ?? "")}${a.illum_pct != null ? ` · ${a.illum_pct}%` : ""}
+    ${a.moonrise ? ` · sorge ${esc(a.moonrise)} (${azLabel(a.moonrise_az)})` : ""}${a.moonset ? ` · cala ${esc(a.moonset)} (${azLabel(a.moonset_az)})` : ""}</span></div>` : "";
+  return `<div class="day">
+    <div class="hd"><span class="dt">${dfmt(r.date)}</span><span class="to">${esc(r.to)}</span></div>
+    <div class="astro-row">
+      <div class="af"><b>${esc(a.sunrise ?? "—")}</b><i>alba · ${azLabel(a.sunrise_az)}</i></div>
+      <div class="af"><b>${esc(a.sunset ?? "—")}</b><i>tramonto · ${azLabel(a.sunset_az)}</i></div>
+    </div>
+    ${moon}
+    ${r.sunset_view ? `<div class="sunset-tag">🌅 vista libera sul tramonto</div>` : ""}
+    ${a.synthetic ? `<p style="margin-top:.4rem;font-size:.74rem;color:var(--magenta)">Dati astro sintetici (offline)</p>` : ""}
+  </div>`;
+}
+
+(async () => {
+  const host = document.getElementById("days");
+  try {
+    const r = await fetch("data/program.json", { cache: "no-cache" });
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    const days = d.days || [];
+    if (!days.length) throw new Error("vuoto");
+    host.innerHTML = days.map(dayCard).join("");
+  } catch (e) {
+    host.innerHTML = `<div class="day">Dati non disponibili (offline senza copia in cache, o deploy in corso) — riapri sotto copertura.</div>`;
+  }
+})();
+
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

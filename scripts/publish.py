@@ -77,6 +77,21 @@ def build_astro(wp: dict, day: str, offline: bool) -> list[dict]:
     return days
 
 
+def build_day_astro(dest_wp: dict, day: str, offline: bool) -> dict:
+    """Effemeridi di UN giorno alla destinazione di quel giorno (non alla
+    posizione di partenza di oggi): usato dal programma a 14 giorni, dove ogni
+    riga ha una rada diversa. build_astro() resta per il briefing di oggi."""
+    if offline:
+        row = {"date": day, "sunrise": "06:32", "sunset": "20:41", "sunrise_az": 65.0,
+               "sunset_az": 295.0, "moonrise": "21:15", "moonset": "07:05",
+               "moonrise_az": 100.0, "moonset_az": 260.0, "moon_deg": synth_moon_deg(day),
+               "synthetic": True}
+    else:
+        row = weather.sun_moon(dest_wp["lat"], dest_wp["lon"], day, days=1)[0]
+    row.update(moon_info(row.get("moon_deg")))
+    return row
+
+
 def leg_for(v: dict, day: str) -> dict | None:
     return next((p for p in v["plan"] if p["date"] == day), None)
 
@@ -214,6 +229,20 @@ def build_program(v: dict, plan_all: list[dict], day: str, offset: int,
                      "crew_delta": {"on_n": sum(1 for m in v["crew"] if m["board"] == orig),
                                     "off_n": sum(1 for m in v["crew"] if m["leave"] == orig)},
                      "wx": None, "wave": None, "sst": None, "_dest": dest_wp})
+
+    # ---- effemeridi per ogni giorno (deterministiche: a differenza di wx/wave
+    # non serve un modello meteo, quindi valgono per tutti i 14 giorni, non solo
+    # nella fascia con previsione attendibile)
+    anch_by_id = {a["id"]: a for a in core.anchorages()}
+    for r in rows:
+        try:
+            astro = build_day_astro(r["_dest"], r["date"], offline)
+        except Exception:
+            astro = None
+        r["astro"] = astro
+        anch = anch_by_id.get(r["to_id"])
+        r["sunset_view"] = (core.in_sector(astro["sunset_az"], anch["exposed_from"], anch["exposed_to"])
+                            if astro and astro.get("sunset_az") is not None and anch else None)
 
     wx_rows = [r for r in rows if r["tier"] != "programma"]
     if offline:
@@ -527,10 +556,18 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         finally:
             weather.combined = _real
 
+    # ---- effemeridi (serve il tramonto di oggi PRIMA di classificare le rade:
+    # a parita' di vento, si preferisce quella che guarda il tramonto)
+    try:
+        astro = build_astro(wp, day, offline)
+    except Exception:
+        astro = []          # niente effemeridi non deve mai bloccare il briefing
+    sunset_az = astro[0].get("sunset_az") if astro else None
+
     # ---- rada di stanotte
     night = next((r for r in series if r["time"].startswith(day) and r["time"][11:] == "21:00"), series[min(21, len(series) - 1)])
     dest = plan["to"] if plan else start_id
-    ranked = shelter.rank(night["twd"], night["tws"], night.get("gust", night["tws"] * 1.3))
+    ranked = shelter.rank(night["twd"], night["tws"], night.get("gust", night["tws"] * 1.3), sunset_az)
 
     def enrich_rada(r: dict) -> dict:
         # voto (STIMA in voyage.json) e foto Commons della rada
@@ -606,10 +643,6 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
                         "tws": now_row.get("tws"), "twd": now_row.get("twd"),
                         "sst": now_row.get("sst")}
                        if now_row else None)
-    try:
-        astro = build_astro(wp, day, offline)
-    except Exception:
-        astro = []          # niente effemeridi non deve mai bloccare il briefing
     wx = {"generated_at": now, "waypoint": wp["name"], "hours": series[start:start + 48],
           "astro": astro}
     sh = ledger.shares(v)

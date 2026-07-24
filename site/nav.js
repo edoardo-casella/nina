@@ -18,6 +18,7 @@
     { title: "Estate 2026 · il viaggio", links: [
       ["index.html#forecast", "Forecast", "⛅"],
       ["index.html#programma", "Percorso", "🗓️"],
+      ["cielo.html", "Cielo del giorno", "🌇"],
       ["arrivi.html", "Arrivi & partenze", "🛟"],
       ["membro.html", "La ciurma", "👥"],
       ["barca.html", "La barca", "🛥️"],
