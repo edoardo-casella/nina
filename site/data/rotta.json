@@ -1,0 +1,690 @@
+{
+  "generated_at": "2026-07-24T17:18+02:00",
+  "days": [
+    {
+      "date": "2026-08-08",
+      "rest": false,
+      "night": false,
+      "frm": "Cannigione",
+      "to": "Cala Portese",
+      "to_id": "cala_portese",
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/500px-Caprera%2C_trasparenze_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
+      },
+      "nm": 7.6,
+      "tappe": [
+        {
+          "to": "Cala Coticcio (Caprera)",
+          "to_id": "coticcio",
+          "nm": 6.1,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Cala Portese",
+          "to_id": "cala_portese",
+          "nm": 1.5,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "rest": false,
+      "night": false,
+      "frm": "Cala Portese",
+      "to": "Isole Lavezzi",
+      "to_id": "lavezzi",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
+      },
+      "nm": 16.4,
+      "tappe": [
+        {
+          "to": "Cala Corsara (Spargi)",
+          "to_id": "spargi",
+          "nm": 6.3,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Marmorata",
+          "to_id": "marmorata",
+          "nm": 4.7,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Isole Lavezzi",
+          "to_id": "lavezzi",
+          "nm": 5.4,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "rest": false,
+      "night": false,
+      "frm": "Isole Lavezzi",
+      "to": "Bonifacio",
+      "to_id": "bonifacio",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/500px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
+      },
+      "nm": 7.6,
+      "tappe": [
+        {
+          "to": "Corsica- Isola Piana",
+          "to_id": "corsica_isola_piana",
+          "nm": 2.5,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Santa Manza",
+          "to_id": "santa_manza",
+          "nm": 2.1,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Bonifacio",
+          "to_id": "bonifacio",
+          "nm": 3.0,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "rest": false,
+      "night": false,
+      "frm": "Bonifacio",
+      "to": "Tizzano",
+      "to_id": "tizzano",
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/500px-Fortin_de_Tizzano_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
+      },
+      "nm": 20.2,
+      "tappe": [
+        {
+          "to": "CR - Roccapina Nord",
+          "to_id": "cr_roccapina_nord",
+          "nm": 12.8,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Cala Longa Tizzano",
+          "to_id": "cala_longa_tizzano",
+          "nm": 5.6,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Tizzano",
+          "to_id": "tizzano",
+          "nm": 1.8,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "rest": false,
+      "night": false,
+      "frm": "Tizzano",
+      "to": "Campomoro",
+      "to_id": "campomoro",
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/500px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
+      },
+      "nm": 6.5,
+      "tappe": [
+        {
+          "to": "Cala Longa Tizzano",
+          "to_id": "cala_longa_tizzano",
+          "nm": 1.8,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Campomoro",
+          "to_id": "campomoro",
+          "nm": 4.8,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "rest": false,
+      "night": false,
+      "frm": "Campomoro",
+      "to": "Isolella",
+      "to_id": "isolella",
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/500px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
+      },
+      "nm": 12.4,
+      "tappe": [
+        {
+          "to": "Isolella",
+          "to_id": "isolella",
+          "nm": 12.4,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "rest": false,
+      "night": false,
+      "frm": "Isolella",
+      "to": "Girolata",
+      "to_id": "girolata",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
+      },
+      "nm": 31.4,
+      "tappe": [
+        {
+          "to": "Girolata",
+          "to_id": "girolata",
+          "nm": 31.4,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "rest": false,
+      "night": false,
+      "frm": "Girolata",
+      "to": "San Fiorenzo",
+      "to_id": "san_fiorenzo",
+      "rating": 3.5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
+      },
+      "nm": 35.8,
+      "tappe": [
+        {
+          "to": "San Fiorenzo",
+          "to_id": "san_fiorenzo",
+          "nm": 35.8,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "rest": false,
+      "night": false,
+      "frm": "San Fiorenzo",
+      "to": "Centuri",
+      "to_id": "centuri",
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
+      },
+      "nm": 19.9,
+      "tappe": [
+        {
+          "to": "Saleccia",
+          "to_id": "saleccia",
+          "nm": 4.2,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Centuri",
+          "to_id": "centuri",
+          "nm": 15.6,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "rest": false,
+      "night": false,
+      "frm": "Centuri",
+      "to": "Erbalunga",
+      "to_id": "erbalunga",
+      "rating": 3.5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
+      },
+      "nm": 12.8,
+      "tappe": [
+        {
+          "to": "Erbalunga",
+          "to_id": "erbalunga",
+          "nm": 12.8,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "rest": false,
+      "night": false,
+      "frm": "Erbalunga",
+      "to": "Campoloro",
+      "to_id": "campoloro",
+      "rating": 1.5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png",
+        "page": "https://commons.wikimedia.org/wiki/File:Endophloeus_markovichianus_(Piller_%26_Mitterpacher,_1783)_lateral_view_(23150294085).png"
+      },
+      "nm": 26.2,
+      "tappe": [
+        {
+          "to": "Foce Golo",
+          "to_id": "foce_golo",
+          "nm": 15.2,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Campoloro",
+          "to_id": "campoloro",
+          "nm": 11.0,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "rest": false,
+      "night": false,
+      "frm": "Campoloro",
+      "to": "Favone",
+      "to_id": "favone",
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
+      },
+      "nm": 34.7,
+      "tappe": [
+        {
+          "to": "Solenzara",
+          "to_id": "solenzara",
+          "nm": 29.7,
+          "activity": []
+        },
+        {
+          "to": "Favone",
+          "to_id": "favone",
+          "nm": 5.0,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "rest": false,
+      "night": false,
+      "frm": "Favone",
+      "to": "Pinarello",
+      "to_id": "pinarello",
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio.jpg"
+      },
+      "nm": 6.2,
+      "tappe": [
+        {
+          "to": "Fautea",
+          "to_id": "fautea",
+          "nm": 3.7,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Pinarello",
+          "to_id": "pinarello",
+          "nm": 2.6,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "rest": false,
+      "night": false,
+      "frm": "Pinarello",
+      "to": "Porto Rotondo",
+      "to_id": "porto_rotondo",
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+      },
+      "nm": 40.4,
+      "tappe": [
+        {
+          "to": "Palombaggia",
+          "to_id": "palombaggia",
+          "nm": 7.5,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Porto Rotondo",
+          "to_id": "porto_rotondo",
+          "nm": 33.0,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "rest": true,
+      "night": false,
+      "frm": "Porto Rotondo",
+      "to": "Porto Rotondo",
+      "to_id": "porto_rotondo",
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+      },
+      "nm": 0.0,
+      "tappe": [
+        {
+          "to": "Porto Rotondo",
+          "to_id": "porto_rotondo",
+          "nm": 0.0,
+          "activity": [
+            "bordo",
+            "porto"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "rest": false,
+      "night": false,
+      "frm": "Porto Rotondo",
+      "to": "Porto Palma",
+      "to_id": "porto_palma",
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Porto_Palma_-_panoramio.jpg/500px-Porto_Palma_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio.jpg"
+      },
+      "nm": 13.5,
+      "tappe": [
+        {
+          "to": "Isola Mortorio",
+          "to_id": "mortorio",
+          "nm": 3.1,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Cala Coticcio (Caprera)",
+          "to_id": "coticcio",
+          "nm": 9.2,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Porto Palma",
+          "to_id": "porto_palma",
+          "nm": 1.3,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "rest": false,
+      "night": false,
+      "frm": "Porto Palma",
+      "to": "Porto Madonna",
+      "to_id": "porto_madonna",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg/500px-Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Sailing_in_Sardinia_,_Isolotti_Paduleddi_-_panoramio.jpg"
+      },
+      "nm": 10.7,
+      "tappe": [
+        {
+          "to": "Cala Coticcio (Caprera)",
+          "to_id": "coticcio",
+          "nm": 1.3,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Cala Corsara (Spargi)",
+          "to_id": "spargi",
+          "nm": 5.9,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Porto Madonna",
+          "to_id": "porto_madonna",
+          "nm": 3.5,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "rest": false,
+      "night": false,
+      "frm": "Porto Madonna",
+      "to": "Corsica- Isola Piana",
+      "to_id": "corsica_isola_piana",
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg/500px-Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Golf_de_Sperone,_trou_n%C2%B0_16.jpg"
+      },
+      "nm": 10.7,
+      "tappe": [
+        {
+          "to": "Cala Santa Maria",
+          "to_id": "santamaria",
+          "nm": 1.5,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Isole Lavezzi",
+          "to_id": "lavezzi",
+          "nm": 6.7,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Corsica- Isola Piana",
+          "to_id": "corsica_isola_piana",
+          "nm": 2.5,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "rest": false,
+      "night": false,
+      "frm": "Corsica- Isola Piana",
+      "to": "Baie de Rondinara",
+      "to_id": "rondinara",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
+      },
+      "nm": 6.9,
+      "tappe": [
+        {
+          "to": "Santa Manza",
+          "to_id": "santa_manza",
+          "nm": 2.1,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Baie de Rondinara",
+          "to_id": "rondinara",
+          "nm": 4.8,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "rest": false,
+      "night": false,
+      "frm": "Baie de Rondinara",
+      "to": "Marmorata",
+      "to_id": "marmorata",
+      "rating": 3.5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Punta_Marmorata_-_panoramio.jpg/500px-Punta_Marmorata_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Punta_Marmorata_-_panoramio.jpg"
+      },
+      "nm": 14.7,
+      "tappe": [
+        {
+          "to": "Santa Manza",
+          "to_id": "santa_manza",
+          "nm": 4.8,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Isole Lavezzi",
+          "to_id": "lavezzi",
+          "nm": 4.4,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Marmorata",
+          "to_id": "marmorata",
+          "nm": 5.4,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "rest": false,
+      "night": false,
+      "frm": "Marmorata",
+      "to": "Cala Coticcio (Caprera)",
+      "to_id": "coticcio",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      },
+      "nm": 14.2,
+      "tappe": [
+        {
+          "to": "Cala Corsara (Spargi)",
+          "to_id": "spargi",
+          "nm": 4.7,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Cala Roto (Budelli)",
+          "to_id": "budelli",
+          "nm": 3.0,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Cala Coticcio (Caprera)",
+          "to_id": "coticcio",
+          "nm": 6.5,
+          "activity": []
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "rest": false,
+      "night": false,
+      "frm": "Cala Coticcio (Caprera)",
+      "to": "Cannigione",
+      "to_id": "cannigione",
+      "rating": 2.5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(03).jpg"
+      },
+      "nm": 6.2,
+      "tappe": [
+        {
+          "to": "Cala Portese",
+          "to_id": "cala_portese",
+          "nm": 1.5,
+          "activity": [
+            "bagno"
+          ]
+        },
+        {
+          "to": "Cannigione",
+          "to_id": "cannigione",
+          "nm": 4.7,
+          "activity": []
+        }
+      ]
+    }
+  ]
+}

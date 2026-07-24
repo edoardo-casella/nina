@@ -341,6 +341,29 @@ def build_destinations(v: dict, now: str) -> dict:
     return {"generated_at": now, "entries": out}
 
 
+def build_rotta(v: dict, now: str, offline: bool) -> dict:
+    """Il PIANO INTERO (non i 14gg rolling di program.json): serve alla pagina
+    'Il giro previsto' per mostrare tutte le tappe da inizio a fine crociera,
+    con foto/voto come program.json. Il piano live oggi E' lo scenario OVEST
+    (settimane 1-2) + Giro corto (settimana 3) — la variante EST (se Maestrale)
+    non vive qui: e' contenuto di riferimento statico dentro rotta.html,
+    perche' non e' mai il piano operativo attivo."""
+    rows = []
+    for p in v["plan"]:
+        dest_wp = core.find_wp(v, p["to"])
+        tot, tappe = 0.0, []
+        for s in norm_steps(p):
+            a, b = core.find_wp(v, s["from"]), core.find_wp(v, s["to"])
+            nm = 0.0 if s["from"] == s["to"] else core.haversine_nm((a["lat"], a["lon"]), (b["lat"], b["lon"]))
+            tot += nm
+            tappe.append({"to": b["name"], "to_id": s["to"], "nm": round(nm, 1), "activity": s.get("activity", [])})
+        rows.append({"date": p["date"], "rest": bool(p.get("rest")), "night": bool(p.get("night")),
+                     "frm": core.find_wp(v, p["from"])["name"], "to": dest_wp["name"], "to_id": dest_wp["id"],
+                     "rating": dest_wp.get("rating"), "photo": photo_ref(dest_wp, offline),
+                     "nm": round(tot, 1), "tappe": tappe})
+    return {"generated_at": now, "days": rows}
+
+
 def sim_shift_days(v: dict, today: str) -> int:
     """Fuori dalle date della crociera la dashboard gira in SIMULAZIONE:
     il piano reale viene traslato come se si partisse oggi. Ritorna l'offset
@@ -753,10 +776,12 @@ if __name__ == "__main__":
     # schede dettaglio: join senza rete del file arricchito a mano (mai fetch qui)
     v = core.load()
     dests = build_destinations(v, briefing["generated_at"])
+    rotta = build_rotta(v, briefing["generated_at"], a.offline)
     # i conti NON si scrivono più in site/: sono riservati e vanno su Supabase;
     # gli arrivi invece sono pubblici (arrivi.json)
     for name, obj in (("briefing", briefing), ("weather", wx),
                       ("program", program), ("destinations", dests),
+                      ("rotta", rotta),
                       ("arrivi", build_arrivi(v, briefing["generated_at"]))):
         (SITE / f"{name}.json").write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
     supabase_upsert_blobs({"conti": conti})

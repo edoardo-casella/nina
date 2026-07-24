@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Il giro previsto · Everywaves</title>
-<meta name="description" content="Il giro stimato della crociera di agosto 2026: rotta OVEST, alternativa EST se Maestrale, giro corto dell'ultima settimana — con mappa e tappe fisse.">
+<meta name="description" content="Il giro stimato della crociera di agosto 2026: prova il simulatore rotta OVEST/EST, il giro corto dell'ultima settimana, giorno per giorno con mappa e foto.">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#0A1424">
@@ -41,12 +41,46 @@ a{color:var(--accent)}
 section{padding:1.1rem 1.1rem 1.6rem}
 h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
 h2::after{content:"";flex:1;height:1px;background:var(--hair)}
-.route{width:100%;border:1px solid var(--hair);border-radius:8px;display:block;cursor:zoom-in;background:var(--sea-1)}
+
+/* simulatore */
+.simbox{background:linear-gradient(160deg, var(--sea-2), var(--sea-1));border:1px solid var(--hair);border-radius:14px;padding:1.1rem}
+.simhd{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem;margin-bottom:.9rem}
+.simhd b{font:700 1.05rem/1.2 var(--display)}
+.simhd span{font-size:.78rem;color:var(--soft)}
+.simbtns{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.simbtn{border:2px solid var(--hair);background:var(--panel);border-radius:10px;padding:.8rem .7rem;text-align:center;cursor:pointer;font-family:var(--body);color:var(--ink);transition:transform .12s,border-color .12s}
+.simbtn .se{font-size:1.6rem;display:block;margin-bottom:.3rem}
+.simbtn b{display:block;font-size:.88rem}
+.simbtn small{display:block;color:var(--soft);font-size:.72rem;margin-top:.15rem}
+.simbtn:hover{transform:translateY(-1px)}
+.simbtn.on{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 12%, var(--panel))}
+.simbtn.on b{color:var(--accent)}
+.simwhy{margin-top:.9rem;font-size:.86rem;color:var(--soft);background:var(--panel);border-radius:8px;padding:.7rem .85rem;border:1px solid var(--hair)}
+.simwhy b{color:var(--ink)}
+
+.route{width:100%;border:1px solid var(--hair);border-radius:8px;display:block;cursor:zoom-in;background:var(--sea-1);margin-top:.9rem;transition:opacity .2s}
+.route.fading{opacity:.3}
 .rcap{color:var(--soft);font-size:.85rem;text-align:center;margin:.6rem auto 0}
-.variant{background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:.85rem .95rem;margin-bottom:.7rem;display:flex;gap:.7rem}
-.variant .dot{width:14px;height:14px;border-radius:50%;flex:none;margin-top:.2rem}
-.variant b{display:block;margin-bottom:.25rem}
-.variant p{color:var(--soft);font-size:.88rem;line-height:1.5}
+
+/* day cards */
+.daycards{display:flex;flex-direction:column;gap:.7rem}
+.daycard{background:var(--panel);border:1px solid var(--hair);border-radius:10px;overflow:hidden;display:flex;min-height:104px}
+.daycard .dc-photo{width:104px;flex:none;background-size:cover;background-position:center;background-color:var(--sea-2)}
+.daycard .dc-body{padding:.65rem .8rem;min-width:0;flex:1}
+.daycard .dc-date{font:700 .6rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.daycard h3{font:700 .98rem/1.3 var(--display);margin:.2rem 0 .3rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.stars{color:var(--gold-2);font-size:.72rem;letter-spacing:1px}
+.dc-meta{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.3rem}
+.chip{font:700 .6rem/1 var(--display);letter-spacing:.03em;background:var(--sea-1);color:var(--soft);border-radius:99px;padding:.22rem .55rem}
+.chip.night{background:rgba(184,134,11,.18);color:var(--gold)}
+.chip.rest{background:rgba(10,122,67,.14);color:var(--verde)}
+.dc-note{font-size:.8rem;color:var(--soft);line-height:1.4}
+.cm-toggle{display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;background:var(--panel);border:1px solid var(--hair);color:var(--soft);border-radius:99px;padding:.5rem .9rem;font:700 .7rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.cm-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.cm-toggle .chev{font-size:.72em;transition:transform .15s}
+.cm-toggle .chev.up{transform:rotate(180deg)}
+.daycards.clip .daycard:nth-child(n+6){display:none}
+
 .stop{display:flex;gap:.8rem;padding:.7rem 0;border-bottom:1px solid var(--hair)}
 .stop:last-child{border-bottom:0}
 .stop .sd{flex:none;width:4.2rem;font:700 .95rem/1.2 var(--display);color:var(--gold)}
@@ -72,21 +106,36 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 <main>
   <div class="head">
     <h1>Il giro previsto</h1>
-    <p style="margin-top:.5rem;color:var(--soft);font-size:.95rem">Come pensiamo di girare Corsica e Sardegna dall'8 al 29 agosto — a grandi linee, non tappa per tappa.</p>
+    <p style="margin-top:.5rem;color:var(--soft);font-size:.95rem">Come pensiamo di girare Corsica e Sardegna dall'8 al 29 agosto — prova il simulatore qui sotto.</p>
     <div class="spoiler"><b>Spoiler:</b> questa è una stima. Il meteo — soprattutto il Maestrale — decide davvero, giorno per giorno. La rotta esatta si conferma sempre col bollettino, non con questa pagina.</div>
   </div>
 
   <section>
-    <h2>La mappa</h2>
-    <img class="route" src="img/percorso-2026.png" alt="Mappa del giro previsto: rotta ovest, rotta est, giro corto" loading="lazy" onclick="openLB(this.src)">
-    <p class="rcap">Tocca per ingrandire.</p>
+    <div class="simbox">
+      <div class="simhd"><b>🎮 Simulatore rotta</b><span>settimane 1-2 · 8→22 ago</span></div>
+      <div class="simbtns">
+        <button class="simbtn" id="btn-ovest" onclick="setScenario('ovest')">
+          <span class="se">🍃</span><b>Vento normale</b><small>rotta OVEST (default)</small>
+        </button>
+        <button class="simbtn" id="btn-est" onclick="setScenario('est')">
+          <span class="se">💨</span><b>Maestrale forte</b><small>NW ≥ 15-20 kn → rotta EST</small>
+        </button>
+      </div>
+      <div class="simwhy" id="simwhy"></div>
+      <img class="route" id="mapimg" src="img/percorso-2026-ovest.png" alt="Mappa della rotta selezionata" loading="lazy" onclick="openLB(this.src)">
+      <p class="rcap">Tocca la mappa per ingrandire.</p>
+    </div>
   </section>
 
   <section>
-    <h2>Le 3 varianti</h2>
-    <div class="variant"><div class="dot" style="background:#3d6fe0"></div><div><b>Rotta OVEST — 8→21/8 (default)</b><p>Il giro in senso antiorario: dalla Maddalena su per la costa ovest della Corsica (Bonifacio, Girolata, Saleccia, San Fiorenzo), la parte più bella. Cambio equipaggio del 15/8 a San Fiorenzo.</p></div></div>
-    <div class="variant"><div class="dot" style="background:#e8743b"></div><div><b>Rotta EST — se Maestrale ≥ 15-20 kn</b><p>Alternativa in senso orario, costa est riparata dal vento. Cambio equipaggio del 15/8 a Bastia invece che San Fiorenzo — il traghetto ospiti arriva comunque lì, poi 40 min d'auto se serve raggiungere l'altra sponda.</p></div></div>
-    <div class="variant"><div class="dot" style="background:#2e9e5b"></div><div><b>Giro corto — 23→29/8</b><p>Ultima settimana: un giro tra le isole a nord della Sardegna (Maddalena, Spargi, Budelli) e il sud della Corsica (Rondinara), secondo il meteo del momento.</p></div></div>
+    <h2 id="daycards-h">Giorno per giorno — rotta OVEST</h2>
+    <div id="daycards"><p style="color:var(--soft);font-size:.9rem">Caricamento…</p></div>
+  </section>
+
+  <section>
+    <h2>🏝️ Giro corto — 23→29/8</h2>
+    <p style="color:var(--soft);font-size:.88rem;margin:-.4rem 0 .8rem">Ultima settimana: tra le isole a nord della Sardegna e il sud della Corsica, secondo il meteo del momento — un solo piano, non cambia col simulatore.</p>
+    <div id="girocorto"><p style="color:var(--soft);font-size:.9rem">Caricamento…</p></div>
   </section>
 
   <section><h2>Tappe fisse</h2>
@@ -104,8 +153,114 @@ const esc = s => (s ?? "").toString().replace(/[&<>"']/g, c => ({ "&": "&amp;", 
 function openLB(src) { const lb = document.getElementById("lb"); lb.querySelector("img").src = src; lb.classList.add("on"); }
 function closeLB() { document.getElementById("lb").classList.remove("on"); }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeLB(); });
+function toggleClip(btn) {
+  const g = document.getElementById(btn.dataset.target);
+  if (!g) return;
+  const expanding = g.classList.contains("clip");
+  g.classList.toggle("clip");
+  btn.innerHTML = expanding ? 'Mostra meno <span class="chev up">▾</span>' : btn.dataset.label + ' <span class="chev">▾</span>';
+}
 
 const dfmt = s => new Date(s + "T12:00").toLocaleDateString("it", { weekday: "short", day: "numeric", month: "long" });
+const stars = n => n == null ? "" : `<span class="stars">${"★".repeat(Math.round(n))}${"☆".repeat(5 - Math.round(n))}</span>`;
+
+// dati OVEST + Giro corto: dal piano vero (voyage.json -> rotta.json), mai testo statico.
+// dati EST: scenario "cosa succederebbe" — riferimento statico (non e' mai il piano
+// operativo attivo), dal foglio Percorso di Summer 26.xlsx, riadattato per finire
+// comunque a Porto Rotondo (il vero cambio equipaggio del 21-22/8).
+const EST_DAYS = [
+  { date: "2026-08-08", to: "Spargi (Cala Corsara)", to_id: "spargi", nm: 6, note: "Briefing, permesso Parco Maddalena." },
+  { date: "2026-08-09", to: "Palombaggia", to_id: "palombaggia", nm: 25, note: "Bocche di Bonifacio al mattino presto; costa est riparata dal Maestrale." },
+  { date: "2026-08-10", to: "Pinarello", to_id: "pinarello", nm: 12, note: "Golfo di Porto Vecchio: giornata corta." },
+  { date: "2026-08-11", to: "Favone", to_id: "favone", nm: 10, note: "SUP, snorkeling; rade piccole, si entra entro le 17." },
+  { date: "2026-08-12", to: "Campoloro", to_id: "campoloro", nm: 26, note: "Tappa di trasferimento verso il Cap Corse." },
+  { date: "2026-08-13", to: "Erbalunga", to_id: "erbalunga", nm: 24, note: "Borgo di pescatori, cena a terra." },
+  { date: "2026-08-14", to: "Bastia", to_id: "bastia", nm: 5, note: "Giorno cuscinetto in porto: città vecchia, cambusa, gasolio, acqua." },
+  { date: "2026-08-15", to: "Macinaggio / Tamarone", to_id: "tamarone", nm: 15, note: "Il traghetto ospiti arriva a Bastia: pickup comodo in banchina." },
+  { date: "2026-08-16", to: "Centuri", to_id: "centuri", nm: 12, note: "Giro del Cap Corse; Centuri è nota per le aragoste." },
+  { date: "2026-08-17", to: "Saleccia / Lotu", to_id: "saleccia", nm: 22, note: "Saleccia di sera è deserta — day-boat già rientrati." },
+  { date: "2026-08-18", to: "Calvi (rada dell'Alga)", to_id: "calvi_alga", nm: 24, note: "Cittadella di Calvi al tramonto." },
+  { date: "2026-08-19", to: "Girolata", to_id: "girolata", nm: 15, note: "Riserva di Scandola in transito, niente sosta." },
+  { date: "2026-08-20", to: "Chiuni / Cargèse", to_id: "anse_chiuni", nm: 16, note: "Calanche di Piana con la luce del pomeriggio." },
+  { date: "2026-08-21", to: "Porto Rotondo", to_id: "porto_rotondo", nm: 48, night: true, note: "Trasferimento lungo: si arriva in serata per il cambio equipaggio." },
+  { date: "2026-08-22", to: "Porto Rotondo", to_id: "porto_rotondo", nm: 0, rest: true, note: "Cambio equipaggio a Porto Rotondo." },
+];
+
+let DESTS = {}, ROTTA = null;
+let SCENARIO = "ovest";
+
+function dayLine(r) {
+  const mid = (r.tappe || []).filter(t => t.to_id !== r.to_id);
+  if (!mid.length) return "";
+  return mid.map(t => t.to + (t.activity.includes("bagno") ? " 🏊" : "")).join(" → ") + " → ";
+}
+
+function dayCard(r, isEst) {
+  const d = isEst ? (DESTS[r.to_id] || {}) : {};
+  const photo = isEst ? (d.gallery && d.gallery[0] && d.gallery[0].src) : (r.photo && r.photo.src);
+  const rating = isEst ? d.rating : r.rating;
+  const note = isEst ? r.note : (dayLine(r) + (r.tappe && r.tappe.length ? `arrivo a ${r.to}` : ""));
+  return `<div class="daycard">
+    <div class="dc-photo" style="${photo ? `background-image:url('${photo}')` : ""}"></div>
+    <div class="dc-body">
+      <div class="dc-date">${dfmt(r.date)}</div>
+      <h3>${esc(r.to)} ${stars(rating)}</h3>
+      <div class="dc-meta">
+        ${r.rest ? `<span class="chip rest">⚓ sosta</span>` : `<span class="chip">${r.nm} nm</span>`}
+        ${r.night ? `<span class="chip night">🌙 notturna</span>` : ""}
+      </div>
+      <p class="dc-note">${esc(note)}</p>
+    </div>
+  </div>`;
+}
+
+function renderScenario() {
+  const host = document.getElementById("daycards");
+  const h = document.getElementById("daycards-h");
+  const why = document.getElementById("simwhy");
+  const map = document.getElementById("mapimg");
+  document.getElementById("btn-ovest").classList.toggle("on", SCENARIO === "ovest");
+  document.getElementById("btn-est").classList.toggle("on", SCENARIO === "est");
+  map.classList.add("fading");
+  setTimeout(() => {
+    map.src = `img/percorso-2026-${SCENARIO}.png`;
+    map.classList.remove("fading");
+  }, 120);
+
+  if (SCENARIO === "ovest") {
+    h.textContent = "Giorno per giorno — rotta OVEST";
+    why.innerHTML = "<b>Rotta OVEST (default):</b> si sale in senso antiorario lungo la costa ovest della Corsica — Bonifacio, Girolata, Saleccia, San Fiorenzo — la parte più bella. Cambio equipaggio del 15/8 a San Fiorenzo.";
+    const days = (ROTTA?.days || []).filter(r => r.date <= "2026-08-22");
+    host.innerHTML = days.length ? `<div class="daycards clip" id="ovest-cards">${days.map(r => dayCard(r, false)).join("")}</div>
+      <button class="cm-toggle" type="button" data-label="Mostra tutti i giorni (${days.length})" data-target="ovest-cards" onclick="toggleClip(this)">Mostra tutti i giorni (${days.length}) <span class="chev">▾</span></button>`
+      : `<p style="color:var(--soft);font-size:.9rem">Dati non disponibili offline.</p>`;
+  } else {
+    h.textContent = "Giorno per giorno — rotta EST (se Maestrale)";
+    why.innerHTML = "<b>Rotta EST (se Maestrale ≥ 15-20 kn):</b> si gira in senso orario lungo la costa est, riparata dal vento. Cambio equipaggio del 15/8 a Bastia invece che San Fiorenzo — il traghetto arriva comunque lì, poi 40 min d'auto se serve l'altra sponda.";
+    host.innerHTML = `<div class="daycards clip" id="est-cards">${EST_DAYS.map(r => dayCard(r, true)).join("")}</div>
+      <button class="cm-toggle" type="button" data-label="Mostra tutti i giorni (${EST_DAYS.length})" data-target="est-cards" onclick="toggleClip(this)">Mostra tutti i giorni (${EST_DAYS.length}) <span class="chev">▾</span></button>`;
+  }
+}
+function setScenario(s) { SCENARIO = s; renderScenario(); }
+window.setScenario = setScenario;
+
+(async () => {
+  try {
+    const [rottaR, destR] = await Promise.all([
+      fetch("data/rotta.json", { cache: "no-cache" }),
+      fetch("data/destinations.json", { cache: "no-cache" }),
+    ]);
+    if (rottaR.ok) ROTTA = await rottaR.json();
+    if (destR.ok) DESTS = (await destR.json()).entries || {};
+  } catch (e) { /* niente giorno-per-giorno: resta il simulatore con la mappa */ }
+  renderScenario();
+
+  const girohost = document.getElementById("girocorto");
+  const giro = (ROTTA?.days || []).filter(r => r.date >= "2026-08-23");
+  girohost.innerHTML = giro.length ? `<div class="daycards clip" id="giro-cards">${giro.map(r => dayCard(r, false)).join("")}</div>
+    <button class="cm-toggle" type="button" data-label="Mostra tutti i giorni (${giro.length})" data-target="giro-cards" onclick="toggleClip(this)">Mostra tutti i giorni (${giro.length}) <span class="chev">▾</span></button>`
+    : `<p style="color:var(--soft);font-size:.9rem">Dati non disponibili offline.</p>`;
+})();
 
 (async () => {
   const host = document.getElementById("stops");

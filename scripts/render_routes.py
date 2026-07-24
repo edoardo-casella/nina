@@ -1090,11 +1090,22 @@ def _kml_placemark_styles(kml_path: Path) -> dict:
     return out
 
 
-def render_nina_overview(kml_path: Path, polys, borders=None):
+def _desaturate(hexcol: str, toward=(214, 208, 195), amt=0.75) -> str:
+    """Sbiadisce un colore verso 'toward' (il PARCHMENT): usato per le rotte
+    NON evidenziate quando si genera una variante 'emphasize'."""
+    r, g, b = int(hexcol[1:3], 16), int(hexcol[3:5], 16), int(hexcol[5:7], 16)
+    tr, tg, tb = toward
+    r = round(r + (tr - r) * amt); g = round(g + (tg - g) * amt); b = round(b + (tb - b) * amt)
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
+def render_nina_overview(kml_path: Path, polys, borders=None, emphasize: str | None = None, title: str | None = None, out_name: str = "nina-2026-overview.png"):
     """Mappa d'insieme del giro previsto 2026 (Niña): le rotte di data/rotte-nina.kml
     (OVEST/EST/Giro corto), coi colori VERI del KML — non la palette generica
     kml_color(i,n) usata per l'archivio storico. Una sola immagine, non un
-    archivio: titolo/legenda dedicati, non il layout di render_global()."""
+    archivio: titolo/legenda dedicati, non il layout di render_global().
+    `emphasize` (sottostringa del nome, es. 'OVEST'): le altre rotte si sbiadiscono
+    verso il colore della pergamena, per il 'simulatore' della pagina rotta.html."""
     trips, _ = load_trips(kml_path)
     style_colors = _kml_style_colors(kml_path)
     pm_styles = _kml_placemark_styles(kml_path)
@@ -1102,6 +1113,12 @@ def render_nina_overview(kml_path: Path, polys, borders=None):
     for i, t in enumerate(trips):
         sid = pm_styles.get(t["name"])
         t["_hex"] = style_colors.get(sid) or kml_color(i, n)[1]
+    if emphasize:
+        # le evidenziate passano per ultime: si disegnano sopra le sbiadite
+        for t in trips:
+            if emphasize.lower() not in t["name"].lower():
+                t["_hex"] = _desaturate(t["_hex"])
+        trips.sort(key=lambda t: emphasize.lower() in t["name"].lower())
 
     PANEL_W = 1700
     MARGIN = 60
@@ -1114,7 +1131,7 @@ def render_nina_overview(kml_path: Path, polys, borders=None):
     total_h = title_h + sub_h + panel.height + legend_h + MARGIN
     canvas = Image.new("RGB", (total_w, total_h), PARCHMENT)
     d = ImageDraw.Draw(canvas)
-    d.text((MARGIN, 30), "Niña — Il giro previsto, agosto 2026", font=_font(44, bold=True), fill=INK)
+    d.text((MARGIN, 30), title or "Niña — Il giro previsto, agosto 2026", font=_font(44, bold=True), fill=INK)
     d.text((MARGIN, 30 + title_h - 46), "Stima: il meteo (soprattutto il Maestrale) decide davvero, giorno per giorno.",
            font=_font(20), fill=(150, 60, 60))
 
@@ -1130,7 +1147,7 @@ def render_nina_overview(kml_path: Path, polys, borders=None):
         d.text((MARGIN + 42, y), t["name"], font=lfont, fill=INK)
         y += 34
 
-    out = OUT_DIR / "nina-2026-overview.png"
+    out = OUT_DIR / out_name
     canvas.save(out, "PNG", optimize=True)
     return out, (total_w, total_h)
 
@@ -1157,6 +1174,12 @@ def main():
         borders = load_borders()
         out, size = render_nina_overview(src, polys, borders)
         print(f"Overview -> {out.name}  {size[0]}x{size[1]}")
+        out2, size2 = render_nina_overview(src, polys, borders, emphasize="Rotta OVEST",
+                                           title="Niña — Scenario OVEST (default)", out_name="nina-2026-ovest.png")
+        print(f"Overview -> {out2.name}  {size2[0]}x{size2[1]}")
+        out3, size3 = render_nina_overview(src, polys, borders, emphasize="Rotta EST",
+                                           title="Niña — Scenario EST (se Maestrale)", out_name="nina-2026-est.png")
+        print(f"Overview -> {out3.name}  {size3[0]}x{size3[1]}")
         return
 
     src = Path(args.source) if args.source else SRC_KML
