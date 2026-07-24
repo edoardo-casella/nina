@@ -20,6 +20,7 @@
       ["index.html#programma", "Percorso", "🗓️"],
       ["rotta.html", "Il giro previsto", "🗺️"],
       ["cielo.html", "Cielo del giorno", "🌇"],
+      ["oroscopo.html", "Oroscopo di bordo", "🔮"],
       ["arrivi.html", "Arrivi & partenze", "🛟"],
       ["membro.html", "La ciurma", "👥"],
       ["barca.html", "La barca", "🛥️"],

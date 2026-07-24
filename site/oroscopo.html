@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oroscopo di bordo · Everywaves</title>
+<meta name="description" content="Le mappe stellari dei 12 segni e la tabella di compatibilità tra chi è a bordo nello stesso periodo, agosto 2026.">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<script src="zodiac.js"></script>
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F;
+  --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43; --magenta:#C2185B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7;
+  --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71; --magenta:#E8536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair)}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.head{padding:1.6rem 1.1rem 1rem}
+.head h1{font:700 2rem/1.05 var(--display);letter-spacing:.01em}
+section{padding:1.1rem 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+
+/* mappe stellari: sempre su cielo notturno, indipendente dal tema del sito */
+.signgrid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.signcard{background:#0A1220;border:1px solid #1E2C42;border-radius:12px;overflow:hidden;color:#DCE7F5}
+.signcard svg{display:block;width:100%;height:auto;background:radial-gradient(ellipse at 50% 30%, #101B30, #060B14)}
+.signcard .star{fill:#EAF2FA}
+.signcard .star.big{fill:#FFF6D6}
+.signcard .line{stroke:#4C6E96;stroke-width:.6;fill:none;opacity:.8}
+.signbody{padding:.6rem .7rem .75rem}
+.signbody .sh{display:flex;align-items:center;gap:.4rem;font:700 .92rem/1 var(--display)}
+.signbody .se{font:400 .6rem/1.3 var(--body);color:#8299B4;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;display:block}
+.signbody .sb{font-size:.72rem;color:#B7C6DA;margin-top:.35rem;line-height:1.4}
+
+/* tabella compatibilità */
+.tablewrap{overflow-x:auto;border:1px solid var(--hair);border-radius:8px}
+table.compat{border-collapse:collapse;font-size:.72rem}
+table.compat th, table.compat td{border:1px solid var(--hair);width:34px;height:34px;text-align:center;padding:0}
+table.compat th{background:var(--sea-1);position:sticky;top:0;font-weight:400}
+table.compat th.rowhd{position:sticky;left:0;z-index:2;background:var(--sea-1);text-align:left;padding:0 .5rem;width:auto;white-space:nowrap;font:700 .7rem/1 var(--display)}
+table.compat th.colhd{writing-mode:vertical-rl;transform:rotate(180deg);font:700 .68rem/1 var(--display);padding:.3rem 0;height:70px}
+table.compat td{cursor:default}
+table.compat td.diag{background:var(--sea-2)}
+.legend{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem;font-size:.8rem;color:var(--soft)}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.note{background:var(--sea-1);border:1px dashed var(--hair);border-radius:4px;padding:.85rem 1rem;font-size:.86rem;color:var(--soft);margin-top:1rem}
+footer{display:block;padding:2rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia</a>
+  <span class="tag">🔮 Oroscopo di bordo</span>
+</div></div>
+
+<main>
+  <div class="head">
+    <h1>Oroscopo di bordo</h1>
+    <p style="margin-top:.5rem;color:var(--soft);font-size:.95rem">Le mappe stellari dei 12 segni, e chi va d'accordo con chi tra chi è a bordo insieme — per gioco, non per scienza.</p>
+  </div>
+
+  <section>
+    <h2>Le mappe stellari</h2>
+    <div class="signgrid" id="signgrid"></div>
+  </section>
+
+  <section>
+    <h2>Tabella compatibilità</h2>
+    <p style="color:var(--soft);font-size:.88rem;margin:-.4rem 0 .9rem">Solo tra chi è a bordo nello stesso periodo — e solo per chi ha già messo il proprio compleanno in "Il mio profilo".</p>
+    <div class="tablewrap" id="compattable"><p style="color:var(--soft);font-size:.9rem;padding:1rem">Caricamento…</p></div>
+    <div class="legend">
+      <span>🔥 Ottima — stesso elemento</span>
+      <span>✨ Buona — elementi complementari</span>
+      <span>🤷 Così così</span>
+      <span>⚡ Scintille — elementi opposti</span>
+    </div>
+    <p class="note">Manca qualcuno? Chi non ha ancora messo il compleanno può farlo da <a href="profilo.html">Il mio profilo</a> — niente anno, solo giorno e mese.</p>
+  </section>
+
+  <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>
+</main>
+
+<script>
+const esc = s => (s ?? "").toString().replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+// mappe stellari: costellazioni semplificate (illustrative, non a scala astronomica)
+const CONSTELLATIONS = {
+  ariete:     { pts: [[20,50],[35,35],[55,30],[75,40],[85,55]], lines: [[0,1],[1,2],[2,3],[3,4]] },
+  toro:       { pts: [[50,20],[35,40],[50,55],[65,40],[25,45],[75,45]], lines: [[0,1],[1,2],[2,3],[3,0],[1,4],[3,5]] },
+  gemelli:    { pts: [[25,15],[22,35],[20,55],[18,68],[55,15],[58,35],[60,55],[62,68]], lines: [[0,1],[1,2],[2,3],[4,5],[5,6],[6,7],[1,5]] },
+  cancro:     { pts: [[50,15],[45,35],[30,55],[60,55]], lines: [[0,1],[1,2],[1,3]] },
+  leone:      { pts: [[20,25],[15,40],[20,55],[35,60],[45,50],[55,45],[75,50],[85,40],[70,30]], lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,4]] },
+  vergine:    { pts: [[20,20],[35,35],[50,30],[65,40],[80,25],[50,55],[45,70]], lines: [[0,1],[1,2],[2,3],[3,4],[2,5],[5,6]] },
+  bilancia:   { pts: [[30,25],[70,25],[50,45],[30,65],[70,65]], lines: [[0,2],[1,2],[2,3],[2,4]] },
+  scorpione:  { pts: [[15,20],[25,30],[35,35],[45,40],[55,42],[65,45],[70,55],[68,65],[58,68],[50,60]], lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9]] },
+  sagittario: { pts: [[25,30],[45,25],[65,30],[70,45],[55,55],[35,55],[25,45]], lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,0],[1,4]] },
+  capricorno: { pts: [[20,30],[50,20],[80,35],[65,55],[35,58]], lines: [[0,1],[1,2],[2,3],[3,4],[4,0]] },
+  acquario:   { pts: [[20,20],[35,30],[25,45],[45,40],[55,55],[75,50],[65,65]], lines: [[0,1],[1,2],[1,3],[3,4],[4,5],[5,6]] },
+  pesci:      { pts: [[15,20],[25,30],[18,42],[35,55],[50,50],[65,45],[82,55],[72,45],[80,32]], lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8]] },
+};
+
+function constellationSVG(sign) {
+  const c = CONSTELLATIONS[sign];
+  if (!c) return "";
+  const lines = c.lines.map(([a, b]) => `<line class="line" x1="${c.pts[a][0]}" y1="${c.pts[a][1]}" x2="${c.pts[b][0]}" y2="${c.pts[b][1]}"/>`).join("");
+  const bg = Array.from({ length: 18 }, () => `<circle class="star" cx="${(Math.random() * 100).toFixed(0)}" cy="${(Math.random() * 70).toFixed(0)}" r="${(Math.random() * .5 + .3).toFixed(1)}" opacity="${(Math.random() * .4 + .2).toFixed(2)}"/>`).join("");
+  const stars = c.pts.map(([x, y], i) => `<circle class="star big" cx="${x}" cy="${y}" r="${i === 0 ? 2.2 : 1.6}"/>`).join("");
+  return `<svg viewBox="0 0 100 70" xmlns="http://www.w3.org/2000/svg">${bg}${lines}${stars}</svg>`;
+}
+
+function renderSigns() {
+  const Z = window.ninaZodiac;
+  document.getElementById("signgrid").innerHTML = Object.keys(Z.SIGN_META).map(key => {
+    const m = Z.SIGN_META[key];
+    return `<div class="signcard">${constellationSVG(key)}
+      <div class="signbody"><div class="sh">${m.emoji} ${m.label}</div><span class="se">${esc(m.element)}</span>
+      <p class="sb">${esc(m.boat)}</p></div>
+    </div>`;
+  }).join("");
+}
+renderSigns();
+
+(async () => {
+  const host = document.getElementById("compattable");
+  const Z = window.ninaZodiac;
+  try {
+    const [crewR, profR] = await Promise.all([
+      fetch("data/crew.json", { cache: "no-cache" }),
+      (window.ninaAuth && ninaAuth.enabled) ? ninaAuth.profilesMap() : Promise.resolve(null),
+    ]);
+    const crewJson = await crewR.json();
+    const profiles = profR || {};
+    const crew = (crewJson.people || [])
+      .filter(p => p.crew2026 && p.crew2026.board && p.crew2026.leave)
+      .map(p => ({ ...p, sign: Z.signFromMd((profiles[p.id] || {}).birth_md) }))
+      .filter(p => p.sign)
+      .sort((a, b) => a.crew2026.board.localeCompare(b.crew2026.board) || a.name.localeCompare(b.name));
+
+    if (crew.length < 2) {
+      host.innerHTML = `<p style="color:var(--soft);font-size:.9rem;padding:1rem">Ancora troppo pochi compleanni in rubrica per fare coppie.</p>`;
+      return;
+    }
+    const overlap = (a, b) => a.crew2026.board <= b.crew2026.leave && b.crew2026.board <= a.crew2026.leave;
+
+    const head = `<tr><th class="rowhd"></th>${crew.map(p => `<th class="colhd" title="${esc(p.name)}">${Z.SIGN_META[p.sign].emoji} ${esc(p.name)}</th>`).join("")}</tr>`;
+    const rows = crew.map((a, i) => {
+      const cells = crew.map((b, j) => {
+        if (i === j) return `<td class="diag" title="${esc(a.name)} — ${Z.SIGN_META[a.sign].label}">${Z.SIGN_META[a.sign].emoji}</td>`;
+        if (j < i) return `<td></td>`;   // solo triangolo superiore: la matrice e' simmetrica
+        if (!overlap(a, b)) return `<td style="color:var(--hair)">·</td>`;
+        const c = Z.compatibility(a.sign, b.sign);
+        return `<td title="${esc(a.name)} + ${esc(b.name)}: ${esc(c.label)}">${c.emoji}</td>`;
+      }).join("");
+      return `<tr><th class="rowhd">${Z.SIGN_META[a.sign].emoji} ${esc(a.name)}</th>${cells}</tr>`;
+    }).join("");
+
+    host.innerHTML = `<table class="compat">${head}${rows}</table>`;
+  } catch (e) {
+    host.innerHTML = `<p style="color:var(--soft);font-size:.9rem;padding:1rem">Dati non disponibili (offline senza copia in cache, o deploy in corso).</p>`;
+  }
+})();
+
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>
