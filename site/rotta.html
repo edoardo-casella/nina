@@ -11,7 +11,9 @@
 <script src="theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap"></noscript>
 <style>
 :root{
   --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
@@ -369,7 +371,8 @@ function renderDetail() {
   document.getElementById("daydetail").innerHTML = `
     <p style="font-size:.82rem;color:var(--soft);margin:.7rem 0 .3rem"><b style="color:var(--ink)">${d.toLocaleDateString("it", { weekday: "long", day: "numeric", month: "long" })}</b> — da dove soffia e quanto forte:</p>
     <div class="compass">${DIRS.map(([lab, deg]) => `<button class="compassbtn${w.twd === deg ? " on" : ""}" onclick="setWind(${deg},${w.tws})">${lab}</button>`).join("")}</div>
-    <div class="windslide"><span>0</span><input type="range" min="0" max="35" value="${w.tws}" oninput="setWind(${w.twd},+this.value)"><b>${w.tws} kn</b></div>`;
+    <label for="windslider" style="font-size:.78rem;color:var(--soft);display:block;margin-top:.5rem">Intensità del vento (nodi)</label>
+    <div class="windslide"><span>0</span><input type="range" id="windslider" min="0" max="35" value="${w.tws}" oninput="setWind(${w.twd},+this.value)" aria-valuetext="${w.tws} nodi"><b>${w.tws} kn</b></div>`;
 }
 function renderResult() {
   const w = WIND[SELDAY], host = document.getElementById("windresult");
