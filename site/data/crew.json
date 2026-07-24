@@ -3676,7 +3676,9 @@
    "tags": [
     "Marinaio",
     "Re dell'aria condizionata",
-    "Notturno"
+    "Notturno",
+    "Timoniere",
+    "Wakeboard"
    ],
    "nicks": [
     "Abbute Puche",
@@ -8297,8 +8299,13 @@
     "leave": "2026-08-29",
     "role": "crew"
    },
+   "tags": [
+    "Debuttante",
+    "Aperitivi"
+   ],
    "nicks": [
-    "Simo"
+    "Simo",
+    "Sima"
    ],
    "sex": "f"
   },

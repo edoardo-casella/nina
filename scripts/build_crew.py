@@ -48,7 +48,7 @@ NICKS = {
     "ilaria-m": ["Ila"],
     "lavinia-p": ["Peeiss", "Peis"],
     "riccardo-b": ["Branca"],
-    "simona-a": ["Simo"],
+    "simona-a": ["Simo", "Sima"],
     "alberto-b": ["Albi"],
     "alice-s": ["Spampi"],
     "angela-k": ["Angi"],

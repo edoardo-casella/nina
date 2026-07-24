@@ -16,7 +16,9 @@
   "andrea-a": [
    "Marinaio",
    "Re dell'aria condizionata",
-   "Notturno"
+   "Notturno",
+   "Timoniere",
+   "Wakeboard"
   ],
   "leonardo-m": [
    "Uomo rana",
@@ -115,6 +117,10 @@
   "lorenzo-c": [
    "Ormeggi",
    "Skipper del tender"
+  ],
+  "simona-a": [
+   "Debuttante",
+   "Aperitivi"
   ]
  }
 }
