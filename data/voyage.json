@@ -1193,14 +1193,15 @@
   {
    "date": "2026-08-18",
    "from": "erbalunga",
-   "to": "favone",
+   "to": "campoloro",
    "rest": false,
-   "night": true,
    "steps": [
     {
      "slot": "mattina",
      "from": "erbalunga",
-     "to": "erbalunga",
+     "to": "foce_golo",
+     "depart_at": "08:00",
+     "arrive_by": "10:30",
      "activity": [
       "bagno"
      ],
@@ -1209,19 +1210,48 @@
     },
     {
      "slot": "sera",
-     "from": "erbalunga",
-     "to": "favone",
-     "depart_at": "20:00",
+     "from": "foce_golo",
+     "to": "campoloro",
+     "depart_at": "14:00",
+     "arrive_by": "16:00",
      "activity": [],
-     "night_stay": false,
+     "night_stay": true,
      "verify": true
     }
    ]
   },
   {
    "date": "2026-08-19",
+   "from": "campoloro",
+   "to": "favone",
+   "rest": false,
+   "steps": [
+    {
+     "slot": "mattina",
+     "from": "campoloro",
+     "to": "solenzara",
+     "depart_at": "08:00",
+     "arrive_by": "13:00",
+     "activity": [],
+     "night_stay": false,
+     "verify": true
+    },
+    {
+     "slot": "sera",
+     "from": "solenzara",
+     "to": "favone",
+     "depart_at": "14:30",
+     "arrive_by": "15:30",
+     "activity": [],
+     "night_stay": true,
+     "verify": true
+    }
+   ]
+  },
+  {
+   "date": "2026-08-20",
    "from": "favone",
-   "to": "palombaggia",
+   "to": "pinarello",
    "rest": false,
    "steps": [
     {
@@ -1237,23 +1267,11 @@
      "verify": true
     },
     {
-     "slot": "pomeriggio",
-     "from": "fautea",
-     "to": "san_ciprianu",
-     "depart_at": "10:15",
-     "arrive_by": "11:00",
-     "activity": [
-      "bagno"
-     ],
-     "night_stay": false,
-     "verify": true
-    },
-    {
      "slot": "sera",
-     "from": "san_ciprianu",
-     "to": "palombaggia",
-     "depart_at": "17:00",
-     "arrive_by": "17:30",
+     "from": "fautea",
+     "to": "pinarello",
+     "depart_at": "15:00",
+     "arrive_by": "15:30",
      "activity": [],
      "night_stay": true,
      "verify": true
@@ -1261,16 +1279,17 @@
    ]
   },
   {
-   "date": "2026-08-20",
-   "from": "palombaggia",
+   "date": "2026-08-21",
+   "from": "pinarello",
    "to": "porto_rotondo",
    "rest": false,
-   "night": true,
    "steps": [
     {
      "slot": "mattina",
-     "from": "palombaggia",
+     "from": "pinarello",
      "to": "palombaggia",
+     "depart_at": "08:00",
+     "arrive_by": "09:30",
      "activity": [
       "bagno"
      ],
@@ -1281,27 +1300,9 @@
      "slot": "sera",
      "from": "palombaggia",
      "to": "porto_rotondo",
-     "depart_at": "20:00",
+     "depart_at": "11:00",
+     "arrive_by": "17:30",
      "activity": [],
-     "night_stay": false,
-     "verify": true
-    }
-   ]
-  },
-  {
-   "date": "2026-08-21",
-   "from": "porto_rotondo",
-   "to": "porto_rotondo",
-   "rest": true,
-   "steps": [
-    {
-     "slot": "giornata",
-     "from": "porto_rotondo",
-     "to": "porto_rotondo",
-     "activity": [
-      "bordo",
-      "porto"
-     ],
      "night_stay": true,
      "verify": true
     }

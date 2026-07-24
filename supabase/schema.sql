@@ -41,8 +41,10 @@ create table if not exists public.profiles (
   specialita text,
   esperienza text,
   ruolo      text,
+  birth_md   text,  -- compleanno "MM-GG", MAI l'anno (oroscopo di bordo)
   updated_at timestamptz not null default now()
 );
+alter table public.profiles add column if not exists birth_md text;
 
 create table if not exists public.private_blobs (
   key        text primary key,

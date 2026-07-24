@@ -13,6 +13,7 @@
 <meta name="theme-color" content="#0A1424">
 <script src="theme.js"></script>
 <script src="ranks.js"></script>
+<script src="zodiac.js"></script>
 <script src="config.js"></script>
 <script src="auth.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,6 +102,19 @@ svg.ins{height:1.5em;width:2.4em;display:block;overflow:visible;flex:none}
 .cchip .cav{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2);display:flex;align-items:center;justify-content:center;font:700 .9rem/1 var(--display);color:#fff}
 .cchip .cn{font-weight:600;font-size:.88rem;line-height:1.12}
 .cchip .cn small{display:block;font:400 .68rem/1.2 var(--body);color:var(--soft)}
+/* oroscopo di bordo */
+.zsign{display:flex;align-items:center;gap:.7rem;padding:.9rem 1rem;background:var(--panel);border:1px solid var(--hair);border-radius:8px;margin-bottom:.7rem}
+.zsign .ze{font-size:2rem;line-height:1}
+.zsign b{display:block;font-size:1rem}
+.zsign small{color:var(--soft);font-size:.82rem}
+.oscdays{display:flex;flex-direction:column;gap:.5rem}
+.oscday{background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:.7rem .9rem}
+.oscday .od-date{font:700 .6rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.oscday .od-row{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.85rem;margin-top:.25rem}
+.oscday .od-row b{color:var(--soft);font-weight:700;font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;margin-right:.35rem}
+.oscdays.clip .oscday:nth-child(n+4){display:none}
+.zcompat{margin-top:.9rem}
+.zcompat>b{font:700 .6rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
 .q-empty{background:var(--sea-1);border:1px dashed var(--hair);border-radius:5px;padding:1rem;color:var(--soft);font-size:.9rem;text-align:center}
 .q-empty a{font-weight:600}
 .qrow{display:grid;grid-template-columns:7.5rem 1fr;gap:.5rem;padding:.5rem 0;border-bottom:1px solid var(--hair);font-size:.92rem}
@@ -300,6 +314,52 @@ const QFIELDS = [
 // schede personali da Supabase (pubbliche), caricate async: {profiles: {crew_id→riga}}
 let PRIV = null;
 
+// Oroscopo di bordo: segno da q.birth_md (Supabase, "MM-GG", niente anno) +
+// contenuto scherzoso deterministico (zodiac.js). Silenzioso se manca il segno.
+function zodiacSection(m, bd, q, all) {
+  const Z = window.ninaZodiac;
+  const sign = Z && Z.signFromMd(q.birth_md);
+  if (!sign) return "";
+  const meta = Z.SIGN_META[sign];
+  const todayIso = new Date().toISOString().slice(0, 10);
+
+  let daysHtml = "";
+  if (bd) {
+    const days = [];
+    for (let d = day(bd.b); d <= day(bd.l); d.setDate(d.getDate() + 1)) days.push(d.toISOString().slice(0, 10));
+    const rows = days.map(iso => {
+      const h = Z.dayHoroscope(sign, iso);
+      return `<div class="oscday"><div class="od-date">${fmtS(iso)}${iso === todayIso ? " · oggi" : ""}</div>
+        <div class="od-row"><span><b>Numeri</b>${h.numeri.join(" · ")}</span><span><b>${h.umore[0]}</b>${esc(h.umore[1])}</span></div>
+        <div class="od-row"><span><b>Fai</b>${esc(h.fare)}</span></div>
+        <div class="od-row"><span><b>Evita</b>${esc(h.evitare)}</span></div>
+      </div>`;
+    }).join("");
+    daysHtml = `<div class="oscdays${days.length > 3 ? " clip" : ""}" id="oscdays">${rows}</div>` +
+      (days.length > 3 ? `<button class="cm-toggle" type="button" data-label="Mostra tutti i giorni (${days.length})" data-target="oscdays" onclick="toggleClip(this)">Mostra tutti i giorni (${days.length}) <span class="chev">▾</span></button>` : "");
+  }
+
+  // compatibilità: chi altro è a bordo con periodo sovrapposto e ha un segno noto
+  let compatHtml = "";
+  if (bd && PRIV && PRIV.profiles) {
+    const mates = all.filter(x => x.id !== m.id && x.crew2026 && x.crew2026.board && x.crew2026.leave
+      && x.crew2026.board <= bd.l && x.crew2026.leave >= bd.b)
+      .map(x => {
+        const xsign = Z.signFromMd((PRIV.profiles[x.id] || {}).birth_md);
+        return xsign ? { x, xsign, comp: Z.compatibility(sign, xsign) } : null;
+      }).filter(Boolean);
+    if (mates.length) {
+      compatHtml = `<div class="zcompat"><b>In sintonia a bordo</b><div class="cchips" style="margin-top:.5rem">` +
+        mates.map(({ x, xsign, comp }) => `<a class="cchip" href="#${x.id}">${avatarP(x, "cav")}<span class="cn">${esc(x.name)}<small>${Z.SIGN_META[xsign].emoji} ${comp.emoji} ${esc(comp.label)}</small></span></a>`).join("") +
+        `</div></div>`;
+    }
+  }
+
+  return `<h2>🔮 Oroscopo di bordo</h2>
+    <div class="zsign"><span class="ze">${meta.emoji}</span><div><b>${meta.label}</b><small>${esc(meta.boat)}</small></div></div>
+    ${daysHtml}${compatHtml}`;
+}
+
 // gradi navali a DUE CARRIERE: GRADES/gradeAt/starPath/rankSVG ora in ranks.js (modulo condiviso)
 const photoOf = m => (m.crew2026 && m.crew2026.photo) || m.photo || null;
 const avatarP = (m, cls) => photoOf(m)
@@ -370,6 +430,7 @@ function memberPage(m, all) {
     ${note ? `<h2>In breve</h2><div class="card note">${note}</div>` : ""}
     ${c && bd ? `<h2>A bordo nel 2026</h2>
       <div class="card">Sale a Cannigione il <b>${fmt(bd.b)}</b> e sbarca il <b>${fmt(bd.l)}</b> — <b>${nn} notti</b> di navigazione tra Corsica e Sardegna.</div>` : ""}
+    ${zodiacSection(m, bd, q, all)}
     ${!c ? `<h2>Compagno di rotta</h2><div class="card">Ha condiviso <b>${m.trips} crociere</b>, <b>${nfmt(m.days)} giorni</b> e <b>${nfmt(m.nm)} miglia</b> di mare con l'Ammiraglio${yrs ? `, dal <b>${m.first}</b> al <b>${m.last}</b>` : ""}. Grado: <b>${esc(m.rank_label || "")}</b>.</div>` : ""}
     ${(c || qrows) ? `<h2>Scheda personale</h2>
       ${qrows ? `<div class="card">${qrows}</div>` : `<div class="q-empty">🧭 Ancora nessuna scheda. Se è la tua pagina, raccontati da <a href="profilo.html">Il mio profilo</a>.</div>`}` : ""}

@@ -17,6 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <script src="config.js"></script>
 <script src="auth.js"></script>
+<script src="zodiac.js"></script>
 <style>
 :root{
   /* GIORNO (default): leggibile in pieno sole — carta bianca, inchiostro nero,
@@ -286,6 +287,11 @@ a.dl{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent);c
 .day strong{display:block;font:600 1.25rem/1.2 var(--mono);margin:.3rem 0}
 .day span{font-size:.75rem;font-style:italic;color:var(--soft);display:block;line-height:1.3}
 
+.ochips{display:flex;flex-wrap:wrap;gap:.5rem}
+.ochip{display:flex;align-items:center;gap:.5rem;background:var(--panel);border:1px solid var(--hair);border-radius:99px;padding:.35rem .8rem .35rem .5rem}
+.ochip .oe{font-size:1.3rem;line-height:1}
+.ochip b{display:block;font-size:.85rem}
+.ochip small{display:block;color:var(--soft);font-size:.72rem}
 .crew{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{border:1px solid var(--hair);border-radius:99px;padding:.28rem .75rem;font-size:.82rem;
   background:var(--sea-1);color:var(--ink);font-family:var(--body);cursor:pointer}
@@ -631,6 +637,21 @@ function astroCard(astro, day) {
   </div>
   ${next ? `<p style="margin-top:.7rem;font-size:.8rem;color:var(--soft)">Prossime notti: ${next}</p>` : ""}
   ${t.synthetic ? `<p style="margin-top:.4rem;font-size:.74rem;color:var(--magenta)">Dati astro sintetici (offline)</p>` : ""}</div>`;
+}
+
+// oroscopo di oggi: solo chi è a bordo E ha un compleanno noto (self-service da
+// profilo.html) — skip silenzioso per gli altri, nessun dato = nessun badge
+function oroscopoCard(crew, profiles) {
+  const Z = window.ninaZodiac;
+  if (!Z || !profiles || !crew || !crew.length) return "";
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const chips = crew.map(m => {
+    const sign = m.id && Z.signFromMd((profiles[m.id] || {}).birth_md);
+    if (!sign) return null;
+    const meta = Z.SIGN_META[sign], h = Z.dayHoroscope(sign, todayIso);
+    return `<div class="ochip"><span class="oe">${meta.emoji}</span><div><b>${esc(m.name)}</b><small>${meta.label} · ${h.umore[0]} ${esc(h.umore[1])}</small></div></div>`;
+  }).filter(Boolean);
+  return chips.length ? `<h2>🔮 Oroscopo di oggi</h2><div class="ochips">${chips.join("")}</div>` : "";
 }
 
 function legCard(b) {
@@ -1172,6 +1193,7 @@ function render(b, wx, c, prog) {
   </details>
 
   ${astroCard(wx.astro, b.day)}
+  ${oroscopoCard(b.crew, window.__profiles)}
   ${crewBlock(b)}
 
   ${contiCard(c)}`;
@@ -1195,6 +1217,7 @@ function render(b, wx, c, prog) {
 
   const programma = `
   ${programGrid(prog)}
+  <p style="margin:-.4rem 0 1rem;font-size:.85rem"><a href="rotta.html">🗺️ Vedi il giro previsto su una mappa ›</a></p>
   <h2>Prossimi giorni — dettaglio</h2>
   ${outlookRows(b.outlook)}
   ${destCatalog(prog)}
@@ -1237,6 +1260,10 @@ function render(b, wx, c, prog) {
     const r = await fetch("data/destinations.json", { cache: "no-cache" });
     if (r.ok) window.__dests = await r.json();
   } catch (e) { /* niente schede dettaglio: fallback al catalogo */ }
+  // schede personali (pubbliche, RLS anon-ok): niente login richiesto, come su membro.html
+  try {
+    window.__profiles = (window.ninaAuth && ninaAuth.enabled) ? await ninaAuth.profilesMap() : null;
+  } catch (e) { window.__profiles = null; }
   if (data) try {
     window.__astro = data[1]?.astro;
     applyTheme();

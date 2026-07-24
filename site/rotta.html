@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il giro previsto · Everywaves</title>
+<meta name="description" content="Il giro stimato della crociera di agosto 2026: rotta OVEST, alternativa EST se Maestrale, giro corto dell'ultima settimana — con mappa e tappe fisse.">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F;
+  --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43; --magenta:#C2185B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7;
+  --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71; --magenta:#E8536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair)}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.head{padding:1.6rem 1.1rem 1rem}
+.head h1{font:700 2rem/1.05 var(--display);letter-spacing:.01em}
+.spoiler{background:rgba(194,24,91,.08);border:1px dashed var(--magenta);border-radius:6px;padding:.85rem 1rem;margin-top:.9rem;font-size:.92rem;color:var(--ink)}
+.spoiler b{color:var(--magenta)}
+section{padding:1.1rem 1.1rem 1.6rem}
+h2{font:700 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:1rem;display:flex;align-items:center;gap:.55rem;border-left:3px solid var(--gold);padding-left:.55rem}
+h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+.route{width:100%;border:1px solid var(--hair);border-radius:8px;display:block;cursor:zoom-in;background:var(--sea-1)}
+.rcap{color:var(--soft);font-size:.85rem;text-align:center;margin:.6rem auto 0}
+.variant{background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:.85rem .95rem;margin-bottom:.7rem;display:flex;gap:.7rem}
+.variant .dot{width:14px;height:14px;border-radius:50%;flex:none;margin-top:.2rem}
+.variant b{display:block;margin-bottom:.25rem}
+.variant p{color:var(--soft);font-size:.88rem;line-height:1.5}
+.stop{display:flex;gap:.8rem;padding:.7rem 0;border-bottom:1px solid var(--hair)}
+.stop:last-child{border-bottom:0}
+.stop .sd{flex:none;width:4.2rem;font:700 .95rem/1.2 var(--display);color:var(--gold)}
+.stop .sx{font-size:.9rem}
+.stop .sx b{display:block;margin-bottom:.15rem}
+.stop .sx small{color:var(--soft)}
+.note{background:var(--sea-1);border:1px dashed var(--hair);border-radius:4px;padding:.85rem 1rem;font-size:.86rem;color:var(--soft);margin-top:1rem}
+footer{display:block;padding:2rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+#lb{position:fixed;inset:0;z-index:80;background:rgba(3,7,14,.95);display:none;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:92vh;object-fit:contain;border-radius:4px}
+#lb .x{position:absolute;top:.8rem;right:1rem;color:#fff;font-size:1.8rem;background:none;border:0;cursor:pointer;line-height:1}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia</a>
+  <span class="tag">🗺️ Il giro previsto</span>
+</div></div>
+
+<main>
+  <div class="head">
+    <h1>Il giro previsto</h1>
+    <p style="margin-top:.5rem;color:var(--soft);font-size:.95rem">Come pensiamo di girare Corsica e Sardegna dall'8 al 29 agosto — a grandi linee, non tappa per tappa.</p>
+    <div class="spoiler"><b>Spoiler:</b> questa è una stima. Il meteo — soprattutto il Maestrale — decide davvero, giorno per giorno. La rotta esatta si conferma sempre col bollettino, non con questa pagina.</div>
+  </div>
+
+  <section>
+    <h2>La mappa</h2>
+    <img class="route" src="img/percorso-2026.png" alt="Mappa del giro previsto: rotta ovest, rotta est, giro corto" loading="lazy" onclick="openLB(this.src)">
+    <p class="rcap">Tocca per ingrandire.</p>
+  </section>
+
+  <section>
+    <h2>Le 3 varianti</h2>
+    <div class="variant"><div class="dot" style="background:#3d6fe0"></div><div><b>Rotta OVEST — 8→21/8 (default)</b><p>Il giro in senso antiorario: dalla Maddalena su per la costa ovest della Corsica (Bonifacio, Girolata, Saleccia, San Fiorenzo), la parte più bella. Cambio equipaggio del 15/8 a San Fiorenzo.</p></div></div>
+    <div class="variant"><div class="dot" style="background:#e8743b"></div><div><b>Rotta EST — se Maestrale ≥ 15-20 kn</b><p>Alternativa in senso orario, costa est riparata dal vento. Cambio equipaggio del 15/8 a Bastia invece che San Fiorenzo — il traghetto ospiti arriva comunque lì, poi 40 min d'auto se serve raggiungere l'altra sponda.</p></div></div>
+    <div class="variant"><div class="dot" style="background:#2e9e5b"></div><div><b>Giro corto — 23→29/8</b><p>Ultima settimana: un giro tra le isole a nord della Sardegna (Maddalena, Spargi, Budelli) e il sud della Corsica (Rondinara), secondo il meteo del momento.</p></div></div>
+  </section>
+
+  <section><h2>Tappe fisse</h2>
+    <div id="stops"><p style="color:var(--soft);font-size:.9rem">Caricamento…</p></div>
+    <p class="note">Queste date non si spostano col meteo: sono i cambi equipaggio (voli/traghetti già prenotati). Tutto il resto — dove si dorme le altre notti — è la parte che decide il bollettino.</p>
+  </section>
+
+  <footer>Mappa generata da <code>data/rotte-nina.kml</code>.<br><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>
+</main>
+
+<div id="lb" onclick="closeLB()"><button class="x" aria-label="chiudi" onclick="closeLB()">✕</button><img alt="Il giro previsto, ingrandito"></div>
+
+<script>
+const esc = s => (s ?? "").toString().replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+function openLB(src) { const lb = document.getElementById("lb"); lb.querySelector("img").src = src; lb.classList.add("on"); }
+function closeLB() { document.getElementById("lb").classList.remove("on"); }
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLB(); });
+
+const dfmt = s => new Date(s + "T12:00").toLocaleDateString("it", { weekday: "short", day: "numeric", month: "long" });
+
+(async () => {
+  const host = document.getElementById("stops");
+  try {
+    const r = await fetch("data/crew.json", { cache: "no-cache" });
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    const crew = (d.people || []).filter(p => p.crew2026 && p.crew2026.board && p.crew2026.leave);
+    const dates = new Set();
+    crew.forEach(p => { dates.add(p.crew2026.board); dates.add(p.crew2026.leave); });
+    const NOTES = {
+      "2026-08-08": "Partenza da Cannigione, ore 14:00.",
+      "2026-08-15": "Cambio equipaggio: San Fiorenzo (rotta ovest) o Bastia (rotta est).",
+      "2026-08-16": "Ancora in zona Bastia / Cap Corse.",
+      "2026-08-21": "Sera sulla costa sarda (zona Olbia / Porto Rotondo) — si preparano gli arrivi del giorno dopo.",
+      "2026-08-22": "Sardegna — altro cambio equipaggio.",
+      "2026-08-29": "Sbarco finale a Cannigione.",
+    };
+    const sorted = [...dates].sort();
+    host.innerHTML = sorted.map(date => {
+      const onN = crew.filter(p => p.crew2026.board === date).length;
+      const offN = crew.filter(p => p.crew2026.leave === date).length;
+      const delta = [onN ? `+${onN}` : "", offN ? `−${offN}` : ""].filter(Boolean).join(" ");
+      return `<div class="stop"><div class="sd">${dfmt(date)}</div><div class="sx">
+        <b>${esc(NOTES[date] || "Cambio equipaggio")}</b>
+        <small>${delta ? `${delta} persone a bordo` : ""}</small>
+      </div></div>`;
+    }).join("");
+  } catch (e) {
+    host.innerHTML = `<p style="color:var(--soft);font-size:.9rem">Date non disponibili (offline senza copia in cache, o deploy in corso).</p>`;
+  }
+})();
+
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

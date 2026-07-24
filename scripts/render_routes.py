@@ -1064,6 +1064,77 @@ def render_global(trips, polys, borders=None):
     return out, (total_w, total_h)
 
 
+def _kml_style_colors(kml_path: Path) -> dict:
+    """{style_id: '#RRGGBB'} da <Style id><LineStyle><color>AABBGGRR</color>."""
+    root = ET.fromstring(read_kml_text(kml_path))
+    out = {}
+    for st in root.iter(_Q("Style")):
+        sid = st.get("id")
+        col = st.find(f"{_Q('LineStyle')}/{_Q('color')}")
+        if sid and col is not None and col.text and len(col.text.strip()) == 8:
+            aa_bb_gg_rr = col.text.strip()
+            b, g, r = aa_bb_gg_rr[2:4], aa_bb_gg_rr[4:6], aa_bb_gg_rr[6:8]
+            out[sid] = f"#{r}{g}{b}"
+    return out
+
+
+def _kml_placemark_styles(kml_path: Path) -> dict:
+    """{placemark name: style_id} da <Placemark><styleUrl>#id</styleUrl>."""
+    root = ET.fromstring(read_kml_text(kml_path))
+    out = {}
+    for pm in root.iter(_Q("Placemark")):
+        nm = pm.find(_Q("name"))
+        su = pm.find(_Q("styleUrl"))
+        if nm is not None and nm.text and su is not None and su.text:
+            out[nm.text.strip()] = su.text.strip().lstrip("#")
+    return out
+
+
+def render_nina_overview(kml_path: Path, polys, borders=None):
+    """Mappa d'insieme del giro previsto 2026 (Niña): le rotte di data/rotte-nina.kml
+    (OVEST/EST/Giro corto), coi colori VERI del KML — non la palette generica
+    kml_color(i,n) usata per l'archivio storico. Una sola immagine, non un
+    archivio: titolo/legenda dedicati, non il layout di render_global()."""
+    trips, _ = load_trips(kml_path)
+    style_colors = _kml_style_colors(kml_path)
+    pm_styles = _kml_placemark_styles(kml_path)
+    n = len(trips)
+    for i, t in enumerate(trips):
+        sid = pm_styles.get(t["name"])
+        t["_hex"] = style_colors.get(sid) or kml_color(i, n)[1]
+
+    PANEL_W = 1700
+    MARGIN = 60
+    panel = _region_panel(trips, polys, PANEL_W, borders=borders)
+
+    title_h = 100
+    sub_h = 40
+    legend_h = 30 + len(trips) * 30 + 20
+    total_w = panel.width + 2 * MARGIN
+    total_h = title_h + sub_h + panel.height + legend_h + MARGIN
+    canvas = Image.new("RGB", (total_w, total_h), PARCHMENT)
+    d = ImageDraw.Draw(canvas)
+    d.text((MARGIN, 30), "Niña — Il giro previsto, agosto 2026", font=_font(44, bold=True), fill=INK)
+    d.text((MARGIN, 30 + title_h - 46), "Stima: il meteo (soprattutto il Maestrale) decide davvero, giorno per giorno.",
+           font=_font(20), fill=(150, 60, 60))
+
+    y = title_h + sub_h
+    canvas.paste(panel, (MARGIN, y))
+    d.rectangle([MARGIN, y, MARGIN + panel.width - 1, y + panel.height - 1], outline=COAST, width=2)
+    y += panel.height + 24
+
+    lfont = _font(22, bold=True)
+    for t in trips:
+        c = tuple(int(t["_hex"][i:i + 2], 16) for i in (1, 3, 5))
+        d.rectangle([MARGIN, y + 4, MARGIN + 30, y + 26], fill=c, outline=INK)
+        d.text((MARGIN + 42, y), t["name"], font=lfont, fill=INK)
+        y += 34
+
+    out = OUT_DIR / "nina-2026-overview.png"
+    canvas.save(out, "PNG", optimize=True)
+    return out, (total_w, total_h)
+
+
 # --- main -------------------------------------------------------------------
 
 def main():
@@ -1073,9 +1144,21 @@ def main():
     ap.add_argument("--no-global", action="store_true", help="salta la mappa globale")
     ap.add_argument("--no-labels", action="store_true", help="senza nomi/POI OSM")
     ap.add_argument("--source", default=None, help="KML sorgente alternativo (default: SRC_KML)")
+    ap.add_argument("--nina-overview", action="store_true",
+                    help="genera SOLO la mappa d'insieme del giro previsto 2026 da data/rotte-nina.kml (colori veri del KML) ed esce")
     args = ap.parse_args()
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    if args.nina_overview:
+        src = Path(args.source) if args.source else (ROOT / "data" / "rotte-nina.kml")
+        if not src.exists():
+            sys.exit(f"ERRORE: KML sorgente non trovato: {src}")
+        polys = load_land()
+        borders = load_borders()
+        out, size = render_nina_overview(src, polys, borders)
+        print(f"Overview -> {out.name}  {size[0]}x{size[1]}")
+        return
+
     src = Path(args.source) if args.source else SRC_KML
     if not src.exists():
         sys.exit(f"ERRORE: KML sorgente non trovato: {src}")

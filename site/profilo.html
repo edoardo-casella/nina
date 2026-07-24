@@ -84,7 +84,22 @@ const FIELDS = [
   ["valigia", "Non può mancare", "L'oggetto che porti sempre in barca", false],
   ["motto", "Motto", "", false],
   ["funfact", "Fun fact", "Una cosa di te che pochi sanno", true],
+  ["birth_md", "Compleanno", "Giorno/mese, es. 24/03 — niente anno", false],
 ];
+
+// "24/03" o "3/3" -> "MM-GG" (memorizzato senza anno); stringa vuota se non valido
+function normBirthMd(v) {
+  const m = v.trim().match(/^(\d{1,2})\s*[\/\-.]\s*(\d{1,2})$/);
+  if (!m) return "";
+  const gg = +m[1], mm = +m[2];
+  if (mm < 1 || mm > 12 || gg < 1 || gg > 31) return "";
+  return String(mm).padStart(2, "0") + "-" + String(gg).padStart(2, "0");
+}
+// "MM-GG" -> "GG/MM" per mostrarlo nel campo come lo si scrive
+function dispBirthMd(v) {
+  const m = (v || "").match(/^(\d{2})-(\d{2})$/);
+  return m ? `${m[2]}/${m[1]}` : (v || "");
+}
 
 async function render() {
   const app = $("app");
@@ -105,7 +120,7 @@ async function render() {
     ${FIELDS.map(([k, lab, hint, long]) => `<div class="field">
       <label for="fl-${k}">${lab}${hint ? ` <small>— ${hint}</small>` : ""}</label>
       ${long ? `<textarea id="fl-${k}" maxlength="400">${esc(p[k])}</textarea>`
-             : `<input id="fl-${k}" maxlength="120" value="${esc(p[k])}">`}
+             : `<input id="fl-${k}" maxlength="120" value="${esc(k === "birth_md" ? dispBirthMd(p[k]) : p[k])}">`}
     </div>`).join("")}
     <button type="submit">Salva il profilo</button>
     <p id="m" class="msg" role="status"></p>
@@ -117,11 +132,16 @@ async function render() {
     ev.preventDefault();
     const m = $("m");
     const upd = {};
-    FIELDS.forEach(([k]) => {
+    for (const [k] of FIELDS) {
       let v = $("fl-" + k).value.trim();
       if (k === "instagram") v = v.replace(/^@+/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//i, "").replace(/\/+$/, "");
+      if (k === "birth_md") {
+        if (v && !(v = normBirthMd(v))) {
+          m.className = "msg err"; m.textContent = "Compleanno non valido — usa il formato GG/MM (es. 24/03)."; return;
+        }
+      }
       upd[k] = v || null;
-    });
+    }
     m.className = "msg"; m.textContent = "Salvo…";
     // upsert: il primo salvataggio crea la riga (policy insert_own), i successivi la aggiornano
     const { error } = await c.from("profiles").upsert({ crew_id: member.crew_id, ...upd });

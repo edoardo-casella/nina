@@ -605,6 +605,13 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
     # in simulazione l'equipaggio e' quello della data reale corrispondente
     orig_day = (dt.date.fromisoformat(day) - dt.timedelta(days=offset)).isoformat()
     crew = core.aboard_on(v, orig_day)
+    # voyage.json usa id BREVI interni (es. "ec") diversi dal crew_id pubblico
+    # (crew.json/Supabase, es. "edo-c") — serve il nome per fare da ponte
+    try:
+        pub_id_by_name = {p["name"]: p["id"] for p in
+                          json.loads((SITE / "crew.json").read_text(encoding="utf-8"))["people"]}
+    except Exception:
+        pub_id_by_name = {}
     # offset esplicito: i telefoni fuori dal fuso italiano devono leggere
     # l'eta' del dato giusta
     now = dt.datetime.now().astimezone().isoformat(timespec="minutes")
@@ -626,8 +633,8 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
         "tonight": tonight, "plan_b": plan_b, "ranked": ranked[:4],
         "outlook": outlook,
         "polar_estimated": v["boat"].get("polar_status", "stimata") == "stimata",
-        "crew": [{"name": m["name"], "role": m["role"], "board": m["board"],
-                  "leave": m["leave"], "cabin": m.get("cabin")} for m in crew],
+        "crew": [{"id": pub_id_by_name.get(m["name"]), "name": m["name"], "role": m["role"],
+                  "board": m["board"], "leave": m["leave"], "cabin": m.get("cabin")} for m in crew],
         "turns": day_turns(crew, (dt.date.fromisoformat(day) - dt.date.fromisoformat(plan_all[0]["date"])).days
                            if plan_all else 0),
         "source": "Open-Meteo (ECMWF) — non ufficiale",
