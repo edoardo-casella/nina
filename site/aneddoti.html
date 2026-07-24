@@ -194,9 +194,10 @@ function byline(a){
   const co = (a.coautori || []).map(id => `${avatarMini(id, "pav")} ${authorLink(id)}`).join(", ");
   return `<div class="abyline">${avatarMini(a.autore, "pav")}<span>✍️ ${who}${co ? ` · con la versione di ${co}` : ""}</span></div>`;
 }
-// --- like condivisi (Supabase, chiave anon PUBBLICA per design: RLS = solo insert) ---
-const LIKES_API = "https://omxohvtjeanbdbxrdenx.supabase.co/rest/v1";
-const LIKES_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9teG9odnRqZWFuYmRieHJkZW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxMzQ0ODAsImV4cCI6MjA5OTcxMDQ4MH0.1b6pejXL4kI7PzQEJbz1a5lrsxVylm5wmW71Uvu7Jlo";
+// --- like condivisi (Supabase Plancia, chiave anon PUBBLICA per design: RLS = solo insert).
+// Migrati dal progetto separato nina-crewin il 2026-07-24 (era senza keep-alive).
+const LIKES_API = "https://nlbhhzjimsxakcugmrdy.supabase.co/rest/v1";
+const LIKES_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sYmhoemppbXN4YWtjdWdtcmR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxMzkwOTIsImV4cCI6MjA5OTcxNTA5Mn0.KIn7VfaslvOAI1PDgzz6LEOnQTgjFdqGmc4fK1iqI2A";
 let LIKES = new Map();
 const likedSet = new Set(JSON.parse(localStorage.getItem("nina_liked") || "[]"));
 function deviceId(){

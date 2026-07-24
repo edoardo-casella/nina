@@ -52,6 +52,50 @@ create table if not exists public.private_blobs (
   updated_at timestamptz not null default now()
 );
 
+-- Like sugli aneddoti e voti "qualità" della ciurma — PUBBLICI (anon insert/select).
+-- Migrati qui il 2026-07-24 dal progetto separato "nina-crewin", che non aveva
+-- keep-alive e rischiava la pausa automatica dopo 7gg di inattività.
+create table if not exists public.nina_likes (
+  id         bigint generated always as identity primary key,
+  anecdote_id text not null,
+  device_id  text not null,
+  created_at timestamptz not null default now()
+);
+alter table public.nina_likes enable row level security;
+drop policy if exists nina_likes_insert on public.nina_likes;
+create policy nina_likes_insert on public.nina_likes for insert to anon, authenticated
+  with check (length(anecdote_id) between 1 and 80 and length(device_id) between 8 and 64);
+grant select, insert on public.nina_likes to anon, authenticated;
+
+create or replace view public.nina_likes_counts as
+  select anecdote_id, count(*)::int as likes from public.nina_likes group by anecdote_id;
+grant select on public.nina_likes_counts to anon, authenticated;
+
+create table if not exists public.nina_qualities (
+  id         bigint generated always as identity primary key,
+  member_id  text not null,
+  quality    text not null,
+  device_id  text not null,
+  created_at timestamptz not null default now()
+);
+alter table public.nina_qualities enable row level security;
+drop policy if exists nina_qualities_insert on public.nina_qualities;
+create policy nina_qualities_insert on public.nina_qualities for insert to anon, authenticated
+  with check (
+    length(member_id) between 1 and 60
+    and length(device_id) between 8 and 64
+    and quality = any (array[
+      'Mano ferma al timone','Stratega di rotta','Nervi saldi in burrasca','Cuoco di bordo',
+      'Barman di rada','Ciapinaro — risolve tutto','Pesca miracolosa','Tuffi da paura',
+      'Anima della festa','Polleggio assoluto','Occhio fotografico','Jolly infaticabile'
+    ])
+  );
+grant select, insert on public.nina_qualities to anon, authenticated;
+
+create or replace view public.nina_qualities_counts as
+  select member_id, quality, count(*)::int as votes from public.nina_qualities group by member_id, quality;
+grant select on public.nina_qualities_counts to anon, authenticated;
+
 -- updated_at automatico sull'editor profilo
 create or replace function public.touch_updated_at() returns trigger
 language plpgsql as $$

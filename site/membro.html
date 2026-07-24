@@ -241,8 +241,9 @@ function compChip(cp, all) {
 function lbOne(src){ const lb=document.getElementById('lb'); lb.querySelector('img').src=src; lb.classList.add('on'); }
 // --- qualita' votabili dai visitatori (Supabase, stessa base dei like degli aneddoti;
 //     vocabolario CHIUSO, enforced anche server-side nella policy RLS) ---
-const Q_API = "https://omxohvtjeanbdbxrdenx.supabase.co/rest/v1";
-const Q_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9teG9odnRqZWFuYmRieHJkZW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxMzQ0ODAsImV4cCI6MjA5OTcxMDQ4MH0.1b6pejXL4kI7PzQEJbz1a5lrsxVylm5wmW71Uvu7Jlo";
+// migrati dal progetto separato nina-crewin il 2026-07-24 (era senza keep-alive)
+const Q_API = "https://nlbhhzjimsxakcugmrdy.supabase.co/rest/v1";
+const Q_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sYmhoemppbXN4YWtjdWdtcmR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxMzkwOTIsImV4cCI6MjA5OTcxNTA5Mn0.KIn7VfaslvOAI1PDgzz6LEOnQTgjFdqGmc4fK1iqI2A";
 const QUALITIES = ["Mano ferma al timone", "Stratega di rotta", "Nervi saldi in burrasca", "Cuoco di bordo",
   "Barman di rada", "Ciapinaro — risolve tutto", "Pesca miracolosa", "Tuffi da paura",
   "Anima della festa", "Polleggio assoluto", "Occhio fotografico", "Jolly infaticabile"];
