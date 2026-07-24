@@ -81,6 +81,34 @@ h2::after{content:"";flex:1;height:1px;background:var(--hair)}
 .cm-toggle .chev.up{transform:rotate(180deg)}
 .daycards.clip .daycard:nth-child(n+6){display:none}
 
+/* simulatore vento avanzato */
+.windbox{background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:1.1rem}
+.windtools{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.9rem}
+.windtool{border:1px solid var(--hair);background:var(--sea-1);color:var(--ink);border-radius:99px;padding:.45rem .85rem;font:700 .74rem/1 var(--display);cursor:pointer}
+.windtool.on{border-color:var(--accent);background:var(--accent);color:#fff}
+.daystrip{display:flex;gap:.35rem;overflow-x:auto;padding-bottom:.5rem;-webkit-user-select:none;user-select:none}
+.daychip{flex:none;width:44px;height:58px;border-radius:8px;border:2px solid var(--hair);background:var(--sea-1);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;font:700 .68rem/1 var(--display);color:var(--soft);gap:.15rem}
+.daychip .dn{font-size:.88rem;color:var(--ink)}
+.daychip .dg{font-size:.58rem;text-transform:uppercase}
+.daychip .arrow{font-size:.8rem;line-height:1}
+.daychip.sel{border-color:var(--ink)}
+.daychip.verde{background:rgba(10,122,67,.18)}
+.daychip.giallo{background:rgba(184,134,11,.2)}
+.daychip.rosso{background:rgba(197,48,48,.2)}
+.compass{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin:.7rem 0}
+.compassbtn{border:1px solid var(--hair);background:var(--sea-1);border-radius:6px;padding:.5rem 0;text-align:center;font:700 .7rem/1 var(--display);cursor:pointer;color:var(--ink)}
+.compassbtn.on{border-color:var(--accent);background:var(--accent);color:#fff}
+.windslide{display:flex;align-items:center;gap:.7rem;margin:.7rem 0}
+.windslide input{flex:1}
+.windslide b{width:4.5rem;text-align:right;font:700 .9rem/1 var(--mono)}
+.windrank{display:flex;flex-direction:column;gap:.4rem;margin-top:.6rem}
+.wrow{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem;background:var(--sea-1);border-radius:6px}
+.wrow .dot{width:11px;height:11px;border-radius:50%;flex:none}
+.wrow .wn{flex:1;font-size:.85rem}
+.wrow .ws{font:700 .8rem/1 var(--mono);color:var(--soft)}
+.weekhint{margin-top:1rem;background:rgba(0,107,159,.08);border:1px solid var(--accent);border-radius:8px;padding:.8rem .9rem;font-size:.86rem}
+.weekhint b{color:var(--accent)}
+
 .stop{display:flex;gap:.8rem;padding:.7rem 0;border-bottom:1px solid var(--hair)}
 .stop:last-child{border-bottom:0}
 .stop .sd{flex:none;width:4.2rem;font:700 .95rem/1.2 var(--display);color:var(--gold)}
@@ -136,6 +164,23 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
     <h2>🏝️ Giro corto — 23→29/8</h2>
     <p style="color:var(--soft);font-size:.88rem;margin:-.4rem 0 .8rem">Ultima settimana: tra le isole a nord della Sardegna e il sud della Corsica, secondo il meteo del momento — un solo piano, non cambia col simulatore.</p>
     <div id="girocorto"><p style="color:var(--soft);font-size:.9rem">Caricamento…</p></div>
+  </section>
+
+  <section>
+    <div class="windbox">
+      <h2 style="margin-bottom:.6rem">🌬️ Simulatore vento — giorno per giorno</h2>
+      <p style="color:var(--soft);font-size:.86rem;margin-bottom:.9rem">Tocca un giorno, scegli da dove soffia e quanto forte — lo stesso calcolo che usa la plancia ogni giorno vero, sulle 10 rade con dati di riparo verificati. Sposta il Maestrale avanti o indietro nel calendario e guarda come cambiano rotta consigliata e rade sicure.</p>
+      <div class="windtools">
+        <button class="windtool" id="paint-maestrale" onclick="armPaint('maestrale')">🖌️ Dipingi Maestrale (NW 25kn)</button>
+        <button class="windtool" id="paint-calmo" onclick="armPaint('calmo')">☀️ Dipingi calmo</button>
+        <button class="windtool on" id="paint-off" onclick="armPaint(null)">✋ Solo seleziona</button>
+        <button class="windtool" onclick="resetWind()">🔄 Azzera</button>
+      </div>
+      <div class="daystrip" id="daystrip"></div>
+      <div id="daydetail"></div>
+      <div id="windresult"></div>
+      <div class="weekhint" id="weekhint"></div>
+    </div>
   </section>
 
   <section><h2>Tappe fisse</h2>
@@ -243,6 +288,110 @@ function renderScenario() {
 }
 function setScenario(s) { SCENARIO = s; renderScenario(); }
 window.setScenario = setScenario;
+
+// --- simulatore vento avanzato: le 10 rade con dati di riparo verificati,
+// stessa formula di scripts/shelter.py (shelter_score) — porta qui, non un
+// duplicato approssimato: stesso margine angolare, stesso fetch, stesse soglie.
+const ANCHORAGES = [
+  { id: "spargi", name: "Cala Corsara (Spargi)", exposed_from: 150, exposed_to: 250, fetch_km: 25 },
+  { id: "budelli", name: "Cala Roto (Budelli)", exposed_from: 30, exposed_to: 130, fetch_km: 15 },
+  { id: "santamaria", name: "Cala Santa Maria", exposed_from: 140, exposed_to: 220, fetch_km: 20 },
+  { id: "lavezzi", name: "Cala Lazarina (Lavezzi)", exposed_from: 260, exposed_to: 20, fetch_km: 30 },
+  { id: "rondinara", name: "Baie de Rondinara", exposed_from: 70, exposed_to: 140, fetch_km: 40 },
+  { id: "porto_vecchio", name: "Golfe de Porto-Vecchio", exposed_from: 40, exposed_to: 110, fetch_km: 30 },
+  { id: "coticcio", name: "Cala Coticcio (Caprera)", exposed_from: 40, exposed_to: 140, fetch_km: 12 },
+  { id: "mortorio", name: "Isola Mortorio", exposed_from: 180, exposed_to: 280, fetch_km: 20 },
+  { id: "sanguinaires", name: "Iles Sanguinaires", exposed_from: 200, exposed_to: 340, fetch_km: 80 },
+  { id: "cannigione", name: "Cannigione", exposed_from: 150, exposed_to: 200, fetch_km: 8 },
+];
+const norm180 = d => ((d + 180) % 360 + 360) % 360 - 180;
+const inSector = (deg, start, end) => { const span = ((end - start) % 360 + 360) % 360; const off = ((deg - start) % 360 + 360) % 360; return off <= span; };
+const distToSector = (deg, start, end) => inSector(deg, start, end) ? 0 : Math.min(Math.abs(norm180(deg - start)), Math.abs(norm180(deg - end)));
+function shelterScore(a, twd, tws, gust) {
+  const margin = distToSector(twd, a.exposed_from, a.exposed_to);
+  const fetch = a.fetch_km || 20;
+  let score, light;
+  if (margin === 0) {
+    const exposure = (tws / 25) * (0.5 + Math.min(fetch, 60) / 120);
+    score = Math.max(0, Math.round(100 * (1 - Math.min(exposure, 1))));
+    light = score < 45 ? "rosso" : "giallo";
+  } else {
+    score = Math.round(Math.min(100, 55 + margin * 0.5));
+    if (gust > 30 && margin < 40) score -= 15;
+    light = score >= 75 ? "verde" : "giallo";
+  }
+  if (tws < 8) { score = Math.max(score, 80); light = "verde"; }
+  return { ...a, score, light, margin: Math.round(margin) };
+}
+const DIRS = [["N", 0], ["NE", 45], ["E", 90], ["SE", 135], ["S", 180], ["SW", 225], ["W", 270], ["NW", 315]];
+const DOT = { verde: "#0A7A43", giallo: "#B8860B", rosso: "#C53030" };
+
+const ALL_DATES = [];
+for (let d = new Date("2026-08-08T12:00"); d <= new Date("2026-08-29T12:00"); d.setDate(d.getDate() + 1)) ALL_DATES.push(d.toISOString().slice(0, 10));
+
+let WIND = {};              // "YYYY-MM-DD" -> {twd, tws}
+let SELDAY = ALL_DATES[0];
+let PAINT = null;           // null | "maestrale" | "calmo"
+
+function dayBest(date) {
+  const w = WIND[date];
+  if (!w) return null;
+  return ANCHORAGES.map(a => shelterScore(a, w.twd, w.tws, w.tws * 1.3)).sort((a, b) => b.score - a.score)[0];
+}
+function renderDaystrip() {
+  document.getElementById("daystrip").innerHTML = ALL_DATES.map(date => {
+    const d = new Date(date + "T12:00");
+    const best = dayBest(date);
+    const w = WIND[date];
+    return `<div class="daychip ${best ? best.light : ""}${date === SELDAY ? " sel" : ""}" onclick="dayClick('${date}')">
+      <span class="dg">${d.toLocaleDateString("it", { month: "short" })}</span><span class="dn">${d.getDate()}</span>
+      ${w ? `<span class="arrow" style="display:inline-block;transform:rotate(${w.twd}deg)">⬇</span>` : ""}
+    </div>`;
+  }).join("");
+}
+function armPaint(mode) {
+  PAINT = mode;
+  document.getElementById("paint-maestrale").classList.toggle("on", mode === "maestrale");
+  document.getElementById("paint-calmo").classList.toggle("on", mode === "calmo");
+  document.getElementById("paint-off").classList.toggle("on", mode === null);
+}
+function dayClick(date) {
+  if (PAINT === "maestrale") WIND[date] = { twd: 315, tws: 25 };
+  else if (PAINT === "calmo") delete WIND[date];
+  SELDAY = date;
+  renderAll();
+}
+function setWind(twd, tws) { WIND[SELDAY] = { twd, tws }; renderAll(); }
+function resetWind() { WIND = {}; renderAll(); }
+function renderDetail() {
+  const w = WIND[SELDAY] || { twd: 315, tws: 12 };
+  const d = new Date(SELDAY + "T12:00");
+  document.getElementById("daydetail").innerHTML = `
+    <p style="font-size:.82rem;color:var(--soft);margin:.7rem 0 .3rem"><b style="color:var(--ink)">${d.toLocaleDateString("it", { weekday: "long", day: "numeric", month: "long" })}</b> — da dove soffia e quanto forte:</p>
+    <div class="compass">${DIRS.map(([lab, deg]) => `<button class="compassbtn${w.twd === deg ? " on" : ""}" onclick="setWind(${deg},${w.tws})">${lab}</button>`).join("")}</div>
+    <div class="windslide"><span>0</span><input type="range" min="0" max="35" value="${w.tws}" oninput="setWind(${w.twd},+this.value)"><b>${w.tws} kn</b></div>`;
+}
+function renderResult() {
+  const w = WIND[SELDAY], host = document.getElementById("windresult");
+  if (!w) { host.innerHTML = `<p style="color:var(--soft);font-size:.85rem;margin-top:.5rem">Nessun vento impostato per questo giorno — scegli direzione e intensità sopra per vedere le rade sicure.</p>`; return; }
+  const ranked = ANCHORAGES.map(a => shelterScore(a, w.twd, w.tws, w.tws * 1.3)).sort((a, b) => b.score - a.score);
+  host.innerHTML = `<div class="windrank">${ranked.map(a => `<div class="wrow"><span class="dot" style="background:${DOT[a.light]}"></span><span class="wn">${esc(a.name)}</span><span class="ws">${a.score}</span></div>`).join("")}</div>`;
+}
+function renderHint() {
+  const maestraleInWeek12 = ALL_DATES.filter(d => d <= "2026-08-21").some(d => {
+    const w = WIND[d]; return w && w.tws >= 15 && (w.twd >= 292 || w.twd <= 22);
+  });
+  const hint = document.getElementById("weekhint");
+  if (maestraleInWeek12) {
+    hint.innerHTML = "<b>Settimane 1-2:</b> col Maestrale che hai impostato, conviene la <b>rotta EST</b> — il simulatore sopra si è aggiornato.";
+    if (SCENARIO !== "est") setScenario("est");
+  } else {
+    hint.innerHTML = "<b>Settimane 1-2:</b> nessun Maestrale forte nella finestra 8→21 agosto — va bene la <b>rotta OVEST</b> (default).";
+    if (SCENARIO !== "ovest") setScenario("ovest");
+  }
+}
+function renderAll() { renderDaystrip(); renderDetail(); renderResult(); renderHint(); }
+renderAll();
 
 (async () => {
   try {
