@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 """Pipeline questionario equipaggio (Jotform) -> staging locale per i profili del sito.
 
-Il form "Questionario Equipaggio - Nina" (261907242193053) raccoglie le risposte
-dei membri 2026. Questo script fa la parte DETERMINISTICA della pipeline:
+Il questionario equipaggio esiste in due form Jotform gemelli (stessi `name` interni
+per ogni domanda, stesse mappe PUBBLICABILI/RISERVATI sotto): l'originale italiano
+"Questionario Equipaggio - Nina" (261907242193053) e un clone tradotto in inglese
+"Crew Questionnaire - Nina" (262072938172056), con uno switch a bandierina reciproco
+in cima a entrambi. Questo script legge le submission di ENTRAMBI (FORM_IDS) e fa la
+parte DETERMINISTICA della pipeline:
 
   --check            elenca le submission nuove (non ancora in data/jotform-processed.json)
   --fetch            per ogni nuova: scrive lo staging in data/jotform-inbox/<cid>-<sub>.json
@@ -22,7 +26,7 @@ serve anche a scaricare gli upload protetti da login appendendo ?apiKey=... all'
 import io, json, os, re, sys, unicodedata, urllib.request, urllib.error
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FORM_ID = "261907242193053"
+FORM_IDS = ["261907242193053", "262072938172056"]  # IT (originale), EN (clone tradotto)
 API = "https://api.jotform.com"
 PROCESSED = os.path.join(ROOT, "data", "jotform-processed.json")
 INBOX = os.path.join(ROOT, "data", "jotform-inbox")
@@ -97,12 +101,21 @@ def api(path, method="GET"):
 def load_processed():
     if os.path.exists(PROCESSED):
         return json.loads(io.open(PROCESSED, encoding="utf-8").read())
-    return {"form_id": FORM_ID, "processed": []}
+    return {"form_ids": FORM_IDS, "processed": []}
 
 
 def submissions():
-    out = api(f"form/{FORM_ID}/submissions?limit=1000")
-    return [s for s in out.get("content", []) if s.get("status") == "ACTIVE"]
+    """Tutte le submission ACTIVE di entrambi i form (IT+EN), ciascuna taggata con
+    la sua provenienza in `_form_id` (serve a --delete/--refetch per sapere quale
+    form contattare; il crew_id si risolve identicamente dal nome, in entrambe le lingue)."""
+    out = []
+    for fid in FORM_IDS:
+        subs = api(f"form/{fid}/submissions?limit=1000")
+        for s in subs.get("content", []):
+            if s.get("status") == "ACTIVE":
+                s["_form_id"] = fid
+                out.append(s)
+    return out
 
 
 def parse(sub):
@@ -131,7 +144,8 @@ def fetch_one(sub, ids):
     os.makedirs(INBOX, exist_ok=True)
     staging = os.path.join(INBOX, f"{cid}-{sid}.json")
     io.open(staging, "w", encoding="utf-8").write(json.dumps(
-        {"submission_id": sid, "created_at": sub.get("created_at"), "crew_id": cid,
+        {"submission_id": sid, "form_id": sub.get("_form_id", FORM_IDS[0]),
+         "created_at": sub.get("created_at"), "crew_id": cid,
          "pubblicabili": pub, "riservati_non_pubblicare": ris},
         ensure_ascii=False, indent=2))
     print(f"  staging: {os.path.relpath(staging, ROOT)}")
@@ -174,16 +188,17 @@ def main():
             sys.exit(f"submission {sid} non trovata")
         fetch_one(target[0], known_ids())
         return
-    nuove = [s for s in subs if s["id"] not in done]
-    print(f"{len(subs)} submission attive, {len(nuove)} nuove")
+    nuove = [s for s in subs if f"{s['_form_id']}:{s['id']}" not in done]
+    print(f"{len(subs)} submission attive (IT+EN), {len(nuove)} nuove")
     for s in nuove:
         nome = next((a.get("answer") for a in s.get("answers", {}).values() if a.get("name") == "nomeE"), "?")
-        print(f"- {s['id']} · {s.get('created_at')} · {nome}")
+        lang = "EN" if s["_form_id"] == FORM_IDS[1] else "IT"
+        print(f"- [{lang}] {s['id']} · {s.get('created_at')} · {nome}")
     if "--fetch" in args and nuove:
         ids = known_ids()
         for s in nuove:
             fetch_one(s, ids)
-            state["processed"].append(s["id"])
+            state["processed"].append(f"{s['_form_id']}:{s['id']}")
         io.open(PROCESSED, "w", encoding="utf-8").write(json.dumps(state, ensure_ascii=False, indent=2) + "\n")
         print(f"processed aggiornato: {len(state['processed'])} totali")
 
