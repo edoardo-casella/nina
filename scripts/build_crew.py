@@ -36,7 +36,7 @@ COUNTRY_OVERRIDE = {"Saint Vincent - France": "Saint Vincent - France - Saint Lu
 NICKS = {
     "antonio-v": ["Anto"],
     "andrea-a": ["Abbute Puche", "Immortale di Secondigliano", "Vulcan", "Idris", "Aibs", "Abba"],
-    "bernardo-b": ["Berna"],
+    "bernardo-b": ["Berna", "Berni"],
     "bianca-m": ["Bibi"],
     "edo-c": ["Edo"],
     "fede-b": ["Fede"],
