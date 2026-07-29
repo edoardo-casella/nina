@@ -160,6 +160,7 @@ if __name__ == "__main__":
     for k, c in n["specialita_piu_gettonate"]:
         print(f"  {c}x  {k}")
     if n["equipaggio_senza_questionario"]:
-        print("\nAncora senza questionario (preferenze non note):")
+        print("\nSenza questionario — trattati come media (nessuna preferenza/allergia")
+        print("specifica da rispettare, gia' contati nelle quantita' sopra):")
         for x in n["equipaggio_senza_questionario"]:
             print(f"  - {x}")
