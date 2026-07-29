@@ -153,15 +153,33 @@ def pasta_breakdown(v: dict, prefs: dict, total_person_days: int) -> list[dict]:
     return righe
 
 
-# --- Alcolici/aperitivo: quantita' pesate sulle notti a bordo di CHI l'ha
-# effettivamente richiesto (non un conteggio flat), con una frequenza di consumo
-# assunta (ogni_n_giorni) - stima dichiarata, non una scienza esatta.
-APERITIVO_ITEMS = {
-    "Aperol (per lo spritz)": {"ogni_n_giorni": 2, "ml_per_persona": 50, "ml_confezione": 700, "formato": "bottiglie da 70cl"},
-    "Prosecco / spumante": {"ogni_n_giorni": 2, "ml_per_persona": 100, "ml_confezione": 750, "formato": "bottiglie da 75cl"},
-    "Vino bianco": {"ogni_n_giorni": 1, "ml_per_persona": 150, "ml_confezione": 750, "formato": "bottiglie da 75cl"},
+# --- Bevande (TUTTE quelle segnalate nel questionario, non solo alcolici): quantita'
+# pesate sulle notti a bordo di CHI l'ha effettivamente richiesta (non un conteggio
+# flat), con una frequenza/dose di consumo assunta - stima dichiarata, non una
+# scienza esatta. "canale": generico -> online; specialita' locale (vino/liquore
+# sardo/corso) -> di persona, stessa logica del formaggio/pane.
+# Vermentino e Rose' corso NON sono righe a se': sono etichette specifiche della
+# stessa quota "Vino bianco" (altrimenti si conterebbe due volte lo stesso vino
+# per chi ha spuntato sia "Vino bianco" sia la sua variante locale) - vedi nota
+# a stampa.
+BEVANDE_CONFIG = {
+    "Aperol (per lo spritz)": {"ogni_n_giorni": 2, "ml_per_persona": 50, "ml_confezione": 700, "formato": "bottiglie da 70cl", "canale": "online"},
+    "Prosecco / spumante": {"ogni_n_giorni": 2, "ml_per_persona": 100, "ml_confezione": 750, "formato": "bottiglie da 75cl", "canale": "online"},
+    "Vino bianco": {"ogni_n_giorni": 1, "ml_per_persona": 150, "ml_confezione": 750, "formato": "bottiglie da 75cl", "canale": "online"},
+    "Coca Cola Zero": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
+    "Coca Cola": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
+    "Estathé Zero": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
+    "Estathé": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
+    "Succhi di frutta": {"ogni_n_giorni": 2, "ml_per_persona": 200, "ml_confezione": 1000, "formato": "bottiglie/brick da 1L", "canale": "online"},
+    "Sprite": {"ogni_n_giorni": 2, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
+    "Gatorade / Powerade": {"ogni_n_giorni": 3, "ml_per_persona": 500, "ml_confezione": 500, "formato": "bottiglie da 500ml", "canale": "online"},
+    "Birra analcolica": {"ogni_n_giorni": 2, "ml_per_persona": 330, "ml_confezione": 330, "formato": "lattine da 33cl", "canale": "online"},
+    "Cannonau (vino rosso sardo)": {"ogni_n_giorni": 2, "ml_per_persona": 150, "ml_confezione": 750, "formato": "bottiglie da 75cl", "canale": "di persona"},
+    "Malvasia di Bosa / passito sardo": {"ogni_n_giorni": 4, "ml_per_persona": 80, "ml_confezione": 500, "formato": "bottiglie da 50cl", "canale": "di persona"},
+    "Mirto (liquore)": {"ogni_n_giorni": 3, "ml_per_persona": 30, "ml_confezione": 500, "formato": "bottiglie da 50cl", "canale": "di persona"},
+    "Filu 'e ferru (acquavite sarda)": {"ogni_n_giorni": 5, "ml_per_persona": 20, "ml_confezione": 500, "formato": "bottiglie da 50cl", "canale": "di persona"},
 }
-ACQUA_TONICA_ML_PER_SPRITZ = 150  # mixer per l'Aperol: dimensionata sui suoi stessi consumi, non sul suo conteggio isolato (1 sola richiesta esplicita)
+ETICHETTE_VINO_BIANCO_LOCALI = {"Vermentino (vino bianco sardo)", "Rosé corso"}
 
 
 def bibite_person_days(v: dict, prefs: dict) -> Counter:
@@ -178,24 +196,27 @@ def bibite_person_days(v: dict, prefs: dict) -> Counter:
     return pd
 
 
-def alcolici_lines(v: dict, prefs: dict) -> list[dict]:
+def bevande_lines(v: dict, prefs: dict) -> list[dict]:
     pd = bibite_person_days(v, prefs)
     righe = []
-    for voce, cfg in APERITIVO_ITEMS.items():
+    for voce, cfg in BEVANDE_CONFIG.items():
         servings = pd.get(voce, 0) / cfg["ogni_n_giorni"]
         ml_tot = servings * cfg["ml_per_persona"]
+        if ml_tot <= 0:
+            continue
         righe.append({
-            "voce": voce, "quantita_totale": round(ml_tot / 1000, 1),
-            "confezioni": math.ceil(ml_tot / cfg["ml_confezione"]) if ml_tot else 0,
-            "formato": cfg["formato"],
+            "voce": voce, "quantita_totale": round(ml_tot / 1000, 2),
+            "confezioni": math.ceil(ml_tot / cfg["ml_confezione"]),
+            "formato": cfg["formato"], "canale": cfg["canale"],
         })
-    aperol_servings = pd.get("Aperol (per lo spritz)", 0) / APERITIVO_ITEMS["Aperol (per lo spritz)"]["ogni_n_giorni"]
-    tonica_ml = aperol_servings * ACQUA_TONICA_ML_PER_SPRITZ
-    righe.append({
-        "voce": "Acqua tonica/gassata (mixer per Aperol)", "quantita_totale": round(tonica_ml / 1000, 1),
-        "confezioni": math.ceil(tonica_ml / 1000) if tonica_ml else 0, "formato": "bottiglie da 1L",
-    })
-    return [r for r in righe if r["confezioni"] > 0]
+    aperol_servings = pd.get("Aperol (per lo spritz)", 0) / BEVANDE_CONFIG["Aperol (per lo spritz)"]["ogni_n_giorni"]
+    tonica_ml = aperol_servings * 150  # mixer per l'Aperol: dimensionata sui suoi stessi consumi
+    if tonica_ml:
+        righe.append({
+            "voce": "Acqua tonica/gassata (mixer per Aperol)", "quantita_totale": round(tonica_ml / 1000, 2),
+            "confezioni": math.ceil(tonica_ml / 1000), "formato": "bottiglie da 1L", "canale": "online",
+        })
+    return righe
 
 NO_ALLERGY_ANSWERS = {"no", "no, nessuna", "nessuna", "no allergie", ""}
 
@@ -281,7 +302,7 @@ def build_plan(v: dict) -> dict:
                                         if k in PERISHABLES},
             "budget_stimato_eur": durables_full["budget_eur"],
             "pasta_dettaglio": pasta_breakdown(v, prefs, durables_full["person_days"]),
-            "alcolici_dettaglio": alcolici_lines(v, prefs),
+            "bevande_dettaglio": bevande_lines(v, prefs),
             "dispensa_essenziali": DISPENSA_ESSENZIALI,
         },
         "rifornimenti_successivi": rifornimenti,
@@ -302,11 +323,12 @@ if __name__ == "__main__":
     g = r["spesa_grossa"]
     print(f"=== SPESA GROSSA — {g['giorno']} ===  budget ~{g['budget_stimato_eur']} EUR\n")
     tutte_le_voci = {**g["non_deperibile_intera_crociera"], **g["deperibile_prima_tratta"]}
-    # Alcolici, pasta/riso e dispensa/conserve: sempre online (generici, non deperibili).
+    # Pasta/riso e dispensa/conserve: sempre online (generici, non deperibili).
+    # Bevande: canale gia' deciso per singola voce (generico online, specialita' di persona).
     righe = (detailed_lines(tutte_le_voci)
              + [{**x, "canale": "online"} for x in g["dispensa_essenziali"]]
              + [{**x, "canale": "online"} for x in g["pasta_dettaglio"]]
-             + [{**x, "canale": "online"} for x in g["alcolici_dettaglio"]])
+             + g["bevande_dettaglio"])
     for canale, titolo in (("online", "ONLINE (ordina in anticipo, ritiro/consegna prima dell'8)"),
                            ("di persona", "DI PERSONA (mercato/pescheria/enoteca l'8 mattina)")):
         print(f"{titolo}:")
@@ -332,6 +354,10 @@ if __name__ == "__main__":
     print("\nBevande piu' richieste:")
     for k, c in n["bevande_piu_richieste"]:
         print(f"  {c}x  {k}")
+    etichette = [f"{c}x {k}" for k, c in n["bevande_piu_richieste"] if k in ETICHETTE_VINO_BIANCO_LOCALI]
+    if etichette:
+        print(f"  (di questi, {' e '.join(etichette)} preferirebbero l'etichetta locale:")
+        print("   stessa quota 'Vino bianco' sopra, scegli quelle bottiglie invece di un bianco generico)")
     print("\nSpecialita' locali piu' gettonate (da provare insieme):")
     for k, c in n["specialita_piu_gettonate"]:
         print(f"  {c}x  {k}")
