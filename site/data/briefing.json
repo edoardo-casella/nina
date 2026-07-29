@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T09:55+02:00",
+  "generated_at": "2026-07-29T11:20+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-29",
@@ -59,7 +59,7 @@
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 1.5,
+    "mean_spread_kn": 1.3,
     "max_spread_kn": 5.4,
     "confidence": "alta"
   },
@@ -125,52 +125,33 @@
   "stop_reason": null,
   "tonight": null,
   "plan_b": {
-    "id": "sanguinaires",
-    "name": "Iles Sanguinaires",
+    "id": "lavezzi",
+    "name": "Cala Lazarina (Lavezzi)",
     "score": 100,
     "light": "verde",
-    "margin_deg": 105,
-    "fetch_km": 80,
-    "why": "vento 95° a 105° dal settore esposto",
-    "holding": "sabbia/roccia",
-    "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
+    "margin_deg": 88,
+    "fetch_km": 30,
+    "why": "vento 108° a 88° dal settore esposto",
+    "holding": "sabbia tra roccia",
+    "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
     "verify": true,
     "sunset_view": true,
     "sunset_bonus": 6,
-    "rating": 4,
+    "rating": 5,
     "photo": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
-      "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
     }
   },
   "ranked": [
     {
-      "id": "sanguinaires",
-      "name": "Iles Sanguinaires",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 105,
-      "fetch_km": 80,
-      "why": "vento 95° a 105° dal settore esposto",
-      "holding": "sabbia/roccia",
-      "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
-      "verify": true,
-      "sunset_view": true,
-      "sunset_bonus": 6,
-      "rating": 4,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
-      }
-    },
-    {
       "id": "lavezzi",
       "name": "Cala Lazarina (Lavezzi)",
-      "score": 98,
+      "score": 100,
       "light": "verde",
-      "margin_deg": 75,
+      "margin_deg": 88,
       "fetch_km": 30,
-      "why": "vento 95° a 75° dal settore esposto",
+      "why": "vento 108° a 88° dal settore esposto",
       "holding": "sabbia tra roccia",
       "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
       "verify": true,
@@ -183,32 +164,32 @@
       }
     },
     {
-      "id": "mortorio",
-      "name": "Isola Mortorio",
-      "score": 98,
+      "id": "sanguinaires",
+      "name": "Iles Sanguinaires",
+      "score": 100,
       "light": "verde",
-      "margin_deg": 85,
-      "fetch_km": 20,
-      "why": "vento 95° a 85° dal settore esposto",
-      "holding": "sabbia",
-      "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
+      "margin_deg": 92,
+      "fetch_km": 80,
+      "why": "vento 108° a 92° dal settore esposto",
+      "holding": "sabbia/roccia",
+      "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
       "verify": true,
-      "sunset_view": false,
-      "sunset_bonus": 0,
+      "sunset_view": true,
+      "sunset_bonus": 6,
       "rating": 4,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
       }
     },
     {
       "id": "budelli",
       "name": "Cala Roto (Budelli)",
-      "score": 94,
+      "score": 96,
       "light": "verde",
       "margin_deg": 0,
       "fetch_km": 15,
-      "why": "vento 95° entra in rada (settore 30-130°), fetch 15 km",
+      "why": "vento 108° entra in rada (settore 30-130°), fetch 15 km",
       "holding": "sabbia",
       "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
       "verify": true,
@@ -218,6 +199,25 @@
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
         "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+      }
+    },
+    {
+      "id": "coticcio",
+      "name": "Cala Coticcio (Caprera)",
+      "score": 96,
+      "light": "verde",
+      "margin_deg": 0,
+      "fetch_km": 12,
+      "why": "vento 108° entra in rada (settore 40-140°), fetch 12 km",
+      "holding": "sabbia",
+      "notes": "Sosta diurna. Sbarco a terra regolamentato.",
+      "verify": true,
+      "sunset_view": false,
+      "sunset_bonus": 0,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
       }
     }
   ],
@@ -482,12 +482,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 29.6,
-    "rh": 48,
+    "temp": 33.3,
+    "rh": 37,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 0.7,
-    "twd": 124,
-    "sst": 27.0
+    "tws": 4.0,
+    "twd": 67,
+    "sst": 27.3
   }
 }
