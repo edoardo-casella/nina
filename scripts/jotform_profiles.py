@@ -23,6 +23,7 @@ REGOLE PRIVACY (promesse nel form): il blocco `riservati_non_pubblicare` dello s
 Richiede una API key Jotform FULL ACCESS nell'env var JOTFORM_API_KEY (mai nei file:
 serve anche a scaricare gli upload protetti da login appendendo ?apiKey=... all'URL).
 """
+import http.client
 import io, json, os, re, sys, unicodedata, urllib.request, urllib.error
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -60,7 +61,8 @@ RISERVATI = {
     "cheTipo": "spiagge", "cheProfondita": "profondita", "Sup": "giochi_acqua",
     "assicurazioneCasco": "assicurazione_casco", "supA": "sup_quota",
 }
-CID_ALIAS = {"edoardo-c": "edo-c", "gabriele-m": "gabri-m", "federico-b": "fede-b", "maria-p": "lavinia-p"}
+CID_ALIAS = {"edoardo-c": "edo-c", "gabriele-m": "gabri-m", "federico-b": "fede-b", "maria-p": "lavinia-p",
+             "federica-n": "fede-n"}
 
 
 def slugify(s):
@@ -156,8 +158,9 @@ def fetch_one(sub, ids):
             print(f"  foto: {os.path.relpath(dest, ROOT)} esiste gia', salto")
             continue
         try:
-            ctype, blob = get(url + ("&" if "?" in url else "?") + "apiKey=" + KEY)
-        except (urllib.error.URLError, OSError) as e:
+            safe_url = url.replace(" ", "%20")  # es. "WhatsApp Image ...jpeg" con spazi non codificati
+            ctype, blob = get(safe_url + ("&" if "?" in safe_url else "?") + "apiKey=" + KEY)
+        except (urllib.error.URLError, OSError, http.client.InvalidURL) as e:
             print(f"  foto: download fallito ({e}) -> scaricala a mano dall'inbox Jotform")
             continue
         # il login wall risponde text/html; il file vero arriva come image/* o octet-stream:

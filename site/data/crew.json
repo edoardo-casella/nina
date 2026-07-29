@@ -8284,10 +8284,15 @@
     "leave": "2026-08-29",
     "role": "crew"
    },
+   "tags": [
+    "Debuttante",
+    "Aperitivi"
+   ],
    "nicks": [
     "Fede"
    ],
-   "sex": "f"
+   "sex": "f",
+   "photo": "crew/img/fede-n.jpg"
   },
   {
    "id": "lavinia-p",
