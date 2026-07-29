@@ -11,7 +11,7 @@ Le note di preferenza (must-have, allergie, bevande piu' richieste, specialita'
 piu' gettonate) sono un aiuto per il menu, non un algoritmo di menu completo.
 """
 from __future__ import annotations
-import argparse, json
+import argparse, json, math
 from collections import Counter
 from core import load, ROOT
 from provisioning import shopping_list
@@ -34,6 +34,64 @@ PERISHABLES = {
     "Pane (g)", "Verdura fresca (g)", "Frutta (g)", "Carne / pesce (g)",
     "Latte (ml)", "Ghiaccio (kg)",
 }
+
+# Confezionamento tipico italiano, per convertire i totali (kg/L/pz) in righe
+# d'ordine reali. Stima: aggiustare qui se il formato reale del negozio e' diverso.
+PACKAGING = {
+    "Acqua in bottiglia (L)": (9, "cassa da 6x1,5L"),
+    "Pasta / riso (g)": (500, "pacco da 500g"),
+    "Pane (g)": (500, "pagnotta/pacco da 500g"),
+    "Verdura fresca (g)": (1000, "kg"),
+    "Frutta (g)": (1000, "kg"),
+    "Carne / pesce (g)": (1000, "kg"),
+    "Uova (n)": (30, "cassa da 30"),
+    "Formaggio (g)": (1000, "kg (sottovuoto)"),
+    "Latte (ml)": (1000, "cartone da 1L"),
+    "Caffe' (dosi)": (15, "confezione da 250g (~15 dosi moka)"),
+    "Birra (n)": (24, "cassa da 24 lattine"),
+    "Vino (bottiglie)": (6, "cassa da 6 bottiglie"),
+    "Snack / biscotti (g)": (300, "confezione da 300g"),
+    "Ghiaccio (kg)": (2, "sacco da 2kg"),
+}
+
+# Canale d'acquisto consigliato per voce:
+#  - "online": generico/pesante/dura a lungo -> ok ordinarlo in anticipo (es. Conad
+#    Spesa Online, area Olbia-Tempio copre Arzachena/Cannigione) e farselo consegnare
+#    prima dell'8, o ritiro in negozio.
+#  - "di persona": freschezza (deperibili) O specialita' locale che l'equipaggio ha
+#    esplicitamente segnalato di voler provare (pecorino sardo, vino locale) -> meglio
+#    scegliere sul posto (mercato/enoteca/pescheria) che affidarsi a un catalogo online.
+CHANNEL = {
+    "Acqua in bottiglia (L)": "online",
+    "Pasta / riso (g)": "online",
+    "Pane (g)": "di persona",
+    "Verdura fresca (g)": "di persona",
+    "Frutta (g)": "di persona",
+    "Carne / pesce (g)": "di persona",
+    "Uova (n)": "online",
+    "Formaggio (g)": "di persona",     # pecorino sardo e' la specialita' piu' richiesta (11x)
+    "Latte (ml)": "di persona",
+    "Caffe' (dosi)": "online",
+    "Birra (n)": "online",
+    "Vino (bottiglie)": "di persona",  # Vermentino/Rose' corso locali richiesti esplicitamente
+    "Snack / biscotti (g)": "online",
+    "Ghiaccio (kg)": "di persona",     # si scioglie: va preso il giorno stesso
+}
+
+
+def detailed_lines(items: dict) -> list[dict]:
+    """Converte {voce: quantita'} in righe d'ordine: confezioni da comprare + canale."""
+    lines = []
+    for item, qty in items.items():
+        size, formato = PACKAGING.get(item, (1, "unita'"))
+        lines.append({
+            "voce": item,
+            "quantita_totale": qty,
+            "confezioni": math.ceil(qty / size),
+            "formato": formato,
+            "canale": CHANNEL.get(item, "di persona"),
+        })
+    return lines
 
 NO_ALLERGY_ANSWERS = {"no", "no, nessuna", "nessuna", "no allergie", ""}
 
@@ -135,10 +193,16 @@ if __name__ == "__main__":
 
     g = r["spesa_grossa"]
     print(f"=== SPESA GROSSA — {g['giorno']} ===  budget ~{g['budget_stimato_eur']} EUR\n")
-    print("Non deperibile (dura tutta la crociera):")
-    _print_items(g["non_deperibile_intera_crociera"])
-    print("\nDeperibile (solo per la prima tratta):")
-    _print_items(g["deperibile_prima_tratta"])
+    tutte_le_voci = {**g["non_deperibile_intera_crociera"], **g["deperibile_prima_tratta"]}
+    righe = detailed_lines(tutte_le_voci)
+    for canale, titolo in (("online", "ONLINE (ordina in anticipo, ritiro/consegna prima dell'8)"),
+                           ("di persona", "DI PERSONA (mercato/pescheria/enoteca l'8 mattina)")):
+        print(f"{titolo}:")
+        for x in righe:
+            if x["canale"] != canale:
+                continue
+            print(f"  {x['voce']:<26} {x['quantita_totale']:>10}  ->  {x['confezioni']:>3}x {x['formato']}")
+        print()
 
     for leg in r["rifornimenti_successivi"]:
         print(f"\n=== RIFORNIMENTO — {leg['tratta']} ({leg['persona_giorno']} persona-giorno) ===")
