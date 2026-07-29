@@ -166,7 +166,7 @@ BEVANDE_CONFIG = {
     "Aperol (per lo spritz)": {"ogni_n_giorni": 2, "ml_per_persona": 50, "ml_confezione": 700, "formato": "bottiglie da 70cl", "canale": "online"},
     "Prosecco / spumante": {"ogni_n_giorni": 2, "ml_per_persona": 100, "ml_confezione": 750, "formato": "bottiglie da 75cl", "canale": "online"},
     "Vino bianco": {"ogni_n_giorni": 1, "ml_per_persona": 150, "ml_confezione": 750, "formato": "bottiglie da 75cl", "canale": "online"},
-    "Coca Cola Zero": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
+    "Coca Cola Zero": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 330, "formato": "lattine da 33cl", "canale": "online"},
     "Coca Cola": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
     "Estathé Zero": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
     "Estathé": {"ogni_n_giorni": 1, "ml_per_persona": 250, "ml_confezione": 1500, "formato": "bottiglie da 1,5L", "canale": "online"},
