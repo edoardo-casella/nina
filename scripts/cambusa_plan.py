@@ -13,8 +13,8 @@ piu' gettonate) sono un aiuto per il menu, non un algoritmo di menu completo.
 from __future__ import annotations
 import argparse, json, math
 from collections import Counter
-from core import load, ROOT
-from provisioning import shopping_list
+from core import load, ROOT, nights_aboard
+from provisioning import shopping_list, SAFETY_MARGIN
 
 INBOX = ROOT / "data" / "jotform-inbox"
 CREWJSON = ROOT / "site" / "data" / "crew.json"
@@ -37,9 +37,11 @@ PERISHABLES = {
 
 # Confezionamento tipico italiano, per convertire i totali (kg/L/pz) in righe
 # d'ordine reali. Stima: aggiustare qui se il formato reale del negozio e' diverso.
+# "Pasta / riso (g)" e "Vino (bottiglie)" NON ci sono: hanno un dettaglio dedicato
+# (pasta_breakdown/alcolici_lines) perche' vanno spezzati per persona/preferenza,
+# non trattati come un blocco unico.
 PACKAGING = {
     "Acqua in bottiglia (L)": (9, "cassa da 6x1,5L"),
-    "Pasta / riso (g)": (500, "pacco da 500g"),
     "Pane (g)": (500, "pagnotta/pacco da 500g"),
     "Verdura fresca (g)": (1000, "kg"),
     "Frutta (g)": (1000, "kg"),
@@ -49,7 +51,6 @@ PACKAGING = {
     "Latte (ml)": (1000, "cartone da 1L"),
     "Caffe' (dosi)": (15, "confezione da 250g (~15 dosi moka)"),
     "Birra (n)": (24, "cassa da 24 lattine"),
-    "Vino (bottiglie)": (6, "cassa da 6 bottiglie"),
     "Snack / biscotti (g)": (300, "confezione da 300g"),
     "Ghiaccio (kg)": (2, "sacco da 2kg"),
 }
@@ -59,11 +60,10 @@ PACKAGING = {
 #    Spesa Online, area Olbia-Tempio copre Arzachena/Cannigione) e farselo consegnare
 #    prima dell'8, o ritiro in negozio.
 #  - "di persona": freschezza (deperibili) O specialita' locale che l'equipaggio ha
-#    esplicitamente segnalato di voler provare (pecorino sardo, vino locale) -> meglio
-#    scegliere sul posto (mercato/enoteca/pescheria) che affidarsi a un catalogo online.
+#    esplicitamente segnalato di voler provare (pecorino sardo) -> meglio scegliere
+#    sul posto (mercato/enoteca/pescheria) che affidarsi a un catalogo online.
 CHANNEL = {
     "Acqua in bottiglia (L)": "online",
-    "Pasta / riso (g)": "online",
     "Pane (g)": "di persona",
     "Verdura fresca (g)": "di persona",
     "Frutta (g)": "di persona",
@@ -73,10 +73,25 @@ CHANNEL = {
     "Latte (ml)": "di persona",
     "Caffe' (dosi)": "online",
     "Birra (n)": "online",
-    "Vino (bottiglie)": "di persona",  # Vermentino/Rose' corso locali richiesti esplicitamente
     "Snack / biscotti (g)": "online",
     "Ghiaccio (kg)": "di persona",     # si scioglie: va preso il giorno stesso
 }
+
+# Dispensa/conserve "boat essential" (fonte: consigli cambusa charter/vela — olio,
+# sale, scatolame, legumi, pane secco). Non erano in RATES/provisioning.py: quantita'
+# a occhio per l'intera crociera (non scalate a persona-giorno come il resto, sono
+# scorte-cuscinetto), da aggiustare liberamente. Alcune coprono cibi immancabili
+# segnalati nel questionario (tonno: Giulia N/Gabri M; acciughe: Lavinia P).
+DISPENSA_ESSENZIALI = [
+    {"voce": "Tonno in scatola (80g)", "quantita_totale": "-", "confezioni": 24, "formato": "scatolette da 80g", "canale": "online"},
+    {"voce": "Acciughe/alici (sottolio o sotto sale)", "quantita_totale": "-", "confezioni": 8, "formato": "vasetti/latte", "canale": "online"},
+    {"voce": "Legumi cotti (fagioli/ceci)", "quantita_totale": "-", "confezioni": 12, "formato": "barattoli da 400g", "canale": "online"},
+    {"voce": "Pomodori pelati / passata", "quantita_totale": "-", "confezioni": 10, "formato": "bottiglie/lattine da 500g-700g", "canale": "online"},
+    {"voce": "Olio extravergine d'oliva", "quantita_totale": "-", "confezioni": 4, "formato": "bottiglie da 1L", "canale": "online"},
+    {"voce": "Sale grosso + fino", "quantita_totale": "-", "confezioni": 2, "formato": "pacchi da 1kg", "canale": "online"},
+    {"voce": "Crackers / gallette / pane secco", "quantita_totale": "-", "confezioni": 10, "formato": "confezioni da 250g", "canale": "online"},
+    {"voce": "Marmellata", "quantita_totale": "-", "confezioni": 4, "formato": "vasetti da 350g", "canale": "online"},
+]
 
 
 def detailed_lines(items: dict) -> list[dict]:
@@ -92,6 +107,95 @@ def detailed_lines(items: dict) -> list[dict]:
             "canale": CHANNEL.get(item, "di persona"),
         })
     return lines
+
+
+# --- Pasta/riso dettagliato: riso vs pasta, + quota senza glutine per chi ne ha
+# bisogno (celiachia/intolleranza reale, rilevata dal testo libero delle allergie,
+# non da un campo dedicato del form). Stessa RATE combinata di provisioning.py
+# (120 g/persona/giorno), solo spezzata invece che in un unico blocco.
+PASTA_RATE_TOTALE = 120  # g/persona/giorno (invariato)
+RISO_QUOTA = 0.20
+PASTA_QUOTA = 0.80
+GLUTEN_KEYWORDS = ("glutine", "celiac")
+
+
+def gluten_free_person_days(v: dict, prefs: dict) -> tuple[int, list[str]]:
+    n2id = name_to_crew_id()
+    days, nomi = 0, []
+    for m in v["crew"]:
+        p = prefs.get(n2id.get(m["name"], m["id"]))
+        if p and any(k in p["allergie"].lower() for k in GLUTEN_KEYWORDS):
+            days += nights_aboard(m)
+            nomi.append(m["name"])
+    return days, nomi
+
+
+def pasta_breakdown(v: dict, prefs: dict, total_person_days: int) -> list[dict]:
+    gf_days, gf_nomi = gluten_free_person_days(v, prefs)
+    normal_days = max(total_person_days - gf_days, 0)
+    riso_g = PASTA_RATE_TOTALE * RISO_QUOTA * total_person_days * SAFETY_MARGIN
+    pasta_normale_g = PASTA_RATE_TOTALE * PASTA_QUOTA * normal_days * SAFETY_MARGIN
+    pasta_gf_g = PASTA_RATE_TOTALE * PASTA_QUOTA * gf_days * SAFETY_MARGIN
+    righe = [
+        {"voce": "Riso", "quantita_totale": round(riso_g, 1),
+         "confezioni": math.ceil(riso_g / 1000), "formato": "pacchi da 1kg"},
+        {"voce": "Pasta corta (normale)", "quantita_totale": round(pasta_normale_g / 2, 1),
+         "confezioni": math.ceil((pasta_normale_g / 2) / 500), "formato": "pacchi da 500g"},
+        {"voce": "Pasta lunga/spaghetti (normale)", "quantita_totale": round(pasta_normale_g / 2, 1),
+         "confezioni": math.ceil((pasta_normale_g / 2) / 500), "formato": "pacchi da 500g"},
+    ]
+    if gf_days:
+        righe.append({
+            "voce": f"Pasta SENZA GLUTINE ({', '.join(gf_nomi)})",
+            "quantita_totale": round(pasta_gf_g, 1),
+            "confezioni": math.ceil(pasta_gf_g / 500), "formato": "pacchi da 500g",
+        })
+    return righe
+
+
+# --- Alcolici/aperitivo: quantita' pesate sulle notti a bordo di CHI l'ha
+# effettivamente richiesto (non un conteggio flat), con una frequenza di consumo
+# assunta (ogni_n_giorni) - stima dichiarata, non una scienza esatta.
+APERITIVO_ITEMS = {
+    "Aperol (per lo spritz)": {"ogni_n_giorni": 2, "ml_per_persona": 50, "ml_confezione": 700, "formato": "bottiglie da 70cl"},
+    "Prosecco / spumante": {"ogni_n_giorni": 2, "ml_per_persona": 100, "ml_confezione": 750, "formato": "bottiglie da 75cl"},
+    "Vino bianco": {"ogni_n_giorni": 1, "ml_per_persona": 150, "ml_confezione": 750, "formato": "bottiglie da 75cl"},
+}
+ACQUA_TONICA_ML_PER_SPRITZ = 150  # mixer per l'Aperol: dimensionata sui suoi stessi consumi, non sul suo conteggio isolato (1 sola richiesta esplicita)
+
+
+def bibite_person_days(v: dict, prefs: dict) -> Counter:
+    """Per ogni bevanda, somma le notti a bordo di chi l'ha scelta (pesato sulla
+    permanenza reale — chi sta 20 giorni conta piu' di chi ne sta 3)."""
+    n2id = name_to_crew_id()
+    pd = Counter()
+    for m in v["crew"]:
+        p = prefs.get(n2id.get(m["name"], m["id"]))
+        if not p:
+            continue
+        for b in p["bibite"]:
+            pd[b] += nights_aboard(m)
+    return pd
+
+
+def alcolici_lines(v: dict, prefs: dict) -> list[dict]:
+    pd = bibite_person_days(v, prefs)
+    righe = []
+    for voce, cfg in APERITIVO_ITEMS.items():
+        servings = pd.get(voce, 0) / cfg["ogni_n_giorni"]
+        ml_tot = servings * cfg["ml_per_persona"]
+        righe.append({
+            "voce": voce, "quantita_totale": round(ml_tot / 1000, 1),
+            "confezioni": math.ceil(ml_tot / cfg["ml_confezione"]) if ml_tot else 0,
+            "formato": cfg["formato"],
+        })
+    aperol_servings = pd.get("Aperol (per lo spritz)", 0) / APERITIVO_ITEMS["Aperol (per lo spritz)"]["ogni_n_giorni"]
+    tonica_ml = aperol_servings * ACQUA_TONICA_ML_PER_SPRITZ
+    righe.append({
+        "voce": "Acqua tonica/gassata (mixer per Aperol)", "quantita_totale": round(tonica_ml / 1000, 1),
+        "confezioni": math.ceil(tonica_ml / 1000) if tonica_ml else 0, "formato": "bottiglie da 1L",
+    })
+    return [r for r in righe if r["confezioni"] > 0]
 
 NO_ALLERGY_ANSWERS = {"no", "no, nessuna", "nessuna", "no allergie", ""}
 
@@ -167,14 +271,18 @@ def build_plan(v: dict) -> dict:
             "deperibile": {k: q for k, q in r["items"].items() if k in PERISHABLES},
         })
 
+    dettagliate_a_parte = {"Pasta / riso (g)", "Vino (bottiglie)"}
     return {
         "spesa_grossa": {
             "giorno": start,
             "non_deperibile_intera_crociera": {k: q for k, q in durables_full["items"].items()
-                                                if k not in PERISHABLES},
+                                                if k not in PERISHABLES and k not in dettagliate_a_parte},
             "deperibile_prima_tratta": {k: q for k, q in perishables_leg1["items"].items()
                                         if k in PERISHABLES},
             "budget_stimato_eur": durables_full["budget_eur"],
+            "pasta_dettaglio": pasta_breakdown(v, prefs, durables_full["person_days"]),
+            "alcolici_dettaglio": alcolici_lines(v, prefs),
+            "dispensa_essenziali": DISPENSA_ESSENZIALI,
         },
         "rifornimenti_successivi": rifornimenti,
         "note_preferenze": preference_notes(v, prefs),
@@ -194,14 +302,18 @@ if __name__ == "__main__":
     g = r["spesa_grossa"]
     print(f"=== SPESA GROSSA — {g['giorno']} ===  budget ~{g['budget_stimato_eur']} EUR\n")
     tutte_le_voci = {**g["non_deperibile_intera_crociera"], **g["deperibile_prima_tratta"]}
-    righe = detailed_lines(tutte_le_voci)
+    # Alcolici, pasta/riso e dispensa/conserve: sempre online (generici, non deperibili).
+    righe = (detailed_lines(tutte_le_voci)
+             + [{**x, "canale": "online"} for x in g["dispensa_essenziali"]]
+             + [{**x, "canale": "online"} for x in g["pasta_dettaglio"]]
+             + [{**x, "canale": "online"} for x in g["alcolici_dettaglio"]])
     for canale, titolo in (("online", "ONLINE (ordina in anticipo, ritiro/consegna prima dell'8)"),
                            ("di persona", "DI PERSONA (mercato/pescheria/enoteca l'8 mattina)")):
         print(f"{titolo}:")
         for x in righe:
             if x["canale"] != canale:
                 continue
-            print(f"  {x['voce']:<26} {x['quantita_totale']:>10}  ->  {x['confezioni']:>3}x {x['formato']}")
+            print(f"  {x['voce']:<45} {x['quantita_totale']:>8}  ->  {x['confezioni']:>3}x {x['formato']}")
         print()
 
     for leg in r["rifornimenti_successivi"]:

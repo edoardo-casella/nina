@@ -22,7 +22,7 @@ RATES = {
     "Caffe' (dosi)": 2,
     "Birra (n)": 1.0,
     "Vino (bottiglie)": 0.25,
-    "Snack / biscotti (g)": 80,
+    "Snack / biscotti (g)": 40,  # discrezionale (gusti personali): dimezzato su segnalazione utente
     "Ghiaccio (kg)": 0.3,
 }
 # voci da azzerare/sostituire per dieta
