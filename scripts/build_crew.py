@@ -83,6 +83,7 @@ NICKS = {
     "tonino-l": ["Tony"],
     "umberto-f": ["Umbe", "Fasa"],
     "lorenzo-c": ["Costanz"],
+    "valentina-f": ["Vale"],
 }
 
 # Crew femminili (crew_id) -> per il "detto/detta" sui profili. Attaccato come "sex".
@@ -91,7 +92,7 @@ FEM = {
     "alice-s", "angela-k", "beatrice-f", "belinda-b", "carlotta-d", "cecilia-r", "chiara-f",
     "fabiana-f", "jennifer-s", "laura-c", "ludovica-r", "margherita-c", "marta-a", "martina-g",
     "martina-r", "matilde-c", "matilde-m", "matilde-r", "monica-m", "paola-c", "rebecca-b", "rebecca-l",
-    "sara-b", "simona-b", "sofia-m",
+    "sara-b", "simona-b", "sofia-m", "valentina-f",
 }
 
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)

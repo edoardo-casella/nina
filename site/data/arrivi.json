@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T09:27+02:00",
+  "generated_at": "2026-07-29T09:39+02:00",
   "start": "2026-08-08",
   "end": "2026-08-29",
   "crew": [
@@ -190,6 +190,15 @@
       "x": 0,
       "p": "crew/img/ilaria-c.jpg",
       "id": "ilaria-c"
+    },
+    {
+      "n": "Valentina Franchi",
+      "b": "2026-08-08",
+      "l": "2026-08-15",
+      "r": "crew",
+      "x": 0,
+      "p": "crew/img/valentina-f.jpg",
+      "id": "valentina-f"
     }
   ]
 }

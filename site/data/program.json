@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T09:27+02:00",
+  "generated_at": "2026-07-29T09:39+02:00",
   "sim": true,
   "day": "2026-07-29",
   "start_date": "2026-07-29",
@@ -49,7 +49,7 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on_n": 9,
+        "on_n": 10,
         "off_n": 0
       },
       "wx": {
@@ -568,7 +568,7 @@
       "tier": "piena",
       "crew_delta": {
         "on_n": 4,
-        "off_n": 3
+        "off_n": 4
       },
       "wx": {
         "wmo": 2,

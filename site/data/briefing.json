@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T09:27+02:00",
+  "generated_at": "2026-07-29T09:39+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-29",
@@ -457,6 +457,14 @@
     {
       "id": "ilaria-c",
       "name": "Ilaria C.",
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-15",
+      "cabin": null
+    },
+    {
+      "id": "valentina-f",
+      "name": "Valentina Franchi",
       "role": "crew",
       "board": "2026-08-08",
       "leave": "2026-08-15",

@@ -15,7 +15,7 @@
   "grande-ammiraglio": "Grande Ammiraglio",
   "abilitato": "Abilitato al comando"
  },
- "n_total": 68,
+ "n_total": 69,
  "people": [
   {
    "id": "edo-c",
@@ -8185,6 +8185,33 @@
    ],
    "sex": "f",
    "photo": "crew/img/bianca-m.jpg"
+  },
+  {
+   "id": "valentina-f",
+   "name": "Valentina Franchi",
+   "trips": 0,
+   "days": 0,
+   "nm": 0,
+   "first": null,
+   "last": null,
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
+   "trips_list": [],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-15",
+    "role": "crew"
+   },
+   "tags": [
+    "Debuttante",
+    "Relax puro"
+   ],
+   "nicks": [
+    "Vale"
+   ],
+   "sex": "f",
+   "photo": "crew/img/valentina-f.jpg"
   },
   {
    "id": "manlio",

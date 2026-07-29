@@ -314,6 +314,21 @@
     "pulizie",
     "check"
    ]
+  },
+  {
+   "id": "vf",
+   "name": "Valentina Franchi",
+   "board": "2026-08-08",
+   "leave": "2026-08-15",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": null,
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
   }
  ],
  "costs": {
