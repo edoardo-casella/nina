@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T11:20+02:00",
+  "generated_at": "2026-07-29T14:28+02:00",
   "sim": true,
   "day": "2026-07-29",
   "start_date": "2026-07-29",
@@ -49,24 +49,24 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on_n": 10,
+        "on_n": 11,
         "off_n": 0
       },
       "wx": {
         "wmo": 1,
-        "tmax": 34.2,
+        "tmax": 34.0,
         "tmin": 22.7,
         "rain_prob": 0,
-        "wind_max": 7.5,
-        "gust_max": 14.8,
-        "wind_dir": 80
+        "wind_max": 7.3,
+        "gust_max": 14.4,
+        "wind_dir": 69
       },
       "wave": {
         "hmax": 0.28,
-        "dir": 280,
-        "period": 5.25
+        "dir": 277,
+        "period": 5.35
       },
-      "sst": 27.9,
+      "sst": 28.0,
       "astro": {
         "date": "2026-07-29",
         "sunrise": "06:14",
@@ -138,18 +138,18 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 0,
-        "tmax": 30.8,
-        "tmin": 25.9,
+        "wmo": 1,
+        "tmax": 30.7,
+        "tmin": 26.1,
         "rain_prob": 0,
-        "wind_max": 10.3,
-        "gust_max": 13.6,
-        "wind_dir": 256
+        "wind_max": 9.9,
+        "gust_max": 13.0,
+        "wind_dir": 239
       },
       "wave": {
         "hmax": 0.2,
         "dir": 293,
-        "period": 3.55
+        "period": 3.7
       },
       "sst": 28.6,
       "astro": {
@@ -224,17 +224,17 @@
       },
       "wx": {
         "wmo": 0,
-        "tmax": 32.2,
-        "tmin": 25.3,
+        "tmax": 32.7,
+        "tmin": 25.1,
         "rain_prob": 0,
         "wind_max": 11.3,
         "gust_max": 22.2,
-        "wind_dir": 262
+        "wind_dir": 261
       },
       "wave": {
         "hmax": 0.42,
         "dir": 290,
-        "period": 3.0
+        "period": 2.85
       },
       "sst": 27.7,
       "astro": {
@@ -308,20 +308,20 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 30.3,
-        "tmin": 24.0,
+        "wmo": 3,
+        "tmax": 31.0,
+        "tmin": 24.4,
         "rain_prob": 0,
-        "wind_max": 9.0,
-        "gust_max": 21.6,
-        "wind_dir": 324
+        "wind_max": 8.9,
+        "gust_max": 20.0,
+        "wind_dir": 321
       },
       "wave": {
-        "hmax": 0.34,
-        "dir": 310,
-        "period": 3.0
+        "hmax": 0.3,
+        "dir": 307,
+        "period": 3.35
       },
-      "sst": 27.3,
+      "sst": 27.0,
       "astro": {
         "date": "2026-08-01",
         "sunrise": "06:19",
@@ -382,20 +382,20 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 45,
-        "tmax": 29.8,
-        "tmin": 23.0,
+        "wmo": 3,
+        "tmax": 29.9,
+        "tmin": 22.7,
         "rain_prob": 0,
-        "wind_max": 5.1,
-        "gust_max": 10.9,
-        "wind_dir": 321
+        "wind_max": 5.4,
+        "gust_max": 11.7,
+        "wind_dir": 318
       },
       "wave": {
-        "hmax": 0.22,
-        "dir": 300,
-        "period": 3.7
+        "hmax": 0.28,
+        "dir": 298,
+        "period": 3.8
       },
-      "sst": 27.3,
+      "sst": 27.4,
       "astro": {
         "date": "2026-08-02",
         "sunrise": "06:20",
@@ -445,20 +445,20 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 1,
+        "wmo": 2,
         "tmax": 33.3,
-        "tmin": 26.4,
+        "tmin": 25.3,
         "rain_prob": 0,
         "wind_max": 5.7,
         "gust_max": 12.2,
-        "wind_dir": 277
+        "wind_dir": 256
       },
       "wave": {
-        "hmax": 0.14,
-        "dir": 291,
+        "hmax": 0.2,
+        "dir": 288,
         "period": 3.4
       },
-      "sst": 28.7,
+      "sst": 28.4,
       "astro": {
         "date": "2026-08-03",
         "sunrise": "06:20",
@@ -517,9 +517,9 @@
         "wind_dir": 227
       },
       "wave": {
-        "hmax": 0.04,
-        "dir": 256,
-        "period": 3.6
+        "hmax": 0.06,
+        "dir": 259,
+        "period": 3.45
       },
       "sst": 28.7,
       "astro": {
@@ -568,7 +568,7 @@
       "tier": "piena",
       "crew_delta": {
         "on_n": 4,
-        "off_n": 4
+        "off_n": 5
       },
       "wx": {
         "wmo": 2,
@@ -580,9 +580,9 @@
         "wind_dir": 297
       },
       "wave": {
-        "hmax": 0.04,
-        "dir": 244,
-        "period": 3.55
+        "hmax": 0.08,
+        "dir": 238,
+        "period": 5.15
       },
       "sst": 29.4,
       "astro": {
@@ -707,7 +707,7 @@
         "wmo": 1,
         "tmax": 36.7,
         "tmin": 28.2,
-        "rain_prob": 4,
+        "rain_prob": 2,
         "wind_max": 2.0,
         "gust_max": 19.8,
         "wind_dir": 340
@@ -777,7 +777,7 @@
         "wmo": 51,
         "tmax": 30.9,
         "tmin": 25.6,
-        "rain_prob": 15,
+        "rain_prob": 14,
         "wind_max": 5.1,
         "gust_max": 18.1,
         "wind_dir": 17

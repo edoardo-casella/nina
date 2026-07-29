@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T11:20+02:00",
+  "generated_at": "2026-07-29T14:28+02:00",
   "approved": false,
   "approved_by": null,
   "day": "2026-07-29",
@@ -59,8 +59,8 @@
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 1.3,
-    "max_spread_kn": 5.4,
+    "mean_spread_kn": 1.2,
+    "max_spread_kn": 4.5,
     "confidence": "alta"
   },
   "steps": [
@@ -237,22 +237,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
       },
       "wx": {
-        "wmo": 0,
-        "tmax": 30.8,
-        "tmin": 25.9,
+        "wmo": 1,
+        "tmax": 30.7,
+        "tmin": 26.1,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 10.3,
-        "gust_max": 13.6,
-        "wind_dir": 256
+        "wind_max": 9.9,
+        "gust_max": 13.0,
+        "wind_dir": 239
       },
       "sailing": {
-        "twa": 59,
+        "twa": 76,
         "andatura": "bolina larga",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 8.2,
-        "twd": 256
+        "tws_est": 7.9,
+        "twd": 239
       }
     },
     {
@@ -271,21 +271,21 @@
       },
       "wx": {
         "wmo": 0,
-        "tmax": 32.2,
-        "tmin": 25.3,
+        "tmax": 32.7,
+        "tmin": 25.1,
         "rain_mm": 0.0,
         "rain_prob": 0,
         "wind_max": 11.3,
         "gust_max": 22.2,
-        "wind_dir": 262
+        "wind_dir": 261
       },
       "sailing": {
-        "twa": 42,
+        "twa": 43,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
         "tws_est": 9.0,
-        "twd": 262
+        "twd": 261
       }
     },
     {
@@ -303,22 +303,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 30.3,
-        "tmin": 24.0,
+        "wmo": 3,
+        "tmax": 31.0,
+        "tmin": 24.4,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 9.0,
-        "gust_max": 21.6,
-        "wind_dir": 324
+        "wind_max": 8.9,
+        "gust_max": 20.0,
+        "wind_dir": 321
       },
       "sailing": {
-        "twa": 21,
+        "twa": 18,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 7.2,
-        "twd": 324
+        "tws_est": 7.1,
+        "twd": 321
       }
     },
     {
@@ -336,22 +336,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
       },
       "wx": {
-        "wmo": 45,
-        "tmax": 29.8,
-        "tmin": 23.0,
+        "wmo": 3,
+        "tmax": 29.9,
+        "tmin": 22.7,
         "rain_mm": 0.0,
         "rain_prob": 0,
-        "wind_max": 5.1,
-        "gust_max": 10.9,
-        "wind_dir": 321
+        "wind_max": 5.4,
+        "gust_max": 11.7,
+        "wind_dir": 318
       },
       "sailing": {
-        "twa": 21,
+        "twa": 24,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 4.1,
-        "twd": 321
+        "tws_est": 4.3,
+        "twd": 318
       }
     },
     {
@@ -369,22 +369,22 @@
         "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
       },
       "wx": {
-        "wmo": 1,
+        "wmo": 2,
         "tmax": 33.3,
-        "tmin": 26.4,
+        "tmin": 25.3,
         "rain_mm": 0.0,
         "rain_prob": 0,
         "wind_max": 5.7,
         "gust_max": 12.2,
-        "wind_dir": 277
+        "wind_dir": 256
       },
       "sailing": {
-        "twa": 73,
-        "andatura": "bolina larga",
+        "twa": 94,
+        "andatura": "traverso",
         "vela": false,
         "boat_kn": 7.2,
         "tws_est": 4.6,
-        "twd": 277
+        "twd": 256
       }
     }
   ],
@@ -469,6 +469,14 @@
       "board": "2026-08-08",
       "leave": "2026-08-15",
       "cabin": null
+    },
+    {
+      "id": "isabella",
+      "name": "Isabella",
+      "role": "crew",
+      "board": "2026-08-08",
+      "leave": "2026-08-15",
+      "cabin": null
     }
   ],
   "turns": {
@@ -482,12 +490,12 @@
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 33.3,
+    "temp": 34.3,
     "rh": 37,
     "rain": 0.0,
     "wmo": 0,
-    "tws": 4.0,
-    "twd": 67,
-    "sst": 27.3
+    "tws": 7.5,
+    "twd": 65,
+    "sst": 27.9
   }
 }
