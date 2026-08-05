@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T15:27:08+02:00",
+  "generated_at": "2026-08-05T17:02:16+02:00",
   "base": "https://www.lamma.toscana.it/models",
   "pagina": "https://www.lamma.toscana.it/mare/modelli/vento-mare.php",
   "campi": {
@@ -15,7 +15,7 @@
       "run": "2026080500",
       "max_step": 73,
       "aree": {
-        "F": "Bonifacio",
+        "F": "Bocche di Bonifacio",
         "Q": "Corsica"
       }
     },
@@ -24,9 +24,10 @@
       "run": "2026080500",
       "max_step": 133,
       "aree": {
-        "N": "Bonifacio",
+        "N": "Bonifacio allargata",
         "S": "Corsica",
-        "B": "Sardegna"
+        "B": "Sardegna",
+        "H": "Med centro-nord"
       }
     }
   }

@@ -17,11 +17,14 @@ BASE = "https://www.lamma.toscana.it/models"
 PAGINA = "https://www.lamma.toscana.it/mare/modelli/vento-mare.php"
 
 # ww3*ecm = inizializzazione IFS-ECMWF (esiste il gemello *gfs, stessa griglia)
+# hr = dettaglio costiero; lr = tagli larghi per la situazione complessiva
+# (N copre sud Corsica + nord Sardegna insieme, H entrambe le isole intere)
 MODELLI = {
     "hr": {"id": "ww3hrecm", "max_step": 73,   # 73 scadenze orarie = 3 giorni
-           "aree": {"F": "Bonifacio", "Q": "Corsica"}},
+           "aree": {"F": "Bocche di Bonifacio", "Q": "Corsica"}},
     "lr": {"id": "ww3lrecm", "max_step": 133,  # 133 scadenze orarie ~ 5.5 giorni
-           "aree": {"N": "Bonifacio", "S": "Corsica", "B": "Sardegna"}},
+           "aree": {"N": "Bonifacio allargata", "S": "Corsica",
+                    "B": "Sardegna", "H": "Med centro-nord"}},
 }
 CAMPI = {"wind10": "Vento 10m", "swh": "Onda", "mwp": "Periodo onda",
          "windgust": "Raffica"}
@@ -63,9 +66,22 @@ def build_manifest() -> dict:
 
 def write_manifest(site_dir: Path) -> dict:
     man = build_manifest()
-    (site_dir / "lamma.json").write_text(
+    path = site_dir / "lamma.json"
+    # merge col manifest precedente: se un DATERUN e' fallito ma l'altro no,
+    # non si butta l'ultimo run buono del modello mancante. Si eredita SOLO il
+    # run: id/max_step/aree vengono sempre dalla config corrente
+    try:
+        old = json.loads(path.read_text(encoding="utf-8"))
+        for k, v in old.get("modelli", {}).items():
+            if k not in man["modelli"] and k in MODELLI and v.get("run"):
+                cfg = MODELLI[k]
+                man["modelli"][k] = {"id": cfg["id"], "run": v["run"],
+                                     "max_step": cfg["max_step"], "aree": cfg["aree"]}
+    except Exception:
+        pass
+    path.write_text(
         json.dumps(man, indent=2, ensure_ascii=False), encoding="utf-8")
-    runs = ", ".join(f"{k}:{v['run']}" for k, v in man["modelli"].items())
+    runs = ", ".join(f"{k}:{v.get('run', '?')}" for k, v in man["modelli"].items())
     print(f"Carte LaMMA: manifest aggiornato ({runs})")
     return man
 

@@ -763,6 +763,16 @@ if __name__ == "__main__":
         print(f"Piano del {b['day']} approvato da {a.approve}")
         sys.exit(0)
 
+    # carte LaMMA: solo il run corrente (le PNG restano hotlink dal browser).
+    # PRIMA di build(): un guasto di Open-Meteo non deve far invecchiare anche
+    # il manifest LaMMA. E LaMMA giu' non deve MAI fermare il deploy.
+    if not a.offline:
+        try:
+            lamma.write_manifest(SITE)
+        except Exception as e:
+            print(f"LaMMA non raggiungibile ({e}): conservo l'ultimo manifest. "
+                  f"Deploy comunque OK.", file=sys.stderr)
+
     try:
         briefing, wx, conti, program = build(a.day, a.offline)
     except (urllib.error.URLError, TimeoutError) as e:
@@ -784,14 +794,6 @@ if __name__ == "__main__":
                       ("rotta", rotta),
                       ("arrivi", build_arrivi(v, briefing["generated_at"]))):
         (SITE / f"{name}.json").write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
-    # carte LaMMA: solo il run corrente (le PNG restano hotlink dal browser).
-    # LaMMA giu' non deve MAI fermare il deploy: resta l'ultimo manifest buono.
-    if not a.offline:
-        try:
-            lamma.write_manifest(SITE)
-        except Exception as e:
-            print(f"LaMMA non raggiungibile ({e}): conservo l'ultimo manifest. "
-                  f"Deploy comunque OK.", file=sys.stderr)
     supabase_upsert_blobs({"conti": conti})
     tag = briefing["leg"]["leg"] if briefing["leg"] else ("sosta" if briefing["rest"] else "—")
     print(f"Pubblicato {a.day}: {tag} | score {briefing['leg']['avg_score'] if briefing['leg'] else '—'} "

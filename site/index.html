@@ -487,11 +487,14 @@ function windyMap(pos, ov, title) {
     Windy centrato su ${esc(pos.name)} — trascina la barra del tempo in basso per vedere il trend.</p>`;
 }
 
-// Carte sinottiche del Consorzio LaMMA (WW3 alta risoluzione): PNG hotlink,
-// riscritte in place a ogni run (init 00Z/12Z, online ~9 ore dopo). Il run
-// corrente arriva da data/lamma.json via CI perché DATERUN.txt non ha CORS;
-// se il manifest manca o è vecchio >24h si stima il run dall'orologio.
-// Cache-buster = run: al run nuovo l'immagine si rinnova da sola.
+// Carte sinottiche del Consorzio LaMMA (WW3): PNG hotlink, riscritte IN PLACE
+// a ogni run (init 00Z/12Z, online ~09/21 UTC) — quindi /last/ risponde sempre
+// 200 col run realmente pubblicato. Il run per etichette e cache-buster arriva
+// da data/lamma.json via CI (DATERUN.txt non ha CORS) e viene arbitrato con la
+// stima dall'orologio da lammaChoose; residuo inevitabile: pochi minuti
+// attorno alla pubblicazione reale. Due modelli: HR (dettaglio, 73 scadenze
+// orarie = 3 giorni) e LR (tagli ampi, 133 ≈ 5.5 giorni) — il LR dà la
+// situazione complessiva: Corsica e Sardegna insieme.
 function lammaEstRun() {
   const n = new Date(), h = n.getUTCHours(), d = new Date(n);
   if (h < 9) d.setUTCDate(d.getUTCDate() - 1);          // 12Z di ieri
@@ -499,11 +502,22 @@ function lammaEstRun() {
   return `${d.getUTCFullYear()}${p(d.getUTCMonth() + 1)}${p(d.getUTCDate())}${p(run)}`;
 }
 
-function lammaSetRun(run) {
-  const c = window.__lammaCfg;
-  c.run = run;
-  c.init = Date.UTC(+run.slice(0, 4), +run.slice(4, 6) - 1, +run.slice(6, 8), +run.slice(8, 10));
-  c.stepNow = Math.min(c.max_step, Math.max(1, Math.floor((Date.now() - c.init) / 36e5) + 1));
+// arbitro del run: di norma vince il più recente tra manifest e stima (un
+// manifest in ritardo di un ciclo etichetterebbe carte nuove con orari vecchi
+// di 12h) — MA se il manifest è stato generato DOPO l'orario di pubblicazione
+// stimato e ancora non vede quel run, LaMMA è in ritardo o l'ha saltato:
+// fede al manifest. Confronti lessicografici validi su YYYYMMDDHH.
+function lammaChoose(manRun, manGen, est) {
+  const estPub = Date.UTC(+est.slice(0, 4), +est.slice(4, 6) - 1,
+    +est.slice(6, 8), +est.slice(8, 10)) + 9 * 36e5;
+  return manRun && (manRun >= est || manGen >= estPub) ? manRun : est;
+}
+
+function lammaSetRun(m, run) {
+  m.run = run;
+  m.init = Date.UTC(+run.slice(0, 4), +run.slice(4, 6) - 1, +run.slice(6, 8), +run.slice(8, 10));
+  m.stepNow = Math.min(m.max_step, Math.max(1, Math.floor((Date.now() - m.init) / 36e5) + 1));
+  m.maxOff = Math.max(0, Math.floor((m.max_step - m.stepNow) / 3) * 3);
 }
 
 const lammaWhen = (init, step) => {
@@ -512,63 +526,107 @@ const lammaWhen = (init, step) => {
     t.toLocaleTimeString("it", { hour: "2-digit", minute: "2-digit" });
 };
 
-function lammaUpd() {
-  const c = window.__lammaCfg; if (!c) return;
-  const area = document.getElementById("lam-area").value,
-        campo = document.getElementById("lam-campo").value,
-        off = +document.getElementById("lam-off").value,
-        step = Math.min(c.max_step, c.stepNow + off);
-  document.getElementById("lam-img").src = `${c.base}/${c.id}/last/${campo}.${area}.${step}.png?r=${c.run}`;
-  document.getElementById("lam-when").textContent = lammaWhen(c.init, step);
+function lammaModel() {
+  const c = window.__lammaCfg;
+  return c && c.models[document.getElementById("lam-area").value.split(":")[0]];
 }
 
+function lammaUpd() {
+  const c = window.__lammaCfg, m = lammaModel(); if (!m) return;
+  const img = document.getElementById("lam-img"); if (!img) return;
+  // riancora a adesso: una sessione aperta attraversa le 09/21 UTC (nuovo run
+  // pubblicato) e comunque stepNow scivola col passare delle ore
+  lammaSetRun(m, lammaChoose(m.manRun, c.manGen, lammaEstRun()));
+  const area = document.getElementById("lam-area").value.split(":")[1],
+        campo = document.getElementById("lam-campo").value,
+        sl = document.getElementById("lam-off");
+  sl.max = m.maxOff;                 // l'orizzonte segue il modello selezionato
+  const off = Math.min(+sl.value, m.maxOff),
+        step = Math.min(m.max_step, m.stepNow + off);
+  sl.value = off;
+  img.src = `${c.base}/${m.id}/last/${campo}.${area}.${step}.png?r=${m.run}`;
+  img.title = `run ${m.run.slice(8, 10)}Z del ${m.run.slice(6, 8)}/${m.run.slice(4, 6)}`;
+  document.getElementById("lam-when").textContent = lammaWhen(m.init, step);
+}
+
+// errore di carico (LaMMA giù, blip di rete in rada, PNG in riscrittura):
+// niente distruzione del widget — nota visibile, immagine nascosta, e ogni
+// tocco su area/campo/slider ritenta il load da solo. onload rimette a posto.
 function lammaErr() {
-  const c = window.__lammaCfg;
-  if (c && !c.retried) {
-    // run stimato/appena annunciato ma carte non ancora online: riprova col run precedente
-    c.retried = true;
-    const prev = new Date(c.init - 432e5), p = x => String(x).padStart(2, "0");
-    lammaSetRun(`${prev.getUTCFullYear()}${p(prev.getUTCMonth() + 1)}${p(prev.getUTCDate())}${p(prev.getUTCHours())}`);
-    lammaUpd();
-    return;
-  }
-  document.getElementById("lam-wrap").innerHTML = `<p style="padding:1rem;font-size:.85rem;color:var(--soft)">
-    Carta non raggiungibile in questo momento — le mappe restano consultabili su
-    <a href="https://www.lamma.toscana.it/mare/modelli/vento-mare.php">lamma.toscana.it</a>.</p>`;
+  const img = document.getElementById("lam-img"), n = document.getElementById("lam-note");
+  if (img) img.style.display = "none";
+  if (n) n.style.display = "block";
+}
+
+function lammaOk() {
+  const img = document.getElementById("lam-img"), n = document.getElementById("lam-note");
+  if (img) img.style.display = "block";
+  if (n) n.style.display = "none";
 }
 
 function lammaCards(lm) {
-  if (!navigator.onLine) return "";
-  const fresh = lm && lm.modelli?.hr && Date.now() - new Date(lm.generated_at) < 864e5;
-  const hr = fresh ? lm.modelli.hr
-    : { id: "ww3hrecm", run: lammaEstRun(), max_step: 73, aree: { F: "Bonifacio", Q: "Corsica" } };
-  const campi = (fresh && lm.campi) ||
+  const fresh = lm && lm.modelli && Date.now() - new Date(lm.generated_at) < 864e5;
+  const man = fresh ? lm.modelli : {}, est = lammaEstRun();
+  // difese sui default: manifest vecchio (senza un'area nuova) o LaMMA
+  // parzialmente giù non devono spegnere il widget
+  const DEF = {
+    hr: { id: "ww3hrecm", max_step: 73,
+          aree: { F: "Bocche di Bonifacio", Q: "Corsica" } },
+    lr: { id: "ww3lrecm", max_step: 133,
+          aree: { N: "Bonifacio allargata", S: "Corsica", B: "Sardegna", H: "Med centro-nord" } },
+  };
+  const manGen = fresh ? Date.parse(lm.generated_at) || 0 : 0;
+  const models = {};
+  for (const k in DEF) {
+    const d = DEF[k], m = man[k] || {};
+    models[k] = { id: m.id || d.id, max_step: m.max_step || d.max_step,
+                  aree: { ...d.aree, ...(m.aree || {}) }, manRun: m.run || null };
+    lammaSetRun(models[k], lammaChoose(models[k].manRun, manGen, est));
+  }
+  const campi = (fresh && lm.campi && Object.keys(lm.campi).length ? lm.campi : null) ||
     { wind10: "Vento 10m", swh: "Onda", mwp: "Periodo onda", windgust: "Raffica" };
-  window.__lammaCfg = { base: (fresh && lm.base) || "https://www.lamma.toscana.it/models",
-    id: hr.id, max_step: hr.max_step };
-  lammaSetRun(hr.run);
-  const c = window.__lammaCfg;
-  const maxOff = Math.max(0, Math.floor((c.max_step - c.stepNow) / 3) * 3);
-  const sel = (id, obj) => `<select id="${id}" onchange="lammaUpd()"
-    style="font:inherit;font-size:.85rem;padding:.25rem .4rem;background:var(--card,transparent);color:inherit;border:1px solid var(--hair);border-radius:3px">${
-    Object.entries(obj).map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select>`;
-  const runLbl = `${hr.run.slice(6, 8)}/${hr.run.slice(4, 6)} ore ${hr.run.slice(8, 10)} UTC`;
-  return `<h2>Carte LaMMA — Bocche &amp; Corsica</h2>
+  const base = (fresh && lm.base) || "https://www.lamma.toscana.it/models";
+  window.__lammaCfg = { base, models, manGen };
+  // re-render (es. post-login): il vecchio DOM è ancora vivo qui — si
+  // conservano area, campo e scadenza scelti dall'utente
+  const prev = id => document.getElementById(id)?.value;
+  const pv = prev("lam-area"), [pm, pa] = (pv || "").split(":");
+  const areaSel = models[pm]?.aree[pa] ? pv : "hr:" + Object.keys(models.hr.aree)[0];
+  const campoSel = campi[prev("lam-campo")] ? prev("lam-campo") : Object.keys(campi)[0];
+  const m0 = models[areaSel.split(":")[0]], area0 = areaSel.split(":")[1];
+  const off0 = Math.min(+prev("lam-off") || 0, m0.maxOff),
+        step0 = Math.min(m0.max_step, m0.stepNow + off0);
+  const areaOpts = Object.entries(models).map(([mk, m]) =>
+    Object.entries(m.aree).map(([v, l]) =>
+      `<option value="${mk}:${v}"${`${mk}:${v}` === areaSel ? " selected" : ""}>${l} · ${
+        mk === "hr" ? "dettaglio 3 gg" : "estesa 5 gg"}</option>`)
+      .join("")).join("");
+  const selStyle = "font:inherit;font-size:.85rem;padding:.25rem .4rem;background:var(--card,transparent);color:inherit;border:1px solid var(--hair);border-radius:3px";
+  return `<h2>Carte LaMMA — vento &amp; mare</h2>
   <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin:.4rem 0 .6rem">
-    ${sel("lam-area", hr.aree)}${sel("lam-campo", campi)}
-    <input id="lam-off" type="range" min="0" max="${maxOff}" step="3" value="0"
+    <select id="lam-area" onchange="lammaUpd()" style="${selStyle}">${areaOpts}</select>
+    <select id="lam-campo" onchange="lammaUpd()" style="${selStyle}">${Object.entries(campi)
+      .map(([v, l]) => `<option value="${v}"${v === campoSel ? " selected" : ""}>${l}</option>`).join("")}</select>
+    <input id="lam-off" type="range" min="0" max="${m0.maxOff}" step="3" value="${off0}"
       oninput="lammaUpd()" style="flex:1;min-width:120px" aria-label="Scadenza previsione">
-    <span id="lam-when" class="num" style="font-size:.85rem;white-space:nowrap">${lammaWhen(c.init, c.stepNow)}</span>
+    <span id="lam-when" class="num" style="font-size:.85rem;white-space:nowrap">${lammaWhen(m0.init, step0)}</span>
   </div>
   <div id="lam-wrap" style="border:1px solid var(--hair);border-radius:3px;overflow:hidden;background:#fff">
-    <img id="lam-img" alt="Carta LaMMA vento e mare" style="width:100%;display:block" loading="lazy"
-      onerror="lammaErr()" src="${c.base}/${c.id}/last/wind10.F.${c.stepNow}.png?r=${c.run}">
+    <img id="lam-img" alt="Carta LaMMA vento e mare" style="width:100%;display:block"
+      onerror="if(this.isConnected)lammaErr()" onload="if(this.isConnected)lammaOk()"
+      src="${base}/${m0.id}/last/${campoSel}.${area0}.${step0}.png?r=${m0.run}"
+      title="run ${m0.run.slice(8, 10)}Z del ${m0.run.slice(6, 8)}/${m0.run.slice(4, 6)}">
+    <p id="lam-note" style="display:none;margin:0;padding:1rem;font-size:.85rem;color:#53565a">
+      Carta non raggiungibile in questo momento — riprova tra poco o cambia scadenza/area;
+      le mappe restano su <a href="https://www.lamma.toscana.it/mare/modelli/vento-mare.php">lamma.toscana.it</a>.</p>
   </div>
   <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
-    Carte del <a href="https://www.lamma.toscana.it/mare/modelli/vento-e-mare-hr" target="_blank" rel="noopener">Consorzio
-    LaMMA</a> — modello WW3 alta risoluzione (vento IFS-ECMWF), run del ${runLbl}, nuovo run 2 volte al giorno.
-    Frecce = direzione di vento e onda. Fonte modellistica non ufficiale:
-    prevale il bollettino dell'<a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">Aeronautica Militare</a>.</p>`;
+    Carte del <a href="https://www.lamma.toscana.it/mare/modelli/vento-mare.php" target="_blank" rel="noopener">Consorzio
+    LaMMA</a> — modello WW3 (vento IFS-ECMWF), nuovo run 2 volte al giorno.
+    «Dettaglio» = alta risoluzione fino a +3 giorni; «estesa» = quadro largo (Corsica e Sardegna
+    insieme) fino a +5 giorni e mezzo. Frecce = direzione di vento e onda. Fonte modellistica
+    non ufficiale: prevale il bollettino
+    dell'<a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">Aeronautica Militare</a>.</p>`;
 }
 
 const wmoIcon = c => c == null ? "·" : c === 0 ? "☀️" : c <= 2 ? "🌤️" : c === 3 ? "☁️" :
