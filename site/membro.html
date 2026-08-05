@@ -197,6 +197,12 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 a.tavl{flex:none;display:inline-flex;text-decoration:none}
 .paybtn{display:inline-flex;align-items:center;gap:.45rem;background:#0070BA;color:#fff;font:700 .68rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.65rem 1rem;border-radius:99px}
 .paybtn:hover{filter:brightness(1.12)}
+.payrow{display:flex;gap:.9rem;align-items:flex-start;margin-top:.9rem;padding-top:.85rem;border-top:1px dashed var(--hair);flex-wrap:wrap}
+.payqr{flex:none;border-radius:6px;background:#fff;padding:4px;box-shadow:0 0 0 1px var(--hair)}
+.payinfo{flex:1;min-width:12rem;font-size:.88rem;line-height:1.55}
+.payinfo small{display:block;color:var(--soft)}
+.copybtn{background:var(--panel);border:1px solid var(--hair);color:var(--soft);font:700 .62rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:.5rem .8rem;border-radius:99px;cursor:pointer}
+.copybtn:hover{border-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
@@ -556,12 +562,26 @@ function renderViaggio(p, ts, adminView) {
   // PayPal.Me con importo pre-compilato: chi paga sceglie "amici e familiari"
   // nella schermata PayPal (il link non puo' forzarlo)
   const payUrl = `https://www.paypal.me/EdoardoCasella/${saldo.toFixed(2)}EUR`;
+  // bonifico SEPA: QR EPC generato da build_finance.py (IBAN solo nel payload,
+  // dietro login+RLS — mai nel sorgente pubblico della pagina)
+  const bank = p.payment ? `
+        <div class="payrow">
+          <img class="payqr" src="${p.payment.qr}" alt="QR bonifico SEPA" width="140" height="140">
+          <div class="payinfo"><b>Oppure bonifico</b> — inquadra il QR con l'app della tua banca:
+            trova già IBAN, importo e causale compilati.
+            <span class="num" style="display:block;margin-top:.35rem;word-break:break-all;font-size:.85rem">${esc(p.payment.iban)}</span>
+            <small>intestato a ${esc(p.payment.beneficiary)} · causale «${esc(p.payment.causale)}»</small>
+            <div style="margin-top:.5rem"><button class="copybtn" type="button" onclick="copyIban(this,'${esc(p.payment.iban)}')">📋 Copia IBAN</button></div>
+          </div>
+        </div>` : "";
   const saldoCard = Math.abs(saldo) < 0.01
     ? `<div class="card vsaldo ok">✅ <b>Tutto in regola</b> — non devi versare altro.</div>`
     : saldo > 0
       ? `<div class="card vsaldo">Ti restano da versare <b class="num">${eur(saldo)}</b>${deltaBarca > 0.005 ? `, di cui quota barca ${eur(deltaBarca)}` : ""}.
         <div style="margin-top:.75rem"><a class="paybtn" href="${payUrl}" target="_blank" rel="noopener">Paga ${eur(saldo)} con PayPal</a></div>
-        <small style="display:block;margin-top:.5rem;color:var(--soft)">Nella schermata PayPal scegli <b>«amici e familiari»</b> (niente commissioni). Il pagamento comparirà qui appena registrato nel registro di bordo.</small></div>`
+        <small style="display:block;margin-top:.5rem;color:var(--soft)">Nella schermata PayPal scegli <b>«amici e familiari»</b> (niente commissioni).</small>
+        ${bank}
+        <small style="display:block;margin-top:.6rem;color:var(--soft)">Il pagamento comparirà qui appena registrato nel registro di bordo.</small></div>`
       : `<div class="card vsaldo ok">Hai un credito di <b class="num">${eur(-saldo)}</b> — ti torna indietro.</div>`;
   return `
     ${adminView ? `<div class="q-empty" style="margin:1.2rem 0 0">🎖️ Vista admin: stai guardando il riepilogo di ${esc(p.name)}.</div>` : ""}
@@ -584,6 +604,13 @@ function renderViaggio(p, ts, adminView) {
     </div>
     ${saldoCard}
     <p class="qhint" style="margin-top:1rem">Aggiornato al ${ts ? new Date(ts).toLocaleString("it", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) : "—"}. I conti arrivano dal registro dello skipper: se qualcosa non torna, scrivigli.</p>`;
+}
+
+async function copyIban(btn, iban) {
+  try {
+    await navigator.clipboard.writeText(iban);
+    btn.textContent = "✓ Copiato"; setTimeout(() => { btn.textContent = "📋 Copia IBAN"; }, 1600);
+  } catch (err) { prompt("Copia l'IBAN:", iban); }   // clipboard negata: fallback
 }
 
 async function routeMe(tab) {

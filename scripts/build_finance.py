@@ -24,7 +24,7 @@ MAI in CI (l'Excel non esiste sul runner): run manuale dopo ogni modifica al fil
 L'Excel aperto in Excel e' lockato → si legge sempre da una copia temporanea.
 """
 from __future__ import annotations
-import argparse, datetime as dt, json, os, shutil, sys, tempfile, urllib.request
+import argparse, base64, datetime as dt, io, json, os, shutil, sys, tempfile, urllib.request
 from pathlib import Path
 
 import openpyxl
@@ -33,6 +33,7 @@ import core
 
 XLSX = core.DATA / "Summer 26.xlsx"
 MAP = core.DATA / "finance-map.local.json"
+PAY = core.DATA / "payment.local.json"        # IBAN+beneficiario per il QR EPC (gitignorato)
 CREW = core.ROOT / "site" / "data" / "crew.json"
 
 # Cosa comprende ogni extra (testi generici, ok nel repo — le CIFRE restano su
@@ -78,6 +79,29 @@ def r2(x) -> float:
 def iso(d) -> str | None:
     return d.date().isoformat() if isinstance(d, dt.datetime) else (
         d.isoformat() if isinstance(d, dt.date) else None)
+
+
+def load_payment() -> dict | None:
+    if not PAY.exists():
+        warn(f"{PAY.name} assente: payload senza QR bonifico/IBAN")
+        return None
+    return json.loads(PAY.read_text(encoding="utf-8"))
+
+
+def epc_qr(pay: dict, amount: float, causale: str) -> str:
+    """QR EPC069-12 (SEPA credit transfer, il 'GiroCode'): l'app bancaria del
+    pagante precompila beneficiario, IBAN, importo esatto e causale."""
+    import qrcode
+    content = "\n".join(["BCD", "002", "1", "SCT", "",
+                         pay["beneficiary"], pay["iban"].replace(" ", "").upper(),
+                         f"EUR{amount:.2f}", "", "", causale])
+    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M,
+                       border=2, box_size=4)
+    qr.add_data(content)
+    qr.make(fit=True)
+    buf = io.BytesIO()
+    qr.make_image(fill_color="black", back_color="white").save(buf, format="PNG")
+    return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
 
 
 def open_wb():
@@ -297,6 +321,7 @@ def build_payloads(wb, m) -> tuple[dict[str, dict], list[str]]:
     weeks, ctypes = read_quote(wb["Quote"], m)
 
     voyage = {c["name"]: c for c in core.load().get("crew", [])}
+    pay = load_payment()
     now = dt.datetime.now().astimezone().isoformat(timespec="seconds")
     payloads, skipped = {}, []
     for p in m["by_id"].values():
@@ -355,6 +380,14 @@ def build_payloads(wb, m) -> tuple[dict[str, dict], list[str]]:
                        "saldo": s.get("saldo", 0.0), "stato": s.get("stato") or None,
                        "delta_da_versare": b["delta"]},
         }
+        # coordinate bonifico + QR EPC solo per chi deve ancora versare
+        saldo = s.get("saldo", 0.0)
+        if pay and saldo > 0.005:
+            causale = f"Saldo barca - {p['public_name']}"
+            payloads[cid]["payment"] = {
+                "iban": pay["iban"], "beneficiary": pay["beneficiary"],
+                "causale": causale, "amount": r2(saldo),
+                "qr": epc_qr(pay, r2(saldo), causale)}
     return payloads, skipped
 
 
