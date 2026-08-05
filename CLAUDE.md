@@ -48,6 +48,14 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
   correzioni manuali nella mappa `OVERRIDES` (`--refresh --only <id>`)
 - `publish.py` — genera i 4 JSON di `site/data/`: `briefing`, `weather`,
   `conti`, `program` (14 giorni con fascia di confidenza `piena`/`degradata`/`programma`)
+- `build_finance.py` — riepilogo finanziario PERSONALE per membro (tab
+  "Il tuo viaggio", `membro.html#<id>/viaggio`) da `data/Summer 26.xlsx` →
+  upsert Supabase `voyage_finance` (RLS: lo vede solo il membro, o l'admin).
+  Ponte nomi completi → crew_id in `data/finance-map.local.json` (gitignorato;
+  nuovi partecipanti = nuova voce lì). **MAI in CI** (l'Excel non esiste sul
+  runner): dopo OGNI modifica all'Excel run manuale `--dry-run` (controlli:
+  nomi, notti, totali) e poi push. L'Excel aperto in Excel e' lockato: lo
+  script legge sempre una copia temp (= ultimo salvataggio).
 
 ### Giornata a tappe (`steps`)
 

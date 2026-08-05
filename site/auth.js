@@ -65,6 +65,14 @@
     return (data && data[0] && data[0].payload) || null;
   }
 
+  // riepilogo finanziario personale (tab "Il tuo viaggio") — la RLS restituisce
+  // SOLO la propria riga (tutte per l'admin): per gli altri crew_id arriva null
+  async function finance(crewId) {
+    const c = await client(); if (!c) return null;
+    const { data } = await c.from("voyage_finance").select("payload,updated_at").eq("crew_id", crewId).limit(1);
+    return (data && data[0]) || null;
+  }
+
   // tutte le schede profilo come mappa crew_id → riga (solo membri approvati)
   async function profilesMap() {
     const c = await client(); if (!c) return null;
@@ -74,5 +82,5 @@
     return m;
   }
 
-  window.ninaAuth = { enabled, client, session, me, approvedMember, signIn, signOut, blob, profilesMap };
+  window.ninaAuth = { enabled, client, session, me, approvedMember, signIn, signOut, blob, finance, profilesMap };
 })();

@@ -176,6 +176,22 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 .qchip .qn{font:700 .68rem/1 var(--display);color:var(--soft);background:var(--sea-2);border-radius:99px;padding:.16rem .4rem}
 .qchip.on .qn{color:var(--accent)}
 .qchip .qn:empty{display:none}
+/* tab Profilo / Il tuo viaggio */
+.mtabs{display:flex;gap:.5rem;padding:1.2rem 1.1rem 0}
+.mtabs a{font:700 .64rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);border-radius:99px;padding:.55rem .95rem;display:inline-flex;align-items:center;gap:.4rem}
+.mtabs a:hover{border-color:var(--accent);color:var(--accent)}
+.mtabs a.on{border-color:var(--accent);background:var(--accent);color:#fff}
+/* righe del riepilogo viaggio */
+.vrow{display:flex;align-items:baseline;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--hair);font-size:.92rem}
+.vrow:last-child{border-bottom:0}
+.vrow .vl{flex:1;min-width:0}
+.vrow .vl small{display:block;color:var(--soft);font-size:.78rem}
+.vrow .va{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.vrow .va.pos{color:var(--verde)}
+.vrow.vtot{border-top:2px solid var(--hair);font-weight:700}
+.vbig{font:700 1.7rem/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.card.vsaldo{border-left-color:var(--gold)}
+.card.vsaldo.ok{border-left-color:var(--verde)}
 </style>
 </head>
 <body>
@@ -413,6 +429,7 @@ function memberPage(m, all) {
       ${vet}
     </div>
   </div>
+  ${tabBar(m, "profilo")}
   <section>
     <div class="mstats">
       <div class="mstat"><b>${m.trips || 0}</b><i>crociere</i></div>
@@ -472,13 +489,107 @@ function directory(all) {
     <footer><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
 }
 
+// --- tab "Il tuo viaggio": riepilogo finanziario PERSONALE (cabina, quota,
+//     extra, transazioni, saldo) da Supabase voyage_finance. La RLS restituisce
+//     SOLO la propria riga: chiunque altro (anche loggato) vede il lucchetto. ---
+const tabBar = (m, active) => (!m.crew2026 || m.pet) ? "" : `<div class="mtabs">
+  <a class="${active === "profilo" ? "on" : ""}" href="#${m.id}">⚓ Profilo</a>
+  <a class="${active === "viaggio" ? "on" : ""}" href="#${m.id}/viaggio">🧳 Il tuo viaggio</a>
+</div>`;
+const eur = n => (Number(n) || 0).toLocaleString("it-IT", { style: "currency", currency: "EUR" });
+const dayAfter = s => { const d = day(s); d.setDate(d.getDate() + 1); return d.toLocaleDateString("it", { day: "numeric", month: "long" }); };
+
+function viaggioPage(m) {
+  return `
+  <div class="mhero">
+    ${photoOf(m) ? `<img class="mphoto zoom" src="${photoOf(m)}" alt="${esc(m.name)}" onclick="lbOne('${photoOf(m)}')">` : avatarP(m, "mph-ph")}
+    <div class="mhd">
+      <div class="role">🧳 Il tuo viaggio · Estate 2026</div>
+      <h1>${esc(m.name)}</h1>
+      <div class="nick">Cabina, quota, extra e pagamenti — il riepilogo personale della crociera.</div>
+    </div>
+  </div>
+  ${tabBar(m, "viaggio")}
+  <section id="vwrap"><div class="q-empty" style="margin-top:1.4rem">Un attimo — controllo chi sei…</div></section>
+  <footer><a class="pl" href="#${m.id}">‹ Torna al profilo</a></footer>`;
+}
+
+async function loadViaggio(m) {
+  const box = document.getElementById("vwrap");
+  const lock = h => { box.innerHTML = `<div class="q-empty" style="margin-top:1.4rem">${h}</div>`; };
+  if (!window.ninaAuth || !ninaAuth.enabled) return lock("🔐 Il riepilogo del viaggio è riservato — l'area equipaggio apre a breve.");
+  try {
+    const { session, member } = await ninaAuth.me();
+    if (!session) return lock(`🔐 Cabina, quota e pagamenti sono riservati.<br><a href="login.html">Accedi all'area equipaggio ›</a>`);
+    if (!member || member.status !== "approved") return lock(`Il tuo accesso non è ancora abilitato — <a href="login.html">dettagli ›</a>`);
+    const own = member.crew_id === m.id, admin = member.role === "admin";
+    if (!own && !admin) return lock(`🔐 Questa sezione è riservata a ${esc(m.name)}. Il tuo riepilogo è nella <a href="membro.html#${esc(member.crew_id)}/viaggio">tua pagina ›</a>`);
+    const row = await ninaAuth.finance(m.id);
+    if (!row) return lock(`Il riepilogo non è ancora stato pubblicato — riprova più tardi.`);
+    box.innerHTML = renderViaggio(row.payload, row.updated_at, admin && !own);
+  } catch (err) { lock("L'area riservata non risponde — riprova tra un attimo."); }
+}
+
+function renderViaggio(p, ts, adminView) {
+  const d = p.dates || {}, t = p.totals || {}, b = p.boat || {};
+  const weeks = (d.weeks || []).map(w => `settimana ${w.n} (${fmtS(w.from)} – ${fmtS(w.to)})`).join(", ");
+  const cabins = (p.cabins || []).map(c => `<div class="vrow"><span class="vl"><b>${esc(c.cabin)}</b>${c.type && c.type !== c.cabin ? ` · ${esc(c.type)}` : ""}<small>dal ${fmt(c.from)} al ${dayAfter(c.to)} · ${c.nights} ${c.nights === 1 ? "notte" : "notti"}${(c.shared_with || []).length ? ` · con ${c.shared_with.map(esc).join(" e ")}` : " · tutta per te"}</small></span></div>`).join("");
+  const extras = (p.extras || []).map(x => `<div class="vrow"><span class="vl"><b>${esc(x.name)}</b><small>${x.note ? `${esc(x.note)} · ` : ""}${esc(x.criterion || "")} · totale ${eur(x.total)}</small></span><span class="va">${eur(x.share)}</span></div>`).join("");
+  const txs = (p.transactions || []).map(x => `<div class="vrow"><span class="vl"><b>${x.direction === "in" ? "Ricevuto da" : "Versato a"} ${esc(x.counterpart)}</b><small>${esc(x.kind || "Movimento")}${x.date ? ` · ${fmt(x.date)}` : ""}${x.note ? ` · ${esc(x.note)}` : ""}</small></span><span class="va${x.direction === "in" ? " pos" : ""}">${x.direction === "in" ? "+" : "−"}${eur(x.amount)}</span></div>`).join("");
+  const saldo = Number(t.saldo) || 0, deltaBarca = Number(t.delta_da_versare) || 0;
+  const saldoCard = Math.abs(saldo) < 0.01
+    ? `<div class="card vsaldo ok">✅ <b>Tutto in regola</b> — non devi versare altro.</div>`
+    : saldo > 0
+      ? `<div class="card vsaldo">Ti restano da versare <b class="num">${eur(saldo)}</b>${deltaBarca > 0.005 ? `, di cui quota barca ${eur(deltaBarca)}` : ""}.</div>`
+      : `<div class="card vsaldo ok">Hai un credito di <b class="num">${eur(-saldo)}</b> — ti torna indietro.</div>`;
+  return `
+    ${adminView ? `<div class="q-empty" style="margin:1.2rem 0 0">🎖️ Vista admin: stai guardando il riepilogo di ${esc(p.name)}.</div>` : ""}
+    <h2>📅 Le tue date</h2>
+    <div class="card">Sali a bordo l'<b>${fmt(d.board)}</b> e sbarchi il <b>${fmt(d.leave)}</b> — <b>${d.nights} notti</b>${weeks ? `: ${weeks}` : ""}.</div>
+    <h2>🛏️ La tua cabina</h2>
+    ${cabins ? `<div class="card">${cabins}</div>` : `<div class="q-empty">Nessuna cabina assegnata.</div>`}
+    <h2>⛵ Quota barca</h2>
+    <div class="card"><span class="vbig">${eur(b.quota_finale)}</span>${Math.abs((Number(b.quota_dovuta) || 0) - (Number(b.quota_finale) || 0)) > 0.01 ? `<br><small style="color:var(--soft)">quota piena ${eur(b.quota_dovuta)}, scontata a ${eur(b.quota_finale)}</small>` : ""}</div>
+    <h2>🧾 I tuoi extra</h2>
+    ${extras ? `<div class="card">${extras}<div class="vrow vtot"><span class="vl">Totale extra</span><span class="va">${eur(p.extras_total)}</span></div></div>` : `<div class="q-empty">Nessun extra a tuo carico.</div>`}
+    <h2>💸 Le tue transazioni</h2>
+    ${txs ? `<div class="card">${txs}</div>` : `<div class="q-empty">Nessun movimento registrato finora.</div>`}
+    <h2>💰 Il conto</h2>
+    <div class="card">
+      <div class="vrow"><span class="vl">Dovuto (barca + extra)</span><span class="va">${eur(t.dovuto)}</span></div>
+      <div class="vrow"><span class="vl">Versato</span><span class="va">${eur(t.versato)}</span></div>
+      ${Number(t.ricevuto) > 0.005 ? `<div class="vrow"><span class="vl">Ricevuto indietro</span><span class="va pos">${eur(t.ricevuto)}</span></div>` : ""}
+      <div class="vrow vtot"><span class="vl">Saldo</span><span class="va">${eur(saldo)}</span></div>
+    </div>
+    ${saldoCard}
+    <p class="qhint" style="margin-top:1rem">Aggiornato al ${ts ? new Date(ts).toLocaleString("it", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) : "—"}. I conti arrivano dal registro dello skipper: se qualcosa non torna, scrivigli.</p>`;
+}
+
+async function routeMe(tab) {
+  const app = document.getElementById("app");
+  app.innerHTML = `<section><div class="q-empty" style="margin-top:1.6rem">Un attimo — controllo chi sei…</div></section>`;
+  const member = window.ninaAuth && ninaAuth.enabled ? await ninaAuth.approvedMember() : null;
+  if (member && DATA.find(x => x.id === member.crew_id)) { location.replace(`#${member.crew_id}${tab ? "/" + tab : ""}`); return; }
+  app.innerHTML = `<section><div class="q-empty" style="margin-top:1.6rem">${member
+    ? "Non trovo la tua pagina nella ciurma — segnalalo allo skipper."
+    : `🔐 Questa scorciatoia porta alla <b>tua</b> pagina — serve l'accesso all'area equipaggio.<br><a href="login.html">Accedi ›</a>`}</div></section>`;
+}
+
 let DATA = [], BOATNAME = new Map(), FLEET = new Map(), ANEC = [];
 function route() {
-  const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+  const raw = decodeURIComponent(location.hash.replace(/^#/, ""));
+  const [id, tab] = raw.split("/");
+  if (id === "me") { routeMe(tab); return; }
   const m = DATA.find(x => x.id === id);
-  if (m && m.crew2026 && m.crew2026.link) { location.replace(m.crew2026.link); return; }
-  document.getElementById("app").innerHTML = m ? memberPage(m, DATA) : directory(DATA);
-  if (m && !m.pet) { QVOTES = new Map(); renderQchips(m.id); loadQualities(m.id); }
+  // il redirect (skipper → skipper.html) salta il tab: #edo-c/viaggio resta qui
+  if (m && m.crew2026 && m.crew2026.link && tab !== "viaggio") { location.replace(m.crew2026.link); return; }
+  if (m && tab === "viaggio" && m.crew2026 && !m.pet) {
+    document.getElementById("app").innerHTML = viaggioPage(m);
+    loadViaggio(m);
+  } else {
+    document.getElementById("app").innerHTML = m ? memberPage(m, DATA) : directory(DATA);
+    if (m && !m.pet) { QVOTES = new Map(); renderQchips(m.id); loadQualities(m.id); }
+  }
   window.scrollTo(0, 0);
 }
 window.addEventListener("hashchange", route);

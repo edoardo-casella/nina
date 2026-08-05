@@ -77,10 +77,13 @@ python scripts/seed_supabase.py --dry-run   # controlla members/profiles propost
 python scripts/seed_supabase.py             # esegue (env-var pronte)
 python scripts/build_crew.py                # rigenera crew.json SENZA q/board/leave
 python scripts/publish.py                   # rigenera i JSON + primo upsert conti/arrivi
+python scripts/build_finance.py --dry-run   # riepiloghi personali da Summer 26.xlsx
+python scripts/build_finance.py             # upsert voyage_finance (tab "Il tuo viaggio")
 ```
 
 Verifica: in Supabase Table Editor `members` ha lo skipper admin + le email Jotform;
-`profiles` ha i membri 2026 (2 con scheda piena); `private_blobs` ha `conti` e `arrivi`.
+`profiles` ha i membri 2026 (2 con scheda piena); `private_blobs` ha `conti` e `arrivi`;
+`voyage_finance` ha una riga per membro con account (RLS: ognuno legge solo la sua).
 
 ## 5 · Go-live
 

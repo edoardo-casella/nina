@@ -129,6 +129,7 @@ async function render() {
       <p>Ciao <b>${esc(email)}</b> — sei dentro. Da qui puoi raggiungere tutto ciò che è riservato all'equipaggio.</p>
       <div class="links">
         <a href="profilo.html">✏️ Il mio profilo — aggiorna la tua scheda</a>
+        <a href="membro.html#${esc(member.crew_id)}/viaggio">🧳 Il tuo viaggio — cabina, quota e pagamenti</a>
         <a href="membro.html#${esc(member.crew_id)}">🧑‍✈️ La mia pagina nella ciurma</a>
         <a href="index.html#oggi">💰 Conti di bordo (nella Plancia)</a>
         ${member.role === "admin" ? `<a href="admin.html">🎖️ Amministrazione — richieste e membri</a>` : ""}

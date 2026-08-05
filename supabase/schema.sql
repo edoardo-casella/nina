@@ -185,9 +185,32 @@ drop policy if exists private_blobs_admin_all on public.private_blobs;
 create policy private_blobs_admin_all on public.private_blobs
   for all to authenticated using (public.is_admin()) with check (public.is_admin());
 
+-- voyage_finance: riepilogo finanziario PERSONALE del viaggio (tab "Il tuo
+-- viaggio" in membro.html). Un payload jsonb per membro, generato da
+-- scripts/build_finance.py dall'Excel locale (mai in CI, mai nel repo).
+-- A differenza di private_blobs ('conti', condiviso fra gli approvati),
+-- qui la riga e' individuale: la legge SOLO il membro stesso (o l'admin).
+create table if not exists public.voyage_finance (
+  crew_id    text primary key,
+  payload    jsonb not null,
+  updated_at timestamptz not null default now()
+);
+
+alter table public.voyage_finance enable row level security;
+
+drop policy if exists voyage_finance_select_own on public.voyage_finance;
+create policy voyage_finance_select_own on public.voyage_finance
+  for select to authenticated
+  using (crew_id = public.my_crew_id() or public.is_admin());
+
+drop policy if exists voyage_finance_admin_all on public.voyage_finance;
+create policy voyage_finance_admin_all on public.voyage_finance
+  for all to authenticated using (public.is_admin()) with check (public.is_admin());
+
 -- ── Grants espliciti (Supabase li dà di default, qui sono documentati) ─────
 grant usage on schema public to anon, authenticated;
 grant select, insert, update on public.members, public.access_requests,
       public.profiles, public.private_blobs to authenticated;
 grant insert on public.access_requests to anon;
 grant select on public.profiles to anon;
+grant select on public.voyage_finance to authenticated;   -- niente anon, niente write

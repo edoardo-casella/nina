@@ -23,6 +23,7 @@
       ["oroscopo.html", "Oroscopo di bordo", "🔮"],
       ["arrivi.html", "Arrivi & partenze", "🛟"],
       ["membro.html", "La ciurma", "👥"],
+      ["membro.html#me/viaggio", "Il tuo viaggio", "🧳"],
       ["barca.html", "La barca", "🛥️"],
       ["guida.html", "Guida pre-partenza", "🎒"],
       ["avionica.html", "Avionica a bordo", "🚁"],
