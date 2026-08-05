@@ -192,6 +192,9 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 .vbig{font:700 1.7rem/1.2 var(--mono);font-variant-numeric:tabular-nums}
 .card.vsaldo{border-left-color:var(--gold)}
 .card.vsaldo.ok{border-left-color:var(--verde)}
+.vrow.vtx{align-items:center}
+.tav{width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2);display:inline-flex;align-items:center;justify-content:center;font:700 .85rem/1 var(--display);color:#fff}
+a.tavl{flex:none;display:inline-flex;text-decoration:none}
 </style>
 </head>
 <body>
@@ -498,6 +501,17 @@ const tabBar = (m, active) => (!m.crew2026 || m.pet) ? "" : `<div class="mtabs">
 </div>`;
 const eur = n => (Number(n) || 0).toLocaleString("it-IT", { style: "currency", currency: "EUR" });
 const dayAfter = s => { const d = day(s); d.setDate(d.getDate() + 1); return d.toLocaleDateString("it", { day: "numeric", month: "long" }); };
+// faccia della controparte di una transazione: foto dalla ciurma (match per
+// nome pubblico), iniziale come fallback, ancora per il Broker; se la persona
+// ha una pagina, la faccia la apre
+function counterAv(name) {
+  const p = DATA.find(x => x.name === name);
+  const av = p && photoOf(p)
+    ? `<img class="tav" src="${photoOf(p)}" alt="${esc(name)}" loading="lazy">`
+    : `<span class="tav">${name === "Broker" ? "⚓" : esc((name || "?").trim()[0].toUpperCase())}</span>`;
+  const href = p ? ((p.crew2026 && p.crew2026.link) || `#${p.id}`) : null;
+  return href ? `<a class="tavl" href="${href}" title="${esc(name)}">${av}</a>` : av;
+}
 
 function viaggioPage(m) {
   return `
@@ -535,7 +549,7 @@ function renderViaggio(p, ts, adminView) {
   const weeks = (d.weeks || []).map(w => `settimana ${w.n} (${fmtS(w.from)} – ${fmtS(w.to)})`).join(", ");
   const cabins = (p.cabins || []).map(c => `<div class="vrow"><span class="vl"><b>${esc(c.cabin)}</b>${c.type && c.type !== c.cabin ? ` · ${esc(c.type)}` : ""}<small>dal ${fmt(c.from)} al ${dayAfter(c.to)} · ${c.nights} ${c.nights === 1 ? "notte" : "notti"}${(c.shared_with || []).length ? ` · con ${c.shared_with.map(esc).join(" e ")}` : " · tutta per te"}</small></span></div>`).join("");
   const extras = (p.extras || []).map(x => `<div class="vrow"><span class="vl"><b>${esc(x.name)}</b><small>${x.note ? `${esc(x.note)} · ` : ""}${esc(x.criterion || "")} · totale ${eur(x.total)}</small></span><span class="va">${eur(x.share)}</span></div>`).join("");
-  const txs = (p.transactions || []).map(x => `<div class="vrow"><span class="vl"><b>${x.direction === "in" ? "Ricevuto da" : "Versato a"} ${esc(x.counterpart)}</b><small>${esc(x.kind || "Movimento")}${x.date ? ` · ${fmt(x.date)}` : ""}${x.note ? ` · ${esc(x.note)}` : ""}</small></span><span class="va${x.direction === "in" ? " pos" : ""}">${x.direction === "in" ? "+" : "−"}${eur(x.amount)}</span></div>`).join("");
+  const txs = (p.transactions || []).map(x => `<div class="vrow vtx">${counterAv(x.counterpart)}<span class="vl"><b>${x.direction === "in" ? "Ricevuto da" : "Versato a"} ${esc(x.counterpart)}</b><small>${esc(x.kind || "Movimento")}${x.date ? ` · ${fmt(x.date)}` : ""}${x.note ? ` · ${esc(x.note)}` : ""}</small></span><span class="va${x.direction === "in" ? " pos" : ""}">${x.direction === "in" ? "+" : "−"}${eur(x.amount)}</span></div>`).join("");
   const saldo = Number(t.saldo) || 0, deltaBarca = Number(t.delta_da_versare) || 0;
   const saldoCard = Math.abs(saldo) < 0.01
     ? `<div class="card vsaldo ok">✅ <b>Tutto in regola</b> — non devi versare altro.</div>`
