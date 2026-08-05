@@ -68,12 +68,13 @@ th{font:700 .58rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase
 <script>
 const esc = s => String(s ?? "").replace(/[<>&"]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]));
 const fmtT = t => t ? new Date(t).toLocaleString("it", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "—";
-let C = null, IDS = [];
+let C = null, IDS = [], PEOPLE = [];
 
 async function crewIds() {
   try {
     const d = await fetch("data/crew.json", { cache: "no-cache" }).then(r => r.json());
-    return (d.people || []).map(p => p.id).sort();
+    PEOPLE = d.people || [];
+    return PEOPLE.map(p => p.id).sort();
   } catch (e) { return []; }
 }
 
@@ -87,15 +88,22 @@ async function render() {
   C = await ninaAuth.client();
   if (!IDS.length) IDS = await crewIds();
 
-  const [reqs, membs, blobs] = await Promise.all([
+  const [reqs, membs, blobs, vf] = await Promise.all([
     C.from("access_requests").select("*").order("created_at", { ascending: false }),
     C.from("members").select("*").order("created_at", { ascending: false }),
     C.from("private_blobs").select("key,updated_at"),
+    C.from("voyage_finance").select("crew_id,updated_at"),   // RLS: l'admin le vede tutte
   ]);
   const rNew = (reqs.data || []).filter(r => r.status === "new");
   const rOld = (reqs.data || []).filter(r => r.status !== "new");
   const opts = sel => `<option value="">— scegli crew_id —</option>` +
     IDS.map(i => `<option ${i === sel ? "selected" : ""}>${esc(i)}</option>`).join("");
+  // riepiloghi di viaggio pubblicati (voyage_finance) + chi ne è ancora senza
+  const nameOf = id => { const p = PEOPLE.find(x => x.id === id); return p ? p.name : id; };
+  const vfOpts = (vf.data || []).map(r => ({ id: r.crew_id, name: nameOf(r.crew_id), t: r.updated_at }))
+    .sort((a, b) => a.name.localeCompare(b.name, "it"));
+  const vfMissing = PEOPLE.filter(p => p.crew2026 && !p.pet && !(vf.data || []).find(r => r.crew_id === p.id))
+    .map(p => p.name).sort((a, b) => a.localeCompare(b, "it"));
   // suggerimento: prova a indovinare il crew_id dal nome (nome-inizialecognome)
   const guess = n => {
     const p = String(n || "").trim().toLowerCase().split(/\s+/);
@@ -139,6 +147,20 @@ async function render() {
       </div></div>
   </section>
 
+  <section><h2>🧳 Riepiloghi di viaggio · ${vfOpts.length}</h2>
+    <div class="card">
+      <div class="row">
+        <select id="vf-sel"><option value="">— scegli un membro —</option>
+          ${vfOpts.map(o => `<option value="${esc(o.id)}">${esc(o.name)} · agg. ${fmtT(o.t)}</option>`).join("")}
+        </select>
+        <button onclick="openViaggio()">Apri la sua pagina</button>
+      </div>
+      <p class="note" style="margin:.6rem 0 0">Apri «Il tuo viaggio» esattamente come lo vede il membro (tu in più hai il banner
+      «vista admin»). Dopo una modifica a Summer 26.xlsx: <span style="font-family:var(--mono)">python scripts/build_finance.py</span>.
+      ${vfMissing.length ? `<br>Senza riepilogo pubblicato: <b>${vfMissing.map(esc).join(", ")}</b>.` : ""}</p>
+    </div>
+  </section>
+
   <section><h2>Dati riservati (CI)</h2>
     <div class="card"><table><thead><tr><th>blob</th><th>ultimo aggiornamento</th></tr></thead><tbody>
       ${["conti", "arrivi"].map(k => { const b = (blobs.data || []).find(x => x.key === k);
@@ -171,6 +193,11 @@ window.setStatus = async (crew_id, status) => {
   const v = await C.from("members").update({ status }).eq("crew_id", crew_id);
   if (v.error) { gm().className = "msg err"; gm().textContent = "Errore: " + v.error.message; return; }
   render();
+};
+window.openViaggio = () => {
+  const id = document.getElementById("vf-sel").value;
+  if (!id) { gm().className = "msg err"; gm().textContent = "Scegli prima un membro."; return; }
+  location.href = `membro.html#${id}/viaggio`;
 };
 window.addMember = async () => {
   const crew_id = document.getElementById("add-id").value;
