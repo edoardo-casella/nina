@@ -195,6 +195,8 @@ footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display
 .vrow.vtx{align-items:center}
 .tav{width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2);display:inline-flex;align-items:center;justify-content:center;font:700 .85rem/1 var(--display);color:#fff}
 a.tavl{flex:none;display:inline-flex;text-decoration:none}
+.paybtn{display:inline-flex;align-items:center;gap:.45rem;background:#0070BA;color:#fff;font:700 .68rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.65rem 1rem;border-radius:99px}
+.paybtn:hover{filter:brightness(1.12)}
 </style>
 </head>
 <body>
@@ -551,10 +553,15 @@ function renderViaggio(p, ts, adminView) {
   const extras = (p.extras || []).map(x => `<div class="vrow"><span class="vl"><b>${esc(x.name)}</b><small>${x.note ? `${esc(x.note)} · ` : ""}${esc(x.criterion || "")} · totale ${eur(x.total)}</small></span><span class="va">${eur(x.share)}</span></div>`).join("");
   const txs = (p.transactions || []).map(x => `<div class="vrow vtx">${counterAv(x.counterpart)}<span class="vl"><b>${x.direction === "in" ? "Ricevuto da" : "Versato a"} ${esc(x.counterpart)}</b><small>${esc(x.kind || "Movimento")}${x.date ? ` · ${fmt(x.date)}` : ""}${x.note ? ` · ${esc(x.note)}` : ""}</small></span><span class="va${x.direction === "in" ? " pos" : ""}">${x.direction === "in" ? "+" : "−"}${eur(x.amount)}</span></div>`).join("");
   const saldo = Number(t.saldo) || 0, deltaBarca = Number(t.delta_da_versare) || 0;
+  // PayPal.Me con importo pre-compilato: chi paga sceglie "amici e familiari"
+  // nella schermata PayPal (il link non puo' forzarlo)
+  const payUrl = `https://www.paypal.me/EdoardoCasella/${saldo.toFixed(2)}EUR`;
   const saldoCard = Math.abs(saldo) < 0.01
     ? `<div class="card vsaldo ok">✅ <b>Tutto in regola</b> — non devi versare altro.</div>`
     : saldo > 0
-      ? `<div class="card vsaldo">Ti restano da versare <b class="num">${eur(saldo)}</b>${deltaBarca > 0.005 ? `, di cui quota barca ${eur(deltaBarca)}` : ""}.</div>`
+      ? `<div class="card vsaldo">Ti restano da versare <b class="num">${eur(saldo)}</b>${deltaBarca > 0.005 ? `, di cui quota barca ${eur(deltaBarca)}` : ""}.
+        <div style="margin-top:.75rem"><a class="paybtn" href="${payUrl}" target="_blank" rel="noopener">Paga ${eur(saldo)} con PayPal</a></div>
+        <small style="display:block;margin-top:.5rem;color:var(--soft)">Nella schermata PayPal scegli <b>«amici e familiari»</b> (niente commissioni). Il pagamento comparirà qui appena registrato nel registro di bordo.</small></div>`
       : `<div class="card vsaldo ok">Hai un credito di <b class="num">${eur(-saldo)}</b> — ti torna indietro.</div>`;
   return `
     ${adminView ? `<div class="q-empty" style="margin:1.2rem 0 0">🎖️ Vista admin: stai guardando il riepilogo di ${esc(p.name)}.</div>` : ""}
