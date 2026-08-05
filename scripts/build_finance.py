@@ -36,11 +36,15 @@ MAP = core.DATA / "finance-map.local.json"
 CREW = core.ROOT / "site" / "data" / "crew.json"
 
 # Cosa comprende ogni extra (testi generici, ok nel repo — le CIFRE restano su
-# Supabase). Aggiornare qui quando si aggiunge un extra nel foglio.
+# Supabase). Chiavi = nome nel foglio Excel. Aggiornare qui quando si aggiunge
+# un extra nel foglio. EXTRA_RENAMES cambia solo il nome MOSTRATO nel payload.
+EXTRA_RENAMES = {
+    "Cauzione": "Assicurazione",
+}
 EXTRA_NOTES = {
-    "Starter Pack": "Pacchetto obbligatorio del charter: pulizie finali, gas e dotazioni di bordo.",
+    "Starter Pack": "Pacchetto obbligatorio del charter: pulizie finali, gas, Starlink e dotazioni di bordo.",
     "Sup": "Noleggio SUP per tutta la crociera.",
-    "Cauzione": "Cauzione del charter.",
+    "Cauzione": "Assicurazione della cauzione del charter.",
     "National Park": "Permessi del parco nazionale (arcipelago di La Maddalena).",
     "Lenzuola": "Cambio lenzuola e biancheria — ripartito sulle notti a bordo.",
     "Early Checkin": "Imbarco anticipato della settimana 1.",
@@ -198,7 +202,8 @@ def read_extra(ws, m) -> tuple[list[dict], dict[int, dict]]:
         per[p["excel_id"]] = {
             "nights": {"tot": int(num(r[2])), "s1": int(num(r[3])),
                        "s2": int(num(r[4])), "s3": int(num(r[5]))},
-            "items": [{"name": c["name"], "criterion": c["criterion"], "total": c["total"],
+            "items": [{"name": EXTRA_RENAMES.get(c["name"], c["name"]),
+                       "criterion": c["criterion"], "total": c["total"],
                        "share": s, "note": EXTRA_NOTES.get(c["name"] or "")}
                       for c, s in zip(catalog, shares) if c["name"] and s > 0.005],
             "total": r2(r[6 + len(catalog)] if len(r) > 6 + len(catalog) else
