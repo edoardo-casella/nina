@@ -1,7 +1,7 @@
 """Genera i JSON pubblici che la dashboard legge (briefing, weather, program,
 destinations) e pubblica i dati RISERVATI (conti, arrivi) su Supabase, dove li
-vede solo l'equipaggio autenticato. Girato da GitHub Actions due volte al
-giorno (12:00 e 20:00 Europe/Rome) e da riga di comando quando serve.
+vede solo l'equipaggio autenticato. Girato da GitHub Actions ogni 3 ore e da
+riga di comando quando serve.
 
   python scripts/publish.py                 # oggi, meteo reale
   python scripts/publish.py --day 2026-08-12
@@ -16,7 +16,7 @@ from __future__ import annotations
 import argparse, datetime as dt, json, math, os, sys, urllib.error, urllib.request
 from pathlib import Path
 
-import core, routing, shelter, ledger, weather, photos
+import core, lamma, routing, shelter, ledger, weather, photos
 
 SITE = core.ROOT / "site" / "data"
 LIGHTS = {"OTTIMA": "verde", "BUONA": "verde", "MEDIOCRE": "giallo", "MOTORE": "giallo", "STOP": "rosso"}
@@ -724,7 +724,7 @@ def supabase_upsert_blobs(blobs: dict) -> None:
     Serve la service key: su GitHub Actions arriva dai secret SUPABASE_URL /
     SUPABASE_SERVICE_KEY, in locale da env-var. Se mancano si salta con un
     avviso: il deploy del sito pubblico non deve MAI dipendere da questo.
-    Girando 2 volte al giorno fa anche da keep-alive del free tier (che
+    Girando ogni 3 ore fa anche da keep-alive del free tier (che
     altrimenti pausa il progetto dopo 7 giorni di inattività)."""
     url, key = os.environ.get("SUPABASE_URL"), os.environ.get("SUPABASE_SERVICE_KEY")
     if not url or not key:
@@ -784,6 +784,14 @@ if __name__ == "__main__":
                       ("rotta", rotta),
                       ("arrivi", build_arrivi(v, briefing["generated_at"]))):
         (SITE / f"{name}.json").write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
+    # carte LaMMA: solo il run corrente (le PNG restano hotlink dal browser).
+    # LaMMA giu' non deve MAI fermare il deploy: resta l'ultimo manifest buono.
+    if not a.offline:
+        try:
+            lamma.write_manifest(SITE)
+        except Exception as e:
+            print(f"LaMMA non raggiungibile ({e}): conservo l'ultimo manifest. "
+                  f"Deploy comunque OK.", file=sys.stderr)
     supabase_upsert_blobs({"conti": conti})
     tag = briefing["leg"]["leg"] if briefing["leg"] else ("sosta" if briefing["rest"] else "—")
     print(f"Pubblicato {a.day}: {tag} | score {briefing['leg']['avg_score'] if briefing['leg'] else '—'} "

@@ -487,6 +487,90 @@ function windyMap(pos, ov, title) {
     Windy centrato su ${esc(pos.name)} — trascina la barra del tempo in basso per vedere il trend.</p>`;
 }
 
+// Carte sinottiche del Consorzio LaMMA (WW3 alta risoluzione): PNG hotlink,
+// riscritte in place a ogni run (init 00Z/12Z, online ~9 ore dopo). Il run
+// corrente arriva da data/lamma.json via CI perché DATERUN.txt non ha CORS;
+// se il manifest manca o è vecchio >24h si stima il run dall'orologio.
+// Cache-buster = run: al run nuovo l'immagine si rinnova da sola.
+function lammaEstRun() {
+  const n = new Date(), h = n.getUTCHours(), d = new Date(n);
+  if (h < 9) d.setUTCDate(d.getUTCDate() - 1);          // 12Z di ieri
+  const run = h >= 21 || h < 9 ? 12 : 0, p = x => String(x).padStart(2, "0");
+  return `${d.getUTCFullYear()}${p(d.getUTCMonth() + 1)}${p(d.getUTCDate())}${p(run)}`;
+}
+
+function lammaSetRun(run) {
+  const c = window.__lammaCfg;
+  c.run = run;
+  c.init = Date.UTC(+run.slice(0, 4), +run.slice(4, 6) - 1, +run.slice(6, 8), +run.slice(8, 10));
+  c.stepNow = Math.min(c.max_step, Math.max(1, Math.floor((Date.now() - c.init) / 36e5) + 1));
+}
+
+const lammaWhen = (init, step) => {
+  const t = new Date(init + (step - 1) * 36e5);
+  return t.toLocaleDateString("it", { weekday: "short", day: "numeric" }) + " · " +
+    t.toLocaleTimeString("it", { hour: "2-digit", minute: "2-digit" });
+};
+
+function lammaUpd() {
+  const c = window.__lammaCfg; if (!c) return;
+  const area = document.getElementById("lam-area").value,
+        campo = document.getElementById("lam-campo").value,
+        off = +document.getElementById("lam-off").value,
+        step = Math.min(c.max_step, c.stepNow + off);
+  document.getElementById("lam-img").src = `${c.base}/${c.id}/last/${campo}.${area}.${step}.png?r=${c.run}`;
+  document.getElementById("lam-when").textContent = lammaWhen(c.init, step);
+}
+
+function lammaErr() {
+  const c = window.__lammaCfg;
+  if (c && !c.retried) {
+    // run stimato/appena annunciato ma carte non ancora online: riprova col run precedente
+    c.retried = true;
+    const prev = new Date(c.init - 432e5), p = x => String(x).padStart(2, "0");
+    lammaSetRun(`${prev.getUTCFullYear()}${p(prev.getUTCMonth() + 1)}${p(prev.getUTCDate())}${p(prev.getUTCHours())}`);
+    lammaUpd();
+    return;
+  }
+  document.getElementById("lam-wrap").innerHTML = `<p style="padding:1rem;font-size:.85rem;color:var(--soft)">
+    Carta non raggiungibile in questo momento — le mappe restano consultabili su
+    <a href="https://www.lamma.toscana.it/mare/modelli/vento-mare.php">lamma.toscana.it</a>.</p>`;
+}
+
+function lammaCards(lm) {
+  if (!navigator.onLine) return "";
+  const fresh = lm && lm.modelli?.hr && Date.now() - new Date(lm.generated_at) < 864e5;
+  const hr = fresh ? lm.modelli.hr
+    : { id: "ww3hrecm", run: lammaEstRun(), max_step: 73, aree: { F: "Bonifacio", Q: "Corsica" } };
+  const campi = (fresh && lm.campi) ||
+    { wind10: "Vento 10m", swh: "Onda", mwp: "Periodo onda", windgust: "Raffica" };
+  window.__lammaCfg = { base: (fresh && lm.base) || "https://www.lamma.toscana.it/models",
+    id: hr.id, max_step: hr.max_step };
+  lammaSetRun(hr.run);
+  const c = window.__lammaCfg;
+  const maxOff = Math.max(0, Math.floor((c.max_step - c.stepNow) / 3) * 3);
+  const sel = (id, obj) => `<select id="${id}" onchange="lammaUpd()"
+    style="font:inherit;font-size:.85rem;padding:.25rem .4rem;background:var(--card,transparent);color:inherit;border:1px solid var(--hair);border-radius:3px">${
+    Object.entries(obj).map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select>`;
+  const runLbl = `${hr.run.slice(6, 8)}/${hr.run.slice(4, 6)} ore ${hr.run.slice(8, 10)} UTC`;
+  return `<h2>Carte LaMMA — Bocche &amp; Corsica</h2>
+  <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin:.4rem 0 .6rem">
+    ${sel("lam-area", hr.aree)}${sel("lam-campo", campi)}
+    <input id="lam-off" type="range" min="0" max="${maxOff}" step="3" value="0"
+      oninput="lammaUpd()" style="flex:1;min-width:120px" aria-label="Scadenza previsione">
+    <span id="lam-when" class="num" style="font-size:.85rem;white-space:nowrap">${lammaWhen(c.init, c.stepNow)}</span>
+  </div>
+  <div id="lam-wrap" style="border:1px solid var(--hair);border-radius:3px;overflow:hidden;background:#fff">
+    <img id="lam-img" alt="Carta LaMMA vento e mare" style="width:100%;display:block" loading="lazy"
+      onerror="lammaErr()" src="${c.base}/${c.id}/last/wind10.F.${c.stepNow}.png?r=${c.run}">
+  </div>
+  <p style="margin-top:.5rem;font-size:.76rem;color:var(--soft)">
+    Carte del <a href="https://www.lamma.toscana.it/mare/modelli/vento-e-mare-hr" target="_blank" rel="noopener">Consorzio
+    LaMMA</a> — modello WW3 alta risoluzione (vento IFS-ECMWF), run del ${runLbl}, nuovo run 2 volte al giorno.
+    Frecce = direzione di vento e onda. Fonte modellistica non ufficiale:
+    prevale il bollettino dell'<a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">Aeronautica Militare</a>.</p>`;
+}
+
 const wmoIcon = c => c == null ? "·" : c === 0 ? "☀️" : c <= 2 ? "🌤️" : c === 3 ? "☁️" :
   c <= 49 ? "🌫️" : c <= 57 ? "🌦️" : c <= 67 ? "🌧️" : c <= 79 ? "🌨️" : c <= 82 ? "🌧️" : "⛈️";
 const comp = d => ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSO","SO","OSO","O","ONO","NO","NNO"][Math.round(d / 22.5) % 16];
@@ -1215,7 +1299,8 @@ function render(b, wx, c, prog) {
   ${dailyStrip(prog, "wave")}
   ${sstStrip(prog)}
   ${windyMap(b.position, "wind", "Vento — mappa live")}
-  ${windyMap(b.position, "waves", "Onde — mappa live")}`;
+  ${windyMap(b.position, "waves", "Onde — mappa live")}
+  ${lammaCards(window.__lamma)}`;
 
   const programma = `
   ${programGrid(prog)}
@@ -1262,6 +1347,10 @@ function render(b, wx, c, prog) {
     const r = await fetch("data/destinations.json", { cache: "no-cache" });
     if (r.ok) window.__dests = await r.json();
   } catch (e) { /* niente schede dettaglio: fallback al catalogo */ }
+  try {
+    const r = await fetch("data/lamma.json", { cache: "no-cache" });
+    if (r.ok) window.__lamma = await r.json();
+  } catch (e) { /* niente manifest: lammaCards stima il run dall'orologio */ }
   // schede personali (pubbliche, RLS anon-ok): niente login richiesto, come su membro.html
   try {
     window.__profiles = (window.ninaAuth && ninaAuth.enabled) ? await ninaAuth.profilesMap() : null;

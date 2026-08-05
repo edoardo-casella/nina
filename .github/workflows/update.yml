@@ -2,9 +2,10 @@ name: Aggiorna briefing
 
 on:
   schedule:
-    # 10:00 e 18:00 UTC = 12:00 e 20:00 ora italiana (CEST, estate)
-    - cron: "0 10 * * *"
-    - cron: "0 18 * * *"
+    # ogni 3 ore: rinfresca meteo/briefing e il run delle carte LaMMA.
+    # LaMMA pubblica i run 00Z/12Z verso le 09/21 UTC: i giri delle 10 e
+    # delle 22 li agganciano ~1 ora dopo. I cron GitHub possono slittare.
+    - cron: "0 1,4,7,10,13,16,19,22 * * *"
   workflow_dispatch:        # bottone "Run workflow": rigenera, e dal telefono
     inputs:                 # (app GitHub) approva il piano o aggiorna la posizione
       approva:
