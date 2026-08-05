@@ -1034,29 +1034,29 @@ function tappeTimeline(b) {
   return `<h2>Le tappe di oggi · <span class="num" style="text-transform:none">${b.day_nm ?? "—"} nm</span></h2><div class="tl">${rows}</div>`;
 }
 
-// Conti di bordo: dati riservati all'equipaggio. Non viaggiano più in un JSON
-// statico — arrivano da Supabase (blob 'conti') solo con una sessione approvata,
-// e la pagina si ri-renderizza. Per gli altri: invito ad accedere.
+// Cassa di bordo: SOLO le spese comuni divise per persona-notte (spese vive,
+// pareggi). Il denaro personale — quota barca, extra, transazioni, saldo — vive
+// in membro.html tab "Il tuo viaggio" (fonte: registro reale dello skipper),
+// per non mostrare due numeri diversi per la stessa cosa. Dati riservati:
+// arrivano da Supabase (blob 'conti') solo con una sessione approvata.
 function contiCard(c) {
   if (!c) {
     if (!window.ninaAuth || !ninaAuth.enabled) return "";   // area riservata spenta: come prima
-    return `<h2>Conti</h2><p style="font-size:.9rem;color:var(--soft)">🔐 La cassa di bordo è riservata
+    return `<h2>Cassa di bordo</h2><p style="font-size:.9rem;color:var(--soft)">🔐 La cassa di bordo è riservata
       all'equipaggio — <a href="login.html">accedi all'area equipaggio ›</a></p>`;
   }
-  // vista personale: quota del membro loggato in chiaro + riga evidenziata
   const me = window.__myName || null;
-  const mine = me && c.per_person.find(p => p.name === me);
   const upd = c.generated_at ? `<span style="font-size:.72rem;color:var(--soft)"> · aggiornata ${new Date(c.generated_at).toLocaleString("it", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span>` : "";
-  return `<h2>Conti</h2>
-  ${mine ? `<p style="margin:-.2rem 0 .5rem;font-size:.95rem"><b>La tua quota: ${Math.round(mine.total)} €</b>
-    <span style="color:var(--soft)">(${mine.nights} ${mine.nights === 1 ? "notte" : "notti"} a bordo)</span></p>` : ""}
+  return `<h2>Cassa di bordo</h2>
+  <p style="margin:-.2rem 0 .5rem;font-size:.9rem;color:var(--soft)">Le spese comuni, divise per persona-notte.
+    Quota barca, extra e saldo sono nel tuo riepilogo personale — <a href="membro.html#me/viaggio">🧳 Il tuo viaggio ›</a></p>
   <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora${upd}</summary>
-    <table><thead><tr><th>Nome</th><th>Notti</th><th>Quota</th></tr></thead><tbody>
-      ${c.per_person.map(p => `<tr${me === p.name ? ` style="font-weight:700;color:var(--accent)"` : ""}><td>${esc(p.name)}${me === p.name ? " · tu" : ""}</td><td>${p.nights}</td><td>${Math.round(p.total)} €</td></tr>`).join("")}
+    <table><thead><tr><th>Nome</th><th>Notti</th></tr></thead><tbody>
+      ${c.per_person.map(p => `<tr${me === p.name ? ` style="font-weight:700;color:var(--accent)"` : ""}><td>${esc(p.name)}${me === p.name ? " · tu" : ""}</td><td>${p.nights}</td></tr>`).join("")}
     </tbody></table>
     ${(c.expenses && c.expenses.length) ? `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Spese registrate:</p>
       <table><tbody>${c.expenses.map(e => `<tr><td>${e.date ? esc(e.date) + " · " : ""}${esc(e.desc)}${e.paid_by ? ` <span style="color:var(--soft)">(${esc(e.paid_by)})</span>` : ""}</td><td class="num">${e.amount.toFixed(2)} €</td></tr>`).join("")}</tbody></table>`
-    : `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Nessuna spesa ancora registrata: quote da preventivo (fisso + budget variabile).</p>`}
+    : `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Nessuna spesa comune ancora registrata — la cassa parte con l'imbarco.</p>`}
     ${c.transfers.length ? `<p style="margin-top:.9rem;font-size:.85rem;color:var(--soft)">Per pareggiare:</p>
       <table><tbody>${c.transfers.map(t => `<tr><td>${esc(t.from)} → ${esc(t.to)}</td><td>${t.amount.toFixed(2)} €</td></tr>`).join("")}</tbody></table>` : ""}
   </details>`;
