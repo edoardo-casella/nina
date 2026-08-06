@@ -164,7 +164,7 @@
       <a href="profilo.html">✏️ Il mio profilo</a>
       <a href="membro.html#${member.crew_id}">🧑‍✈️ La mia pagina</a>
       <a href="membro.html#${member.crew_id}/viaggio">🧳 Il tuo viaggio</a>
-      <a href="index.html#oggi">💰 Cassa di bordo</a>
+      <a href="index.html#cassa">💰 Cassa di bordo</a>
       ${member.role === "admin" ? `<a href="admin.html">🎖️ Amministrazione</a>` : ""}
       <button type="button" id="nina-out">🚪 Esci</button>`;
     document.body.appendChild(menu);

@@ -521,9 +521,13 @@ function lammaSetRun(m, run) {
 }
 
 const lammaWhen = (init, step) => {
-  const t = new Date(init + (step - 1) * 36e5);
-  return t.toLocaleDateString("it", { weekday: "short", day: "numeric" }) + " · " +
-    t.toLocaleTimeString("it", { hour: "2-digit", minute: "2-digit" });
+  const t = new Date(init + (step - 1) * 36e5), now = new Date();
+  const dd = Math.floor((t - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
+  const hm = t.toLocaleTimeString("it", { hour: "2-digit", minute: "2-digit" });
+  if (dd === 0) return `oggi · ${hm}`;
+  if (dd === 1) return `domani · ${hm}`;
+  const day = t.toLocaleDateString("it", { weekday: "short", day: "numeric" });
+  return dd > 1 ? `+${dd}g · ${day} · ${hm}` : `${day} · ${hm}`;
 };
 
 function lammaModel() {
@@ -601,15 +605,18 @@ function lammaCards(lm) {
       `<option value="${mk}:${v}"${`${mk}:${v}` === areaSel ? " selected" : ""}>${l} · ${
         mk === "hr" ? "dettaglio 3 gg" : "estesa 5 gg"}</option>`)
       .join("")).join("");
-  const selStyle = "font:inherit;font-size:.85rem;padding:.25rem .4rem;background:var(--card,transparent);color:inherit;border:1px solid var(--hair);border-radius:3px";
+  // 16px minimi: sotto, iOS Safari auto-zooma a ogni tocco sul select
+  const selStyle = "font:inherit;font-size:1rem;padding:.25rem .4rem;background:var(--card,transparent);color:inherit;border:1px solid var(--hair);border-radius:3px;max-width:100%;min-width:0";
   return `<h2>Carte LaMMA — vento &amp; mare</h2>
   <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin:.4rem 0 .6rem">
     <select id="lam-area" onchange="lammaUpd()" style="${selStyle}">${areaOpts}</select>
     <select id="lam-campo" onchange="lammaUpd()" style="${selStyle}">${Object.entries(campi)
       .map(([v, l]) => `<option value="${v}"${v === campoSel ? " selected" : ""}>${l}</option>`).join("")}</select>
-    <input id="lam-off" type="range" min="0" max="${m0.maxOff}" step="3" value="${off0}"
-      oninput="lammaUpd()" style="flex:1;min-width:120px" aria-label="Scadenza previsione">
-    <span id="lam-when" class="num" style="font-size:.85rem;white-space:nowrap">${lammaWhen(m0.init, step0)}</span>
+    <div style="display:flex;flex:1 1 100%;gap:.5rem;align-items:center">
+      <input id="lam-off" type="range" min="0" max="${m0.maxOff}" step="3" value="${off0}"
+        oninput="lammaUpd()" style="flex:1;min-width:120px" aria-label="Scadenza previsione">
+      <span id="lam-when" class="num" style="font-size:.85rem;white-space:nowrap">${lammaWhen(m0.init, step0)}</span>
+    </div>
   </div>
   <div id="lam-wrap" style="border:1px solid var(--hair);border-radius:3px;overflow:hidden;background:#fff">
     <img id="lam-img" alt="Carta LaMMA vento e mare" style="width:100%;display:block"
@@ -1042,15 +1049,15 @@ function tappeTimeline(b) {
 function contiCard(c) {
   if (!c) {
     if (!window.ninaAuth || !ninaAuth.enabled) return "";   // area riservata spenta: come prima
-    return `<h2>Cassa di bordo</h2><p style="font-size:.9rem;color:var(--soft)">🔐 La cassa di bordo è riservata
+    return `<h2 id="cassa">Cassa di bordo</h2><p style="font-size:.9rem;color:var(--soft)">🔐 La cassa di bordo è riservata
       all'equipaggio — <a href="login.html">accedi all'area equipaggio ›</a></p>`;
   }
   const me = window.__myName || null;
   const upd = c.generated_at ? `<span style="font-size:.72rem;color:var(--soft)"> · aggiornata ${new Date(c.generated_at).toLocaleString("it", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span>` : "";
-  return `<h2>Cassa di bordo</h2>
+  return `<h2 id="cassa">Cassa di bordo</h2>
   <p style="margin:-.2rem 0 .5rem;font-size:.9rem;color:var(--soft)">Le spese comuni, divise per persona-notte.
     Quota barca, extra e saldo sono nel tuo riepilogo personale — <a href="membro.html#me/viaggio">🧳 Il tuo viaggio ›</a></p>
-  <details><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora${upd}</summary>
+  <details id="cassa-det"><summary>${c.person_nights} persona-notte · ${c.spent.toFixed(2)} € anticipati finora${upd}</summary>
     <table><thead><tr><th>Nome</th><th>Notti</th></tr></thead><tbody>
       ${c.per_person.map(p => `<tr${me === p.name ? ` style="font-weight:700;color:var(--accent)"` : ""}><td>${esc(p.name)}${me === p.name ? " · tu" : ""}</td><td>${p.nights}</td></tr>`).join("")}
     </tbody></table>
@@ -1273,6 +1280,10 @@ function route() {
   });
   if (currentTab !== t) window.scrollTo(0, scrollMem[t] || 0);
   currentTab = t;
+  if (h === "cassa") {   // ancora dal menu: card cassa aperta e portata a fuoco
+    document.getElementById("cassa-det")?.setAttribute("open", "");
+    document.getElementById("cassa")?.scrollIntoView();
+  }
 }
 window.addEventListener("hashchange", route);
 
@@ -1356,9 +1367,9 @@ function render(b, wx, c, prog) {
   ${waveRibbon(wx.hours)}
   ${dailyStrip(prog, "wave")}
   ${sstStrip(prog)}
+  ${lammaCards(window.__lamma)}
   ${windyMap(b.position, "wind", "Vento — mappa live")}
-  ${windyMap(b.position, "waves", "Onde — mappa live")}
-  ${lammaCards(window.__lamma)}`;
+  ${windyMap(b.position, "waves", "Onde — mappa live")}`;
 
   const programma = `
   ${programGrid(prog)}
