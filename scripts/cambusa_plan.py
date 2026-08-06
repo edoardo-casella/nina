@@ -93,6 +93,33 @@ DISPENSA_ESSENZIALI = [
     {"voce": "Marmellata", "quantita_totale": "-", "confezioni": 4, "formato": "vasetti da 350g", "canale": "online"},
 ]
 
+# Pulizia e consumabili per l'intera crociera (22 giorni, ~13 persone medie,
+# catamarano 4 cabine/4 bagni). Come la dispensa: quantita' a occhio, scorte-
+# cuscinetto da aggiustare liberamente. NB: la carta igienica deve essere quella
+# dissolvibile per WC marini — quella normale intasa le pompe.
+PULIZIA_CONSUMABILI = [
+    {"voce": "Carta igienica (dissolvibile per WC marini)", "quantita_totale": "-", "confezioni": 3, "formato": "pacchi da 12 rotoli", "canale": "online"},
+    {"voce": "Rotoloni carta cucina", "quantita_totale": "-", "confezioni": 2, "formato": "pacchi da 6", "canale": "online"},
+    {"voce": "Detersivo piatti a mano (concentrato)", "quantita_totale": "-", "confezioni": 3, "formato": "flaconi da 1L", "canale": "online"},
+    {"voce": "Spugne + panno abrasivo", "quantita_totale": "-", "confezioni": 2, "formato": "pacchi da 6", "canale": "online"},
+    {"voce": "Panni microfibra", "quantita_totale": "-", "confezioni": 1, "formato": "pacco da 6", "canale": "online"},
+    {"voce": "Sacchi immondizia grandi (100L)", "quantita_totale": "-", "confezioni": 2, "formato": "rotoli da 25", "canale": "online"},
+    {"voce": "Sacchetti immondizia piccoli (30L, bagni)", "quantita_totale": "-", "confezioni": 2, "formato": "rotoli da 20", "canale": "online"},
+    {"voce": "Sgrassatore multiuso spray", "quantita_totale": "-", "confezioni": 2, "formato": "flaconi da 750ml", "canale": "online"},
+    {"voce": "Detergente bagno / anticalcare", "quantita_totale": "-", "confezioni": 2, "formato": "flaconi da 750ml", "canale": "online"},
+    {"voce": "Sapone mani (dispenser + ricarica)", "quantita_totale": "-", "confezioni": 4, "formato": "2 dispenser + 2 ricariche", "canale": "online"},
+    {"voce": "Gel igienizzante mani", "quantita_totale": "-", "confezioni": 3, "formato": "flaconi da 250ml", "canale": "online"},
+    {"voce": "Pellicola trasparente + alluminio", "quantita_totale": "-", "confezioni": 4, "formato": "2 + 2 rotoli", "canale": "online"},
+    {"voce": "Sacchetti freezer con zip", "quantita_totale": "-", "confezioni": 2, "formato": "confezioni da 30", "canale": "online"},
+    {"voce": "Tovaglioli di carta", "quantita_totale": "-", "confezioni": 6, "formato": "pacchi da 100", "canale": "online"},
+    {"voce": "Sapone di Marsiglia (bucato a mano)", "quantita_totale": "-", "confezioni": 1, "formato": "panetto/flacone", "canale": "online"},
+    {"voce": "Mollette + cordina stendibiancheria", "quantita_totale": "-", "confezioni": 1, "formato": "kit", "canale": "online"},
+    {"voce": "Antizanzare spray corpo", "quantita_totale": "-", "confezioni": 4, "formato": "spray da 100ml", "canale": "online"},
+    {"voce": "Dopopuntura", "quantita_totale": "-", "confezioni": 2, "formato": "stick/roll-on", "canale": "online"},
+    {"voce": "Guanti da cucina monouso", "quantita_totale": "-", "confezioni": 1, "formato": "scatola da 100", "canale": "online"},
+    {"voce": "Accendini cucina", "quantita_totale": "-", "confezioni": 3, "formato": "pezzi", "canale": "online"},
+]
+
 
 def detailed_lines(items: dict) -> list[dict]:
     """Converte {voce: quantita'} in righe d'ordine: confezioni da comprare + canale."""
@@ -304,6 +331,7 @@ def build_plan(v: dict) -> dict:
             "pasta_dettaglio": pasta_breakdown(v, prefs, durables_full["person_days"]),
             "bevande_dettaglio": bevande_lines(v, prefs),
             "dispensa_essenziali": DISPENSA_ESSENZIALI,
+            "pulizia_consumabili": PULIZIA_CONSUMABILI,
         },
         "rifornimenti_successivi": rifornimenti,
         "note_preferenze": preference_notes(v, prefs),
@@ -328,7 +356,8 @@ if __name__ == "__main__":
     righe = (detailed_lines(tutte_le_voci)
              + [{**x, "canale": "online"} for x in g["dispensa_essenziali"]]
              + [{**x, "canale": "online"} for x in g["pasta_dettaglio"]]
-             + g["bevande_dettaglio"])
+             + g["bevande_dettaglio"]
+             + g["pulizia_consumabili"])
     for canale, titolo in (("online", "ONLINE (ordina in anticipo, ritiro/consegna prima dell'8)"),
                            ("di persona", "DI PERSONA (mercato/pescheria/enoteca l'8 mattina)")):
         print(f"{titolo}:")
