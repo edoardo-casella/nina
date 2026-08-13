@@ -121,17 +121,34 @@ Verifica: in Supabase Table Editor `members` ha lo skipper admin + le email Jotf
 
 Upgrade solo se servono: Supabase Pro (25 $/mese) per backup automatici; GitHub Pro per repo privato.
 
-## Nota: DUE progetti Supabase (2026-07-15)
+## Nota: DUE progetti Supabase (2026-07-15, aggiornata 2026-08-12)
 
 Il sito usa due progetti su due account Supabase distinti:
-1. **Plancia** (`nlbhhzjimsxakcugmrdy`, account GitHub-login) — area riservata. Keep-alive: CI 2x/die.
+1. **Plancia** (`nlbhhzjimsxakcugmrdy`, account GitHub-login) — area riservata. Keep-alive: CI ogni 3h.
 2. **nina-crewin** (`omxohvtjeanbdbxrdenx`, account preesistente con GestioneCondomini, connettore
-   claude.ai) — **like degli aneddoti** (tabella `nina_likes`, anon key hardcoded in aneddoti.html).
-   ⚠️ NESSUN keep-alive: senza traffico per 7 giorni il free tier lo PAUSA e i like spariscono
-   in silenzio (contatori a zero/offline). Opzioni: (a) consolidare i like dentro Plancia
-   (tabella+vista+RLS migrate, ripuntare LIKES_API, poi dismettere nina-crewin) — consigliato;
-   (b) aggiungere in update.yml un ping alla REST di nina-crewin. NON dismettere nina-crewin
-   prima di aver migrato i like.
+   claude.ai) — residuale: i **like degli aneddoti sono stati migrati dentro Plancia il 2026-07-24**
+   (opzione (a): tabella+vista+RLS in `schema.sql`, `LIKES_API` ripuntata in aneddoti.html).
+   nina-crewin non ha più workload attivo → dismissibile.
+
+## Edge Function `telegram-position` (2026-08-12)
+
+Sul progetto **Plancia** gira la funzione `supabase/functions/telegram-position/`
+(webhook del bot Telegram `@nina_plancia_bot`): condividi la posizione in chat →
+la funzione chiama il `workflow_dispatch` di update.yml (inputs lat/lon/luogo) →
+`data/position.json` aggiornato + redeploy. `verify_jwt = false` (Telegram non
+manda JWT; l'auth è il `secret_token` del webhook, verificato dalla funzione).
+
+Secrets della funzione (npx supabase secrets set …):
+- `TELEGRAM_BOT_TOKEN` — da BotFather
+- `TELEGRAM_SECRET` — random, lo stesso passato a setWebhook come `secret_token`
+- `GH_PAT` — fine-grained, SOLO repo `nina`, permesso Actions:Read&write (scade
+  a 1 anno: rotazione annotata in OPERATIONS.md). ⚠️ 2026-08-13: caricato
+  temporaneamente il token OAuth del gh CLI (scope repo+workflow su tutti i
+  repo) per partire in crociera — **sostituire col fine-grained al rientro**
+- `ALLOWED_CHAT_IDS` — csv: chat privata Edo + gruppo equipaggio
+
+Stato di throttle live-location: tabella `bot_state` (schema.sql), solo service
+role. Deploy: `npx supabase functions deploy telegram-position --no-verify-jwt`.
 
 ## Note di sicurezza
 

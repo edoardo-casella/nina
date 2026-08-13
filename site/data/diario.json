@@ -1,0 +1,195 @@
+{
+  "_README": "Diario di bordo narrativo — Estate 2026. Scritto a mano (Edo/agente), MAI generato né toccato dalla CI (publish.py non lo conosce). wind/sea/nm a null = da compilare: scripts/diario_fill.py propone i valori (dry-run) e li scrive solo con --write. I blank in prosa (es. 'pesce pescato: ____') si compilano a mano.",
+  "title": "Diario di bordo — Estate 2026",
+  "sub": "S/Y <i>Nina</i> · Dufour 48 Catamaran (2023) · Base: Cannigione, Sardegna · Settimana I",
+  "updated": "2026-08-12",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-08-08",
+      "route": "Cannigione → Spargi (La Maddalena)",
+      "wind": "NO 5-10 kn, raffiche 24",
+      "sea": "poco mosso, 0,7 m",
+      "nm": 10,
+      "status": "done",
+      "entries": [
+        {
+          "time": "11:00",
+          "html": "<p>Briefing. Il piano è semplice, quasi elegante: ritirare la spesa già ordinata e pagata al supermercato, integrare i freschi, caricare tutto sui furgoni prenotati, mollare gli ormeggi entro le 15:30. Le istruzioni vengono impartite con la lentezza che si riserva ai bambini e agli equipaggi al primo giorno. Sono state comprese, ci dicono.</p>"
+        },
+        {
+          "time": "13:30",
+          "html": "<p>Non sono state comprese. L'equipaggio a terra entra nel supermercato sbagliato e — invece di insospettirsi di fronte all'assenza di un ordine da ottanta chili intestato a <i>Nina</i> — procede a fare <b>una seconda spesa da capo</b>. Poi telefona in barca per chiedere allegramente \"fra quanto arriva la roba\".</p>"
+        },
+        {
+          "time": "13:50",
+          "html": "<p>Si distacca <b>Capo Bernardo Bolgeri</b>, unico uomo a bordo con senso dell'orientamento commerciale, con missione di recupero. Individua il supermercato giusto, riscatta la spesa originale, riorganizza la consegna. Sarà ricordato.</p>"
+        },
+        {
+          "time": "14:40",
+          "html": "<p><i>Incidente del Carrello.</i> Uno dei carrelli destinati al trasporto viene rivendicato da un locale — sommozzatore, in stato di ebbrezza monumentale — che ne reclama la proprietà con argomentazioni difficili da ricostruire. Momenti di tensione fra la componente maschile dell'equipaggio e l'uomo. Il carrello resta nostro. La dignità è più o meno intatta.</p>"
+        },
+        {
+          "time": "17:00",
+          "html": "<p><b>Mollati gli ormeggi.</b> Con novanta minuti di ritardo sul piano del comandante, che li annota tutti.</p>"
+        },
+        {
+          "time": "20:00 ca.",
+          "html": "<p>Ancoraggio a <b>Spargi</b>. Cena a bordo. Cielo pulito.</p>"
+        },
+        {
+          "time": "22:30",
+          "html": "<p>Nasce ufficialmente la leggenda notturna di <b>Lorenzo Costanzo, detto il Presidente</b>, che imbarca la componente maschile sul tender e conduce una perlustrazione quasi completa della costa di Spargi: ogni caletta ispezionata, ogni anfratto sondato, il tutto con la scusa ufficiale di pescare pesce fresco. Pesce fresco pescato: ____. Morale: altissimo.</p>"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-08-09",
+      "route": "Spargi → Budelli → Cannigione (rientro forzato)",
+      "wind": "E 1-7 kn, raffiche 19",
+      "sea": "quasi calmo, 0,2 m",
+      "nm": 15,
+      "status": "done",
+      "entries": [
+        {
+          "time": "09:00",
+          "html": "<p>Controllo mattutino. Scoperta poco poetica: <b>un'elica è in procinto di staccarsi.</b> A questo si aggiunge il quadro clinico generale di <i>Nina</i>, che di anno nuovo ha solo l'anagrafe: generatore che si spegne a intermittenza, silenziatore capriccioso, manutenzione a livelli che definiremmo <i>archeologici</i>.</p>"
+        },
+        {
+          "time": "09:30",
+          "html": "<p>Primo contatto con il charter. Inizia una trattativa a distanza che ci accompagnerà per tutta la giornata. Richiesta dell'equipaggio: <b>intervento in loco a Budelli</b>, per non sacrificare la vacanza del Presidente sull'altare della meccanica.</p>"
+        },
+        {
+          "time": "11:00",
+          "html": "<p>Trasferimento a <b>Budelli</b>. Ci raggiunge <b>il mitico Fonda</b> con le moto d'acqua. La giornata, per qualche ora, sembra quella promessa dalle brochure.</p>"
+        },
+        {
+          "time": "13:00",
+          "html": "<p>Il Presidente inaugura quella che si rivelerà la costante termodinamica dell'intera settimana: <b>la griglia</b>. Chili di carne, senza tregua, senza spiegazioni, senza pietà.</p>"
+        },
+        {
+          "time": "16:00",
+          "html": "<p>Il charter comunica che l'intervento va fatto in porto. Rotta su Cannigione. Umore a bordo: variabile da \"rassegnato\" a \"presidenziale\".</p>"
+        },
+        {
+          "time": "18:30",
+          "html": "<p>Ormeggio a <b>Cannigione</b>. Il tecnico constata che <b>mancano i pezzi</b>. Nessuna sostituzione oggi. Furia del Presidente, sconforto generale, notte in porto non prevista da nessun piano.</p>"
+        },
+        {
+          "time": "21:00",
+          "html": "<p>Si griglia comunque. Non si perde un'occasione.</p>"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-08-10",
+      "route": "Cannigione → Lavezzi → Cavallo → Isola Piana",
+      "wind": "SSE 1-6 kn, raffiche 13",
+      "sea": "calmo, 0,1 m",
+      "nm": 22,
+      "status": "done",
+      "entries": [
+        {
+          "time": "06:30",
+          "html": "<p>Fix dell'elica completato. <b>Partenza prestissimo</b>, con il fervore di chi ha una giornata da recuperare.</p>"
+        },
+        {
+          "time": "11:00 ca.",
+          "html": "<p>Arrivo all'<b>Isola di Lavezzi</b>. Ormeggiamo entusiasticamente fuori dalle zone consentite e veniamo altrettanto entusiasticamente redarguiti dal ranger del parco. Barca spostata. Prima lezione corsa della settimana: la Riserva dei Lavezzi non ammette interpretazioni creative.</p>"
+        },
+        {
+          "time": "11:45",
+          "html": "<p>Decisione di comando: si sbarca una squadra per la gita a terra. Al tender vanno <b>il marinaio scelto Lorenzo Costanzo</b>, <b>Giacomo Nassi</b> e il resto della componente femminile. Viene affidato loro il pieno comando di uno degli asset strategici della vacanza. Contatto radio stabilito. Rendez-vous previsto: tre ore.</p>"
+        },
+        {
+          "time": "14:45",
+          "html": "<p>Il team non è rientrato.</p>"
+        },
+        {
+          "time": "15:00",
+          "html": "<p>Contatti radio. Segue una delle conversazioni più istruttive nella storia della navigazione moderna, dalla quale emerge che il team <b>ha sbagliato isola</b>. Non essendo del tutto persuasi che \"isola\" implichi confini fisici, si sono spostati fino a <b>Cavallo</b>.</p>"
+        },
+        {
+          "time": "15:30",
+          "html": "<p><i>Nina</i> si sposta a Cavallo per recuperare l'equipaggio disperso, ormai <b>senza benzina</b>, in una baia sbagliata di un'isola sbagliata. Recupero riuscito. Il tender rientra a bordo con onore ridotto.</p>"
+        },
+        {
+          "time": "13:00–16:00",
+          "html": "<p>Nel frattempo, sotto un sole da fonderia, <b>il generatore va in surriscaldamento</b>. La coppia <b>Bolgeri–Casella</b> si chiude nel vano tecnico all'ora di pranzo e riporta il sistema in vita. Intervento riuscito. Nessuno a bordo crede che sia definitivo: la barca sta scendendo a pezzi con una certa metodicità, e quelle mani su quel generatore torneranno.</p>"
+        },
+        {
+          "time": "18:00",
+          "html": "<p>Ormeggio all'<b>Isola Piana</b>. Fondale: <b>un metro e mezzo</b>, con <b>dieci centimetri</b> scarsi fra le derive e la sabbia. Manovra da manuale o da denuncia, a seconda di chi la racconta.</p>"
+        },
+        {
+          "time": "19:00",
+          "html": "<p>Il Presidente, felicissimo, accende la griglia.</p>"
+        },
+        {
+          "time": "20:30",
+          "html": "<p><i>Il Rilevamento Batimetrico dell'Isola Piana.</i> Non fidandosi dei dieci centimetri, un comitato tecnico-scientifico capitanato dal Presidente conduce una campagna di misurazione della profondità dell'intera caletta, ruotando <b>a mano</b> la barca su 360° per verificare ogni settore. Ore di lavoro, precisione ingegneristica, consenso unanime sui risultati.</p>"
+        },
+        {
+          "time": "03:30",
+          "html": "<p>La marea, che non era stata invitata alle riunioni, si abbassa. <b>Contatto con la sabbia.</b> Venti minuti di picco di bassa marea vissuti in stato di allerta collettiva, poi <i>Nina</i> si rialza da sola e l'equipaggio torna a dormire, con la serena convinzione che la scienza abbia comunque avuto ragione.</p>"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-08-11",
+      "route": "Isola Piana → Bonifacio → Plage de Roccapina",
+      "wind": "ONO 2-11 kn, raffiche 26",
+      "sea": "quasi calmo, 0,1 m",
+      "nm": 17,
+      "status": "done",
+      "entries": [
+        {
+          "time": "08:00",
+          "html": "<p>Bagni nell'acqua dell'Isola Piana, che di giorno perdona tutto. Morale altissimo.</p>"
+        },
+        {
+          "time": "10:00",
+          "html": "<p>Arrivano i <b>gommonauti</b>. Puntuali come una marea, ma più rumorosi. La baia diventa rapidamente meno nostra.</p>"
+        },
+        {
+          "time": "11:00",
+          "html": "<p>Scalo a <b>Bonifacio</b>. Si organizza un servizio navetta con il tender e sbarca la squadra di terra, con missione tripla: rifornimenti, benzina, gas.</p>"
+        },
+        {
+          "time": "11:00–16:00",
+          "html": "<p><i>Ottima performance del team di terra</i>, e per una volta senza ironia: visita alla Rocca, spesa delle ragazze, hamburger di livello assicurati per cena, <b>pieno di benzina al motore del tender</b>, e — colonna portante della spedizione — <b>bombole del gas</b> per consentire al Presidente di grigliare a oltranza. Bonifacio dall'alto ripaga della fatica.</p>"
+        },
+        {
+          "time": "17:30",
+          "html": "<p>Navigazione verso la <b>Plage de Roccapina</b>, con il leone di roccia a guardia della baia.</p>"
+        },
+        {
+          "time": "19:00",
+          "html": "<p>Viene proposto un pacchetto trekking al tramonto. Viene respinto all'unanimità: l'equipaggio è entrato ufficialmente in <b>modalità relax</b>.</p>"
+        },
+        {
+          "time": "24:00",
+          "html": "<p>Si resta a bordo fino a mezzanotte per festeggiare il compleanno di <b>Giacomo Nassi, Sottotenente di Cavallo</b>, titolo guadagnato sul campo tre giorni prima e destinato a restargli addosso per il resto della navigazione. Brindisi, griglia, notte ferma.</p>"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-08-12",
+      "route": "Roccapina → Golfo di Ajaccio",
+      "wind": null,
+      "sea": null,
+      "nm": 28,
+      "status": "in-progress",
+      "entries": [
+        {
+          "time": "10:30",
+          "html": "<p>Mollati gli ormeggi. Rotta a nord verso il <b>Golfo di Ajaccio</b>. Nei piani del comandante, due navigazioni notturne nei prossimi giorni.</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Config minimale per il deploy delle edge function sul progetto Plancia.
+# telegram-position riceve i webhook di Telegram, che non può mandare un JWT
+# Supabase: verify_jwt spento (l'auth è il secret_token di setWebhook,
+# verificato dalla funzione stessa). Belt & braces: deployare comunque con
+# `npx supabase functions deploy telegram-position --no-verify-jwt`.
+project_id = "nlbhhzjimsxakcugmrdy"
+
+[functions.telegram-position]
+verify_jwt = false

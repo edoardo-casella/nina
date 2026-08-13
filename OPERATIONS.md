@@ -31,7 +31,17 @@ resta valido finché non cambia il giorno.
 ## Posizione reale (quando serve)
 
 La posizione di default è quella **da piano**. Per dire alla Plancia dove
-siamo davvero (meteo e mappe si ricentrano):
+siamo davvero (meteo, mappe e carta LaMMA di default si ricentrano):
+
+**Flusso primario — Telegram** (chiunque a bordo): nella chat col bot
+`@nina_plancia_bot` o nel gruppo equipaggio → 📎 → **Posizione** → invia.
+Il bot conferma in chat e la Plancia si aggiorna in ~2 minuti. Vale anche la
+**posizione live**: viene seguita con un aggiornamento ogni ~10 minuti.
+Se cerchi un posto col nome nel picker (venue), quel nome compare in Plancia.
+Il comando `/id` risponde (in qualunque chat) con l'ID della chat: serve per
+abilitare una nuova chat nel secret `ALLOWED_CHAT_IDS` della funzione.
+
+**Fallback — app GitHub** (se il bot non risponde):
 
 1. Google Maps → tenere premuto sulla propria posizione → copia coordinate.
 2. App GitHub → Actions → Run workflow → incollare `lat`, `lon` e il nome del
@@ -41,10 +51,12 @@ La posizione GPS vale 24 ore, poi si torna a quella da piano (un dato vecchio
 dichiarato è utile, uno vecchio spacciato per fresco no). La dashboard mostra
 sempre la fonte: "(GPS, X h fa)" oppure "(da piano)".
 
-> Nota: la condivisione posizione di Google Maps **non ha un'API ufficiale** —
-> non si può leggere in automatico dall'account. Upgrade possibile in futuro:
-> bot Telegram nel gruppo equipaggio (condividi posizione → la Plancia si
-> aggiorna da sola). Richiede un token bot: da decidere.
+> Bot giù? Controllare `https://api.telegram.org/bot<TOKEN>/getWebhookInfo`
+> (deve puntare a `.../functions/v1/telegram-position`, senza
+> `last_error_message`) e i log della funzione su Supabase (progetto Plancia →
+> Edge Functions → telegram-position). Il PAT GitHub della funzione scade
+> annualmente: se il bot risponde "non sono riuscito", rigenerarlo (repo
+> `nina`, permesso Actions:write) e `npx supabase secrets set GH_PAT=...`.
 
 ## Parlare con l'agente (domande, cambi di piano)
 

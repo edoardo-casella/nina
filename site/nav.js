@@ -19,6 +19,7 @@
       ["index.html#forecast", "Forecast", "⛅"],
       ["index.html#programma", "Percorso", "🗓️"],
       ["rotta.html", "Il giro previsto", "🗺️"],
+      ["diario.html", "Diario di bordo", "📔"],
       ["cielo.html", "Cielo del giorno", "🌇"],
       ["oroscopo.html", "Oroscopo di bordo", "🔮"],
       ["arrivi.html", "Arrivi & partenze", "🛟"],

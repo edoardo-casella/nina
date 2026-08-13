@@ -38,6 +38,11 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 - `routing.py` — Sail Score, simulazione ora per ora
 - `shelter.py` — Shelter Score per le rade
 - `ledger.py` / `provisioning.py` / `logbook.py` / `import_kml.py`
+- `diario_fill.py` — compila vento/mare/miglia del diario narrativo
+  (`site/data/diario.json`, committato a mano, MAI toccato dalla CI; pagina
+  `site/diario.html`). Miglia da waypoint reali, meteo da Open-Meteo
+  `past_days` (modello, NON osservazioni: per la calibrazione vale solo il
+  logbook). Dry-run di default, `--write` patcha solo i campi `null`
 - `draft_plan.py` — bozza one-off delle tappe giornaliere (dry-run di default)
 - `photos.py` — foto destinazioni da Wikimedia Commons (`gallery_for` N foto /
   `photo_for` 1; geosearch, no API key, `_get` throttled+cache condiviso; mai bloccante)
@@ -72,6 +77,11 @@ Bozza: `python scripts/draft_plan.py` (dry-run) → revisione → `--write` → 
 La dashboard ha 4 viste hash-routed (`#oggi` executive summary + tappe,
 `#vento` e `#mare` 48h + 14gg, `#programma` griglia 2 settimane). `sw.js`:
 a ogni release del guscio si bumpa `SHELL`; la cache `DATA` non si rinomina mai.
+
+Posizione real-time: bot Telegram `@nina_plancia_bot` → edge function
+`supabase/functions/telegram-position/` (progetto Plancia) → workflow_dispatch
+di update.yml → `data/position.json`. Secrets e runbook in
+`docs/LANCIO-EVERYWAVES.md`; flusso utente in `OPERATIONS.md`.
 
 ## Stato dei dati
 

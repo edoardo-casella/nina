@@ -207,6 +207,18 @@ drop policy if exists voyage_finance_admin_all on public.voyage_finance;
 create policy voyage_finance_admin_all on public.voyage_finance
   for all to authenticated using (public.is_admin()) with check (public.is_admin());
 
+-- bot_state: stato del bot Telegram della Plancia (edge function
+-- telegram-position) — oggi solo il throttle della live location (una riga,
+-- key 'telegram_position', value {"ts": epoch_ms dell'ultimo dispatch}).
+-- Scrive/legge SOLO la service role della funzione: RLS attiva senza policy,
+-- nessun grant ad anon/authenticated.
+create table if not exists public.bot_state (
+  key        text primary key,
+  value      jsonb not null,
+  updated_at timestamptz not null default now()
+);
+alter table public.bot_state enable row level security;
+
 -- ── Grants espliciti (Supabase li dà di default, qui sono documentati) ─────
 grant usage on schema public to anon, authenticated;
 grant select, insert, update on public.members, public.access_requests,

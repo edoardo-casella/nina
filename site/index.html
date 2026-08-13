@@ -404,6 +404,7 @@ footer strong{color:var(--ink)}
   <a href="skipper.html">🎖️ Lo skipper</a>
   <a href="classifica.html">🏆 Classifica</a>
   <a href="aneddoti.html">📖 Aneddoti</a>
+  <a href="diario.html">📔 Diario di bordo</a>
   <a href="viaggio.html">⛵ I viaggi</a>
   <a href="paese.html">🌍 I mari</a>
   <a href="mete.html">🗺️ Le mete</a>
@@ -432,7 +433,7 @@ footer strong{color:var(--ink)}
 <footer>
   Vento e onda: <strong>Open-Meteo</strong> (modello ECMWF). Bollettino ufficiale del mare: <a href="https://www.meteoam.it/it/mare" target="_blank" rel="noopener">Aeronautica Militare</a>.<br><br>
   <span class="poweredby">powered by <span class="starlink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="12" rx="10.5" ry="4.4" transform="rotate(-28 12 12)"/><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/></svg>Starlink</span></span> — internet satellitare a bordo, anche al largo<br><br>
-  <a href="manifesto.html">⚓ Cos'è Everywaves</a> · <a href="unisciti.html">✉️ Vuoi imbarcarti?</a> · <a href="guida.html">🎒 Guida pre-partenza</a> · <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="aneddoti.html">📖 Aneddoti</a> · <a href="viaggio.html">I viaggi</a> · <a href="mete.html">🗺️ Le mete</a> · <a href="avionica.html">Avionica a bordo</a> · <a href="membro.html">L'equipaggio</a> · <a href="arrivi.html">Arrivi &amp; partenze</a>
+  <a href="manifesto.html">⚓ Cos'è Everywaves</a> · <a href="unisciti.html">✉️ Vuoi imbarcarti?</a> · <a href="guida.html">🎒 Guida pre-partenza</a> · <a href="barca.html">La barca</a> · <a href="skipper.html">Lo skipper</a> · <a href="aneddoti.html">📖 Aneddoti</a> · <a href="diario.html">📔 Diario di bordo</a> · <a href="viaggio.html">I viaggi</a> · <a href="mete.html">🗺️ Le mete</a> · <a href="avionica.html">Avionica a bordo</a> · <a href="membro.html">L'equipaggio</a> · <a href="arrivi.html">Arrivi &amp; partenze</a>
 </footer>
 
 <script>
@@ -568,7 +569,12 @@ function lammaOk() {
   if (n) n.style.display = "none";
 }
 
-function lammaCards(lm) {
+// area di default dalla posizione della barca: nelle Bocche (e Maddalena) il
+// dettaglio F; da Campomoro in su, lungo la Corsica, il taglio Q. La scelta
+// manuale dell'utente (select ancora nel DOM) vince sempre, per la sessione.
+const lammaAreaFor = pos => pos && pos.lat != null && pos.lat >= 41.55 ? "hr:Q" : "hr:F";
+
+function lammaCards(lm, pos) {
   const fresh = lm && lm.modelli && Date.now() - new Date(lm.generated_at) < 864e5;
   const man = fresh ? lm.modelli : {}, est = lammaEstRun();
   // difese sui default: manifest vecchio (senza un'area nuova) o LaMMA
@@ -595,7 +601,11 @@ function lammaCards(lm) {
   // conservano area, campo e scadenza scelti dall'utente
   const prev = id => document.getElementById(id)?.value;
   const pv = prev("lam-area"), [pm, pa] = (pv || "").split(":");
-  const areaSel = models[pm]?.aree[pa] ? pv : "hr:" + Object.keys(models.hr.aree)[0];
+  // default dalla posizione, con la stessa difesa dei DEF: se il manifest non
+  // conosce l'area suggerita si ripiega sulla prima hr disponibile
+  const auto = lammaAreaFor(pos), [am, aa] = auto.split(":");
+  const areaSel = models[pm]?.aree[pa] ? pv
+    : models[am]?.aree[aa] ? auto : "hr:" + Object.keys(models.hr.aree)[0];
   const campoSel = campi[prev("lam-campo")] ? prev("lam-campo") : Object.keys(campi)[0];
   const m0 = models[areaSel.split(":")[0]], area0 = areaSel.split(":")[1];
   const off0 = Math.min(+prev("lam-off") || 0, m0.maxOff),
@@ -1367,7 +1377,7 @@ function render(b, wx, c, prog) {
   ${waveRibbon(wx.hours)}
   ${dailyStrip(prog, "wave")}
   ${sstStrip(prog)}
-  ${lammaCards(window.__lamma)}
+  ${lammaCards(window.__lamma, b.position)}
   ${windyMap(b.position, "wind", "Vento — mappa live")}
   ${windyMap(b.position, "waves", "Onde — mappa live")}`;
 

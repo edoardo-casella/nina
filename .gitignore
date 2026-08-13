@@ -56,6 +56,9 @@ data/Viaggi in barca*.kml
 # File stray non tracciato, origine ignota
 data/65bba01eeca560e2820bb0c1.webp
 
+# Supabase CLI (stato locale del link/deploy)
+supabase/.temp/
+
 # OS
 .DS_Store
 Thumbs.db
