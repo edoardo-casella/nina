@@ -16,7 +16,7 @@ from __future__ import annotations
 import argparse, datetime as dt, json, math, os, sys, urllib.error, urllib.request
 from pathlib import Path
 
-import core, lamma, routing, shelter, ledger, weather, photos
+import core, lamma, routing, shelter, ledger, splitwise, weather, photos
 
 SITE = core.ROOT / "site" / "data"
 LIGHTS = {"OTTIMA": "verde", "BUONA": "verde", "MEDIOCRE": "giallo", "MOTORE": "giallo", "STOP": "rosso"}
@@ -688,6 +688,21 @@ def build(day: str, offline: bool) -> tuple[dict, dict, dict]:
              "expenses": [{"date": e.get("date"), "desc": e.get("desc") or e.get("what") or e.get("label") or "spesa",
                            "amount": e["amount"], "paid_by": _name.get(e.get("paid_by"), e.get("paid_by"))}
                           for e in v.get("expenses", [])]}
+    # Cassa da Splitwise (se configurata): spese/pareggi registrati in app
+    # dall'equipaggio; le quote per_person (charter) restano da ledger. Splitwise
+    # giu' o env assenti -> la card resta su voyage.json.expenses come sopra.
+    sw_key, sw_gid = os.environ.get("SPLITWISE_API_KEY"), os.environ.get("SPLITWISE_GROUP_ID")
+    if sw_key and sw_gid and not offline:
+        try:
+            sw = splitwise.conti_data(sw_key, sw_gid)
+            conti.update(spent=sw["spent"], transfers=sw["transfers"],
+                         expenses=sw["expenses"], source="splitwise")
+            if sw["non_eur"]:
+                print(f"Splitwise: valute non-EUR nel gruppo {sw['non_eur']} — "
+                      "totali da verificare", file=sys.stderr)
+        except Exception as exc:
+            print(f"Splitwise non raggiungibile ({exc}): cassa da voyage.json",
+                  file=sys.stderr)
     program = build_program(v, plan_all, day, offset, offline, now)
     return briefing, wx, conti, program
 

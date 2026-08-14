@@ -9,6 +9,10 @@ del telefono (funziona anche offline, mostra l'età dei dati).
 - **12:00 e 20:00** (ora italiana): il workflow scarica il meteo reale
   (Open-Meteo/ECMWF, onde, effemeridi met.no), ricalcola briefing, Sail Score,
   rade, turni e outlook, e ripubblica la dashboard.
+- La **cassa di bordo** si aggiorna da sola dal gruppo Splitwise «Nina I»
+  (spese comuni + pareggi; registrare le spese in app e basta). Le quote
+  charter restano dall'Excel. Se Splitwise non risponde, resta l'ultima
+  cassa pubblicata.
 - Il **tema** passa da solo a giorno/notte con l'alba e il tramonto.
 - I **turni** ruotano da soli ogni giorno (skipper esenti).
 - Fino all'8 agosto la dashboard gira in **SIMULAZIONE** (piano traslato a

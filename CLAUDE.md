@@ -38,6 +38,11 @@ dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
 - `routing.py` — Sail Score, simulazione ora per ora
 - `shelter.py` — Shelter Score per le rade
 - `ledger.py` / `provisioning.py` / `logbook.py` / `import_kml.py`
+- `splitwise.py` — cassa di bordo dal gruppo Splitwise (env SPLITWISE_API_KEY
+  + SPLITWISE_GROUP_ID, secrets in Actions): spese/pareggi con share esatti
+  (anche split disuguali; payment nel netto, non nello speso); publish.py li
+  mette nel blob conti al posto di voyage.json.expenses, con fallback se
+  Splitwise è giù. Bonifici minimi = ledger.min_transfers condiviso
 - `diario_fill.py` — compila vento/mare/miglia del diario narrativo
   (`site/data/diario.json`, committato a mano, MAI toccato dalla CI; pagina
   `site/diario.html`). Miglia da waypoint reali, meteo da Open-Meteo

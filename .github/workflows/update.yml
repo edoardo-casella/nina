@@ -62,11 +62,15 @@ jobs:
       # SUPABASE_*: publish.py carica i dati riservati (conti, arrivi) su
       # Supabase — e il giro 2x/die fa da keep-alive del free tier. Se i secret
       # non sono configurati lo step salta quella parte con un avviso.
+      # SPLITWISE_*: se presenti, la cassa di bordo legge le spese comuni dal
+      # gruppo Splitwise dell'equipaggio (fallback: voyage.json.expenses).
       - name: Genera i JSON del briefing
         env:
           TZ: Europe/Rome
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SPLITWISE_API_KEY: ${{ secrets.SPLITWISE_API_KEY }}
+          SPLITWISE_GROUP_ID: ${{ secrets.SPLITWISE_GROUP_ID }}
         run: python scripts/publish.py
 
       # Il piano resta "non approvato" finche' qualcuno non lo conferma:

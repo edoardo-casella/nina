@@ -49,16 +49,8 @@ def _beneficiaries(v: dict, e: dict) -> list[str]:
     return e["beneficiaries"]
 
 
-def settle(v: dict) -> dict:
-    """Chi ha anticipato cosa -> lista minima di bonifici per pareggiare."""
-    paid, owed = defaultdict(float), defaultdict(float)
-    for e in v["expenses"]:
-        paid[e["paid_by"]] += e["amount"]
-        bens = _beneficiaries(v, e)
-        for b in bens:
-            owed[b] += e["amount"] / len(bens)
-
-    net = {m["id"]: round(paid[m["id"]] - owed[m["id"]], 2) for m in v["crew"]}
+def min_transfers(net: dict) -> list[dict]:
+    """Da un netto {chi: +credito/-debito} alla lista minima di bonifici."""
     creditors = sorted([(k, x) for k, x in net.items() if x > 0.01], key=lambda t: -t[1])
     debtors = sorted([(k, -x) for k, x in net.items() if x < -0.01], key=lambda t: -t[1])
 
@@ -70,7 +62,20 @@ def settle(v: dict) -> dict:
         debtors[i] = (d, dv - amt); creditors[j] = (c, cv - amt)
         if debtors[i][1] < 0.01: i += 1
         if creditors[j][1] < 0.01: j += 1
-    return {"net": net, "transfers": transfers, "total_spent": round(sum(paid.values()), 2)}
+    return transfers
+
+
+def settle(v: dict) -> dict:
+    """Chi ha anticipato cosa -> lista minima di bonifici per pareggiare."""
+    paid, owed = defaultdict(float), defaultdict(float)
+    for e in v["expenses"]:
+        paid[e["paid_by"]] += e["amount"]
+        bens = _beneficiaries(v, e)
+        for b in bens:
+            owed[b] += e["amount"] / len(bens)
+
+    net = {m["id"]: round(paid[m["id"]] - owed[m["id"]], 2) for m in v["crew"]}
+    return {"net": net, "transfers": min_transfers(net), "total_spent": round(sum(paid.values()), 2)}
 
 
 def occupancy(v: dict) -> list[tuple[str, int]]:
