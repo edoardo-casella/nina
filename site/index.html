@@ -82,6 +82,15 @@ header{background:var(--hdr);color:var(--hdrtext);position:sticky;top:0;z-index:
 .live.on::before{content:"●";margin-right:.25rem;animation:pulse 2s infinite}
 .live.off::before{content:"●";margin-right:.25rem}
 @keyframes pulse{50%{opacity:.35}}
+/* posizione barca nell'header: GPS fresco (verde pulsante) o da programma (neutro) */
+.pos{display:inline-flex;align-items:center;gap:.32rem;font:700 .58rem/1 var(--display);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--hdrtext);text-decoration:none;border:1px solid var(--hair);
+  border-radius:999px;padding:.34rem .6rem;max-width:11.5rem;flex:none}
+.pos .dot{color:var(--soft)}
+.pos.gps .dot{color:var(--verde);animation:pulse 2s infinite}
+.pos .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pos .age{color:var(--soft);font-family:var(--mono);letter-spacing:0;font-weight:600}
+.pos:hover{color:var(--accent);border-color:var(--accent)}
 .when{font-family:var(--mono);font-size:.78rem;color:var(--soft);margin-left:auto;text-align:right;flex:none}
 .stale{color:var(--stale)}
 
@@ -388,6 +397,7 @@ footer strong{color:var(--ink)}
   <a class="brand" href="manifesto.html" title="Everywaves — la community di chi va in barca a vela"><img src="img/logo.png" alt="Everywaves" style="height:26px;display:block"></a>
   <div class="hdr-right">
     <a class="boat" id="boat" href="barca.html" title="La barca di quest'anno — Dufour 48 Catamaran">Niña</a><span class="live" id="live"></span>
+    <a class="pos" id="pos" href="#oggi" hidden></a>
     <div class="cap" id="captains"></div>
     <div class="hmeta"><span class="clock" id="clock"></span><span class="when" id="when">carico…</span></div>
     <button class="theme" id="themeBtn" onclick="cycleTheme()" title="Modalità tema: AUTO segue alba e tramonto, poi GIORNO e NOTTE">MODE · AUTO</button>
@@ -1312,6 +1322,20 @@ function render(b, wx, c, prog) {
         : /bernardo bolgeri/i.test(c)
           ? `<a class="caplink" href="membro.html#bernardo-b">${esc(c)}</a>`
           : esc(c)).join(" · ") : "";
+
+  // pill posizione barca nell'header (da briefing.position: GPS fresco o piano)
+  const posEl = document.getElementById("pos"), pp = b.position;
+  if (posEl) {
+    if (pp?.name) {
+      posEl.hidden = false;
+      posEl.className = "pos" + (pp.live ? " gps" : "");
+      const age = pp.live && pp.age_h != null
+        ? `<span class="age">GPS ${pp.age_h < 1 ? "&lt;1" : Math.round(pp.age_h)}h</span>` : "";
+      posEl.innerHTML = `<span class="dot">●</span><span class="nm">${esc(pp.name)}</span>${age}`;
+      posEl.title = (pp.live ? `Posizione GPS di ${pp.age_h}h fa` : "Posizione dal programma di navigazione")
+        + (pp.lat != null ? ` — ${pp.lat.toFixed(3)}N ${pp.lon.toFixed(3)}E` : "");
+    } else posEl.hidden = true;
+  }
 
   // banner "Proposta — non approvata" e "Simulazione" rimossi su richiesta (sito community)
   document.getElementById("flag").innerHTML = "";
