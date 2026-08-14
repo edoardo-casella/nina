@@ -47,8 +47,30 @@ def expenses(key: str, group_id: str) -> list[dict]:
     return [e for e in out if not e.get("deleted_at")]
 
 
+# Splitwise user id -> nome come appare sul sito (voyage.json crew). Keyed
+# per id, NON per nome: i display Splitwise sono liberi ("Gine", "Costanz",
+# "matildemalanca15") e cambiabili dall'utente. Verificato via email 2026-08-14.
+# Chi entra nel gruppo dopo (equipaggi 15/8 e 22/8) va aggiunto qui.
+NAME_MAP = {
+    20136237: "Edo C",        # Edoardo Casella
+    31837892: "Ginevra L",    # "Gine"
+    35409668: "Giacomo N",    # Giacomo Nassi
+    35630477: "Bernardo B",   # "bernardo bolgeri"
+    55090008: "Bianca M",     # "Bi Mazzoli"
+    92858746: "Matilde M",    # "matildemalanca15" (Malanca)
+    100252186: "Isabella",    # Isabella Wood
+    14444843: "Ilaria C.",    # Ilaria Chiuchiolo
+    99385232: "Matilde C.",   # "mati" (l'altra Matilde)
+    16854700: "Lorenzo C.",   # "Costanz" (Costanzo, il Presidente)
+    104408857: "Vale F",      # Valentina Franchi
+}
+
+
 def _display(u: dict) -> str:
-    """Nome come in app: 'Edoardo C' — stessa forma nome+iniziale del sito."""
+    """Nome del sito da NAME_MAP; fuori mappa: 'Nome C' dai dati Splitwise."""
+    mapped = NAME_MAP.get(u.get("id"))
+    if mapped:
+        return mapped
     first = (u.get("first_name") or "").strip() or "?"
     last = (u.get("last_name") or "").strip()
     return f"{first} {last[0]}" if last else first
