@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T17:02:16+02:00",
+  "generated_at": "2026-08-14T12:10:20+02:00",
   "base": "https://www.lamma.toscana.it/models",
   "pagina": "https://www.lamma.toscana.it/mare/modelli/vento-mare.php",
   "campi": {
@@ -12,7 +12,7 @@
   "modelli": {
     "hr": {
       "id": "ww3hrecm",
-      "run": "2026080500",
+      "run": "2026081300",
       "max_step": 73,
       "aree": {
         "F": "Bocche di Bonifacio",
@@ -21,7 +21,7 @@
     },
     "lr": {
       "id": "ww3lrecm",
-      "run": "2026080500",
+      "run": "2026081300",
       "max_step": 133,
       "aree": {
         "N": "Bonifacio allargata",

@@ -15,7 +15,7 @@
   "grande-ammiraglio": "Grande Ammiraglio",
   "abilitato": "Abilitato al comando"
  },
- "n_total": 70,
+ "n_total": 71,
  "people": [
   {
    "id": "edo-c",
@@ -8176,6 +8176,10 @@
     "leave": "2026-08-21",
     "role": "crew"
    },
+   "bio": {
+    "epithet": "L'amante del silenzio",
+    "html": "Passeggera pura e felice di esserlo: si adatta, non disturba la quiete altrui e in cambio chiede una sola clausola &mdash; al risveglio, una mezz'ora di interazioni ridotte al minimo per ricaricare le batterie. Ama il silenzio, e una barca a vela col motore spento è il posto giusto. In cucina dichiara un'esperienza &laquo;base di sopravvivenza&raquo; ma si applica: la sua insalata marocchina è già prenotata, e tra formaggi e frutta la cambusa è in buone mani."
+   },
    "tags": [
     "Cambusa",
     "Amante del silenzio"
@@ -8203,6 +8207,10 @@
     "leave": "2026-08-15",
     "role": "crew"
    },
+   "bio": {
+    "epithet": "La zen di bordo",
+    "html": "L'unica ad aver risposto al questionario in inglese, e con la filosofia più zen dell'equipaggio: pregi? &laquo;Let's find out&raquo;. Difetti? &laquo;Let's find out&raquo;. Passeggera pura, ma con la scuola di vela alle spalle e un 5 su 5 di amore per la barca. La sua regola d'oro è definitiva: chi non cucina non può fare la schizzinosa. Basi non negoziabili: acqua e colazione; per il resto ogni giocattolo d'acqua è il benvenuto &mdash; &laquo;ma non prendete niente solo per me&raquo;."
+   },
    "tags": [
     "Debuttante",
     "Relax puro"
@@ -8229,6 +8237,10 @@
     "board": "2026-08-08",
     "leave": "2026-08-15",
     "role": "crew"
+   },
+   "bio": {
+    "epithet": "La debuttante",
+    "html": "Prima volta assoluta in barca: tutto da scoprire, compresi i propri difetti (&laquo;devo ancora scoprirli&raquo;). Una certezza però ce l'ha: &laquo;in barca non ho pregi particolari, ma in generale sono abbastanza simpatica&raquo;. Viene per il panorama e il relax, il contatto col mare la conquista, e intanto si è messa a disposizione come jolly tra cucina, piatti e riordino. In cambusa una sola parola d'ordine: pasta."
    },
    "tags": [
     "Debuttante",
@@ -8311,6 +8323,10 @@
     "leave": "2026-08-29",
     "role": "crew"
    },
+   "bio": {
+    "epithet": "L'entusiasta",
+    "html": "Debuttante col curriculum più ambizioso del questionario: prima volta in barca e candidatura a dieci ruoli, dall'ormeggio alla cassa comune passando per skipper del tender, barman e cuoca. Al minicorso nodi ha risposto &laquo;Sì, ci sto!&raquo; senza esitazioni. Porta simpatia, buonumore e un radar infallibile per l'ora dell'aperitivo; in tavola, che non manchi mai la frutta."
+   },
    "tags": [
     "Debuttante",
     "Aperitivi"
@@ -8337,6 +8353,10 @@
     "board": "2026-08-21",
     "leave": "2026-08-29",
     "role": "crew"
+   },
+   "bio": {
+    "epithet": "La regina dei pastoni",
+    "html": "Porta presa bene e buona musica, e in cucina non scherza: si diletta con &laquo;bei pastoni&raquo; collaudati fino a dieci persone &mdash; pasta acciughe e pangrattato in testa, con amatriciana e tonno-cipolla in rotazione; le acciughe sono la sua materia prima immancabile. Programma di bordo dichiarato: leggere al sole, musica al tramonto davanti a un aperitivo, bagnetto serale prima di addormentarsi sotto le stelle, valigia minimalista di costumi e parei. Il bagno di bordo non la vedrà mai: &laquo;il mio bagno è il mare&raquo;. Nottambula da 4 su 5, curiosa di timone e nodi; unico vero nemico: briciole e capelli per terra."
    },
    "tags": [
     "Pastoni epici",
@@ -8366,6 +8386,10 @@
     "leave": "2026-08-29",
     "role": "crew"
    },
+   "bio": {
+    "epithet": "Il razzo di cucina",
+    "html": "Prima volta in barca, filosofia già chiarissima: &laquo;fare delle balotte e stare sereni&raquo;. In cucina si presenta così: &laquo;aiuto volentieri, sono un razzo&raquo; &mdash; e con insalatone, guacamole, salmone e bruschette il reparto aperitivi ha trovato la sua specialista. I pregi li lascia &laquo;da scoprire&raquo; in navigazione."
+   },
    "tags": [
     "Debuttante",
     "Aperitivi"
@@ -8394,6 +8418,10 @@
     "leave": "2026-08-16",
     "role": "crew"
    },
+   "bio": {
+    "epithet": "La mattiniera",
+    "html": "La più mattiniera dell'equipaggio (nottambula 1 su 5): se c'è un'alba in mezzo al mare, lei è già sul ponte a guardarla. Collaborativa, ordinata e rispettosa degli spazi altrui &mdash; sui difetti rimanda ai compagni di vacanza: &laquo;me lo diranno loro&raquo;. Si è candidata a pulizie, spesa, cassa comune e console da DJ, e al minicorso nodi ha detto subito sì. In tavola: insalatone miste e frutta."
+   },
    "tags": [
     "Ordine a bordo",
     "DJ di bordo"
@@ -8420,6 +8448,10 @@
     "board": "2026-08-15",
     "leave": "2026-08-22",
     "role": "crew"
+   },
+   "bio": {
+    "epithet": "L'anima libera",
+    "html": "In barca &laquo;ha perso il conto, praticamente ci vive&raquo; &mdash; ma sempre a motore: questa è la sua prima vela. Mattiniero, empirico, si adatta e non rompe; chiede solo, ogni tanto, un po' di tempo per ricaricare. Il cibo è il suo love language: cresciuto a gare di cucina con <a class='plink' href='membro.html#ginevra-l'>Ginevra L.</a> &mdash; una pietanza a testa e poi giudici l'uno dell'altra &mdash; oggi predica cose semplici ma buone: materia prima, pesce, crudo. Dice che la barca accentua la persona che è: un'anima libera. Sul comandante ha le idee chiare: &laquo;educato, competente, paziente... e bono&raquo;."
    },
    "tags": [
     "Cucina semplice",
@@ -8450,6 +8482,10 @@
     "role": "crew",
     "note": "Sbarca il 15 agosto a San Fiorenzo (Bastia se si passa dalla costa est per il maestrale)."
    },
+   "bio": {
+    "epithet": "L'uomo degli ormeggi",
+    "html": "Sa il fatto suo: più di dieci volte in barca, scuola di vela e un paio di vacanze da skipper alle spalle. Alla domanda sui pregi ha risposto con una parola sola: &laquo;ormeggi&raquo; &mdash; e infatti si è candidato a manovre, prodiere, cime e tender. Nottambulo da 5 su 5, l'uomo giusto per le serate lunghe in rada, che è il suo habitat preferito. In valigia, se l'equipaggio approva, kite surf e tavola da wake."
+   },
    "tags": [
     "Ormeggi",
     "Skipper del tender"
@@ -8478,12 +8514,44 @@
     "role": "crew",
     "note": "Sbarca il 15 agosto a San Fiorenzo (Bastia se si passa dalla costa est per il maestrale)."
    },
+   "bio": {
+    "epithet": "La timoniera",
+    "html": "Essenziale come le sue risposte al questionario: poche parole, tutte operative. Più di dieci volte in barca, scuola di vela e un'autodefinizione netta: &laquo;so il fatto mio &mdash; timono e do una mano alle manovre&raquo;. Amore per la vela 5 su 5 e voglia di imparare ancora. In cucina si candida da protagonista: cuoca, cambusa, spesa, aperitivi &mdash; e già che c'è anche foto e social. Al minicorso nodi: &laquo;Sì, ci sto!&raquo;."
+   },
    "tags": [
     "Timoniera",
     "Cuoca"
    ],
    "sex": "f",
    "photo": "crew/img/ilaria-c.jpg"
+  },
+  {
+   "id": "agata-v",
+   "name": "Agata V",
+   "trips": 0,
+   "days": 0,
+   "nm": 0,
+   "first": null,
+   "last": null,
+   "rank": "mozzo",
+   "rank_label": "Mozzo",
+   "track": "marinaio",
+   "trips_list": [],
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-22",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "La zazzamita di bordo",
+    "html": "Più di dieci volte in barca e già diverse uscite col comandante, ma stavolta da passeggera curiosa: vuole provare il timone, e sul minicorso nodi concede un &laquo;forse&raquo;. Autodefinizione perfetta: operativa, sempre pronta a fare qualcosa se serve e dove serve &mdash; infatti si è candidata a mezza lista dei ruoli, dalla cucina alla cassa comune, foto e social compresi. Unica eccezione dichiarata: la zazzamita sdraiata a inseguire il sole, arte in cui è maestra. Ama i colori di mare e cielo all'alba e al tramonto; i suoi nemici sono il dondolio in rada e la gestione dei capelli. In tavola porta frutta fresca e insalate con feta e anguria, in valigia un sogno: un giro in moto d'acqua."
+   },
+   "tags": [
+    "Jolly operativa",
+    "Zazzamita al sole"
+   ],
+   "sex": "f",
+   "photo": "crew/img/agata-v.jpg"
   }
  ]
 }

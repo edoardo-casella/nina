@@ -286,6 +286,21 @@
    ]
   },
   {
+   "id": "agv",
+   "name": "Agata V",
+   "board": "2026-08-15",
+   "leave": "2026-08-22",
+   "role": "crew",
+   "diet": "onnivoro",
+   "cabin": null,
+   "weight": 1,
+   "duties": [
+    "cucina",
+    "pulizie",
+    "check"
+   ]
+  },
+  {
    "id": "loc",
    "name": "Lorenzo C.",
    "board": "2026-08-08",

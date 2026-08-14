@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T14:28+02:00",
+  "generated_at": "2026-08-14T12:10+02:00",
   "days": [
     {
       "date": "2026-08-08",
@@ -40,7 +40,7 @@
       "to_id": "lavezzi",
       "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
       },
       "nm": 16.4,
@@ -206,7 +206,7 @@
       "to_id": "girolata",
       "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
       },
       "nm": 31.4,
@@ -228,7 +228,7 @@
       "to_id": "san_fiorenzo",
       "rating": 3.5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
       },
       "nm": 35.8,
@@ -250,7 +250,7 @@
       "to_id": "centuri",
       "rating": 4,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
       },
       "nm": 19.9,
@@ -280,7 +280,7 @@
       "to_id": "erbalunga",
       "rating": 3.5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
       },
       "nm": 12.8,
@@ -302,7 +302,7 @@
       "to_id": "campoloro",
       "rating": 1.5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Endophloeus_markovichianus_(Piller_%26_Mitterpacher,_1783)_lateral_view_(23150294085).png"
       },
       "nm": 26.2,
@@ -332,7 +332,7 @@
       "to_id": "favone",
       "rating": 3,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
       },
       "nm": 34.7,
@@ -360,7 +360,7 @@
       "to_id": "pinarello",
       "rating": 4,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio.jpg"
       },
       "nm": 6.2,
@@ -559,7 +559,7 @@
       "to_id": "rondinara",
       "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
       },
       "nm": 6.9,
@@ -627,7 +627,7 @@
       "to_id": "coticcio",
       "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
       },
       "nm": 14.2,
@@ -665,7 +665,7 @@
       "to_id": "cannigione",
       "rating": 2.5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(03).jpg"
       },
       "nm": 6.2,

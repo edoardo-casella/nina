@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T14:28+02:00",
+  "generated_at": "2026-08-14T12:10+02:00",
   "start": "2026-08-08",
   "end": "2026-08-29",
   "crew": [
@@ -173,6 +173,15 @@
       "x": 0,
       "p": "crew/img/antonio-v.jpg",
       "id": "antonio-v"
+    },
+    {
+      "n": "Agata V",
+      "b": "2026-08-15",
+      "l": "2026-08-22",
+      "r": "crew",
+      "x": 0,
+      "p": "crew/img/agata-v.jpg",
+      "id": "agata-v"
     },
     {
       "n": "Lorenzo C.",

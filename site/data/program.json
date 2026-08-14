@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-29T14:28+02:00",
-  "sim": true,
-  "day": "2026-07-29",
-  "start_date": "2026-07-29",
-  "end_date": "2026-08-19",
+  "generated_at": "2026-08-14T12:10+02:00",
+  "sim": false,
+  "day": "2026-08-14",
+  "start_date": "2026-08-08",
+  "end_date": "2026-08-29",
   "tiers": {
     "piena": "previsione affidabile (fino a ~7 giorni)",
     "degradata": "affidabilita' ridotta (8-10 giorni)",
@@ -11,473 +11,7 @@
   },
   "days": [
     {
-      "date": "2026-07-29",
-      "rest": false,
-      "night": false,
-      "frm": "Cannigione",
-      "to": "Cala Portese",
-      "to_id": "cala_portese",
-      "rating": 4,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Caprera%2C_trasparenze_-_panoramio.jpg/500px-Caprera%2C_trasparenze_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Caprera,_trasparenze_-_panoramio.jpg"
-      },
-      "nm": 7.6,
-      "tappe": [
-        {
-          "slot": "mattina",
-          "to": "Cala Coticcio (Caprera)",
-          "to_id": "coticcio",
-          "nm": 6.1,
-          "activity": [
-            "bagno"
-          ],
-          "rating": 5,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "to": "Cala Portese",
-          "to_id": "cala_portese",
-          "nm": 1.5,
-          "activity": [],
-          "rating": 4,
-          "verify": true
-        }
-      ],
-      "n_tappe": 2,
-      "verify": true,
-      "tier": "piena",
-      "crew_delta": {
-        "on_n": 11,
-        "off_n": 0
-      },
-      "wx": {
-        "wmo": 1,
-        "tmax": 34.0,
-        "tmin": 22.7,
-        "rain_prob": 0,
-        "wind_max": 7.3,
-        "gust_max": 14.4,
-        "wind_dir": 69
-      },
-      "wave": {
-        "hmax": 0.28,
-        "dir": 277,
-        "period": 5.35
-      },
-      "sst": 28.0,
-      "astro": {
-        "date": "2026-07-29",
-        "sunrise": "06:14",
-        "sunset": "20:42",
-        "sunrise_az": 64,
-        "sunset_az": 296,
-        "moonrise": "20:53",
-        "moonset": "05:45",
-        "moonrise_az": 117,
-        "moonset_az": 240,
-        "moon_deg": 172.89,
-        "name": "Luna piena",
-        "emoji": "🌕",
-        "illum_pct": 100
-      },
-      "sunset_view": null
-    },
-    {
-      "date": "2026-07-30",
-      "rest": false,
-      "night": false,
-      "frm": "Cala Portese",
-      "to": "Isole Lavezzi",
-      "to_id": "lavezzi",
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
-      },
-      "nm": 16.4,
-      "tappe": [
-        {
-          "slot": "mattina",
-          "to": "Cala Corsara (Spargi)",
-          "to_id": "spargi",
-          "nm": 6.3,
-          "activity": [
-            "bagno"
-          ],
-          "rating": 5,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "to": "Marmorata",
-          "to_id": "marmorata",
-          "nm": 4.7,
-          "activity": [
-            "bagno"
-          ],
-          "rating": 3.5,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "to": "Isole Lavezzi",
-          "to_id": "lavezzi",
-          "nm": 5.4,
-          "activity": [],
-          "rating": 5,
-          "verify": true
-        }
-      ],
-      "n_tappe": 3,
-      "verify": true,
-      "tier": "piena",
-      "crew_delta": {
-        "on_n": 0,
-        "off_n": 0
-      },
-      "wx": {
-        "wmo": 1,
-        "tmax": 30.7,
-        "tmin": 26.1,
-        "rain_prob": 0,
-        "wind_max": 9.9,
-        "gust_max": 13.0,
-        "wind_dir": 239
-      },
-      "wave": {
-        "hmax": 0.2,
-        "dir": 293,
-        "period": 3.7
-      },
-      "sst": 28.6,
-      "astro": {
-        "date": "2026-07-30",
-        "sunrise": "06:16",
-        "sunset": "20:42",
-        "sunrise_az": 64,
-        "sunset_az": 296,
-        "moonrise": "21:20",
-        "moonset": "06:51",
-        "moonrise_az": 110,
-        "moonset_az": 246,
-        "moon_deg": 184.13,
-        "name": "Luna piena",
-        "emoji": "🌕",
-        "illum_pct": 100
-      },
-      "sunset_view": true
-    },
-    {
-      "date": "2026-07-31",
-      "rest": false,
-      "night": false,
-      "frm": "Isole Lavezzi",
-      "to": "Bonifacio",
-      "to_id": "bonifacio",
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG/500px-%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_%283%29.JPG",
-        "page": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Sainte-Marie-Majeure_de_Bonifacio_(3).JPG"
-      },
-      "nm": 7.6,
-      "tappe": [
-        {
-          "slot": "mattina",
-          "to": "Corsica- Isola Piana",
-          "to_id": "corsica_isola_piana",
-          "nm": 2.5,
-          "activity": [
-            "bagno"
-          ],
-          "rating": 4,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "to": "Santa Manza",
-          "to_id": "santa_manza",
-          "nm": 2.1,
-          "activity": [
-            "bagno"
-          ],
-          "rating": 3.5,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "to": "Bonifacio",
-          "to_id": "bonifacio",
-          "nm": 3.0,
-          "activity": [],
-          "rating": 5,
-          "verify": true
-        }
-      ],
-      "n_tappe": 3,
-      "verify": true,
-      "tier": "piena",
-      "crew_delta": {
-        "on_n": 0,
-        "off_n": 0
-      },
-      "wx": {
-        "wmo": 0,
-        "tmax": 32.7,
-        "tmin": 25.1,
-        "rain_prob": 0,
-        "wind_max": 11.3,
-        "gust_max": 22.2,
-        "wind_dir": 261
-      },
-      "wave": {
-        "hmax": 0.42,
-        "dir": 290,
-        "period": 2.85
-      },
-      "sst": 27.7,
-      "astro": {
-        "date": "2026-07-31",
-        "sunrise": "06:17",
-        "sunset": "20:41",
-        "sunrise_az": 64,
-        "sunset_az": 295,
-        "moonrise": "21:43",
-        "moonset": "07:57",
-        "moonrise_az": 103,
-        "moonset_az": 253,
-        "moon_deg": 195.52,
-        "name": "Luna piena",
-        "emoji": "🌕",
-        "illum_pct": 98
-      },
-      "sunset_view": null
-    },
-    {
-      "date": "2026-08-01",
-      "rest": false,
-      "night": false,
-      "frm": "Bonifacio",
-      "to": "Tizzano",
-      "to_id": "tizzano",
-      "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fortin_de_Tizzano_02.jpg/500px-Fortin_de_Tizzano_02.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Fortin_de_Tizzano_02.jpg"
-      },
-      "nm": 20.2,
-      "tappe": [
-        {
-          "slot": "mattina",
-          "to": "CR - Roccapina Nord",
-          "to_id": "cr_roccapina_nord",
-          "nm": 12.8,
-          "activity": [
-            "bagno"
-          ],
-          "rating": 4.5,
-          "verify": true
-        },
-        {
-          "slot": "pomeriggio",
-          "to": "Cala Longa Tizzano",
-          "to_id": "cala_longa_tizzano",
-          "nm": 5.6,
-          "activity": [
-            "bagno"
-          ],
-          "rating": 3.5,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "to": "Tizzano",
-          "to_id": "tizzano",
-          "nm": 1.8,
-          "activity": [],
-          "rating": 3,
-          "verify": true
-        }
-      ],
-      "n_tappe": 3,
-      "verify": true,
-      "tier": "piena",
-      "crew_delta": {
-        "on_n": 0,
-        "off_n": 0
-      },
-      "wx": {
-        "wmo": 3,
-        "tmax": 31.0,
-        "tmin": 24.4,
-        "rain_prob": 0,
-        "wind_max": 8.9,
-        "gust_max": 20.0,
-        "wind_dir": 321
-      },
-      "wave": {
-        "hmax": 0.3,
-        "dir": 307,
-        "period": 3.35
-      },
-      "sst": 27.0,
-      "astro": {
-        "date": "2026-08-01",
-        "sunrise": "06:19",
-        "sunset": "20:42",
-        "sunrise_az": 65,
-        "sunset_az": 295,
-        "moonrise": "22:05",
-        "moonset": "09:03",
-        "moonrise_az": 95,
-        "moonset_az": 261,
-        "moon_deg": 207.09,
-        "name": "Gibbosa calante",
-        "emoji": "🌖",
-        "illum_pct": 95
-      },
-      "sunset_view": null
-    },
-    {
-      "date": "2026-08-02",
-      "rest": false,
-      "night": false,
-      "frm": "Tizzano",
-      "to": "Campomoro",
-      "to_id": "campomoro",
-      "rating": 4,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg/500px-Campomoro_plage_%28vue_du_sentier_vers_tour%29_1.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Campomoro_plage_(vue_du_sentier_vers_tour)_1.jpg"
-      },
-      "nm": 6.5,
-      "tappe": [
-        {
-          "slot": "mattina",
-          "to": "Cala Longa Tizzano",
-          "to_id": "cala_longa_tizzano",
-          "nm": 1.8,
-          "activity": [
-            "bagno"
-          ],
-          "rating": 3.5,
-          "verify": true
-        },
-        {
-          "slot": "sera",
-          "to": "Campomoro",
-          "to_id": "campomoro",
-          "nm": 4.8,
-          "activity": [],
-          "rating": 4,
-          "verify": true
-        }
-      ],
-      "n_tappe": 2,
-      "verify": true,
-      "tier": "piena",
-      "crew_delta": {
-        "on_n": 0,
-        "off_n": 0
-      },
-      "wx": {
-        "wmo": 3,
-        "tmax": 29.9,
-        "tmin": 22.7,
-        "rain_prob": 0,
-        "wind_max": 5.4,
-        "gust_max": 11.7,
-        "wind_dir": 318
-      },
-      "wave": {
-        "hmax": 0.28,
-        "dir": 298,
-        "period": 3.8
-      },
-      "sst": 27.4,
-      "astro": {
-        "date": "2026-08-02",
-        "sunrise": "06:20",
-        "sunset": "20:41",
-        "sunrise_az": 65,
-        "sunset_az": 295,
-        "moonrise": "22:26",
-        "moonset": "10:09",
-        "moonrise_az": 87,
-        "moonset_az": 269,
-        "moon_deg": 218.85,
-        "name": "Gibbosa calante",
-        "emoji": "🌖",
-        "illum_pct": 89
-      },
-      "sunset_view": null
-    },
-    {
-      "date": "2026-08-03",
-      "rest": false,
-      "night": false,
-      "frm": "Campomoro",
-      "to": "Isolella",
-      "to_id": "isolella",
-      "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg/500px-Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella%2C_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Tour_g%C3%A9noise_de_l%E2%80%99Isolella_16o8_%C3%A0_Pietrosella,_rive_sud_du_golfe_d%E2%80%99Ajaccio_En_Corse_du_sud.jpg"
-      },
-      "nm": 12.4,
-      "tappe": [
-        {
-          "slot": "giornata",
-          "to": "Isolella",
-          "to_id": "isolella",
-          "nm": 12.4,
-          "activity": [],
-          "rating": 3,
-          "verify": true
-        }
-      ],
-      "n_tappe": 1,
-      "verify": true,
-      "tier": "piena",
-      "crew_delta": {
-        "on_n": 0,
-        "off_n": 0
-      },
-      "wx": {
-        "wmo": 2,
-        "tmax": 33.3,
-        "tmin": 25.3,
-        "rain_prob": 0,
-        "wind_max": 5.7,
-        "gust_max": 12.2,
-        "wind_dir": 256
-      },
-      "wave": {
-        "hmax": 0.2,
-        "dir": 288,
-        "period": 3.4
-      },
-      "sst": 28.4,
-      "astro": {
-        "date": "2026-08-03",
-        "sunrise": "06:20",
-        "sunset": "20:40",
-        "sunrise_az": 65,
-        "sunset_az": 294,
-        "moonrise": "22:48",
-        "moonset": "11:17",
-        "moonrise_az": 79,
-        "moonset_az": 278,
-        "moon_deg": 230.85,
-        "name": "Gibbosa calante",
-        "emoji": "🌖",
-        "illum_pct": 82
-      },
-      "sunset_view": null
-    },
-    {
-      "date": "2026-08-04",
+      "date": "2026-08-14",
       "rest": false,
       "night": false,
       "frm": "Isolella",
@@ -485,7 +19,7 @@
       "to_id": "girolata",
       "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
       },
       "nm": 31.4,
@@ -508,39 +42,39 @@
         "off_n": 0
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 34.9,
-        "tmin": 25.4,
-        "rain_prob": 0,
-        "wind_max": 6.8,
-        "gust_max": 20.0,
-        "wind_dir": 227
+        "wmo": 1,
+        "tmax": 33.9,
+        "tmin": 25.6,
+        "rain_prob": 33,
+        "wind_max": 4.9,
+        "gust_max": 14.0,
+        "wind_dir": 1
       },
       "wave": {
-        "hmax": 0.06,
-        "dir": 259,
-        "period": 3.45
+        "hmax": 0.12,
+        "dir": 289,
+        "period": 3.35
       },
-      "sst": 28.7,
+      "sst": 28.8,
       "astro": {
-        "date": "2026-08-04",
-        "sunrise": "06:21",
-        "sunset": "20:41",
-        "sunrise_az": 66,
-        "sunset_az": 294,
-        "moonrise": "23:11",
-        "moonset": "12:28",
-        "moonrise_az": 70,
-        "moonset_az": 286,
-        "moon_deg": 243.09,
-        "name": "Gibbosa calante",
-        "emoji": "🌖",
-        "illum_pct": 73
+        "date": "2026-08-14",
+        "sunrise": "06:31",
+        "sunset": "20:28",
+        "sunrise_az": 70,
+        "sunset_az": 290,
+        "moonrise": "08:24",
+        "moonset": "21:19",
+        "moonrise_az": 82,
+        "moonset_az": 273,
+        "moon_deg": 16.5,
+        "name": "Luna nuova",
+        "emoji": "🌑",
+        "illum_pct": 2
       },
       "sunset_view": null
     },
     {
-      "date": "2026-08-05",
+      "date": "2026-08-15",
       "rest": false,
       "night": false,
       "frm": "Girolata",
@@ -548,7 +82,7 @@
       "to_id": "san_fiorenzo",
       "rating": 3.5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
       },
       "nm": 35.8,
@@ -567,43 +101,43 @@
       "verify": true,
       "tier": "piena",
       "crew_delta": {
-        "on_n": 4,
+        "on_n": 5,
         "off_n": 5
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 34.7,
-        "tmin": 26.0,
-        "rain_prob": 0,
-        "wind_max": 7.6,
-        "gust_max": 20.8,
-        "wind_dir": 297
+        "wmo": 3,
+        "tmax": 33.3,
+        "tmin": 25.5,
+        "rain_prob": 15,
+        "wind_max": 5.0,
+        "gust_max": 11.9,
+        "wind_dir": 280
       },
       "wave": {
-        "hmax": 0.08,
-        "dir": 238,
-        "period": 5.15
+        "hmax": 0.04,
+        "dir": 278,
+        "period": 2.8
       },
       "sst": 29.4,
       "astro": {
-        "date": "2026-08-05",
-        "sunrise": "06:18",
-        "sunset": "20:38",
-        "sunrise_az": 66,
-        "sunset_az": 294,
-        "moonrise": "23:35",
-        "moonset": "13:39",
-        "moonrise_az": 63,
-        "moonset_az": 294,
-        "moon_deg": 255.58,
-        "name": "Ultimo quarto",
-        "emoji": "🌗",
-        "illum_pct": 62
+        "date": "2026-08-15",
+        "sunrise": "06:29",
+        "sunset": "20:24",
+        "sunrise_az": 70,
+        "sunset_az": 290,
+        "moonrise": "09:33",
+        "moonset": "21:37",
+        "moonrise_az": 91,
+        "moonset_az": 265,
+        "moon_deg": 29.38,
+        "name": "Crescente",
+        "emoji": "🌒",
+        "illum_pct": 6
       },
       "sunset_view": null
     },
     {
-      "date": "2026-08-06",
+      "date": "2026-08-16",
       "rest": false,
       "night": false,
       "frm": "San Fiorenzo",
@@ -611,7 +145,7 @@
       "to_id": "centuri",
       "rating": 4,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
       },
       "nm": 19.9,
@@ -639,41 +173,45 @@
       ],
       "n_tappe": 2,
       "verify": true,
-      "tier": "degradata",
+      "tier": "piena",
       "crew_delta": {
         "on_n": 0,
         "off_n": 2
       },
       "wx": {
-        "wmo": 0,
-        "tmax": 27.6,
-        "tmin": 26.5,
-        "rain_prob": 0,
-        "wind_max": 10.1,
-        "gust_max": 14.8,
-        "wind_dir": 256
+        "wmo": 3,
+        "tmax": 31.5,
+        "tmin": 27.5,
+        "rain_prob": 38,
+        "wind_max": 8.2,
+        "gust_max": 15.7,
+        "wind_dir": 241
       },
-      "wave": null,
-      "sst": null,
+      "wave": {
+        "hmax": 0.3,
+        "dir": 272,
+        "period": 2.9
+      },
+      "sst": 29.9,
       "astro": {
-        "date": "2026-08-06",
-        "sunrise": "06:18",
-        "sunset": "20:37",
-        "sunrise_az": 66,
-        "sunset_az": 294,
-        "moonrise": "00:09",
-        "moonset": "14:56",
-        "moonrise_az": 56,
-        "moonset_az": 302,
-        "moon_deg": 268.39,
-        "name": "Ultimo quarto",
-        "emoji": "🌗",
-        "illum_pct": 51
+        "date": "2026-08-16",
+        "sunrise": "06:29",
+        "sunset": "20:23",
+        "sunrise_az": 70,
+        "sunset_az": 290,
+        "moonrise": "10:43",
+        "moonset": "21:57",
+        "moonrise_az": 100,
+        "moonset_az": 256,
+        "moon_deg": 41.89,
+        "name": "Crescente",
+        "emoji": "🌒",
+        "illum_pct": 13
       },
       "sunset_view": null
     },
     {
-      "date": "2026-08-07",
+      "date": "2026-08-17",
       "rest": false,
       "night": false,
       "frm": "Centuri",
@@ -681,7 +219,7 @@
       "to_id": "erbalunga",
       "rating": 3.5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
       },
       "nm": 12.8,
@@ -698,41 +236,45 @@
       ],
       "n_tappe": 1,
       "verify": true,
-      "tier": "degradata",
+      "tier": "piena",
       "crew_delta": {
         "on_n": 0,
         "off_n": 0
       },
       "wx": {
-        "wmo": 1,
-        "tmax": 36.7,
-        "tmin": 28.2,
-        "rain_prob": 2,
-        "wind_max": 2.0,
-        "gust_max": 19.8,
-        "wind_dir": 340
+        "wmo": 96,
+        "tmax": 28.5,
+        "tmin": 25.9,
+        "rain_prob": 42,
+        "wind_max": 3.8,
+        "gust_max": 24.5,
+        "wind_dir": 350
       },
-      "wave": null,
-      "sst": null,
+      "wave": {
+        "hmax": 0.12,
+        "dir": 291,
+        "period": 4.25
+      },
+      "sst": 30.0,
       "astro": {
-        "date": "2026-08-07",
-        "sunrise": "06:19",
-        "sunset": "20:35",
-        "sunrise_az": 67,
-        "sunset_az": 293,
-        "moonrise": "00:54",
-        "moonset": "16:12",
-        "moonrise_az": 52,
-        "moonset_az": 307,
-        "moon_deg": 281.48,
-        "name": "Ultimo quarto",
-        "emoji": "🌗",
-        "illum_pct": 40
+        "date": "2026-08-17",
+        "sunrise": "06:30",
+        "sunset": "20:21",
+        "sunrise_az": 71,
+        "sunset_az": 289,
+        "moonrise": "11:50",
+        "moonset": "22:19",
+        "moonrise_az": 108,
+        "moonset_az": 249,
+        "moon_deg": 54.01,
+        "name": "Crescente",
+        "emoji": "🌒",
+        "illum_pct": 21
       },
       "sunset_view": null
     },
     {
-      "date": "2026-08-08",
+      "date": "2026-08-18",
       "rest": false,
       "night": false,
       "frm": "Erbalunga",
@@ -740,7 +282,7 @@
       "to_id": "campoloro",
       "rating": 1.5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Endophloeus_markovichianus_(Piller_%26_Mitterpacher,_1783)_lateral_view_(23150294085).png"
       },
       "nm": 26.2,
@@ -768,41 +310,45 @@
       ],
       "n_tappe": 2,
       "verify": true,
-      "tier": "degradata",
+      "tier": "piena",
       "crew_delta": {
         "on_n": 0,
         "off_n": 0
       },
       "wx": {
-        "wmo": 51,
-        "tmax": 30.9,
-        "tmin": 25.6,
-        "rain_prob": 14,
-        "wind_max": 5.1,
-        "gust_max": 18.1,
-        "wind_dir": 17
+        "wmo": 3,
+        "tmax": 31.0,
+        "tmin": 21.3,
+        "rain_prob": 27,
+        "wind_max": 5.3,
+        "gust_max": 12.8,
+        "wind_dir": 315
       },
-      "wave": null,
-      "sst": null,
+      "wave": {
+        "hmax": 0.24,
+        "dir": 165,
+        "period": 4.4
+      },
+      "sst": 30.0,
       "astro": {
-        "date": "2026-08-08",
-        "sunrise": "06:21",
-        "sunset": "20:32",
-        "sunrise_az": 67,
-        "sunset_az": 293,
-        "moonrise": null,
-        "moonset": "17:22",
-        "moonrise_az": null,
-        "moonset_az": 309,
-        "moon_deg": 294.85,
-        "name": "Calante",
-        "emoji": "🌘",
+        "date": "2026-08-18",
+        "sunrise": "06:32",
+        "sunset": "20:18",
+        "sunrise_az": 71,
+        "sunset_az": 288,
+        "moonrise": "12:57",
+        "moonset": "22:45",
+        "moonrise_az": 115,
+        "moonset_az": 242,
+        "moon_deg": 65.77,
+        "name": "Crescente",
+        "emoji": "🌒",
         "illum_pct": 29
       },
       "sunset_view": null
     },
     {
-      "date": "2026-08-09",
+      "date": "2026-08-19",
       "rest": false,
       "night": false,
       "frm": "Campoloro",
@@ -810,7 +356,7 @@
       "to_id": "favone",
       "rating": 3,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
       },
       "nm": 34.7,
@@ -836,33 +382,45 @@
       ],
       "n_tappe": 2,
       "verify": true,
-      "tier": "programma",
+      "tier": "piena",
       "crew_delta": {
         "on_n": 0,
         "off_n": 0
       },
-      "wx": null,
-      "wave": null,
-      "sst": null,
+      "wx": {
+        "wmo": 3,
+        "tmax": 33.2,
+        "tmin": 25.3,
+        "rain_prob": 8,
+        "wind_max": 7.2,
+        "gust_max": 17.9,
+        "wind_dir": 183
+      },
+      "wave": {
+        "hmax": 0.2,
+        "dir": 165,
+        "period": 3.2
+      },
+      "sst": 29.3,
       "astro": {
-        "date": "2026-08-09",
-        "sunrise": "06:24",
-        "sunset": "20:30",
-        "sunrise_az": 68,
-        "sunset_az": 292,
-        "moonrise": "01:58",
-        "moonset": "18:23",
-        "moonrise_az": 51,
-        "moonset_az": 308,
-        "moon_deg": 308.45,
-        "name": "Calante",
-        "emoji": "🌘",
-        "illum_pct": 19
+        "date": "2026-08-19",
+        "sunrise": "06:34",
+        "sunset": "20:16",
+        "sunrise_az": 72,
+        "sunset_az": 288,
+        "moonrise": "14:02",
+        "moonset": "23:17",
+        "moonrise_az": 121,
+        "moonset_az": 237,
+        "moon_deg": 77.22,
+        "name": "Primo quarto",
+        "emoji": "🌓",
+        "illum_pct": 39
       },
       "sunset_view": null
     },
     {
-      "date": "2026-08-10",
+      "date": "2026-08-20",
       "rest": false,
       "night": false,
       "frm": "Favone",
@@ -870,7 +428,7 @@
       "to_id": "pinarello",
       "rating": 4,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio.jpg"
       },
       "nm": 6.2,
@@ -898,33 +456,45 @@
       ],
       "n_tappe": 2,
       "verify": true,
-      "tier": "programma",
+      "tier": "piena",
       "crew_delta": {
         "on_n": 0,
         "off_n": 0
       },
-      "wx": null,
-      "wave": null,
-      "sst": null,
+      "wx": {
+        "wmo": 3,
+        "tmax": 31.2,
+        "tmin": 23.3,
+        "rain_prob": 7,
+        "wind_max": 7.3,
+        "gust_max": 15.9,
+        "wind_dir": 164
+      },
+      "wave": {
+        "hmax": 0.34,
+        "dir": 141,
+        "period": 3.3
+      },
+      "sst": 28.9,
       "astro": {
-        "date": "2026-08-10",
-        "sunrise": "06:25",
-        "sunset": "20:29",
-        "sunrise_az": 68,
-        "sunset_az": 292,
-        "moonrise": "03:09",
-        "moonset": "19:14",
-        "moonrise_az": 53,
-        "moonset_az": 305,
-        "moon_deg": 322.19,
-        "name": "Calante",
-        "emoji": "🌘",
-        "illum_pct": 10
+        "date": "2026-08-20",
+        "sunrise": "06:35",
+        "sunset": "20:15",
+        "sunrise_az": 72,
+        "sunset_az": 287,
+        "moonrise": "15:05",
+        "moonset": "23:54",
+        "moonrise_az": 126,
+        "moonset_az": 233,
+        "moon_deg": 88.43,
+        "name": "Primo quarto",
+        "emoji": "🌓",
+        "illum_pct": 49
       },
       "sunset_view": null
     },
     {
-      "date": "2026-08-11",
+      "date": "2026-08-21",
       "rest": false,
       "night": false,
       "frm": "Pinarello",
@@ -960,28 +530,472 @@
       ],
       "n_tappe": 2,
       "verify": true,
-      "tier": "programma",
+      "tier": "piena",
       "crew_delta": {
         "on_n": 2,
         "off_n": 2
+      },
+      "wx": {
+        "wmo": 45,
+        "tmax": 33.8,
+        "tmin": 22.4,
+        "rain_prob": 25,
+        "wind_max": 5.8,
+        "gust_max": 17.3,
+        "wind_dir": 129
+      },
+      "wave": {
+        "hmax": 0.34,
+        "dir": 144,
+        "period": 3.2
+      },
+      "sst": 28.4,
+      "astro": {
+        "date": "2026-08-21",
+        "sunrise": "06:37",
+        "sunset": "20:11",
+        "sunrise_az": 73,
+        "sunset_az": 287,
+        "moonrise": "16:01",
+        "moonset": "00:40",
+        "moonrise_az": 128,
+        "moonset_az": 232,
+        "moon_deg": 99.46,
+        "name": "Primo quarto",
+        "emoji": "🌓",
+        "illum_pct": 58
+      },
+      "sunset_view": null
+    },
+    {
+      "date": "2026-08-22",
+      "rest": true,
+      "night": false,
+      "frm": "Porto Rotondo",
+      "to": "Porto Rotondo",
+      "to_id": "porto_rotondo",
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+      },
+      "nm": 0.0,
+      "tappe": [
+        {
+          "slot": "giornata",
+          "to": "Porto Rotondo",
+          "to_id": "porto_rotondo",
+          "nm": 0.0,
+          "activity": [
+            "bordo",
+            "porto"
+          ],
+          "rating": 3,
+          "verify": true
+        }
+      ],
+      "n_tappe": 1,
+      "verify": true,
+      "tier": "degradata",
+      "crew_delta": {
+        "on_n": 5,
+        "off_n": 3
+      },
+      "wx": {
+        "wmo": 51,
+        "tmax": 31.5,
+        "tmin": 26.2,
+        "rain_prob": 20,
+        "wind_max": 4.2,
+        "gust_max": 20.6,
+        "wind_dir": 330
+      },
+      "wave": null,
+      "sst": null,
+      "astro": {
+        "date": "2026-08-22",
+        "sunrise": "06:38",
+        "sunset": "20:10",
+        "sunrise_az": 74,
+        "sunset_az": 286,
+        "moonrise": "16:55",
+        "moonset": null,
+        "moonrise_az": 129,
+        "moonset_az": null,
+        "moon_deg": 110.39,
+        "name": "Primo quarto",
+        "emoji": "🌓",
+        "illum_pct": 67
+      },
+      "sunset_view": null
+    },
+    {
+      "date": "2026-08-23",
+      "rest": false,
+      "night": false,
+      "frm": "Porto Rotondo",
+      "to": "Porto Palma",
+      "to_id": "porto_palma",
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Porto_Palma_-_panoramio.jpg/500px-Porto_Palma_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio.jpg"
+      },
+      "nm": 13.5,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Isola Mortorio",
+          "to_id": "mortorio",
+          "nm": 3.1,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 4,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "to": "Cala Coticcio (Caprera)",
+          "to_id": "coticcio",
+          "nm": 9.2,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 5,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Porto Palma",
+          "to_id": "porto_palma",
+          "nm": 1.3,
+          "activity": [],
+          "rating": 3,
+          "verify": true
+        }
+      ],
+      "n_tappe": 3,
+      "verify": true,
+      "tier": "degradata",
+      "crew_delta": {
+        "on_n": 0,
+        "off_n": 0
+      },
+      "wx": {
+        "wmo": 0,
+        "tmax": 31.7,
+        "tmin": 25.7,
+        "rain_prob": 10,
+        "wind_max": 6.9,
+        "gust_max": 16.3,
+        "wind_dir": 306
+      },
+      "wave": null,
+      "sst": null,
+      "astro": {
+        "date": "2026-08-23",
+        "sunrise": "06:39",
+        "sunset": "20:09",
+        "sunrise_az": 74,
+        "sunset_az": 286,
+        "moonrise": "17:43",
+        "moonset": "01:31",
+        "moonrise_az": 127,
+        "moonset_az": 231,
+        "moon_deg": 121.3,
+        "name": "Gibbosa crescente",
+        "emoji": "🌔",
+        "illum_pct": 76
+      },
+      "sunset_view": null
+    },
+    {
+      "date": "2026-08-24",
+      "rest": false,
+      "night": false,
+      "frm": "Porto Palma",
+      "to": "Porto Madonna",
+      "to_id": "porto_madonna",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg/500px-Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Sailing_in_Sardinia_,_Isolotti_Paduleddi_-_panoramio.jpg"
+      },
+      "nm": 10.7,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Cala Coticcio (Caprera)",
+          "to_id": "coticcio",
+          "nm": 1.3,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 5,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "to": "Cala Corsara (Spargi)",
+          "to_id": "spargi",
+          "nm": 5.9,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 5,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Porto Madonna",
+          "to_id": "porto_madonna",
+          "nm": 3.5,
+          "activity": [],
+          "rating": 5,
+          "verify": true
+        }
+      ],
+      "n_tappe": 3,
+      "verify": true,
+      "tier": "degradata",
+      "crew_delta": {
+        "on_n": 0,
+        "off_n": 0
+      },
+      "wx": {
+        "wmo": 0,
+        "tmax": 27.8,
+        "tmin": 26.4,
+        "rain_prob": 6,
+        "wind_max": 17.1,
+        "gust_max": 22.7,
+        "wind_dir": 265
+      },
+      "wave": null,
+      "sst": null,
+      "astro": {
+        "date": "2026-08-24",
+        "sunrise": "06:40",
+        "sunset": "20:08",
+        "sunrise_az": 74,
+        "sunset_az": 285,
+        "moonrise": "18:23",
+        "moonset": "02:29",
+        "moonrise_az": 124,
+        "moonset_az": 233,
+        "moon_deg": 132.25,
+        "name": "Gibbosa crescente",
+        "emoji": "🌔",
+        "illum_pct": 84
+      },
+      "sunset_view": null
+    },
+    {
+      "date": "2026-08-25",
+      "rest": false,
+      "night": false,
+      "frm": "Porto Madonna",
+      "to": "Corsica- Isola Piana",
+      "to_id": "corsica_isola_piana",
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg/500px-Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Golf_de_Sperone,_trou_n%C2%B0_16.jpg"
+      },
+      "nm": 10.7,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Cala Santa Maria",
+          "to_id": "santamaria",
+          "nm": 1.5,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 4.5,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "to": "Isole Lavezzi",
+          "to_id": "lavezzi",
+          "nm": 6.7,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 5,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Corsica- Isola Piana",
+          "to_id": "corsica_isola_piana",
+          "nm": 2.5,
+          "activity": [],
+          "rating": 4,
+          "verify": true
+        }
+      ],
+      "n_tappe": 3,
+      "verify": true,
+      "tier": "programma",
+      "crew_delta": {
+        "on_n": 0,
+        "off_n": 0
       },
       "wx": null,
       "wave": null,
       "sst": null,
       "astro": {
-        "date": "2026-08-11",
-        "sunrise": "06:27",
-        "sunset": "20:26",
-        "sunrise_az": 69,
-        "sunset_az": 291,
-        "moonrise": "04:29",
-        "moonset": "19:52",
-        "moonrise_az": 58,
-        "moonset_az": 298,
-        "moon_deg": 335.97,
-        "name": "Calante",
-        "emoji": "🌘",
-        "illum_pct": 4
+        "date": "2026-08-25",
+        "sunrise": "06:42",
+        "sunset": "20:07",
+        "sunrise_az": 75,
+        "sunset_az": 285,
+        "moonrise": "18:56",
+        "moonset": "03:33",
+        "moonrise_az": 119,
+        "moonset_az": 237,
+        "moon_deg": 143.32,
+        "name": "Gibbosa crescente",
+        "emoji": "🌔",
+        "illum_pct": 90
+      },
+      "sunset_view": null
+    },
+    {
+      "date": "2026-08-26",
+      "rest": false,
+      "night": false,
+      "frm": "Corsica- Isola Piana",
+      "to": "Baie de Rondinara",
+      "to_id": "rondinara",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
+      },
+      "nm": 6.9,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Santa Manza",
+          "to_id": "santa_manza",
+          "nm": 2.1,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 3.5,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Baie de Rondinara",
+          "to_id": "rondinara",
+          "nm": 4.8,
+          "activity": [],
+          "rating": 5,
+          "verify": true
+        }
+      ],
+      "n_tappe": 2,
+      "verify": true,
+      "tier": "programma",
+      "crew_delta": {
+        "on_n": 0,
+        "off_n": 0
+      },
+      "wx": null,
+      "wave": null,
+      "sst": null,
+      "astro": {
+        "date": "2026-08-26",
+        "sunrise": "06:42",
+        "sunset": "20:05",
+        "sunrise_az": 75,
+        "sunset_az": 284,
+        "moonrise": "19:23",
+        "moonset": "04:38",
+        "moonrise_az": 113,
+        "moonset_az": 243,
+        "moon_deg": 154.53,
+        "name": "Gibbosa crescente",
+        "emoji": "🌔",
+        "illum_pct": 95
+      },
+      "sunset_view": false
+    },
+    {
+      "date": "2026-08-27",
+      "rest": false,
+      "night": false,
+      "frm": "Baie de Rondinara",
+      "to": "Marmorata",
+      "to_id": "marmorata",
+      "rating": 3.5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Punta_Marmorata_-_panoramio.jpg/500px-Punta_Marmorata_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Punta_Marmorata_-_panoramio.jpg"
+      },
+      "nm": 14.7,
+      "tappe": [
+        {
+          "slot": "mattina",
+          "to": "Santa Manza",
+          "to_id": "santa_manza",
+          "nm": 4.8,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 3.5,
+          "verify": true
+        },
+        {
+          "slot": "pomeriggio",
+          "to": "Isole Lavezzi",
+          "to_id": "lavezzi",
+          "nm": 4.4,
+          "activity": [
+            "bagno"
+          ],
+          "rating": 5,
+          "verify": true
+        },
+        {
+          "slot": "sera",
+          "to": "Marmorata",
+          "to_id": "marmorata",
+          "nm": 5.4,
+          "activity": [],
+          "rating": 3.5,
+          "verify": true
+        }
+      ],
+      "n_tappe": 3,
+      "verify": true,
+      "tier": "programma",
+      "crew_delta": {
+        "on_n": 0,
+        "off_n": 0
+      },
+      "wx": null,
+      "wave": null,
+      "sst": null,
+      "astro": {
+        "date": "2026-08-27",
+        "sunrise": "06:44",
+        "sunset": "20:04",
+        "sunrise_az": 76,
+        "sunset_az": 284,
+        "moonrise": "19:47",
+        "moonset": "05:45",
+        "moonrise_az": 106,
+        "moonset_az": 250,
+        "moon_deg": 165.95,
+        "name": "Luna piena",
+        "emoji": "🌕",
+        "illum_pct": 99
       },
       "sunset_view": null
     }
@@ -999,7 +1013,7 @@
         9.3389
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg/500px-La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg/500px-La_Maddalena_-_Isola_di_Spargi_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena_-_Isola_di_Spargi_(11).jpg"
       }
     },
@@ -1015,7 +1029,7 @@
         9.3556
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
       }
     },
@@ -1031,7 +1045,7 @@
         9.2544
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
       }
     },
@@ -1063,7 +1077,7 @@
         9.2775
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
       }
     },
@@ -1079,7 +1093,7 @@
         9.465
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
       }
     },
@@ -1111,7 +1125,7 @@
         8.61306
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
       }
     },
@@ -1159,7 +1173,7 @@
         9.39
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/500px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/500px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Corcelli_(01).jpg"
       }
     },
@@ -1239,7 +1253,7 @@
         8.585
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
       }
     },
@@ -1255,7 +1269,7 @@
         9.575
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
       }
     },
@@ -1399,7 +1413,7 @@
         9.3504
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
       }
     },
@@ -1415,7 +1429,7 @@
         9.39
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio.jpg"
       }
     },
@@ -1479,7 +1493,7 @@
         9.2815
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
       }
     },
@@ -1527,7 +1541,7 @@
         9.4787
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
       }
     },
@@ -1575,7 +1589,7 @@
         9.305
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg/500px-Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg/500px-Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Baie_de_Porto-Vecchio,_Corse_-_Patrick_Nouhailler_-_panoramio.jpg"
       }
     },
@@ -1655,7 +1669,7 @@
         9.3986
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/F%C3%A9rule_f%C3%A9tide.jpg/500px-F%C3%A9rule_f%C3%A9tide.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:F%C3%A9rule_f%C3%A9tide.jpg"
       }
     },
@@ -1719,7 +1733,7 @@
         9.4404
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg/500px-Arzachena%2C_frazione_Cannigione%2C_panorama_%2803%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Arzachena,_frazione_Cannigione,_panorama_(03).jpg"
       }
     },
@@ -1815,7 +1829,7 @@
         9.539
       ],
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png/500px-Endophloeus_markovichianus_%28Piller_%26_Mitterpacher%2C_1783%29_lateral_view_%2823150294085%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Endophloeus_markovichianus_(Piller_%26_Mitterpacher,_1783)_lateral_view_(23150294085).png"
       }
     }

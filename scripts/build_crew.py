@@ -93,7 +93,7 @@ FEM = {
     "alice-s", "angela-k", "beatrice-f", "belinda-b", "carlotta-d", "cecilia-r", "chiara-f",
     "fabiana-f", "jennifer-s", "laura-c", "ludovica-r", "margherita-c", "marta-a", "martina-g",
     "martina-r", "matilde-c", "matilde-m", "matilde-r", "monica-m", "paola-c", "rebecca-b", "rebecca-l",
-    "sara-b", "simona-b", "sofia-m", "valentina-f", "isabella",
+    "sara-b", "simona-b", "sofia-m", "valentina-f", "isabella", "agata-v",
 }
 
 wb = openpyxl.load_workbook(_cvtmp, data_only=True)
