@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-14T12:10+02:00",
+  "generated_at": "2026-08-17T21:08+02:00",
   "approved": false,
   "approved_by": null,
-  "day": "2026-08-14",
+  "day": "2026-08-17",
   "boat": "Niña",
   "voyage": "Corsica & La Maddalena 2026",
   "captains": [
@@ -14,51 +14,30 @@
   "departure_at": "2026-08-08T14:00",
   "departure_place": "Cannigione",
   "position": {
-    "id": "isolella",
-    "name": "Isolella",
-    "lat": 41.83733,
-    "lon": 8.76,
-    "live": false,
-    "age_h": null
+    "id": "centuri",
+    "name": "posizione GPS",
+    "lat": 42.35019,
+    "lon": 9.56508,
+    "live": true,
+    "age_h": 0.0
   },
   "rest": false,
   "leg": {
-    "leg": "Isolella -> Girolata",
-    "nm": 31.4,
-    "cog": 348,
-    "depart": "2026-08-14T08:00",
-    "eta": "2026-08-14T12:21",
-    "hours": 4.4,
-    "avg_score": 39,
+    "leg": "Centuri -> Erbalunga",
+    "nm": 12.8,
+    "cog": 154,
+    "depart": "2026-08-17T08:00",
+    "eta": "2026-08-17T09:46",
+    "hours": 1.8,
+    "avg_score": 38,
     "sail_pct": 0,
     "abort": false,
     "detail": [
       {
-        "time": "2026-08-14T08:00",
-        "twa": 102,
-        "tws": 1.4,
-        "score": 39,
-        "mode": "motore"
-      },
-      {
-        "time": "2026-08-14T09:00",
-        "twa": 78,
-        "tws": 0.0,
-        "score": 39,
-        "mode": "motore"
-      },
-      {
-        "time": "2026-08-14T10:00",
-        "twa": 78,
-        "tws": 1.7,
-        "score": 39,
-        "mode": "motore"
-      },
-      {
-        "time": "2026-08-14T11:00",
-        "twa": 74,
-        "tws": 3.1,
-        "score": 39,
+        "time": "2026-08-17T08:00",
+        "twa": 148,
+        "tws": 1.8,
+        "score": 38,
         "mode": "motore"
       }
     ],
@@ -66,68 +45,47 @@
     "activity": [],
     "night_stay": true,
     "verify": true,
-    "arrive_by": "12:15",
-    "frm_id": "isolella",
-    "to_id": "girolata",
-    "rating": 5,
+    "arrive_by": "09:45",
+    "frm_id": "centuri",
+    "to_id": "erbalunga",
+    "rating": 3.5,
     "photo": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
     },
     "stay": false,
-    "frm": "Isolella",
-    "to": "Girolata"
+    "frm": "Centuri",
+    "to": "Erbalunga"
   },
   "leg_sailing": {
-    "andatura": "bolina larga",
-    "twa": 78,
+    "andatura": "lasco",
+    "twa": 148,
     "vela": false,
     "avg_kn": 7.1
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 1.3,
-    "max_spread_kn": 3.1,
+    "mean_spread_kn": 0.9,
+    "max_spread_kn": 2.7,
     "confidence": "alta"
   },
   "steps": [
     {
-      "leg": "Isolella -> Girolata",
-      "nm": 31.4,
-      "cog": 348,
-      "depart": "2026-08-14T08:00",
-      "eta": "2026-08-14T12:21",
-      "hours": 4.4,
-      "avg_score": 39,
+      "leg": "Centuri -> Erbalunga",
+      "nm": 12.8,
+      "cog": 154,
+      "depart": "2026-08-17T08:00",
+      "eta": "2026-08-17T09:46",
+      "hours": 1.8,
+      "avg_score": 38,
       "sail_pct": 0,
       "abort": false,
       "detail": [
         {
-          "time": "2026-08-14T08:00",
-          "twa": 102,
-          "tws": 1.4,
-          "score": 39,
-          "mode": "motore"
-        },
-        {
-          "time": "2026-08-14T09:00",
-          "twa": 78,
-          "tws": 0.0,
-          "score": 39,
-          "mode": "motore"
-        },
-        {
-          "time": "2026-08-14T10:00",
-          "twa": 78,
-          "tws": 1.7,
-          "score": 39,
-          "mode": "motore"
-        },
-        {
-          "time": "2026-08-14T11:00",
-          "twa": 74,
-          "tws": 3.1,
-          "score": 39,
+          "time": "2026-08-17T08:00",
+          "twa": 148,
+          "tws": 1.8,
+          "score": 38,
           "mode": "motore"
         }
       ],
@@ -135,219 +93,120 @@
       "activity": [],
       "night_stay": true,
       "verify": true,
-      "arrive_by": "12:15",
-      "frm_id": "isolella",
-      "to_id": "girolata",
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Girolata_Osani_2_JPG.jpg/500px-Girolata_Osani_2_JPG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Girolata_Osani_2_JPG.jpg"
-      },
-      "stay": false,
-      "frm": "Isolella",
-      "to": "Girolata"
-    }
-  ],
-  "day_nm": 31.4,
-  "stop_reason": null,
-  "tonight": null,
-  "plan_b": {
-    "id": "santamaria",
-    "name": "Cala Santa Maria",
-    "score": 100,
-    "light": "verde",
-    "margin_deg": 90,
-    "fetch_km": 20,
-    "why": "vento 310° a 90° dal settore esposto",
-    "holding": "sabbia, ottima",
-    "notes": "Ampia, riparata da N e NW.",
-    "verify": true,
-    "sunset_view": false,
-    "sunset_bonus": 0,
-    "rating": 4.5,
-    "photo": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/500px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Corcelli_(01).jpg"
-    }
-  },
-  "ranked": [
-    {
-      "id": "santamaria",
-      "name": "Cala Santa Maria",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 90,
-      "fetch_km": 20,
-      "why": "vento 310° a 90° dal settore esposto",
-      "holding": "sabbia, ottima",
-      "notes": "Ampia, riparata da N e NW.",
-      "verify": true,
-      "sunset_view": false,
-      "sunset_bonus": 0,
-      "rating": 4.5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/500px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Corcelli_(01).jpg"
-      }
-    },
-    {
-      "id": "lavezzi",
-      "name": "Cala Lazarina (Lavezzi)",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 0,
-      "fetch_km": 30,
-      "why": "vento 310° entra in rada (settore 260-20°), fetch 30 km",
-      "holding": "sabbia tra roccia",
-      "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
-      "verify": true,
-      "sunset_view": true,
-      "sunset_bonus": 6,
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
-      }
-    },
-    {
-      "id": "rondinara",
-      "name": "Baie de Rondinara",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 120,
-      "fetch_km": 40,
-      "why": "vento 310° a 120° dal settore esposto",
-      "holding": "sabbia, ottima",
-      "notes": "Rifugio classico da Maestrale. Affollata in agosto.",
-      "verify": true,
-      "sunset_view": false,
-      "sunset_bonus": 0,
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
-      }
-    },
-    {
-      "id": "porto_vecchio",
-      "name": "Golfe de Porto-Vecchio",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 90,
-      "fetch_km": 30,
-      "why": "vento 310° a 90° dal settore esposto",
-      "holding": "fango/sabbia",
-      "notes": "Molte cale interne, riparo in quasi ogni condizione.",
-      "verify": true,
-      "sunset_view": false,
-      "sunset_bonus": 0,
-      "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg/500px-Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Baie_de_Porto-Vecchio,_Corse_-_Patrick_Nouhailler_-_panoramio.jpg"
-      }
-    }
-  ],
-  "outlook": [
-    {
-      "date": "2026-08-15",
-      "rest": false,
-      "night": false,
-      "frm": "Girolata",
-      "to": "San Fiorenzo",
-      "to_id": "san_fiorenzo",
-      "nm": 35.8,
-      "n_tappe": 1,
-      "rating": 3.5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg/500px-St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:St.Florent_-_view_from_la_Roya_beach_-_panoramio.jpg"
-      },
-      "wx": {
-        "wmo": 3,
-        "tmax": 33.3,
-        "tmin": 25.5,
-        "rain_mm": 0.1,
-        "rain_prob": 15,
-        "wind_max": 5.0,
-        "gust_max": 11.9,
-        "wind_dir": 280
-      },
-      "sailing": {
-        "twa": 135,
-        "andatura": "lasco",
-        "vela": false,
-        "boat_kn": 7.2,
-        "tws_est": 4.0,
-        "twd": 280
-      }
-    },
-    {
-      "date": "2026-08-16",
-      "rest": false,
-      "night": false,
-      "frm": "San Fiorenzo",
-      "to": "Centuri",
-      "to_id": "centuri",
-      "nm": 17.1,
-      "n_tappe": 2,
-      "rating": 4,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg/500px-Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Centuri_chapelle_Saint-Antoine_%C3%A0_la_marine.jpg"
-      },
-      "wx": {
-        "wmo": 3,
-        "tmax": 31.5,
-        "tmin": 27.5,
-        "rain_mm": 0.3,
-        "rain_prob": 38,
-        "wind_max": 8.2,
-        "gust_max": 15.7,
-        "wind_dir": 241
-      },
-      "sailing": {
-        "twa": 129,
-        "andatura": "lasco",
-        "vela": false,
-        "boat_kn": 7.2,
-        "tws_est": 6.6,
-        "twd": 241
-      }
-    },
-    {
-      "date": "2026-08-17",
-      "rest": false,
-      "night": false,
-      "frm": "Centuri",
-      "to": "Erbalunga",
+      "arrive_by": "09:45",
+      "frm_id": "centuri",
       "to_id": "erbalunga",
-      "nm": 12.8,
-      "n_tappe": 1,
       "rating": 3.5,
       "photo": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Erbalunga_la_tour.jpg/500px-Erbalunga_la_tour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Erbalunga_la_tour.jpg"
       },
-      "wx": {
-        "wmo": 96,
-        "tmax": 28.5,
-        "tmin": 25.9,
-        "rain_mm": 4.6,
-        "rain_prob": 42,
-        "wind_max": 3.8,
-        "gust_max": 24.5,
-        "wind_dir": 350
-      },
-      "sailing": {
-        "twa": 164,
-        "andatura": "poppa",
-        "vela": false,
-        "boat_kn": 7.2,
-        "tws_est": 3.0,
-        "twd": 350
+      "stay": false,
+      "frm": "Centuri",
+      "to": "Erbalunga"
+    }
+  ],
+  "day_nm": 12.8,
+  "stop_reason": null,
+  "tonight": null,
+  "plan_b": {
+    "id": "mortorio",
+    "name": "Isola Mortorio",
+    "score": 100,
+    "light": "verde",
+    "margin_deg": 106,
+    "fetch_km": 20,
+    "why": "vento 74° a 106° dal settore esposto",
+    "holding": "sabbia",
+    "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
+    "verify": true,
+    "sunset_view": false,
+    "sunset_bonus": 0,
+    "rating": 4,
+    "photo": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
+    }
+  },
+  "ranked": [
+    {
+      "id": "mortorio",
+      "name": "Isola Mortorio",
+      "score": 100,
+      "light": "verde",
+      "margin_deg": 106,
+      "fetch_km": 20,
+      "why": "vento 74° a 106° dal settore esposto",
+      "holding": "sabbia",
+      "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
+      "verify": true,
+      "sunset_view": false,
+      "sunset_bonus": 0,
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
       }
     },
+    {
+      "id": "sanguinaires",
+      "name": "Iles Sanguinaires",
+      "score": 100,
+      "light": "verde",
+      "margin_deg": 94,
+      "fetch_km": 80,
+      "why": "vento 74° a 94° dal settore esposto",
+      "holding": "sabbia/roccia",
+      "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
+      "verify": true,
+      "sunset_view": true,
+      "sunset_bonus": 6,
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
+      }
+    },
+    {
+      "id": "coticcio",
+      "name": "Cala Coticcio (Caprera)",
+      "score": 97,
+      "light": "verde",
+      "margin_deg": 0,
+      "fetch_km": 12,
+      "why": "vento 74° entra in rada (settore 40-140°), fetch 12 km",
+      "holding": "sabbia",
+      "notes": "Sosta diurna. Sbarco a terra regolamentato.",
+      "verify": true,
+      "sunset_view": false,
+      "sunset_bonus": 0,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      }
+    },
+    {
+      "id": "budelli",
+      "name": "Cala Roto (Budelli)",
+      "score": 96,
+      "light": "verde",
+      "margin_deg": 0,
+      "fetch_km": 15,
+      "why": "vento 74° entra in rada (settore 30-130°), fetch 15 km",
+      "holding": "sabbia",
+      "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
+      "verify": true,
+      "sunset_view": false,
+      "sunset_bonus": 0,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
+      }
+    }
+  ],
+  "outlook": [
     {
       "date": "2026-08-18",
       "rest": false,
@@ -365,20 +224,20 @@
       "wx": {
         "wmo": 3,
         "tmax": 31.0,
-        "tmin": 21.3,
+        "tmin": 22.3,
         "rain_mm": 0.0,
-        "rain_prob": 27,
-        "wind_max": 5.3,
-        "gust_max": 12.8,
-        "wind_dir": 315
+        "rain_prob": 33,
+        "wind_max": 5.5,
+        "gust_max": 15.6,
+        "wind_dir": 192
       },
       "sailing": {
-        "twa": 141,
-        "andatura": "lasco",
+        "twa": 18,
+        "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 4.2,
-        "twd": 315
+        "tws_est": 4.4,
+        "twd": 192
       }
     },
     {
@@ -397,22 +256,114 @@
       },
       "wx": {
         "wmo": 3,
-        "tmax": 33.2,
-        "tmin": 25.3,
+        "tmax": 34.9,
+        "tmin": 25.1,
         "rain_mm": 0.0,
-        "rain_prob": 8,
-        "wind_max": 7.2,
-        "gust_max": 17.9,
-        "wind_dir": 183
+        "rain_prob": 0,
+        "wind_max": 5.5,
+        "gust_max": 14.8,
+        "wind_dir": 7
       },
       "sailing": {
-        "twa": 7,
+        "twa": 177,
+        "andatura": "poppa",
+        "vela": false,
+        "boat_kn": 7.2,
+        "tws_est": 4.4,
+        "twd": 7
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "rest": false,
+      "night": false,
+      "frm": "Favone",
+      "to": "Pinarello",
+      "to_id": "pinarello",
+      "nm": 6.1,
+      "n_tappe": 2,
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio.jpg"
+      },
+      "wx": {
+        "wmo": 1,
+        "tmax": 35.5,
+        "tmin": 24.8,
+        "rain_mm": 0.0,
+        "rain_prob": 0,
+        "wind_max": 11.9,
+        "gust_max": 22.7,
+        "wind_dir": 216
+      },
+      "sailing": {
+        "twa": 32,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 5.8,
-        "twd": 183
+        "tws_est": 9.5,
+        "twd": 216
       }
+    },
+    {
+      "date": "2026-08-21",
+      "rest": false,
+      "night": false,
+      "frm": "Pinarello",
+      "to": "Porto Rotondo",
+      "to_id": "porto_rotondo",
+      "nm": 39.1,
+      "n_tappe": 2,
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+      },
+      "wx": {
+        "wmo": 3,
+        "tmax": 32.7,
+        "tmin": 26.3,
+        "rain_mm": 0.3,
+        "rain_prob": 40,
+        "wind_max": 16.2,
+        "gust_max": 27.6,
+        "wind_dir": 236
+      },
+      "sailing": {
+        "twa": 67,
+        "andatura": "bolina larga",
+        "vela": false,
+        "boat_kn": 7.2,
+        "tws_est": 13.0,
+        "twd": 236
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "rest": true,
+      "night": false,
+      "frm": "Porto Rotondo",
+      "to": "Porto Rotondo",
+      "to_id": "porto_rotondo",
+      "nm": 0.0,
+      "n_tappe": 1,
+      "rating": 3,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
+      },
+      "wx": {
+        "wmo": 3,
+        "tmax": 32.0,
+        "tmin": 22.9,
+        "rain_mm": 0.0,
+        "rain_prob": 10,
+        "wind_max": 13.1,
+        "gust_max": 24.9,
+        "wind_dir": 279
+      },
+      "sailing": null
     }
   ],
   "polar_estimated": false,
@@ -450,79 +401,63 @@
       "cabin": "Bagno privato"
     },
     {
-      "id": "giacomo-n",
-      "name": "Giacomo N",
+      "id": "giulia-n",
+      "name": "Giulia N",
       "role": "crew",
-      "board": "2026-08-08",
-      "leave": "2026-08-16",
+      "board": "2026-08-15",
+      "leave": "2026-08-29",
+      "cabin": "Castello letto 2"
+    },
+    {
+      "id": "fede-b",
+      "name": "Fede B",
+      "role": "crew",
+      "board": "2026-08-15",
+      "leave": "2026-08-29",
+      "cabin": "Castello letto 1"
+    },
+    {
+      "id": "manlio",
+      "name": "Manlio",
+      "role": "crew",
+      "board": "2026-08-15",
+      "leave": "2026-08-22",
       "cabin": "Bagno privato"
     },
     {
-      "id": "matilde-c",
-      "name": "Matilde C.",
+      "id": "antonio-v",
+      "name": "Antonio V",
       "role": "crew",
-      "board": "2026-08-08",
-      "leave": "2026-08-15",
-      "cabin": "Bagno privato"
-    },
-    {
-      "id": "matilde-m",
-      "name": "Matilde M",
-      "role": "crew",
-      "board": "2026-08-08",
-      "leave": "2026-08-16",
+      "board": "2026-08-15",
+      "leave": "2026-08-22",
       "cabin": null
     },
     {
-      "id": "lorenzo-c",
-      "name": "Lorenzo C.",
+      "id": "agata-v",
+      "name": "Agata V",
       "role": "crew",
-      "board": "2026-08-08",
-      "leave": "2026-08-15",
-      "cabin": null
-    },
-    {
-      "id": "ilaria-c",
-      "name": "Ilaria C.",
-      "role": "crew",
-      "board": "2026-08-08",
-      "leave": "2026-08-15",
-      "cabin": null
-    },
-    {
-      "id": "valentina-f",
-      "name": "Vale F",
-      "role": "crew",
-      "board": "2026-08-08",
-      "leave": "2026-08-15",
-      "cabin": null
-    },
-    {
-      "id": "isabella",
-      "name": "Isabella",
-      "role": "crew",
-      "board": "2026-08-08",
-      "leave": "2026-08-15",
+      "board": "2026-08-15",
+      "leave": "2026-08-22",
       "cabin": null
     }
   ],
   "turns": {
-    "cucina_pranzo": "Ilaria C.",
-    "cucina_cena": "Vale F",
-    "pulizie_pranzo": "Isabella",
-    "pulizie_cena": "Ginevra L",
-    "check_mattina": "Bianca M",
-    "check_pomeriggio": "Giacomo N"
+    "cucina_pranzo": "Giulia N",
+    "cucina_cena": "Fede B",
+    "pulizie_pranzo": "Manlio",
+    "pulizie_cena": "Antonio V",
+    "check_mattina": "Agata V",
+    "check_pomeriggio": "Ginevra L"
   },
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 32.7,
-    "rh": 52,
-    "rain": 0.0,
-    "wmo": 0,
-    "tws": 3.3,
-    "twd": 277,
-    "sst": 29.1
+    "temp": 26.4,
+    "rh": 81,
+    "rain": 0.1,
+    "wmo": 51,
+    "tws": 1.4,
+    "twd": 74,
+    "sst": 29.8
   }
 }
