@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-20T12:27+02:00",
+  "generated_at": "2026-08-23T10:02+02:00",
   "approved": false,
   "approved_by": null,
-  "day": "2026-08-20",
+  "day": "2026-08-23",
   "boat": "Niña",
   "voyage": "Corsica & La Maddalena 2026",
   "captains": [
@@ -14,64 +14,72 @@
   "departure_at": "2026-08-08T14:00",
   "departure_place": "Cannigione",
   "position": {
-    "id": "favone",
-    "name": "Spiaggia Testa del Polpo",
-    "lat": 41.2321,
-    "lon": 9.4469,
+    "id": "porto_rotondo",
+    "name": "posizione GPS",
+    "lat": 40.88587,
+    "lon": 9.64717,
     "live": true,
     "age_h": 0.0
   },
   "rest": false,
   "leg": {
-    "leg": "Favone -> Fautea",
-    "nm": 3.7,
-    "cog": 176,
-    "depart": "2026-08-20T08:00",
-    "eta": "2026-08-20T08:30",
-    "hours": 0.5,
-    "avg_score": 36,
+    "leg": "Isola Mortorio -> Cala Coticcio (Caprera)",
+    "nm": 9.2,
+    "cog": 327,
+    "depart": "2026-08-23T10:15",
+    "eta": "2026-08-23T11:31",
+    "hours": 1.3,
+    "avg_score": 37,
     "sail_pct": 0,
     "abort": false,
-    "detail": [],
-    "slot": "mattina",
+    "detail": [
+      {
+        "time": "2026-08-23T11:00",
+        "twa": 82,
+        "tws": 4.1,
+        "score": 37,
+        "mode": "motore"
+      }
+    ],
+    "slot": "pomeriggio",
     "activity": [
       "bagno"
     ],
     "night_stay": false,
     "verify": true,
-    "arrive_by": "08:30",
-    "frm_id": "favone",
-    "to_id": "fautea",
-    "rating": 3.5,
+    "arrive_by": "11:30",
+    "frm_id": "mortorio",
+    "to_id": "coticcio",
+    "rating": 5,
     "photo": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sunrise_At_Fautea_Beach_%28262708439%29.jpeg/500px-Sunrise_At_Fautea_Beach_%28262708439%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "page": "https://commons.wikimedia.org/wiki/File:Sunrise_At_Fautea_Beach_(262708439).jpeg"
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
     },
     "stay": false,
-    "frm": "Favone",
-    "to": "Fautea"
+    "frm": "Isola Mortorio",
+    "to": "Cala Coticcio (Caprera)"
   },
   "leg_sailing": {
-    "andatura": "bolina larga",
-    "twa": 64,
+    "andatura": "traverso",
+    "twa": 82,
     "vela": false,
-    "avg_kn": 7.4
+    "avg_kn": 7.1
   },
   "options": [],
   "confidence": {
-    "mean_spread_kn": 4.7,
-    "max_spread_kn": 13.0,
-    "confidence": "media"
+    "mean_spread_kn": 1.8,
+    "max_spread_kn": 11.6,
+    "confidence": "alta"
   },
   "steps": [
     {
-      "leg": "Favone -> Fautea",
-      "nm": 3.7,
-      "cog": 176,
-      "depart": "2026-08-20T08:00",
-      "eta": "2026-08-20T08:30",
-      "hours": 0.5,
-      "avg_score": 36,
+      "leg": "Porto Rotondo -> Isola Mortorio",
+      "nm": 3.1,
+      "cog": 23,
+      "depart": "2026-08-23T08:00",
+      "eta": "2026-08-23T08:25",
+      "hours": 0.4,
+      "avg_score": 38,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -82,25 +90,62 @@
       "night_stay": false,
       "verify": true,
       "arrive_by": "08:30",
-      "frm_id": "favone",
-      "to_id": "fautea",
-      "rating": 3.5,
+      "frm_id": "porto_rotondo",
+      "to_id": "mortorio",
+      "rating": 4,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sunrise_At_Fautea_Beach_%28262708439%29.jpeg/500px-Sunrise_At_Fautea_Beach_%28262708439%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Sunrise_At_Fautea_Beach_(262708439).jpeg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
       },
       "stay": false,
-      "frm": "Favone",
-      "to": "Fautea"
+      "frm": "Porto Rotondo",
+      "to": "Isola Mortorio"
     },
     {
-      "leg": "Fautea -> Pinarello",
-      "nm": 2.6,
-      "cog": 195,
-      "depart": "2026-08-20T15:00",
-      "eta": "2026-08-20T15:21",
-      "hours": 0.4,
-      "avg_score": 36,
+      "leg": "Isola Mortorio -> Cala Coticcio (Caprera)",
+      "nm": 9.2,
+      "cog": 327,
+      "depart": "2026-08-23T10:15",
+      "eta": "2026-08-23T11:31",
+      "hours": 1.3,
+      "avg_score": 37,
+      "sail_pct": 0,
+      "abort": false,
+      "detail": [
+        {
+          "time": "2026-08-23T11:00",
+          "twa": 82,
+          "tws": 4.1,
+          "score": 37,
+          "mode": "motore"
+        }
+      ],
+      "slot": "pomeriggio",
+      "activity": [
+        "bagno"
+      ],
+      "night_stay": false,
+      "verify": true,
+      "arrive_by": "11:30",
+      "frm_id": "mortorio",
+      "to_id": "coticcio",
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      },
+      "stay": false,
+      "frm": "Isola Mortorio",
+      "to": "Cala Coticcio (Caprera)"
+    },
+    {
+      "leg": "Cala Coticcio (Caprera) -> Porto Palma",
+      "nm": 1.3,
+      "cog": 211,
+      "depart": "2026-08-23T17:15",
+      "eta": "2026-08-23T17:25",
+      "hours": 0.2,
+      "avg_score": 37,
       "sail_pct": 0,
       "abort": false,
       "detail": [],
@@ -108,212 +153,120 @@
       "activity": [],
       "night_stay": true,
       "verify": true,
-      "arrive_by": "15:30",
-      "frm_id": "fautea",
-      "to_id": "pinarello",
-      "rating": 4,
+      "arrive_by": "17:30",
+      "frm_id": "coticcio",
+      "to_id": "porto_palma",
+      "rating": 3,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Isola_Pinarello_-_panoramio.jpg/500px-Isola_Pinarello_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Isola_Pinarello_-_panoramio.jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Porto_Palma_-_panoramio.jpg/500px-Porto_Palma_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio.jpg"
       },
       "stay": false,
-      "frm": "Fautea",
-      "to": "Pinarello"
+      "frm": "Cala Coticcio (Caprera)",
+      "to": "Porto Palma"
     }
   ],
-  "day_nm": 6.3,
+  "day_nm": 13.6,
   "stop_reason": null,
   "tonight": null,
   "plan_b": {
-    "id": "santamaria",
-    "name": "Cala Santa Maria",
+    "id": "sanguinaires",
+    "name": "Iles Sanguinaires",
     "score": 100,
     "light": "verde",
-    "margin_deg": 89,
-    "fetch_km": 20,
-    "why": "vento 309° a 89° dal settore esposto",
-    "holding": "sabbia, ottima",
-    "notes": "Ampia, riparata da N e NW.",
+    "margin_deg": 105,
+    "fetch_km": 80,
+    "why": "vento 95° a 105° dal settore esposto",
+    "holding": "sabbia/roccia",
+    "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
     "verify": true,
-    "sunset_view": false,
-    "sunset_bonus": 0,
-    "rating": 4.5,
+    "sunset_view": true,
+    "sunset_bonus": 6,
+    "rating": 4,
     "photo": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/500px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Corcelli_(01).jpg"
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
     }
   },
   "ranked": [
     {
-      "id": "santamaria",
-      "name": "Cala Santa Maria",
+      "id": "sanguinaires",
+      "name": "Iles Sanguinaires",
       "score": 100,
       "light": "verde",
-      "margin_deg": 89,
-      "fetch_km": 20,
-      "why": "vento 309° a 89° dal settore esposto",
-      "holding": "sabbia, ottima",
-      "notes": "Ampia, riparata da N e NW.",
+      "margin_deg": 105,
+      "fetch_km": 80,
+      "why": "vento 95° a 105° dal settore esposto",
+      "holding": "sabbia/roccia",
+      "notes": "Solo con tempo stabile. Nessun riparo dai quadranti occidentali.",
       "verify": true,
-      "sunset_view": false,
-      "sunset_bonus": 0,
-      "rating": 4.5,
+      "sunset_view": true,
+      "sunset_bonus": 6,
+      "rating": 4,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg/500px-La_Maddalena%2C_isola_di_Corcelli_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Corcelli_(01).jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ajaccio%2C_France_-_panoramio.jpg/500px-Ajaccio%2C_France_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Ajaccio,_France_-_panoramio.jpg"
       }
     },
     {
-      "id": "rondinara",
-      "name": "Baie de Rondinara",
-      "score": 100,
+      "id": "lavezzi",
+      "name": "Cala Lazarina (Lavezzi)",
+      "score": 98,
       "light": "verde",
-      "margin_deg": 121,
-      "fetch_km": 40,
-      "why": "vento 309° a 121° dal settore esposto",
-      "holding": "sabbia, ottima",
-      "notes": "Rifugio classico da Maestrale. Affollata in agosto.",
-      "verify": true,
-      "sunset_view": false,
-      "sunset_bonus": 0,
-      "rating": 5,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
-      }
-    },
-    {
-      "id": "porto_vecchio",
-      "name": "Golfe de Porto-Vecchio",
-      "score": 100,
-      "light": "verde",
-      "margin_deg": 91,
+      "margin_deg": 75,
       "fetch_km": 30,
-      "why": "vento 309° a 91° dal settore esposto",
-      "holding": "fango/sabbia",
-      "notes": "Molte cale interne, riparo in quasi ogni condizione.",
+      "why": "vento 95° a 75° dal settore esposto",
+      "holding": "sabbia tra roccia",
+      "notes": "Riserva naturale, boe. Insidiosa con Ponente.",
       "verify": true,
-      "sunset_view": false,
-      "sunset_bonus": 0,
-      "rating": 3,
+      "sunset_view": true,
+      "sunset_bonus": 6,
+      "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg/500px-Baie_de_Porto-Vecchio%2C_Corse_-_Patrick_Nouhailler_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Baie_de_Porto-Vecchio,_Corse_-_Patrick_Nouhailler_-_panoramio.jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lavezzi.jpg/500px-Lavezzi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Lavezzi.jpg"
       }
     },
     {
-      "id": "coticcio",
-      "name": "Cala Coticcio (Caprera)",
-      "score": 100,
+      "id": "mortorio",
+      "name": "Isola Mortorio",
+      "score": 98,
       "light": "verde",
-      "margin_deg": 91,
-      "fetch_km": 12,
-      "why": "vento 309° a 91° dal settore esposto",
+      "margin_deg": 85,
+      "fetch_km": 20,
+      "why": "vento 95° a 85° dal settore esposto",
       "holding": "sabbia",
-      "notes": "Sosta diurna. Sbarco a terra regolamentato.",
+      "notes": "Buon riparo dal Grecale, esposta a Libeccio.",
+      "verify": true,
+      "sunset_view": false,
+      "sunset_bonus": 0,
+      "rating": 4,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg/500px-La_Maddalena%2C_isola_di_Mortorio_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:La_Maddalena,_isola_di_Mortorio_(02).jpg"
+      }
+    },
+    {
+      "id": "budelli",
+      "name": "Cala Roto (Budelli)",
+      "score": 89,
+      "light": "verde",
+      "margin_deg": 0,
+      "fetch_km": 15,
+      "why": "vento 95° entra in rada (settore 30-130°), fetch 15 km",
+      "holding": "sabbia",
+      "notes": "Zona A del parco: verificare divieti di ancoraggio e sbarco.",
       "verify": true,
       "sunset_view": false,
       "sunset_bonus": 0,
       "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_spiaggia_rosa_di_Budelli_-_panoramio.jpg/500px-La_spiaggia_rosa_di_Budelli_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:La_spiaggia_rosa_di_Budelli_-_panoramio.jpg"
       }
     }
   ],
   "outlook": [
-    {
-      "date": "2026-08-21",
-      "rest": false,
-      "night": false,
-      "frm": "Pinarello",
-      "to": "Porto Rotondo",
-      "to_id": "porto_rotondo",
-      "nm": 39.1,
-      "n_tappe": 2,
-      "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
-      },
-      "wx": {
-        "wmo": 80,
-        "tmax": 32.4,
-        "tmin": 25.6,
-        "rain_mm": 0.7,
-        "rain_prob": 23,
-        "wind_max": 15.8,
-        "gust_max": 32.7,
-        "wind_dir": 253
-      },
-      "sailing": {
-        "twa": 84,
-        "andatura": "traverso",
-        "vela": true,
-        "boat_kn": 6.54,
-        "tws_est": 12.6,
-        "twd": 253
-      }
-    },
-    {
-      "date": "2026-08-22",
-      "rest": true,
-      "night": false,
-      "frm": "Porto Rotondo",
-      "to": "Porto Rotondo",
-      "to_id": "porto_rotondo",
-      "nm": 0.0,
-      "n_tappe": 1,
-      "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg/500px-Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Spiaggia_Ira_Porto_Rotondo_-_panoramio.jpg"
-      },
-      "wx": {
-        "wmo": 1,
-        "tmax": 30.6,
-        "tmin": 24.8,
-        "rain_mm": 0.0,
-        "rain_prob": 0,
-        "wind_max": 15.7,
-        "gust_max": 29.2,
-        "wind_dir": 278
-      },
-      "sailing": null
-    },
-    {
-      "date": "2026-08-23",
-      "rest": false,
-      "night": false,
-      "frm": "Porto Rotondo",
-      "to": "Porto Palma",
-      "to_id": "porto_palma",
-      "nm": 10.5,
-      "n_tappe": 3,
-      "rating": 3,
-      "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Porto_Palma_-_panoramio.jpg/500px-Porto_Palma_-_panoramio.jpg",
-        "page": "https://commons.wikimedia.org/wiki/File:Porto_Palma_-_panoramio.jpg"
-      },
-      "wx": {
-        "wmo": 0,
-        "tmax": 31.9,
-        "tmin": 21.7,
-        "rain_mm": 0.0,
-        "rain_prob": 0,
-        "wind_max": 7.6,
-        "gust_max": 14.8,
-        "wind_dir": 308
-      },
-      "sailing": {
-        "twa": 27,
-        "andatura": "bolina",
-        "vela": false,
-        "boat_kn": 7.2,
-        "tws_est": 6.1,
-        "twd": 308
-      }
-    },
     {
       "date": "2026-08-24",
       "rest": false,
@@ -325,26 +278,26 @@
       "n_tappe": 3,
       "rating": 5,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg/500px-Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg/500px-Sailing_in_Sardinia_%2C_Isolotti_Paduleddi_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Sailing_in_Sardinia_,_Isolotti_Paduleddi_-_panoramio.jpg"
       },
       "wx": {
-        "wmo": 2,
-        "tmax": 28.3,
-        "tmin": 26.5,
+        "wmo": 3,
+        "tmax": 28.8,
+        "tmin": 26.6,
         "rain_mm": 0.0,
-        "rain_prob": 3,
-        "wind_max": 10.0,
-        "gust_max": 14.0,
-        "wind_dir": 99
+        "rain_prob": 5,
+        "wind_max": 13.1,
+        "gust_max": 28.4,
+        "wind_dir": 92
       },
       "sailing": {
-        "twa": 134,
+        "twa": 127,
         "andatura": "lasco",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 8.0,
-        "twd": 99
+        "tws_est": 10.5,
+        "twd": 92
       }
     },
     {
@@ -358,26 +311,125 @@
       "n_tappe": 3,
       "rating": 4,
       "photo": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg/500px-Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg/500px-Golf_de_Sperone%2C_trou_n%C2%B0_16.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "page": "https://commons.wikimedia.org/wiki/File:Golf_de_Sperone,_trou_n%C2%B0_16.jpg"
       },
       "wx": {
         "wmo": 3,
-        "tmax": 31.1,
-        "tmin": 25.1,
+        "tmax": 31.0,
+        "tmin": 26.4,
         "rain_mm": 0.0,
-        "rain_prob": 10,
-        "wind_max": 9.0,
-        "gust_max": 20.2,
-        "wind_dir": 259
+        "rain_prob": 13,
+        "wind_max": 12.7,
+        "gust_max": 29.4,
+        "wind_dir": 269
       },
       "sailing": {
-        "twa": 52,
+        "twa": 42,
         "andatura": "bolina",
         "vela": false,
         "boat_kn": 7.2,
-        "tws_est": 7.2,
-        "twd": 259
+        "tws_est": 10.2,
+        "twd": 269
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "rest": false,
+      "night": false,
+      "frm": "Corsica- Isola Piana",
+      "to": "Baie de Rondinara",
+      "to_id": "rondinara",
+      "nm": 6.6,
+      "n_tappe": 2,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rondinara_%E2%80%93_Bunker_06.jpg/500px-Rondinara_%E2%80%93_Bunker_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Rondinara_%E2%80%93_Bunker_06.jpg"
+      },
+      "wx": {
+        "wmo": 3,
+        "tmax": 29.4,
+        "tmin": 22.7,
+        "rain_mm": 0.0,
+        "rain_prob": 0,
+        "wind_max": 8.8,
+        "gust_max": 24.1,
+        "wind_dir": 45
+      },
+      "sailing": {
+        "twa": 24,
+        "andatura": "bolina",
+        "vela": false,
+        "boat_kn": 7.2,
+        "tws_est": 7.0,
+        "twd": 45
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "rest": false,
+      "night": false,
+      "frm": "Baie de Rondinara",
+      "to": "Marmorata",
+      "to_id": "marmorata",
+      "nm": 13.7,
+      "n_tappe": 3,
+      "rating": 3.5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Punta_Marmorata_-_panoramio.jpg/500px-Punta_Marmorata_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Punta_Marmorata_-_panoramio.jpg"
+      },
+      "wx": {
+        "wmo": 3,
+        "tmax": 36.5,
+        "tmin": 27.0,
+        "rain_mm": 0.0,
+        "rain_prob": 3,
+        "wind_max": 16.5,
+        "gust_max": 32.5,
+        "wind_dir": 103
+      },
+      "sailing": {
+        "twa": 84,
+        "andatura": "traverso",
+        "vela": true,
+        "boat_kn": 6.73,
+        "tws_est": 13.2,
+        "twd": 103
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "rest": false,
+      "night": false,
+      "frm": "Marmorata",
+      "to": "Cala Coticcio (Caprera)",
+      "to_id": "coticcio",
+      "nm": 10.6,
+      "n_tappe": 3,
+      "rating": 5,
+      "photo": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Museo_Garibaldino_di_Caprera_02.jpg/500px-Museo_Garibaldino_di_Caprera_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "page": "https://commons.wikimedia.org/wiki/File:Museo_Garibaldino_di_Caprera_02.jpg"
+      },
+      "wx": {
+        "wmo": 3,
+        "tmax": 33.4,
+        "tmin": 25.3,
+        "rain_mm": 0.0,
+        "rain_prob": 8,
+        "wind_max": 13.0,
+        "gust_max": 27.2,
+        "wind_dir": 290
+      },
+      "sailing": {
+        "twa": 174,
+        "andatura": "poppa",
+        "vela": false,
+        "boat_kn": 7.2,
+        "tws_est": 10.4,
+        "twd": 290
       }
     }
   ],
@@ -400,22 +452,6 @@
       "cabin": "Bagno privato"
     },
     {
-      "id": "bernardo-b",
-      "name": "Bernardo B",
-      "role": "skipper",
-      "board": "2026-08-08",
-      "leave": "2026-08-21",
-      "cabin": "Bagno privato"
-    },
-    {
-      "id": "bianca-m",
-      "name": "Bianca M",
-      "role": "crew",
-      "board": "2026-08-08",
-      "leave": "2026-08-21",
-      "cabin": "Bagno privato"
-    },
-    {
       "id": "giulia-n",
       "name": "Giulia N",
       "role": "crew",
@@ -432,47 +468,79 @@
       "cabin": "Castello letto 1"
     },
     {
-      "id": "manlio",
-      "name": "Manlio",
+      "id": "riccardo-b",
+      "name": "Riccardo B",
       "role": "crew",
-      "board": "2026-08-15",
-      "leave": "2026-08-22",
+      "board": "2026-08-22",
+      "leave": "2026-08-29",
+      "cabin": "Doppia bagno condiviso"
+    },
+    {
+      "id": "fede-n",
+      "name": "Fede N",
+      "role": "crew",
+      "board": "2026-08-22",
+      "leave": "2026-08-29",
+      "cabin": "Doppia bagno condiviso"
+    },
+    {
+      "id": "ilaria-m",
+      "name": "Ilaria M",
+      "role": "crew",
+      "board": "2026-08-21",
+      "leave": "2026-08-29",
       "cabin": "Bagno privato"
     },
     {
-      "id": "antonio-v",
-      "name": "Antonio V",
+      "id": "lavinia-p",
+      "name": "Lavinia P",
       "role": "crew",
-      "board": "2026-08-15",
-      "leave": "2026-08-22",
-      "cabin": null
+      "board": "2026-08-21",
+      "leave": "2026-08-29",
+      "cabin": "Bagno privato"
     },
     {
-      "id": "agata-v",
-      "name": "Agata V",
+      "id": "andrea-a",
+      "name": "Andrea A",
       "role": "crew",
-      "board": "2026-08-15",
-      "leave": "2026-08-22",
-      "cabin": null
+      "board": "2026-08-22",
+      "leave": "2026-08-29",
+      "cabin": "Bagno privato"
+    },
+    {
+      "id": "simona-a",
+      "name": "Simona A",
+      "role": "crew",
+      "board": "2026-08-22",
+      "leave": "2026-08-29",
+      "cabin": "Bagno privato"
+    },
+    {
+      "id": "gabri-m",
+      "name": "Gabri M",
+      "role": "marinaio",
+      "board": "2026-08-22",
+      "leave": "2026-08-29",
+      "cabin": "Skipper / Marinaio"
     }
   ],
   "turns": {
-    "cucina_pranzo": "Antonio V",
-    "cucina_cena": "Agata V",
-    "pulizie_pranzo": "Ginevra L",
-    "pulizie_cena": "Bianca M",
-    "check_mattina": "Giulia N",
-    "check_pomeriggio": "Fede B"
+    "cucina_pranzo": "Ilaria M",
+    "cucina_cena": "Lavinia P",
+    "pulizie_pranzo": "Andrea A",
+    "pulizie_cena": "Simona A",
+    "check_mattina": "Gabri M",
+    "check_pomeriggio": "Ginevra L"
   },
   "source": "Open-Meteo (ECMWF) — non ufficiale",
   "official": "https://www.meteoam.it/it/mare",
   "now": {
-    "temp": 33.7,
-    "rh": 44,
+    "temp": 28.3,
+    "rh": 51,
     "rain": 0.0,
-    "wmo": 1,
-    "tws": 6.7,
-    "twd": 112,
-    "sst": 28.7
+    "wmo": 0,
+    "tws": 1.6,
+    "twd": 30,
+    "sst": 29.2
   }
 }
