@@ -1,10 +1,16 @@
 {
-  "_README": "Riepilogo CONSUNTIVO del viaggio Estate 2026. Scritto a mano (Edo/agente), MAI generato ne' toccato dalla CI (publish.py non lo conosce). Le miglia per leg arrivano da 'python scripts/render_routes.py --nina-consuntivo' (stampa a console); null = in attesa del KML consuntivo. I partecipanti NON stanno qui: riepilogo.html li deriva da arrivi.json per sovrapposizione date con ogni leg.",
+  "_README": "Riepilogo CONSUNTIVO del viaggio Estate 2026. Scritto a mano (Edo/agente), MAI generato ne' toccato dalla CI (publish.py non lo conosce). Le miglia per leg arrivano da 'python scripts/render_routes.py --nina-consuntivo' (stampa a console); null = in attesa del KML consuntivo. I partecipanti NON stanno qui: riepilogo.html li deriva da arrivi.json per sovrapposizione date con ogni leg. I giorni (legs[].days) vengono dal foglio 'Percorso Effettivo' di Summer 26.xlsx; nm giornaliere = tratti del tracciato KML riconciliati sui totali di leg (indicative, scala di crociera).",
   "title": "Estate 2026 — il giro fatto",
   "sub": "Corsica e La Maddalena, 8–29 agosto: tre settimane, tre equipaggi, un catamarano.",
-  "updated": "2026-08-29",
-  "period": { "start": "2026-08-08", "end": "2026-08-29" },
-  "totals": { "nm": 565, "days": 22 },
+  "updated": "2026-08-30",
+  "period": {
+    "start": "2026-08-08",
+    "end": "2026-08-29"
+  },
+  "totals": {
+    "nm": 565,
+    "days": 22
+  },
   "overview_img": "img/riepilogo-2026-overview.png",
   "legs": [
     {
@@ -15,7 +21,64 @@
       "img": "img/riepilogo-2026-w1.png",
       "nm": 198,
       "ports": [],
-      "highlights": []
+      "highlights": [],
+      "days": [
+        {
+          "d": "2026-08-08",
+          "night": "Spargi (Cala dell'Amore)",
+          "nm": 10,
+          "lunch": "Partenza da Cannigione"
+        },
+        {
+          "d": "2026-08-09",
+          "night": "Cannigione (porto)",
+          "nm": 18,
+          "am": "Budelli (Cavaliere)",
+          "note": "notte in porto per avaria all'elica"
+        },
+        {
+          "d": "2026-08-10",
+          "night": "Isola Piana (Corsica)",
+          "nm": 23,
+          "am": "Lavezzi",
+          "lunch": "Cavallo (Plage de Zeri)"
+        },
+        {
+          "d": "2026-08-11",
+          "night": "Roccapina",
+          "nm": 19,
+          "am": "Isola Piana",
+          "lunch": "Bonifacio"
+        },
+        {
+          "d": "2026-08-12",
+          "night": "Isole Sanguinarie",
+          "nm": 30,
+          "am": "Roccapina",
+          "lunch": "in navigazione"
+        },
+        {
+          "d": "2026-08-13",
+          "night": "Girolata",
+          "nm": 39,
+          "am": "Scandola (Canalette)"
+        },
+        {
+          "d": "2026-08-14",
+          "night": "Saleccia",
+          "nm": 59,
+          "am": "Calvi",
+          "lunch": "Saleccia"
+        },
+        {
+          "d": "2026-08-15",
+          "night": "Saleccia",
+          "nm": null,
+          "am": "Saint-Florent",
+          "lunch": "Fiume Bughju",
+          "note": "cambio equipaggio a Saint-Florent"
+        }
+      ]
     },
     {
       "id": "w2",
@@ -25,7 +88,54 @@
       "img": "img/riepilogo-2026-w2.png",
       "nm": 210,
       "ports": [],
-      "highlights": []
+      "highlights": [],
+      "days": [
+        {
+          "d": "2026-08-16",
+          "night": "Cala Genovese (Cap Corse)",
+          "nm": 32,
+          "am": "Saleccia",
+          "lunch": "in navigazione"
+        },
+        {
+          "d": "2026-08-17",
+          "night": "Favone",
+          "nm": 74,
+          "am": "Cala Genovese",
+          "lunch": "Macinaggio",
+          "note": "discesa della costa est, arrivo in notturna"
+        },
+        {
+          "d": "2026-08-18",
+          "night": "Villata",
+          "nm": 11,
+          "am": "Favone",
+          "lunch": "Villata"
+        },
+        {
+          "d": "2026-08-19",
+          "night": "Caprera (I Due Mari)",
+          "nm": 52,
+          "am": "Isola Piana (Corsica)",
+          "lunch": "Cannigione (porto)",
+          "note": "sosta tecnica in porto (generatore)"
+        },
+        {
+          "d": "2026-08-20",
+          "night": "Caprera (Porto Palma)",
+          "nm": 16,
+          "am": "Caprera (Cala Coticcio)",
+          "lunch": "Maddalena (Testa di Polpo)"
+        },
+        {
+          "d": "2026-08-21",
+          "night": "Porto Istana",
+          "nm": 25,
+          "am": "Porto Palma",
+          "lunch": "Porto Istana",
+          "note": "sbarco a Porto Istana"
+        }
+      ]
     },
     {
       "id": "w3",
@@ -35,7 +145,60 @@
       "img": "img/riepilogo-2026-w3.png",
       "nm": 157,
       "ports": [],
-      "highlights": []
+      "highlights": [],
+      "days": [
+        {
+          "d": "2026-08-22",
+          "night": "Isola Piana (Tavolara)",
+          "nm": 18,
+          "am": "Porto Istana",
+          "lunch": "La Cinta",
+          "note": "imbarco del terzo equipaggio"
+        },
+        {
+          "d": "2026-08-23",
+          "night": "Budelli (Cavaliere)",
+          "nm": 38,
+          "am": "Tavolara",
+          "lunch": "Capriccioli"
+        },
+        {
+          "d": "2026-08-24",
+          "night": "Roccapina",
+          "nm": 25,
+          "am": "Budelli",
+          "lunch": "Bonifacio"
+        },
+        {
+          "d": "2026-08-25",
+          "night": "Campomoro",
+          "nm": 17,
+          "am": "Roccapina",
+          "lunch": "Cala Longa (Tizzano)"
+        },
+        {
+          "d": "2026-08-26",
+          "night": "Stagnolu",
+          "nm": 20,
+          "am": "Campomoro",
+          "lunch": "Anse d'Arbitru"
+        },
+        {
+          "d": "2026-08-27",
+          "night": "Lavezzi (Cala di u Lioni)",
+          "nm": 19,
+          "am": "Punta di Sperone",
+          "lunch": "Isola Piana (Corsica)"
+        },
+        {
+          "d": "2026-08-28",
+          "night": "Cannigione (porto)",
+          "nm": 20,
+          "am": "Lavezzi",
+          "lunch": "Porto Palma (Caprera)",
+          "note": "rientro alla base"
+        }
+      ]
     }
   ]
 }

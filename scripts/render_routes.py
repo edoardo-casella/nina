@@ -922,7 +922,7 @@ def _place_labels(draw, panel_w, panel_h, items, font):
         _text_halo(draw, (cx, cy), text, font, fill=INK, halo=(255, 255, 255), r=2)
 
 
-def _region_panel(trips, polys, panel_w, S=2, pad=0.12, min_span=0.5, borders=None):
+def _region_panel(trips, polys, panel_w, S=2, pad=0.12, min_span=0.5, borders=None, spots=None):
     alllon = np.concatenate([t["lonlat"][:, 0] for t in trips])
     alllat = np.concatenate([t["lonlat"][:, 1] for t in trips])
     latmid = (alllat.min() + alllat.max()) / 2
@@ -978,13 +978,29 @@ def _region_panel(trips, polys, panel_w, S=2, pad=0.12, min_span=0.5, borders=No
             _text_halo(d1, (float(p[0]), float(p[1])), name.upper(), gifont,
                        fill=(120, 105, 80), halo=(255, 255, 255), r=1)
 
-    # etichette viaggi (crisp, anti-collisione) — sopra tutto
-    items = []
-    for t in trips:
-        rp = proj1(smooth_track(t["lonlat"]))
-        mid = rp[len(rp) // 2]
-        items.append(((float(mid[0]), float(mid[1])), t["name"]))
-    _place_labels(d1, panel_w, panel_h, items, _font(17, bold=True))
+    # spot (rade/porti del consuntivo): pallino + etichetta anti-collisione
+    if spots:
+        sfont = _font(max(12, panel_w // 115), bold=True)
+        items_s = []
+        for name, lat, lon in spots:
+            if not _inview(lat, lon):
+                continue
+            p = proj1(np.array([[lon, lat]]))[0]
+            x, y = float(p[0]), float(p[1])
+            d1.ellipse([x - 5.5, y - 5.5, x + 5.5, y + 5.5], fill=(255, 255, 255))
+            d1.ellipse([x - 4, y - 4, x + 4, y + 4], fill=(150, 44, 34))
+            items_s.append(((x, y), name))
+        _place_labels(d1, panel_w, panel_h, items_s, sfont)
+
+    # etichette viaggi (crisp, anti-collisione) — sopra tutto. Con gli spot attivi
+    # si omettono: farebbero collisione con le etichette rada e la legenda basta.
+    if not spots:
+        items = []
+        for t in trips:
+            rp = proj1(smooth_track(t["lonlat"]))
+            mid = rp[len(rp) // 2]
+            items.append(((float(mid[0]), float(mid[1])), t["name"]))
+        _place_labels(d1, panel_w, panel_h, items, _font(17, bold=True))
     return img
 
 
@@ -1099,7 +1115,7 @@ def _desaturate(hexcol: str, toward=(214, 208, 195), amt=0.75) -> str:
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
-def render_nina_overview(kml_path: Path, polys, borders=None, emphasize: str | None = None, title: str | None = None, out_name: str = "nina-2026-overview.png", subtitle: str | None = None):
+def render_nina_overview(kml_path: Path, polys, borders=None, emphasize: str | None = None, title: str | None = None, out_name: str = "nina-2026-overview.png", subtitle: str | None = None, spots=None):
     """Mappa d'insieme del giro previsto 2026 (Niña): le rotte di data/rotte-nina.kml
     (OVEST/EST/Giro corto), coi colori VERI del KML — non la palette generica
     kml_color(i,n) usata per l'archivio storico. Una sola immagine, non un
@@ -1122,7 +1138,7 @@ def render_nina_overview(kml_path: Path, polys, borders=None, emphasize: str | N
 
     PANEL_W = 1700
     MARGIN = 60
-    panel = _region_panel(trips, polys, PANEL_W, borders=borders)
+    panel = _region_panel(trips, polys, PANEL_W, borders=borders, spots=spots)
 
     title_h = 100
     sub_h = 40
@@ -1201,16 +1217,23 @@ def main():
             print(f"  {t['name']}: {nm:.0f} nm")
         polys = load_land()
         borders = load_borders()
+        # spot (rade/porti) del consuntivo: overview = tutti, variante-settimana = solo i suoi
+        spots_file = ROOT / "data" / "spots-nina-2026.json"
+        all_spots = []
+        if spots_file.exists():
+            all_spots = json.loads(spots_file.read_text(encoding="utf-8"))["spots"]
+        by_leg = lambda leg: [(s["name"], s["lat"], s["lon"]) for s in all_spots if leg in s.get("legs", [])]
+        every = [(s["name"], s["lat"], s["lon"]) for s in all_spots]
         sub = "Consuntivo: le rotte vere delle tre settimane, come le abbiamo navigate."
         out, size = render_nina_overview(src, polys, borders, title="Niña — Estate 2026, il giro fatto",
-                                         subtitle=sub, out_name="riepilogo-2026-overview.png")
+                                         subtitle=sub, out_name="riepilogo-2026-overview.png", spots=every)
         print(f"Consuntivo -> {out.name}  {size[0]}x{size[1]}")
         for i in (1, 2, 3):
             key = f"Settimana {i}"
             name = next((t["name"] for t in trips if key.lower() in t["name"].lower()), key)
             out_i, size_i = render_nina_overview(src, polys, borders, emphasize=key,
                                                  title=f"Niña — {name}", subtitle=sub,
-                                                 out_name=f"riepilogo-2026-w{i}.png")
+                                                 out_name=f"riepilogo-2026-w{i}.png", spots=by_leg(f"w{i}"))
             print(f"Consuntivo -> {out_i.name}  {size_i[0]}x{size_i[1]}")
         return
 

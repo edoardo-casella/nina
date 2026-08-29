@@ -1,0 +1,24 @@
+{
+  "_README": "Spot del consuntivo 2026 (pernottamenti + punti cambio) per le mappe di riepilogo — da 'Summer 26.xlsx' foglio 'Percorso Effettivo'. legs = su quali mappe-settimana compare. Coordinate: voyage.json waypoints dove esistono, altrimenti stimate sulla carta (scala di crociera, non nautica).",
+  "spots": [
+    { "name": "Cannigione", "lat": 41.1069, "lon": 9.4404, "legs": ["w1", "w3"] },
+    { "name": "Cala dell'Amore (Spargi)", "lat": 41.2450, "lon": 9.3440, "legs": ["w1"] },
+    { "name": "Isola Piana", "lat": 41.3745, "lon": 9.2253, "legs": ["w1"] },
+    { "name": "Roccapina", "lat": 41.4940, "lon": 8.9250, "legs": ["w1", "w3"] },
+    { "name": "Sanguinarie", "lat": 41.8850, "lon": 8.5850, "legs": ["w1"] },
+    { "name": "Girolata", "lat": 42.3492, "lon": 8.6131, "legs": ["w1"] },
+    { "name": "Saleccia", "lat": 42.7287, "lon": 9.2050, "legs": ["w1", "w2"] },
+    { "name": "Saint-Florent", "lat": 42.6858, "lon": 9.2815, "legs": ["w1", "w2"] },
+    { "name": "Cala Genovese", "lat": 42.9800, "lon": 9.4595, "legs": ["w2"] },
+    { "name": "Favone", "lat": 41.7742, "lon": 9.3986, "legs": ["w2"] },
+    { "name": "Villata", "lat": 41.6760, "lon": 9.3930, "legs": ["w2"] },
+    { "name": "I Due Mari (Caprera)", "lat": 41.2040, "lon": 9.4710, "legs": ["w2"] },
+    { "name": "Porto Palma", "lat": 41.1892, "lon": 9.4505, "legs": ["w2"] },
+    { "name": "Porto Istana", "lat": 40.8700, "lon": 9.6300, "legs": ["w2", "w3"] },
+    { "name": "Isola Piana (Tavolara)", "lat": 40.8850, "lon": 9.6680, "legs": ["w3"] },
+    { "name": "Budelli (Cavaliere)", "lat": 41.2830, "lon": 9.3620, "legs": ["w3"] },
+    { "name": "Campomoro", "lat": 41.6342, "lon": 8.8098, "legs": ["w3"] },
+    { "name": "Stagnolu", "lat": 41.4480, "lon": 9.0560, "legs": ["w3"] },
+    { "name": "Lavezzi (Cala di u Lioni)", "lat": 41.3392, "lon": 9.2544, "legs": ["w3"] }
+  ]
+}

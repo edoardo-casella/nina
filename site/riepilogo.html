@@ -73,6 +73,17 @@ section{padding:0 1.1rem 1.6rem}
 .cn{display:block;font-size:.86rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cr{display:block;font:600 .64rem/1.3 var(--mono);color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cr em{color:var(--gold);font-style:normal}
+/* giorno per giorno */
+.gg{width:100%;border-collapse:collapse;margin:.2rem 0 .9rem}
+.gg th{font:700 .58rem/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--soft);
+  text-align:left;padding:.3rem .45rem;border-bottom:1px solid var(--hair)}
+.gg td{padding:.42rem .45rem;border-bottom:1px dashed var(--hair);font-size:.86rem;vertical-align:top}
+.gg tr:last-child td{border-bottom:0}
+.gg .gd{white-space:nowrap;font:600 .74rem/1.6 var(--mono);color:var(--accent)}
+.gg .gnm{text-align:right;font:600 .8rem/1.6 var(--mono);color:var(--ink);white-space:nowrap}
+.gg .gr b{font-weight:600}
+.gg .gnote{display:block;font-size:.74rem;color:var(--soft);margin-top:.15rem}
+.gg .arr{color:var(--soft)}
 /* tappe & momenti */
 .ports{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
 .ports .pc{font:600 .72rem/1 var(--mono);color:var(--ink);border:1px solid var(--hair);border-radius:99px;
@@ -138,6 +149,19 @@ function crewCard(m) {
     <span class="cmid"><span class="cn">${esc(m.n)}</span>${sub ? `<span class="cr">${sub}</span>` : ""}</span></a>`;
 }
 
+const dshortDay = s => day(s).toLocaleDateString("it", { weekday: "short", day: "numeric" });
+function dayTable(days) {
+  if (!(days || []).length) return "";
+  const rows = days.map(r => {
+    const hops = [r.am, r.lunch].filter(Boolean).map(esc).join(` <span class="arr">→</span> `);
+    return `<tr><td class="gd">${esc(dshortDay(r.d))}</td>
+      <td class="gr">${hops ? hops + ` <span class="arr">→</span> ` : ""}<b>${esc(r.night)}</b>${r.note ? `<span class="gnote">${esc(r.note)}</span>` : ""}</td>
+      <td class="gnm">${r.nm != null ? r.nm : "—"}</td></tr>`;
+  }).join("");
+  return `<div class="ct">Il giro, giorno per giorno</div>
+    <table class="gg"><thead><tr><th>Giorno</th><th>Rotta</th><th style="text-align:right">nm</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
 function legBlock(leg, crew) {
   const people = legCrew(crew, leg);
   const nights = Math.round((day(leg.end) - day(leg.start)) / 864e5);
@@ -150,6 +174,7 @@ function legBlock(leg, crew) {
       <span class="db"><b>A bordo</b> ${people.length}</span>
     </div>
     <div class="mapbox">${mapImg(leg.img, "Rotta della " + leg.name)}<p class="mcap">Tocca la mappa per ingrandire.</p></div>
+    ${dayTable(leg.days)}
     <div class="ct">L'equipaggio</div>
     <div class="cgrid">${people.map(crewCard).join("")}</div>
     ${(leg.ports || []).length ? `<div class="ports">${leg.ports.map(p => `<span class="pc">⚓ ${esc(p)}</span>`).join("")}</div>` : ""}
