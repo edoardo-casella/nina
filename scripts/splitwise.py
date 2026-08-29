@@ -69,6 +69,14 @@ NAME_MAP = {
     116152688: "Giulia N",    # Giulia Nesi
     38104676: "Fede B",       # Federico Bobbio
     46833282: "Manlio",       # Manlio Larotonda
+    # equipaggio settimana 3, entrati in Nina III (verificati 2026-08-29)
+    19777243: "Riccardo B",   # Riccardo Brancaleoni
+    9372966: "Fede N",        # Federica Nandi
+    37124750: "Andrea A",     # Andrea Abbate
+    22334962: "Simona A",     # "Simona🐣" Aderniece
+    44764984: "Lavinia P",    # Maria Lavinia Pasetti
+    18210863: "Ilaria M",     # Ilaria Mascagni
+    3591024: "Gabri M",       # Gabriele Mascagni
 }
 
 

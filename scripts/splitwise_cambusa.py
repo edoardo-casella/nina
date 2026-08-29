@@ -41,9 +41,22 @@ import os, re, sys
 from splitwise import NAME_MAP, expenses
 from splitwise_extras import _post
 
-NINA1, NINA2 = 101493357, 101863026
+NINA1, NINA2, NINA3 = 101493357, 101863026, 101863028
 EDO, BERNARDO, VALENTINA = 20136237, 35630477, 104408857
 DATE = "2026-08-15"
+
+# --- Cessione dispensa Nina II -> Nina III (cambio equipaggio 22/8) ---------
+# Inventario rimanenze dettato da Edo il 29/8, valorizzato 219,70 (stima
+# supermercato verificata) + acqua forfait -> 230,00 TONDI (decisione Edo).
+# Stessa meccanica del passaggio Nina I->II: le rimanenze appartengono ai 9 di
+# Nina II (le spese erano gia' divise in 9 quote eque) -> storno accreditato
+# ai 9 in parti uguali, a carico di Edo, che incassa dagli 11 di Nina III.
+W3_CESSIONE = 230.00
+W3_DATE = "2026-08-22"
+NINA2_MEMBERS = [EDO, 62069699, 108699505, 31837892, BERNARDO, 55090008,
+                 116152688, 38104676, 46833282]      # i 9 (Antonio, Agata, Gine, Bianca, Giulia, Fede B, Manlio)
+NINA3_MEMBERS = [EDO, 19777243, 31837892, 37124750, 38104676, 116152688,
+                 3591024, 9372966, 22334962, 44764984, 18210863]  # gli 11 di Nina III
 
 T = 1655.00           # Spesa Dettori 1300 (Bernardo) + Market Dettori Primo 355 (Edo)
 ALCOL = 302.07        # alcolici del primo gruppo (fuori Valentina)
@@ -58,7 +71,12 @@ JB_CESSIONE = round(JB_T - JB_CONSUMO, 2)      # 255.00 = 85% del batch 20x15, a
 JB_COEFF = {VALE: 10, GIACOMO: 5.5, GINE: 3.5, EDO: 3.5}   # 22.5 punti; Edo e
 # Gine parificati (decisione 15/8 sera): la loro somma resta 7, Vale e Jack invariati
 
-MEMBERS = sorted(NAME_MAP)          # gli 11 di Nina I (NAME_MAP e' esattamente quel gruppo)
+# Gli 11 di Nina I, ESPLICITI: mai derivare da NAME_MAP (che copre anche i
+# gruppi delle settimane 2 e 3 — derivarla qui rispalmerebbe la cambusa di
+# Nina I su tutta la crociera; il 29/8 l'API l'ha rifiutato per membership,
+# per fortuna, ed e' nato questo commento).
+MEMBERS = sorted([EDO, 31837892, 35409668, BERNARDO, 55090008, 92858746,
+                  100252186, 14444843, 99385232, 16854700, VALENTINA])
 BEVITORI = [u for u in MEMBERS if u != VALENTINA]
 
 
@@ -106,8 +124,9 @@ def build() -> list[dict]:
          "cost": CESSIONE, "paid": e3p, "owed": {EDO: CESSIONE},
          "note": "Dispensa avanzata venduta all'equipaggio di Nina II: il valore torna ai partecipanti di Nina I; Edo lo incassa dal gruppo Nina II."},
         {"group": NINA2, "slug": "acquisto", "desc": "Acquisto cambusa da Nina I",
-         "cost": CESSIONE, "paid": {EDO: CESSIONE}, "owed": {EDO: CESSIONE},
-         "note": "Dispensa comprata dall'equipaggio di Nina I. Placeholder intestato a Edo: da ripartire sull'equipaggio quando entra nel gruppo."},
+         "cost": CESSIONE, "paid": {EDO: CESSIONE},
+         "owed": equal_shares(CESSIONE, NINA2_MEMBERS),
+         "note": "Dispensa comprata dall'equipaggio di Nina I, divisa fra i 9 (riparto fatto da Edo in app il 21/8; il piano rispecchia quello stato — NON tornare al placeholder)."},
     ]
     # --- John Barrille: consumo per coefficienti + cessione invenduto ---
     jb_owed = weighted_shares(JB_CONSUMO, JB_COEFF)
@@ -121,8 +140,40 @@ def build() -> list[dict]:
          "cost": JB_CESSIONE, "paid": jb2p, "owed": {EDO: JB_CESSIONE},
          "note": "L'invenduto di John Barrille (255 = 85% del batch 20x15) passa all'equipaggio di Nina II: il valore torna agli anticipatori (Edo 550, Giacomo 250); Edo lo incassa dal gruppo Nina II."},
         {"group": NINA2, "slug": "jb_acquisto", "desc": "Acquisto John Barrille da Nina I",
-         "cost": JB_CESSIONE, "paid": {EDO: JB_CESSIONE}, "owed": {EDO: JB_CESSIONE},
-         "note": "Invenduto John Barrille comprato dall'equipaggio di Nina I. Placeholder intestato a Edo: da ripartire sull'equipaggio quando entra nel gruppo."},
+         "cost": JB_CESSIONE, "paid": {EDO: JB_CESSIONE},
+         "owed": {EDO: 85.00, 62069699: 85.00, GINE: 85.00},
+         "note": "Invenduto John Barrille comprato da Nina I, diviso fra i 3 consumatori (Edo, Antonio, Gine — riparto fatto da Edo in app il 21/8; NON tornare al placeholder)."},
+    ]
+    # --- Cessione dispensa Nina II -> Nina III ---
+    plans += [
+        {"group": NINA2, "slug": "cessione_w3", "desc": "Cessione dispensa a Nina III (storno)",
+         "cost": W3_CESSIONE, "paid": equal_shares(W3_CESSIONE, NINA2_MEMBERS),
+         "owed": {EDO: W3_CESSIONE}, "date": W3_DATE,
+         "note": "Dispensa e bevande avanzate vendute all'equipaggio di Nina III (inventario del cambio equipaggio, valorizzato 230): il valore torna ai 9 di Nina II in parti uguali; Edo lo incassa dal gruppo Nina III."},
+        {"group": NINA3, "slug": "acquisto_w3", "desc": "Acquisto dispensa da Nina II",
+         "cost": W3_CESSIONE, "paid": {EDO: W3_CESSIONE},
+         "owed": equal_shares(W3_CESSIONE, NINA3_MEMBERS), "date": W3_DATE,
+         "note": "Dispensa e bevande comprate dall'equipaggio di Nina II (caffe', pasta, olio, passate, bibite... — inventario del 22/8, valore 230), divise fra tutti gli 11."},
+    ]
+    # --- Conguagli di chiusura della quota barca (29/8) ---
+    # Cifre decise da Edo sul foglio conti (posizioni per nucleo familiare;
+    # il dettaglio resta nel foglio locale, non nel repo). Controparte: Edo.
+    plans += [
+        # 772 = quota Bianca 2239 - credito personale Bernardo 1467 (dal registro:
+        # 15741 al broker - 12035 incassati - 2239 sua quota). La prima stesura
+        # (2239) ignorava il suo credito da tesoriere: corretta il 29/8 sera.
+        {"group": NINA1, "slug": "conguaglio_bernardo", "desc": "Conguaglio quota barca",
+         "cost": 772.00, "paid": {EDO: 772.00}, "owed": {BERNARDO: 772.00},
+         "date": "2026-08-29",
+         "note": "Conguaglio di chiusura della quota barca — riepilogo nel foglio conti del viaggio."},
+        {"group": NINA1, "slug": "conguaglio_giacomo", "desc": "Conguaglio quota barca (rimborso)",
+         "cost": 2008.00, "paid": {GIACOMO: 2008.00}, "owed": {EDO: 2008.00},
+         "date": "2026-08-29",
+         "note": "Rimborso di chiusura della quota barca — riepilogo nel foglio conti del viaggio."},
+        {"group": NINA1, "slug": "conguaglio_ginevra", "desc": "Conguaglio quota barca (rimborso)",
+         "cost": 767.00, "paid": {GINE: 767.00}, "owed": {EDO: 767.00},
+         "date": "2026-08-29",
+         "note": "Rimborso di chiusura della quota barca — riepilogo nel foglio conti del viaggio."},
     ]
     # invarianti contabili: ogni spesa quadrata, anticipi restituiti al centesimo
     for p in plans:
@@ -162,8 +213,8 @@ def main() -> None:
     write = "--write" in sys.argv
     name = dict(NAME_MAP)
 
-    have: dict[int, dict[str, dict]] = {NINA1: {}, NINA2: {}}
-    for g in (NINA1, NINA2):
+    have: dict[int, dict[str, dict]] = {NINA1: {}, NINA2: {}, NINA3: {}}
+    for g in (NINA1, NINA2, NINA3):
         for e in expenses(key, str(g)):
             for mk in re.findall(r"\[nina-cambusa:[a-z0-9_]+\]", e.get("details") or ""):
                 have[g][mk] = e
@@ -171,7 +222,7 @@ def main() -> None:
     created = 0
     for p in build():
         mark = f"[nina-cambusa:{p['slug']}]"
-        gname = "Nina I" if p["group"] == NINA1 else "Nina II"
+        gname = {NINA1: "Nina I", NINA2: "Nina II", NINA3: "Nina III"}[p["group"]]
         old = have[p["group"]].get(mark)
         same = old and float(old["cost"]) == p["cost"] and all(
             abs(float(next((u[f"{k}_share"] for u in old["users"]
@@ -189,7 +240,7 @@ def main() -> None:
             continue
         payload = {"cost": f"{p['cost']:.2f}", "description": p["desc"],
                    "details": p["note"] + " " + mark, "group_id": p["group"],
-                   "currency_code": "EUR", "date": DATE}
+                   "currency_code": "EUR", "date": p.get("date", DATE)}
         for i, u in enumerate(sorted(set(p["paid"]) | set(p["owed"]))):
             payload[f"users__{i}__user_id"] = u
             payload[f"users__{i}__paid_share"] = f"{p['paid'].get(u, 0):.2f}"
