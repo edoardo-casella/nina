@@ -63,6 +63,12 @@ NAME_MAP = {
     99385232: "Matilde C.",   # "mati" (l'altra Matilde)
     16854700: "Lorenzo C.",   # "Costanz" (Costanzo, il Presidente)
     104408857: "Vale F",      # Valentina Franchi
+    # equipaggio settimana 2, entrati in Nina II (verificati 2026-08-21)
+    62069699: "Antonio V",    # "Antonino"
+    108699505: "Agata V",
+    116152688: "Giulia N",    # Giulia Nesi
+    38104676: "Fede B",       # Federico Bobbio
+    46833282: "Manlio",       # Manlio Larotonda
 }
 
 
@@ -84,7 +90,13 @@ def conti_data(key: str, group_id: str) -> dict:
     spent = 0.0
     for e in exp:
         cost = float(e["cost"])
-        for u in e.get("users", []):
+        users = e.get("users", [])
+        # spesa NEUTRA (ognuno deve esattamente quanto ha pagato): pezza
+        # giustificativa o spesa personale, zero anticipo — fuori dalla cassa
+        if users and all(abs(float(u.get("paid_share") or 0)
+                             - float(u.get("owed_share") or 0)) <= 0.01 for u in users):
+            continue
+        for u in users:
             name = _display(u.get("user") or {})
             net[name] = round(net.get(name, 0.0)
                               + float(u.get("paid_share") or 0)
