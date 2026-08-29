@@ -1099,7 +1099,7 @@ def _desaturate(hexcol: str, toward=(214, 208, 195), amt=0.75) -> str:
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
-def render_nina_overview(kml_path: Path, polys, borders=None, emphasize: str | None = None, title: str | None = None, out_name: str = "nina-2026-overview.png"):
+def render_nina_overview(kml_path: Path, polys, borders=None, emphasize: str | None = None, title: str | None = None, out_name: str = "nina-2026-overview.png", subtitle: str | None = None):
     """Mappa d'insieme del giro previsto 2026 (Niña): le rotte di data/rotte-nina.kml
     (OVEST/EST/Giro corto), coi colori VERI del KML — non la palette generica
     kml_color(i,n) usata per l'archivio storico. Una sola immagine, non un
@@ -1132,7 +1132,8 @@ def render_nina_overview(kml_path: Path, polys, borders=None, emphasize: str | N
     canvas = Image.new("RGB", (total_w, total_h), PARCHMENT)
     d = ImageDraw.Draw(canvas)
     d.text((MARGIN, 30), title or "Niña — Il giro previsto, agosto 2026", font=_font(44, bold=True), fill=INK)
-    d.text((MARGIN, 30 + title_h - 46), "Stima: il meteo (soprattutto il Maestrale) decide davvero, giorno per giorno.",
+    d.text((MARGIN, 30 + title_h - 46),
+           subtitle or "Stima: il meteo (soprattutto il Maestrale) decide davvero, giorno per giorno.",
            font=_font(20), fill=(150, 60, 60))
 
     y = title_h + sub_h
@@ -1163,6 +1164,8 @@ def main():
     ap.add_argument("--source", default=None, help="KML sorgente alternativo (default: SRC_KML)")
     ap.add_argument("--nina-overview", action="store_true",
                     help="genera SOLO la mappa d'insieme del giro previsto 2026 da data/rotte-nina.kml (colori veri del KML) ed esce")
+    ap.add_argument("--nina-consuntivo", action="store_true",
+                    help="genera la mappa CONSUNTIVA del viaggio 2026 (overview + 3 leg settimanali) da data/rotte-nina-2026-consuntivo.kml ed esce")
     args = ap.parse_args()
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -1180,6 +1183,35 @@ def main():
         out3, size3 = render_nina_overview(src, polys, borders, emphasize="Rotta EST",
                                            title="Niña — Scenario EST (se Maestrale)", out_name="nina-2026-est.png")
         print(f"Overview -> {out3.name}  {size3[0]}x{size3[1]}")
+        return
+
+    if args.nina_consuntivo:
+        src = Path(args.source) if args.source else (ROOT / "data" / "rotte-nina-2026-consuntivo.kml")
+        if not src.exists():
+            sys.exit(f"ERRORE: KML sorgente non trovato: {src}")
+        # miglia per leg: haversine sui vertici del KML (traccia a scala di
+        # crociera, non log di navigazione: le nm vere possono essere di piu')
+        trips, _ = load_trips(src)
+        R_NM = 3440.065
+        for t in trips:
+            ll = np.radians(np.asarray(t["lonlat"], dtype=float))
+            dlon, dlat = np.diff(ll[:, 0]), np.diff(ll[:, 1])
+            a = np.sin(dlat / 2) ** 2 + np.cos(ll[:-1, 1]) * np.cos(ll[1:, 1]) * np.sin(dlon / 2) ** 2
+            nm = float(np.sum(2 * R_NM * np.arcsin(np.sqrt(a))))
+            print(f"  {t['name']}: {nm:.0f} nm")
+        polys = load_land()
+        borders = load_borders()
+        sub = "Consuntivo: le rotte vere delle tre settimane, come le abbiamo navigate."
+        out, size = render_nina_overview(src, polys, borders, title="Niña — Estate 2026, il giro fatto",
+                                         subtitle=sub, out_name="riepilogo-2026-overview.png")
+        print(f"Consuntivo -> {out.name}  {size[0]}x{size[1]}")
+        for i in (1, 2, 3):
+            key = f"Settimana {i}"
+            name = next((t["name"] for t in trips if key.lower() in t["name"].lower()), key)
+            out_i, size_i = render_nina_overview(src, polys, borders, emphasize=key,
+                                                 title=f"Niña — {name}", subtitle=sub,
+                                                 out_name=f"riepilogo-2026-w{i}.png")
+            print(f"Consuntivo -> {out_i.name}  {size_i[0]}x{size_i[1]}")
         return
 
     src = Path(args.source) if args.source else SRC_KML

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il giro fatto · Everywaves</title>
+<meta name="description" content="Il riepilogo del viaggio Estate 2026 di S/Y Nina: le rotte vere delle tre settimane, gli equipaggi, le miglia — com'è andata davvero.">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0A1424">
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap"></noscript>
+<style>
+:root{
+  --paper:#FBFDFF; --sea-1:#EEF4F9; --sea-2:#D8E4EE; --panel:#FFFFFF;
+  --ink:#0B1320; --soft:#3E556B; --hair:#C4D2DF; --accent:#006B9F; --gold:#B8860B; --gold-2:#E5C158; --verde:#0A7A43; --rosso:#C0392B;
+  --display:"IBM Plex Sans Condensed",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#070E1A; --sea-1:#101E33; --sea-2:#1C3552; --panel:#0C1728;
+  --ink:#DCE7F5; --soft:#8299B4; --hair:#22384F; --accent:#35C4E7; --gold:#E5C158; --gold-2:#FBE7A8; --verde:#2FBF71; --rosso:#E2536F;
+}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;border-left:1px solid var(--hair);border-right:1px solid var(--hair);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
+.back{font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.top .tag{font:700 .66rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+section{padding:0 1.1rem 1.6rem}
+/* hero (stesso idioma di diario.html / aneddoti.html) */
+.ahero{padding:1.6rem 1.1rem .2rem}
+.ahero .yr{font:700 .62rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.ahero h1{font:700 2.2rem/1.02 var(--display);letter-spacing:.01em;margin:.35rem 0 .2rem}
+.ahero .sub{color:var(--soft)}
+/* statistiche (idioma di arrivi.html) */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:1px;background:var(--hair);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:1.2rem}
+.stat{background:var(--panel);padding:.9rem .4rem;text-align:center}
+.stat b{display:block;font:700 1.5rem/1 var(--mono);color:var(--accent)}
+.stat i{display:block;font:700 .54rem/1.3 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-top:.4rem}
+/* mappe */
+.mapbox{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:.6rem;margin-top:1.2rem}
+.mapbox img{display:block;width:100%;height:auto;border-radius:3px;cursor:zoom-in}
+.mcap{text-align:center;color:var(--soft);font-size:.78rem;margin:.5rem 0 .1rem}
+.mmiss{border:1px dashed var(--hair);border-radius:3px;background:var(--sea-1);color:var(--soft);
+  font-size:.88rem;text-align:center;padding:2.2rem 1rem}
+/* pannello settimana (idioma "giorno" di diario.html) */
+.legp{position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--hair);
+  border-left:3px solid var(--gold);border-radius:4px;padding:1.05rem 1.1rem;margin:1.1rem 0}
+.legp .gnum{font:700 .6rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.legp h2{font:700 1.28rem/1.15 var(--display);margin:.3rem 0 .55rem}
+.gbadges{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem}
+.gbadges .db{font:600 .68rem/1 var(--mono);color:var(--soft);border:1px solid var(--hair);border-radius:99px;
+  padding:.32rem .6rem;background:var(--sea-1)}
+.gbadges .db b{font-weight:700;color:var(--ink)}
+.legp .mapbox{margin:.2rem 0 1rem;padding:.45rem}
+/* equipaggio del leg */
+.ct{font:700 .62rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);
+  border-top:1px dashed var(--hair);padding-top:.85rem;margin-bottom:.7rem}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.45rem}
+.cm{display:flex;align-items:center;gap:.55rem;padding:.4rem .5rem;border:1px solid var(--hair);
+  border-radius:9px;text-decoration:none;color:inherit;min-width:0;background:var(--paper)}
+.cm:hover .cn{color:var(--accent)}
+.cav{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;background:var(--sea-2)}
+.cav.ph{display:flex;align-items:center;justify-content:center;font:700 .9rem/1 var(--display);color:#fff;background:var(--accent)}
+.cmid{min-width:0}
+.cn{display:block;font-size:.86rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr{display:block;font:600 .64rem/1.3 var(--mono);color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr em{color:var(--gold);font-style:normal}
+/* tappe & momenti */
+.ports{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.ports .pc{font:600 .72rem/1 var(--mono);color:var(--ink);border:1px solid var(--hair);border-radius:99px;
+  padding:.34rem .62rem;background:var(--sea-1)}
+.hl{margin-top:.9rem;border-top:1px dashed var(--hair);padding-top:.8rem}
+.hl li{font-size:.92rem;line-height:1.6;margin:.3rem 0 .3rem 1.2rem}
+.note{background:var(--sea-1);border:1px dashed var(--hair);border-radius:4px;padding:.85rem 1rem;font-size:.86rem;color:var(--soft);margin-top:1.2rem}
+footer{display:block;padding:1.8rem 1.1rem 3rem;text-align:center;color:var(--soft);font-size:.85rem}
+footer a.pl{display:inline-block;margin-top:1rem;font:700 .66rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--soft);border:1px solid var(--hair);padding:.6rem 1rem;border-radius:99px}
+/* lightbox (idioma di rotta.html) */
+#lb{position:fixed;inset:0;z-index:80;background:rgba(3,7,14,.95);display:none;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:92vh;object-fit:contain;border-radius:4px}
+#lb .x{position:absolute;top:.8rem;right:1rem;color:#fff;font-size:1.8rem;background:none;border:0;cursor:pointer;line-height:1}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="back" href="index.html">‹ Plancia</a>
+  <span class="tag">🏁 Il giro fatto</span>
+</div></div>
+<main id="app"></main>
+
+<div id="lb" onclick="closeLB()"><button class="x" aria-label="chiudi" onclick="closeLB()">✕</button><img alt="Mappa ingrandita"></div>
+
+<script>
+const esc = s => String(s ?? "").replace(/[<>&]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+function openLB(src) { const lb = document.getElementById("lb"); lb.querySelector("img").src = src; lb.classList.add("on"); }
+function closeLB() { document.getElementById("lb").classList.remove("on"); }
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLB(); });
+
+const day = s => new Date(s + "T12:00");
+const dshort = s => day(s).toLocaleDateString("it", { day: "numeric", month: "short" });
+const drange = (a, b) => `${day(a).getDate()} → ${dshort(b)}`;
+
+// avatar + link profilo: stesso pattern di arrivi.html (id vero, mai slug del label)
+const slug = n => n.toLowerCase().replace(/\s+/g, "-");
+const cid = m => m.id || slug(m.n);
+const mhref = m => m.n.startsWith("Edo ") ? "skipper.html" : `membro.html#${cid(m)}`;
+function imgFail(el){ const s = document.createElement("span"); s.className = el.className + " ph"; s.textContent = el.dataset.i || "?"; el.replaceWith(s); }
+const avatar = m => `<img class="cav" src="${m.p || "crew/img/" + cid(m) + ".jpg"}" alt="" loading="lazy" data-i="${m.n[0]}" onerror="imgFail(this)">`;
+const RL = { skipper: "skipper", apprentice: "aspirante skipper", marinaio: "marinaio" };
+
+// se il PNG della mappa non c'e' ancora, al posto dell'immagine resta una nota
+function mapFail(el){ const d = document.createElement("div"); d.className = "mmiss"; d.textContent = "🗺️ Mappa in preparazione — arriva col prossimo aggiornamento."; el.replaceWith(d); }
+const mapImg = (src, alt) => `<img src="${src}" alt="${esc(alt)}" loading="lazy" onclick="openLB(this.src)" onerror="mapFail(this)">`;
+
+// chi era a bordo in un leg: sovrapposizione date imbarco/sbarco vs [start, end)
+function legCrew(crew, leg) {
+  return crew.filter(m => m.b < leg.end && m.l > leg.start)
+    .map(m => {
+      const partial = m.b > leg.start ? `dal ${dshort(m.b)}` : m.l < leg.end ? `fino al ${dshort(m.l)}` : null;
+      return { ...m, partial };
+    })
+    .sort((a, b) => (a.partial ? 1 : 0) - (b.partial ? 1 : 0) || a.n.localeCompare(b.n, "it"));
+}
+
+function crewCard(m) {
+  const role = m.r && m.r !== "crew" ? `<em>${RL[m.r] || m.r}</em>` : "";
+  const sub = [role, m.partial].filter(Boolean).join(" · ");
+  return `<a class="cm" href="${mhref(m)}" title="${m.n}: ${dshort(m.b)} → ${dshort(m.l)}">${avatar(m)}
+    <span class="cmid"><span class="cn">${esc(m.n)}</span>${sub ? `<span class="cr">${sub}</span>` : ""}</span></a>`;
+}
+
+function legBlock(leg, crew) {
+  const people = legCrew(crew, leg);
+  const nights = Math.round((day(leg.end) - day(leg.start)) / 864e5);
+  return `<div class="legp" id="${leg.id}">
+    <div class="gnum">${esc(leg.name)}</div>
+    <h2>${drange(leg.start, leg.end)}</h2>
+    <div class="gbadges">
+      <span class="db"><b>Miglia</b> ${leg.nm != null ? leg.nm + " nm" : "___"}</span>
+      <span class="db"><b>Notti</b> ${nights}</span>
+      <span class="db"><b>A bordo</b> ${people.length}</span>
+    </div>
+    <div class="mapbox">${mapImg(leg.img, "Rotta della " + leg.name)}<p class="mcap">Tocca la mappa per ingrandire.</p></div>
+    <div class="ct">L'equipaggio</div>
+    <div class="cgrid">${people.map(crewCard).join("")}</div>
+    ${(leg.ports || []).length ? `<div class="ports">${leg.ports.map(p => `<span class="pc">⚓ ${esc(p)}</span>`).join("")}</div>` : ""}
+    ${(leg.highlights || []).length ? `<ul class="hl">${leg.highlights.map(h => `<li>${esc(h)}</li>`).join("")}</ul>` : ""}
+  </div>`;
+}
+
+(async () => {
+  const app = document.getElementById("app");
+  try {
+    const [rj, aj] = await Promise.all([
+      fetch("data/riepilogo.json", { cache: "no-cache" }).then(r => r.json()),
+      fetch("data/arrivi.json", { cache: "no-cache" }).then(r => r.json()).catch(() => ({ crew: [] })),
+    ]);
+    const crew = aj.crew || [];
+    app.innerHTML =
+      `<div class="ahero"><div class="yr">Estate 2026 · consuntivo</div>
+        <h1>${esc(rj.title)}</h1>
+        <div class="sub">${esc(rj.sub || "")}</div></div>
+      <div class="stats">
+        <div class="stat"><b>${rj.totals && rj.totals.nm != null ? rj.totals.nm : "___"}</b><i>miglia</i></div>
+        <div class="stat"><b>${rj.totals && rj.totals.days || "___"}</b><i>giorni</i></div>
+        <div class="stat"><b>${crew.length || "___"}</b><i>persone</i></div>
+        <div class="stat"><b>${(rj.legs || []).length}</b><i>equipaggi</i></div>
+      </div>
+      <section>
+        <div class="mapbox">${mapImg(rj.overview_img, "Il giro completo, tre settimane")}<p class="mcap">Il giro completo — tocca per ingrandire.</p></div>
+        ${(rj.legs || []).map(l => legBlock(l, crew)).join("")}
+        <div class="note">Rotte dal registro di Google Earth dello skipper, a scala di crociera. Equipaggi dal registro arrivi &amp; partenze (nome + iniziale, come sulla plancia). Il racconto giorno per giorno è nel <a href="diario.html">diario di bordo</a>.</div>
+      </section>
+      <footer>Riepilogo del viaggio Estate 2026 di S/Y Niña.<br><a class="pl" href="index.html">‹ Torna alla Plancia Niña</a></footer>`;
+  } catch (e) {
+    app.innerHTML = `<section><p style="padding:2rem 0">Riepilogo non disponibile offline.</p></section>`;
+  }
+})();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

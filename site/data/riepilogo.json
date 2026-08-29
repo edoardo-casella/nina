@@ -1,0 +1,41 @@
+{
+  "_README": "Riepilogo CONSUNTIVO del viaggio Estate 2026. Scritto a mano (Edo/agente), MAI generato ne' toccato dalla CI (publish.py non lo conosce). Le miglia per leg arrivano da 'python scripts/render_routes.py --nina-consuntivo' (stampa a console); null = in attesa del KML consuntivo. I partecipanti NON stanno qui: riepilogo.html li deriva da arrivi.json per sovrapposizione date con ogni leg.",
+  "title": "Estate 2026 — il giro fatto",
+  "sub": "Corsica e La Maddalena, 8–29 agosto: tre settimane, tre equipaggi, un catamarano.",
+  "updated": "2026-08-29",
+  "period": { "start": "2026-08-08", "end": "2026-08-29" },
+  "totals": { "nm": 565, "days": 22 },
+  "overview_img": "img/riepilogo-2026-overview.png",
+  "legs": [
+    {
+      "id": "w1",
+      "name": "Settimana 1",
+      "start": "2026-08-08",
+      "end": "2026-08-15",
+      "img": "img/riepilogo-2026-w1.png",
+      "nm": 198,
+      "ports": [],
+      "highlights": []
+    },
+    {
+      "id": "w2",
+      "name": "Settimana 2",
+      "start": "2026-08-15",
+      "end": "2026-08-22",
+      "img": "img/riepilogo-2026-w2.png",
+      "nm": 210,
+      "ports": [],
+      "highlights": []
+    },
+    {
+      "id": "w3",
+      "name": "Settimana 3",
+      "start": "2026-08-22",
+      "end": "2026-08-29",
+      "img": "img/riepilogo-2026-w3.png",
+      "nm": 157,
+      "ports": [],
+      "highlights": []
+    }
+  ]
+}
