@@ -167,7 +167,7 @@ const ROUTE = {
   invitation: "baleares-18", ondine: "croazia-18", lohengrin: "cuba-19",
   alba: "sardegna-20", enya: "corsica-21", silkwave: "sardegna-21", "mars-planet": "sicilia-21",
   challenger: "baleari-22", isla: "sicilia-23", "all-in": "sporades-22",
-  cari: "seychelles-24", alexandros: "cyclades-2024"
+  cari: "seychelles-24", alexandros: "cyclades-2024", nina: "nina-26"
 };
 const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
 const flag1 = c => CC[c] ? `<img class="flag" src="skipper/flags/${CC[c]}.svg" alt="${esc(c)}" title="${esc(IT_NAME[c] || c)}">` : "";
@@ -213,7 +213,8 @@ function buildCrewMap(people) {
   CREWMAP = {}; CREWBYID = {};
   people.forEach(p => { CREWBYID[p.id] = p; CREWMAP[normName(p.name)] = p; });
   // alias nickname 2026 vs nome registro nei viaggi
-  [["gabrielem", "gabri-m"], ["federicob", "fede-b"]].forEach(([n, id]) => { if (CREWBYID[id]) CREWMAP[n] = CREWBYID[id]; });
+  [["gabrielem", "gabri-m"], ["federicob", "fede-b"], ["federican", "fede-n"],
+   ["valentinaf", "valentina-f"], ["manliol", "manlio"], ["isabellaw", "isabella"]].forEach(([n, id]) => { if (CREWBYID[id]) CREWMAP[n] = CREWBYID[id]; });
 }
 function crewChip(name, year) {
   const p = CREWMAP[normName(name)];
@@ -249,7 +250,7 @@ function histDays(p, year) {
 // paese cliccabile → paese.html#<iso>
 const countryLinks = c => parts(c).map(p => CC[p] ? `<a href="paese.html#${CC[p]}">${esc(IT_NAME[p] || p)}</a>` : esc(IT_NAME[p] || p)).join(" · ");
 // tag (portati dal dossier skipper): ritmo, esperienza, icona scafo
-const CAT = ["Lagoon", "Bali", "Fountain Pajot", "Fountain-Pajot"];
+const CAT = ["Lagoon", "Bali", "Fountain Pajot", "Fountain-Pajot", "Dufour 48"];
 const isCat = boat => CAT.some(b => (boat || "").startsWith(b.trim()));
 const ICON_MONO = `<svg class="bt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16l-2.3 4H6.3z"/><path d="M12 3.5v12.5"/><path d="M12 6l5.5 10H12"/></svg>`;
 const ICON_CAT = `<svg class="bt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16h6l-1.3 4H3.8z"/><path d="M15.5 16h6l-1.3 4h-3.4z"/><path d="M6 16h12"/><path d="M12 4v12"/><path d="M12 6l5 10H12"/></svg>`;
@@ -283,7 +284,7 @@ function tripPage(t, all) {
   const idx = all.findIndex(x => x.id === t.id);
   const prev = all[idx - 1], next = all[idx + 1];
   const zone = cleanZone(t.zone);
-  const cat = /Lagoon|Bali|Fountain|Pajot/i.test(t.boat) ? "catamarano" : "monoscafo";
+  const cat = /Lagoon|Bali|Fountain|Pajot|Dufour 48/i.test(t.boat) ? "catamarano" : "monoscafo";
   const avg = t.days ? Math.round(t.nm / t.days) : null;
   const pc = pace(avg), df = diffOf(t.zone, t.month);
   // Nei viaggi normali lo skipper viene aggiunto in testa; nei viaggi con
@@ -294,7 +295,7 @@ function tripPage(t, all) {
     : (t.crew.some(n => normName(n) === "edoc") ? t.crew : ["Edo C", ...t.crew]);
   const crew = crewAll.map(n => crewChip(n, t.year)).join("");
   const crewMarkup = grouped
-    ? `<p class="crewnote">Due equipaggi si sono alternati nello stesso itinerario.</p><div class="crewturns">${t.crew_groups.map(g => `<div class="crewturn"><h3>${esc(g.label)}<span>${g.days} giorni</span></h3><div class="crewgrid">${(g.crew || []).map(n => crewChip(n, t.year)).join("")}</div></div>`).join("")}</div>`
+    ? `<p class="crewnote">Gli equipaggi si sono alternati nello stesso itinerario.</p><div class="crewturns">${t.crew_groups.map(g => `<div class="crewturn"><h3>${esc(g.label)}<span>${g.days} giorni</span></h3><div class="crewgrid">${(g.crew || []).map(n => crewChip(n, t.year)).join("")}</div></div>`).join("")}</div>`
     : `<div class="crewgrid">${crew || "<span class='noph'>Equipaggio non disponibile.</span>"}</div>`;
   const galId = "g_" + t.id.replace(/-/g, "_");   // niente trattini: window.g_all_in valido (non g_all-in)
   // galleria compatta: clip CSS a 12 foto (8 su mobile) + "Mostra tutte"; il lightbox
@@ -354,8 +355,8 @@ function directory(all) {
       <span>${t.year} · ${t.nm} nm</span>${t.n_photos ? `<br><span class="pc">📷 ${t.n_photos} foto</span>` : ""}</div></a>`;
   }).join("");
   const withPh = all.filter(t => t.n_photos).length;
-  return `<div class="vhero"><div class="yr">Archivio · 2011–2024</div>
-    <h1>I viaggi</h1><div class="sub">25 crociere in 14 stagioni. ${withPh} con foto — le altre arriveranno.</div></div>
+  return `<div class="vhero"><div class="yr">Archivio · 2011–2026</div>
+    <h1>I viaggi</h1><div class="sub">26 crociere in 15 stagioni. ${withPh} con foto — le altre arriveranno.</div></div>
     <section>
     <h2>🌍 Tutte le rotte · 2011–2024</h2>
     <img class="route gmap" src="trips/routes/_global.png" alt="Tutte le rotte 2011–2024 · Mediterraneo, Cuba, Piccole Antille" loading="lazy" onclick="openLB([{src:'trips/routes/_global.png',people:[]}],0)">

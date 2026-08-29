@@ -133,7 +133,8 @@ def slugify(s): return re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", 
 GROUPS_FILE = os.path.join(ROOT, "data", "trip-crew-groups.json")
 group_cfg = json.loads(io.open(GROUPS_FILE, encoding="utf-8").read()).get("trips", {}) if os.path.exists(GROUPS_FILE) else {}
 crew_groups = {}  # trip numerico -> [{days, pids}], usato anche per la co-navigazione
-cid_alias = {"edoardo-c": "edo-c", "gabriele-m": "gabri-m", "federico-b": "fede-b"}
+cid_alias = {"edoardo-c": "edo-c", "gabriele-m": "gabri-m", "federico-b": "fede-b",
+             "federica-n": "fede-n", "manlio-l": "manlio", "isabella-w": "isabella"}
 pid_by_cid = {}
 for pid, pp in people.items():
     cid = slugify(pp["nom"] + " " + pp["cog"][:1])
@@ -146,11 +147,15 @@ for trip_slug, spec in group_cfg.items():
     t = matches[0]
     if spec.get("trip_id") is not None and int(spec["trip_id"]) != t:
         raise ValueError(f"Configurazione equipaggi {trip_slug}: trip_id {spec['trip_id']} non corrisponde a {t}")
-    parsed, person_days = [], collections.Counter()
+    parsed, person_days, person_nm = [], collections.Counter(), collections.Counter()
     for g in spec.get("groups", []):
         days = float(g["days"])
         if days <= 0:
             raise ValueError(f"{trip_slug}/{g.get('id')}: days deve essere positivo")
+        # "nm" opzionale: miglia REALI del turno (dal KML consuntivo). Se ogni turno
+        # del viaggio lo dichiara, le miglia personali sono la somma dei turni fatti
+        # invece del pro-rata sui giorni (un turno in porto vale 0, non nm/giorni).
+        g_nm = float(g["nm"]) if g.get("nm") is not None else None
         pids = []
         for cid in g.get("crew", []):
             if cid == "edo-c":
@@ -159,9 +164,13 @@ for trip_slug, spec in group_cfg.items():
             if pid is None:
                 raise ValueError(f"{trip_slug}/{g.get('id')}: crew id sconosciuto {cid}")
             pids.append(pid); person_days[pid] += days
-        parsed.append({"days": days, "pids": pids})
+            if g_nm is not None: person_nm[pid] += g_nm
+        parsed.append({"days": days, "nm": g_nm, "pids": pids})
     if abs(sum(g["days"] for g in parsed) - trip_days[t]) > 0.01:
         raise ValueError(f"{trip_slug}: la durata dei turni non coincide con i {trip_days[t]:g} giorni del viaggio")
+    nm_explicit = bool(parsed) and all(g["nm"] is not None for g in parsed)
+    if nm_explicit and abs(sum(g["nm"] for g in parsed) - trip_nm[t]) > 1:
+        raise ValueError(f"{trip_slug}: le miglia dei turni non coincidono con le {trip_nm[t]} nm del viaggio")
 
     # La configurazione e' autoritativa: rimuove anche partecipazioni spurie dal
     # registro (per Alba 2020, Giacomo B.) e aggiunge eventuali persone mancanti.
@@ -181,7 +190,7 @@ for trip_slug, spec in group_cfg.items():
                 part_nm[(t, pid)] = trip_nm[t] * excel_days / trip_days[t]
             continue
         part_days[(t, pid)] = days
-        part_nm[(t, pid)] = trip_nm[t] * days / trip_days[t]
+        part_nm[(t, pid)] = person_nm[pid] if nm_explicit else trip_nm[t] * days / trip_days[t]
     crew_groups[t] = parsed
 
 def pname(p):
@@ -223,7 +232,8 @@ def companions_for(p):  # con chi ha navigato di piu' (peso: n. viaggi condivisi
             shared_days, shared_nm = collections.Counter(), collections.Counter()
             for g in crew_groups[t]:
                 if p in g["pids"]:
-                    g_nm = trip_nm.get(t, 0) * g["days"] / trip_days[t] if trip_days.get(t) else 0
+                    g_nm = g["nm"] if g.get("nm") is not None else (
+                        trip_nm.get(t, 0) * g["days"] / trip_days[t] if trip_days.get(t) else 0)
                     for q in g["pids"]:
                         if q != p:
                             shared_days[q] += g["days"]; shared_nm[q] += g_nm
@@ -254,6 +264,8 @@ def companions_for(p):  # con chi ha navigato di piu' (peso: n. viaggi condivisi
     return res
 
 def match(name):  # voyage nickname -> registry pid
+    # mononimi del sito -> nome a due parole per il match sul registro
+    name = {"Manlio": "Manlio L", "Isabella": "Isabella W"}.get(name.strip(), name)
     parts = name.strip().split()
     if len(parts) < 2: return None
     first = norm(parts[0]); si = norm(parts[-1])[:1]
@@ -323,7 +335,7 @@ TOTAL_DAYS = round(sum(trip_days.values())); TOTAL_NM = sum(trip_nm.values())  #
 for m in members:
     nm = m["name"]
     if nm.split()[0].lower() in ("edo", "edoardo"):
-        st = {"trips": 25, "days": TOTAL_DAYS, "nm": TOTAL_NM, "first": 2011, "last": 2024}; me = True
+        st = {"trips": 26, "days": TOTAL_DAYS, "nm": TOTAL_NM, "first": 2011, "last": 2026}; me = True
         tl = trips_list_for(list(trip_year.keys()))   # lo skipper c'e' su tutti i viaggi
     else:
         pid = match(nm); me = False
@@ -411,7 +423,7 @@ for x in out:
         x["photo"] = "crew/img/" + x["id"] + ".jpg"; n_avatar += 1
 
 out.sort(key=lambda x: (-x["days"], -x["trips"]))
-data = {"generated_at": "2026-07-11",
+data = {"generated_at": "2026-08-29",
         "ranks": {rid: lab for ladder in GRADES.values() for _, rid, lab in ladder},
         "n_total": len(out),
         "people": out}

@@ -321,7 +321,7 @@ const MONTHS = { January: "gennaio", February: "febbraio", March: "marzo", April
   May: "maggio", June: "giugno", July: "luglio", August: "agosto", September: "settembre",
   October: "ottobre", November: "novembre", December: "dicembre" };
 const OCEAN = new Set(["Cuba", "Saint Vincent", "Saint Lucia", "Seychelles"]);
-const CAT = ["Lagoon", "Bali", "Fountain Pajot", "Fountain-Pajot", "Bali "];
+const CAT = ["Lagoon", "Bali", "Fountain Pajot", "Fountain-Pajot", "Bali ", "Dufour 48"];
 
 const parts = c => (c || "").split(/[-&]/).map(x => x.trim()).filter(Boolean);
 // miglia attribuite a un singolo paese: sui viaggi multi-paese usa la ripartizione
@@ -461,7 +461,7 @@ function diffOf(zone, month) {
   return { ...DIFF[lvl], why };
 }
 
-const tslug = s => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const tslug = s => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 function tripsHTML(d) {
   const oavg = d.totals.days ? Math.round(d.totals.nm / d.totals.days) : null;
   const mi = m => { const i = Object.keys(MONTHS).indexOf(m); return i < 0 ? 99 : i; };

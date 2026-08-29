@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-11",
+ "generated_at": "2026-08-29",
  "trips": [
   {
    "id": "nemo",
@@ -4207,6 +4207,105 @@
    "story": {
     "title": "Il grande screzio",
     "html": "Seychelles, la crociera più tumultuosa di tutte &mdash; e non per colpa del mare. Il viaggio della discordia, con il celebre <a class='plink' href='aneddoti.html#grande-screzio'>grande screzio</a> a <b>Grande S&oelig;ur</b> tra <a class='plink' href='membro.html#ginevra-l'>Ginevra L.</a> e <a class='plink' href='membro.html#bernardo-b'>Bernardo</a>. Lieto fine un anno dopo, come racconta il dossier."
+   }
+  },
+  {
+   "id": "nina",
+   "year": 2026,
+   "month": "August",
+   "country": "Italy - France",
+   "zone": "Sardegna & Corsica",
+   "boat": "Dufour 48",
+   "name": "Niña",
+   "nm": 565,
+   "days": 21.0,
+   "crew": [
+    "Agata V",
+    "Andrea A",
+    "Antonio V",
+    "Bernardo B",
+    "Bianca M",
+    "Fede B",
+    "Fede N",
+    "Gabri M",
+    "Giacomo N",
+    "Ginevra L",
+    "Giulia N",
+    "Ilaria C.",
+    "Ilaria M",
+    "Isabella",
+    "Lavinia P",
+    "Lorenzo C.",
+    "Manlio",
+    "Matilde C.",
+    "Matilde M",
+    "Riccardo B",
+    "Simona A",
+    "Vale F"
+   ],
+   "crew_groups": [
+    {
+     "id": "w1",
+     "label": "Settimana 1 · 8–15 agosto",
+     "days": 7,
+     "crew": [
+      "Edo C",
+      "Ginevra L",
+      "Bernardo B",
+      "Bianca M",
+      "Giacomo N",
+      "Matilde M",
+      "Matilde C.",
+      "Lorenzo C.",
+      "Ilaria C.",
+      "Vale F",
+      "Isabella"
+     ]
+    },
+    {
+     "id": "w2",
+     "label": "Settimana 2 · 15–22 agosto",
+     "days": 7,
+     "crew": [
+      "Edo C",
+      "Ginevra L",
+      "Bernardo B",
+      "Bianca M",
+      "Giulia N",
+      "Fede B",
+      "Manlio",
+      "Antonio V",
+      "Agata V"
+     ]
+    },
+    {
+     "id": "w3",
+     "label": "Settimana 3 · 22–29 agosto",
+     "days": 7,
+     "crew": [
+      "Edo C",
+      "Ginevra L",
+      "Giulia N",
+      "Fede B",
+      "Riccardo B",
+      "Fede N",
+      "Andrea A",
+      "Simona A",
+      "Gabri M",
+      "Ilaria M",
+      "Lavinia P"
+     ]
+    }
+   ],
+   "n_photos": 0,
+   "photos": [],
+   "nm_by_country": {
+    "Italy": 194,
+    "France": 371
+   },
+   "story": {
+    "title": "Tre settimane, tre equipaggi",
+    "html": "La crociera più lunga del registro: ventun notti e 565 miglia tra <b>Sardegna</b> e <b>Corsica</b>, con tre equipaggi che si passano il testimone a <b>Bastia</b> e a <b>Porto Rotondo</b> &mdash; ventitré nomi a bordo, mai così tanti. Prima settimana in senso antiorario lungo la costa ovest corsa fino al <b>Cap Corse</b>, seconda in discesa lungo la costa orientale, ultima tra le <b>Bocche di Bonifacio</b> e La Maddalena. Unica a bordo dall'inizio alla fine, con lo skipper, <a class='plink' href='membro.html#ginevra-l'>Ginevra L.</a> Le rotte vere sono nel <a href='riepilogo.html'>riepilogo del viaggio</a>, la cronaca nel <a href='diario.html'>diario di bordo</a>."
    }
   }
  ]

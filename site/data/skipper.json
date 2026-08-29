@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-23T00:03:19",
+  "generated_at": "2026-08-29T22:37:35",
   "name": "Edoardo C.",
   "role": "Skipper",
   "instagram": "https://www.instagram.com/edoardocasella/",
   "totals": {
-    "trips": 25,
-    "nm": 7735,
-    "days": 290.5,
-    "seasons": 14,
+    "trips": 26,
+    "nm": 8300,
+    "days": 311.5,
+    "seasons": 15,
     "first_year": 2011,
-    "last_year": 2024,
+    "last_year": 2026,
     "countries": [
       "Croazia",
       "Cuba",
@@ -23,13 +23,14 @@
       "Turkey"
     ],
     "n_countries": 10,
-    "n_boats": 18
+    "n_boats": 19
   },
   "boats": [
     "Bali 4.1",
     "Bavaria 50",
     "Bavaria 51 Cruiser",
     "Cyclades 50",
+    "Dufour 48",
     "Dufour GL 500",
     "Fountain Pajot 40",
     "Gib Sea 45",
@@ -341,6 +342,21 @@
       "boat_name": "Alexandros",
       "nm": 230,
       "days": 6.5
+    },
+    {
+      "year": 2026,
+      "month": "August",
+      "weeks": "3 wk",
+      "country": "Italy - France",
+      "zone": "Sardegna & Corsica",
+      "boat": "Dufour 48",
+      "boat_name": "Niña",
+      "nm": 565,
+      "days": 21.0,
+      "nm_by_country": {
+        "Italy": 194,
+        "France": 371
+      }
     }
   ],
   "gallery": [

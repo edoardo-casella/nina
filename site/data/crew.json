@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-11",
+ "generated_at": "2026-08-29",
  "ranks": {
   "mozzo": "Mozzo",
   "marinaio": "Marinaio",
@@ -20,11 +20,11 @@
   {
    "id": "edo-c",
    "name": "Edo C",
-   "trips": 25,
-   "days": 290,
-   "nm": 7735,
+   "trips": 26,
+   "days": 312,
+   "nm": 8300,
    "first": 2011,
-   "last": 2024,
+   "last": 2026,
    "rank": "ammiraglio",
    "rank_label": "Ammiraglio",
    "track": "comandante",
@@ -279,6 +279,16 @@
      "nm": 140,
      "days": 15,
      "pdays": 15
+    },
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 21
     }
    ],
    "crew2026": {
@@ -453,11 +463,11 @@
   {
    "id": "matilde-c",
    "name": "Matilde C.",
-   "trips": 9,
-   "days": 136,
-   "nm": 3468,
+   "trips": 10,
+   "days": 143,
+   "nm": 3666,
    "first": 2011,
-   "last": 2019,
+   "last": 2026,
    "rank": "tenente",
    "rank_label": "Tenente di vascello",
    "track": "marinaio",
@@ -551,6 +561,17 @@
      "nm": 390,
      "days": 11,
      "pdays": 11
+    },
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 198
     }
    ],
    "crew2026": {
@@ -588,9 +609,9 @@
     {
      "id": "edo-c",
      "name": "Edo C",
-     "trips": 9,
-     "days": 136,
-     "nm": 3468
+     "trips": 10,
+     "days": 143,
+     "nm": 3666
     },
     {
      "id": "margherita-c",
@@ -619,6 +640,13 @@
      "trips": 3,
      "days": 59,
      "nm": 1213
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 3,
+     "days": 46,
+     "nm": 1036
     },
     {
      "id": "riccardo-b",
@@ -652,8 +680,8 @@
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 2,
-     "days": 25,
-     "nm": 709
+     "days": 31,
+     "nm": 848
     },
     {
      "id": "simona-b",
@@ -684,18 +712,18 @@
      "nm": 661
     },
     {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 2,
-     "days": 20,
-     "nm": 429
-    },
-    {
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14,
-     "nm": 324
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
     },
     {
      "id": "michele-m",
@@ -712,11 +740,60 @@
      "nm": 271
     },
     {
-     "id": "belinda-b",
-     "name": "Belinda B.",
+     "id": "ginevra-l",
+     "name": "Ginevra L",
      "trips": 1,
-     "days": 10,
-     "nm": 232
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
     }
    ],
    "photo": "crew/img/matilde-c.jpg"
@@ -887,14 +964,21 @@
      "name": "Riccardo B",
      "trips": 3,
      "days": 29,
-     "nm": 914
+     "nm": 925
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 39,
+     "nm": 838
     },
     {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 2,
-     "days": 25,
-     "nm": 709
+     "days": 31,
+     "nm": 848
     },
     {
      "id": "luca-b",
@@ -909,13 +993,6 @@
      "trips": 2,
      "days": 23,
      "nm": 785
-    },
-    {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 2,
-     "days": 20,
-     "nm": 429
     },
     {
      "id": "silvano-b",
@@ -935,8 +1012,15 @@
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14,
-     "nm": 324
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
     },
     {
      "id": "gabri-m",
@@ -951,16 +1035,423 @@
      "trips": 1,
      "days": 11,
      "nm": 390
+    }
+   ],
+   "photo": "crew/img/margherita-c.jpg"
+  },
+  {
+   "id": "bernardo-b",
+   "name": "Bernardo B",
+   "trips": 10,
+   "days": 123,
+   "nm": 3048,
+   "first": 2011,
+   "last": 2026,
+   "rank": "cap-vascello",
+   "rank_label": "Capitano di vascello",
+   "track": "comandante",
+   "ext_days": 55,
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia",
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20,
+     "pdays": 20
+    },
+    {
+     "id": "natfika",
+     "year": 2012,
+     "zone": "Cicladi",
+     "country": "Greece",
+     "boat": "Bavaria 50",
+     "nm": 189,
+     "days": 6,
+     "pdays": 6
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cicladi e Dodecaneso",
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19,
+     "pdays": 19
+    },
+    {
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 252,
+     "days": 13,
+     "pdays": 13
+    },
+    {
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12,
+     "pdays": 12
+    },
+    {
+     "id": "enya",
+     "year": 2021,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 430,
+     "days": 12,
+     "pdays": 12
+    },
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicilia ed Egadi",
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6,
+     "pdays": 6
+    },
+    {
+     "id": "alexandros",
+     "year": 2024,
+     "zone": "Cicladi",
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 230,
+     "days": 6,
+     "pdays": 6
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Seychelles",
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15,
+     "pdays": 15
+    },
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 13,
+     "pnm": 408
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-21",
+    "role": "skipper",
+    "photo": "crew/img/bernardo-b.jpg"
+   },
+   "photos": [
+    {
+     "src": "trips/img/stephanie/01.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
+    },
+    {
+     "src": "trips/img/stephanie/02.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
+    },
+    {
+     "src": "trips/img/stephanie/06.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
+    },
+    {
+     "src": "trips/img/isla/01.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    }
+   ],
+   "bio": {
+    "epithet": "Meccanico troubleshooter",
+    "html": "Grande meccanico e uomo dei motori: quando devi entrare in porto con vento forte, o quando a bordo c'è un guaio tecnico, è lui l'uomo indispensabile. A tavola predilige il non-salutare e le scofanate di pasta. Incrocia nel Mediterraneo con sede a <b>Piombino</b>, sulla fregata &laquo;Bad Boys&raquo; insieme al socio: una barca che sembra uscita dagli anni Ottanta, sempre &quot;ferma&quot; solo perché i guasti lui e il socio li risolvono direttamente in mare &mdash; ed è così che è diventato <b>&laquo;Il Meccanico Tuttofare&raquo;</b>, un meccanico vero. Difetti pochi, se non quando si impunta; e la tendenza a farsi distrarre dalle fidanzate. Uno dei migliori compagni di equipaggio che si possano avere a bordo."
+   },
+   "tags": [
+    "Meccanico troubleshooter",
+    "Fregata Bad Boys",
+    "Senatore di bordo",
+    "Barman",
+    "DJ di bordo"
+   ],
+   "nicks": [
+    "Berna",
+    "Berni"
+   ],
+   "sex": "m",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 10,
+     "days": 123,
+     "nm": 3048
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 4,
+     "days": 45,
+     "nm": 1131
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 4,
+     "days": 41,
+     "nm": 859
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 4,
+     "days": 40,
+     "nm": 869
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 3,
+     "days": 46,
+     "nm": 1036
+    },
+    {
+     "id": "gabriele-b",
+     "name": "Gabriele B.",
+     "trips": 2,
+     "days": 39,
+     "nm": 838
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 2,
+     "days": 39,
+     "nm": 838
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 2,
+     "days": 39,
+     "nm": 838
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 2,
+     "days": 39,
+     "nm": 838
     },
     {
      "id": "belinda-b",
      "name": "Belinda B.",
+     "trips": 2,
+     "days": 33,
+     "nm": 715
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 2,
+     "days": 27,
+     "nm": 570
+    },
+    {
+     "id": "jennifer-s",
+     "name": "Jennifer S.",
+     "trips": 2,
+     "days": 27,
+     "nm": 570
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 2,
+     "days": 12,
+     "nm": 301
+    },
+    {
+     "id": "chiara-f",
+     "name": "Chiara F.",
      "trips": 1,
-     "days": 10,
-     "nm": 232
+     "days": 13,
+     "nm": 252
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 13,
+     "nm": 408
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "tonino-l",
+     "name": "Tonino L.",
+     "trips": 1,
+     "days": 6,
+     "nm": 230
+    },
+    {
+     "id": "angela-k",
+     "name": "Angela K.",
+     "trips": 1,
+     "days": 6,
+     "nm": 230
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 6,
+     "nm": 91
+    },
+    {
+     "id": "mirco-l",
+     "name": "Mirco L.",
+     "trips": 1,
+     "days": 6,
+     "nm": 189
+    },
+    {
+     "id": "rebecca-l",
+     "name": "Rebecca L.",
+     "trips": 1,
+     "days": 6,
+     "nm": 189
+    },
+    {
+     "id": "fabiana-f",
+     "name": "Fabiana F.",
+     "trips": 1,
+     "days": 6,
+     "nm": 189
+    },
+    {
+     "id": "martina-r",
+     "name": "Martina R.",
+     "trips": 1,
+     "days": 6,
+     "nm": 189
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
     }
-   ],
-   "photo": "crew/img/margherita-c.jpg"
+   ]
   },
   {
    "id": "claudio-c",
@@ -1127,11 +1618,18 @@
      "nm": 1213
     },
     {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 39,
+     "nm": 838
+    },
+    {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 2,
-     "days": 25,
-     "nm": 709
+     "days": 31,
+     "nm": 848
     },
     {
      "id": "cecilia-r",
@@ -1139,13 +1637,6 @@
      "trips": 2,
      "days": 23,
      "nm": 736
-    },
-    {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 2,
-     "days": 20,
-     "nm": 429
     },
     {
      "id": "silvano-b",
@@ -1159,7 +1650,7 @@
      "name": "Riccardo B",
      "trips": 2,
      "days": 18,
-     "nm": 524
+     "nm": 535
     },
     {
      "id": "simona-b",
@@ -1172,8 +1663,15 @@
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14,
-     "nm": 324
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
     },
     {
      "id": "rebecca-b",
@@ -1188,13 +1686,6 @@
      "trips": 1,
      "days": 12,
      "nm": 395
-    },
-    {
-     "id": "belinda-b",
-     "name": "Belinda B.",
-     "trips": 1,
-     "days": 10,
-     "nm": 232
     }
    ],
    "photo": "crew/img/claudio-c.jpg"
@@ -1344,11 +1835,18 @@
      "nm": 1213
     },
     {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 39,
+     "nm": 838
+    },
+    {
      "id": "nicola-r",
      "name": "Nicola R.",
      "trips": 2,
-     "days": 25,
-     "nm": 709
+     "days": 31,
+     "nm": 848
     },
     {
      "id": "cecilia-r",
@@ -1356,13 +1854,6 @@
      "trips": 2,
      "days": 23,
      "nm": 736
-    },
-    {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 2,
-     "days": 20,
-     "nm": 429
     },
     {
      "id": "silvano-b",
@@ -1376,7 +1867,7 @@
      "name": "Riccardo B",
      "trips": 2,
      "days": 18,
-     "nm": 524
+     "nm": 535
     },
     {
      "id": "simona-b",
@@ -1389,8 +1880,15 @@
      "id": "filippo-r",
      "name": "Filippo R.",
      "trips": 1,
-     "days": 14,
-     "nm": 324
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
     },
     {
      "id": "rebecca-b",
@@ -1405,91 +1903,82 @@
      "trips": 1,
      "days": 12,
      "nm": 395
-    },
-    {
-     "id": "belinda-b",
-     "name": "Belinda B.",
-     "trips": 1,
-     "days": 10,
-     "nm": 232
     }
    ],
    "photo": "crew/img/paola-c.jpg"
   },
   {
-   "id": "bernardo-b",
-   "name": "Bernardo B",
-   "trips": 9,
-   "days": 91,
-   "nm": 2231,
-   "first": 2011,
-   "last": 2024,
-   "rank": "cap-vascello",
-   "rank_label": "Capitano di vascello",
-   "track": "comandante",
-   "ext_days": 55,
+   "id": "riccardo-b",
+   "name": "Riccardo B",
+   "trips": 8,
+   "days": 72,
+   "nm": 2017,
+   "first": 2015,
+   "last": 2026,
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
+   "abilitato": true,
    "trips_list": [
     {
-     "id": "camelia",
-     "year": 2011,
-     "zone": "Croazia",
-     "country": "Croazia",
-     "boat": "Cyclades 50",
-     "nm": 463,
-     "days": 20,
-     "pdays": 10,
-     "pnm": 232
+     "id": "blue-bird",
+     "year": 2015,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 253,
+     "days": 12,
+     "pdays": 12
     },
     {
-     "id": "natfika",
-     "year": 2012,
-     "zone": "Cicladi",
-     "country": "Greece",
-     "boat": "Bavaria 50",
-     "nm": 189,
+     "id": "trocha",
+     "year": 2015,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Jeanneau 53",
+     "nm": 395,
+     "days": 12,
+     "pdays": 12
+    },
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadine",
+     "country": "Saint Vincent - France - Saint Lucia",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11,
+     "pdays": 11
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11,
+     "pdays": 11
+    },
+    {
+     "id": "silkwave",
+     "year": 2021,
+     "zone": "Sardegna",
+     "country": "Italy",
+     "boat": "Bavaria 51 Cruiser",
+     "nm": 320,
      "days": 6,
      "pdays": 6
     },
     {
-     "id": "stephanie",
-     "year": 2012,
-     "zone": "Cicladi e Dodecaneso",
-     "country": "Greece-Turkey",
-     "boat": "Sun Odyssey 54",
-     "nm": 375,
-     "days": 19,
-     "pdays": 10,
-     "pnm": 197
-    },
-    {
-     "id": "aquarela",
-     "year": 2016,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Sun Odyssey 49",
-     "nm": 252,
-     "days": 13,
-     "pdays": 13
-    },
-    {
-     "id": "invitation",
-     "year": 2018,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Dufour GL 500",
-     "nm": 470,
-     "days": 12,
-     "pdays": 12
-    },
-    {
-     "id": "enya",
+     "id": "mars-planet",
      "year": 2021,
-     "zone": "Sardegna e Corsica",
-     "country": "Italy - France",
-     "boat": "Bali 4.1",
-     "nm": 430,
-     "days": 12,
-     "pdays": 12
+     "zone": "Sicilia ed Egadi",
+     "country": "Italy",
+     "boat": "Oceanis 48",
+     "nm": 140,
+     "days": 6,
+     "pdays": 6
     },
     {
      "id": "isla",
@@ -1502,254 +1991,298 @@
      "pdays": 6
     },
     {
-     "id": "alexandros",
-     "year": 2024,
-     "zone": "Cicladi",
-     "country": "Greece",
-     "boat": "Lagoon 42",
-     "nm": 230,
-     "days": 6,
-     "pdays": 6
-    },
-    {
-     "id": "cari",
-     "year": 2024,
-     "zone": "Seychelles",
-     "country": "Seychelles",
-     "boat": "Lagoon 46",
-     "nm": 140,
-     "days": 15,
-     "pdays": 15
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 157
     }
    ],
    "crew2026": {
-    "board": "2026-08-08",
-    "leave": "2026-08-21",
-    "role": "skipper",
-    "photo": "crew/img/bernardo-b.jpg"
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
+    "role": "apprentice"
    },
    "photos": [
     {
-     "src": "trips/img/stephanie/01.jpg",
-     "trip_id": "stephanie",
-     "caption": "Grecia Cicladi-Dodecaneso 2012"
+     "src": "trips/img/blue-bird/02.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
     },
     {
-     "src": "trips/img/stephanie/02.jpg",
-     "trip_id": "stephanie",
-     "caption": "Grecia Cicladi-Dodecaneso 2012"
+     "src": "trips/img/blue-bird/03.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
     },
     {
-     "src": "trips/img/stephanie/06.jpg",
-     "trip_id": "stephanie",
-     "caption": "Grecia Cicladi-Dodecaneso 2012"
+     "src": "trips/img/blue-bird/05.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
+    },
+    {
+     "src": "trips/img/trocha/06.jpg",
+     "trip_id": "trocha",
+     "caption": "Baleari 2015"
+    },
+    {
+     "src": "trips/img/trocha/07.jpg",
+     "trip_id": "trocha",
+     "caption": "Baleari 2015"
+    },
+    {
+     "src": "trips/img/sorbe/04.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/07.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/08.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/09.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/silkwave/01.jpg",
+     "trip_id": "silkwave",
+     "caption": "Sardegna 2021"
     },
     {
      "src": "trips/img/isla/01.jpg",
      "trip_id": "isla",
      "caption": "Sicilia 2023"
+    },
+    {
+     "src": "trips/img/isla/02.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
     }
    ],
    "bio": {
-    "epithet": "Meccanico troubleshooter",
-    "html": "Grande meccanico e uomo dei motori: quando devi entrare in porto con vento forte, o quando a bordo c'è un guaio tecnico, è lui l'uomo indispensabile. A tavola predilige il non-salutare e le scofanate di pasta. Incrocia nel Mediterraneo con sede a <b>Piombino</b>, sulla fregata &laquo;Bad Boys&raquo; insieme al socio: una barca che sembra uscita dagli anni Ottanta, sempre &quot;ferma&quot; solo perché i guasti lui e il socio li risolvono direttamente in mare &mdash; ed è così che è diventato <b>&laquo;Il Meccanico Tuttofare&raquo;</b>, un meccanico vero. Difetti pochi, se non quando si impunta; e la tendenza a farsi distrarre dalle fidanzate. Uno dei migliori compagni di equipaggio che si possano avere a bordo."
+    "epithet": "Il conviviale",
+    "html": "Parlerebbe anche con i muri, e in barca si fa in quattro: conviviale con tutti, abilissimo timoniere e ottimo uomo-rana di supporto. Ha preso la patente nautica e da poco ha iniziato la sua carriera da comandante. Molto goloso, amante degli sfizi e delle birrette &mdash; tanto che <a class='plink' href='membro.html#andrea-a'>Andrea A.</a> gli rimprovera le troppe lattine lasciate mezze aperte in giro."
    },
    "tags": [
-    "Meccanico troubleshooter",
-    "Fregata Bad Boys",
-    "Senatore di bordo",
-    "Barman",
-    "DJ di bordo"
+    "Conviviale",
+    "Timoniere",
+    "Aspirante comandante",
+    "Goloso",
+    "Senatore di bordo"
    ],
    "nicks": [
-    "Berna",
-    "Berni"
+    "Branca"
    ],
    "sex": "m",
    "companions": [
     {
      "id": "edo-c",
      "name": "Edo C",
-     "trips": 9,
-     "days": 91,
-     "nm": 2231
+     "trips": 8,
+     "days": 72,
+     "nm": 2017
     },
     {
-     "id": "sofia-m",
-     "name": "Sofia M.",
-     "trips": 4,
-     "days": 45,
-     "nm": 1131
-    },
-    {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
+     "id": "matilde-c",
+     "name": "Matilde C.",
      "trips": 3,
-     "days": 33,
-     "nm": 661
+     "days": 34,
+     "nm": 1056
     },
     {
-     "id": "ginevra-l",
-     "name": "Ginevra L",
+     "id": "luca-b",
+     "name": "Luca B.",
      "trips": 3,
-     "days": 27,
-     "nm": 461
+     "days": 34,
+     "nm": 1056
     },
     {
-     "id": "pietro-c",
-     "name": "Pietro C.",
-     "trips": 2,
-     "days": 27,
-     "nm": 570
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 3,
+     "days": 34,
+     "nm": 1056
     },
     {
-     "id": "jennifer-s",
-     "name": "Jennifer S.",
-     "trips": 2,
-     "days": 27,
-     "nm": 570
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 3,
+     "days": 29,
+     "nm": 925
     },
     {
-     "id": "belinda-b",
-     "name": "Belinda B.",
-     "trips": 2,
-     "days": 23,
-     "nm": 484
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 3,
+     "days": 29,
+     "nm": 806
     },
     {
-     "id": "gabriele-b",
-     "name": "Gabriele B.",
-     "trips": 2,
-     "days": 20,
-     "nm": 429
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 3,
+     "days": 29,
+     "nm": 806
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 3,
+     "days": 29,
+     "nm": 818
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 3,
+     "days": 29,
+     "nm": 818
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 3,
+     "days": 25,
+     "nm": 730
     },
     {
      "id": "claudio-c",
      "name": "Claudio C.",
      "trips": 2,
-     "days": 20,
-     "nm": 429
+     "days": 18,
+     "nm": 535
     },
     {
      "id": "paola-c",
      "name": "Paola C.",
      "trips": 2,
-     "days": 20,
-     "nm": 429
+     "days": 18,
+     "nm": 535
     },
     {
-     "id": "margherita-c",
-     "name": "Margherita C.",
+     "id": "ginevra-l",
+     "name": "Ginevra L",
      "trips": 2,
-     "days": 20,
-     "nm": 429
+     "days": 13,
+     "nm": 248
     },
     {
-     "id": "matilde-c",
-     "name": "Matilde C.",
+     "id": "fede-b",
+     "name": "Fede B",
      "trips": 2,
-     "days": 20,
-     "nm": 429
+     "days": 13,
+     "nm": 248
+    },
+    {
+     "id": "marco-t",
+     "name": "Marco T.",
+     "trips": 1,
+     "days": 12,
+     "nm": 253
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 1,
+     "days": 12,
+     "nm": 253
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 12,
-     "nm": 470
+     "days": 11,
+     "nm": 390
     },
     {
-     "id": "ludovica-r",
-     "name": "Ludovica R.",
+     "id": "michele-m",
+     "name": "Michele M.",
      "trips": 1,
-     "days": 12,
-     "nm": 470
+     "days": 11,
+     "nm": 271
     },
     {
-     "id": "giacomo-m",
-     "name": "Giacomo M.",
+     "id": "monica-m",
+     "name": "Monica M.",
      "trips": 1,
-     "days": 12,
-     "nm": 470
+     "days": 11,
+     "nm": 271
     },
     {
-     "id": "chiara-f",
-     "name": "Chiara F.",
+     "id": "giulia-n",
+     "name": "Giulia N",
      "trips": 1,
-     "days": 10,
-     "nm": 194
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "fede-n",
+     "name": "Fede N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "simona-a",
+     "name": "Simona A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6,
+     "nm": 91
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 6,
+     "nm": 91
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 6,
+     "nm": 91
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 6,
+     "nm": 320
     },
     {
-     "id": "laura-c",
-     "name": "Laura C.",
-     "trips": 1,
-     "days": 7,
-     "nm": 274
-    },
-    {
-     "id": "tonino-l",
-     "name": "Tonino L.",
+     "id": "riccardo-t",
+     "name": "Riccardo T.",
      "trips": 1,
      "days": 6,
-     "nm": 230
-    },
-    {
-     "id": "angela-k",
-     "name": "Angela K.",
-     "trips": 1,
-     "days": 6,
-     "nm": 230
-    },
-    {
-     "id": "fede-b",
-     "name": "Fede B",
-     "trips": 1,
-     "days": 6,
-     "nm": 91
-    },
-    {
-     "id": "riccardo-b",
-     "name": "Riccardo B",
-     "trips": 1,
-     "days": 6,
-     "nm": 91
-    },
-    {
-     "id": "mirco-l",
-     "name": "Mirco L.",
-     "trips": 1,
-     "days": 6,
-     "nm": 189
-    },
-    {
-     "id": "rebecca-l",
-     "name": "Rebecca L.",
-     "trips": 1,
-     "days": 6,
-     "nm": 189
-    },
-    {
-     "id": "fabiana-f",
-     "name": "Fabiana F.",
-     "trips": 1,
-     "days": 6,
-     "nm": 189
-    },
-    {
-     "id": "martina-r",
-     "name": "Martina R.",
-     "trips": 1,
-     "days": 6,
-     "nm": 189
+     "nm": 320
     }
-   ]
+   ],
+   "photo": "crew/img/riccardo-b.jpg"
   },
   {
    "id": "cecilia-r",
@@ -1854,8 +2387,8 @@
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 27,
-     "nm": 824
+     "days": 32,
+     "nm": 1020
     },
     {
      "id": "claudio-c",
@@ -1875,8 +2408,8 @@
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 15,
-     "nm": 412
+     "days": 20,
+     "nm": 550
     },
     {
      "id": "bernardo-b",
@@ -1902,6 +2435,13 @@
     {
      "id": "giacomo-m",
      "name": "Giacomo M.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
      "trips": 1,
      "days": 12,
      "nm": 470
@@ -2010,478 +2550,16 @@
      "trips": 1,
      "days": 10,
      "nm": 275
-    },
-    {
-     "id": "laura-c",
-     "name": "Laura C.",
-     "trips": 1,
-     "days": 7,
-     "nm": 274
     }
    ],
    "photo": "crew/img/cecilia-r.jpg"
   },
   {
-   "id": "riccardo-b",
-   "name": "Riccardo B",
-   "trips": 7,
-   "days": 65,
-   "nm": 1849,
-   "first": 2015,
-   "last": 2023,
-   "rank": "nostromo",
-   "rank_label": "Nostromo",
-   "track": "marinaio",
-   "abilitato": true,
-   "trips_list": [
-    {
-     "id": "blue-bird",
-     "year": 2015,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Sun Odyssey 49",
-     "nm": 253,
-     "days": 12,
-     "pdays": 12
-    },
-    {
-     "id": "trocha",
-     "year": 2015,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Jeanneau 53",
-     "nm": 395,
-     "days": 12,
-     "pdays": 12
-    },
-    {
-     "id": "sorbe",
-     "year": 2017,
-     "zone": "Grenadine",
-     "country": "Saint Vincent - France - Saint Lucia",
-     "boat": "Lagoon 450",
-     "nm": 271,
-     "days": 11,
-     "pdays": 11
-    },
-    {
-     "id": "lohengrin",
-     "year": 2019,
-     "zone": "Cuba",
-     "country": "Cuba",
-     "boat": "Lagoon 450",
-     "nm": 390,
-     "days": 11,
-     "pdays": 11
-    },
-    {
-     "id": "silkwave",
-     "year": 2021,
-     "zone": "Sardegna",
-     "country": "Italy",
-     "boat": "Bavaria 51 Cruiser",
-     "nm": 320,
-     "days": 6,
-     "pdays": 6
-    },
-    {
-     "id": "mars-planet",
-     "year": 2021,
-     "zone": "Sicilia ed Egadi",
-     "country": "Italy",
-     "boat": "Oceanis 48",
-     "nm": 140,
-     "days": 6,
-     "pdays": 6
-    },
-    {
-     "id": "isla",
-     "year": 2023,
-     "zone": "Sicilia ed Egadi",
-     "country": "Italy",
-     "boat": "Fountain Pajot 40",
-     "nm": 91,
-     "days": 6,
-     "pdays": 6
-    }
-   ],
-   "crew2026": {
-    "board": "2026-08-22",
-    "leave": "2026-08-29",
-    "role": "apprentice"
-   },
-   "photos": [
-    {
-     "src": "trips/img/blue-bird/02.jpg",
-     "trip_id": "blue-bird",
-     "caption": "Spagna 2015"
-    },
-    {
-     "src": "trips/img/blue-bird/03.jpg",
-     "trip_id": "blue-bird",
-     "caption": "Spagna 2015"
-    },
-    {
-     "src": "trips/img/blue-bird/05.jpg",
-     "trip_id": "blue-bird",
-     "caption": "Spagna 2015"
-    },
-    {
-     "src": "trips/img/trocha/06.jpg",
-     "trip_id": "trocha",
-     "caption": "Baleari 2015"
-    },
-    {
-     "src": "trips/img/trocha/07.jpg",
-     "trip_id": "trocha",
-     "caption": "Baleari 2015"
-    },
-    {
-     "src": "trips/img/sorbe/04.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    },
-    {
-     "src": "trips/img/sorbe/07.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    },
-    {
-     "src": "trips/img/sorbe/08.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    },
-    {
-     "src": "trips/img/sorbe/09.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    },
-    {
-     "src": "trips/img/silkwave/01.jpg",
-     "trip_id": "silkwave",
-     "caption": "Sardegna 2021"
-    },
-    {
-     "src": "trips/img/isla/01.jpg",
-     "trip_id": "isla",
-     "caption": "Sicilia 2023"
-    },
-    {
-     "src": "trips/img/isla/02.jpg",
-     "trip_id": "isla",
-     "caption": "Sicilia 2023"
-    }
-   ],
-   "bio": {
-    "epithet": "Il conviviale",
-    "html": "Parlerebbe anche con i muri, e in barca si fa in quattro: conviviale con tutti, abilissimo timoniere e ottimo uomo-rana di supporto. Ha preso la patente nautica e da poco ha iniziato la sua carriera da comandante. Molto goloso, amante degli sfizi e delle birrette &mdash; tanto che <a class='plink' href='membro.html#andrea-a'>Andrea A.</a> gli rimprovera le troppe lattine lasciate mezze aperte in giro."
-   },
-   "tags": [
-    "Conviviale",
-    "Timoniere",
-    "Aspirante comandante",
-    "Goloso",
-    "Senatore di bordo"
-   ],
-   "nicks": [
-    "Branca"
-   ],
-   "sex": "m",
-   "companions": [
-    {
-     "id": "edo-c",
-     "name": "Edo C",
-     "trips": 7,
-     "days": 65,
-     "nm": 1849
-    },
-    {
-     "id": "matilde-c",
-     "name": "Matilde C.",
-     "trips": 3,
-     "days": 34,
-     "nm": 1056
-    },
-    {
-     "id": "luca-b",
-     "name": "Luca B.",
-     "trips": 3,
-     "days": 34,
-     "nm": 1056
-    },
-    {
-     "id": "rebecca-b",
-     "name": "Rebecca B.",
-     "trips": 3,
-     "days": 34,
-     "nm": 1056
-    },
-    {
-     "id": "margherita-c",
-     "name": "Margherita C.",
-     "trips": 3,
-     "days": 29,
-     "nm": 914
-    },
-    {
-     "id": "silvano-b",
-     "name": "Silvano B.",
-     "trips": 3,
-     "days": 29,
-     "nm": 795
-    },
-    {
-     "id": "simona-b",
-     "name": "Simona B.",
-     "trips": 3,
-     "days": 29,
-     "nm": 795
-    },
-    {
-     "id": "gabri-m",
-     "name": "Gabri M",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "ilaria-m",
-     "name": "Ilaria M",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "claudio-c",
-     "name": "Claudio C.",
-     "trips": 2,
-     "days": 18,
-     "nm": 524
-    },
-    {
-     "id": "paola-c",
-     "name": "Paola C.",
-     "trips": 2,
-     "days": 18,
-     "nm": 524
-    },
-    {
-     "id": "andrea-a",
-     "name": "Andrea A",
-     "trips": 2,
-     "days": 18,
-     "nm": 573
-    },
-    {
-     "id": "marco-t",
-     "name": "Marco T.",
-     "trips": 1,
-     "days": 12,
-     "nm": 253
-    },
-    {
-     "id": "carlo-a",
-     "name": "Carlo A.",
-     "trips": 1,
-     "days": 12,
-     "nm": 253
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 11,
-     "nm": 390
-    },
-    {
-     "id": "michele-m",
-     "name": "Michele M.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    },
-    {
-     "id": "monica-m",
-     "name": "Monica M.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    },
-    {
-     "id": "ginevra-l",
-     "name": "Ginevra L",
-     "trips": 1,
-     "days": 6,
-     "nm": 91
-    },
-    {
-     "id": "fede-b",
-     "name": "Fede B",
-     "trips": 1,
-     "days": 6,
-     "nm": 91
-    },
-    {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 1,
-     "days": 6,
-     "nm": 91
-    },
-    {
-     "id": "sofia-m",
-     "name": "Sofia M.",
-     "trips": 1,
-     "days": 6,
-     "nm": 91
-    },
-    {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
-     "trips": 1,
-     "days": 6,
-     "nm": 91
-    },
-    {
-     "id": "leonardo-m",
-     "name": "Leonardo M.",
-     "trips": 1,
-     "days": 6,
-     "nm": 320
-    },
-    {
-     "id": "riccardo-t",
-     "name": "Riccardo T.",
-     "trips": 1,
-     "days": 6,
-     "nm": 320
-    }
-   ],
-   "photo": "crew/img/riccardo-b.jpg"
-  },
-  {
-   "id": "gabriele-b",
-   "name": "Gabriele B.",
-   "trips": 3,
-   "days": 59,
-   "nm": 1213,
-   "first": 2011,
-   "last": 2013,
-   "rank": "nostromo",
-   "rank_label": "Nostromo",
-   "track": "marinaio",
-   "trips_list": [
-    {
-     "id": "camelia",
-     "year": 2011,
-     "zone": "Croazia",
-     "country": "Croazia",
-     "boat": "Cyclades 50",
-     "nm": 463,
-     "days": 20,
-     "pdays": 20
-    },
-    {
-     "id": "stephanie",
-     "year": 2012,
-     "zone": "Cicladi e Dodecaneso",
-     "country": "Greece-Turkey",
-     "boat": "Sun Odyssey 54",
-     "nm": 375,
-     "days": 19,
-     "pdays": 19
-    },
-    {
-     "id": "klaudia",
-     "year": 2013,
-     "zone": "Dodecaneso e Turchia",
-     "country": "Greece-Turkey",
-     "boat": "Sun Odyssey 54",
-     "nm": 375,
-     "days": 20,
-     "pdays": 20
-    }
-   ],
-   "photos": [
-    {
-     "src": "trips/img/camelia/02.jpg",
-     "trip_id": "camelia",
-     "caption": "Croazia 2011"
-    },
-    {
-     "src": "trips/img/stephanie/02.jpg",
-     "trip_id": "stephanie",
-     "caption": "Grecia Cicladi-Dodecaneso 2012"
-    }
-   ],
-   "bio": {
-    "epithet": "Il tattico",
-    "html": "Il grande tattico di ogni vacanza: campione di windsurf e, a suo dire, fratello gemello di Bill Gates. Con lui a bordo la tattica e la strategia sono sempre di altissimo livello."
-   },
-   "nicks": [
-    "Ga",
-    "Il rosso"
-   ],
-   "sex": "m",
-   "companions": [
-    {
-     "id": "edo-c",
-     "name": "Edo C",
-     "trips": 3,
-     "days": 59,
-     "nm": 1213
-    },
-    {
-     "id": "claudio-c",
-     "name": "Claudio C.",
-     "trips": 3,
-     "days": 59,
-     "nm": 1213
-    },
-    {
-     "id": "paola-c",
-     "name": "Paola C.",
-     "trips": 3,
-     "days": 59,
-     "nm": 1213
-    },
-    {
-     "id": "margherita-c",
-     "name": "Margherita C.",
-     "trips": 3,
-     "days": 59,
-     "nm": 1213
-    },
-    {
-     "id": "matilde-c",
-     "name": "Matilde C.",
-     "trips": 3,
-     "days": 59,
-     "nm": 1213
-    },
-    {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 2,
-     "days": 20,
-     "nm": 429
-    },
-    {
-     "id": "belinda-b",
-     "name": "Belinda B.",
-     "trips": 1,
-     "days": 10,
-     "nm": 232
-    }
-   ],
-   "photo": "crew/img/gabriele-b.jpg"
-  },
-  {
    "id": "leonardo-m",
    "name": "Leonardo M.",
    "trips": 6,
-   "days": 57,
-   "nm": 1860,
+   "days": 62,
+   "nm": 2056,
    "first": 2014,
    "last": 2022,
    "rank": "nostromo",
@@ -2506,8 +2584,7 @@
      "boat": "Dufour GL 500",
      "nm": 470,
      "days": 12,
-     "pdays": 7,
-     "pnm": 274
+     "pdays": 12
     },
     {
      "id": "alba",
@@ -2655,8 +2732,8 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 6,
-     "days": 57,
-     "nm": 1860
+     "days": 62,
+     "nm": 2056
     },
     {
      "id": "gualtiero-s",
@@ -2669,8 +2746,15 @@
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 2,
-     "days": 27,
-     "nm": 824
+     "days": 32,
+     "nm": 1020
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 2,
+     "days": 23,
+     "nm": 865
     },
     {
      "id": "marta-a",
@@ -2680,11 +2764,11 @@
      "nm": 670
     },
     {
-     "id": "laura-c",
-     "name": "Laura C.",
+     "id": "giacomo-n",
+     "name": "Giacomo N",
      "trips": 2,
-     "days": 18,
-     "nm": 669
+     "days": 17,
+     "nm": 505
     },
     {
      "id": "giacomo-b",
@@ -2692,13 +2776,6 @@
      "trips": 2,
      "days": 16,
      "nm": 385
-    },
-    {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
-     "trips": 2,
-     "days": 14,
-     "nm": 397
     },
     {
      "id": "umberto-f",
@@ -2725,8 +2802,36 @@
      "id": "alice-s",
      "name": "Alice S.",
      "trips": 1,
-     "days": 15,
-     "nm": 412
+     "days": 20,
+     "nm": 550
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
+    },
+    {
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
+     "trips": 1,
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "ginevra-l",
@@ -2785,34 +2890,6 @@
      "nm": 275
     },
     {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 1,
-     "days": 7,
-     "nm": 274
-    },
-    {
-     "id": "sofia-m",
-     "name": "Sofia M.",
-     "trips": 1,
-     "days": 7,
-     "nm": 274
-    },
-    {
-     "id": "ludovica-r",
-     "name": "Ludovica R.",
-     "trips": 1,
-     "days": 7,
-     "nm": 274
-    },
-    {
-     "id": "giacomo-m",
-     "name": "Giacomo M.",
-     "trips": 1,
-     "days": 7,
-     "nm": 274
-    },
-    {
      "id": "riccardo-b",
      "name": "Riccardo B",
      "trips": 1,
@@ -2830,13 +2907,363 @@
    "photo": "crew/img/leonardo-m.jpg"
   },
   {
+   "id": "ginevra-l",
+   "name": "Ginevra L",
+   "trips": 5,
+   "days": 60,
+   "nm": 1421,
+   "first": 2022,
+   "last": 2026,
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporadi",
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
+     "days": 11,
+     "pdays": 11
+    },
+    {
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicilia ed Egadi",
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6,
+     "pdays": 6
+    },
+    {
+     "id": "alexandros",
+     "year": 2024,
+     "zone": "Cicladi",
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 230,
+     "days": 6,
+     "pdays": 6
+    },
+    {
+     "id": "cari",
+     "year": 2024,
+     "zone": "Seychelles",
+     "country": "Seychelles",
+     "boat": "Lagoon 46",
+     "nm": 140,
+     "days": 15,
+     "pdays": 15
+    },
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 21
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-29",
+    "role": "crew",
+    "photo": "crew/img/ginevra-l.jpg"
+   },
+   "photos": [
+    {
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/11.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    },
+    {
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
+    }
+   ],
+   "bio": {
+    "epithet": "La cuoca",
+    "html": "La cuoca di ogni vacanza &mdash; e l'equipaggio è felicissimo che non sia più vegana, così si torna ad assaporare tutta la sua collezione di piatti. Porta sempre in tavola qualcosa di alternativo e sofisticato, roba rara su una barca. Famose anche le sue lezioni di yoga all'equipaggio e i suoi giri in SUP. Con l'acqua profonda ha un rapporto complicato: si tuffa volentieri solo dove vede il fondo. E occhio a stuzzicarla sui temi d'equipaggio appena atterrata da un volo intercontinentale &mdash; magari con scalo forzato a Mauritius, perché alle Seychelles non si scendeva per le turbolenze (<a class='plink' href='aneddoti.html#grande-screzio'>vedi</a>). Quanto ai giri in SUP: la scusa è portarti a spasso, in realtà ti traghetta da una parte all'altra così lei fa esercizio &mdash; le serve giusto un peso in più. È la compagna del comandante <a class='plink' href='skipper.html'><b>Edo C</b></a>."
+   },
+   "tags": [
+    "Cuoca",
+    "Yoga",
+    "SUP",
+    "Cambusa",
+    "Navigazione notturna"
+   ],
+   "nicks": [
+    "Gine",
+    "Gi",
+    "Ginx"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 5,
+     "days": 60,
+     "nm": 1421
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 4,
+     "days": 40,
+     "nm": 824
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 4,
+     "days": 40,
+     "nm": 869
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 2,
+     "days": 21,
+     "nm": 231
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 2,
+     "days": 20,
+     "nm": 458
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 2,
+     "days": 13,
+     "nm": 248
+    },
+    {
+     "id": "pietro-c",
+     "name": "Pietro C.",
+     "trips": 1,
+     "days": 15,
+     "nm": 140
+    },
+    {
+     "id": "jennifer-s",
+     "name": "Jennifer S.",
+     "trips": 1,
+     "days": 15,
+     "nm": 140
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 14,
+     "nm": 367
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 13,
+     "nm": 408
+    },
+    {
+     "id": "laura-c",
+     "name": "Laura C.",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
+     "id": "carlotta-d",
+     "name": "Carlotta D.",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "fede-n",
+     "name": "Fede N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "simona-a",
+     "name": "Simona A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "tonino-l",
+     "name": "Tonino L.",
+     "trips": 1,
+     "days": 6,
+     "nm": 230
+    },
+    {
+     "id": "angela-k",
+     "name": "Angela K.",
+     "trips": 1,
+     "days": 6,
+     "nm": 230
+    }
+   ]
+  },
+  {
    "id": "giacomo-n",
    "name": "Giacomo N",
-   "trips": 5,
-   "days": 48,
-   "nm": 1058,
+   "trips": 6,
+   "days": 59,
+   "nm": 1364,
    "first": 2021,
-   "last": 2024,
+   "last": 2026,
    "rank": "nostromo",
    "rank_label": "Nostromo",
    "track": "marinaio",
@@ -2869,8 +3296,7 @@
      "boat": "Lagoon 42",
      "nm": 395,
      "days": 11,
-     "pdays": 8,
-     "pnm": 287
+     "pdays": 11
     },
     {
      "id": "isla",
@@ -2891,6 +3317,17 @@
      "nm": 140,
      "days": 15,
      "pdays": 15
+    },
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 8,
+     "pnm": 198
     }
    ],
    "crew2026": {
@@ -2965,16 +3402,23 @@
     {
      "id": "edo-c",
      "name": "Edo C",
-     "trips": 5,
-     "days": 48,
-     "nm": 1058
+     "trips": 6,
+     "days": 59,
+     "nm": 1364
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
-     "trips": 3,
-     "days": 33,
-     "nm": 661
+     "trips": 4,
+     "days": 41,
+     "nm": 859
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 4,
+     "days": 40,
+     "nm": 824
     },
     {
      "id": "sofia-m",
@@ -2982,13 +3426,6 @@
      "trips": 3,
      "days": 33,
      "nm": 661
-    },
-    {
-     "id": "ginevra-l",
-     "name": "Ginevra L",
-     "trips": 3,
-     "days": 29,
-     "nm": 518
     },
     {
      "id": "pietro-c",
@@ -3008,43 +3445,92 @@
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 2,
-     "days": 14,
-     "nm": 397
+     "days": 17,
+     "nm": 505
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 2,
+     "days": 7,
+     "nm": 91
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 8,
-     "nm": 287
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "marta-a",
      "name": "Marta A.",
      "trips": 1,
-     "days": 8,
-     "nm": 287
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "carlotta-d",
      "name": "Carlotta D.",
      "trips": 1,
-     "days": 8,
-     "nm": 287
+     "days": 11,
+     "nm": 395
     },
     {
      "id": "gualtiero-s",
      "name": "Gualtiero S.",
      "trips": 1,
-     "days": 8,
-     "nm": 287
+     "days": 11,
+     "nm": 395
     },
     {
-     "id": "fede-b",
-     "name": "Fede B",
+     "id": "bianca-m",
+     "name": "Bianca M",
      "trips": 1,
-     "days": 6,
-     "nm": 91
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
     },
     {
      "id": "riccardo-b",
@@ -3080,8 +3566,153 @@
      "trips": 1,
      "days": 6,
      "nm": 110
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
     }
    ]
+  },
+  {
+   "id": "gabriele-b",
+   "name": "Gabriele B.",
+   "trips": 3,
+   "days": 59,
+   "nm": 1213,
+   "first": 2011,
+   "last": 2013,
+   "rank": "nostromo",
+   "rank_label": "Nostromo",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia",
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20,
+     "pdays": 20
+    },
+    {
+     "id": "stephanie",
+     "year": 2012,
+     "zone": "Cicladi e Dodecaneso",
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 19,
+     "pdays": 19
+    },
+    {
+     "id": "klaudia",
+     "year": 2013,
+     "zone": "Dodecaneso e Turchia",
+     "country": "Greece-Turkey",
+     "boat": "Sun Odyssey 54",
+     "nm": 375,
+     "days": 20,
+     "pdays": 20
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/camelia/02.jpg",
+     "trip_id": "camelia",
+     "caption": "Croazia 2011"
+    },
+    {
+     "src": "trips/img/stephanie/02.jpg",
+     "trip_id": "stephanie",
+     "caption": "Grecia Cicladi-Dodecaneso 2012"
+    }
+   ],
+   "bio": {
+    "epithet": "Il tattico",
+    "html": "Il grande tattico di ogni vacanza: campione di windsurf e, a suo dire, fratello gemello di Bill Gates. Con lui a bordo la tattica e la strategia sono sempre di altissimo livello."
+   },
+   "nicks": [
+    "Ga",
+    "Il rosso"
+   ],
+   "sex": "m",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 3,
+     "days": 59,
+     "nm": 1213
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 3,
+     "days": 59,
+     "nm": 1213
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 3,
+     "days": 59,
+     "nm": 1213
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 3,
+     "days": 59,
+     "nm": 1213
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 3,
+     "days": 59,
+     "nm": 1213
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 39,
+     "nm": 838
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    }
+   ],
+   "photo": "crew/img/gabriele-b.jpg"
   },
   {
    "id": "sofia-m",
@@ -3205,15 +3836,15 @@
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "fede-b",
@@ -3233,225 +3864,266 @@
    "photo": "crew/img/sofia-m.jpg"
   },
   {
-   "id": "ginevra-l",
-   "name": "Ginevra L",
-   "trips": 4,
-   "days": 39,
-   "nm": 856,
-   "first": 2022,
-   "last": 2024,
+   "id": "andrea-a",
+   "name": "Andrea A",
+   "trips": 5,
+   "days": 43,
+   "nm": 1161,
+   "first": 2011,
+   "last": 2026,
    "rank": "marinaio-scelto",
    "rank_label": "Marinaio scelto",
    "track": "marinaio",
    "trips_list": [
     {
-     "id": "all-in",
-     "year": 2022,
-     "zone": "Sporadi",
+     "id": "nemo",
+     "year": 2011,
+     "zone": "Cicladi",
      "country": "Greece",
-     "boat": "Lagoon 42",
-     "nm": 395,
+     "boat": "Lagoon 440",
+     "nm": 321,
      "days": 11,
      "pdays": 11
     },
     {
-     "id": "isla",
-     "year": 2023,
-     "zone": "Sicilia ed Egadi",
+     "id": "blue-bird",
+     "year": 2015,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 253,
+     "days": 12,
+     "pdays": 12
+    },
+    {
+     "id": "silkwave",
+     "year": 2021,
+     "zone": "Sardegna",
      "country": "Italy",
-     "boat": "Fountain Pajot 40",
-     "nm": 91,
+     "boat": "Bavaria 51 Cruiser",
+     "nm": 320,
      "days": 6,
      "pdays": 6
     },
     {
-     "id": "alexandros",
-     "year": 2024,
-     "zone": "Cicladi",
-     "country": "Greece",
-     "boat": "Lagoon 42",
-     "nm": 230,
+     "id": "challenger",
+     "year": 2022,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Lagoon 450",
+     "nm": 110,
      "days": 6,
      "pdays": 6
     },
     {
-     "id": "cari",
-     "year": 2024,
-     "zone": "Seychelles",
-     "country": "Seychelles",
-     "boat": "Lagoon 46",
-     "nm": 140,
-     "days": 15,
-     "pdays": 15
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 157
     }
    ],
    "crew2026": {
-    "board": "2026-08-08",
+    "board": "2026-08-22",
     "leave": "2026-08-29",
-    "role": "crew",
-    "photo": "crew/img/ginevra-l.jpg"
+    "role": "crew"
    },
    "photos": [
     {
-     "src": "trips/img/all-in/03.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "src": "trips/img/nemo/01.jpg",
+     "trip_id": "nemo",
+     "caption": "Grecia 2011"
     },
     {
-     "src": "trips/img/all-in/04.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "src": "trips/img/blue-bird/02.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
     },
     {
-     "src": "trips/img/all-in/10.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "src": "trips/img/blue-bird/04.jpg",
+     "trip_id": "blue-bird",
+     "caption": "Spagna 2015"
     },
     {
-     "src": "trips/img/all-in/11.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/13.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/14.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/15.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "src": "trips/img/silkwave/01.jpg",
+     "trip_id": "silkwave",
+     "caption": "Sardegna 2021"
     }
    ],
    "bio": {
-    "epithet": "La cuoca",
-    "html": "La cuoca di ogni vacanza &mdash; e l'equipaggio è felicissimo che non sia più vegana, così si torna ad assaporare tutta la sua collezione di piatti. Porta sempre in tavola qualcosa di alternativo e sofisticato, roba rara su una barca. Famose anche le sue lezioni di yoga all'equipaggio e i suoi giri in SUP. Con l'acqua profonda ha un rapporto complicato: si tuffa volentieri solo dove vede il fondo. E occhio a stuzzicarla sui temi d'equipaggio appena atterrata da un volo intercontinentale &mdash; magari con scalo forzato a Mauritius, perché alle Seychelles non si scendeva per le turbolenze (<a class='plink' href='aneddoti.html#grande-screzio'>vedi</a>). Quanto ai giri in SUP: la scusa è portarti a spasso, in realtà ti traghetta da una parte all'altra così lei fa esercizio &mdash; le serve giusto un peso in più. È la compagna del comandante <a class='plink' href='skipper.html'><b>Edo C</b></a>."
+    "epithet": "Il condizionatore",
+    "html": "Regola dell'equipaggio: non lasciatelo al timone quando è cotto. Famoso l'episodio di <b>Sardegna 2021</b> &mdash; il comandante dormiva, al timone Andrea e <a class='plink' href='membro.html#riccardo-t'>Riccardo T.</a> (l'altissimo); una scossa sveglia di soprassalto il capitano, che in pochi secondi si accorge che stanno puntando gli scogli e con una virata d'emergenza salva barca e viaggio. Per il resto è loquace, ottimo marinaio, sempre disponibile: quando la sera è stanco va solo lasciato in pace. Odia il caldo, ama l'aria condizionata e la regola in modo maniacale. Leggendari i suoi ululati."
    },
    "tags": [
-    "Cuoca",
-    "Yoga",
-    "SUP",
-    "Cambusa",
-    "Navigazione notturna"
+    "Marinaio",
+    "Re dell'aria condizionata",
+    "Notturno",
+    "Timoniere",
+    "Wakeboard"
    ],
    "nicks": [
-    "Gine",
-    "Gi",
-    "Ginx"
+    "Abbute Puche",
+    "Immortale di Secondigliano",
+    "Vulcan",
+    "Idris",
+    "Aibs",
+    "Abba"
    ],
-   "sex": "f",
+   "sex": "m",
    "companions": [
     {
      "id": "edo-c",
      "name": "Edo C",
-     "trips": 4,
-     "days": 39,
-     "nm": 856
+     "trips": 5,
+     "days": 43,
+     "nm": 1161
     },
     {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
+     "id": "riccardo-b",
+     "name": "Riccardo B",
      "trips": 3,
-     "days": 29,
-     "nm": 518
+     "days": 25,
+     "nm": 730
     },
     {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 3,
-     "days": 27,
-     "nm": 461
-    },
-    {
-     "id": "sofia-m",
-     "name": "Sofia M.",
+     "id": "marco-t",
+     "name": "Marco T.",
      "trips": 2,
-     "days": 21,
-     "nm": 231
+     "days": 23,
+     "nm": 574
+    },
+    {
+     "id": "carlo-a",
+     "name": "Carlo A.",
+     "trips": 2,
+     "days": 23,
+     "nm": 574
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 12,
+     "nm": 430
+    },
+    {
+     "id": "riccardo-t",
+     "name": "Riccardo T.",
+     "trips": 2,
+     "days": 12,
+     "nm": 430
     },
     {
      "id": "pietro-c",
      "name": "Pietro C.",
      "trips": 1,
-     "days": 15,
-     "nm": 140
+     "days": 11,
+     "nm": 321
     },
     {
-     "id": "jennifer-s",
-     "name": "Jennifer S.",
-     "trips": 1,
-     "days": 15,
-     "nm": 140
-    },
-    {
-     "id": "laura-c",
-     "name": "Laura C.",
+     "id": "enrico-g",
+     "name": "Enrico G.",
      "trips": 1,
      "days": 11,
-     "nm": 395
+     "nm": 321
     },
     {
-     "id": "marta-a",
-     "name": "Marta A.",
+     "id": "gianmarco-m",
+     "name": "Gianmarco M.",
      "trips": 1,
      "days": 11,
-     "nm": 395
+     "nm": 321
     },
     {
-     "id": "carlotta-d",
-     "name": "Carlotta D.",
+     "id": "alberto-b",
+     "name": "Alberto B.",
      "trips": 1,
      "days": 11,
-     "nm": 395
+     "nm": 321
     },
     {
-     "id": "leonardo-m",
-     "name": "Leonardo M.",
+     "id": "ginevra-l",
+     "name": "Ginevra L",
      "trips": 1,
-     "days": 11,
-     "nm": 395
+     "days": 7,
+     "nm": 157
     },
     {
-     "id": "gualtiero-s",
-     "name": "Gualtiero S.",
+     "id": "giulia-n",
+     "name": "Giulia N",
      "trips": 1,
-     "days": 11,
-     "nm": 395
-    },
-    {
-     "id": "tonino-l",
-     "name": "Tonino L.",
-     "trips": 1,
-     "days": 6,
-     "nm": 230
-    },
-    {
-     "id": "angela-k",
-     "name": "Angela K.",
-     "trips": 1,
-     "days": 6,
-     "nm": 230
+     "days": 7,
+     "nm": 157
     },
     {
      "id": "fede-b",
      "name": "Fede B",
      "trips": 1,
-     "days": 6,
-     "nm": 91
+     "days": 7,
+     "nm": 157
     },
     {
-     "id": "riccardo-b",
-     "name": "Riccardo B",
+     "id": "fede-n",
+     "name": "Fede N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "simona-a",
+     "name": "Simona A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "umberto-f",
+     "name": "Umberto F.",
      "trips": 1,
      "days": 6,
-     "nm": 91
+     "nm": 110
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 6,
+     "nm": 110
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 6,
+     "nm": 110
     }
-   ]
+   ],
+   "photo": "crew/img/andrea-a.jpg"
   },
   {
    "id": "pietro-c",
@@ -3591,201 +4263,6 @@
     }
    ],
    "photo": "crew/img/pietro-c.jpg"
-  },
-  {
-   "id": "andrea-a",
-   "name": "Andrea A",
-   "trips": 4,
-   "days": 36,
-   "nm": 1004,
-   "first": 2011,
-   "last": 2022,
-   "rank": "marinaio-scelto",
-   "rank_label": "Marinaio scelto",
-   "track": "marinaio",
-   "trips_list": [
-    {
-     "id": "nemo",
-     "year": 2011,
-     "zone": "Cicladi",
-     "country": "Greece",
-     "boat": "Lagoon 440",
-     "nm": 321,
-     "days": 11,
-     "pdays": 11
-    },
-    {
-     "id": "blue-bird",
-     "year": 2015,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Sun Odyssey 49",
-     "nm": 253,
-     "days": 12,
-     "pdays": 12
-    },
-    {
-     "id": "silkwave",
-     "year": 2021,
-     "zone": "Sardegna",
-     "country": "Italy",
-     "boat": "Bavaria 51 Cruiser",
-     "nm": 320,
-     "days": 6,
-     "pdays": 6
-    },
-    {
-     "id": "challenger",
-     "year": 2022,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Lagoon 450",
-     "nm": 110,
-     "days": 6,
-     "pdays": 6
-    }
-   ],
-   "crew2026": {
-    "board": "2026-08-22",
-    "leave": "2026-08-29",
-    "role": "crew"
-   },
-   "photos": [
-    {
-     "src": "trips/img/nemo/01.jpg",
-     "trip_id": "nemo",
-     "caption": "Grecia 2011"
-    },
-    {
-     "src": "trips/img/blue-bird/02.jpg",
-     "trip_id": "blue-bird",
-     "caption": "Spagna 2015"
-    },
-    {
-     "src": "trips/img/blue-bird/04.jpg",
-     "trip_id": "blue-bird",
-     "caption": "Spagna 2015"
-    },
-    {
-     "src": "trips/img/silkwave/01.jpg",
-     "trip_id": "silkwave",
-     "caption": "Sardegna 2021"
-    }
-   ],
-   "bio": {
-    "epithet": "Il condizionatore",
-    "html": "Regola dell'equipaggio: non lasciatelo al timone quando è cotto. Famoso l'episodio di <b>Sardegna 2021</b> &mdash; il comandante dormiva, al timone Andrea e <a class='plink' href='membro.html#riccardo-t'>Riccardo T.</a> (l'altissimo); una scossa sveglia di soprassalto il capitano, che in pochi secondi si accorge che stanno puntando gli scogli e con una virata d'emergenza salva barca e viaggio. Per il resto è loquace, ottimo marinaio, sempre disponibile: quando la sera è stanco va solo lasciato in pace. Odia il caldo, ama l'aria condizionata e la regola in modo maniacale. Leggendari i suoi ululati."
-   },
-   "tags": [
-    "Marinaio",
-    "Re dell'aria condizionata",
-    "Notturno",
-    "Timoniere",
-    "Wakeboard"
-   ],
-   "nicks": [
-    "Abbute Puche",
-    "Immortale di Secondigliano",
-    "Vulcan",
-    "Idris",
-    "Aibs",
-    "Abba"
-   ],
-   "sex": "m",
-   "companions": [
-    {
-     "id": "edo-c",
-     "name": "Edo C",
-     "trips": 4,
-     "days": 36,
-     "nm": 1004
-    },
-    {
-     "id": "marco-t",
-     "name": "Marco T.",
-     "trips": 2,
-     "days": 23,
-     "nm": 574
-    },
-    {
-     "id": "carlo-a",
-     "name": "Carlo A.",
-     "trips": 2,
-     "days": 23,
-     "nm": 574
-    },
-    {
-     "id": "riccardo-b",
-     "name": "Riccardo B",
-     "trips": 2,
-     "days": 18,
-     "nm": 573
-    },
-    {
-     "id": "leonardo-m",
-     "name": "Leonardo M.",
-     "trips": 2,
-     "days": 12,
-     "nm": 430
-    },
-    {
-     "id": "riccardo-t",
-     "name": "Riccardo T.",
-     "trips": 2,
-     "days": 12,
-     "nm": 430
-    },
-    {
-     "id": "pietro-c",
-     "name": "Pietro C.",
-     "trips": 1,
-     "days": 11,
-     "nm": 321
-    },
-    {
-     "id": "enrico-g",
-     "name": "Enrico G.",
-     "trips": 1,
-     "days": 11,
-     "nm": 321
-    },
-    {
-     "id": "gianmarco-m",
-     "name": "Gianmarco M.",
-     "trips": 1,
-     "days": 11,
-     "nm": 321
-    },
-    {
-     "id": "alberto-b",
-     "name": "Alberto B.",
-     "trips": 1,
-     "days": 11,
-     "nm": 321
-    },
-    {
-     "id": "umberto-f",
-     "name": "Umberto F.",
-     "trips": 1,
-     "days": 6,
-     "nm": 110
-    },
-    {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
-     "trips": 1,
-     "days": 6,
-     "nm": 110
-    },
-    {
-     "id": "giacomo-b",
-     "name": "Giacomo B.",
-     "trips": 1,
-     "days": 6,
-     "nm": 110
-    }
-   ],
-   "photo": "crew/img/andrea-a.jpg"
   },
   {
    "id": "luca-b",
@@ -4100,6 +4577,426 @@
    "photo": "crew/img/rebecca-b.jpg"
   },
   {
+   "id": "belinda-b",
+   "name": "Belinda B.",
+   "trips": 2,
+   "days": 33,
+   "nm": 715,
+   "first": 2011,
+   "last": 2016,
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "camelia",
+     "year": 2011,
+     "zone": "Croazia",
+     "country": "Croazia",
+     "boat": "Cyclades 50",
+     "nm": 463,
+     "days": 20,
+     "pdays": 20
+    },
+    {
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 252,
+     "days": 13,
+     "pdays": 13
+    }
+   ],
+   "nicks": [
+    "Beli"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 2,
+     "days": 33,
+     "nm": 715
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 33,
+     "nm": 715
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "gabriele-b",
+     "name": "Gabriele B.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "chiara-f",
+     "name": "Chiara F.",
+     "trips": 1,
+     "days": 13,
+     "nm": 252
+    }
+   ]
+  },
+  {
+   "id": "nicola-r",
+   "name": "Nicola R.",
+   "trips": 2,
+   "days": 31,
+   "nm": 848,
+   "first": 2014,
+   "last": 2018,
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporadi",
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20,
+     "pdays": 20
+    },
+    {
+     "id": "ondine",
+     "year": 2018,
+     "zone": "Croazia",
+     "country": "Croazia",
+     "boat": "Sun Odyssey 519",
+     "nm": 385,
+     "days": 11,
+     "pdays": 11
+    }
+   ],
+   "nicks": [
+    "Nick"
+   ],
+   "sex": "m",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 2,
+     "days": 31,
+     "nm": 848
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 2,
+     "days": 31,
+     "nm": 848
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 2,
+     "days": 31,
+     "nm": 848
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 2,
+     "days": 31,
+     "nm": 848
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 31,
+     "nm": 848
+    },
+    {
+     "id": "filippo-r",
+     "name": "Filippo R.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11,
+     "nm": 385
+    }
+   ],
+   "photo": "crew/img/nicola-r.jpg"
+  },
+  {
+   "id": "ilaria-m",
+   "name": "Ilaria M",
+   "trips": 3,
+   "days": 30,
+   "nm": 818,
+   "first": 2017,
+   "last": 2026,
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
+   "abilitato": true,
+   "trips_list": [
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadine",
+     "country": "Saint Vincent - France - Saint Lucia",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11,
+     "pdays": 11
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11,
+     "pdays": 11
+    },
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 8,
+     "pnm": 157
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
+    "role": "apprentice"
+   },
+   "photos": [
+    {
+     "src": "trips/img/sorbe/03.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/07.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    }
+   ],
+   "bio": {
+    "epithet": "L'aspirante in meditazione",
+    "html": "Aspirante skipper. L'highlight è alle <b>Sporadi</b>, Grecia 2014, quando era in flotta sulla gemella &laquo;Regina V&raquo;: ritiratasi in meditazione verso sera, non la si trovava più, tanto che le due barche dovettero organizzare una vera ricerca e soccorso &mdash; <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> ed Edo partirono con le torce a perlustrare. Al momento del recupero, complice il vento forte e un piccolo errore del comandante, forarono pure il gommone."
+   },
+   "tags": [
+    "Aspirante skipper",
+    "Meditazione",
+    "Cuoca di bordo",
+    "Nottambula"
+   ],
+   "nicks": [
+    "Ila"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 3,
+     "days": 30,
+     "nm": 818
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 3,
+     "days": 29,
+     "nm": 818
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 3,
+     "days": 29,
+     "nm": 818
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 22,
+     "nm": 661
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 2,
+     "days": 22,
+     "nm": 661
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 2,
+     "days": 22,
+     "nm": 661
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11,
+     "nm": 390
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 1,
+     "days": 11,
+     "nm": 390
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11,
+     "nm": 271
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11,
+     "nm": 271
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 1,
+     "days": 11,
+     "nm": 271
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 1,
+     "days": 11,
+     "nm": 271
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "fede-n",
+     "name": "Fede N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "simona-a",
+     "name": "Simona A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    }
+   ],
+   "photo": "crew/img/ilaria-m.jpg"
+  },
+  {
    "id": "silvano-b",
    "name": "Silvano B.",
    "trips": 3,
@@ -4169,7 +5066,7 @@
      "name": "Riccardo B",
      "trips": 3,
      "days": 29,
-     "nm": 795
+     "nm": 806
     },
     {
      "id": "simona-b",
@@ -4315,7 +5212,7 @@
      "name": "Riccardo B",
      "trips": 3,
      "days": 29,
-     "nm": 795
+     "nm": 806
     },
     {
      "id": "luca-b",
@@ -4389,6 +5286,232 @@
     }
    ],
    "photo": "crew/img/simona-b.jpg"
+  },
+  {
+   "id": "gabri-m",
+   "name": "Gabri M",
+   "trips": 3,
+   "days": 29,
+   "nm": 818,
+   "first": 2017,
+   "last": 2026,
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
+   "abilitato": true,
+   "trips_list": [
+    {
+     "id": "sorbe",
+     "year": 2017,
+     "zone": "Grenadine",
+     "country": "Saint Vincent - France - Saint Lucia",
+     "boat": "Lagoon 450",
+     "nm": 271,
+     "days": 11,
+     "pdays": 11
+    },
+    {
+     "id": "lohengrin",
+     "year": 2019,
+     "zone": "Cuba",
+     "country": "Cuba",
+     "boat": "Lagoon 450",
+     "nm": 390,
+     "days": 11,
+     "pdays": 11
+    },
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 157
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
+    "role": "apprentice"
+   },
+   "photos": [
+    {
+     "src": "trips/img/sorbe/03.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/04.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/07.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    },
+    {
+     "src": "trips/img/sorbe/09.jpg",
+     "trip_id": "sorbe",
+     "caption": "Grenadine 2017"
+    }
+   ],
+   "bio": {
+    "epithet": "L'uomo dei tuffi",
+    "html": "L'uomo pazzo di bordo, l'uomo dei tuffi: insieme al fratello <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> si lancerebbe da qualsiasi cosa. Ottimo marinaio polivalente, uomo delle missioni impossibili e un po' pericolose."
+   },
+   "tags": [
+    "Uomo dei tuffi",
+    "Marinaio polivalente",
+    "Timoniere",
+    "Skipper del tender",
+    "Barman"
+   ],
+   "nicks": [
+    "Gastone",
+    "Gustavo",
+    "Gustav"
+   ],
+   "sex": "m",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 3,
+     "days": 29,
+     "nm": 818
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 3,
+     "days": 29,
+     "nm": 818
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 3,
+     "days": 29,
+     "nm": 818
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 2,
+     "days": 22,
+     "nm": 661
+    },
+    {
+     "id": "luca-b",
+     "name": "Luca B.",
+     "trips": 2,
+     "days": 22,
+     "nm": 661
+    },
+    {
+     "id": "rebecca-b",
+     "name": "Rebecca B.",
+     "trips": 2,
+     "days": 22,
+     "nm": 661
+    },
+    {
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
+     "trips": 1,
+     "days": 11,
+     "nm": 390
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 1,
+     "days": 11,
+     "nm": 390
+    },
+    {
+     "id": "michele-m",
+     "name": "Michele M.",
+     "trips": 1,
+     "days": 11,
+     "nm": 271
+    },
+    {
+     "id": "monica-m",
+     "name": "Monica M.",
+     "trips": 1,
+     "days": 11,
+     "nm": 271
+    },
+    {
+     "id": "simona-b",
+     "name": "Simona B.",
+     "trips": 1,
+     "days": 11,
+     "nm": 271
+    },
+    {
+     "id": "silvano-b",
+     "name": "Silvano B.",
+     "trips": 1,
+     "days": 11,
+     "nm": 271
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "fede-n",
+     "name": "Fede N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "simona-a",
+     "name": "Simona A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    }
+   ],
+   "photo": "crew/img/gabri-m.jpg"
   },
   {
    "id": "marco-t",
@@ -4654,6 +5777,13 @@
      "nm": 395
     },
     {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
@@ -4701,13 +5831,6 @@
      "trips": 1,
      "days": 10,
      "nm": 275
-    },
-    {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
-     "trips": 1,
-     "days": 8,
-     "nm": 287
     },
     {
      "id": "umberto-f",
@@ -4807,132 +5930,76 @@
    "photo": "crew/img/jennifer-s.jpg"
   },
   {
-   "id": "nicola-r",
-   "name": "Nicola R.",
+   "id": "laura-c",
+   "name": "Laura C.",
    "trips": 2,
-   "days": 25,
-   "nm": 709,
-   "first": 2014,
-   "last": 2018,
+   "days": 23,
+   "nm": 865,
+   "first": 2018,
+   "last": 2022,
    "rank": "marinaio-scelto",
    "rank_label": "Marinaio scelto",
    "track": "marinaio",
    "trips_list": [
     {
-     "id": "anax",
-     "year": 2014,
-     "zone": "Sporadi",
-     "country": "Greece",
-     "boat": "Sun Odyssey 49",
-     "nm": 463,
-     "days": 20,
-     "pdays": 14,
-     "pnm": 324
+     "id": "invitation",
+     "year": 2018,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Dufour GL 500",
+     "nm": 470,
+     "days": 12,
+     "pdays": 12
     },
     {
-     "id": "ondine",
-     "year": 2018,
-     "zone": "Croazia",
-     "country": "Croazia",
-     "boat": "Sun Odyssey 519",
-     "nm": 385,
+     "id": "all-in",
+     "year": 2022,
+     "zone": "Sporadi",
+     "country": "Greece",
+     "boat": "Lagoon 42",
+     "nm": 395,
      "days": 11,
      "pdays": 11
     }
    ],
-   "nicks": [
-    "Nick"
-   ],
-   "sex": "m",
-   "companions": [
+   "photos": [
     {
-     "id": "edo-c",
-     "name": "Edo C",
-     "trips": 2,
-     "days": 25,
-     "nm": 709
+     "src": "trips/img/all-in/03.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
     },
     {
-     "id": "claudio-c",
-     "name": "Claudio C.",
-     "trips": 2,
-     "days": 25,
-     "nm": 709
+     "src": "trips/img/all-in/04.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
     },
     {
-     "id": "paola-c",
-     "name": "Paola C.",
-     "trips": 2,
-     "days": 25,
-     "nm": 709
+     "src": "trips/img/all-in/10.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
     },
     {
-     "id": "margherita-c",
-     "name": "Margherita C.",
-     "trips": 2,
-     "days": 25,
-     "nm": 709
+     "src": "trips/img/all-in/13.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
     },
     {
-     "id": "matilde-c",
-     "name": "Matilde C.",
-     "trips": 2,
-     "days": 25,
-     "nm": 709
+     "src": "trips/img/all-in/14.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
     },
     {
-     "id": "filippo-r",
-     "name": "Filippo R.",
-     "trips": 1,
-     "days": 14,
-     "nm": 324
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 11,
-     "nm": 385
+     "src": "trips/img/all-in/15.jpg",
+     "trip_id": "all-in",
+     "caption": "Grecia 2022"
     }
    ],
-   "photo": "crew/img/nicola-r.jpg"
-  },
-  {
-   "id": "belinda-b",
-   "name": "Belinda B.",
-   "trips": 2,
-   "days": 23,
-   "nm": 484,
-   "first": 2011,
-   "last": 2016,
-   "rank": "marinaio-scelto",
-   "rank_label": "Marinaio scelto",
-   "track": "marinaio",
-   "trips_list": [
-    {
-     "id": "camelia",
-     "year": 2011,
-     "zone": "Croazia",
-     "country": "Croazia",
-     "boat": "Cyclades 50",
-     "nm": 463,
-     "days": 20,
-     "pdays": 10,
-     "pnm": 232
-    },
-    {
-     "id": "aquarela",
-     "year": 2016,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Sun Odyssey 49",
-     "nm": 252,
-     "days": 13,
-     "pdays": 13
-    }
-   ],
+   "bio": {
+    "epithet": "La regina del burraco",
+    "html": "Una sfegatata di burraco e giochi di società a bordo: non si tira mai indietro in nessuna attività. Predilige l'escursione e lo scoprire posti nuovi, ed è una grande giocatrice di giochi da tavolo &mdash; avalon compreso. È la sposa di <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a>"
+   },
    "nicks": [
-    "Beli"
+    "Uein"
    ],
    "sex": "f",
    "companions": [
@@ -4941,58 +6008,87 @@
      "name": "Edo C",
      "trips": 2,
      "days": 23,
-     "nm": 484
+     "nm": 865
+    },
+    {
+     "id": "leonardo-m",
+     "name": "Leonardo M.",
+     "trips": 2,
+     "days": 23,
+     "nm": 865
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
-     "trips": 2,
-     "days": 23,
-     "nm": 484
+     "trips": 1,
+     "days": 12,
+     "nm": 470
     },
     {
-     "id": "chiara-f",
-     "name": "Chiara F.",
+     "id": "sofia-m",
+     "name": "Sofia M.",
      "trips": 1,
-     "days": 10,
-     "nm": 194
+     "days": 12,
+     "nm": 470
     },
     {
-     "id": "claudio-c",
-     "name": "Claudio C.",
+     "id": "cecilia-r",
+     "name": "Cecilia R.",
      "trips": 1,
-     "days": 10,
-     "nm": 232
+     "days": 12,
+     "nm": 470
     },
     {
-     "id": "paola-c",
-     "name": "Paola C.",
+     "id": "ludovica-r",
+     "name": "Ludovica R.",
      "trips": 1,
-     "days": 10,
-     "nm": 232
+     "days": 12,
+     "nm": 470
     },
     {
-     "id": "margherita-c",
-     "name": "Margherita C.",
+     "id": "giacomo-m",
+     "name": "Giacomo M.",
      "trips": 1,
-     "days": 10,
-     "nm": 232
+     "days": 12,
+     "nm": 470
     },
     {
-     "id": "matilde-c",
-     "name": "Matilde C.",
+     "id": "ginevra-l",
+     "name": "Ginevra L",
      "trips": 1,
-     "days": 10,
-     "nm": 232
+     "days": 11,
+     "nm": 395
     },
     {
-     "id": "gabriele-b",
-     "name": "Gabriele B.",
+     "id": "giacomo-n",
+     "name": "Giacomo N",
      "trips": 1,
-     "days": 10,
-     "nm": 232
+     "days": 11,
+     "nm": 395
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
+     "id": "carlotta-d",
+     "name": "Carlotta D.",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
     }
-   ]
+   ],
+   "photo": "crew/img/laura-c.jpg"
   },
   {
    "id": "carlo-a",
@@ -5113,325 +6209,6 @@
    "photo": "crew/img/carlo-a.jpg"
   },
   {
-   "id": "ilaria-m",
-   "name": "Ilaria M",
-   "trips": 2,
-   "days": 22,
-   "nm": 661,
-   "first": 2017,
-   "last": 2019,
-   "rank": "marinaio-scelto",
-   "rank_label": "Marinaio scelto",
-   "track": "marinaio",
-   "abilitato": true,
-   "trips_list": [
-    {
-     "id": "sorbe",
-     "year": 2017,
-     "zone": "Grenadine",
-     "country": "Saint Vincent - France - Saint Lucia",
-     "boat": "Lagoon 450",
-     "nm": 271,
-     "days": 11,
-     "pdays": 11
-    },
-    {
-     "id": "lohengrin",
-     "year": 2019,
-     "zone": "Cuba",
-     "country": "Cuba",
-     "boat": "Lagoon 450",
-     "nm": 390,
-     "days": 11,
-     "pdays": 11
-    }
-   ],
-   "crew2026": {
-    "board": "2026-08-21",
-    "leave": "2026-08-29",
-    "role": "apprentice"
-   },
-   "photos": [
-    {
-     "src": "trips/img/sorbe/03.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    },
-    {
-     "src": "trips/img/sorbe/07.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    }
-   ],
-   "bio": {
-    "epithet": "L'aspirante in meditazione",
-    "html": "Aspirante skipper. L'highlight è alle <b>Sporadi</b>, Grecia 2014, quando era in flotta sulla gemella &laquo;Regina V&raquo;: ritiratasi in meditazione verso sera, non la si trovava più, tanto che le due barche dovettero organizzare una vera ricerca e soccorso &mdash; <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> ed Edo partirono con le torce a perlustrare. Al momento del recupero, complice il vento forte e un piccolo errore del comandante, forarono pure il gommone."
-   },
-   "tags": [
-    "Aspirante skipper",
-    "Meditazione",
-    "Cuoca di bordo",
-    "Nottambula"
-   ],
-   "nicks": [
-    "Ila"
-   ],
-   "sex": "f",
-   "companions": [
-    {
-     "id": "edo-c",
-     "name": "Edo C",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "riccardo-b",
-     "name": "Riccardo B",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "matilde-c",
-     "name": "Matilde C.",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "luca-b",
-     "name": "Luca B.",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "rebecca-b",
-     "name": "Rebecca B.",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "gabri-m",
-     "name": "Gabri M",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 11,
-     "nm": 390
-    },
-    {
-     "id": "margherita-c",
-     "name": "Margherita C.",
-     "trips": 1,
-     "days": 11,
-     "nm": 390
-    },
-    {
-     "id": "michele-m",
-     "name": "Michele M.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    },
-    {
-     "id": "monica-m",
-     "name": "Monica M.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    },
-    {
-     "id": "simona-b",
-     "name": "Simona B.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    },
-    {
-     "id": "silvano-b",
-     "name": "Silvano B.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    }
-   ],
-   "photo": "crew/img/ilaria-m.jpg"
-  },
-  {
-   "id": "gabri-m",
-   "name": "Gabri M",
-   "trips": 2,
-   "days": 22,
-   "nm": 661,
-   "first": 2017,
-   "last": 2019,
-   "rank": "marinaio-scelto",
-   "rank_label": "Marinaio scelto",
-   "track": "marinaio",
-   "abilitato": true,
-   "trips_list": [
-    {
-     "id": "sorbe",
-     "year": 2017,
-     "zone": "Grenadine",
-     "country": "Saint Vincent - France - Saint Lucia",
-     "boat": "Lagoon 450",
-     "nm": 271,
-     "days": 11,
-     "pdays": 11
-    },
-    {
-     "id": "lohengrin",
-     "year": 2019,
-     "zone": "Cuba",
-     "country": "Cuba",
-     "boat": "Lagoon 450",
-     "nm": 390,
-     "days": 11,
-     "pdays": 11
-    }
-   ],
-   "crew2026": {
-    "board": "2026-08-22",
-    "leave": "2026-08-29",
-    "role": "apprentice"
-   },
-   "photos": [
-    {
-     "src": "trips/img/sorbe/03.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    },
-    {
-     "src": "trips/img/sorbe/04.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    },
-    {
-     "src": "trips/img/sorbe/07.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    },
-    {
-     "src": "trips/img/sorbe/09.jpg",
-     "trip_id": "sorbe",
-     "caption": "Grenadine 2017"
-    }
-   ],
-   "bio": {
-    "epithet": "L'uomo dei tuffi",
-    "html": "L'uomo pazzo di bordo, l'uomo dei tuffi: insieme al fratello <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a> si lancerebbe da qualsiasi cosa. Ottimo marinaio polivalente, uomo delle missioni impossibili e un po' pericolose."
-   },
-   "tags": [
-    "Uomo dei tuffi",
-    "Marinaio polivalente",
-    "Timoniere",
-    "Skipper del tender",
-    "Barman"
-   ],
-   "nicks": [
-    "Gastone",
-    "Gustavo",
-    "Gustav"
-   ],
-   "sex": "m",
-   "companions": [
-    {
-     "id": "edo-c",
-     "name": "Edo C",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "riccardo-b",
-     "name": "Riccardo B",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "matilde-c",
-     "name": "Matilde C.",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "luca-b",
-     "name": "Luca B.",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "rebecca-b",
-     "name": "Rebecca B.",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "ilaria-m",
-     "name": "Ilaria M",
-     "trips": 2,
-     "days": 22,
-     "nm": 661
-    },
-    {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
-     "trips": 1,
-     "days": 11,
-     "nm": 390
-    },
-    {
-     "id": "margherita-c",
-     "name": "Margherita C.",
-     "trips": 1,
-     "days": 11,
-     "nm": 390
-    },
-    {
-     "id": "michele-m",
-     "name": "Michele M.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    },
-    {
-     "id": "monica-m",
-     "name": "Monica M.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    },
-    {
-     "id": "simona-b",
-     "name": "Simona B.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    },
-    {
-     "id": "silvano-b",
-     "name": "Silvano B.",
-     "trips": 1,
-     "days": 11,
-     "nm": 271
-    }
-   ],
-   "photo": "crew/img/gabri-m.jpg"
-  },
-  {
    "id": "marta-a",
    "name": "Marta A.",
    "trips": 2,
@@ -5535,6 +6312,13 @@
      "nm": 395
     },
     {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
@@ -5582,178 +6366,405 @@
      "trips": 1,
      "days": 10,
      "nm": 275
-    },
-    {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
-     "trips": 1,
-     "days": 8,
-     "nm": 287
     }
    ],
    "photo": "crew/img/marta-a.jpg"
   },
   {
-   "id": "laura-c",
-   "name": "Laura C.",
+   "id": "fede-b",
+   "name": "Fede B",
    "trips": 2,
-   "days": 18,
-   "nm": 669,
-   "first": 2018,
-   "last": 2022,
-   "rank": "marinaio",
-   "rank_label": "Marinaio",
+   "days": 20,
+   "nm": 458,
+   "first": 2023,
+   "last": 2026,
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
    "track": "marinaio",
    "trips_list": [
     {
-     "id": "invitation",
-     "year": 2018,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Dufour GL 500",
-     "nm": 470,
-     "days": 12,
-     "pdays": 7,
-     "pnm": 274
+     "id": "isla",
+     "year": 2023,
+     "zone": "Sicilia ed Egadi",
+     "country": "Italy",
+     "boat": "Fountain Pajot 40",
+     "nm": 91,
+     "days": 6,
+     "pdays": 6
     },
     {
-     "id": "all-in",
-     "year": 2022,
-     "zone": "Sporadi",
-     "country": "Greece",
-     "boat": "Lagoon 42",
-     "nm": 395,
-     "days": 11,
-     "pdays": 11
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 14,
+     "pnm": 367
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-29",
+    "role": "crew"
+   },
+   "photos": [
+    {
+     "src": "trips/img/isla/02.jpg",
+     "trip_id": "isla",
+     "caption": "Sicilia 2023"
+    }
+   ],
+   "bio": {
+    "epithet": "Il jolly",
+    "html": "La chiave inglese, il jolly di qualsiasi vacanza: con il suo accento torinese non ti fa smettere un attimo di ridere. Nuotatore infinito &mdash; potrebbe nuotare per i fatti suoi mentre la barca va da tutt'altra parte senza nemmeno accorgersene. Una volta, in Sicilia, l'abbiamo cambiato di rada lasciandolo indietro: ci ha raggiunti a nuoto. Non fa mai abbassare l'umore di bordo."
+   },
+   "tags": [
+    "Jolly",
+    "Gran nuotatore",
+    "Anima della festa",
+    "Aspirante timoniere"
+   ],
+   "nicks": [
+    "Fede"
+   ],
+   "sex": "m",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 2,
+     "days": 20,
+     "nm": 458
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 2,
+     "days": 20,
+     "nm": 458
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 2,
+     "days": 13,
+     "nm": 248
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 2,
+     "days": 12,
+     "nm": 301
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 2,
+     "days": 7,
+     "nm": 91
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 14,
+     "nm": 367
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "fede-n",
+     "name": "Fede N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "simona-a",
+     "name": "Simona A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "sofia-m",
+     "name": "Sofia M.",
+     "trips": 1,
+     "days": 6,
+     "nm": 91
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    }
+   ],
+   "photo": "crew/img/fede-b.jpg"
+  },
+  {
+   "id": "alice-s",
+   "name": "Alice S.",
+   "trips": 1,
+   "days": 20,
+   "nm": 550,
+   "first": 2020,
+   "last": 2020,
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "alba",
+     "year": 2020,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Bali 4.1",
+     "nm": 550,
+     "days": 20,
+     "pdays": 20
     }
    ],
    "photos": [
     {
-     "src": "trips/img/all-in/03.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/04.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/10.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/13.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/14.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
-    },
-    {
-     "src": "trips/img/all-in/15.jpg",
-     "trip_id": "all-in",
-     "caption": "Grecia 2022"
+     "src": "trips/img/alba/14.jpg",
+     "trip_id": "alba",
+     "caption": "Sardegna-Corsica 2020"
     }
    ],
-   "bio": {
-    "epithet": "La regina del burraco",
-    "html": "Una sfegatata di burraco e giochi di società a bordo: non si tira mai indietro in nessuna attività. Predilige l'escursione e lo scoprire posti nuovi, ed è una grande giocatrice di giochi da tavolo &mdash; avalon compreso. È la sposa di <a class='plink' href='membro.html#leonardo-m'>Leonardo M.</a>"
-   },
    "nicks": [
-    "Uein"
+    "Spampi"
    ],
    "sex": "f",
    "companions": [
     {
      "id": "edo-c",
      "name": "Edo C",
-     "trips": 2,
-     "days": 18,
-     "nm": 669
+     "trips": 1,
+     "days": 20,
+     "nm": 550
     },
     {
      "id": "leonardo-m",
      "name": "Leonardo M.",
-     "trips": 2,
-     "days": 18,
-     "nm": 669
-    },
-    {
-     "id": "ginevra-l",
-     "name": "Ginevra L",
      "trips": 1,
-     "days": 11,
-     "nm": 395
-    },
-    {
-     "id": "marta-a",
-     "name": "Marta A.",
-     "trips": 1,
-     "days": 11,
-     "nm": 395
-    },
-    {
-     "id": "carlotta-d",
-     "name": "Carlotta D.",
-     "trips": 1,
-     "days": 11,
-     "nm": 395
-    },
-    {
-     "id": "gualtiero-s",
-     "name": "Gualtiero S.",
-     "trips": 1,
-     "days": 11,
-     "nm": 395
-    },
-    {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
-     "trips": 1,
-     "days": 8,
-     "nm": 287
-    },
-    {
-     "id": "bernardo-b",
-     "name": "Bernardo B",
-     "trips": 1,
-     "days": 7,
-     "nm": 274
-    },
-    {
-     "id": "sofia-m",
-     "name": "Sofia M.",
-     "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 20,
+     "nm": 550
     },
     {
      "id": "cecilia-r",
      "name": "Cecilia R.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 20,
+     "nm": 550
     },
     {
-     "id": "ludovica-r",
-     "name": "Ludovica R.",
+     "id": "sara-b",
+     "name": "Sara B.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 10,
+     "nm": 275
     },
     {
-     "id": "giacomo-m",
-     "name": "Giacomo M.",
+     "id": "matilde-r",
+     "name": "Matilde R.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "sergio-s",
+     "name": "Sergio S.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "beatrice-f",
+     "name": "Beatrice F.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "gualtiero-s",
+     "name": "Gualtiero S.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "marta-a",
+     "name": "Marta A.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "martina-g",
+     "name": "Martina G.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "giorgio-m",
+     "name": "Giorgio M.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
+    },
+    {
+     "id": "giacomo-b",
+     "name": "Giacomo B.",
+     "trips": 1,
+     "days": 10,
+     "nm": 275
     }
    ],
-   "photo": "crew/img/laura-c.jpg"
+   "photo": "crew/img/alice-s.jpg"
+  },
+  {
+   "id": "filippo-r",
+   "name": "Filippo R.",
+   "trips": 1,
+   "days": 20,
+   "nm": 463,
+   "first": 2014,
+   "last": 2014,
+   "rank": "marinaio-scelto",
+   "rank_label": "Marinaio scelto",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "anax",
+     "year": 2014,
+     "zone": "Sporadi",
+     "country": "Greece",
+     "boat": "Sun Odyssey 49",
+     "nm": 463,
+     "days": 20,
+     "pdays": 20
+    }
+   ],
+   "photos": [
+    {
+     "src": "trips/img/anax/01.jpg",
+     "trip_id": "anax",
+     "caption": "Grecia Sporadi 2014"
+    }
+   ],
+   "bio": {
+    "epithet": "L'uomo dello sport",
+    "html": "L'uomo dello sport e delle domande scomode: quando lo porti in vacanza sembra <b>Ronaldo in vacanza</b>, sempre pronto per un piccolo allenamento o per una bevuta in compagnia."
+   },
+   "nicks": [
+    "Filo"
+   ],
+   "sex": "m",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "claudio-c",
+     "name": "Claudio C.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "paola-c",
+     "name": "Paola C.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "margherita-c",
+     "name": "Margherita C.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    },
+    {
+     "id": "nicola-r",
+     "name": "Nicola R.",
+     "trips": 1,
+     "days": 20,
+     "nm": 463
+    }
+   ],
+   "photo": "crew/img/filippo-r.jpg"
   },
   {
    "id": "giacomo-b",
@@ -5894,38 +6905,48 @@
    "photo": "crew/img/giacomo-b.jpg"
   },
   {
-   "id": "alice-s",
-   "name": "Alice S.",
+   "id": "giulia-n",
+   "name": "Giulia N",
    "trips": 1,
-   "days": 15,
-   "nm": 412,
-   "first": 2020,
-   "last": 2020,
+   "days": 14,
+   "nm": 367,
+   "first": 2026,
+   "last": 2026,
    "rank": "marinaio",
    "rank_label": "Marinaio",
    "track": "marinaio",
    "trips_list": [
     {
-     "id": "alba",
-     "year": 2020,
+     "id": "nina",
+     "year": 2026,
      "zone": "Sardegna e Corsica",
      "country": "Italy - France",
-     "boat": "Bali 4.1",
-     "nm": 550,
-     "days": 20,
-     "pdays": 15,
-     "pnm": 412
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 14,
+     "pnm": 367
     }
    ],
-   "photos": [
-    {
-     "src": "trips/img/alba/14.jpg",
-     "trip_id": "alba",
-     "caption": "Sardegna-Corsica 2020"
-    }
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-29",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "La jolly del polleggio",
+    "html": "Prima crociera con la Niña, ma non la prima volta in barca: alle spalle una traversata <b>Montenegro&ndash;Grecia</b> e la mano già ferma al timone. Si è candidata praticamente a tutto &mdash; manovre, ormeggio, cucina, musica, foto e perfino la cassa di bordo &mdash; con una sola regola non negoziabile: rispettare il polleggio. In cucina niente pose da chef: la sua pasta con pomodorini, capperi e acciughe è già in menu, e se il pescato collabora promette il ragù bianco di pesce spada e i calamari ripieni alla romagnola. Dorme nove ore a notte e non se ne vergogna; pregio dichiarato: &laquo;non rompo&raquo;."
+   },
+   "tags": [
+    "Timoniera",
+    "DJ di bordo",
+    "Foto & blog",
+    "Cassiera",
+    "Jolly"
    ],
    "nicks": [
-    "Spampi"
+    "Juliet",
+    "Giuli"
    ],
    "sex": "f",
    "companions": [
@@ -5933,173 +6954,123 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 15,
-     "nm": 412
+     "days": 14,
+     "nm": 367
     },
     {
-     "id": "leonardo-m",
-     "name": "Leonardo M.",
+     "id": "ginevra-l",
+     "name": "Ginevra L",
      "trips": 1,
-     "days": 15,
-     "nm": 412
+     "days": 14,
+     "nm": 367
     },
     {
-     "id": "cecilia-r",
-     "name": "Cecilia R.",
+     "id": "fede-b",
+     "name": "Fede B",
      "trips": 1,
-     "days": 15,
-     "nm": 412
+     "days": 14,
+     "nm": 367
     },
     {
-     "id": "sara-b",
-     "name": "Sara B.",
+     "id": "ilaria-m",
+     "name": "Ilaria M",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 8,
+     "nm": 157
     },
     {
-     "id": "matilde-r",
-     "name": "Matilde R.",
+     "id": "lavinia-p",
+     "name": "Lavinia P",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 8,
+     "nm": 157
     },
     {
-     "id": "sergio-s",
-     "name": "Sergio S.",
+     "id": "manlio",
+     "name": "Manlio",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 7,
+     "nm": 210
     },
     {
-     "id": "beatrice-f",
-     "name": "Beatrice F.",
+     "id": "antonio-v",
+     "name": "Antonio V",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 7,
+     "nm": 210
     },
     {
-     "id": "gualtiero-s",
-     "name": "Gualtiero S.",
+     "id": "agata-v",
+     "name": "Agata V",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 7,
+     "nm": 210
     },
     {
-     "id": "marta-a",
-     "name": "Marta A.",
+     "id": "riccardo-b",
+     "name": "Riccardo B",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 7,
+     "nm": 157
     },
     {
-     "id": "martina-g",
-     "name": "Martina G.",
+     "id": "fede-n",
+     "name": "Fede N",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 7,
+     "nm": 157
     },
     {
-     "id": "giorgio-m",
-     "name": "Giorgio M.",
+     "id": "andrea-a",
+     "name": "Andrea A",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 7,
+     "nm": 157
     },
     {
-     "id": "giacomo-b",
-     "name": "Giacomo B.",
+     "id": "simona-a",
+     "name": "Simona A",
      "trips": 1,
-     "days": 10,
-     "nm": 275
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
     }
    ],
-   "photo": "crew/img/alice-s.jpg"
-  },
-  {
-   "id": "filippo-r",
-   "name": "Filippo R.",
-   "trips": 1,
-   "days": 14,
-   "nm": 324,
-   "first": 2014,
-   "last": 2014,
-   "rank": "marinaio",
-   "rank_label": "Marinaio",
-   "track": "marinaio",
-   "trips_list": [
-    {
-     "id": "anax",
-     "year": 2014,
-     "zone": "Sporadi",
-     "country": "Greece",
-     "boat": "Sun Odyssey 49",
-     "nm": 463,
-     "days": 20,
-     "pdays": 14,
-     "pnm": 324
-    }
-   ],
-   "photos": [
-    {
-     "src": "trips/img/anax/01.jpg",
-     "trip_id": "anax",
-     "caption": "Grecia Sporadi 2014"
-    }
-   ],
-   "bio": {
-    "epithet": "L'uomo dello sport",
-    "html": "L'uomo dello sport e delle domande scomode: quando lo porti in vacanza sembra <b>Ronaldo in vacanza</b>, sempre pronto per un piccolo allenamento o per una bevuta in compagnia."
-   },
-   "nicks": [
-    "Filo"
-   ],
-   "sex": "m",
-   "companions": [
-    {
-     "id": "edo-c",
-     "name": "Edo C",
-     "trips": 1,
-     "days": 14,
-     "nm": 324
-    },
-    {
-     "id": "claudio-c",
-     "name": "Claudio C.",
-     "trips": 1,
-     "days": 14,
-     "nm": 324
-    },
-    {
-     "id": "paola-c",
-     "name": "Paola C.",
-     "trips": 1,
-     "days": 14,
-     "nm": 324
-    },
-    {
-     "id": "margherita-c",
-     "name": "Margherita C.",
-     "trips": 1,
-     "days": 14,
-     "nm": 324
-    },
-    {
-     "id": "matilde-c",
-     "name": "Matilde C.",
-     "trips": 1,
-     "days": 14,
-     "nm": 324
-    },
-    {
-     "id": "nicola-r",
-     "name": "Nicola R.",
-     "trips": 1,
-     "days": 14,
-     "nm": 324
-    }
-   ],
-   "photo": "crew/img/filippo-r.jpg"
+   "photo": "crew/img/giulia-n.jpg"
   },
   {
    "id": "riccardo-t",
@@ -6203,6 +7174,204 @@
     }
    ],
    "photo": "crew/img/riccardo-t.jpg"
+  },
+  {
+   "id": "bianca-m",
+   "name": "Bianca M",
+   "trips": 1,
+   "days": 13,
+   "nm": 408,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 13,
+     "pnm": 408
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-21",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "L'amante del silenzio",
+    "html": "Passeggera pura e felice di esserlo: si adatta, non disturba la quiete altrui e in cambio chiede una sola clausola &mdash; al risveglio, una mezz'ora di interazioni ridotte al minimo per ricaricare le batterie. Ama il silenzio, e una barca a vela col motore spento è il posto giusto. In cucina dichiara un'esperienza &laquo;base di sopravvivenza&raquo; ma si applica: la sua insalata marocchina è già prenotata, e tra formaggi e frutta la cambusa è in buone mani."
+   },
+   "tags": [
+    "Cambusa",
+    "Amante del silenzio"
+   ],
+   "nicks": [
+    "Bibi"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 13,
+     "nm": 408
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 13,
+     "nm": 408
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 13,
+     "nm": 408
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    }
+   ],
+   "photo": "crew/img/bianca-m.jpg"
+  },
+  {
+   "id": "chiara-f",
+   "name": "Chiara F.",
+   "trips": 1,
+   "days": 13,
+   "nm": 252,
+   "first": 2016,
+   "last": 2016,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "aquarela",
+     "year": 2016,
+     "zone": "Baleari",
+     "country": "Spain",
+     "boat": "Sun Odyssey 49",
+     "nm": 252,
+     "days": 13,
+     "pdays": 13
+    }
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 13,
+     "nm": 252
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 13,
+     "nm": 252
+    },
+    {
+     "id": "belinda-b",
+     "name": "Belinda B.",
+     "trips": 1,
+     "days": 13,
+     "nm": 252
+    }
+   ]
   },
   {
    "id": "umberto-f",
@@ -6377,15 +7546,15 @@
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 12,
+     "nm": 470
     }
    ],
    "photo": "crew/img/ludovica-r.jpg"
@@ -6454,15 +7623,15 @@
      "id": "leonardo-m",
      "name": "Leonardo M.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 12,
+     "nm": 470
     },
     {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
-     "days": 7,
-     "nm": 274
+     "days": 12,
+     "nm": 470
     }
    ],
    "photo": "crew/img/giacomo-m.jpg"
@@ -6546,6 +7715,13 @@
      "nm": 395
     },
     {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 11,
+     "nm": 395
+    },
+    {
      "id": "laura-c",
      "name": "Laura C.",
      "trips": 1,
@@ -6572,13 +7748,6 @@
      "trips": 1,
      "days": 11,
      "nm": 395
-    },
-    {
-     "id": "giacomo-n",
-     "name": "Giacomo N",
-     "trips": 1,
-     "days": 8,
-     "nm": 287
     }
    ],
    "photo": "crew/img/carlotta-d.jpg"
@@ -7634,28 +8803,45 @@
    ]
   },
   {
-   "id": "chiara-f",
-   "name": "Chiara F.",
+   "id": "lavinia-p",
+   "name": "Lavinia P",
    "trips": 1,
-   "days": 10,
-   "nm": 194,
-   "first": 2016,
-   "last": 2016,
+   "days": 8,
+   "nm": 157,
+   "first": 2026,
+   "last": 2026,
    "rank": "marinaio",
    "rank_label": "Marinaio",
    "track": "marinaio",
    "trips_list": [
     {
-     "id": "aquarela",
-     "year": 2016,
-     "zone": "Baleari",
-     "country": "Spain",
-     "boat": "Sun Odyssey 49",
-     "nm": 252,
-     "days": 13,
-     "pdays": 10,
-     "pnm": 194
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 8,
+     "pnm": 157
     }
+   ],
+   "crew2026": {
+    "board": "2026-08-21",
+    "leave": "2026-08-29",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "La regina dei pastoni",
+    "html": "Porta presa bene e buona musica, e in cucina non scherza: si diletta con &laquo;bei pastoni&raquo; collaudati fino a dieci persone &mdash; pasta acciughe e pangrattato in testa, con amatriciana e tonno-cipolla in rotazione; le acciughe sono la sua materia prima immancabile. Programma di bordo dichiarato: leggere al sole, musica al tramonto davanti a un aperitivo, bagnetto serale prima di addormentarsi sotto le stelle, valigia minimalista di costumi e parei. Il bagno di bordo non la vedrà mai: &laquo;il mio bagno è il mare&raquo;. Nottambula da 4 su 5, curiosa di timone e nodi; unico vero nemico: briciole e capelli per terra."
+   },
+   "tags": [
+    "Pastoni epici",
+    "Lettrice al sole"
+   ],
+   "nicks": [
+    "Peeiss",
+    "Peis"
    ],
    "sex": "f",
    "companions": [
@@ -7663,72 +8849,864 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 10,
-     "nm": 194
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 8,
+     "nm": 157
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "fede-n",
+     "name": "Fede N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "simona-a",
+     "name": "Simona A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    }
+   ],
+   "photo": "crew/img/lavinia-p.jpg"
+  },
+  {
+   "id": "matilde-m",
+   "name": "Matilde M",
+   "trips": 1,
+   "days": 8,
+   "nm": 198,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 8,
+     "pnm": 198
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-16",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "La mattiniera",
+    "html": "La più mattiniera dell'equipaggio (nottambula 1 su 5): se c'è un'alba in mezzo al mare, lei è già sul ponte a guardarla. Collaborativa, ordinata e rispettosa degli spazi altrui &mdash; sui difetti rimanda ai compagni di vacanza: &laquo;me lo diranno loro&raquo;. Si è candidata a pulizie, spesa, cassa comune e console da DJ, e al minicorso nodi ha detto subito sì. In tavola: insalatone miste e frutta."
+   },
+   "tags": [
+    "Ordine a bordo",
+    "DJ di bordo"
+   ],
+   "nicks": [
+    "Mati"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 8,
+     "nm": 198
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
-     "days": 10,
-     "nm": 194
+     "days": 8,
+     "nm": 198
     },
     {
-     "id": "belinda-b",
-     "name": "Belinda B.",
+     "id": "bianca-m",
+     "name": "Bianca M",
      "trips": 1,
-     "days": 10,
-     "nm": 194
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 8,
+     "nm": 198
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
     }
-   ]
+   ],
+   "photo": "crew/img/matilde-m.jpg"
   },
   {
-   "id": "fede-b",
-   "name": "Fede B",
+   "id": "isabella",
+   "name": "Isabella",
    "trips": 1,
-   "days": 6,
-   "nm": 91,
-   "first": 2023,
-   "last": 2023,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
+   "days": 7,
+   "nm": 198,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
    "track": "marinaio",
    "trips_list": [
     {
-     "id": "isla",
-     "year": 2023,
-     "zone": "Sicilia ed Egadi",
-     "country": "Italy",
-     "boat": "Fountain Pajot 40",
-     "nm": 91,
-     "days": 6,
-     "pdays": 6
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 198
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-15",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "La zen di bordo",
+    "html": "L'unica ad aver risposto al questionario in inglese, e con la filosofia più zen dell'equipaggio: pregi? &laquo;Let's find out&raquo;. Difetti? &laquo;Let's find out&raquo;. Passeggera pura, ma con la scuola di vela alle spalle e un 5 su 5 di amore per la barca. La sua regola d'oro è definitiva: chi non cucina non può fare la schizzinosa. Basi non negoziabili: acqua e colazione; per il resto ogni giocattolo d'acqua è il benvenuto &mdash; &laquo;ma non prendete niente solo per me&raquo;."
+   },
+   "tags": [
+    "Debuttante",
+    "Relax puro"
+   ],
+   "nicks": [
+    "Ella"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    }
+   ],
+   "photo": "crew/img/isabella.jpg"
+  },
+  {
+   "id": "valentina-f",
+   "name": "Vale F",
+   "trips": 1,
+   "days": 7,
+   "nm": 198,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 198
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-15",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "La debuttante",
+    "html": "Prima volta assoluta in barca: tutto da scoprire, compresi i propri difetti (&laquo;devo ancora scoprirli&raquo;). Una certezza però ce l'ha: &laquo;in barca non ho pregi particolari, ma in generale sono abbastanza simpatica&raquo;. Viene per il panorama e il relax, il contatto col mare la conquista, e intanto si è messa a disposizione come jolly tra cucina, piatti e riordino. In cambusa una sola parola d'ordine: pasta."
+   },
+   "tags": [
+    "Debuttante",
+    "Relax puro"
+   ],
+   "nicks": [
+    "Vale"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    }
+   ],
+   "photo": "crew/img/valentina-f.jpg"
+  },
+  {
+   "id": "manlio",
+   "name": "Manlio",
+   "trips": 1,
+   "days": 7,
+   "nm": 210,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 210
     }
    ],
    "crew2026": {
     "board": "2026-08-15",
+    "leave": "2026-08-22",
+    "role": "crew"
+   },
+   "sex": "m",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    }
+   ]
+  },
+  {
+   "id": "fede-n",
+   "name": "Fede N",
+   "trips": 1,
+   "days": 7,
+   "nm": 157,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 157
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-22",
     "leave": "2026-08-29",
     "role": "crew"
    },
-   "photos": [
-    {
-     "src": "trips/img/isla/02.jpg",
-     "trip_id": "isla",
-     "caption": "Sicilia 2023"
-    }
-   ],
    "bio": {
-    "epithet": "Il jolly",
-    "html": "La chiave inglese, il jolly di qualsiasi vacanza: con il suo accento torinese non ti fa smettere un attimo di ridere. Nuotatore infinito &mdash; potrebbe nuotare per i fatti suoi mentre la barca va da tutt'altra parte senza nemmeno accorgersene. Una volta, in Sicilia, l'abbiamo cambiato di rada lasciandolo indietro: ci ha raggiunti a nuoto. Non fa mai abbassare l'umore di bordo."
+    "epithet": "L'entusiasta",
+    "html": "Debuttante col curriculum più ambizioso del questionario: prima volta in barca e candidatura a dieci ruoli, dall'ormeggio alla cassa comune passando per skipper del tender, barman e cuoca. Al minicorso nodi ha risposto &laquo;Sì, ci sto!&raquo; senza esitazioni. Porta simpatia, buonumore e un radar infallibile per l'ora dell'aperitivo; in tavola, che non manchi mai la frutta."
    },
    "tags": [
-    "Jolly",
-    "Gran nuotatore",
-    "Anima della festa",
-    "Aspirante timoniere"
+    "Debuttante",
+    "Aperitivi"
    ],
    "nicks": [
     "Fede"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "simona-a",
+     "name": "Simona A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    }
+   ],
+   "photo": "crew/img/fede-n.jpg"
+  },
+  {
+   "id": "simona-a",
+   "name": "Simona A",
+   "trips": 1,
+   "days": 7,
+   "nm": 157,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 157
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-22",
+    "leave": "2026-08-29",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "Il razzo di cucina",
+    "html": "Prima volta in barca, filosofia già chiarissima: &laquo;fare delle balotte e stare sereni&raquo;. In cucina si presenta così: &laquo;aiuto volentieri, sono un razzo&raquo; &mdash; e con insalatone, guacamole, salmone e bruschette il reparto aperitivi ha trovato la sua specialista. I pregi li lascia &laquo;da scoprire&raquo; in navigazione."
+   },
+   "tags": [
+    "Debuttante",
+    "Aperitivi"
+   ],
+   "nicks": [
+    "Simo",
+    "Sima"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "riccardo-b",
+     "name": "Riccardo B",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "fede-n",
+     "name": "Fede N",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "andrea-a",
+     "name": "Andrea A",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "gabri-m",
+     "name": "Gabri M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 7,
+     "nm": 157
+    }
+   ],
+   "photo": "crew/img/simona-a.jpg"
+  },
+  {
+   "id": "antonio-v",
+   "name": "Antonio V",
+   "trips": 1,
+   "days": 7,
+   "nm": 210,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 210
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-22",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "L'anima libera",
+    "html": "In barca &laquo;ha perso il conto, praticamente ci vive&raquo; &mdash; ma sempre a motore: questa è la sua prima vela. Mattiniero, empirico, si adatta e non rompe; chiede solo, ogni tanto, un po' di tempo per ricaricare. Il cibo è il suo love language: cresciuto a gare di cucina con <a class='plink' href='membro.html#ginevra-l'>Ginevra L.</a> &mdash; una pietanza a testa e poi giudici l'uno dell'altra &mdash; oggi predica cose semplici ma buone: materia prima, pesce, crudo. Dice che la barca accentua la persona che è: un'anima libera. Sul comandante ha le idee chiare: &laquo;educato, competente, paziente... e bono&raquo;."
+   },
+   "tags": [
+    "Cucina semplice",
+    "DJ di bordo",
+    "Anima libera"
+   ],
+   "nicks": [
+    "Anto"
    ],
    "sex": "m",
    "companions": [
@@ -7736,46 +9714,443 @@
      "id": "edo-c",
      "name": "Edo C",
      "trips": 1,
-     "days": 6,
-     "nm": 91
+     "days": 7,
+     "nm": 210
     },
     {
      "id": "ginevra-l",
      "name": "Ginevra L",
      "trips": 1,
-     "days": 6,
-     "nm": 91
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "agata-v",
+     "name": "Agata V",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
     },
     {
      "id": "bernardo-b",
      "name": "Bernardo B",
      "trips": 1,
      "days": 6,
-     "nm": 91
+     "nm": 210
     },
     {
-     "id": "riccardo-b",
-     "name": "Riccardo B",
+     "id": "bianca-m",
+     "name": "Bianca M",
      "trips": 1,
      "days": 6,
-     "nm": 91
-    },
-    {
-     "id": "sofia-m",
-     "name": "Sofia M.",
-     "trips": 1,
-     "days": 6,
-     "nm": 91
+     "nm": 210
     },
     {
      "id": "giacomo-n",
      "name": "Giacomo N",
      "trips": 1,
-     "days": 6,
-     "nm": 91
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
     }
    ],
-   "photo": "crew/img/fede-b.jpg"
+   "photo": "crew/img/antonio-v.jpg"
+  },
+  {
+   "id": "lorenzo-c",
+   "name": "Lorenzo C.",
+   "trips": 1,
+   "days": 7,
+   "nm": 198,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 198
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-15",
+    "role": "crew",
+    "note": "Sbarca il 15 agosto a San Fiorenzo (Bastia se si passa dalla costa est per il maestrale)."
+   },
+   "bio": {
+    "epithet": "L'uomo degli ormeggi",
+    "html": "Sa il fatto suo: più di dieci volte in barca, scuola di vela e un paio di vacanze da skipper alle spalle. Alla domanda sui pregi ha risposto con una parola sola: &laquo;ormeggi&raquo; &mdash; e infatti si è candidato a manovre, prodiere, cime e tender. Nottambulo da 5 su 5, l'uomo giusto per le serate lunghe in rada, che è il suo habitat preferito. In valigia, se l'equipaggio approva, kite surf e tavola da wake."
+   },
+   "tags": [
+    "Ormeggi",
+    "Skipper del tender"
+   ],
+   "nicks": [
+    "Costanz"
+   ],
+   "sex": "m",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ilaria-c",
+     "name": "Ilaria C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    }
+   ],
+   "photo": "crew/img/lorenzo-c.jpg"
+  },
+  {
+   "id": "ilaria-c",
+   "name": "Ilaria C.",
+   "trips": 1,
+   "days": 7,
+   "nm": 198,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 198
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-08",
+    "leave": "2026-08-15",
+    "role": "crew",
+    "note": "Sbarca il 15 agosto a San Fiorenzo (Bastia se si passa dalla costa est per il maestrale)."
+   },
+   "bio": {
+    "epithet": "La timoniera",
+    "html": "Essenziale come le sue risposte al questionario: poche parole, tutte operative. Più di dieci volte in barca, scuola di vela e un'autodefinizione netta: &laquo;so il fatto mio &mdash; timono e do una mano alle manovre&raquo;. Amore per la vela 5 su 5 e voglia di imparare ancora. In cucina si candida da protagonista: cuoca, cambusa, spesa, aperitivi &mdash; e già che c'è anche foto e social. Al minicorso nodi: &laquo;Sì, ci sto!&raquo;."
+   },
+   "tags": [
+    "Timoniera",
+    "Cuoca"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "matilde-c",
+     "name": "Matilde C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "lorenzo-c",
+     "name": "Lorenzo C.",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "valentina-f",
+     "name": "Vale F",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    },
+    {
+     "id": "isabella",
+     "name": "Isabella",
+     "trips": 1,
+     "days": 7,
+     "nm": 198
+    }
+   ],
+   "photo": "crew/img/ilaria-c.jpg"
+  },
+  {
+   "id": "agata-v",
+   "name": "Agata V",
+   "trips": 1,
+   "days": 7,
+   "nm": 210,
+   "first": 2026,
+   "last": 2026,
+   "rank": "marinaio",
+   "rank_label": "Marinaio",
+   "track": "marinaio",
+   "trips_list": [
+    {
+     "id": "nina",
+     "year": 2026,
+     "zone": "Sardegna e Corsica",
+     "country": "Italy - France",
+     "boat": "Dufour 48",
+     "nm": 565,
+     "days": 21,
+     "pdays": 7,
+     "pnm": 210
+    }
+   ],
+   "crew2026": {
+    "board": "2026-08-15",
+    "leave": "2026-08-22",
+    "role": "crew"
+   },
+   "bio": {
+    "epithet": "La zazzamita di bordo",
+    "html": "Più di dieci volte in barca e già diverse uscite col comandante, ma stavolta da passeggera curiosa: vuole provare il timone, e sul minicorso nodi concede un &laquo;forse&raquo;. Autodefinizione perfetta: operativa, sempre pronta a fare qualcosa se serve e dove serve &mdash; infatti si è candidata a mezza lista dei ruoli, dalla cucina alla cassa comune, foto e social compresi. Unica eccezione dichiarata: la zazzamita sdraiata a inseguire il sole, arte in cui è maestra. Ama i colori di mare e cielo all'alba e al tramonto; i suoi nemici sono il dondolio in rada e la gestione dei capelli. In tavola porta frutta fresca e insalate con feta e anguria, in valigia un sogno: un giro in moto d'acqua."
+   },
+   "tags": [
+    "Jolly operativa",
+    "Zazzamita al sole"
+   ],
+   "sex": "f",
+   "companions": [
+    {
+     "id": "edo-c",
+     "name": "Edo C",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "ginevra-l",
+     "name": "Ginevra L",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "giulia-n",
+     "name": "Giulia N",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "fede-b",
+     "name": "Fede B",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "manlio",
+     "name": "Manlio",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "antonio-v",
+     "name": "Antonio V",
+     "trips": 1,
+     "days": 7,
+     "nm": 210
+    },
+    {
+     "id": "bernardo-b",
+     "name": "Bernardo B",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "bianca-m",
+     "name": "Bianca M",
+     "trips": 1,
+     "days": 6,
+     "nm": 210
+    },
+    {
+     "id": "giacomo-n",
+     "name": "Giacomo N",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "matilde-m",
+     "name": "Matilde M",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "ilaria-m",
+     "name": "Ilaria M",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    },
+    {
+     "id": "lavinia-p",
+     "name": "Lavinia P",
+     "trips": 1,
+     "days": 1,
+     "nm": 0
+    }
+   ],
+   "photo": "crew/img/agata-v.jpg"
   },
   {
    "id": "tonino-l",
@@ -8158,400 +10533,6 @@
      "nm": 189
     }
    ]
-  },
-  {
-   "id": "bianca-m",
-   "name": "Bianca M",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-08",
-    "leave": "2026-08-21",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "L'amante del silenzio",
-    "html": "Passeggera pura e felice di esserlo: si adatta, non disturba la quiete altrui e in cambio chiede una sola clausola &mdash; al risveglio, una mezz'ora di interazioni ridotte al minimo per ricaricare le batterie. Ama il silenzio, e una barca a vela col motore spento è il posto giusto. In cucina dichiara un'esperienza &laquo;base di sopravvivenza&raquo; ma si applica: la sua insalata marocchina è già prenotata, e tra formaggi e frutta la cambusa è in buone mani."
-   },
-   "tags": [
-    "Cambusa",
-    "Amante del silenzio"
-   ],
-   "nicks": [
-    "Bibi"
-   ],
-   "sex": "f",
-   "photo": "crew/img/bianca-m.jpg"
-  },
-  {
-   "id": "isabella",
-   "name": "Isabella",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-08",
-    "leave": "2026-08-15",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "La zen di bordo",
-    "html": "L'unica ad aver risposto al questionario in inglese, e con la filosofia più zen dell'equipaggio: pregi? &laquo;Let's find out&raquo;. Difetti? &laquo;Let's find out&raquo;. Passeggera pura, ma con la scuola di vela alle spalle e un 5 su 5 di amore per la barca. La sua regola d'oro è definitiva: chi non cucina non può fare la schizzinosa. Basi non negoziabili: acqua e colazione; per il resto ogni giocattolo d'acqua è il benvenuto &mdash; &laquo;ma non prendete niente solo per me&raquo;."
-   },
-   "tags": [
-    "Debuttante",
-    "Relax puro"
-   ],
-   "nicks": [
-    "Ella"
-   ],
-   "sex": "f",
-   "photo": "crew/img/isabella.jpg"
-  },
-  {
-   "id": "valentina-f",
-   "name": "Vale F",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-08",
-    "leave": "2026-08-15",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "La debuttante",
-    "html": "Prima volta assoluta in barca: tutto da scoprire, compresi i propri difetti (&laquo;devo ancora scoprirli&raquo;). Una certezza però ce l'ha: &laquo;in barca non ho pregi particolari, ma in generale sono abbastanza simpatica&raquo;. Viene per il panorama e il relax, il contatto col mare la conquista, e intanto si è messa a disposizione come jolly tra cucina, piatti e riordino. In cambusa una sola parola d'ordine: pasta."
-   },
-   "tags": [
-    "Debuttante",
-    "Relax puro"
-   ],
-   "nicks": [
-    "Vale"
-   ],
-   "sex": "f",
-   "photo": "crew/img/valentina-f.jpg"
-  },
-  {
-   "id": "manlio",
-   "name": "Manlio",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-15",
-    "leave": "2026-08-22",
-    "role": "crew"
-   },
-   "sex": "m"
-  },
-  {
-   "id": "giulia-n",
-   "name": "Giulia N",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-15",
-    "leave": "2026-08-29",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "La jolly del polleggio",
-    "html": "Prima crociera con la Niña, ma non la prima volta in barca: alle spalle una traversata <b>Montenegro&ndash;Grecia</b> e la mano già ferma al timone. Si è candidata praticamente a tutto &mdash; manovre, ormeggio, cucina, musica, foto e perfino la cassa di bordo &mdash; con una sola regola non negoziabile: rispettare il polleggio. In cucina niente pose da chef: la sua pasta con pomodorini, capperi e acciughe è già in menu, e se il pescato collabora promette il ragù bianco di pesce spada e i calamari ripieni alla romagnola. Dorme nove ore a notte e non se ne vergogna; pregio dichiarato: &laquo;non rompo&raquo;."
-   },
-   "tags": [
-    "Timoniera",
-    "DJ di bordo",
-    "Foto & blog",
-    "Cassiera",
-    "Jolly"
-   ],
-   "nicks": [
-    "Juliet",
-    "Giuli"
-   ],
-   "sex": "f",
-   "photo": "crew/img/giulia-n.jpg"
-  },
-  {
-   "id": "fede-n",
-   "name": "Fede N",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-22",
-    "leave": "2026-08-29",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "L'entusiasta",
-    "html": "Debuttante col curriculum più ambizioso del questionario: prima volta in barca e candidatura a dieci ruoli, dall'ormeggio alla cassa comune passando per skipper del tender, barman e cuoca. Al minicorso nodi ha risposto &laquo;Sì, ci sto!&raquo; senza esitazioni. Porta simpatia, buonumore e un radar infallibile per l'ora dell'aperitivo; in tavola, che non manchi mai la frutta."
-   },
-   "tags": [
-    "Debuttante",
-    "Aperitivi"
-   ],
-   "nicks": [
-    "Fede"
-   ],
-   "sex": "f",
-   "photo": "crew/img/fede-n.jpg"
-  },
-  {
-   "id": "lavinia-p",
-   "name": "Lavinia P",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-21",
-    "leave": "2026-08-29",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "La regina dei pastoni",
-    "html": "Porta presa bene e buona musica, e in cucina non scherza: si diletta con &laquo;bei pastoni&raquo; collaudati fino a dieci persone &mdash; pasta acciughe e pangrattato in testa, con amatriciana e tonno-cipolla in rotazione; le acciughe sono la sua materia prima immancabile. Programma di bordo dichiarato: leggere al sole, musica al tramonto davanti a un aperitivo, bagnetto serale prima di addormentarsi sotto le stelle, valigia minimalista di costumi e parei. Il bagno di bordo non la vedrà mai: &laquo;il mio bagno è il mare&raquo;. Nottambula da 4 su 5, curiosa di timone e nodi; unico vero nemico: briciole e capelli per terra."
-   },
-   "tags": [
-    "Pastoni epici",
-    "Lettrice al sole"
-   ],
-   "nicks": [
-    "Peeiss",
-    "Peis"
-   ],
-   "sex": "f",
-   "photo": "crew/img/lavinia-p.jpg"
-  },
-  {
-   "id": "simona-a",
-   "name": "Simona A",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-22",
-    "leave": "2026-08-29",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "Il razzo di cucina",
-    "html": "Prima volta in barca, filosofia già chiarissima: &laquo;fare delle balotte e stare sereni&raquo;. In cucina si presenta così: &laquo;aiuto volentieri, sono un razzo&raquo; &mdash; e con insalatone, guacamole, salmone e bruschette il reparto aperitivi ha trovato la sua specialista. I pregi li lascia &laquo;da scoprire&raquo; in navigazione."
-   },
-   "tags": [
-    "Debuttante",
-    "Aperitivi"
-   ],
-   "nicks": [
-    "Simo",
-    "Sima"
-   ],
-   "sex": "f",
-   "photo": "crew/img/simona-a.jpg"
-  },
-  {
-   "id": "matilde-m",
-   "name": "Matilde M",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-08",
-    "leave": "2026-08-16",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "La mattiniera",
-    "html": "La più mattiniera dell'equipaggio (nottambula 1 su 5): se c'è un'alba in mezzo al mare, lei è già sul ponte a guardarla. Collaborativa, ordinata e rispettosa degli spazi altrui &mdash; sui difetti rimanda ai compagni di vacanza: &laquo;me lo diranno loro&raquo;. Si è candidata a pulizie, spesa, cassa comune e console da DJ, e al minicorso nodi ha detto subito sì. In tavola: insalatone miste e frutta."
-   },
-   "tags": [
-    "Ordine a bordo",
-    "DJ di bordo"
-   ],
-   "nicks": [
-    "Mati"
-   ],
-   "sex": "f",
-   "photo": "crew/img/matilde-m.jpg"
-  },
-  {
-   "id": "antonio-v",
-   "name": "Antonio V",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-15",
-    "leave": "2026-08-22",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "L'anima libera",
-    "html": "In barca &laquo;ha perso il conto, praticamente ci vive&raquo; &mdash; ma sempre a motore: questa è la sua prima vela. Mattiniero, empirico, si adatta e non rompe; chiede solo, ogni tanto, un po' di tempo per ricaricare. Il cibo è il suo love language: cresciuto a gare di cucina con <a class='plink' href='membro.html#ginevra-l'>Ginevra L.</a> &mdash; una pietanza a testa e poi giudici l'uno dell'altra &mdash; oggi predica cose semplici ma buone: materia prima, pesce, crudo. Dice che la barca accentua la persona che è: un'anima libera. Sul comandante ha le idee chiare: &laquo;educato, competente, paziente... e bono&raquo;."
-   },
-   "tags": [
-    "Cucina semplice",
-    "DJ di bordo",
-    "Anima libera"
-   ],
-   "nicks": [
-    "Anto"
-   ],
-   "sex": "m",
-   "photo": "crew/img/antonio-v.jpg"
-  },
-  {
-   "id": "lorenzo-c",
-   "name": "Lorenzo C.",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-08",
-    "leave": "2026-08-15",
-    "role": "crew",
-    "note": "Sbarca il 15 agosto a San Fiorenzo (Bastia se si passa dalla costa est per il maestrale)."
-   },
-   "bio": {
-    "epithet": "L'uomo degli ormeggi",
-    "html": "Sa il fatto suo: più di dieci volte in barca, scuola di vela e un paio di vacanze da skipper alle spalle. Alla domanda sui pregi ha risposto con una parola sola: &laquo;ormeggi&raquo; &mdash; e infatti si è candidato a manovre, prodiere, cime e tender. Nottambulo da 5 su 5, l'uomo giusto per le serate lunghe in rada, che è il suo habitat preferito. In valigia, se l'equipaggio approva, kite surf e tavola da wake."
-   },
-   "tags": [
-    "Ormeggi",
-    "Skipper del tender"
-   ],
-   "nicks": [
-    "Costanz"
-   ],
-   "sex": "m",
-   "photo": "crew/img/lorenzo-c.jpg"
-  },
-  {
-   "id": "ilaria-c",
-   "name": "Ilaria C.",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-08",
-    "leave": "2026-08-15",
-    "role": "crew",
-    "note": "Sbarca il 15 agosto a San Fiorenzo (Bastia se si passa dalla costa est per il maestrale)."
-   },
-   "bio": {
-    "epithet": "La timoniera",
-    "html": "Essenziale come le sue risposte al questionario: poche parole, tutte operative. Più di dieci volte in barca, scuola di vela e un'autodefinizione netta: &laquo;so il fatto mio &mdash; timono e do una mano alle manovre&raquo;. Amore per la vela 5 su 5 e voglia di imparare ancora. In cucina si candida da protagonista: cuoca, cambusa, spesa, aperitivi &mdash; e già che c'è anche foto e social. Al minicorso nodi: &laquo;Sì, ci sto!&raquo;."
-   },
-   "tags": [
-    "Timoniera",
-    "Cuoca"
-   ],
-   "sex": "f",
-   "photo": "crew/img/ilaria-c.jpg"
-  },
-  {
-   "id": "agata-v",
-   "name": "Agata V",
-   "trips": 0,
-   "days": 0,
-   "nm": 0,
-   "first": null,
-   "last": null,
-   "rank": "mozzo",
-   "rank_label": "Mozzo",
-   "track": "marinaio",
-   "trips_list": [],
-   "crew2026": {
-    "board": "2026-08-15",
-    "leave": "2026-08-22",
-    "role": "crew"
-   },
-   "bio": {
-    "epithet": "La zazzamita di bordo",
-    "html": "Più di dieci volte in barca e già diverse uscite col comandante, ma stavolta da passeggera curiosa: vuole provare il timone, e sul minicorso nodi concede un &laquo;forse&raquo;. Autodefinizione perfetta: operativa, sempre pronta a fare qualcosa se serve e dove serve &mdash; infatti si è candidata a mezza lista dei ruoli, dalla cucina alla cassa comune, foto e social compresi. Unica eccezione dichiarata: la zazzamita sdraiata a inseguire il sole, arte in cui è maestra. Ama i colori di mare e cielo all'alba e al tramonto; i suoi nemici sono il dondolio in rada e la gestione dei capelli. In tavola porta frutta fresca e insalate con feta e anguria, in valigia un sogno: un giro in moto d'acqua."
-   },
-   "tags": [
-    "Jolly operativa",
-    "Zazzamita al sole"
-   ],
-   "sex": "f",
-   "photo": "crew/img/agata-v.jpg"
   }
  ]
 }

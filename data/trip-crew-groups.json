@@ -1,6 +1,51 @@
 {
-  "_README": "Sovrascrive il roster dei viaggi con cambi di equipaggio. I giorni e le miglia personali sono calcolati sommando i turni realmente condivisi; le miglia di ogni turno sono proporzionali alla sua durata rispetto al viaggio completo.",
+  "_README": "Sovrascrive il roster dei viaggi con cambi di equipaggio. I giorni e le miglia personali sono calcolati sommando i turni realmente condivisi; le miglia di ogni turno sono proporzionali alla sua durata rispetto al viaggio completo, oppure ESPLICITE col campo nm per turno (dal KML consuntivo: un giorno di cambio in porto vale 0 nm). I giorni qui sono NOTTI a bordo. Per nina i 5 segmenti seguono i confini reali dei cambi (15-16/8 Bastia, 21-22/8 Porto Rotondo); la scheda pubblica su viaggio.html mostra invece i 3 equipaggi settimanali (crew_groups hand-authored in trips.json).",
   "trips": {
+    "nina": {
+      "trip_id": 28,
+      "groups": [
+        {
+          "id": "w1",
+          "label": "Settimana 1 · 8–15/8",
+          "days": 7,
+          "nm": 198,
+          "crew": ["edo-c", "ginevra-l", "bernardo-b", "bianca-m", "giacomo-n", "matilde-m",
+                   "matilde-c", "lorenzo-c", "ilaria-c", "valentina-f", "isabella"]
+        },
+        {
+          "id": "cambio-bastia",
+          "label": "Cambio a Bastia · 15–16/8",
+          "days": 1,
+          "nm": 0,
+          "crew": ["edo-c", "ginevra-l", "bernardo-b", "bianca-m", "giacomo-n", "matilde-m",
+                   "giulia-n", "fede-b", "manlio", "antonio-v", "agata-v"]
+        },
+        {
+          "id": "w2",
+          "label": "Settimana 2 · 16–21/8",
+          "days": 5,
+          "nm": 210,
+          "crew": ["edo-c", "ginevra-l", "bernardo-b", "bianca-m", "giulia-n", "fede-b",
+                   "manlio", "antonio-v", "agata-v"]
+        },
+        {
+          "id": "cambio-porto-rotondo",
+          "label": "Cambio a Porto Rotondo · 21–22/8",
+          "days": 1,
+          "nm": 0,
+          "crew": ["edo-c", "ginevra-l", "giulia-n", "fede-b", "manlio", "antonio-v", "agata-v",
+                   "ilaria-m", "lavinia-p"]
+        },
+        {
+          "id": "w3",
+          "label": "Settimana 3 · 22–29/8",
+          "days": 7,
+          "nm": 157,
+          "crew": ["edo-c", "ginevra-l", "giulia-n", "fede-b", "riccardo-b", "fede-n",
+                   "andrea-a", "simona-a", "gabri-m", "ilaria-m", "lavinia-p"]
+        }
+      ]
+    },
     "alba": {
       "trip_id": 19,
       "groups": [

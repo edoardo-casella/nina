@@ -90,6 +90,19 @@
         "Italy": 16,
         "France": 4
       }
+    },
+    "nina": {
+      "folder": "rotte-nina-2026-consuntivo.kml",
+      "official_nm": 565,
+      "track_nm": 564.5,
+      "track_nm_by_country": {
+        "Italy": 194.1,
+        "France": 370.4
+      },
+      "nm_by_country": {
+        "Italy": 194,
+        "France": 371
+      }
     }
   }
 }
