@@ -27,7 +27,10 @@ charter e logistica voli solo in `data/Summer 26.xlsx` e
 ## Architettura
 
 Stato unico: `data/voyage.json`. Otto skill in `skills/`, script in `scripts/`,
-dashboard statica in `site/`, pubblicata da GitHub Actions due volte al giorno.
+dashboard statica in `site/`, pubblicata da GitHub Actions a ogni push su `main`
+(o "Run workflow" manuale). Il refresh schedulato ogni 3 ore e' SOSPESO dal
+2026-08-31 (crociera conclusa; istruzioni per riattivarlo in `update.yml`);
+`keepalive.yml` pinga Supabase due volte a settimana per evitare la pausa del free tier.
 
 - `core.py` — stato, geodesia, polare (con VMG di bolina e di poppa)
 - `weather.py` — Open-Meteo, cache 1 h, `ensemble_spread` per l'affidabilità;

@@ -1,11 +1,11 @@
 name: Aggiorna briefing
 
 on:
-  schedule:
-    # ogni 3 ore: rinfresca meteo/briefing e il run delle carte LaMMA.
-    # LaMMA pubblica i run 00Z/12Z verso le 09/21 UTC: i giri delle 10 e
-    # delle 22 li agganciano ~1 ora dopo. I cron GitHub possono slittare.
-    - cron: "0 1,4,7,10,13,16,19,22 * * *"
+  # Refresh schedulato SOSPESO dal 2026-08-31 (crociera conclusa): il giro ogni
+  # 3 ore di meteo/briefing/LaMMA non serve piu'. Per riattivarlo ripristinare:
+  #   schedule:
+  #     - cron: "0 1,4,7,10,13,16,19,22 * * *"
+  # Il keep-alive di Supabase che questo giro garantiva ora sta in keepalive.yml.
   workflow_dispatch:        # bottone "Run workflow": rigenera, e dal telefono
     inputs:                 # (app GitHub) approva il piano o aggiorna la posizione
       approva:
